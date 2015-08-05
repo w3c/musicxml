@@ -2974,7 +2974,7 @@ By default, a series of direction-type elements and a series of child elements o
 		<xs:attributeGroup ref="valign-image"/>
 		<xs:attribute name="height" type="tenths"/>
 		<xs:attribute name="width" type="tenths"/>
-		<xs:attribute name="unplayed" type="xs:NMTOKEN"/>
+		<xs:attribute name="unplayed" type="xs:token"/>
 	</xs:complexType>
 
 	<xs:complexType name="frame-note">

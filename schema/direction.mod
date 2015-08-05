@@ -819,7 +819,7 @@
     %valign-image;
     height  %tenths;  #IMPLIED
     width   %tenths;  #IMPLIED
-    unplayed NMTOKEN #IMPLIED
+    unplayed CDATA    #IMPLIED
 >
 <!ELEMENT frame-strings (#PCDATA)>
 <!ELEMENT frame-frets (#PCDATA)>
