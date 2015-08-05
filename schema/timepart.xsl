@@ -36,7 +36,7 @@
   <xsl:output method="xml" indent="yes" encoding="UTF-8"
 	omit-xml-declaration="no" standalone="no"
 	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
-	doctype-public="-//Recordare//DTD MusicXML 2.0 Partwise//EN" />
+	doctype-public="-//Recordare//DTD MusicXML 3.0 Partwise//EN" />
 
   <!--
     For the root, only look for score-partwise and
