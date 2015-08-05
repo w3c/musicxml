@@ -3,14 +3,14 @@
 
 	Version 3.0
 	
-	Copyright © 2004-2011 Recordare LLC.
-	http://www.recordare.com/
+	Copyright © 2004-2011 MakeMusic, Inc.
+	http://www.makemusic.com/
 	
 	This MusicXML™ work is being provided by the copyright
 	holder under the MusicXML Public License Version 3.0,
 	available from:
 	
-		http://www.recordare.com/dtds/license.html
+		http://www.musicxml.org/dtds/license.html
 -->
 
 <!--
