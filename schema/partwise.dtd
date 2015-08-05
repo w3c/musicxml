@@ -1,30 +1,30 @@
 <!--
-	MusicXML Partwise DTD
+	MusicXML™ Partwise DTD
 
-	Version 1.1 - 20 May 2005
+	Version 2.0 - 18 June 2007
 	
-	Copyright © 2004-2005 Recordare LLC.
+	Copyright © 2004-2007 Recordare LLC.
 	http://www.recordare.com/
 	
-	This MusicXML work is being provided by the copyright
+	This MusicXML™ work is being provided by the copyright
 	holder under the MusicXML Document Type Definition 
-	Public License Version 1.02, available from:
+	Public License Version 2.0, available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
 
 <!--
-	MusicXML is designed to represent musical scores,
-	specifically common western musical notation from the
-	17th century onwards. It is designed as an interchange
-	format for notation, analysis, retrieval, and performance
+	The MusicXML format is designed to represent musical scores,
+	specifically common western musical notation from the 17th
+	century onwards. It is designed as an interchange format
+	for notation, analysis, retrieval, and performance
 	applications. Therefore it is intended to be sufficient,
 	not optimal, for these applications.
 	
-	MusicXML is based on the MuseData and Humdrum formats.
-	Humdrum explicitly represents the two-dimensional nature
-	of musical scores by a 2-D layout notation. Since XML
-	is a hierarchical format, we cannot do this explicitly.
+	The MusicXML format is based on the MuseData and Humdrum
+	formats. Humdrum explicitly represents the two-dimensional
+	nature of musical scores by a 2-D layout notation. Since the
+	XML format is hierarchical, we cannot do this explicitly.
 	Instead, there are two top-level formats:
 	
 	partwise.dtd   Represents scores by part/instrument
@@ -43,11 +43,11 @@
 	Suggested use:
 	
 	<!DOCTYPE score-partwise PUBLIC
-		"-//Recordare//DTD MusicXML 1.1 Partwise//EN"
+		"-//Recordare//DTD MusicXML 2.0 Partwise//EN"
 		"http://www.musicxml.org/dtds/partwise.dtd">
 	
-	This DTD is made up of a series of component DTDs, all
-	of which are included here.
+	This DTD is made up of a series of component DTD modules,
+	all of which are included here.
 -->
 
 <!-- Entities -->
@@ -62,88 +62,87 @@
 <!ENTITY % partwise "INCLUDE">
 <!ENTITY % timewise "IGNORE">
 
-<!-- Component DTDs -->
+<!-- Component DTD modules -->
 
 <!--
-	The common DTD contains the entities and elements that
-	are shared among multiple component DTDs.
+	The common DTD module contains the entities and elements
+	that are shared among multiple component DTDs.
 -->
 <!ENTITY % common PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.1 Common//EN"
-	"common.dtd">
+	"-//Recordare//ELEMENTS MusicXML 2.0 Common//EN"
+	"common.mod">
 %common;
 
 <!--
-	The layout DTD contains formatting information for
+	The layout DTD module contains formatting information for
 	pages, systems, staves, and measures.
 -->
 <!ENTITY % layout PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.1 Layout//EN"
-	"layout.dtd">
+	"-//Recordare//ELEMENTS MusicXML 2.0 Layout//EN"
+	"layout.mod">
 %layout;
 
 <!-- 
-	The identity DTD contains identification and metadata
-	elements.
+	The identity DTD module contains identification and
+	metadata elements.
 -->
 <!ENTITY % identity PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.1 Identity//EN"
-	"identity.dtd">
+	"-//Recordare//ELEMENTS MusicXML 2.0 Identity//EN"
+	"identity.mod">
 %identity;
 
 <!--
-	The attributes DTD includes elements that usually
-	change at the start of a measure, such as key
-	signatures, time signatures, and clefs.
+	The attributes DTD module contains elements that usually
+	change at the start of a measure, such as key signatures,
+	time signatures, and clefs.
 -->
 <!ENTITY % attributes PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.1 Attributes//EN"
-	"attributes.dtd">
+	"-//Recordare//ELEMENTS MusicXML 2.0 Attributes//EN"
+	"attributes.mod">
 %attributes;
 
 <!--
-	The link DTD contains XLink attributes.
+	The link DTD module contains XLink attributes.
 -->
 <!ENTITY % link PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.1 Link//EN"
-	"link.dtd">
+	"-//Recordare//ELEMENTS MusicXML 2.0 Link//EN"
+	"link.mod">
 %link;
 
 <!--
-	The note DTD contains the bulk of the elements and 
-	attributes for a musical scores relating to individual
+	The note DTD module contains the bulk of the elements
+	and attributes for a musical scores relating to individual
 	notes and rests.
  -->
 <!ENTITY % note PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.1 Note//EN"
-	"note.dtd">
+	"-//Recordare//ELEMENTS MusicXML 2.0 Note//EN"
+	"note.mod">
 %note;
 
 <!--
-	The barline DTD contains elements regarding
+	The barline DTD module contains elements regarding
 	barline style, repeats, and multiple endings.
 -->
 <!ENTITY % barline PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.1 Barline//EN"
-	"barline.dtd">
+	"-//Recordare//ELEMENTS MusicXML 2.0 Barline//EN"
+	"barline.mod">
 %barline;
 
 <!-- 
-	The direction DTD contains elements for musical 
-	directions not tied to individual notes. This
-	includes harmony and chord symbol elements.
+	The direction DTD module contains elements for musical
+	directions not tied to individual notes. This includes
+	harmony and chord symbol elements.
 -->
 <!ENTITY % direction PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.1 Direction//EN"
-	"direction.dtd">
+	"-//Recordare//ELEMENTS MusicXML 2.0 Direction//EN"
+	"direction.mod">
 %direction;
 
 <!--
-	The score DTD contains the top-level elements
-	for musical scores, including the root document
-	elements.
+	The score DTD module contains the top-level elements for
+	musical scores, including the root document elements.
 -->
 <!ENTITY % score PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.1 Score//EN"
-	"score.dtd">
+	"-//Recordare//ELEMENTS MusicXML 2.0 Score//EN"
+	"score.mod">
 %score;

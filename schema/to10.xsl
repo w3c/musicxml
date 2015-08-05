@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-	MusicXML to10.xsl
+	MusicXML™ to10.xsl stylesheet
 	
-	Version 1.1 - 20 May 2005
+	Version 2.0 - 18 June 2007
 	
-	Copyright © 2004-2005 Recordare LLC.
+	Copyright © 2004-2007 Recordare LLC.
 	http://www.recordare.com/
 	
-	This MusicXML work is being provided by the copyright
+	This MusicXML™ work is being provided by the copyright
 	holder under the MusicXML Document Type Definition 
-	Public License Version 1.02, available from:
+	Public License Version 2.0, available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -124,14 +124,20 @@
            staff-layout | measure-layout"/>
   
   <!-- Additions in direction.dtd -->
+  <!-- 
+    For safety, remove entire direction that has a new
+    MusicXML 1.1 direction-type child.
+  -->
+  <xsl:template 
+    match="direction[//pedal[@type='.change'] |
+		//harp-pedals | //scordatura]"/>
+
   <xsl:template
-    match="barre | pedal[@type='change'] | kind/@* |
-           frame/@* | harp-pedals | scordatura | 
+    match="barre | kind/@* | frame/@* | degree/@* |
            harmony/offset | harmony/staff |
            words/@halign | words/@valign | words/@enclosure | 
            rehearsal/@xml:lang | rehearsal/@enclosure |
            print/@page-number"/>
-  <xsl:template match="pedal/@type[.='change']"/>
 
   <!-- Additions in link.dtd -->
   <xsl:template 

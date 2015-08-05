@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-	MusicXML timepart.xsl
+	MusicXML™ timepart.xsl stylesheet
 
-	Version 1.1 - 20 May 2005
+	Version 2.0 - 18 June 2007
 	
-	Copyright © 2004-2005 Recordare LLC.
+	Copyright © 2004-2007 Recordare LLC.
 	http://www.recordare.com/
 	
-	This MusicXML work is being provided by the copyright
+	This MusicXML™ work is being provided by the copyright
 	holder under the MusicXML Document Type Definition 
-	Public License Version 1.02, available from:
+	Public License Version 2.0, available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -36,7 +36,7 @@
   <xsl:output method="xml" indent="yes" encoding="UTF-8"
 	omit-xml-declaration="no" standalone="no"
 	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
-	doctype-public="-//Recordare//DTD MusicXML 1.1 Partwise//EN" />
+	doctype-public="-//Recordare//DTD MusicXML 2.0 Partwise//EN" />
 
   <!--
     For the root, only look for score-partwise and
@@ -142,12 +142,12 @@
                 <xsl:attribute name="number">
                   <xsl:value-of select="parent::measure/@number"/>
                 </xsl:attribute>
-                <xsl:if test="parent::measure/@implict[yes]">
+                <xsl:if test="parent::measure/@implicit[. = 'yes']">
                   <xsl:attribute name="implicit">
                     <xsl:value-of select="parent::measure/@implicit"/>
                   </xsl:attribute>
                 </xsl:if>
-                <xsl:if test="parent::measure/@non-controlling[yes]">
+                <xsl:if test="parent::measure/@non-controlling[. = 'yes']">
                   <xsl:attribute name="non-controlling">
                     <xsl:value-of
                       select="parent::measure/@non-controlling"/>

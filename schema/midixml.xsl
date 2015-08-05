@@ -4,14 +4,14 @@
 	MIDI XML midixml.xsl for sorting MIDI files with
 	absolute timestamps.
 
-	Version 1.1 - 20 May 2005
+	Version 2.0 - 18 June 2007
 	
-	Copyright © 2004-2005 Recordare LLC.
+	Copyright © 2004-2007 Recordare LLC.
 	http://www.recordare.com/
 	
-	This MusicXML work is being provided by the copyright
+	This MusicXML™ work is being provided by the copyright
 	holder under the MusicXML Document Type Definition 
-	Public License Version 1.02, available from:
+	Public License Version 2.0, available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -42,8 +42,8 @@
   </xsl:template>
 
   <!--
-	When we get to a Track, sort all events within the 
-	track by their Absolute timestamp.
+	When we get to a Track, sort all events within the track
+	by their Absolute timestamp.
   -->
 
   <xsl:template match="Track">

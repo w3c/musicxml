@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-	MusicXML parttime.xsl
+	MusicXML™ parttime.xsl stylesheet
 
-	Version 1.1 - 20 May 2005
+	Version 2.0 - 18 June 2007
 	
-	Copyright © 2004-2005 Recordare LLC.
+	Copyright © 2004-2007 Recordare LLC.
 	http://www.recordare.com/
 	
-	This MusicXML work is being provided by the copyright
+	This MusicXML™ work is being provided by the copyright
 	holder under the MusicXML Document Type Definition 
-	Public License Version 1.02, available from:
+	Public License Version 2.0, available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -36,7 +36,7 @@
   <xsl:output method="xml" indent="yes" encoding="UTF-8"
 	omit-xml-declaration="no" standalone="no"
 	doctype-system="http://www.musicxml.org/dtds/timewise.dtd"
-	doctype-public="-//Recordare//DTD MusicXML 1.1 Timewise//EN" />
+	doctype-public="-//Recordare//DTD MusicXML 2.0 Timewise//EN" />
 
   <!--
     For the root, only look for score-partwise and
@@ -121,12 +121,12 @@
           <xsl:attribute name="number">
             <xsl:value-of select="$measure-number"/>
           </xsl:attribute>
-          <xsl:if test="@implict[yes]">
+          <xsl:if test="@implicit[. = 'yes']">
             <xsl:attribute name="implicit">
               <xsl:value-of select="@implicit"/>
             </xsl:attribute>
           </xsl:if>
-          <xsl:if test="@non-controlling[yes]">
+          <xsl:if test="@non-controlling[. = 'yes']">
             <xsl:attribute name="non-controlling">
               <xsl:value-of select="@non-controlling"/>
             </xsl:attribute>
