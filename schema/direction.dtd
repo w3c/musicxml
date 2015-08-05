@@ -1,9 +1,9 @@
 <!--
 	MusicXML direction.dtd
 
-	Version 1.0 - 7 January 2004
+	Version 1.1 - 20 May 2005
 	
-	Copyright © 2004 Recordare LLC.
+	Copyright © 2004-2005 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML work is being provided by the copyright
@@ -44,29 +44,38 @@
 -->
 <!ELEMENT direction-type (rehearsal+ | segno+ | words+ |
 	coda+ | wedge | dynamics+ | dashes | bracket | pedal | 
-	metronome | octave-shift | damp | damp-all | 
-	eyeglasses | other-direction)>
+	metronome | octave-shift | harp-pedals | damp | 
+	damp-all | eyeglasses | scordatura | other-direction)>
 
 <!--
-	Position and font entities apply to the 
+	Print style entities apply to the individual
 	direction-type, not to the overall direction.
+-->
+
+<!--
+	Language is Italian ("it") by default. Enclosure is
+	square by default.
 -->
 <!ELEMENT rehearsal (#PCDATA)>
 <!ATTLIST rehearsal
-    %position; 
-    %font;
+    %print-style;
+    xml:lang NMTOKEN #IMPLIED
+    enclosure (square | circle | none) #IMPLIED
 >
 
 <!ELEMENT words (#PCDATA)>
 <!--
 	Left justification is assumed if not specified. 
-	Language is Italian ("it") by default.
+	Language is Italian ("it") by default. Enclosure
+	is none by default.
 -->
 <!ATTLIST words
-    justify (left | center | right) #IMPLIED
-    %position; 
-    %font;
+	%justify;
+	%halign;
+	%valign;
+    %print-style;
     xml:lang NMTOKEN #IMPLIED
+    enclosure (rectangle | oval | none) #IMPLIED
 >
 
 <!--
@@ -82,7 +91,8 @@
     type (crescendo | diminuendo | stop) #REQUIRED
     number %number-level; #IMPLIED
     spread CDATA #IMPLIED
-    %position; 
+    %position;
+    %color;
 >
 
 <!--
@@ -92,7 +102,8 @@
 <!ATTLIST dashes
     type %start-stop; #REQUIRED
     number %number-level; #IMPLIED
-    %position; 
+    %position;
+    %color;
 >
 
 <!--
@@ -111,18 +122,20 @@
     line-end (up | down | both | arrow | none) #REQUIRED
     end-length %tenths; #IMPLIED
     %line-type;
-    %position; 
+    %position;
+    %color;
 >
 
 <!-- 
 	Piano pedal marks. The line attribute is yes if pedal
-	lines are used, no if Ped and * signs are used. 
+	lines are used, no if Ped and * signs are used. The
+	change type is used with line set to yes.
 -->
 <!ELEMENT pedal EMPTY>
 <!ATTLIST pedal
-    type %start-stop; #REQUIRED
+    type (start | stop | change) #REQUIRED
     line %yes-no;	#IMPLIED
-    %position; 
+    %print-style; 
 >
 
 <!--
@@ -137,7 +150,7 @@
 <!ELEMENT metronome (beat-unit, beat-unit-dot*, 
 	(per-minute | (beat-unit, beat-unit-dot*)))>
 <!ATTLIST metronome
-    %position;
+    %print-style;
     parentheses %yes-no; #IMPLIED
 >
 <!ELEMENT beat-unit (#PCDATA)>
@@ -157,25 +170,54 @@
     type (up | down | stop) #REQUIRED
     number %number-level; #IMPLIED
     size CDATA "8"
-    %position; 
+    %print-style; 
 >
+
+<!-- 
+	The harp-pedals element is used to create harp
+	pedal diagrams. The pedal-step and pedal-alter
+	elements use the same values as the step and alter
+	elements. For easiest reading, the pedal-tuning 
+	elements show follow standard harp pedal order,
+	with pedal-step values of D, C, B, E, F, G, and A.
+-->
+<!ELEMENT harp-pedals (pedal-tuning)+>
+<!ATTLIST harp-pedals
+    %print-style; 
+>
+<!ELEMENT pedal-tuning (pedal-step, pedal-alter)>
+<!ELEMENT pedal-step (#PCDATA)>
+<!ELEMENT pedal-alter (#PCDATA)>
 
 <!-- Harp damping marks -->
 <!ELEMENT damp EMPTY>
 <!ATTLIST damp
-    %position; 
+    %print-style; 
 >
 <!ELEMENT damp-all EMPTY>
 <!ATTLIST damp-all
-    %position; 
+    %print-style; 
 >
 
 <!-- Eyeglasses, common in commercial music. -->
 <!ELEMENT eyeglasses EMPTY>
 <!ATTLIST eyeglasses
-    %position; 
+    %print-style; 
 >
 
+<!-- 
+	Scordatura string tunings are represented by a series
+	of accord elements. The tuning-step, tuning-alter, 
+	and tuning-octave elements are also used with the 
+	staff-tuning element, and are defined in the common.dtd
+	file. Strings are numbered from high to low.
+-->
+<!ELEMENT scordatura (accord+)>
+<!ELEMENT accord
+	(tuning-step, tuning-alter?, tuning-octave)>
+<!ATTLIST accord
+    string CDATA #REQUIRED
+>
 
 <!--
 	The other-direction element is used to define
@@ -185,7 +227,7 @@
 -->
 <!ELEMENT other-direction (#PCDATA)>
 <!ATTLIST other-direction
-    %position; 
+    %print-style; 
 >
 
 <!--
@@ -194,6 +236,9 @@
 	to the current musical location. This is for visual
 	appearance only; any sound associated with the
 	direction takes effect at the current location.
+	If an element within a direction includes a default-x
+	attribute, the offset value will be ignored for that
+	element.
 -->
 <!ELEMENT offset (#PCDATA)>
 
@@ -246,10 +291,12 @@
 	    minor-seventh (minor triad, minor seventh)
 	    diminished-seventh
 	        (diminished triad, diminished seventh)
+	    augmented-seventh
+	        (augmented triad, minor seventh)
 	    half-diminished
 	        (diminished triad, minor seventh)
 	    major-minor
-	        (minor triad, major seventh
+	        (minor triad, major seventh)
 	Sixths:
 	    major-sixth (major triad, added sixth)
 	    minor-sixth (minor triad, added sixth)
@@ -269,7 +316,7 @@
 	    suspended-second (major second, perfect fifth)
 	    suspended-fourth (perfect fourth, perfect fifth)
 	Functional sixths:
-	    Neopolitan
+	    Neapolitan
 	    Italian
 	    French
 	    German
@@ -281,8 +328,39 @@
 	composed of add elements. The "none" kind is used to
 	explicitly encode absence of chords or functional
 	harmony.
+
+	The attributes are used to indicate the formatting
+	of the symbol. Since the kind element is the constant
+	in all the harmony-chord entities that can make up
+	a polychord, many formatting attributes are here.
+
+	The use-symbols attribute is yes if the kind should be
+	represented when possible with harmony symbols rather
+	than letters and numbers. These symbols include:
+
+	    major: a triangle, like Unicode 25B3
+	    minor: -, like Unicode 002D
+	    augmented: +, like Unicode 002B
+	    diminished: °, like Unicode 00B0
+	    half-diminished: ø, like Unicode 00F8
+
+	The text attribute describes how the kind should be 
+	spelled if not using symbols; it is ignored if use-symbols
+	is yes. The stack-degrees attribute is yes if the degree 
+	elements should be stacked above each other. The 
+	parentheses-degrees attribute is yes if all the degrees 
+	should be in parentheses. The bracket-degrees attribute
+	is yes if all the degrees should be in a bracket. If not 
+	specified, these values are implementation-specific.
 -->
 <!ELEMENT kind (#PCDATA)>
+<!ATTLIST kind
+    use-symbols          %yes-no;   #IMPLIED
+    text                 CDATA      #IMPLIED
+    stack-degrees        %yes-no;   #IMPLIED
+    parentheses-degrees  %yes-no;   #IMPLIED
+    bracket-degrees      %yes-no;   #IMPLIED
+>
 
 <!--
 	Inversion is a number indicating which inversion is used:
@@ -313,12 +391,18 @@
 	chord based on its kind element. If the degree-type is
 	add, the degree-alter is relative to a dominant chord
 	(major and perfect intervals except for a minor 
-	seventh).
+	seventh). The print-object attribute can be used to
+	keep the degree from printing separately when it has
+	already taken into account in the text attribute of
+	the kind element.
 	
 	A harmony of kind "other" can be spelled explicitly by
 	using a series of degree elements together with a root.
 -->
 <!ELEMENT degree (degree-value, degree-alter, degree-type)>
+<!ATTLIST degree
+    %print-object;
+>
 <!ELEMENT degree-value (#PCDATA)>
 <!ELEMENT degree-alter (#PCDATA)>
 <!ELEMENT degree-type (#PCDATA)>
@@ -339,10 +423,29 @@
 -->
 <!ELEMENT frame 
 	(frame-strings, frame-frets, first-fret?, frame-note+)>
+<!ATTLIST frame 
+    %position;
+    %color;
+    height  %tenths;  #IMPLIED
+    width   %tenths;  #IMPLIED
+>
 <!ELEMENT frame-strings (#PCDATA)>
 <!ELEMENT frame-frets (#PCDATA)>
 <!ELEMENT first-fret (#PCDATA)>
-<!ELEMENT frame-note (string, fret, fingering?)>
+<!ELEMENT frame-note (string, fret, fingering?, barre?)>
+
+<!-- 
+	The barre element indicates placing a finger over 
+	multiple strings on a single fret. The type is "start" 
+	for the lowest pitched string (e.g., the string with 
+	the highest MusicXML number) and is "stop" for the 
+	highest pitched string.
+-->
+<!ELEMENT barre EMPTY>
+<!ATTLIST barre
+    type %start-stop; #REQUIRED
+    %color;
+>
 
 <!--
 	If there are alternate harmonies possible, this can be
@@ -358,12 +461,12 @@
 	of a frame or fretboard diagram.
 -->
 <!ELEMENT harmony ((%harmony-chord;)+, frame?, 
-	%editorial;)>
+	offset?, %editorial;, staff?)>
 <!ATTLIST harmony
     type (explicit | implied | alternate) #IMPLIED
-    print-object %yes-no; #IMPLIED
+    %print-object;
     print-frame  %yes-no; #IMPLIED
-    %position;
+    %print-style;
     %placement;
 >
 
@@ -394,25 +497,37 @@
 >
 
 <!--
-	The print element contains general printing parameters.
+	The print element contains general printing parameters,
+	including the layout elements defined in layout.dtd.
 	
-	Staff spacing between grand staffs is measured in
+	The new-system and new-page attributes indicate whether
+	to force a system or page break, or to force the current
+	music onto the same system or page as the preceding 
+	music. Normally this is the first music data within a
+	measure. If used in multi-part music, they should be 
+	placed in the same positions within each part, or the
+	results are undefined. The page-number attribute sets
+	the number of a new page; it is ignored if new-page
+	is not "yes".
+
+	Staff spacing between multiple staves is measured in
 	tenths of staff lines (e.g. 100 = 10 staff lines).
-	
-	The new-system and new-page attributes indicate
-	whether to force a system or page break, or to
-	force the current music onto the same system or
-	page as the preceding music. Normally this is the
-	first music data within a measure. If used in
-	multi-part music, they should be placed in the
-	same positions within each part, or the results
-	are undefined.
+	This is deprecated in MusicXML 1.1; the staff-layout
+	element should be used instead. If both are present,
+	the staff-layout values take priority.
+
+	Layout elements in a print statement only apply to
+	the current page, system, staff, or measure. Music
+	that follows continues to take the default values 
+	from the layout included in the <defaults> element.
 -->
-<!ELEMENT print EMPTY>
+<!ELEMENT print (page-layout?, system-layout?, 
+	staff-layout*, measure-layout?)>
 <!ATTLIST print
 	staff-spacing %tenths; #IMPLIED
 	new-system %yes-no; #IMPLIED
-	new-page %yes-no; #IMPLIED	
+	new-page %yes-no; #IMPLIED
+	page-number CDATA #IMPLIED	
 >
 
 <!-- 

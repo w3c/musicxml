@@ -3,9 +3,9 @@
 <!--
 	MusicXML timepart.xsl
 
-	Version 1.0 - 7 January 2004
+	Version 1.1 - 20 May 2005
 	
-	Copyright © 2004 Recordare LLC.
+	Copyright © 2004-2005 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML work is being provided by the copyright
@@ -31,16 +31,12 @@
 
   <!--
     XML output, with a DOCTYPE refering the partwise DTD.
-    Here we use a relative URL for doctype-system. You can
-    change this to another relative URL, or to the full
-    Internet URL:
-		
-	 http://www.musicxml.org/dtds/partwise.dtd
+    Here we use the full Internet URL.
   -->
   <xsl:output method="xml" indent="yes" encoding="UTF-8"
 	omit-xml-declaration="no" standalone="no"
-	doctype-system="/musicxml/partwise.dtd"
-	doctype-public="-//Recordare//DTD MusicXML 1.0 Partwise//EN" />
+	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
+	doctype-public="-//Recordare//DTD MusicXML 1.1 Partwise//EN" />
 
   <!--
     For the root, only look for score-partwise and
@@ -89,14 +85,17 @@
     <xsl:element name="score-partwise">
 		
       <!--
-        Copy the five score header elements and their
+        Copy the seven score header elements and their
         children. The DTD specifies that these occur, if
         present, in a fixed order.
       -->
+      <xsl:apply-templates select="@version[.!='1.0']"/>
       <xsl:apply-templates select="work"/>
       <xsl:apply-templates select="movement-number"/>
       <xsl:apply-templates select="movement-title"/>
       <xsl:apply-templates select="identification"/>
+      <xsl:apply-templates select="defaults"/>
+      <xsl:apply-templates select="credit"/>
       <xsl:apply-templates select="part-list"/>
 			
       <!--
@@ -152,6 +151,12 @@
                   <xsl:attribute name="non-controlling">
                     <xsl:value-of
                       select="parent::measure/@non-controlling"/>
+                  </xsl:attribute>
+                </xsl:if>
+                <xsl:if test="parent::measure/@width">
+                  <xsl:attribute name="width">
+                    <xsl:value-of
+                      select="parent::measure/@width"/>
                   </xsl:attribute>
                 </xsl:if>
 								

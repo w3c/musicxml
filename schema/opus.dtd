@@ -1,9 +1,9 @@
 <!--
 	MusicXML Opus DTD
 
-	Version 1.0 - 7 January 2004
+	Version 1.1 - 20 May 2005
 	
-	Copyright © 2004 Recordare LLC.
+	Copyright © 2004-2005 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML work is being provided by the copyright
@@ -26,7 +26,7 @@
 	Suggested use:
 	
 	<!DOCTYPE opus PUBLIC
-		"-//Recordare//DTD MusicXML 1.0 Opus//EN"
+		"-//Recordare//DTD MusicXML 1.1 Opus//EN"
 		"http://www.musicxml.org/dtds/opus.dtd">
 -->
 
@@ -34,7 +34,7 @@
 
 <!-- XLink attributes DTD. -->
 <!ENTITY % link PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.0 Link//EN"
+	"-//Recordare//ELEMENTS MusicXML 1.1 Link//EN"
 	 "link.dtd">
 %link;
 

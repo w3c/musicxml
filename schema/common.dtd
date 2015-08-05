@@ -1,9 +1,9 @@
 <!--
 	MusicXML common.dtd
 
-	Version 1.0 - 7 January 2004
+	Version 1.1 - 20 May 2005
 	
-	Copyright © 2004 Recordare LLC.
+	Copyright © 2004-2005 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML work is being provided by the copyright
@@ -49,12 +49,15 @@
 <!ENTITY % yyyy-mm-dd "(#PCDATA)">
 
 <!--
-	Number representing tenths of interline space (positive
-	or negative) for use in attributes. Both integer and
-	decimal values are allowed, such as 5 for a half space
-	and 2.5 for a quarter space.
+	The tenths entity is a number representing tenths of 
+	interline space (positive or negative) for use in 
+	attributes. The layout-tenths entity is the same for
+	use in elements. Both integer and decimal values are 
+	allowed, such as 5 for a half space and 2.5 for a 
+	quarter space.
 -->
 <!ENTITY % tenths "CDATA">
+<!ENTITY % layout-tenths "(#PCDATA)">
 
 <!--
 	Common structures between element and attribute definitions. 
@@ -85,9 +88,10 @@
 
 <!--
 	The symbol-size entity is used to indicate full vs.
-	cue-sized symbols.
+	cue-sized vs. oversized symbols. The large value
+	for oversized symbols was added in version 1.1.
 -->
-<!ENTITY % symbol-size "(full | cue)">
+<!ENTITY % symbol-size "(full | cue | large)">
 
 <!--
 	The up-down entity is used for arrow direction,
@@ -105,23 +109,50 @@
 <!--
 	The position attributes are based on MuseData print
 	suggestions. For most elements, any program will compute
-	a default x and y position. The position attribute lets
-	this be changed two ways. The default-x and default-y
-	attributes change the computation of the default
-	position. The origin becomes the left-hand side of
-	the note or the musical position within the bar (x)
-	and the top line of the staff (y). The relative-x and
-	relative-y attributes change the position relative to
-	the default position, either as computed by the
-	individual program, or as overridden by the default-x
-	and default-y attributes.
+	a default x and y position. The position attributes let
+	this be changed two ways. 
+
+	The default-x and default-y attributes change the 
+	computation of the default position. For most elements,
+	the origin is changed relative to the left-hand side of
+	the note or the musical position within the bar (x) and
+	the top line of the staff (y).
+
+	For the following elements, the default-x value changes
+	the origin relative to the start of the current measure:
+
+		- note
+		- figured-bass
+		- harmony
+		- link
+		- directive
+		- all descendants of the part-list element
+		- all children of the direction-type element
+
+	For the note, figured-bass, and harmony elements, the 
+	default-x value is considered to have adjusted the 
+	musical position within the bar for its descendant 
+	elements.
+
+	Since the <credit-words> element is not related to a
+	measure, in this case the default-x and default-y 
+	attributes adjust the origin relative to the bottom 
+	left-hand corner of the first page.
+
+	The relative-x and relative-y attributes change the 
+	position relative to the default position, either as 
+	computed by the individual program, or as overridden by 
+	the default-x and default-y attributes.
 	
 	Positive x is right, negative x is left; positive y
 	is up, negative y is down. All units are in tenths of
-	interline space. Positions can be applied to notes,
-	notations, directions, and stems. For stems, positive y
-	lengthens a stem while negative y shortens it. Negative
-	values for default-y are not allowed.
+	interline space. For stems, positive relative-y 
+	lengthens a stem while negative relative-y shortens it.
+
+	As elsewhere in MusicXML, tenths are the global tenths 
+	defined by the <scaling> element, not the local tenths
+	of a staff resized by the <staff-size> element.
+
 -->
 <!ENTITY % position
 	"default-x     %tenths;    #IMPLIED
@@ -148,26 +179,30 @@
 
 <!--
 	The bezier entity is used to indicate the curvature of
-	slurs. Normal slurs and S-shaped slurs need only two
-	bezier points: one associated with the start of the
-	slur, the other with the stop. Complex slurs and slurs
-	divided over system breaks can specify bezier data at
-	slur elements with a continue type. 
+	slurs and ties, representing the control points for a 
+	cubic bezier curve. For ties, the bezier entity is 
+	used with the tied element.
+
+	Normal slurs, S-shaped slurs, and ties need only two 
+	bezier points: one associated with the start of the slur 
+	or tie, the other with the stop. Complex slurs and slurs 
+	divided over system breaks can specify additional 
+	bezier data at slur elements with a continue type.
 	
 	The bezier-offset, bezier-x, and bezier-y attributes
-	describe the outgoing bezier point for slurs with
-	a start type, and the incoming bezier point for
-	slurs with types of continue or stop. The attributes
-	bezier-offset2, bezier-x2, and bezier-y2 are only
-	valid with slurs of type continue, and describe the
-	outgoing bezier point.
+	describe the outgoing bezier point for slurs and ties 
+	with a start type, and the incoming bezier point for
+	slurs and ties with types of stop or continue. The 
+	attributes bezier-offset2, bezier-x2, and bezier-y2 
+	are only valid with slurs of type continue, and 
+	describe the outgoing bezier point.
 	
 	The bezier-offset and bezier-offset2 attributes are
 	measured in terms of musical divisions, like the offset
 	element. These are the recommended attributes for
 	specifying horizontal position. The other attributes
 	are specified in tenths, relative to any position 
-	settings associated with the slur element.
+	settings associated with the slur or tied element.
 -->
 <!ENTITY % bezier
 	"bezier-offset  CDATA     #IMPLIED
@@ -202,12 +237,14 @@
 	The font entity gathers together attributes for
 	determining the font within a directive or direction.
 	They are based on the text styles for Cascading
-	Style Sheets. The font-family can be music, serif,
-	or sans-serif. The font-style can be normal or italic.
-	The font-size can be one of the CSS sizes (xx-small,
-	x-small, small, medium, large, x-large, xx-large) or
-	a numeric point size. The font-weight can be normal
-	or bold. The default is the application-dependent,
+	Style Sheets. The font-family is a comma-separated list
+	of font names. These can be specific font styles such
+	as Maestro or Opus, or one of three generic font styles:
+	music, serif, or sans-serif. The font-style can be 
+	normal or italic. The font-size can be one of the CSS 
+	sizes (xx-small, x-small, small, medium, large, x-large,
+	xx-large) or a numeric point size. The font-weight can 
+	be normal or bold. The default is application-dependent,
 	but is a text font vs. a music font.
 -->
 
@@ -217,6 +254,70 @@
 	 font-size    CDATA  #IMPLIED
 	 font-weight  CDATA  #IMPLIED">
 	
+<!--
+	The color entity indicates the color of an element.
+	Color may be represented as hexadecimal RGB triples,
+	as in HTML, or as hexadecimal ARGB tuples, with the
+	A indicating alpha of transparency. An alpha value
+	of 00 is totally transparent; FF is totally opaque.
+	If RGB is used, the A value is assumed to be FF. 
+
+	For instance, the RGB value "#800080" represents
+	purple. An ARGB value of "#40800080" would be a
+	transparent purple.
+
+	As in SVG 1.1, colors are defined in terms of the
+	sRGB color space (IEC 61966).
+-->
+<!ENTITY % color
+	"color CDATA #IMPLIED">
+
+<!--
+	The justify entity is used to indicate left, center,
+	or right justification. The default value varies for
+	different elements.
+-->
+<!ENTITY % justify
+	"justify (left | center | right) #IMPLIED">
+
+<!--
+	In cases where text extends over more than one line, 
+	horizontal alignment and justify values can be 
+	different. The most typical case is for credits, 
+	such as:
+
+		Words and music by
+		  Pat Songwriter
+
+	Typically this type of credit is aligned to the right,
+	so that the position information refers to the right-
+	most part of the text. But in this example, the text 
+	is center-justified, not right-justified.
+
+	The halign attribute is used in these situations. If it 
+	is not present, its value is the same as for the justify
+	attribute.
+-->
+<!ENTITY % halign
+	"halign (left | center | right) #IMPLIED">
+
+<!--
+	The valign entity is used to indicate vertical
+	alignment to the top, middle, bottom, or baseline 
+	of the text. Defaults are implementation-dependent.
+-->
+<!ENTITY % valign
+	"valign (top | middle | bottom | baseline) #IMPLIED">
+
+<!--
+	The most popular combination of printing attributes
+	is position, font, and color.
+-->
+<!ENTITY % print-style
+	"%position;
+	 %font;
+	 %color;">
+
 <!--
 	The line-shape entity is used to distinguish between
 	straight and curved lines. The line-type entity
@@ -232,20 +333,30 @@
 <!--
 	The printout entity is based on MuseData print
 	suggestions. They allow a way to specify not to print
-	print an object (e.g. note or rest) or its augmentation
-	dots. This is especially useful for notes that overlap
-	in different voices. By default, all these attributes
-	are set to yes. For wholly invisible notes, such as
-	those providing sound-only data, the attribute for
-	print-spacing may be set to no so that no space is
-	left for this note. The print-spacing value is only
-	used if both print-object and print-dot are no.
+	print an object (e.g. note or rest), its augmentation
+	dots, or its lyrics. This is especially useful for notes 
+	that overlap in different voices, or for chord sheets
+	that contain lyrics and chords but no melody. For wholly
+	invisible notes, such as those providing sound-only data,
+	the attribute for print-spacing may be set to no so that
+	no space is left for this note. The print-spacing value
+	is only used if no note, dot, or lyric is being printed.
+
+	By default, all these attributes are set to yes. If 
+	print-object is set to no, print-dot and print-lyric are
+	interpreted to also be set to no if they are not present.
 -->
+<!ENTITY % print-object
+	"print-object  %yes-no;  #IMPLIED">
+
+<!ENTITY % print-spacing
+	"print-spacing %yes-no;  #IMPLIED">
 
 <!ENTITY % printout
-	"print-object  %yes-no;  #IMPLIED
+	"%print-object;
 	 print-dot     %yes-no;  #IMPLIED
-	 print-spacing %yes-no;  #IMPLIED">
+	 %print-spacing;
+	 print-lyric   %yes-no;  #IMPLIED">
 
 <!--
 	The trill-sound entity includes attributes used to guide
@@ -286,7 +397,7 @@
 	beats element refers to the number of discrete elements
 	(like MIDI pitch bends) used to represent a continuous
 	bend or slide. The first-beat indicates the percentage
-	of the durection for starting a bend; the last-beat the
+	of the direction for starting a bend; the last-beat the
 	percentage for ending it. The default choices are:
 	
 		accelerate = "no"
@@ -300,6 +411,19 @@
 	 first-beat    CDATA    #IMPLIED
 	 last-beat     CDATA    #IMPLIED">
 
+<!--
+	The level-display entity allows specification of 
+	three common ways to indicate editorial indications:
+	putting parentheses or square brackets around a 
+	symbol, or making the symbol a different size. If 
+	not specified, they are left to application defaults.
+	It is used by the level and accidental elements.
+-->
+<!ENTITY % level-display
+   "parentheses %yes-no;       #IMPLIED
+    bracket     %yes-no;       #IMPLIED
+    size        %symbol-size;  #IMPLIED">
+
 <!-- Elements -->
 
 <!--
@@ -307,19 +431,26 @@
 	information, while voice is used to distinguish
 	between multiple voices (what MuseData calls tracks)
 	in individual parts. These elements are used
-	throughout the component MusicXML DTDs. The attributes
-	allow specification of three common ways to indicate
-	the editorial difference: putting parentheses or
-	square brackets around a symbol, or making the symbol
-	cue-size vs. full-size. If not specified, they are 
-	left to application defaults.
+	throughout the component MusicXML DTDs. If the 
+	reference attribute for the level element is yes,
+	this indicates editorial information that is for 
+	display only and should not affect playback. For 
+	instance, a modern edition of older music may set 
+	reference="yes" on the attributes containing the 
+	music's original clef, key, and time signature. 
+	It is no by default.
 -->
 <!ELEMENT footnote (#PCDATA)>
+<!ATTLIST footnote
+    %justify;
+    %halign;
+    %valign;
+    %print-style;
+>
 <!ELEMENT level (#PCDATA)>
 <!ATTLIST level
-    parentheses %yes-no; #IMPLIED
-    bracket %yes-no; #IMPLIED
-    size %symbol-size; #IMPLIED
+	reference %yes-no; #IMPLIED
+    %level-display;
 >
 <!ELEMENT voice (#PCDATA)>
 
@@ -333,7 +464,7 @@
 <!ELEMENT fermata EMPTY>
 <!ATTLIST fermata
     type (upright | inverted) #IMPLIED
-    %position; 
+    %print-style;
 >
 <!ELEMENT wavy-line EMPTY>
 <!ATTLIST wavy-line
@@ -341,12 +472,15 @@
     number %beam-level; #IMPLIED
     %position;
     %placement; 
+    %color;
     %trill-sound; 
 >
 
 <!--
-	Staff assignment is only needed for music notated on the
-	grand staff. Used by both notes and directions. 
+	Staff assignment is only needed for music notated on
+	multiple staves. Used by both notes and directions.
+	Staff values are numbers, with 1 referring to the
+	top-most staff in a part.
 -->
 <!ELEMENT staff (#PCDATA)>
 
@@ -358,12 +492,12 @@
 -->
 <!ELEMENT segno EMPTY>
 <!ATTLIST segno
-    %position; 
+    %print-style; 
 >
 
 <!ELEMENT coda EMPTY>
 <!ATTLIST coda
-    %position; 
+    %print-style; 
 >
 
 <!--
@@ -379,8 +513,8 @@
 	direction element. Dynamics may also be combined as
 	in <sf/><mp/>.
 	
-	Currently these letter dynamic symbols are separated from
-	crescendo, decrescrendo, and wedge indications. Dynamic
+	These letter dynamic symbols are separated from
+	crescendo, decrescendo, and wedge indications. Dynamic
 	representation is basically inconsistent in scores
 	(lots of things are assumed by the composer and left out,
 	such as returns to original dynamics), and is quite
@@ -394,9 +528,8 @@
 	sfp | sfpp | fp | rf | rfz | sfz | sffz | fz | 
 	other-dynamics)*)>
 <!ATTLIST dynamics
-    %position; 
+    %print-style; 
     %placement; 
-    %font;
 >
 <!ELEMENT p EMPTY>
 <!ELEMENT pp EMPTY>
@@ -434,15 +567,16 @@
 	fingerings may be given, typically to substitute
 	fingerings in the middle of a note. The substitution
 	and alternate values are "no" if the attribute is 
-	not present.
+	not present. For guitar and other fretted instruments,
+	the fingering element represents the fretting finger;
+	the pluck element represents the plucking finger.
 -->
 <!ELEMENT fingering (#PCDATA)>
 <!ATTLIST fingering
-    substitution (yes | no) #IMPLIED
-    alternate (yes | no) #IMPLIED
-    %position; 
+    substitution %yes-no; #IMPLIED
+    alternate %yes-no; #IMPLIED
+    %print-style; 
     %placement;
-    %font;
 >
 
 <!--
@@ -450,9 +584,29 @@
 	and chord symbols. Fret numbers start with 0 for 
 	an open string and 1 for the first fret. String
 	numbers start with 1 for the highest string. 
+	String can also be used in regular notation.
 -->
 <!ELEMENT fret (#PCDATA)>
+<!ATTLIST fret
+    %font;
+    %color; 
+>
 <!ELEMENT string (#PCDATA)>
+<!ATTLIST string
+	%print-style;
+	%placement;
+>
+
+<!--
+	The tuning-step, tuning-alter, and tuning-octave
+	elements are represented like the step, alter, and
+	octave elements, with different names to reflect their
+	different function. They are used in the staff-tuning
+	and accord elements.
+-->
+<!ELEMENT tuning-step (#PCDATA)>
+<!ELEMENT tuning-alter (#PCDATA)>
+<!ELEMENT tuning-octave (#PCDATA)>
 
 <!--
 	The midi-instrument element can be a part of either

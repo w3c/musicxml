@@ -4,9 +4,9 @@
 	MIDI XML midixml.xsl for sorting MIDI files with
 	absolute timestamps.
 
-	Version 1.0 - 7 January 2004
+	Version 1.1 - 20 May 2005
 	
-	Copyright © 2004 Recordare LLC.
+	Copyright © 2004-2005 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML work is being provided by the copyright

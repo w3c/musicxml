@@ -1,9 +1,9 @@
 <!--
 	MusicXML score.dtd
 
-	Version 1.0 - 7 January 2004
+	Version 1.1 - 20 May 2005
 	
-	Copyright © 2004 Recordare LLC.
+	Copyright © 2004-2005 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML work is being provided by the copyright
@@ -22,12 +22,71 @@
 <!ELEMENT work (work-number?, work-title?, opus?)>
 <!ELEMENT work-number (#PCDATA)>
 <!ELEMENT work-title (#PCDATA)>
+
 <!ELEMENT opus EMPTY>
 <!ATTLIST opus
     %link-attributes; 
 >
+
 <!ELEMENT movement-number (#PCDATA)>
 <!ELEMENT movement-title (#PCDATA)>
+
+<!--
+	Collect score-wide defaults. This includes scaling
+	and layout, defined in layout.dtd, and default values
+	for the music font, word font, lyric font, and 
+	lyric language. The number and name attributes in
+	lyric-font and lyric-language elements are typically
+	used when lyrics are provided in multiple languages.
+	If the number and name attributes are omitted, the 
+	lyric-font and lyric-language values apply to all 
+	numbers and names.
+-->
+<!ELEMENT defaults (scaling?, page-layout?,
+	system-layout?, staff-layout*, music-font?, 
+	word-font?, lyric-font*, lyric-language*)>
+
+<!ELEMENT music-font EMPTY>
+<!ATTLIST music-font
+	%font;
+>
+<!ELEMENT word-font EMPTY>
+<!ATTLIST word-font
+	%font;
+>
+<!ELEMENT lyric-font EMPTY>
+<!ATTLIST lyric-font
+    number NMTOKEN #IMPLIED
+    name CDATA #IMPLIED
+	%font;
+>
+<!ELEMENT lyric-language EMPTY>
+<!ATTLIST lyric-language
+    number NMTOKEN #IMPLIED
+    name CDATA #IMPLIED
+	xml:lang NMTOKEN #REQUIRED
+>
+
+<!--
+	Credit elements refer to the title, composer, arranger,
+	lyricist, copyright, dedication, and other text that
+	appears on the first page of a score. The credit-words
+	element is similar to the words element for directions.
+	However, since the credit is not part of a measure,
+	the default-x and default-y attributes adjust the
+	origin relative to the bottom left-hand corner of
+	the first page. The enclosure is none by default.
+-->
+<!ELEMENT credit (credit-words+)>
+<!ELEMENT credit-words (#PCDATA)>
+<!ATTLIST credit-words
+    %justify;
+    %halign;
+    %valign;
+    %print-style;
+    xml:lang NMTOKEN #IMPLIED
+    enclosure (rectangle | oval | none) #IMPLIED
+>
 
 <!--
 	The part-list identifies the different musical parts in
@@ -65,7 +124,17 @@
 	part-abbreviation will precede the other systems.
 -->
 <!ELEMENT part-name (#PCDATA)>
+<!ATTLIST part-name
+    %print-style;
+    %print-object;
+    %justify;
+>
 <!ELEMENT part-abbreviation (#PCDATA)>
+<!ATTLIST part-abbreviation
+    %print-style;
+    %print-object;
+    %justify;
+>
 
 <!--
 	The part-group element indicates groupings of parts in
@@ -87,9 +156,24 @@
     number CDATA "1"
 >
 <!ELEMENT group-name (#PCDATA)>
+<!ATTLIST group-name
+    %print-style;
+    %justify;
+>
 <!ELEMENT group-abbreviation (#PCDATA)>
+<!ATTLIST group-abbreviation
+    %print-style;
+    %justify;
+>
 <!ELEMENT group-symbol (#PCDATA)>
+<!ATTLIST group-symbol
+    %position;
+    %color;
+>
 <!ELEMENT group-barline (#PCDATA)>
+<!ATTLIST group-barline
+    %color;
+>
 
 <!--
 	The score-instrument element allows for multiple
@@ -150,11 +234,13 @@
 
 <!--
 	The score-header entity contains basic score metadata
-	about the work and movement, plus the part list. 
+	about the work and movement, score-wide defaults for
+	layout and fonts, credits that appear on the first page,
+	and the part list. 
 -->
 <!ENTITY % score-header
     "(work?, movement-number?, movement-title?,
-      identification?, part-list)">
+      identification?, defaults?, credit*, part-list)">
 
 <!--
 	The score is the root element for the DTD. It includes
@@ -165,14 +251,27 @@
 	scores makes it easy to ensure that an XSLT stylesheet
 	does not try to transform a document already in the
 	desired format.
+
+	The version attribute is new to MusicXML 1.1. It provides
+	an easier way to get version information than through the
+	MusicXML public ID. The default value is 1.0 to make it 
+	possible for programs that handle version 1.1 to 
+	distinguish version 1.0 files reliably. Programs that
+	write MusicXML 1.1 files should set this attribute.
 -->
 <![ %partwise; [
 <!ELEMENT score-partwise (%score-header;, part+)>
+<!ATTLIST score-partwise
+    version  CDATA  "1.0"
+>	
 <!ELEMENT part (measure+)>
 <!ELEMENT measure (%music-data;)>
 ]]>
 <![ %timewise; [
 <!ELEMENT score-timewise (%score-header;, measure+)>
+<!ATTLIST score-timewise
+    version  CDATA  "1.0"
+>	
 <!ELEMENT measure (part+)>
 <!ELEMENT part (%music-data;)>
 ]]>
@@ -197,9 +296,14 @@
 	measures in other parts. This is intended for use in
 	multimetric music like the Don Giovanni minuet. The
 	value is "no" if not specified.
+
+	Measure width is specified in tenths. These are the
+	global tenths specified in the scaling element, not
+	local tenths as modified by the staff-size element.
 -->
 <!ATTLIST measure
     number CDATA #REQUIRED
     implicit %yes-no; #IMPLIED
     non-controlling %yes-no; #IMPLIED
+    width %tenths; #IMPLIED
 >

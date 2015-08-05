@@ -1,9 +1,9 @@
 <!--
 	MusicXML Partwise DTD
 
-	Version 1.0 - 7 January 2004
+	Version 1.1 - 20 May 2005
 	
-	Copyright © 2004 Recordare LLC.
+	Copyright © 2004-2005 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML work is being provided by the copyright
@@ -27,8 +27,8 @@
 	is a hierarchical format, we cannot do this explicitly.
 	Instead, there are two top-level formats:
 	
-	partwise.dtd		Represents scores by part/instrument
-	timewise.dtd		Represents scores by time/measure
+	partwise.dtd   Represents scores by part/instrument
+	timewise.dtd   Represents scores by time/measure
 	
 	Thus partwise.dtd contains measures within each part,
 	while timewise.dtd contains parts within each measure.
@@ -38,14 +38,12 @@
 	The partwise and timewise score DTDs represent a single 
 	movement of music. Multiple movements or other musical 
 	collections are presented using opus.dtd. An opus
-	document contains XLinks to individual scores, along
-	with more detailed reference and musicological
-	information.
+	document contains XLinks to individual scores.
 	
 	Suggested use:
 	
 	<!DOCTYPE score-partwise PUBLIC
-		"-//Recordare//DTD MusicXML 1.0 Partwise//EN"
+		"-//Recordare//DTD MusicXML 1.1 Partwise//EN"
 		"http://www.musicxml.org/dtds/partwise.dtd">
 	
 	This DTD is made up of a series of component DTDs, all
@@ -71,16 +69,25 @@
 	are shared among multiple component DTDs.
 -->
 <!ENTITY % common PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.0 Common//EN"
+	"-//Recordare//ELEMENTS MusicXML 1.1 Common//EN"
 	"common.dtd">
 %common;
+
+<!--
+	The layout DTD contains formatting information for
+	pages, systems, staves, and measures.
+-->
+<!ENTITY % layout PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Layout//EN"
+	"layout.dtd">
+%layout;
 
 <!-- 
 	The identity DTD contains identification and metadata
 	elements.
 -->
 <!ENTITY % identity PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.0 Identity//EN"
+	"-//Recordare//ELEMENTS MusicXML 1.1 Identity//EN"
 	"identity.dtd">
 %identity;
 
@@ -90,7 +97,7 @@
 	signatures, time signatures, and clefs.
 -->
 <!ENTITY % attributes PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.0 Attributes//EN"
+	"-//Recordare//ELEMENTS MusicXML 1.1 Attributes//EN"
 	"attributes.dtd">
 %attributes;
 
@@ -98,7 +105,7 @@
 	The link DTD contains XLink attributes.
 -->
 <!ENTITY % link PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.0 Link//EN"
+	"-//Recordare//ELEMENTS MusicXML 1.1 Link//EN"
 	"link.dtd">
 %link;
 
@@ -108,7 +115,7 @@
 	notes and rests.
  -->
 <!ENTITY % note PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.0 Note//EN"
+	"-//Recordare//ELEMENTS MusicXML 1.1 Note//EN"
 	"note.dtd">
 %note;
 
@@ -117,7 +124,7 @@
 	barline style, repeats, and multiple endings.
 -->
 <!ENTITY % barline PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.0 Barline//EN"
+	"-//Recordare//ELEMENTS MusicXML 1.1 Barline//EN"
 	"barline.dtd">
 %barline;
 
@@ -127,7 +134,7 @@
 	includes harmony and chord symbol elements.
 -->
 <!ENTITY % direction PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.0 Direction//EN"
+	"-//Recordare//ELEMENTS MusicXML 1.1 Direction//EN"
 	"direction.dtd">
 %direction;
 
@@ -137,6 +144,6 @@
 	elements.
 -->
 <!ENTITY % score PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 1.0 Score//EN"
+	"-//Recordare//ELEMENTS MusicXML 1.1 Score//EN"
 	"score.dtd">
 %score;

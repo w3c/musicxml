@@ -1,9 +1,9 @@
 <!--
 	MusicXML barline.dtd
 
-	Version 1.0 - 7 January 2004
+	Version 1.1 - 20 May 2005
 	
-	Copyright © 2004 Recordare LLC.
+	Copyright © 2004-2005 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML work is being provided by the copyright
@@ -46,10 +46,13 @@
 
 <!--
 	Bar-style contains style information. Choices are
-	regular, dotted, heavy, light-light, light-heavy,
-	heavy-light, heavy-heavy, and none.
+	regular, dotted, dashed, heavy, light-light, 
+	light-heavy, heavy-light, heavy-heavy, and none.
 -->
 <!ELEMENT bar-style (#PCDATA)>
+<!ATTLIST bar-style
+	%color;
+>
 
 <!--
 	The voice entity and the wavy-line, segno, and fermata
@@ -65,15 +68,20 @@
 	barline of the last measure in an ending. Stop is used
 	when the ending mark concludes with a downward jog, as
 	is the case for first endings. Discontinue is used when
-	there is no downward jog, as in the final ending. The
-	number attribute reflects what is under the ending
-	line. Single endings such as "1" or multiple endings
-	such as "1, 2" may be used.
+	there is no downward jog, as in the final ending. The 
+	length of the jog can be specified using the end-length
+	attribute. The number attribute reflects what is under 
+	the ending line. Single endings such as "1" or multiple
+	endings such as "1, 2" may be used. The ending element 
+	text is used when the text displayed in the ending is
+	different than what appears in the number attribute.
 -->
-<!ELEMENT ending EMPTY>
+<!ELEMENT ending (#PCDATA)>
 <!ATTLIST ending
     number CDATA #REQUIRED
     type (start | stop | discontinue) #REQUIRED
+    %print-style;
+    end-length %tenths; #IMPLIED
 >
 
 <!--
