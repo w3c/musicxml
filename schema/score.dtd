@@ -1,0 +1,205 @@
+<!--
+	MusicXML score.dtd
+
+	Version 1.0 - 7 January 2004
+	
+	Copyright © 2004 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	Works and movements are optionally identified by number
+	and title. The work element also may indicate a link
+	to the opus document that composes multiple movements
+	into a collection.
+-->
+<!ELEMENT work (work-number?, work-title?, opus?)>
+<!ELEMENT work-number (#PCDATA)>
+<!ELEMENT work-title (#PCDATA)>
+<!ELEMENT opus EMPTY>
+<!ATTLIST opus
+    %link-attributes; 
+>
+<!ELEMENT movement-number (#PCDATA)>
+<!ELEMENT movement-title (#PCDATA)>
+
+<!--
+	The part-list identifies the different musical parts in
+	this movement. Each part has an ID that is used later
+	within the musical data. Since parts may be encoded
+	separately and combined later, identification elements
+	are present at both the score and score-part levels.
+	There must be at least one score-part, combined as
+	desired with part-group elements that indicate braces
+	and brackets. Parts are ordered from top to bottom in
+	a score based on the order in which they appear in the
+	part-list.
+	
+	Each MusicXML part corresponds to a track in a Standard
+	MIDI Format 1 file. The score-instrument elements are
+	used when there are multiple instruments per track.
+	The midi-device element is used to make a MIDI device
+	or port assignment for the given track. Initial
+	midi-instrument assignments may be made here as well.
+-->
+<!ELEMENT part-list (part-group*, score-part,
+	(part-group | score-part)*)>
+<!ELEMENT score-part (identification?, part-name,
+	part-abbreviation?, group*, score-instrument*,
+	midi-device?, midi-instrument*)>
+<!ATTLIST score-part
+    id ID #REQUIRED
+>
+
+<!--
+	The part-name indicates the full name of the musical 
+	part. The part-abbreviation indicates the abbreviated
+	version of the name of the musical part. The part-name
+	will often precede the first system, while the 
+	part-abbreviation will precede the other systems.
+-->
+<!ELEMENT part-name (#PCDATA)>
+<!ELEMENT part-abbreviation (#PCDATA)>
+
+<!--
+	The part-group element indicates groupings of parts in
+	the score, usually indicated by braces and brackets.
+	The number attribute is used to distinguish overlapping
+	and nested part-groups, not the sequence of groups. As
+	with parts, groups can have a name and abbreviation.
+	The group-symbol element indicates how the group is 
+	indicated on the score. Values include none (default),
+	brace, line, and bracket. Values for the child elements
+	are ignored at the stop of a group. The group-barline
+	element indicates if the group should have common
+	barlines. Values can be yes, no, or Mensurstrich.
+-->
+<!ELEMENT part-group (group-name?, group-abbreviation?,
+	group-symbol?, group-barline?, %editorial;)>
+<!ATTLIST part-group
+    type %start-stop; #REQUIRED
+    number CDATA "1"
+>
+<!ELEMENT group-name (#PCDATA)>
+<!ELEMENT group-abbreviation (#PCDATA)>
+<!ELEMENT group-symbol (#PCDATA)>
+<!ELEMENT group-barline (#PCDATA)>
+
+<!--
+	The score-instrument element allows for multiple
+	instruments per score-part. As with the score-part
+	element, each score-instrument has a required ID
+	attribute, a name, and an optional abbreviation.
+	A score-instrument element is also required if the
+	score specifies MIDI channels, banks, or programs.
+	An initial midi-instrument assignment can also
+	be made here. MusicXML software should be able to
+	automatically assign reasonable channels and 
+	instruments without these elements in simple cases,
+	such as where part names match General MIDI
+	instrument names.
+	
+	The midi-instrument element is defined in common.dtd,
+	as it can be used within both the score-part and
+	sound elements.
+-->
+<!ELEMENT score-instrument
+	(instrument-name, instrument-abbreviation?)>
+<!ATTLIST score-instrument
+    id ID #REQUIRED
+>
+<!ELEMENT instrument-name (#PCDATA)>
+<!ELEMENT instrument-abbreviation (#PCDATA)>
+
+<!--
+	The midi-device content corresponds to the DeviceName
+	meta event in Standard MIDI Files. The optional port
+	attribute is a number from 1 to 16 that can be used
+	with the unofficial MIDI port (or cable) meta event.
+-->
+<!ELEMENT midi-device (#PCDATA)>
+<!ATTLIST midi-device
+    port CDATA #IMPLIED
+>
+
+<!--
+	The group element allows the use of different versions
+	of the part for different purposes. Typical values
+	include score, parts, sound, and data. Ordering 
+	information that is directly encoded in MuseData can
+	be derived from the ordering within a score or opus
+	in MusicXML.
+-->
+<!ELEMENT group (#PCDATA)>
+
+<!--
+	Here is the basic musical data that is either associated
+	with a part or a measure, depending on whether partwise
+	or timewise hierarchy is used.
+-->
+<!ENTITY % music-data
+    "(note | backup | forward | direction | attributes |
+      harmony | figured-bass | print | sound | barline | 
+      grouping | link | bookmark)*">
+
+<!--
+	The score-header entity contains basic score metadata
+	about the work and movement, plus the part list. 
+-->
+<!ENTITY % score-header
+    "(work?, movement-number?, movement-title?,
+      identification?, part-list)">
+
+<!--
+	The score is the root element for the DTD. It includes
+	the score-header entity, followed either by a series of
+	parts with measures inside (score-partwise) or a series
+	of measures with parts inside (score-timewise). Having
+	distinct top-level elements for partwise and timewise
+	scores makes it easy to ensure that an XSLT stylesheet
+	does not try to transform a document already in the
+	desired format.
+-->
+<![ %partwise; [
+<!ELEMENT score-partwise (%score-header;, part+)>
+<!ELEMENT part (measure+)>
+<!ELEMENT measure (%music-data;)>
+]]>
+<![ %timewise; [
+<!ELEMENT score-timewise (%score-header;, measure+)>
+<!ELEMENT measure (part+)>
+<!ELEMENT part (%music-data;)>
+]]>
+<!--
+	In either format, the part element has an id attribute
+	that is an IDREF back to a score-part in the part-list.
+	Measures have a required number attribute (going from
+	partwise to timewise, measures are grouped via the
+	number).
+-->
+<!ATTLIST part
+    id IDREF #REQUIRED
+>
+<!--
+	The implicit attribute is set to "yes" for measures where
+	the measure number should never appear, such as pickup
+	measures and the last half of mid-measure repeats. The
+	value is "no" if not specified.
+	
+	The non-controlling attribute indicates that this measure
+	in this part does not necessarily synchronize with other
+	measures in other parts. This is intended for use in
+	multimetric music like the Don Giovanni minuet. The
+	value is "no" if not specified.
+-->
+<!ATTLIST measure
+    number CDATA #REQUIRED
+    implicit %yes-no; #IMPLIED
+    non-controlling %yes-no; #IMPLIED
+>

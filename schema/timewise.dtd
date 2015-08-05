@@ -1,0 +1,142 @@
+<!--
+	MusicXML Timewise DTD
+
+	Version 1.0 - 7 January 2004
+	
+	Copyright © 2004 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	MusicXML is designed to represent musical scores,
+	specifically common western musical notation from the
+	17th century onwards. It is designed as an interchange
+	format for notation, analysis, retrieval, and performance
+	applications. Therefore it is intended to be sufficient,
+	not optimal, for these applications.
+	
+	MusicXML is based on the MuseData and Humdrum formats.
+	Humdrum explicitly represents the two-dimensional nature
+	of musical scores by a 2-D layout notation. Since XML
+	is a hierarchical format, we cannot do this explicitly.
+	Instead, there are two top-level formats:
+	
+	partwise.dtd		Represents scores by part/instrument
+	timewise.dtd		Represents scores by time/measure
+	
+	Thus partwise.dtd contains measures within each part,
+	while timewise.dtd contains parts within each measure.
+	XSLT stylesheets are provided to convert between the
+	two formats.
+	
+	The partwise and timewise score DTDs represent a single 
+	movement of music. Multiple movements or other musical 
+	collections are presented using opus.dtd. An opus
+	document contains XLinks to individual scores, along
+	with more detailed reference and musicological
+	information.
+	
+	Suggested use:
+	
+	<!DOCTYPE score-timewise PUBLIC
+		"-//Recordare//DTD MusicXML 1.0 Timewise//EN"
+		"http://www.musicxml.org/dtds/timewise.dtd">
+	
+	This DTD is made up of a series of component DTDs, all
+	of which are included here.
+-->
+
+<!-- Entities -->
+
+<!--
+	The partwise and timewise entities are used with
+	conditional sections to control the differences between
+	the partwise and timewise DTDs. The values for these
+	entities are what distinguish the partwise and timewise
+	DTD files.
+--> 
+<!ENTITY % partwise "IGNORE">
+<!ENTITY % timewise "INCLUDE">
+
+<!-- Component DTDs -->
+
+<!--
+	The common DTD contains the entities and elements that
+	are shared among multiple component DTDs.
+-->
+<!ENTITY % common PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.0 Common//EN"
+	"common.dtd">
+%common;
+
+<!-- 
+	The identity DTD contains identification and metadata
+	elements.
+-->
+<!ENTITY % identity PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.0 Identity//EN"
+	"identity.dtd">
+%identity;
+
+<!--
+	The attributes DTD includes elements that usually
+	change at the start of a measure, such as key
+	signatures, time signatures, and clefs.
+-->
+<!ENTITY % attributes PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.0 Attributes//EN"
+	"attributes.dtd">
+%attributes;
+
+<!--
+	The link DTD contains XLink attributes.
+-->
+<!ENTITY % link PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.0 Link//EN"
+	"link.dtd">
+%link;
+
+<!--
+	The note DTD contains the bulk of the elements and 
+	attributes for a musical scores relating to individual
+	notes and rests.
+ -->
+<!ENTITY % note PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.0 Note//EN"
+	"note.dtd">
+%note;
+
+<!--
+	The barline DTD contains elements regarding
+	barline style, repeats, and multiple endings.
+-->
+<!ENTITY % barline PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.0 Barline//EN"
+	"barline.dtd">
+%barline;
+
+<!-- 
+	The direction DTD contains elements for musical 
+	directions not tied to individual notes. This
+	includes harmony and chord symbol elements.
+-->
+<!ENTITY % direction PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.0 Direction//EN"
+	"direction.dtd">
+%direction;
+
+<!--
+	The score DTD contains the top-level elements
+	for musical scores, including the root document
+	elements.
+-->
+<!ENTITY % score PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.0 Score//EN"
+	"score.dtd">
+%score;

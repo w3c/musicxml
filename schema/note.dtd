@@ -1,0 +1,912 @@
+<!--
+	MusicXML note.dtd
+
+	Version 1.0 - 7 January 2004
+	
+	Copyright © 2004 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	The note component DTD contains the note representations
+	for MusicXML. This section of the DTD can then be used
+	within a partwise or timewise MusicXML score. This DTD
+	contains the note element, all its children elements,
+	and related entities.
+-->
+
+<!-- Entities -->
+
+<!-- Structures -->
+
+<!--
+	The common note elements between cue/grace notes and
+	regular (full) notes: pitch, chord, and rest information,
+	but not duration (cue and grace notes do not have
+	duration encoded here). Unpitched elements are used for
+	unpitched percussion, speaking voice, and other musical
+	elements lacking determinate pitch.
+-->
+<!ENTITY % full-note "(chord?, (pitch | unpitched | rest))">
+
+<!-- Elements -->
+<!--
+	Notes are the most common type of MusicXML data. MusicXML
+	keeps the MuseData distinction between elements used for
+	sound information and element used for notation
+	information (e.g., tie is used for sound, tied for
+	notation). Thus grace notes do not have a duration
+	element. Cue notes have a duration element, as do forward
+	elements, but no tie elements. Having these two types of
+	information available can make interchange considerably
+	easier, as some programs handle one type of information
+	much more readily than the other. 
+-->
+<!ELEMENT note 
+   (((grace, %full-note;, (tie, tie?)?) |
+    (cue, %full-note;, duration) |
+	 (%full-note;, duration, (tie, tie?)?)),
+	instrument?, %editorial-voice;, type?, dot*,
+	accidental?, time-modification?, stem?, notehead?,
+	staff?, beam*, notations*, lyric*)>
+
+<!--
+	The position and printout entities for printing
+	suggestions are defined in common.dtd.
+	
+	The dynamics and end-dynamics attributes reflect MIDI's
+	Note On and Note Off velocities, respectively. They are
+	expressed in terms of percentages of a standard MIDI
+	forte volume of 90. The attack and release attributes
+	are used to alter the staring and stopping time of the
+	note from when it would otherwise occur based on the 
+	flow of durations - information that is specific to a
+	performance. They are expressed in terms of divisions,
+	either positive or negative. If a note is played only
+	one time through a repeat, the time-only attribute
+	shows which time to play the note. The pizzicato 
+	attribute is used when just this note is sounded
+	pizzicato, vs. the pizzicato and arco elements.
+-->
+<!ATTLIST note
+    %position; 
+    %printout;
+    dynamics CDATA #IMPLIED
+    end-dynamics CDATA #IMPLIED
+    attack CDATA #IMPLIED
+    release CDATA #IMPLIED
+    time-only CDATA #IMPLIED
+    pizzicato %yes-no; #IMPLIED
+>
+
+<!--
+	Pitch is represented as a combination of the step of the
+	diatonic scale, the chromatic alteration, and the octave.
+	The step element uses the English letters A through G:
+	in a future revision, this could expand to international
+	namings. The alter element represents chromatic
+	alteration in number of semitones (e.g., -1 for flat,
+	1 for sharp). Decimal values like 0.5 (quarter tone
+	sharp) may be used for microtones. The octave element
+	is represented by the numbers 0 to 9, where 4 indicates
+	the octave started by middle C.
+-->
+<!ELEMENT pitch (step, alter?, octave)>
+<!ELEMENT step (#PCDATA)>
+<!ELEMENT alter (#PCDATA)>
+<!ELEMENT octave (#PCDATA)>
+
+<!--
+	The cue and grace elements indicate the presence of
+	cue and grace notes. The slash attribute for a grace
+	note is yes for slashed eighth notes. The other grace
+	note attributes come from MuseData sound suggestions.
+	Steal-time-previous indicates the percentage of time
+	to steal from the previous note for the grace note.
+	Steal-time-following indicates the percentage of time
+	to steal from the following note for the grace note.
+	Make-time indicates to make time, not steal time; the
+	units are in real-time divisions for the grace note. 
+-->
+<!ELEMENT cue EMPTY>
+<!ELEMENT grace EMPTY>
+<!ATTLIST grace
+    steal-time-previous CDATA #IMPLIED
+    steal-time-following CDATA #IMPLIED
+    make-time CDATA #IMPLIED
+    slash %yes-no; #IMPLIED
+>
+
+<!--
+	The chord element indicates that this note is an
+	additional chord tone with the preceding note. The
+	duration of this note can be no longer than the preceding
+	note. In MuseData, a missing duration indicates the same
+	length as the preceding note, but here we require the 
+	duration for chord records too.
+-->
+<!ELEMENT chord EMPTY>
+
+<!--
+	The unpitched element indicates musical elements that are
+	notated on the staff but lack definite pitch, such as
+	unpitched percussion and speaking voice. Like notes, it
+	uses step and octave elements to indicate placement on
+	the staff, following the current clef. If percussion clef
+	is used, the display-step and display-octave are
+	interpreted as if in treble clef, with a G in octave 4 
+	on line 2. If not present, the note is placed on the 
+	middle line of the staff, generally used for one-line
+	staffs.
+-->
+<!ELEMENT unpitched ((display-step, display-octave)?)>
+<!ELEMENT display-step (#PCDATA)>
+<!ELEMENT display-octave (#PCDATA)>
+
+<!--
+	The rest element indicates notated rests or silences.
+	Rest are usually empty, but placement on the staff can
+	be specified using display-step and display-octave
+	elements.
+-->
+<!ELEMENT rest ((display-step, display-octave)?)>
+
+<!--
+	Duration is specified in division units. This is the
+	intended duration vs. notated duration (for instance,
+	swing eighths vs. even eighths, or differences in dotted
+	notes in Baroque-era music). Differences in duration 
+	specific to an interpretation or performance should use
+	the note element's attack and release attributes. The 
+	tie element indicates that a tie begins or ends with 
+	this note. The tie element indicates sound; the tied 
+	element indicates notation.
+-->
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT tie EMPTY>
+<!ATTLIST tie
+    type %start-stop; #REQUIRED
+>
+
+<!--
+	If multiple score-instruments are specified on a
+	score-part, there should be an instrument element for
+	each note in the part. The id attribute is an IDREF back
+	to the score-instrument ID.
+-->
+<!ELEMENT instrument EMPTY>
+<!ATTLIST instrument
+    id IDREF #REQUIRED
+>
+<!--
+	Type indicates the graphic note type, Valid values (from
+	shortest to longest) are 256th, 128th, 64th, 32nd, 16th,
+	eighth, quarter, half, whole, breve, and long. The size
+	attribute indicates full-size or cue-size, with full the
+	default for regular notes and cue the default for cue
+	and grace notes.
+-->
+<!ELEMENT type (#PCDATA)>
+<!ATTLIST type
+    size %symbol-size; #IMPLIED
+>
+
+<!--
+	One dot element is used for each dot of prolongation.
+-->
+<!ELEMENT dot EMPTY>
+<!ATTLIST dot
+    %position;
+>
+
+<!--
+	Actual notated accidentals. Valid values include: sharp,
+	natural, flat, double-sharp, sharp-sharp, flat-flat,
+	natural-sharp, natural-flat, quarter-flat, quarter-sharp,
+	three-quarters-flat, and three-quarters-sharp. Editorial
+	and cautionary indications, are indicated by attributes.
+	Values for these attributes are "no" if not present.
+-->
+<!ELEMENT accidental (#PCDATA)>
+<!ATTLIST accidental
+    cautionary %yes-no; #IMPLIED
+    editorial %yes-no; #IMPLIED
+    size %symbol-size; #IMPLIED
+    %position;
+>
+
+<!--
+	Time modification indicates tuplets and other
+	durational changes. The actual-notes element describes
+	how many notes are played in the time usually occupied
+	by the number of normal-notes. If the normal-notes type
+	is different than the current note type (e.g., a 
+	quarter note within an eighth note triplet), then the
+	normal-notes type (e.g. eighth) is specified in the
+	normal-type and normal-dot elements.
+-->
+<!ELEMENT time-modification
+	(actual-notes, normal-notes, 
+	(normal-type, normal-dot*)?)>
+<!ELEMENT actual-notes (#PCDATA)>
+<!ELEMENT normal-notes (#PCDATA)>
+<!ELEMENT normal-type (#PCDATA)>
+<!ELEMENT normal-dot EMPTY>
+
+<!--
+	Stems can be down, up, none, or double. For down and up
+	stems, the position attributes can be used to specify
+	stem length. The relative values specify the end of the
+	stem relative to the program default. Deafult values
+	specify an absolute end stem position. Negative values
+	of default-y are not permitted. Negative values of
+	relative-y that would flip a stem instead of shortening
+	it should also be ignored.
+-->
+<!ELEMENT stem (#PCDATA)>
+<!ATTLIST stem
+    %position;
+>
+
+<!--
+	The notehead element indicates shapes other than the
+	open and closed ovals associated with note durations.
+	The element value can be slash, triangle, diamond,
+	square, cross, x, circle-x, normal, or none.
+	
+	For the enclosed shapes, the default is to be hollow for
+	half notes and longer, and filled otherwise. The filled
+	attribute can be set to change this if needed.
+	
+	If the parentheses attribute is set to yes, the notehead
+	is parenthesized. It is no by default.
+-->
+<!ELEMENT notehead (#PCDATA)>
+<!ATTLIST notehead
+    filled %yes-no; #IMPLIED
+    parentheses %yes-no; #IMPLIED
+>
+
+<!--
+	Beam types include begin, continue, end, forward hook,
+	and backward hook. In MuseData, up to six concurrent
+	beams are available to cover up to 256th notes. This
+	seems sufficient so we use an enumerated type defined
+	in common.dtd. The repeater attribute, used for tremolos,
+	needs to be specified with a "yes" value for each beam 
+	using it.
+	
+	Note that the beam number does not distinguish sets
+	of beams that overlap, as it does for slur and other
+	elements. Beaming groups are distinguished by
+	being in different voices and/or the presence or
+	absence of grace and cue elements.
+-->
+<!ELEMENT beam (#PCDATA)>
+<!ATTLIST beam
+    number %beam-level; "1"
+    repeater %yes-no; #IMPLIED
+>
+
+<!--
+	Notations are musical notations, not XML notations.
+	Multiple notations are allowed in order to represent
+	multiple editorial levels. The set of notations will be
+	refined and expanded over time, especially to handle
+	more instrument-specific technical notations.
+-->
+<!ELEMENT notations
+	(%editorial;, 
+	 (tied | slur | tuplet | glissando | slide | 
+	  ornaments | technical | articulations | dynamics |
+	  fermata | arpeggiate | non-arpeggiate | 
+	  accidental-mark | other-notation)*)>
+
+<!ELEMENT tied EMPTY>
+<!ATTLIST tied
+    type %start-stop; #REQUIRED
+    number %number-level; #IMPLIED
+    %line-type;
+    %position;
+    %placement;
+    %orientation;
+>
+
+<!--
+	Slur elements are empty. Most slurs are represented
+	with two elements: one with a start type, and one
+	with a stop type. Very complex slurs can add more
+	elements using a continue type.
+-->
+<!ELEMENT slur EMPTY>
+<!ATTLIST slur
+    type %start-stop-continue; #REQUIRED
+    number %number-level; "1"
+    %line-type;
+    %position;
+    %placement;
+    %orientation;
+    %bezier;
+>
+
+<!--
+	A tuplet element is present when a tuplet is to be
+	displayed graphically, in addition to the sound data
+	provided by the time-modification elements. The number
+	attribute is used to distinguish nested tuplets. The
+	bracket attribute is used to indicate the presence of a
+	bracket. If unspecified, the results are implementation-
+	dependent. 
+	
+	Whereas a time-modification element shows how the
+	cumulative, sounding effect of tuplets compare to
+	the written note type, the tuplet element describes
+	how this is displayed. The tuplet-actual and
+	tuplet-normal elements provide optional full control
+	over tuplet specifications. Each allows the number
+	and note type (including dots) describing a single
+	tuplet. If any of these elements are absent, their
+	values are based on the time-modification element.
+	
+	The show-number attribute is used to display either
+	the number of actual notes, the number of both actual
+	and normal notes, or neither. It is actual by default.
+	The show-type attribute is used to display either the
+	actual type, both the actual and normal types, or
+	neither. It is none by default.
+-->
+<!ELEMENT tuplet (tuplet-actual?, tuplet-normal?)>
+<!ATTLIST tuplet
+    type %start-stop; #REQUIRED
+    number %number-level; #IMPLIED
+    bracket %yes-no; #IMPLIED
+    show-number (actual | both | none) #IMPLIED
+    show-type (actual | both | none) #IMPLIED
+    %position;
+    %placement;
+>
+<!ELEMENT tuplet-actual (tuplet-number?,
+	tuplet-type?, tuplet-dot*)>
+<!ELEMENT tuplet-normal (tuplet-number?,
+	tuplet-type?, tuplet-dot*)>
+<!ELEMENT tuplet-number (#PCDATA)>
+<!ELEMENT tuplet-type (#PCDATA)>
+<!ELEMENT tuplet-dot EMPTY>
+
+<!--
+	Glissando and slide elements both indicate rapidly
+	moving from one pitch to the other so that individual
+	notes are not discerned. The distinction is similar
+	to that between NIFF's glisssando and portamento 
+	elements. A glissando sounds the half notes in
+	between the slide and defaults to a wavy line. A
+	slide is continuous between two notes and defaults
+	to a solid line.
+-->
+<!ELEMENT glissando EMPTY>
+<!ATTLIST glissando
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %line-type; 
+    %position; 
+>
+<!ELEMENT slide EMPTY>
+<!ATTLIST slide
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %line-type; 
+    %position; 
+    %bend-sound;
+>
+
+<!--
+	The other-notation element is used to define
+	any notations not yet in MusicXML. This allows 
+	extended representation, though without application
+	interoperability. It handles notations where more 
+	specific extension elements such as other-dynamics 
+	and other-technical are not appropriate.
+-->
+<!ELEMENT other-notation (#PCDATA)>
+<!ATTLIST other-notation
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %position; 
+    %placement;
+>
+
+<!--
+	Ornaments can be any of several types, followed
+	optionally by accidentals. The accidental-mark
+	element's content is represented the same as an
+	accidental element, but with a different name to
+	reflect the different musical meaning.
+-->
+<!ELEMENT ornaments
+	(((trill-mark | turn | delayed-turn | shake |
+	   wavy-line | mordent | inverted-mordent | 
+	   schleifer | other-ornament), accidental-mark*)*)>
+<!ELEMENT trill-mark EMPTY>
+<!ATTLIST trill-mark
+    %position; 
+    %placement; 
+    %trill-sound; 
+>
+<!ELEMENT turn EMPTY>
+<!ATTLIST turn
+    %position; 
+    %placement; 
+    %trill-sound; 
+>
+<!ELEMENT delayed-turn EMPTY>
+<!ATTLIST delayed-turn
+    %position; 
+    %placement; 
+    %trill-sound; 
+>
+<!ELEMENT shake EMPTY>
+<!ATTLIST shake
+    %position; 
+    %placement; 
+    %trill-sound; 
+>
+
+<!-- 
+	The long attribute for the mordent and inverted-mordent
+	elements is "no" by default. The mordent element 
+	represents the sign with the vertical line; the
+	inverted-mordent represent the sign without the
+	vertical line.
+-->
+<!ELEMENT mordent EMPTY>
+<!ATTLIST mordent
+    long %yes-no; #IMPLIED
+    %position; 
+    %placement; 
+    %trill-sound; 
+>
+<!ELEMENT inverted-mordent EMPTY>
+<!ATTLIST inverted-mordent
+    long %yes-no; #IMPLIED
+    %position; 
+    %placement; 
+    %trill-sound; 
+>
+
+<!--
+	The German name for this ornament is used to avoid
+	confusion with the more common slide element
+	defined earlier.
+-->
+<!ELEMENT schleifer EMPTY>
+<!ATTLIST schleifer
+    %position; 
+    %placement; 
+>
+
+<!--
+	The other-ornament element is used to define
+	any ornaments not yet in MusicXML. This allows 
+	extended representation, though without application 
+	interoperability.
+-->
+<!ELEMENT other-ornament (#PCDATA)>
+<!ATTLIST other-ornament
+    %position; 
+    %placement; 
+>
+
+<!--
+	An accidental-mark can be used as a separate
+	notation or as part of an ornament. When used in
+	an ornament, position and placement are relative
+	to the ornament, not relative to the note.
+-->
+<!ELEMENT accidental-mark (#PCDATA)>
+<!ATTLIST accidental-mark
+    %position; 
+    %placement; 
+>
+
+<!--
+	Technical indications give performance information for
+	individual instruments. The current elements are
+	weighted towards keyboard and string instruments.
+	Woodwind, brass, and percussion will be treated
+	more thoroughly in later revisions.
+-->
+<!ELEMENT technical
+	((up-bow | down-bow | harmonic | open-string |
+	  thumb-position | fingering | double-tongue |
+	  triple-tongue | stopped | snap-pizzicato |
+	  fret | string | hammer-on | pull-off | bend |
+	  tap | heel | toe | fingernails | 
+	  other-technical)*)>
+
+<!ELEMENT up-bow EMPTY>
+<!ATTLIST up-bow
+    %position; 
+    %placement; 
+>
+<!ELEMENT down-bow EMPTY>
+<!ATTLIST down-bow
+    %position; 
+    %placement; 
+>
+
+<!--
+	The harmonic element indicates natural and artificial
+	harmonics. Natural harmonics usually notate the
+	base pitch rather than the sounding pitch. Allowing
+	the type of pitch to be specified, combined with
+	MusicXML's controls for appearance/playback 
+	differences, allows both the notation and the sound
+	to be represented. Artificial harmonics can add a 
+	notated touching-pitch; the pitch or fret at which
+	the string is touched lightly to produce the harmonic.
+	Artificial pinch harmonics will usually not notate
+	a touching pitch.
+-->
+<!ELEMENT harmonic
+    ((natural | artificial)?, 
+     (base-pitch | touching-pitch | sounding-pitch)?)>
+<!ATTLIST harmonic
+    %position; 
+    %placement; 
+>
+<!ELEMENT natural EMPTY>
+<!ELEMENT artificial EMPTY>
+<!ELEMENT base-pitch EMPTY>
+<!ELEMENT touching-pitch EMPTY>
+<!ELEMENT sounding-pitch EMPTY>
+
+<!ELEMENT open-string EMPTY>
+<!ATTLIST open-string
+    %position; 
+    %placement; 
+>
+<!ELEMENT thumb-position EMPTY>
+<!ATTLIST thumb-position
+    %position; 
+    %placement; 
+>
+
+<!ELEMENT double-tongue EMPTY>
+<!ATTLIST double-tongue
+    %position; 
+    %placement; 
+>
+<!ELEMENT triple-tongue EMPTY>
+<!ATTLIST triple-tongue
+    %position; 
+    %placement; 
+>
+<!ELEMENT stopped EMPTY>
+<!ATTLIST stopped
+    %position; 
+    %placement; 
+>
+<!ELEMENT snap-pizzicato EMPTY>
+<!ATTLIST snap-pizzicato
+    %position; 
+    %placement; 
+>
+
+<!--
+	The hammer-on and pull-off elements are used in
+	guitar and fretted instrument notation. Since
+	a single slur can be marked over many notes,
+	the hammer-on and pull-off elements are 
+	separate so the individual pair of notes
+	can be specified. The element content can be
+	used to specify how the hammer-on or pull-off
+	should be notated. An empty element leaves
+	this choice to the program defaults.
+-->
+<!ELEMENT hammer-on (#PCDATA)>
+<!ATTLIST hammer-on
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %position;
+    %placement;
+    %font;
+>
+<!ELEMENT pull-off (#PCDATA)>
+<!ATTLIST pull-off
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %position;
+    %placement;
+    %font;
+>
+
+<!--
+	The bend element is used in guitar and tablature.
+	The bend-alter element indicates the number of
+	steps in the bend, similar to the alter element.
+	As with the alter element, numbers like 0.5 can
+	be used to indicate microtones. Negative numbers
+	indicate pre-bends or releases; the pre-bend and
+	release elements are used to distinguish what
+	is intended. A with-bar element indicates that
+	the bend is to be done at the bridge with a
+	whammy or vibrato bar. The content of the
+	element indicates how this should be notated.
+-->
+<!ELEMENT bend
+	(bend-alter, (pre-bend | release)?, with-bar?)>
+<!ATTLIST bend
+    %position; 
+    %bend-sound;
+>
+<!ELEMENT bend-alter (#PCDATA)>
+<!ELEMENT pre-bend EMPTY>
+<!ELEMENT release EMPTY>
+<!ELEMENT with-bar (#PCDATA)>
+<!ATTLIST with-bar
+    %position; 
+    %placement; 
+>
+
+<!--
+	The tap element indicates a tap on the fretboard.
+	The element content allows specification of the
+	notation; + and T are common choices. If empty,
+	the program default is used.
+-->
+<!ELEMENT tap (#PCDATA)>
+<!ATTLIST tap
+    %position; 
+    %placement; 
+    %font;
+>
+
+<!-- Heel and toe are used with organ pedals. -->
+<!ELEMENT heel EMPTY>
+<!ATTLIST heel
+    %position; 
+    %placement; 
+>
+<!ELEMENT toe EMPTY>
+<!ATTLIST toe
+    %position; 
+    %placement; 
+>
+
+<!-- Fingernails is used in harp notation. -->
+<!ELEMENT fingernails EMPTY>
+<!ATTLIST fingernails
+    %position; 
+    %placement; 
+>
+
+<!--
+	The other-technical element is used to define
+	any technical indications not yet in MusicXML.
+	This allows extended representation, though 
+	without application interoperability.
+-->
+<!ELEMENT other-technical (#PCDATA)>
+<!ATTLIST other-technical
+    %position; 
+    %placement; 
+>
+
+<!--
+	Articulations and accents are grouped together here.
+-->
+<!ELEMENT articulations
+	((accent | strong-accent | staccato | tenuto |
+	  detached-legato | staccatissimo | spiccato |
+	  scoop | plop | doit | falloff | breath-mark | 
+	  caesura | other-articulation)*)>
+
+<!ELEMENT accent EMPTY>
+<!ATTLIST accent
+    %position; 
+    %placement; 
+>
+<!ELEMENT strong-accent EMPTY>
+<!ATTLIST strong-accent
+    %position; 
+    %placement; 
+    type %up-down; "up"
+>
+<!ELEMENT staccato EMPTY>
+<!ATTLIST staccato
+    %position; 
+    %placement; 
+>
+<!ELEMENT tenuto EMPTY>
+<!ATTLIST tenuto
+    %position; 
+    %placement; 
+>
+<!ELEMENT detached-legato EMPTY>
+<!ATTLIST detached-legato
+    %position; 
+    %placement; 
+>
+<!ELEMENT staccatissimo EMPTY>
+<!ATTLIST staccatissimo
+    %position; 
+    %placement; 
+>
+<!ELEMENT spiccato EMPTY>
+<!ATTLIST spiccato
+    %position; 
+    %placement; 
+>
+
+<!-- 
+	The scoop, plop, doit, and falloff elements are
+	indeterminate slides attached to a single note.
+	Scoops and plops come before the main note, coming
+	from below and above the pitch, respectively. Doits
+	and falloffs come after the main note, going above
+	and below the pitch, respectively.
+-->
+<!ELEMENT scoop EMPTY>
+<!ATTLIST scoop
+    %line-shape;
+    %line-type;
+    %position; 
+    %placement; 
+>
+<!ELEMENT plop EMPTY>
+<!ATTLIST plop
+    %line-shape;
+    %line-type;
+    %position; 
+    %placement; 
+>
+<!ELEMENT doit EMPTY>
+<!ATTLIST doit
+    %line-shape;
+    %line-type;
+    %position; 
+    %placement; 
+>
+<!ELEMENT falloff EMPTY>
+<!ATTLIST falloff
+    %line-shape;
+    %line-type;
+    %position; 
+    %placement; 
+>
+
+<!ELEMENT breath-mark EMPTY>
+<!ATTLIST breath-mark
+    %position; 
+    %placement; 
+>
+<!ELEMENT caesura EMPTY>
+<!ATTLIST caesura
+    %position; 
+    %placement; 
+>
+
+<!--
+	The other-articulation element is used to define
+	any articulations not yet in MusicXML. This 
+	allows extended representation, though without 
+	application interoperability.
+-->
+<!ELEMENT other-articulation (#PCDATA)>
+<!ATTLIST other-articulation
+    %position; 
+    %placement; 
+>
+
+<!--
+	Dynamics and fermata elements are found in common.dtd 
+	as they apply to more than just note elements.
+-->
+
+<!--
+	Indicates that this note is part of an arpeggiated chord.
+	The number attribute can be used to distinguish between
+	two simultaneous chords arpeggiated separately (different
+	numbers) or together (same number). The up-down attribute
+	is used if there is an arrow on the arpeggio sign. By
+	default, arpeggios go from the lowest to highest note.
+-->
+<!ELEMENT arpeggiate EMPTY>
+<!ATTLIST arpeggiate
+    number %number-level; #IMPLIED
+    direction %up-down; #IMPLIED
+    %position; 
+    %placement; 
+>
+
+<!-- 
+	Indicates that this note is at the top or bottom of
+	a bracket indicating to not arpeggiate these notes.
+	Since this does not involve playback, it is only
+	used on the top or bottom notes, not on each note
+	as for the arpeggiate element.
+-->
+<!ELEMENT non-arpeggiate EMPTY>
+<!ATTLIST non-arpeggiate
+    type %top-bottom; #REQUIRED
+    number %number-level; #IMPLIED
+    %position; 
+    %placement; 
+>
+
+<!--
+	Text underlays for lyrics, based on Humdrum with support
+	for other formats. The lyric number indicates multiple
+	lines, though a name can be used as well (as in Finale's
+	verse/chorus/section specification). Word extensions are
+	represented using the extend element. Hyphenation is 
+	indicated by the syllabic element, which can be single, 
+	begin, end, or middle. These represent single-syllable
+	words, word-beginning syllables, word-ending syllables,
+	and mid-word syllables. Multiple syllables on a single
+	note are separated by elision elements. A hyphen in the
+	text element should only be used for an actual hyphenated
+	word. Humming and laughing representations are taken from
+	Humdrum. The end-line and end-paragraph elements come
+	from RP-017 for Standard MIDI File Lyric meta-events;
+	they help facilitate lyric display for Karaoke and
+	similar applications. Language names for text elements
+	come from ISO 639, with optional country subcodes from
+	ISO 3166.
+-->
+<!ELEMENT lyric
+  ((((syllabic?, text),
+     (elision, syllabic?, text)*, extend?) |
+    extend | laughing | humming),
+   end-line?, end-paragraph?, %editorial;)>
+<!ATTLIST lyric
+    number NMTOKEN #IMPLIED
+    name CDATA #IMPLIED
+>
+
+<!ELEMENT text (#PCDATA)>
+<!ATTLIST text
+    %font;
+    xml:lang NMTOKEN #IMPLIED
+>
+<!ELEMENT syllabic (#PCDATA)>
+<!ELEMENT elision EMPTY>
+<!ELEMENT extend EMPTY>
+<!ELEMENT laughing EMPTY>
+<!ELEMENT humming EMPTY>
+<!ELEMENT end-line EMPTY>
+<!ELEMENT end-paragraph EMPTY>
+
+<!--
+	Figured bass elements take their position from the first
+	regular note that follows. We will need to clarify these
+	definitions over time.
+-->
+<!ELEMENT figured-bass (figure+, duration?, %editorial;)>
+<!ATTLIST figured-bass
+    %position; 
+    %printout;
+>
+<!ELEMENT figure (prefix?, figure-number?, suffix?)>
+<!ELEMENT prefix (#PCDATA)>
+<!ELEMENT figure-number (#PCDATA)>
+<!ELEMENT suffix (#PCDATA)>
+
+<!--
+	Backup and forward are required to coordinate multiple
+	voices in one part, including music on a grand staff.
+	Forward is generally used within voices and staves,
+	while backup to move between voices and staves. Thus
+	the backup element does not include voice or staff
+	elements. Duration values should always be positive,
+	and should not cross measure boundaries.
+-->
+<!ELEMENT backup (duration, %editorial;)>
+<!ELEMENT forward
+	(duration, %editorial-voice;, staff?)>
