@@ -1,7 +1,7 @@
 <!--
 	MusicXML™ score.mod module
 
-	Version 2.0 - 18 June 2007
+	Version 2.0 - 10 July 2007
 	
 	Copyright © 2004-2007 Recordare LLC.
 	http://www.recordare.com/
@@ -90,9 +90,16 @@
 	before the music, these page numbers do not refer to the
 	page numbering specified by the print element's page-number
 	attribute.
+
+	In the initial release of Version 2.0, the credit element
+	had a non-deterministic definition. The current credit
+	element definition has the same meaning, but avoids the
+	validity errors arising from a non-deterministic definition.
 -->
-<!ELEMENT credit (((link*, bookmark*, credit-words)+) | 
-	(link*, bookmark*, credit-image))>
+<!ELEMENT credit
+	(link*, bookmark*, 
+	(credit-image | 
+	 (credit-words, (link*, bookmark*, credit-words)*)))>
 <!ATTLIST credit
     page NMTOKEN #IMPLIED
 >
