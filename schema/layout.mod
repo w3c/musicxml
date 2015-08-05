@@ -1,14 +1,14 @@
 <!--
 	MusicXML™ layout.mod module
 
-	Version 2.0 - 18 June 2007
+	Version 3.0
 	
-	Copyright © 2004-2007 Recordare LLC.
+	Copyright © 2004-2011 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Document Type Definition 
-	Public License Version 2.0, available from:
+	holder under the MusicXML Public License Version 3.0,
+	available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -73,16 +73,19 @@
 >
 
 <!--
-	System layout includes left and right margins and the
-	vertical distance from the previous system. Margins are
-	relative to the page margins. Positive values indent and
-	negative values reduce the margin size. The system
-	distance is measured from the bottom line of the previous
-	system to the top line of the current system. It is ignored
-	for the first system on a page. The top system distance
-	is measured from the page's top margin to the top line
-	of the first system. It is ignored for all but the first
-	system on a page.
+	A system is a group of staves that are read and played 
+	simultaneously. System layout includes left and right 
+	margins, the vertical distance from the previous system,
+	and the presence or absence of system dividers. 
+
+	Margins are relative to the page margins. Positive values
+	indent and negative values reduce the margin size. The
+	system distance is measured from the bottom line of the
+	previous system to the top line of the current system.
+	It is ignored for the first system on a page. The top
+	system distance is measured from the page's top margin to
+	the top line of the first system. It is ignored for all
+	but the first system on a page.
 
 	Sometimes the sum of measure widths in a system may not
 	equal the system width specified by the layout elements due
@@ -91,12 +94,49 @@
 	For instance, applications may find that the system layout
 	data is more reliable than the sum of the measure widths,
 	and adjust the measure widths accordingly.
+
+	When used in the layout element, the system-layout element
+	defines a default appearance for all systems in the score.
+	When used in the print element, the system layout element
+	affects the appearance of the current system only. All
+	other systems use the default values provided in the
+	defaults element. If any child elements are missing from
+	the system-layout element in a print element, the values 
+	from the defaults element are used there as well.
 -->
 <!ELEMENT system-layout
-	(system-margins?, system-distance?, top-system-distance?)>
+	(system-margins?, system-distance?, 
+	 top-system-distance?, system-dividers?)>
 <!ELEMENT system-margins (left-margin, right-margin)>
 <!ELEMENT system-distance %layout-tenths;>
 <!ELEMENT top-system-distance %layout-tenths;>
+
+<!--
+	The system-dividers element indicates the presence or
+	absence of system dividers (also known as system separation
+	marks) between systems displayed on the same page. Dividers
+	on the left and right side of the page are controlled by
+	the left-divider and right-divider elements respectively.
+	The default vertical position is half the system-distance
+	value from the top of the system that is below the divider.
+	The default horizontal position is the left and right
+	system margin, respectively.
+
+	When used in the print element, the system-dividers element
+	affects the dividers that would appear between the current
+	system and the previous system. 
+-->
+<!ELEMENT system-dividers (left-divider, right-divider)>
+<!ELEMENT left-divider EMPTY>
+<!ATTLIST left-divider
+    %print-object;
+    %print-style-align; 
+>
+<!ELEMENT right-divider EMPTY>
+<!ATTLIST right-divider
+    %print-object;
+    %print-style-align; 
+>
 
 <!--
 	Staff layout includes the vertical distance from the bottom
@@ -127,9 +167,10 @@
 <!--
 	The appearance element controls general graphical
 	settings for the music's final form appearance on a
-	printed page of display. Currently this includes support
-	for line widths and definitions for note sizes, plus an
-	extension element for other aspects of appearance.
+	printed page of display. This includes support
+	for line widths, definitions for note sizes, and standard
+	distances between notation elements, plus an extension
+	element for other aspects of appearance.
 
 	The line-width element indicates the width of a line type
 	in tenths. The type attribute defines what type of line is
@@ -150,13 +191,19 @@
 	A value of 100 would be identical to the size of a regular
 	note as defined by the music font.
 
+	The distance element represents standard distances between
+	notation elements in tenths. The type attribute defines what
+	type of distance is being defined. Values include hyphen
+	(for hyphens in lyrics) and beam.
+
 	The other-appearance element is used to define any
 	graphical settings not yet in the current version of the
 	MusicXML format. This allows extended representation,
 	though without application interoperability.
 -->
 <!ELEMENT appearance
-	(line-width*, note-size*, other-appearance*)>
+	(line-width*, note-size*, distance*, 
+	 other-appearance*)>
 <!ELEMENT line-width %layout-tenths;>
 <!ATTLIST line-width
     type CDATA #REQUIRED
@@ -164,6 +211,10 @@
 <!ELEMENT note-size (#PCDATA)>
 <!ATTLIST note-size
     type (cue | grace | large) #REQUIRED
+>
+<!ELEMENT distance %layout-tenths;>
+<!ATTLIST distance
+    type CDATA #REQUIRED
 >
 <!ELEMENT other-appearance (#PCDATA)>
 <!ATTLIST other-appearance

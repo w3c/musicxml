@@ -1,14 +1,14 @@
 <!--
 	MusicXML™ Partwise DTD
 
-	Version 2.0 - 18 June 2007
+	Version 3.0
 	
-	Copyright © 2004-2007 Recordare LLC.
+	Copyright © 2004-2011 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Document Type Definition 
-	Public License Version 2.0, available from:
+	holder under the MusicXML Public License Version 3.0,
+	available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -43,7 +43,7 @@
 	Suggested use:
 	
 	<!DOCTYPE score-partwise PUBLIC
-		"-//Recordare//DTD MusicXML 2.0 Partwise//EN"
+		"-//Recordare//DTD MusicXML 3.0 Partwise//EN"
 		"http://www.musicxml.org/dtds/partwise.dtd">
 	
 	This DTD is made up of a series of component DTD modules,
@@ -69,7 +69,7 @@
 	that are shared among multiple component DTDs.
 -->
 <!ENTITY % common PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 2.0 Common//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.0 Common//EN"
 	"common.mod">
 %common;
 
@@ -78,7 +78,7 @@
 	pages, systems, staves, and measures.
 -->
 <!ENTITY % layout PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 2.0 Layout//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.0 Layout//EN"
 	"layout.mod">
 %layout;
 
@@ -87,7 +87,7 @@
 	metadata elements.
 -->
 <!ENTITY % identity PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 2.0 Identity//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.0 Identity//EN"
 	"identity.mod">
 %identity;
 
@@ -97,7 +97,7 @@
 	time signatures, and clefs.
 -->
 <!ENTITY % attributes PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 2.0 Attributes//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.0 Attributes//EN"
 	"attributes.mod">
 %attributes;
 
@@ -105,7 +105,7 @@
 	The link DTD module contains XLink attributes.
 -->
 <!ENTITY % link PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 2.0 Link//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.0 Link//EN"
 	"link.mod">
 %link;
 
@@ -115,7 +115,7 @@
 	notes and rests.
  -->
 <!ENTITY % note PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 2.0 Note//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.0 Note//EN"
 	"note.mod">
 %note;
 
@@ -124,7 +124,7 @@
 	barline style, repeats, and multiple endings.
 -->
 <!ENTITY % barline PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 2.0 Barline//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.0 Barline//EN"
 	"barline.mod">
 %barline;
 
@@ -134,7 +134,7 @@
 	harmony and chord symbol elements.
 -->
 <!ENTITY % direction PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 2.0 Direction//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.0 Direction//EN"
 	"direction.mod">
 %direction;
 
@@ -143,6 +143,6 @@
 	musical scores, including the root document elements.
 -->
 <!ENTITY % score PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 2.0 Score//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.0 Score//EN"
 	"score.mod">
 %score;

@@ -1,14 +1,14 @@
 <!--
 	Standard MIDI File DTD: MIDI XML
 
-	Version 2.0 - 18 June 2007
-
-	Copyright © 2004-2007 Recordare LLC.
+	Version 3.0
+	
+	Copyright © 2004-2011 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Document Type Definition 
-	Public License Version 2.0, available from:
+	holder under the MusicXML Public License Version 3.0,
+	available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -25,7 +25,7 @@
 	Suggested use:
 	
 	<!DOCTYPE MIDIFile PUBLIC
-		"-//Recordare//DTD MusicXML 2.0 MIDI//EN"
+		"-//Recordare//DTD MusicXML 3.0 MIDI//EN"
 		"http://www.musicxml.org/dtds/midixml.dtd">
 	
 -->

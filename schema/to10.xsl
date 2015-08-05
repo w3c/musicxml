@@ -3,14 +3,14 @@
 <!--
 	MusicXML™ to10.xsl stylesheet
 	
-	Version 2.0 - 18 June 2007
+	Version 3.0
 	
-	Copyright © 2004-2007 Recordare LLC.
+	Copyright © 2004-2011 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Document Type Definition 
-	Public License Version 2.0, available from:
+	holder under the MusicXML Public License Version 3.0,
+	available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -129,7 +129,7 @@
     MusicXML 1.1 direction-type child.
   -->
   <xsl:template 
-    match="direction[//pedal[@type='.change'] |
+    match="direction[//pedal[@type='change'] |
 		//harp-pedals | //scordatura]"/>
 
   <xsl:template

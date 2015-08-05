@@ -1,14 +1,14 @@
 <!--
 	MusicXML™ direction.mod module
 
-	Version 2.0 - 18 June 2007
+	Version 3.0
 	
-	Copyright © 2004-2007 Recordare LLC.
+	Copyright © 2004-2011 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Document Type Definition 
-	Public License Version 2.0, available from:
+	holder under the MusicXML Public License Version 3.0,
+	available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -22,6 +22,17 @@
 	suggestions are likewise not necessarily attached to
 	particular note elements, and are included here as well.
 -->
+
+<!-- Entities -->
+
+<!--
+	The tip-direction entity represents the direction in which
+	the tip of a stick or beater points, using Unicode arrow
+	terminology.
+-->
+<!ENTITY % tip-direction 
+	"(up | down | left | right | 
+	  northwest | northeast | southeast | southwest)">
 
 <!-- Elements -->
 
@@ -52,9 +63,10 @@
 -->
 <!ELEMENT direction-type (rehearsal+ | segno+ | words+ |
 	coda+ | wedge | dynamics+ | dashes | bracket | pedal | 
-	metronome | octave-shift | harp-pedals | damp | 
-	damp-all | eyeglasses | scordatura | image |
-	accordion-registration | other-direction)>
+	metronome | octave-shift | harp-pedals | damp | damp-all |
+	eyeglasses | string-mute | scordatura | image |
+	principal-voice | accordion-registration | percussion+ | 
+	other-direction)>
 
 <!--
 	Entities related to print suggestions apply to the
@@ -63,16 +75,12 @@
 
 <!--
 	Language is Italian ("it") by default. Enclosure is
-	square by default.
+	square by default. Left justification is assumed if
+	not specified.
 -->
 <!ELEMENT rehearsal (#PCDATA)>
 <!ATTLIST rehearsal
-    %print-style;
-    %text-decoration;
-    xml:lang NMTOKEN #IMPLIED
-    %text-direction;
-    %text-rotation;
-    enclosure (square | circle | none) #IMPLIED
+    %text-formatting;
 >
 
 <!--
@@ -91,13 +99,24 @@
 	closed at the left side, and diminuendo for the start
 	of a wedge that is closed on the right side. Spread 
 	values at the start of a crescendo wedge or end of a
-	diminuendo wedge are ignored.
+	diminuendo wedge are ignored. The niente attribute is yes
+	if a circle appears at the point of the wedge, indicating
+	a crescendo from nothing or diminuendo to nothing. It is 
+	no by default, and used only when the type is crescendo,
+	or the type is stop for a wedge that began with a diminuendo
+	type. The line-type is solid by default. The continue type 
+	is used for formatting wedges over a system break, or for
+	other situations where a single wedge is divided into
+	multiple segments.
 -->
 <!ELEMENT wedge EMPTY>
 <!ATTLIST wedge
-    type (crescendo | diminuendo | stop) #REQUIRED
+    type (crescendo | diminuendo | stop | continue) #REQUIRED
     number %number-level; #IMPLIED
-    spread CDATA #IMPLIED
+    spread %tenths; #IMPLIED
+    niente %yes-no; #IMPLIED
+    %line-type;
+    %dashed-formatting;
     %position;
     %color;
 >
@@ -107,8 +126,9 @@
 -->
 <!ELEMENT dashes EMPTY>
 <!ATTLIST dashes
-    type %start-stop; #REQUIRED
+    type %start-stop-continue; #REQUIRED
     number %number-level; #IMPLIED
+    %dashed-formatting;
     %position;
     %color;
 >
@@ -124,25 +144,35 @@
 -->
 <!ELEMENT bracket EMPTY>
 <!ATTLIST bracket
-    type %start-stop; #REQUIRED
+    type %start-stop-continue; #REQUIRED
     number %number-level; #IMPLIED
     line-end (up | down | both | arrow | none) #REQUIRED
     end-length %tenths; #IMPLIED
     %line-type;
+    %dashed-formatting;
     %position;
     %color;
 >
 
 <!-- 
 	Piano pedal marks. The line attribute is yes if pedal
-	lines are used, no if Ped and * signs are used. The
-	change type is used with line set to yes.
+	lines are used. The sign attribute is yes if Ped and *
+	signs are used. For MusicXML 2.0 compatibility, the sign
+	attribute is yes by default if the line attribute is no,
+	and is no by default if the line attribute is yes. The
+	change and continue types are used when the line attribute
+	is yes. The change type indicates a pedal lift and retake
+	indicated with an inverted V marking. The continue type
+	allows more precise formatting across system breaks and for
+	more complex pedaling lines. The alignment attributes are
+	ignored if the line attribute is yes.
 -->
 <!ELEMENT pedal EMPTY>
 <!ATTLIST pedal
-    type (start | stop | change) #REQUIRED
-    line %yes-no;	#IMPLIED
-    %print-style; 
+    type (start | stop | continue | change) #REQUIRED
+    line %yes-no; #IMPLIED
+    sign %yes-no; #IMPLIED
+    %print-style-align; 
 >
 
 <!--
@@ -182,7 +212,8 @@
 	 (per-minute | (beat-unit, beat-unit-dot*))) |
 	(metronome-note+, (metronome-relation, metronome-note+)?))>
 <!ATTLIST metronome
-    %print-style;
+    %print-style-align;
+    %justify;
     parentheses %yes-no; #IMPLIED
 >
 <!ELEMENT beat-unit (#PCDATA)>
@@ -221,9 +252,10 @@
 -->
 <!ELEMENT octave-shift EMPTY>
 <!ATTLIST octave-shift
-    type (up | down | stop) #REQUIRED
+    type (up | down | stop | continue) #REQUIRED
     number %number-level; #IMPLIED
     size CDATA "8"
+    %dashed-formatting;
     %print-style; 
 >
 
@@ -237,7 +269,7 @@
 -->
 <!ELEMENT harp-pedals (pedal-tuning)+>
 <!ATTLIST harp-pedals
-    %print-style; 
+    %print-style-align; 
 >
 <!ELEMENT pedal-tuning (pedal-step, pedal-alter)>
 <!ELEMENT pedal-step (#PCDATA)>
@@ -246,17 +278,24 @@
 <!-- Harp damping marks -->
 <!ELEMENT damp EMPTY>
 <!ATTLIST damp
-    %print-style; 
+    %print-style-align; 
 >
 <!ELEMENT damp-all EMPTY>
 <!ATTLIST damp-all
-    %print-style; 
+    %print-style-align; 
 >
 
 <!-- Eyeglasses, common in commercial music. -->
 <!ELEMENT eyeglasses EMPTY>
 <!ATTLIST eyeglasses
-    %print-style; 
+    %print-style-align; 
+>
+
+<!-- String mute on and mute off symbols -->
+<!ELEMENT string-mute EMPTY>
+<!ATTLIST string-mute
+    type (on | off) #REQUIRED
+    %print-style-align; 
 >
 
 <!-- 
@@ -290,6 +329,25 @@
     %valign-image; 
 >
 
+<!-- 
+	The principal-voice element represents principal and
+	secondary voices in a score, either for analysis or
+	for square bracket symbols that appear in a score.
+	The symbol attribute indicates the type of symbol used at
+	the start of the principal-voice. Valid values are 
+	Hauptstimme, Nebenstimme, plain (for a plain square
+	bracket), and none. The content of the principal-voice
+	element is used for analysis and may be any text value.
+	When used for analysis separate from any printed score
+	markings, the symbol attribute should be set to "none".
+-->
+<!ELEMENT principal-voice (#PCDATA)>
+<!ATTLIST principal-voice
+    type %start-stop; #REQUIRED
+    symbol (Hauptstimme | Nebenstimme | plain | none) #REQUIRED
+    %print-style-align;
+>
+
 <!--
 	The accordion-registration element is use for accordion
 	registration symbols. These are circular symbols divided
@@ -305,11 +363,148 @@
 <!ELEMENT accordion-registration
 	(accordion-high?, accordion-middle?, accordion-low?)>
 <!ATTLIST accordion-registration
-    %print-style; 
+    %print-style-align; 
 >
 <!ELEMENT accordion-high EMPTY>
 <!ELEMENT accordion-middle (#PCDATA)>
 <!ELEMENT accordion-low EMPTY>
+
+<!--
+	The percussion element is used to define percussion
+	pictogram symbols. Definitions for these symbols can be
+	found in Kurt Stone's "Music Notation in the Twentieth
+	Century" on pages 206-212 and 223. Some values are
+	added to these based on how usage has evolved in
+	the 30 years since Stone's book was published.
+-->
+<!ELEMENT percussion
+	(glass | metal | wood | pitched | membrane | effect |
+	 timpani | beater | stick | stick-location | 
+	 other-percussion)>
+<!ATTLIST percussion
+    %print-style-align;
+    %enclosure; 
+>
+
+<!--
+	The glass element represents pictograms for glass
+	percussion instruments. The one valid value is
+	wind chimes.
+-->
+<!ELEMENT glass (#PCDATA)>
+
+<!--
+	The metal element represents pictograms for metal
+	percussion instruments. Valid values are almglocken, bell,
+	bell plate, brake drum, Chinese cymbal, cowbell,
+	crash cymbals, crotale, cymbal tongs, domed gong,
+	finger cymbals, flexatone, gong, hi-hat, high-hat cymbals,
+	handbell, sistrum, sizzle cymbal, sleigh bells,
+	suspended cymbal, tam tam, triangle, and Vietnamese hat.
+	The hi-hat value refers to a pictogram like Stone's
+	high-hat cymbals, but without the long vertical line
+	at the bottom.
+-->
+<!ELEMENT metal (#PCDATA)>
+
+<!--
+	The wood element represents pictograms for wood
+	percussion instruments. Valid values are board clapper,
+	cabasa, castanets, claves, guiro, log drum, maraca,
+	maracas, ratchet, sandpaper blocks, slit drum,
+	temple block, vibraslap, and wood block. The maraca
+	and maracas values distinguish the one- and two-maraca
+	versions of the pictogram. The castanets and vibraslap
+	values are in addition to Stone's list.
+-->
+<!ELEMENT wood (#PCDATA)>
+
+<!--
+	The pitched element represents pictograms for pitched
+	percussion instruments. Valid values are chimes,
+	glockenspiel, mallet, marimba, tubular chimes, vibraphone,
+	and xylophone. The chimes and tubular chimes values
+	distinguish the single-line and double-line versions of the
+	pictogram. The mallet value is in addition to Stone's list.
+-->
+<!ELEMENT pitched (#PCDATA)>
+
+<!--
+	The membrane element represents pictograms for membrane
+	percussion instruments. Valid values are bass drum,
+	bass drum on side, bongos, conga drum, goblet drum,
+	military drum, snare drum, snare drum snares off,
+	tambourine, tenor drum, timbales, and tomtom. The
+	goblet drum value is in addition to Stone's list.
+-->
+<!ELEMENT membrane (#PCDATA)>
+
+<!--
+	The effect element represents pictograms for sound effect
+	percussion instruments. Valid values are anvil, auto horn,
+	bird whistle, cannon, duck call, gun shot, klaxon horn,
+	lions roar, police whistle, siren, slide whistle,
+	thunder sheet, wind machine, and wind whistle. The cannon
+	value is in addition to Stone's list.
+-->
+<!ELEMENT effect (#PCDATA)>
+
+<!--
+	The timpani element represents the timpani pictogram.
+-->
+<!ELEMENT timpani EMPTY>
+
+<!--
+	The beater element represents pictograms for beaters,
+	mallets, and sticks that do not have different materials
+	represented in the pictogram. Valid values are bow,
+	chime hammer, coin, finger, fingernail, fist,
+	guiro scraper, hammer, hand, jazz stick, knitting needle,
+	metal hammer, snare stick, spoon mallet, triangle beater,
+	triangle beater plain, and wire brush. The jazz stick value
+	refers to Stone's plastic tip snare stick. The triangle
+	beater plain value refers to the plain line version of the
+	pictogram. The finger and hammer values are in addition
+	to Stone's list. The tip attribute represents the direction
+	in which the tip of a beater points.
+-->
+
+<!ELEMENT beater (#PCDATA)>
+<!ATTLIST beater
+	tip %tip-direction; #IMPLIED 
+>
+
+<!--
+	The stick element represents pictograms where the material
+	in the stick, mallet, or beater is included. Valid values
+	for stick-type are bass drum, double bass drum, timpani,
+	xylophone, and yarn. Valid values for stick-material are
+	soft, medium, hard, shaded, and x. The shaded and x values
+	reflect different uses for brass, wood, and steel core
+	beaters of different types. The tip attribute represents
+	the direction in which the tip of a stick points.
+-->
+
+<!ELEMENT stick (stick-type, stick-material)>
+<!ATTLIST stick
+	tip %tip-direction; #IMPLIED
+>
+<!ELEMENT stick-type (#PCDATA)>
+<!ELEMENT stick-material (#PCDATA)>
+
+<!--
+	The stick-location element represents pictograms for the
+	location of sticks, beaters, or mallets on cymbals, gongs,
+	drums, and other instruments. Valid values are center,
+	rim, cymbal bell, and cymbal edge.
+-->
+<!ELEMENT stick-location (#PCDATA)>
+
+<!--
+	The other-percussion element represents percussion
+	pictograms not defined elsewhere.
+-->
+<!ELEMENT other-percussion (#PCDATA)>
 
 <!--
 	The other-direction element is used to define any direction
@@ -320,7 +515,7 @@
 <!ELEMENT other-direction (#PCDATA)>
 <!ATTLIST other-direction
 	%print-object;
-    %print-style; 
+    %print-style-align; 
 >
 
 <!--
@@ -395,7 +590,7 @@
 	similar to the step and alter elements in a pitch, but
 	renamed to distinguish the different musical meanings.
 	The root-step text element indicates how the root should
-	appear on the page if not using the element contents.
+	appear in a score if not using the element contents.
 	In some chord styles, this will include the root-alter
 	information as well. In that case, the print-object
 	attribute of the root-alter element can be set to no.
@@ -490,14 +685,19 @@
 	    diminished: °, like Unicode 00B0
 	    half-diminished: ø, like Unicode 00F8
 
-	The text attribute describes how the kind should be 
-	spelled if not using symbols; it is ignored if use-symbols
-	is yes. The stack-degrees attribute is yes if the degree 
-	elements should be stacked above each other. The 
-	parentheses-degrees attribute is yes if all the degrees 
-	should be in parentheses. The bracket-degrees attribute
-	is yes if all the degrees should be in a bracket. If not 
-	specified, these values are implementation-specific.
+	For the major-minor kind, only the minor symbol is used when
+	use-symbols is yes. The major symbol is set using the symbol
+	attribute in the degree-value element. The corresponding
+	degree-alter value will usually be 0 in this case.
+
+	The text attribute describes how the kind should be spelled
+	in a score. If use-symbols is yes, the value of the text
+	attribute follows the symbol. The stack-degrees attribute
+	is yes if the degree elements should be stacked above each
+	other. The parentheses-degrees attribute is yes if all the
+	degrees should be in parentheses. The bracket-degrees 
+	attribute is yes if all the degrees should be in a bracket.
+	If not specified, these values are implementation-specific.
 	The alignment attributes are for the entire harmony-chord
 	entity of which this kind element is a part.
 -->
@@ -529,7 +729,7 @@
 	in pop chord symbols. As with root, it is divided into
 	step and alter elements, similar to pitches. The attributes
 	for bass-step and bass-alter work the same way as
-	the corresponding root-step and root-alter attributes.
+	the corresponding attributes for root-step and root-alter.
 -->
 <!ELEMENT bass (bass-step, bass-alter?)>
 <!ELEMENT bass-step (#PCDATA)>
@@ -562,9 +762,14 @@
 	the kind element. The plus-minus attribute is used to
 	indicate if plus and minus symbols should be used
 	instead of sharp and flat symbols to display the degree
-	alteration; it is no by default. The degree-value and
-	degree-type text attributes specify how the value and
-	type of the degree should be displayed.
+	alteration; it is no by default. 
+
+	The degree-value and degree-type text attributes specify
+	how the value and type of the degree should be displayed
+	in a score. The degree-value symbol attribute indicates
+	that a symbol should be used in specifying the degree.
+	If the symbol attribute is present, the value of the text
+	attribute follows the symbol. 
 	
 	A harmony of kind "other" can be spelled explicitly by
 	using a series of degree elements together with a root.
@@ -575,6 +780,8 @@
 >
 <!ELEMENT degree-value (#PCDATA)>
 <!ATTLIST degree-value
+    symbol (major | minor | augmented | 
+		diminished | half-diminished) #IMPLIED
     text CDATA #IMPLIED
     %print-style;
 >
@@ -593,18 +800,15 @@
 	The frame element represents a frame or fretboard diagram
 	used together with a chord symbol. The representation is
 	based on the NIFF guitar grid with additional information.
-	The frame-strings and frame-frets elements give the overall
-	size of the frame in vertical lines (strings) and horizontal
-	spaces (frets). The first-fret indicates which fret is shown
-	in the top space of the frame; it is fret 1 if the element
-	is not present. The optional text attribute indicates how
-	this is represented in the fret diagram, while the location
-	attribute indicates whether the text appears to the left or
-	right of the frame. The frame-note element represents each
-	note included in the frame. The definitions for string,
-	fret, and fingering are found in the common.mod file. An
-	open string will have a fret value of 0, while a muted
-	string will not be associated with a frame-note element.
+	The frame-strings and frame-frets elements give the 
+	overall size of the frame in vertical lines (strings) and 
+	horizontal spaces (frets).
+
+	The frame element's unplayed attribute indicates what to
+	display above a string that has no associated frame-note
+	element. Typical values are x and the empty string. If the
+	attribute is not present, the display of the unplayed
+	string is application-defined. 
 -->
 <!ELEMENT frame 
 	(frame-strings, frame-frets, first-fret?, frame-note+)>
@@ -612,17 +816,35 @@
     %position;
     %color;
     %halign;
-    %valign;
+    %valign-image;
     height  %tenths;  #IMPLIED
     width   %tenths;  #IMPLIED
+    unplayed NMTOKEN #IMPLIED
 >
 <!ELEMENT frame-strings (#PCDATA)>
 <!ELEMENT frame-frets (#PCDATA)>
+
+<!--
+	The first-fret indicates which fret is shown in the top
+	space of the frame; it is fret 1 if the element is not
+	present. The optional text attribute indicates how this
+	is represented in the fret diagram, while the location
+	attribute indicates whether the text appears to the left
+	or right of the frame.
+-->
 <!ELEMENT first-fret (#PCDATA)>
 <!ATTLIST first-fret
     text CDATA #IMPLIED
     location %left-right; #IMPLIED
 >
+
+<!--
+	The frame-note element represents each note included in
+	the frame. The definitions for string, fret, and fingering
+	are found in the common.mod file. An open string will
+	have a fret value of 0, while a muted string will not be
+	associated with a frame-note element.
+-->
 <!ELEMENT frame-note (string, fret, fingering?, barre?)>
 
 <!-- 
@@ -721,7 +943,7 @@
 -->
 <!ELEMENT measure-numbering (#PCDATA)>
 <!ATTLIST measure-numbering
-    %print-style;
+    %print-style-align;
 >
 
 <!-- 
@@ -765,9 +987,12 @@
 	different among parts and voices. The value may also be 
 	"yes" to indicate no change to the final duration.
 	
-	If the sound element applies only one time through a
-	repeat, the time-only attribute indicates which time
-	to apply the sound element.
+	If the sound element applies only particular times through a
+	repeat, the time-only attribute indicates which times to apply
+	the sound element. The value is a comma-separated list of
+	positive integers arranged in ascending order, indicating
+	which times through the repeated section that the element
+	applies.
 	
 	Pizzicato in a sound element effects all following notes.
 	Yes indicates pizzicato, no indicates arco.
@@ -789,8 +1014,11 @@
 	percentage that the pedal is depressed. A value of 0 is
 	equivalent to no, and a value of 100 is equivalent to yes.
 	
-	MIDI instruments are changed using the midi-instrument
-	element defined in the common.mod file.
+	MIDI devices, MIDI instruments, and playback techniques are
+	changed using the midi-device, midi-instrument, and play 
+	elements defined in the common.mod file. When there are
+	multiple instances of these elements, they should be grouped
+	together by instrument using the id attribute values.
 
 	The offset element is used to indicate that the sound takes
 	place offset from the current score position. If the sound
@@ -801,7 +1029,8 @@
 	should not be used to compensate for latency issues in 
 	particular hardware configurations.
 -->
-<!ELEMENT sound ((midi-instrument*), offset?)>
+<!ELEMENT sound ((midi-device?, midi-instrument?, play?)*,
+	offset?)>
 <!ATTLIST sound
     tempo CDATA #IMPLIED
     dynamics CDATA #IMPLIED
@@ -813,7 +1042,7 @@
     divisions CDATA #IMPLIED
     forward-repeat %yes-no; #IMPLIED
     fine CDATA #IMPLIED
-    time-only CDATA #IMPLIED
+    %time-only;
     pizzicato %yes-no; #IMPLIED
     pan CDATA #IMPLIED
     elevation CDATA #IMPLIED

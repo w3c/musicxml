@@ -1,14 +1,14 @@
 <!--
 	MusicXML™ link.mod module
 
-	Version 2.0 - 18 June 2007
+	Version 3.0
 	
-	Copyright © 2004-2007 Recordare LLC.
+	Copyright © 2004-2011 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Document Type Definition 
-	Public License Version 2.0, available from:
+	holder under the MusicXML Public License Version 3.0,
+	available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -19,6 +19,9 @@
 	XLink. The bookmark element serves as a well-defined target
 	for an incoming XLink. The entity for link-attributes is
 	also used to connect a MusicXML score with a MusicXML opus.
+	If a relative link is used within a document that is part of
+	a compressed MusicXML file, the link is relative to the 
+	root folder of the zip file.
 -->
 
 <!-- Entities -->

@@ -1,14 +1,14 @@
 <!--
 	MusicXML™ score.mod module
 
-	Version 2.0 - 10 July 2007
+	Version 3.0
 	
-	Copyright © 2004-2007 Recordare LLC.
+	Copyright © 2004-2011 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Document Type Definition 
-	Public License Version 2.0, available from:
+	holder under the MusicXML Public License Version 3.0,
+	available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -91,18 +91,20 @@
 	page numbering specified by the print element's page-number
 	attribute.
 
-	In the initial release of Version 2.0, the credit element
-	had a non-deterministic definition. The current credit
-	element definition has the same meaning, but avoids the
-	validity errors arising from a non-deterministic definition.
+	The credit-type element, new in Version 3.0, indicates the
+	purpose behind a credit. Multiple types of data may be
+	combined in a single credit, so multiple elements may be
+	used. Standard values include page number, title, subtitle,
+	composer, arranger, lyricist, and rights.
 -->
 <!ELEMENT credit
-	(link*, bookmark*, 
+	(credit-type*, link*, bookmark*, 
 	(credit-image | 
 	 (credit-words, (link*, bookmark*, credit-words)*)))>
 <!ATTLIST credit
     page NMTOKEN #IMPLIED
 >
+<!ELEMENT credit-type (#PCDATA)>
 <!ELEMENT credit-words (#PCDATA)>
 <!ATTLIST credit-words
     %text-formatting;
@@ -132,19 +134,21 @@
 	MIDI Format 1 file. The score-instrument elements are
 	used when there are multiple instruments per track.
 	The midi-device element is used to make a MIDI device
-	or port assignment for the given track. Initial
-	midi-instrument assignments may be made here as well.
+	or port assignment for the given track or specific MIDI
+	instruments. Initial midi-instrument assignments may be
+	made here as well.
 
-	The part-name and part-abbreviation elements are defined
-	in the common.mod file, as they can be used within both the
-	part-list and print elements.
+	The part-name-display and part-abbreviation-display
+	elements are defined in the common.mod file, as they can
+	be used within both the score-part and print elements.
 -->
 <!ELEMENT part-list (part-group*, score-part,
 	(part-group | score-part)*)>
 <!ELEMENT score-part (identification?,
 	part-name, part-name-display?,
 	part-abbreviation?, part-abbreviation-display?, 
-	group*, score-instrument*, midi-device?, midi-instrument*)>
+	group*, score-instrument*, 
+	(midi-device?, midi-instrument?)*)>
 <!ATTLIST score-part
     id ID #REQUIRED
 >
@@ -196,13 +200,13 @@
 
 	The group-symbol element indicates how the symbol for
 	a group is indicated in the score. Values include none,
-	brace, line, and bracket; the default is none. The 
-	group-barline element indicates if the group should have
-	common barlines. Values can be yes, no, or Mensurstrich.
-	The group-time element indicates that the displayed time
-	signatures should stretch across all parts and staves in
-	the group. Values for the child elements are ignored at
-	the stop of a group. 
+	brace, line, bracket, and square; the default is none.
+	The group-barline element indicates if the group should
+	have common barlines. Values can be yes, no, or
+	Mensurstrich. The group-time element indicates that the
+	displayed time signatures should stretch across all parts
+	and staves in the group. Values for the child elements
+	are ignored at the stop of a group. 
 
 	A part-group element is not needed for a single multi-staff
 	part. By default, multi-staff parts include a brace symbol
@@ -264,11 +268,19 @@
 	A score-instrument element is also required if the
 	score specifies MIDI 1.0 channels, banks, or programs.
 	An initial midi-instrument assignment can also
-	be made here. MusicXML software should be able to
-	automatically assign reasonable channels and 
-	instruments without these elements in simple cases,
-	such as where part names match General MIDI
-	instrument names.
+	be made here.
+
+	The instrument-sound and virtual-instrument elements
+	are new as of Version 3.0. The instrument-sound element
+	describes the default timbre of the score-instrument. This
+	description is independent of a particular virtual or
+	MIDI instrument specification and allows playback to be
+	shared more easily between applications and libraries.
+	The virtual-instrument element defines a specific virtual
+	instrument used for an instrument sound. The
+	virtual-library element indicates the virtual instrument
+	library name, and the virtual-name element indicates the
+	library-specific name for the virtual instrument.
 
 	The solo and ensemble elements are new as of Version
 	2.0. The solo element is present if performance is
@@ -284,25 +296,20 @@
 -->
 <!ELEMENT score-instrument
 	(instrument-name, instrument-abbreviation?,
-	 (solo | ensemble)?)>
+	 instrument-sound?, (solo | ensemble)?,
+	 virtual-instrument?)>
 <!ATTLIST score-instrument
     id ID #REQUIRED
 >
 <!ELEMENT instrument-name (#PCDATA)>
 <!ELEMENT instrument-abbreviation (#PCDATA)>
+<!ELEMENT instrument-sound (#PCDATA)>
 <!ELEMENT solo EMPTY>
 <!ELEMENT ensemble (#PCDATA)>
-
-<!--
-	The midi-device content corresponds to the DeviceName
-	meta event in Standard MIDI Files. The optional port
-	attribute is a number from 1 to 16 that can be used
-	with the unofficial MIDI port (or cable) meta event.
--->
-<!ELEMENT midi-device (#PCDATA)>
-<!ATTLIST midi-device
-    port CDATA #IMPLIED
->
+<!ELEMENT virtual-instrument
+	(virtual-library?, virtual-name?)>
+<!ELEMENT virtual-library (#PCDATA)>
+<!ELEMENT virtual-name (#PCDATA)>
 
 <!--
 	The group element allows the use of different versions of
@@ -395,6 +402,8 @@
 	Measure width is specified in tenths. These are the
 	global tenths specified in the scaling element, not
 	local tenths as modified by the staff-size element.
+	The width covers the entire measure from barline 
+	or system start to barline or system end.
 -->
 <!ATTLIST measure
     number CDATA #REQUIRED

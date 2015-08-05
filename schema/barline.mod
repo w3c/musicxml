@@ -1,14 +1,14 @@
 <!--
 	MusicXML™ barline.mod module
 
-	Version 2.0 - 18 June 2007
+	Version 3.0
 	
-	Copyright © 2004-2007 Recordare LLC.
+	Copyright © 2004-2011 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Document Type Definition 
-	Public License Version 2.0, available from:
+	holder under the MusicXML Public License Version 3.0,
+	available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -66,7 +66,7 @@
 >
 
 <!--
-	The voice entity and the wavy-line, segno, and fermata
+	The editorial entity and the wavy-line, segno, and fermata
 	elements are defined in the common.mod file. They can
 	apply to both notes and barlines.
 -->
@@ -107,14 +107,20 @@
 >
 
 <!--
-	Repeat marks. The start of the repeat has a forward
-	direction while the end of the repeat has a backward
-	direction. Backward repeats that are not part of an
-	ending can use the times attribute to indicate the
-	number of times the repeated section is played.
+	Repeat marks. The start of the repeat has a forward direction
+	while the end of the repeat has a backward direction. Backward
+	repeats that are not part of an ending can use the times
+	attribute to indicate the number of times the repeated section
+	is played. The winged attribute indicates whether the repeat
+	has winged extensions that appear above and below the barline.
+	The straight and curved values represent single wings, while
+	the double-straight and double-curved values represent double
+	wings. The none value indicates no wings and is the default.
 -->
 <!ELEMENT repeat EMPTY>
 <!ATTLIST repeat
     direction (backward | forward) #REQUIRED
     times CDATA #IMPLIED
+    winged (none | straight | curved | 
+		double-straight | double-curved) #IMPLIED
 >

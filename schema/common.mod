@@ -1,14 +1,14 @@
 <!--
 	MusicXML™ common.mod module
 
-	Version 2.0 - 18 June 2007
+	Version 3.0
 	
-	Copyright © 2004-2007 Recordare LLC.
+	Copyright © 2004-2011 Recordare LLC.
 	http://www.recordare.com/
 	
 	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Document Type Definition 
-	Public License Version 2.0, available from:
+	holder under the MusicXML Public License Version 3.0,
+	available from:
 	
 		http://www.recordare.com/dtds/license.html
 -->
@@ -67,10 +67,20 @@
 	for musical elements that can either start or stop, such 
 	as slurs, tuplets, and wedges. The start-stop-continue
 	entity is used when there is a need to refer to an
-	intermediate point in the symbol, as for complex slurs.
-	The start-stop-single entity is used when the same
+	intermediate point in the symbol, as for complex slurs
+	or for specifying formatting of symbols across system
+	breaks. The start-stop-single entity is used when the same
 	element is used for multi-note and single-note notations,
 	as for tremolos.
+
+	The values of start, stop, and continue refer to how an
+	element appears in musical score order, not in MusicXML
+	document order. An element with a stop attribute may
+	precede the corresponding element with a start attribute
+	within a MusicXML document. This is particularly common
+	in multi-staff music. For example, the stopping point for
+	a slur may appear in staff 1 before the starting point for
+	the slur appears in staff 2 later in the document.
 -->
 <!ENTITY % start-stop "(start | stop)">
 <!ENTITY % start-stop-continue "(start | stop | continue)">
@@ -94,6 +104,12 @@
 	for oversized symbols was added in version 1.1.
 -->
 <!ENTITY % symbol-size "(full | cue | large)">
+
+<!--
+	The above-below type is used to indicate whether one
+	element appears above or below another element.
+-->
+<!ENTITY % above-below "(above | below)">
 
 <!--
 	The up-down entity is used for arrow direction,
@@ -121,6 +137,16 @@
 <!ENTITY % number-of-lines "(0 | 1 | 2 | 3)">
 
 <!--
+	The enclosure-shape entity describes the shape and 
+	presence / absence of an enclosure around text. A bracket
+	enclosure is similar to a rectangle with the bottom line
+	missing, as is common in jazz notation.
+-->
+<!ENTITY % enclosure-shape 
+	"(rectangle | square | oval | circle | 
+	  bracket | triangle | diamond | none)">
+
+<!--
 	Slurs, tuplets, and many other features can be
 	concurrent and overlapping within a single musical
 	part. The number-level attribute distinguishes up to
@@ -128,20 +154,20 @@
 	program should be prepared to handle cases where
 	the number-levels stop in an arbitrary order.
 	Different numbers are needed when the features
-	overlap in MusicXML file order. When a number-level
+	overlap in MusicXML document order. When a number-level
 	value is implied, the value is 1 by default.
 -->
 <!ENTITY % number-level "(1 | 2 | 3 | 4 | 5 | 6)">
 
 <!--
-	The MusicXML format supports six levels of beaming, up
-	to 256th notes. Unlike the number-level attribute, the
+	The MusicXML format supports eight levels of beaming, up
+	to 1024th notes. Unlike the number-level attribute, the
 	beam-level attribute identifies concurrent beams in a beam
 	group. It does not distinguish overlapping beams such as
 	grace notes within regular notes, or beams used in different
 	voices.
 -->
-<!ENTITY % beam-level "(1 | 2 | 3 | 4 | 5 | 6)">
+<!ENTITY % beam-level "(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)">
 
 <!--
 	Common structures for formatting attribute definitions. 
@@ -171,11 +197,16 @@
 		- all descendants of the part-list element
 		- all children of the direction-type element
 
-	When the part-name and part-abbreviation elements are
-	used in the print element, the default-x value changes the
-	origin relative to the start of the first measure on the
-	system. These values are used when the current measure or
-	a succeeding measure starts a new system.
+	This origin is from the start of the entire measure,
+	at either the left barline or the start of the system.
+
+	When the default-x attribute is used within a child element
+	of the part-name-display, part-abbreviation-display, 
+	group-name-display, or group-abbreviation-display elements,
+	it changes the origin relative to the start of the first 
+	measure on the system. These values are used when the current
+	measure or a succeeding measure starts a new system. The same 
+	change of origin is used for the group-symbol element.
 
 	For the note, figured-bass, and harmony elements, the
 	default-x value is considered to have adjusted the musical
@@ -223,7 +254,7 @@
 	notation. 
 -->
 <!ENTITY % placement
-	"placement (above | below) #IMPLIED">
+	"placement %above-below; #IMPLIED">
 
 <!--
 	The orientation attribute indicates whether slurs and
@@ -288,16 +319,17 @@
 	Style Sheets. The font-family is a comma-separated list
 	of font names. These can be specific font styles such
 	as Maestro or Opus, or one of several generic font styles:
-	music, serif, sans-serif, handwritten, cursive, fantasy,
-	and monospace. The music and handwritten values refer
-	to music fonts; the rest refer to text fonts. The fantasy
-	style refers to decorative text such as found in older
-	German-style printing. The font-style can be normal or 
-	italic. The font-size can be one of the CSS sizes 
-	(xx-small, x-small, small, medium, large, x-large,
-	xx-large) or a numeric point size. The font-weight can 
-	be normal or bold. The default is application-dependent,
-	but is a text font vs. a music font.
+	music, engraved, handwritten, text, serif, sans-serif,
+	handwritten, cursive, fantasy, and monospace. The music,
+	engraved, and handwritten values refer to music fonts;
+	the rest refer to text fonts. The fantasy style refers to
+	decorative text such as found in older German-style
+	printing. The font-style can be normal or italic. The
+	font-size can be one of the CSS sizes (xx-small, x-small,
+	small, medium, large, x-large, xx-large) or a numeric
+	point size. The font-weight can be normal or bold. The
+	default is application-dependent, but is a text font vs.
+	a music font.
 -->
 <!ENTITY % font
 	"font-family  CDATA  #IMPLIED
@@ -336,9 +368,11 @@
 	 line-through  %number-of-lines;   #IMPLIED">
 	
 <!--
-	The justify entity is used to indicate left, center,
-	or right justification. The default value varies for
-	different elements.
+	The justify entity is used to indicate left, center, or
+	right justification. The default value varies for different
+	elements. For elements where the justify attribute is present
+	but the halign attribute is not, the justify attribute
+	indicates horizontal alignment as well as justification.
 -->
 <!ENTITY % justify
 	"justify (left | center | right) #IMPLIED">
@@ -429,6 +463,13 @@
 	"rotation CDATA #IMPLIED">
 
 <!--
+	The enclosure entity is used to specify the
+	formatting of an enclosure around text or symbols.
+-->
+<!ENTITY % enclosure
+	"enclosure %enclosure-shape; #IMPLIED">
+
+<!--
 	The print-style entity groups together the most popular
 	combination of printing attributes: position, font, and
 	color.
@@ -437,6 +478,15 @@
 	"%position;
 	 %font;
 	 %color;">
+
+<!--
+	The print-style-align entity adds the halign and valign
+	attributes to the position, font, and color attributes.
+-->
+<!ENTITY % print-style-align
+	"%print-style;
+	 %halign;
+	 %valign;">
 
 <!--
 	The line-shape entity is used to distinguish between
@@ -449,6 +499,17 @@
 
 <!ENTITY % line-type
 	"line-type (solid | dashed | dotted | wavy) #IMPLIED">
+
+<!--
+	The dashed-formatting entity represents the length of
+	dashes and spaces in a dashed line. Both the dash-length
+	and space-length attributes are represented in tenths.
+	These attributes are ignored if the corresponding 
+	line-type attribute is not dashed.
+-->
+<!ENTITY % dashed-formatting
+	"dash-length   %tenths;  #IMPLIED
+	 space-length  %tenths;  #IMPLIED">
 
 <!--
 	The printout entity is based on MuseData print
@@ -485,16 +546,15 @@
 -->
 <!ENTITY % text-formatting
 	"%justify;
-	 %halign;
-	 %valign;
-	 %print-style;
+	 %print-style-align;
 	 %text-decoration;
 	 %text-rotation;
 	 %letter-spacing;
 	 %line-height;
 	 xml:lang NMTOKEN #IMPLIED
+	 xml:space (default | preserve) #IMPLIED
 	 %text-direction;
-	 enclosure (rectangle | oval | none) #IMPLIED">
+	 %enclosure;">
 
 <!--
 	The level-display entity allows specification of three 
@@ -566,6 +626,16 @@
 	 last-beat     CDATA    #IMPLIED">
 
 <!--
+	The time-only entity is used to indicate that a particular
+	playback-related element only applies particular times through
+	a repeated section. The value is a comma-separated list of
+	positive integers arranged in ascending order, indicating which
+	times through the repeated section that the element applies.
+-->
+<!ENTITY % time-only
+	"time-only CDATA #IMPLIED">
+
+<!--
 	Common structures for other attribute definitions. 
 -->
 
@@ -581,7 +651,7 @@
 	public ID. The default value is 1.0 to make it possible
 	for programs that handle later versions to distinguish
 	earlier version files reliably. Programs that write
-	MusicXML 1.1 or 2.0 files should set this attribute.
+	MusicXML 1.1 or later files should set this attribute.
 -->
 <!ENTITY % document-attributes "version  CDATA  '1.0'">
 
@@ -663,12 +733,12 @@
 -->
 <!ELEMENT segno EMPTY>
 <!ATTLIST segno
-    %print-style; 
+    %print-style-align; 
 >
 
 <!ELEMENT coda EMPTY>
 <!ATTLIST coda
-    %print-style; 
+    %print-style-align; 
 >
 
 <!--
@@ -679,7 +749,9 @@
 	type is different than the current note type (e.g., a 
 	quarter note within an eighth note triplet), then the
 	normal-notes type (e.g. eighth) is specified in the
-	normal-type and normal-dot elements.
+	normal-type and normal-dot elements. The content of the
+	actual-notes and normal-notes elements ia a non-negative
+	integer.
 -->
 <!ELEMENT actual-notes (#PCDATA)>
 <!ELEMENT normal-notes (#PCDATA)>
@@ -713,8 +785,10 @@
 	sfp | sfpp | fp | rf | rfz | sfz | sffz | fz | 
 	other-dynamics)*)>
 <!ATTLIST dynamics
-    %print-style; 
-    %placement; 
+    %print-style-align; 
+    %placement;
+    %text-decoration; 
+    %enclosure;
 >
 <!ELEMENT p EMPTY>
 <!ELEMENT pp EMPTY>
@@ -795,7 +869,7 @@
 <!--
 	The display-text element is used for exact formatting of
 	multi-font text in element in display elements such as
-	part-name-display.  Language is Italian ("it") by default.
+	part-name-display. Language is Italian ("it") by default.
 	Enclosure is none by default.
 -->
 <!ELEMENT display-text (#PCDATA)>
@@ -837,6 +911,24 @@
 >
 
 <!--
+	The midi-device content corresponds to the DeviceName
+	meta event in Standard MIDI Files. The optional port
+	attribute is a number from 1 to 16 that can be used
+	with the unofficial MIDI port (or cable) meta event.
+	Unlike the DeviceName meta event, there can be
+	multiple midi-device elements per MusicXML part
+	starting in MusicXML 3.0. The optional id attribute
+	refers to the score-instrument assigned to this
+	device. If missing, the device assignment affects
+	all score-instrument elements in the score-part.
+-->
+<!ELEMENT midi-device (#PCDATA)>
+<!ATTLIST midi-device
+    port CDATA #IMPLIED
+    id IDREF #IMPLIED
+>
+
+<!--
 	The midi-instrument element can be a part of either
 	the score-instrument element at the start of a part,
 	or the sound element within a part. The id attribute
@@ -868,8 +960,10 @@
 
 <!--
 	For unpitched instruments, specify a MIDI 1.0 note number
-	ranging from 1 to 128. Usually used with MIDI banks for
-	percussion.
+	ranging from 1 to 128. It is usually used with MIDI banks for
+	percussion. Note that MIDI 1.0 note numbers are generally
+	specified from 0 to 127 rather than the 1 to 128 numbering
+	used in this element.
 -->
 <!ELEMENT midi-unpitched (#PCDATA)>
 
@@ -892,3 +986,51 @@
 -->
 <!ELEMENT pan (#PCDATA)>
 <!ELEMENT elevation (#PCDATA)>
+
+<!-- 
+	The play element, new in Version 3.0, specifies playback
+	techniques to be used in conjunction with the instrument-sound
+	element. When used as part of a sound element, it applies to
+	all notes going forward in score order. In multi-instrument
+	parts, the affected instrument should be specified using the
+	id attribute. When used as part of a note element, it applies
+	to the current note only.
+-->
+<!ELEMENT play ((ipa | mute | semi-pitched | other-play)*)>
+<!ATTLIST play
+    id IDREF #IMPLIED
+>
+
+<!-- 
+	The ipa element represents International Phonetic Alphabet
+	(IPA) sounds for vocal music. String content is limited to
+	IPA 2005 symbols represented in Unicode 6.0.
+-->
+<!ELEMENT ipa (#PCDATA)>
+
+<!-- 
+	The mute element represents muting for different instruments,
+	including brass, winds, and strings. The on and off values
+	are used for undifferentiated mutes. The remaining values
+	represent specific mutes: straight, cup, harmon-no-stem, 
+	harmon-stem, bucket, plunger, hat, solotone, practice,
+	stop-mute, stop-hand, echo, and palm.
+-->
+<!ELEMENT mute (#PCDATA)>
+
+<!-- 
+	The semi-pitched element represents categories of indefinite
+	pitch for percussion instruments. Values are high, medium-high,
+	medium, medium-low, low, and very-low.
+-->
+<!ELEMENT semi-pitched (#PCDATA)>
+
+<!-- 
+	The other-play element represents other types of playback. The
+	required type attribute indicates the type of playback to which
+	the element content applies.
+-->
+<!ELEMENT other-play (#PCDATA)>
+<!ATTLIST other-play
+    type CDATA #REQUIRED
+>
