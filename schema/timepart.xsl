@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-	MusicXML™ timepart.xsl stylesheet
+	MusicXML timepart.xsl stylesheet
 
-	Version 3.0
+	Version 3.1 Draft
 	
-	Copyright © 2004-2011 MakeMusic, Inc.
-	http://www.makemusic.com/
+	Copyright © 2004-2016 the Contributors to the MusicXML 
+	Specification, published by the W3C Music Notation Community
+	Group under the W3C Community Contributor License Agreement 
+	(CLA): 
 	
-	This MusicXML™ work is being provided by the copyright
-	holder under the MusicXML Public License Version 3.0,
-	available from:
+	   https://www.w3.org/community/about/agreements/cla/
 	
-		http://www.musicxml.org/dtds/license.html
+	A human-readable summary is available:
+	
+	   https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
 <!-- 
@@ -36,7 +38,7 @@
   <xsl:output method="xml" indent="yes" encoding="UTF-8"
 	omit-xml-declaration="no" standalone="no"
 	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
-	doctype-public="-//Recordare//DTD MusicXML 3.0 Partwise//EN" />
+	doctype-public="-//Recordare//DTD MusicXML 3.1 Partwise//EN" />
 
   <!--
     For the root, only look for score-partwise and
