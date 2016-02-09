@@ -2428,7 +2428,7 @@ Clefs appear at the start of each system unless the print-object attribute has b
 
 	<xs:complexType name="interchangeable">
 		<xs:annotation>
-			<xs:documentation>The interchangeable type is used to represent the second in a pair of interchangeable dual time signatures, such as the 6/8 in 3/4 (6/8). A separate symbol attribute value is available compared to the time element's symbol attribute, which applies to the first of the dual time signatures. The parentheses attribute value is yes by default.</xs:documentation>
+			<xs:documentation>The interchangeable type is used to represent the second in a pair of interchangeable dual time signatures, such as the 6/8 in 3/4 (6/8). A separate symbol attribute value is available compared to the time element's symbol attribute, which applies to the first of the dual time signatures.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="time-relation" type="time-relation" minOccurs="0"/>
