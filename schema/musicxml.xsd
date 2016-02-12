@@ -2503,7 +2503,7 @@ The multiple-rest and measure-repeat symbols indicate the number of measures cov
 
 	<xs:complexType name="multiple-rest">
 		<xs:annotation>
-			<xs:documentation>The text of the multiple-rest type indicates the number of measures in the multiple rest. Multiple rests may use the 1-bar / 2-bar / 4-bar rest symbols, or a single shape. The use-symbols attribute indicates which to use; it is no if not specified. The element text is ignored when the type is stop.</xs:documentation>
+			<xs:documentation>The text of the multiple-rest type indicates the number of measures in the multiple rest. Multiple rests may use the 1-bar / 2-bar / 4-bar rest symbols, or a single shape. The use-symbols attribute indicates which to use; it is no if not specified.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="positive-integer-or-empty">
