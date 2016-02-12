@@ -696,9 +696,9 @@
 
 <!--
 	Fermata and wavy-line elements can be applied both to
-	notes and to measures, so they are defined here. Wavy
+	notes and to barlines, so they are defined here. Wavy
 	lines are one way to indicate trills; when used with a
-	measure element, they should always have type="continue"
+	barline element, they should always have type="continue"
 	set. The fermata text content represents the shape of the
 	fermata sign and may be normal, angled, or square.
 	An empty fermata element represents a normal fermata.
