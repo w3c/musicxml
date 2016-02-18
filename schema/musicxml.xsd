@@ -4253,7 +4253,7 @@ The dynamics and end-dynamics attributes correspond to MIDI 1.0's Note On and No
 
 	<xs:complexType name="note-type">
 		<xs:annotation>
-			<xs:documentation>The note-type type indicates the graphic note type. Values range from 256th to long. The size attribute indicates full, cue, or large size, with full the default for regular notes and cue the default for cue and grace notes.</xs:documentation>
+			<xs:documentation>The note-type type indicates the graphic note type. Values range from 1024th to maxima. The size attribute indicates full, cue, or large size, with full the default for regular notes and cue the default for cue and grace notes.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="note-type-value">
