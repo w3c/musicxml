@@ -3764,7 +3764,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 			</xs:element>
 			<xs:element name="falloff" type="empty-line">
 				<xs:annotation>
-					<xs:documentation>The falloff element is an indeterminate slide attached to a single note. The falloff element appears before the main note and goes below the main pitch.</xs:documentation>
+					<xs:documentation>The falloff element is an indeterminate slide attached to a single note. The falloff element appears after the main note and goes below the main pitch.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="breath-mark" type="breath-mark"/>
