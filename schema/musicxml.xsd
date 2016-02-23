@@ -2382,7 +2382,7 @@ The beat-repeat element specifies a notation style for repetitions. The actual m
 
 	<xs:complexType name="cancel">
 		<xs:annotation>
-			<xs:documentation>A cancel element indicates that the old key signature should be cancelled before the new one appears. This will always happen when changing to C major or A minor and need not be specified then. The cancel value matches the fifths value of the cancelled key signature (e.g., a cancel of -2 will provide an explicit cancellation for changing from B flat major to F major). The optional location attribute indicates whether the cancellation appears relative to the new key signature.</xs:documentation>
+			<xs:documentation>A cancel element indicates that the old key signature should be cancelled before the new one appears. This will always happen when changing to C major or A minor and need not be specified then. The cancel value matches the fifths value of the cancelled key signature (e.g., a cancel of -2 will provide an explicit cancellation for changing from B flat major to F major). The optional location attribute indicates where the cancellation appears relative to the new key signature.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="fifths">
