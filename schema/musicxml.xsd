@@ -252,7 +252,7 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 	
 	<xs:simpleType name="number-level">
 		<xs:annotation>
-			<xs:documentation>Slurs, tuplets, and many other features can be concurrent and overlapping within a single musical part. The number-level type distinguishes up to six concurrent objects of the same type. A reading program should be prepared to handle cases where the number-levels stop in an arbitrary order. Different numbers are needed when the features overlap in MusicXML document order. When a number-level value is implied, the value is 1 by default.</xs:documentation>
+			<xs:documentation>Slurs, tuplets, and many other features can be concurrent and overlapping within a single musical part. The number-level type distinguishes up to six concurrent objects of the same type. A reading program should be prepared to handle cases where the number-levels stop in an arbitrary order. Different numbers are needed when the features overlap in MusicXML document order. When a number-level value is optional, the value is 1 by default.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:positiveInteger">
 			<xs:minInclusive value="1"/>
