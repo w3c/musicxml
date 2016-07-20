@@ -1887,10 +1887,12 @@ For mordent and inverted-mordent elements, the defaults are different:
 	
 	<xs:attributeGroup name="image-attributes">
 		<xs:annotation>
-			<xs:documentation>The image-attributes group is used to include graphical images in a score. The required source attribute is the URL for the image file. The required type attribute is the MIME type for the image file format. Typical choices include application/postscript, image/gif, image/jpeg, image/png, and image/tiff.</xs:documentation>
+			<xs:documentation>The image-attributes group is used to include graphical images in a score. The required source attribute is the URL for the image file. The required type attribute is the MIME type for the image file format. Typical choices include application/postscript, image/gif, image/jpeg, image/png, and image/tiff. The optional height and width attributes are used to size and scale an image. The image should be scaled independently in X and Y if both height and width are specified. If only one attribute is specified, the image should be scaled proportionally to fit in the specified dimension.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="source" type="xs:anyURI" use="required"/>
 		<xs:attribute name="type" type="xs:token" use="required"/>
+		<xs:attribute name="height" type="tenths"/>
+		<xs:attribute name="width" type="tenths"/>
 		<xs:attributeGroup ref="position"/>
 		<xs:attributeGroup ref="halign"/>
 		<xs:attributeGroup ref="valign-image"/>

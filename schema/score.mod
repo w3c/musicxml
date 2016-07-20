@@ -115,6 +115,8 @@
 <!ATTLIST credit-image
     source CDATA #REQUIRED
     type CDATA #REQUIRED
+    height %tenths; #IMPLIED
+    width %tenths; #IMPLIED
     %position; 
     %halign;
     %valign-image;
