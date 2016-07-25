@@ -320,12 +320,19 @@
 	for the image file. The required type attribute is the
 	MIME type for the image file format. Typical choices
 	include application/postscript, image/gif, image/jpeg,
-	image/png, and image/tiff.
+	image/png, and image/tiff. The optional height and width
+	attributes are used to size and scale an image. The image
+	should be scaled independently in X and Y if both height
+	and width are specified. If only one attribute is specified,
+	the image should be scaled proportionally to fit in the
+	specified dimension.
 -->
 <!ELEMENT image EMPTY>
 <!ATTLIST image
     source CDATA #REQUIRED
     type CDATA #REQUIRED
+    height %tenths; #IMPLIED
+    width %tenths; #IMPLIED
     %position;
     %halign;
     %valign-image; 
