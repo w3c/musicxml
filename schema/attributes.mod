@@ -134,6 +134,9 @@
 <!ELEMENT key-step (#PCDATA)>
 <!ELEMENT key-alter (#PCDATA)>
 <!ELEMENT key-accidental (#PCDATA)>
+<!ATTLIST key-accidental
+    %smufl;
+>
 <!ELEMENT key-octave (#PCDATA)>
 <!ATTLIST key-octave
     number NMTOKEN #REQUIRED

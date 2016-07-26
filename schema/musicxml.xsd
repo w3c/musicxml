@@ -358,6 +358,14 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 		</xs:restriction>
 	</xs:simpleType>
 	
+	<xs:simpleType name="smufl-glyph-name">
+		<xs:annotation>
+			<xs:documentation>The smufl-glyph-name type is used for attributes that reference a specific Standard Music Font Layout (SMuFL) character. The value is a SMuFL canonical glyph name, not a code point. For instance, the value for a standard
+	piano pedal mark would be keyboardPedalPed, not U+E650.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+	
 	<xs:simpleType name="start-note">
 		<xs:annotation>
 			<xs:documentation>The start-note type describes the starting note of trills and mordents for playback, relative to the current note.</xs:documentation>
@@ -1219,7 +1227,7 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 	
 	<xs:simpleType name="accidental-value">
 		<xs:annotation>
-			<xs:documentation>The accidental-value type represents notated accidentals supported by MusicXML. In the MusicXML 2.0 DTD this was a string with values that could be included. The XSD strengthens the data typing to an enumerated list. The quarter- and three-quarters- accidentals are Tartini-style quarter-tone accidentals. The -down and -up accidentals are quarter-tone accidentals that include arrows pointing down or up. The slash- accidentals are used in Turkish classical music. The numbered sharp and flat accidentals are superscripted versions of the accidental signs, used in Turkish folk music. The sori and koron accidentals are microtonal sharp and flat accidentals used in Iranian and Persian music.</xs:documentation>
+			<xs:documentation>The accidental-value type represents notated accidentals supported by MusicXML. In the MusicXML 2.0 DTD this was a string with values that could be included. The XSD strengthens the data typing to an enumerated list. The quarter- and three-quarters- accidentals are Tartini-style quarter-tone accidentals. The -down and -up accidentals are quarter-tone accidentals that include arrows pointing down or up. The slash- accidentals are used in Turkish classical music. The numbered sharp and flat accidentals are superscripted versions of the accidental signs, used in Turkish folk music. The sori and koron accidentals are microtonal sharp and flat accidentals used in Iranian and Persian music. The other accidental covers accidentals other than those listed here. It is usually used in combination with the smufl attribute to specify a particular SMuFL accidental. The smufl attribute may be used with any accidental value to help specify the appearance of symbols that share the same MusicXML semantics.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="sharp"/>
@@ -1256,6 +1264,7 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 			<xs:enumeration value="flat-4"/>
 			<xs:enumeration value="sori"/>
 			<xs:enumeration value="koron"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -1782,6 +1791,13 @@ By default, all these attributes are set to yes. If print-object is set to no, t
 		<xs:attribute name="print-lyric" type="yes-no"/>
 	</xs:attributeGroup>
 	
+	<xs:attributeGroup name="smufl">
+		<xs:annotation>
+			<xs:documentation>The smufl attribute group is used to indicate a particular Standard Music Font Layout (SMuFL) character. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="smufl" type="smufl-glyph-name"/>		
+	</xs:attributeGroup>
+	
 	<xs:attributeGroup name="text-decoration">
 		<xs:annotation>
 			<xs:documentation>The text-decoration attribute group is based on the similar feature in XHTML and CSS. It allows for text to be underlined, overlined, or struck-through. It extends the CSS version by allow double or triple lines instead of just being on or off.</xs:documentation>
@@ -1987,6 +2003,7 @@ Measure width is specified in tenths. These are the global tenths specified in t
 		<xs:simpleContent>
 			<xs:extension base="accidental-value">
 				<xs:attributeGroup ref="text-formatting"/>
+				<xs:attributeGroup ref="smufl"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -2458,6 +2475,17 @@ Clefs appear at the start of each system unless the print-object attribute has b
 		<xs:attribute name="number" type="staff-number"/>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="print-object"/>
+	</xs:complexType>
+	
+	<xs:complexType name="key-accidental">
+		<xs:annotation>
+			<xs:documentation>The key-accidental type indicates the accidental to be displayed in a non-traditional key signature, represented in the same manner as the accidental type without the formatting attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="accidental-value">
+				<xs:attributeGroup ref="smufl"/>
+			</xs:extension>
+		</xs:simpleContent>
 	</xs:complexType>
 	
 	<xs:complexType name="key-octave">
@@ -3682,6 +3710,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 				<xs:attribute name="editorial" type="yes-no"/>
 				<xs:attributeGroup ref="level-display"/>
 				<xs:attributeGroup ref="print-style"/>
+				<xs:attributeGroup ref="smufl"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -3694,6 +3723,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 			<xs:extension base="accidental-value">
 				<xs:attributeGroup ref="print-style"/>
 				<xs:attributeGroup ref="placement"/>
+				<xs:attributeGroup ref="smufl"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -5135,7 +5165,7 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 					<xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-alter element represents the alteration for a given pitch step, represented with semitones in the same manner as the alter element.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="key-accidental" type="accidental-value" minOccurs="0">
+			<xs:element name="key-accidental" type="key-accidental" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Non-traditional key signatures can be represented using the Humdrum/Scot concept of a list of altered tones. The key-accidental element indicates the accidental to be displayed in the key signature, represented in the same manner as the accidental element. It is used for disambiguating microtonal accidentals.</xs:documentation>
 				</xs:annotation>
