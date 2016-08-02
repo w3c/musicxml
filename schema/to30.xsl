@@ -51,12 +51,41 @@
   
   <!-- Additions in note.mod -->
 
+  <!-- 
+    Remove accidental and accidental-mark elements with 
+    the new other value.
+  -->
+  <xsl:template 
+    match="accidental[.='other']"/>
+ 
+  <xsl:template 
+    match="accidental-mark[.='other']"/>
+  
+  <xsl:template 
+    match="accidental/@smufl | accidental-mark/@smufl"/>
+  
   <!-- Additions in attributes.mod -->
 
+  <!-- Remove key-accidental elements with new other value -->
+
+  <xsl:template 
+    match="key-accidental[.='other']"/>
+  
+  <xsl:template 
+    match="key-accidental/@smufl"/>
+  
   <!-- Additions in barline.mod -->
 
   <!-- Additions in common.mod -->
 
+  <!-- Remove accidental-text elements with new other value -->
+  
+  <xsl:template 
+    match="accidental-text[.='other']"/>
+  
+  <xsl:template 
+    match="accidental-text/@smufl"/>
+  
   <!-- Additions in direction.mod -->
 
   <xsl:template 

@@ -237,7 +237,7 @@
 	triple-sharp, triple-flat, slash-quarter-sharp,
 	slash-sharp, slash-flat, double-slash-flat, sharp-1,
 	sharp-2, sharp-3, sharp-5, flat-1, flat-2, flat-3,
-	flat-4, sori, and koron.
+	flat-4, sori, koron, and other.
 
 	The quarter- and three-quarters- accidentals are
 	Tartini-style quarter-tone accidentals. The -down and -up
@@ -247,7 +247,13 @@
 	sharp and flat accidentals are superscripted versions
 	of the accidental signs, used in Turkish folk music.
 	The sori and koron accidentals are microtonal sharp and
-	flat accidentals used in Iranian and Persian music.
+	flat accidentals used in Iranian and Persian music. The
+	other accidental covers accidentals other than those listed
+	here. It is usually used in combination with the smufl
+	attribute to specify a particular SMuFL accidental. The
+	smufl attribute may be used with any accidental value to
+	help specify the appearance of symbols that share the same
+	MusicXML semantics.
 
 	Editorial and cautionary indications are indicated
 	by attributes. Values for these attributes are "no" if not 
@@ -261,6 +267,7 @@
     editorial %yes-no; #IMPLIED
     %level-display;
     %print-style;
+    %smufl;
 >
 
 <!--
@@ -700,7 +707,8 @@
 <!ELEMENT accidental-mark (#PCDATA)>
 <!ATTLIST accidental-mark
     %print-style; 
-    %placement; 
+    %placement;
+    %smufl;
 >
 
 <!--

@@ -172,6 +172,15 @@
 <!ENTITY % beam-level "(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)">
 
 <!--
+	The smufl-glyph-name entity is used for attributes that
+	reference a specific Standard Music Font Layout (SMuFL)
+	character. The value is a SMuFL canonical glyph name,
+	not a code point. For instance, the value for a standard
+	piano pedal mark would be keyboardPedalPed, not U+E650.
+-->
+<!ENTITY % smufl-glyph-name "NMTOKEN">
+
+<!--
 	Common structures for formatting attribute definitions. 
 -->
 
@@ -658,6 +667,15 @@
 <!ENTITY % document-attributes "version  CDATA  '1.0'">
 
 <!--
+	The smufl entity is used to indicate a particular Standard
+	Music Font Layout (SMuFL) character. Sometimes this is a 
+	formatting choice, and sometimes this is a refinement of
+	the semantic meaning of an element.
+-->
+<!ENTITY % smufl
+	"smufl %smufl-glyph-name; #IMPLIED">
+
+<!--
 	Common structures for element definitions. 
 -->
 
@@ -887,6 +905,7 @@
 <!ELEMENT accidental-text (#PCDATA)>
 <!ATTLIST accidental-text
     %text-formatting;
+    %smufl;
 >
 
 <!--
