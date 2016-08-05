@@ -802,8 +802,8 @@
 -->
 <!ELEMENT dynamics ((p | pp | ppp | pppp | ppppp | pppppp |
 	f | ff | fff | ffff | fffff | ffffff | mp | mf | sf |
-	sfp | sfpp | fp | rf | rfz | sfz | sffz | fz | n | pf | sfzp |
-	other-dynamics)*)>
+	sfp | sfpp | fp | rf | rfz | sfz | sffz | fz | n | pf |
+	sfzp | other-dynamics)*)>
 <!ATTLIST dynamics
     %print-style-align;
     %placement;

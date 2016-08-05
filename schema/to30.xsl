@@ -78,15 +78,9 @@
 
   <!-- Additions in common.mod -->
 
-	<!-- Remove n, pf, and sfzp elements -->
-	<xsl:template
-    match="n"/>
-
-	<xsl:template
-	  match="pf"/>
-
-	<xsl:template
-	  match="sfzp"/>
+  <!-- Remove n, pf, and sfzp elements -->
+  <xsl:template
+    match="n | pf | sfzp"/>
 
   <!-- Remove accidental-text elements with new other value -->
 
