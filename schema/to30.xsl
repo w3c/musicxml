@@ -2,18 +2,18 @@
 
 <!--
 	MusicXML to30.xsl stylesheet
-	
+
 	Version 3.1 Draft
-	
-	Copyright © 2004-2016 the Contributors to the MusicXML 
+
+	Copyright © 2004-2016 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
-	Group under the W3C Community Contributor License Agreement 
-	(CLA): 
-	
+	Group under the W3C Community Contributor License Agreement
+	(CLA):
+
 	   https://www.w3.org/community/about/agreements/cla/
-	
+
 	A human-readable summary is available:
-	
+
 	   https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
@@ -37,71 +37,75 @@
 	doctype-public="-//Recordare//DTD MusicXML 3.0 Partwise//EN" />
 
   <!--
-    For the root, only look for score-partwise. Anything else 
+    For the root, only look for score-partwise. Anything else
     as a root element gets ignored.
-  -->  
+  -->
   <xsl:template match="/">
     <xsl:apply-templates select="./score-partwise"/>
   </xsl:template>
 
   <!--
-    Transformations that remove post-3.0 elements and 
+    Transformations that remove post-3.0 elements and
     attributes.
   -->
-  
+
   <!-- Additions in note.mod -->
 
-  <!-- 
-    Remove accidental and accidental-mark elements with 
+  <!--
+    Remove accidental and accidental-mark elements with
     the new other value.
   -->
-  <xsl:template 
+  <xsl:template
     match="accidental[.='other']"/>
- 
-  <xsl:template 
+
+  <xsl:template
     match="accidental-mark[.='other']"/>
-  
-  <xsl:template 
+
+  <xsl:template
     match="accidental/@smufl | accidental-mark/@smufl"/>
-  
+
   <!-- Additions in attributes.mod -->
 
   <!-- Remove key-accidental elements with new other value -->
 
-  <xsl:template 
+  <xsl:template
     match="key-accidental[.='other']"/>
-  
-  <xsl:template 
+
+  <xsl:template
     match="key-accidental/@smufl"/>
-  
+
   <!-- Additions in barline.mod -->
 
   <!-- Additions in common.mod -->
 
+  <!-- Remove n, pf, and sfzp elements -->
+  <xsl:template
+    match="n | pf | sfzp"/>
+
   <!-- Remove accidental-text elements with new other value -->
-  
-  <xsl:template 
+
+  <xsl:template
     match="accidental-text[.='other']"/>
-  
-  <xsl:template 
+
+  <xsl:template
     match="accidental-text/@smufl"/>
-  
+
   <!-- Additions in direction.mod -->
 
-  <xsl:template 
+  <xsl:template
     match="image/@height | image/@width"/>
 
   <!-- Additions in layout.mod -->
-  
+
   <!-- Additions in score.mod -->
 
-  <xsl:template 
+  <xsl:template
     match="credit-image/@height | credit-image/@width"/>
 
   <!--
     Convert score version attribute to 3.0
   -->
-  <xsl:template 
+  <xsl:template
     match="score-partwise/@version | score-timewise/@version">
     <xsl:attribute name="version">3.0</xsl:attribute>
   </xsl:template>
@@ -114,9 +118,9 @@
   <xsl:template match="text()">
     <xsl:value-of select="." />
   </xsl:template>
-  
+
   <!--
-    Whitespace within an xsl:copy could cause problems with 
+    Whitespace within an xsl:copy could cause problems with
     empty elements.
   -->
   <xsl:template match="*|@*|comment()|processing-instruction()">
