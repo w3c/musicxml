@@ -234,10 +234,11 @@
 	natural-sharp, natural-flat, quarter-flat, quarter-sharp,
 	three-quarters-flat, three-quarters-sharp, sharp-down,
 	sharp-up, natural-down, natural-up, flat-down, flat-up,
-	triple-sharp, triple-flat, slash-quarter-sharp,
-	slash-sharp, slash-flat, double-slash-flat, sharp-1,
-	sharp-2, sharp-3, sharp-5, flat-1, flat-2, flat-3,
-	flat-4, sori, koron, and other.
+	double-sharp-down, double-sharp-up, flat-flat-down, 
+	flat-flat-up, arrow-down, arrow-up, triple-sharp,
+	triple-flat, slash-quarter-sharp, slash-sharp, slash-flat,
+	double-slash-flat, sharp-1, sharp-2, sharp-3, sharp-5,
+	flat-1, flat-2, flat-3, flat-4, sori, koron, and other.
 
 	The quarter- and three-quarters- accidentals are
 	Tartini-style quarter-tone accidentals. The -down and -up

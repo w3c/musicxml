@@ -53,23 +53,34 @@
 
   <!-- 
     Remove accidental and accidental-mark elements with 
-    the new other value.
+    the new accidental values.
   -->
   <xsl:template 
-    match="accidental[.='other']"/>
+    match="accidental[. = 'double-sharp-down' or 
+    . = 'double-sharp-up' or . = 'flat-flat-down' or
+    . = 'flat-flat-up' or . = 'arrow-down' or 
+    . = 'arrow-up' or . = 'other']"/>
  
   <xsl:template 
-    match="accidental-mark[.='other']"/>
+    match="accidental-mark[. = 'double-sharp-down' or 
+    . = 'double-sharp-up' or . = 'flat-flat-down' or
+    . = 'flat-flat-up' or . = 'arrow-down' or 
+    . = 'arrow-up' or . = 'other']"/>
   
   <xsl:template 
     match="accidental/@smufl | accidental-mark/@smufl"/>
   
   <!-- Additions in attributes.mod -->
 
-  <!-- Remove key-accidental elements with new other value -->
+  <!-- 
+    Remove key-accidental elements with new accidental values.
+  -->
 
   <xsl:template 
-    match="key-accidental[.='other']"/>
+    match="key-accidental[. = 'double-sharp-down' or 
+    . = 'double-sharp-up' or . = 'flat-flat-down' or
+    . = 'flat-flat-up' or . = 'arrow-down' or 
+    . = 'arrow-up' or . = 'other']"/>
   
   <xsl:template 
     match="key-accidental/@smufl"/>

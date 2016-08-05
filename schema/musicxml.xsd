@@ -1248,6 +1248,12 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 			<xs:enumeration value="natural-up"/>
 			<xs:enumeration value="flat-down"/>
 			<xs:enumeration value="flat-up"/>
+			<xs:enumeration value="double-sharp-down"/>
+			<xs:enumeration value="double-sharp-up"/>
+			<xs:enumeration value="flat-flat-down"/>
+			<xs:enumeration value="flat-flat-up"/>
+			<xs:enumeration value="arrow-down"/>
+			<xs:enumeration value="arrow-up"/>
 			<xs:enumeration value="triple-sharp"/>
 			<xs:enumeration value="triple-flat"/>
 			<xs:enumeration value="slash-quarter-sharp"/>
