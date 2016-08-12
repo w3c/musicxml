@@ -803,7 +803,7 @@
 <!ELEMENT dynamics ((p | pp | ppp | pppp | ppppp | pppppp |
 	f | ff | fff | ffff | fffff | ffffff | mp | mf | sf |
 	sfp | sfpp | fp | rf | rfz | sfz | sffz | fz | 
-	other-dynamics)*)>
+	n | pf | sfzp | other-dynamics)*)>
 <!ATTLIST dynamics
     %print-style-align; 
     %placement;
@@ -833,6 +833,9 @@
 <!ELEMENT sfz EMPTY>
 <!ELEMENT sffz EMPTY>
 <!ELEMENT fz EMPTY>
+<!ELEMENT n EMPTY>
+<!ELEMENT pf EMPTY>
+<!ELEMENT sfzp EMPTY>
 <!ELEMENT other-dynamics (#PCDATA)>
 
 <!--
