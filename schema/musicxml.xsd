@@ -2044,6 +2044,9 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 			<xs:element name="sfz" type="empty"/>
 			<xs:element name="sffz" type="empty"/>
 			<xs:element name="fz" type="empty"/>
+			<xs:element name="n" type="empty"/>
+			<xs:element name="pf" type="empty"/>
+			<xs:element name="sfzp" type="empty"/>
 			<xs:element name="other-dynamics" type="xs:string"/>
 		</xs:choice>
 		<xs:attributeGroup ref="print-style-align"/>

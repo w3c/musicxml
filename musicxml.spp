@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project ValidFileSet="Yes" ValidFile="schema\musicxml.xsd">
+	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml">
+		<File FilePath="schema\sounds.xml" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="XSL Files" ExtStr="xsl;xslt">
+		<File FilePath="schema\midixml.xsl" HomeFolder="Yes"/>
+		<File FilePath="schema\parttime.xsl" HomeFolder="Yes"/>
+		<File FilePath="schema\timepart.xsl" HomeFolder="Yes"/>
+		<File FilePath="schema\to10.xsl" HomeFolder="Yes"/>
+		<File FilePath="schema\to11.xsl" HomeFolder="Yes"/>
+		<File FilePath="schema\to20.xsl" HomeFolder="Yes"/>
+		<File FilePath="schema\to30.xsl" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="XQuery Files" ExtStr="xq;xql;xquery"/>
+	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
+	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd">
+		<File FilePath="schema\attributes.mod" HomeFolder="Yes"/>
+		<File FilePath="schema\barline.mod" HomeFolder="Yes"/>
+		<File FilePath="schema\common.mod" HomeFolder="Yes"/>
+		<File FilePath="schema\container.dtd" HomeFolder="Yes"/>
+		<File FilePath="schema\direction.mod" HomeFolder="Yes"/>
+		<File FilePath="schema\identity.mod" HomeFolder="Yes"/>
+		<File FilePath="schema\layout.mod" HomeFolder="Yes"/>
+		<File FilePath="schema\link.mod" HomeFolder="Yes"/>
+		<File FilePath="schema\midixml.dtd" HomeFolder="Yes"/>
+		<File FilePath="schema\musicxml.xsd" HomeFolder="Yes"/>
+		<File FilePath="schema\note.mod" HomeFolder="Yes"/>
+		<File FilePath="schema\opus.dtd" HomeFolder="Yes"/>
+		<File FilePath="schema\opus.xsd" HomeFolder="Yes"/>
+		<File FilePath="schema\partwise.dtd" HomeFolder="Yes"/>
+		<File FilePath="schema\score.mod" HomeFolder="Yes"/>
+		<File FilePath="schema\sounds.dtd" HomeFolder="Yes"/>
+		<File FilePath="schema\timewise.dtd" HomeFolder="Yes"/>
+		<File FilePath="schema\xlink.xsd" HomeFolder="Yes"/>
+		<File FilePath="schema\xml.xsd" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="Entities" ExtStr="ent">
+		<File FilePath="schema\isolat1.ent" HomeFolder="Yes"/>
+		<File FilePath="schema\isolat2.ent" HomeFolder="Yes"/>
+	</Folder>
+</Project>
