@@ -837,6 +837,9 @@
 <!ELEMENT pf EMPTY>
 <!ELEMENT sfzp EMPTY>
 <!ELEMENT other-dynamics (#PCDATA)>
+<!ATTLIST other-dynamics
+    %smufl;
+>
 
 <!--
 	The fret, string, and fingering elements can be used either

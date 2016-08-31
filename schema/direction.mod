@@ -514,17 +514,25 @@
 	pictograms not defined elsewhere.
 -->
 <!ELEMENT other-percussion (#PCDATA)>
+<!ATTLIST other-percussion
+    %smufl;
+>
 
 <!--
 	The other-direction element is used to define any direction
-	symbols not yet in the current version of the MusicXML
-	format. This allows extended representation, though without
-	application interoperability.
+	symbols not yet in the MusicXML format. The smufl attribute
+	can be used to specify a particular direction symbol, allowing
+	application interoperability without requiring every SMuFL
+	glyph to have a MusicXML element equivalent. Using the
+	other-direction type without the smufl attribute allows
+	for extended representation, though without application
+	interoperability.
 -->
 <!ELEMENT other-direction (#PCDATA)>
 <!ATTLIST other-direction
 	%print-object;
-    %print-style-align; 
+    %print-style-align;
+    %smufl; 
 >
 
 <!--

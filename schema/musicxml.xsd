@@ -2047,7 +2047,7 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 			<xs:element name="n" type="empty"/>
 			<xs:element name="pf" type="empty"/>
 			<xs:element name="sfzp" type="empty"/>
-			<xs:element name="other-dynamics" type="xs:string"/>
+			<xs:element name="other-dynamics" type="other-text"/>
 		</xs:choice>
 		<xs:attributeGroup ref="print-style-align"/>
 		<xs:attributeGroup ref="placement"/>
@@ -3233,12 +3233,13 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 
 	<xs:complexType name="other-direction">
 		<xs:annotation>
-			<xs:documentation>The other-direction type is used to define any direction symbols not yet in the current version of the MusicXML format. This allows extended representation, though without application interoperability.</xs:documentation>
+			<xs:documentation>The other-direction type is used to define any direction symbols not yet in the MusicXML format. The smufl attribute can be used to specify a particular direction symbol, allowing application interoperability without requiring every SMuFL glyph to have a MusicXML element equivalent. Using the other-direction type without the smufl attribute allows for extended representation, though without application interoperability.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
 				<xs:attributeGroup ref="print-object"/>
 				<xs:attributeGroup ref="print-style-align"/>
+				<xs:attributeGroup ref="smufl"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -3297,7 +3298,7 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 			<xs:element name="beater" type="beater"/>
 			<xs:element name="stick" type="stick"/>
 			<xs:element name="stick-location" type="stick-location"/>
-			<xs:element name="other-percussion" type="xs:string"/>
+			<xs:element name="other-percussion" type="other-text"/>
 		</xs:choice>
 		<xs:attributeGroup ref="print-style-align"/>
 		<xs:attributeGroup ref="enclosure"/>
@@ -3824,9 +3825,9 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 					<xs:documentation>The unstress element indicates an unstressed note. It is often notated using a u-shaped symbol.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="other-articulation" type="placement-text">
+			<xs:element name="other-articulation" type="other-placement-text">
 				<xs:annotation>
-					<xs:documentation>The other-articulation element is used to define any articulations not yet in the MusicXML format. This allows extended representation, though without application interoperability.</xs:documentation>
+					<xs:documentation>The other-articulation element is used to define any articulations not yet in the MusicXML format. The smufl attribute can be used to specify a particular articulation, allowing application interoperability without requiring every SMuFL articulation to have a MusicXML element equivalent. Using the other-articulation element without the smufl attribute allows for extended representation, though without application interoperability.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
@@ -4397,9 +4398,9 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="tremolo" type="tremolo"/>
-				<xs:element name="other-ornament" type="placement-text">
+				<xs:element name="other-ornament" type="other-placement-text">
 					<xs:annotation>
-						<xs:documentation>The other-ornament element is used to define any ornaments not yet in the MusicXML format. This allows extended representation, though without application interoperability.</xs:documentation>
+					<xs:documentation>The other-ornament element is used to define any ornaments not yet in the MusicXML format. The smufl attribute can be used to specify a particular ornament, allowing application interoperability without requiring every SMuFL ornament to have a MusicXML element equivalent. Using the other-ornament element without the smufl attribute allows for extended representation, though without application interoperability.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:choice>
@@ -4409,7 +4410,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 
 	<xs:complexType name="other-notation">
 		<xs:annotation>
-			<xs:documentation>The other-notation type is used to define any notations not yet in the MusicXML format. This allows extended representation, though without application interoperability. It handles notations where more specific extension elements such as other-dynamics and other-technical are not appropriate.</xs:documentation>
+			<xs:documentation>The other-notation type is used to define any notations not yet in the MusicXML format. It handles notations where more specific extension elements such as other-dynamics and other-technical are not appropriate. The smufl attribute can be used to specify a particular notation, allowing application interoperability without requiring every SMuFL glyph to have a MusicXML element equivalent. Using the other-notation type without the smufl attribute allows for extended representation, though without application interoperability.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
@@ -4418,10 +4419,35 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				<xs:attributeGroup ref="print-object"/>
 				<xs:attributeGroup ref="print-style"/>
 				<xs:attributeGroup ref="placement"/>
+				<xs:attributeGroup ref="smufl"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="other-placement-text">
+		<xs:annotation>
+			<xs:documentation>The other-placement-text type represents a text element with print-style, placement, and smufl attribute groups. This type is used by MusicXML notation extension elements to allow specification of specific SMuFL glyphs without needed to add every glyph as a MusicXML element.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="print-style"/>
+				<xs:attributeGroup ref="placement"/>
+				<xs:attributeGroup ref="smufl"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="other-text">
+		<xs:annotation>
+			<xs:documentation>The other-text type represents a text element with a smufl attribute group. This type is used by MusicXML direction extension elements to allow specification of specific SMuFL glyphs without needed to add every glyph as a MusicXML element.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="smufl"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="pitch">
 		<xs:annotation>
 			<xs:documentation>Pitch is represented as a combination of the step of the diatonic scale, the chromatic alteration, and the octave.</xs:documentation>
@@ -4592,9 +4618,9 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 			<xs:element name="hole" type="hole"/>
 			<xs:element name="arrow" type="arrow"/>
 			<xs:element name="handbell" type="handbell"/>
-			<xs:element name="other-technical" type="placement-text">
+			<xs:element name="other-technical" type="other-placement-text">
 				<xs:annotation>
-					<xs:documentation>The other-technical element is used to define any technical indications not yet in the MusicXML format. This allows extended representation, though without application interoperability.</xs:documentation>
+					<xs:documentation>The other-technical element is used to define any technical indications not yet in the MusicXML format. The smufl attribute can be used to specify a particular glyph, allowing application interoperability without requiring every SMuFL technical indication to have a MusicXML element equivalent. Using the other-technical element without the smufl attribute allows for extended representation, though without application interoperability.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
