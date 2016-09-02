@@ -57,18 +57,22 @@
   -->
   <xsl:template 
     match="accidental[. = 'double-sharp-down' or 
-    . = 'double-sharp-up' or . = 'flat-flat-down' or
-    . = 'flat-flat-up' or . = 'arrow-down' or 
-    . = 'arrow-up' or . = 'other']"/>
+			. = 'double-sharp-up' or . = 'flat-flat-down' or
+			. = 'flat-flat-up' or . = 'arrow-down' or 
+			. = 'arrow-up' or . = 'other']"/>
  
   <xsl:template 
     match="accidental-mark[. = 'double-sharp-down' or 
-    . = 'double-sharp-up' or . = 'flat-flat-down' or
-    . = 'flat-flat-up' or . = 'arrow-down' or 
-    . = 'arrow-up' or . = 'other']"/>
+			. = 'double-sharp-up' or . = 'flat-flat-down' or
+			. = 'flat-flat-up' or . = 'arrow-down' or 
+			. = 'arrow-up' or . = 'other']"/>
   
+  
+  <!-- Remove smufl attributes -->
   <xsl:template 
-    match="accidental/@smufl | accidental-mark/@smufl"/>
+    match="accidental/@smufl | accidental-mark/@smufl |
+			other-articulation/@smufl | other-notation/@smufl |
+			other-ornament/@smufl | other-technical/@smufl"/>
   
   <!-- Additions in attributes.mod -->
 
@@ -78,9 +82,9 @@
 
   <xsl:template 
     match="key-accidental[. = 'double-sharp-down' or 
-    . = 'double-sharp-up' or . = 'flat-flat-down' or
-    . = 'flat-flat-up' or . = 'arrow-down' or 
-    . = 'arrow-up' or . = 'other']"/>
+			. = 'double-sharp-up' or . = 'flat-flat-down' or
+			. = 'flat-flat-up' or . = 'arrow-down' or 
+			. = 'arrow-up' or . = 'other']"/>
   
   <xsl:template 
     match="key-accidental/@smufl"/>
@@ -94,22 +98,28 @@
     match="n | pf | sfzp"/>
 
   <!-- Remove accidental-text elements with new other value -->
-  
   <xsl:template 
     match="accidental-text[.='other']"/>
   
+  <!-- Remove smufl attributes -->
   <xsl:template 
-    match="accidental-text/@smufl"/>
+    match="accidental-text/@smufl | other-dynamics/@smufl"/>
   
   <!-- Additions in direction.mod -->
 
+  <!-- Remove new image attributes -->
   <xsl:template 
     match="image/@height | image/@width"/>
 
+  <!-- Remove smufl attributes -->
+  <xsl:template 
+    match="other-direction/@smufl | other-percussion/@smufl"/>
+  
   <!-- Additions in layout.mod -->
   
   <!-- Additions in score.mod -->
 
+  <!-- Remove new image attributes -->
   <xsl:template 
     match="credit-image/@height | credit-image/@width"/>
 

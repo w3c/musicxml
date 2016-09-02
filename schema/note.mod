@@ -529,12 +529,15 @@
 >
 
 <!--
-	The other-notation element is used to define any notations
-	not yet in the MusicXML format. This allows extended
-	representation, though without application interoperability.
-	It handles notations where more specific extension elements
-	such as other-dynamics and other-technical are not
-	appropriate.
+	The other-notation element is used to define any notations not
+	yet in the MusicXML format. It handles notations where more 
+	specific extension elements such as other-dynamics and
+	other-technical are not appropriate. The smufl attribute can
+	be used to specify a particular notation, allowing application
+	interoperability without requiring every SMuFL glyph to have a
+	MusicXML element equivalent. Using the other-notation element
+	without the smufl attribute allows for extended representation,
+	though without application interoperability.
 -->
 <!ELEMENT other-notation (#PCDATA)>
 <!ATTLIST other-notation
@@ -543,6 +546,7 @@
     %print-object;
     %print-style; 
     %placement;
+    %smufl;
 >
 
 <!--
@@ -690,13 +694,18 @@
 
 <!--
 	The other-ornament element is used to define any ornaments
-	not yet in the MusicXML format. This allows extended
-	representation, though without application interoperability.
+	not yet in the MusicXML format. The smufl attribute can be
+	used to specify a particular ornament, allowing application
+	interoperability without requiring every SMuFL ornament to have
+	a MusicXML element equivalent. Using the other-ornament element
+	without the smufl attribute allows for extended representation,
+	though without application interoperability.
 -->
 <!ELEMENT other-ornament (#PCDATA)>
 <!ATTLIST other-ornament
     %print-style; 
-    %placement; 
+    %placement;
+    %smufl; 
 >
 
 <!--
@@ -1013,14 +1022,19 @@
 
 <!--
 	The other-technical element is used to define any technical
-	indications not yet in the MusicXML format. This allows
-	extended representation, though without application
+	indications not yet in the MusicXML format. The smufl attribute
+	can be used to specify a particular glyph, allowing application
+	interoperability without requiring every SMuFL technical
+	indication to have a MusicXML element equivalent. Using the
+	other-technical element without the smufl attribute allows
+	for extended representation, though without application
 	interoperability.
 -->
 <!ELEMENT other-technical (#PCDATA)>
 <!ATTLIST other-technical
     %print-style; 
-    %placement; 
+    %placement;
+    %smufl; 
 >
 
 <!--
@@ -1154,14 +1168,19 @@
 
 <!--
 	The other-articulation element is used to define any
-	articulations not yet in the MusicXML format. This allows
-	extended representation, though without application
-	interoperability.
+	articulations not yet in the MusicXML format. The smufl
+	attribute can be used to specify a particular articulation,
+	allowing application interoperability without requiring every
+	SMuFL articulation to have a MusicXML element equivalent.
+	Using the other-articulation element without the smufl
+	attribute allows for extended representation, though without
+	application interoperability.
 -->
 <!ELEMENT other-articulation (#PCDATA)>
 <!ATTLIST other-articulation
     %print-style; 
-    %placement; 
+    %placement;
+    %smufl; 
 >
 
 <!--
