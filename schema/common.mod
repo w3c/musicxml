@@ -770,7 +770,7 @@
 	quarter note within an eighth note triplet), then the
 	normal-notes type (e.g. eighth) is specified in the
 	normal-type and normal-dot elements. The content of the
-	actual-notes and normal-notes elements ia a non-negative
+	actual-notes and normal-notes elements is a non-negative
 	integer.
 -->
 <!ELEMENT actual-notes (#PCDATA)>
