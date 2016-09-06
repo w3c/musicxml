@@ -112,8 +112,11 @@
 	values as the display-octave element. The number attribute
 	is a positive integer that refers to the key signature
 	element in left-to-right order. If the cancel attribute is
-	set to yes, then this number refers to an element specified
-	by the cancel element. It is no by default.
+	set to yes, then this number refers to the canceling key
+	signature specified by the cancel element in the parent key
+	element. The cancel attribute cannot be set to yes if there is
+	no corresponding cancel element within the parent key element.
+	It is no by default.
 
 	Key signatures appear at the start of each system unless
 	the print-object attribute has been set to "no".
