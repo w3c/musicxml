@@ -107,6 +107,10 @@
   
   <!-- Additions in direction.mod -->
 
+  <!-- Remove staff-divide element -->
+  <xsl:template
+    match="staff-divide"/>
+
   <!-- Remove new image attributes -->
   <xsl:template 
     match="image/@height | image/@width"/>

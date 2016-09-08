@@ -67,8 +67,8 @@
 	coda+ | wedge | dynamics+ | dashes | bracket | pedal | 
 	metronome | octave-shift | harp-pedals | damp | damp-all |
 	eyeglasses | string-mute | scordatura | image |
-	principal-voice | accordion-registration | percussion+ | 
-	other-direction)>
+	principal-voice | accordion-registration | staff-divide | 
+	percussion+ | other-direction)>
 
 <!--
 	Entities related to print suggestions apply to the
@@ -377,6 +377,17 @@
 <!ELEMENT accordion-high EMPTY>
 <!ELEMENT accordion-middle (#PCDATA)>
 <!ELEMENT accordion-low EMPTY>
+
+<!-- 
+	The staff-divide element is used for staff division symbols.
+	The down, up, and up-down type values correspond to SMuFL
+	code points U+E00B, U+E00C, and U+E00D respectively.
+-->
+<!ELEMENT staff-divide EMPTY>
+<!ATTLIST staff-divide
+    type (down | up | up-down) #REQUIRED
+    %print-style-align; 
+>
 
 <!--
 	The percussion element is used to define percussion
