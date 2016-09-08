@@ -107,10 +107,13 @@
   
   <!-- Additions in direction.mod -->
 
-  <!-- Remove staff-divide element -->
-  <xsl:template
-    match="staff-divide"/>
-
+  <!-- 
+    For safety, remove entire direction that has a new
+    MusicXML 3.1 direction-type child.
+  -->
+  <xsl:template 
+    match="direction[direction-type[staff-divide]]"/>
+ 
   <!-- Remove new image attributes -->
   <xsl:template 
     match="image/@height | image/@width"/>
