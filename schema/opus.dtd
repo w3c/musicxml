@@ -28,7 +28,7 @@
 	Suggested use:
 	
 	<!DOCTYPE opus PUBLIC
-		"-//Recordare//DTD MusicXML 3.0 Opus//EN"
+		"-//Recordare//DTD MusicXML 3.1 Opus//EN"
 		"http://www.musicxml.org/dtds/opus.dtd">
 -->
 
@@ -39,7 +39,7 @@
 	that are shared among multiple DTD modules.
 -->
 <!ENTITY % common PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 3.0 Common//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.1 Common//EN"
 	"common.mod">
 %common;
 
@@ -47,7 +47,7 @@
 	The link DTD module contains XLink attributes.
 -->
 <!ENTITY % link PUBLIC
-	"-//Recordare//ELEMENTS MusicXML 3.0 Link//EN"
+	"-//Recordare//ELEMENTS MusicXML 3.1 Link//EN"
 	"link.mod">
 %link;
 
