@@ -51,6 +51,9 @@
   
   <!-- Additions in note.mod -->
 
+  <!-- Remove inverted-vertical-turn and haydn elements -->
+  <xsl:template
+    match="inverted-vertical-turn | haydn"/>
   <!-- 
     Remove accidental and accidental-mark elements with 
     the new accidental values.

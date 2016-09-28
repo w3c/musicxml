@@ -4396,6 +4396,11 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 						<xs:documentation>The vertical-turn element has the turn symbol shape arranged vertically going from upper left to lower right.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				<xs:element name="inverted-vertical-turn" type="empty-trill-sound">
+					<xs:annotation>
+						<xs:documentation>The inverted-vertical-turn element has the turn symbol shape arranged vertically going from upper right to lower left.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="shake" type="empty-trill-sound">
 					<xs:annotation>
 						<xs:documentation>The shake element has a similar appearance to an inverted-mordent element.</xs:documentation>
@@ -4404,12 +4409,12 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				<xs:element name="wavy-line" type="wavy-line"/>
 				<xs:element name="mordent" type="mordent">
 					<xs:annotation>
-						<xs:documentation>The mordent element represents the sign with the vertical line. The long attribute is "no" by default.</xs:documentation>
+						<xs:documentation>The mordent element represents the sign with the vertical line. The choice of which mordent sign is inverted differs between MusicXML and SMuFL. The long attribute is "no" by default.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="inverted-mordent" type="mordent">
 					<xs:annotation>
-						<xs:documentation>The inverted-mordent element represents the sign without the vertical line. The long attribute is "no" by default.</xs:documentation>
+						<xs:documentation>The inverted-mordent element represents the sign without the vertical line. The choice of which mordent is inverted differs between MusicXML and SMuFL. The long attribute is "no" by default.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="schleifer" type="empty-placement">
@@ -4418,6 +4423,11 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="tremolo" type="tremolo"/>
+				<xs:element name="haydn" type="empty-trill-sound">
+					<xs:annotation>
+						<xs:documentation>The haydn element represents the Haydn ornament. This is defined in SMuFL as ornamentHaydn.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="other-ornament" type="other-placement-text">
 					<xs:annotation>
 					<xs:documentation>The other-ornament element is used to define any ornaments not yet in the MusicXML format. The smufl attribute can be used to specify a particular ornament, allowing application interoperability without requiring every SMuFL ornament to have a MusicXML element equivalent. Using the other-ornament element without the smufl attribute allows for extended representation, though without application interoperability.</xs:documentation>
