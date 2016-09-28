@@ -51,12 +51,9 @@
 
   <!-- Additions in note.mod -->
 
-  <!-- Remove inverted-vertical-turn and haydn elements -->
+  <!-- Remove new MusicXML 3.1 elements -->
   <xsl:template
-    match="inverted-vertical-turn | haydn"/>
-
-  <!-- Remove soft-accent element -->
-  <xsl:template match="soft-accent"/>
+    match="inverted-vertical-turn | haydn | soft-accent"/>
 
   <!--
     Remove accidental and accidental-mark elements with

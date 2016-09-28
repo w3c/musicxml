@@ -1065,7 +1065,7 @@
 	((accent | strong-accent | staccato | tenuto |
 	  detached-legato | staccatissimo | spiccato |
 	  scoop | plop | doit | falloff | breath-mark |
-	  caesura | stress | unstress | soft-accent | 
+	  caesura | stress | unstress | soft-accent |
 	  other-articulation)*)>
 
 <!ELEMENT accent EMPTY>
@@ -1184,6 +1184,18 @@
 >
 <!ELEMENT unstress EMPTY>
 <!ATTLIST unstress
+    %print-style;
+    %placement;
+>
+
+<!--
+The soft-accent element indicates a soft accent that is not
+as heavy as a normal accent. It is often notated as &lt;&gt;.
+It can be combined with other articulations to implement the
+entire SMuFL Articulation Supplement range.
+-->
+<!ELEMENT soft-accent EMPTY>
+<!ATTLIST soft-accent
     %print-style;
     %placement;
 >
