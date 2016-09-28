@@ -2,18 +2,18 @@
 
 <!--
 	MusicXML to30.xsl stylesheet
-	
+
 	Version 3.1 Draft
-	
-	Copyright © 2004-2016 the Contributors to the MusicXML 
+
+	Copyright © 2004-2016 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
-	Group under the W3C Community Contributor License Agreement 
-	(CLA): 
-	
+	Group under the W3C Community Contributor License Agreement
+	(CLA):
+
 	   https://www.w3.org/community/about/agreements/cla/
-	
+
 	A human-readable summary is available:
-	
+
 	   https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
@@ -37,61 +37,65 @@
 	doctype-public="-//Recordare//DTD MusicXML 3.0 Partwise//EN" />
 
   <!--
-    For the root, only look for score-partwise. Anything else 
+    For the root, only look for score-partwise. Anything else
     as a root element gets ignored.
-  -->  
+  -->
   <xsl:template match="/">
     <xsl:apply-templates select="./score-partwise"/>
   </xsl:template>
 
   <!--
-    Transformations that remove post-3.0 elements and 
+    Transformations that remove post-3.0 elements and
     attributes.
   -->
-  
+
   <!-- Additions in note.mod -->
 
   <!-- Remove inverted-vertical-turn and haydn elements -->
   <xsl:template
     match="inverted-vertical-turn | haydn"/>
-  <!-- 
-    Remove accidental and accidental-mark elements with 
+
+  <!-- Remove soft-accent element -->
+  <xsl:template match="soft-accent"/>
+
+  <!--
+    Remove accidental and accidental-mark elements with
     the new accidental values.
   -->
-  <xsl:template 
-    match="accidental[. = 'double-sharp-down' or 
+  <xsl:template
+    match="accidental[. = 'double-sharp-down' or
 			. = 'double-sharp-up' or . = 'flat-flat-down' or
-			. = 'flat-flat-up' or . = 'arrow-down' or 
+			. = 'flat-flat-up' or . = 'arrow-down' or
 			. = 'arrow-up' or . = 'other']"/>
- 
-  <xsl:template 
-    match="accidental-mark[. = 'double-sharp-down' or 
+
+  <xsl:template
+    match="accidental-mark[. = 'double-sharp-down' or
 			. = 'double-sharp-up' or . = 'flat-flat-down' or
-			. = 'flat-flat-up' or . = 'arrow-down' or 
+			. = 'flat-flat-up' or . = 'arrow-down' or
 			. = 'arrow-up' or . = 'other']"/>
-  
-  
+
+
   <!-- Remove smufl attributes -->
-  <xsl:template 
+  <xsl:template
     match="accidental/@smufl | accidental-mark/@smufl |
 			other-articulation/@smufl | other-notation/@smufl |
 			other-ornament/@smufl | other-technical/@smufl"/>
-  
+
   <!-- Additions in attributes.mod -->
 
-  <!-- 
+  <!--
     Remove key-accidental elements with new accidental values.
   -->
 
-  <xsl:template 
-    match="key-accidental[. = 'double-sharp-down' or 
+  <xsl:template
+    match="key-accidental[. = 'double-sharp-down' or
 			. = 'double-sharp-up' or . = 'flat-flat-down' or
-			. = 'flat-flat-up' or . = 'arrow-down' or 
+			. = 'flat-flat-up' or . = 'arrow-down' or
 			. = 'arrow-up' or . = 'other']"/>
-  
-  <xsl:template 
+
+  <xsl:template
     match="key-accidental/@smufl"/>
-  
+
   <!-- Additions in barline.mod -->
 
   <!-- Additions in common.mod -->
@@ -101,42 +105,42 @@
     match="n | pf | sfzp"/>
 
   <!-- Remove accidental-text elements with new other value -->
-  <xsl:template 
+  <xsl:template
     match="accidental-text[.='other']"/>
-  
+
   <!-- Remove smufl attributes -->
-  <xsl:template 
+  <xsl:template
     match="accidental-text/@smufl | other-dynamics/@smufl"/>
-  
+
   <!-- Additions in direction.mod -->
 
-  <!-- 
+  <!--
     For safety, remove entire direction that has a new
     MusicXML 3.1 direction-type child.
   -->
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[staff-divide]]"/>
- 
+
   <!-- Remove new image attributes -->
-  <xsl:template 
+  <xsl:template
     match="image/@height | image/@width"/>
 
   <!-- Remove smufl attributes -->
-  <xsl:template 
+  <xsl:template
     match="other-direction/@smufl | other-percussion/@smufl"/>
-  
+
   <!-- Additions in layout.mod -->
-  
+
   <!-- Additions in score.mod -->
 
   <!-- Remove new image attributes -->
-  <xsl:template 
+  <xsl:template
     match="credit-image/@height | credit-image/@width"/>
 
   <!--
     Convert score version attribute to 3.0
   -->
-  <xsl:template 
+  <xsl:template
     match="score-partwise/@version | score-timewise/@version">
     <xsl:attribute name="version">3.0</xsl:attribute>
   </xsl:template>
@@ -149,9 +153,9 @@
   <xsl:template match="text()">
     <xsl:value-of select="." />
   </xsl:template>
-  
+
   <!--
-    Whitespace within an xsl:copy could cause problems with 
+    Whitespace within an xsl:copy could cause problems with
     empty elements.
   -->
   <xsl:template match="*|@*|comment()|processing-instruction()">
