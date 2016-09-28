@@ -557,9 +557,10 @@
 -->
 <!ELEMENT ornaments
 	(((trill-mark | turn | delayed-turn | inverted-turn |
-	   delayed-inverted-turn | vertical-turn | shake |
-	   wavy-line | mordent | inverted-mordent | schleifer |
-	   tremolo | other-ornament), accidental-mark*)*)>
+	   delayed-inverted-turn | vertical-turn | 
+	   inverted-vertical-turn | shake | wavy-line | 
+	   mordent | inverted-mordent | schleifer | tremolo |
+	   haydn | other-ornament), accidental-mark*)*)>
 <!ELEMENT trill-mark EMPTY>
 <!ATTLIST trill-mark
     %print-style; 
@@ -613,6 +614,13 @@
     %trill-sound; 
 >
 
+<!ELEMENT inverted-vertical-turn EMPTY>
+<!ATTLIST inverted-vertical-turn
+    %print-style; 
+    %placement; 
+    %trill-sound; 
+>
+
 <!ELEMENT shake EMPTY>
 <!ATTLIST shake
     %print-style; 
@@ -628,11 +636,13 @@
 <!-- 
 	The long attribute for the mordent and inverted-mordent
 	elements is "no" by default. The mordent element represents
-	the sign with the vertical line; the inverted-mordent
-	element represents the sign without the vertical line.
-	The approach and departure attributes are used for compound
-	ornaments, indicating how the beginning and ending of the
-	ornament look relative to the main part of the mordent.
+	the mordent sign with the vertical line; the inverted-mordent
+	element represents the mordent sign without the vertical line.
+	The choice of which mordent is inverted differs between
+	MusicXML and SMuFL. The approach and departure attributes are
+	used for compound ornaments, indicating how the beginning and
+	ending of the ornament look relative to the main part of the
+	mordent.
 -->
 <!ELEMENT mordent EMPTY>
 <!ATTLIST mordent
@@ -690,6 +700,17 @@
     type %start-stop-single; "single"
     %print-style; 
     %placement; 
+>
+
+<!--
+	The haydn element represents the Haydn ornament. This is
+	defined in SMuFL as ornamentHaydn. 
+-->
+<!ELEMENT haydn EMPTY>
+<!ATTLIST haydn
+    %print-style; 
+    %placement; 
+    %trill-sound; 
 >
 
 <!--
