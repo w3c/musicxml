@@ -2,16 +2,16 @@
 	MusicXML note.mod module
 
 	Version 3.1 Draft
-	
-	Copyright © 2004-2016 the Contributors to the MusicXML 
+
+	Copyright © 2004-2016 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
-	Group under the W3C Community Contributor License Agreement 
-	(CLA): 
-	
+	Group under the W3C Community Contributor License Agreement
+	(CLA):
+
 	   https://www.w3.org/community/about/agreements/cla/
-	
+
 	A human-readable summary is available:
-	
+
 	   https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
@@ -47,9 +47,9 @@
 	but no tie elements. Having these two types of information
 	available can make interchange considerably easier, as
 	some programs handle one type of information much more
-	readily than the other. 
+	readily than the other.
 -->
-<!ELEMENT note 
+<!ELEMENT note
 	(((grace, %full-note;, (tie, tie?)?) |
 	  (cue, %full-note;, duration) |
 	  (%full-note;, duration, (tie, tie?)?)),
@@ -60,14 +60,14 @@
 <!--
 	The position and printout entities for printing suggestions
 	are defined in the common.mod file.
-	
+
 	The dynamics and end-dynamics attributes correspond to
 	MIDI 1.0's Note On and Note Off velocities, respectively.
 	They are expressed in terms of percentages of the default
-	forte value (90 for MIDI 1.0). 
-	
-	The attack and release attributes are used to alter the 
-	starting and stopping time of the note from when it would 
+	forte value (90 for MIDI 1.0).
+
+	The attack and release attributes are used to alter the
+	starting and stopping time of the note from when it would
 	otherwise occur based on the flow of durations - information
 	that is specific to a performance. They are expressed in
 	terms of divisions, either positive or negative. A note that
@@ -77,16 +77,16 @@
 	The attack attribute only changes the starting time of a
 	note, and the release attribute only changes the stopping
 	time of a note.
-	
+
 	If a note is played only particular times through a repeat,
 	the time-only entity shows which times to play the note.
-	
+
 	The pizzicato attribute is used when just this note is
 	sounded pizzicato, vs. the pizzicato element which changes
 	overall playback between pizzicato and arco.
 -->
 <!ATTLIST note
-    %print-style; 
+    %print-style;
     %printout;
     dynamics CDATA #IMPLIED
     end-dynamics CDATA #IMPLIED
@@ -99,10 +99,10 @@
 <!--
 	Pitch is represented as a combination of the step of the
 	diatonic scale, the chromatic alteration, and the octave.
-	The step element uses the English letters A through G. 
+	The step element uses the English letters A through G.
 	The alter element represents chromatic alteration in
 	number of semitones (e.g., -1 for flat, 1 for sharp).
-	Decimal values like 0.5 (quarter tone sharp) are 
+	Decimal values like 0.5 (quarter tone sharp) are
 	used for microtones. The octave element is represented
 	by the numbers 0 to 9, where 4 indicates the octave
 	started by middle C.
@@ -122,7 +122,7 @@
 	attribute indicates the percentage of time to steal from the
 	following note for the grace note, as for appoggiaturas. The
 	make-time attribute indicates to make time, not steal time;
-	the units are in real-time divisions for the grace note. 
+	the units are in real-time divisions for the grace note.
 -->
 <!ELEMENT cue EMPTY>
 <!ELEMENT grace EMPTY>
@@ -177,13 +177,13 @@
 	in dotted notes in Baroque-era music). Differences in
 	duration specific to an interpretation or performance
 	should use the note element's attack and release
-	attributes. 
+	attributes.
 
 	The tie element indicates that a tie begins or ends with
 	this note. If the tie element applies only particular times
 	through a repeat, the time-only attribute indicates which
 	times to apply it. The tie element indicates sound; the tied
-	element indicates notation. 
+	element indicates notation.
 -->
 <!ELEMENT duration (#PCDATA)>
 <!ELEMENT tie EMPTY>
@@ -225,7 +225,7 @@
 <!ELEMENT dot EMPTY>
 <!ATTLIST dot
     %print-style;
-    %placement; 
+    %placement;
 >
 
 <!--
@@ -234,7 +234,7 @@
 	natural-sharp, natural-flat, quarter-flat, quarter-sharp,
 	three-quarters-flat, three-quarters-sharp, sharp-down,
 	sharp-up, natural-down, natural-up, flat-down, flat-up,
-	double-sharp-down, double-sharp-up, flat-flat-down, 
+	double-sharp-down, double-sharp-up, flat-flat-down,
 	flat-flat-up, arrow-down, arrow-up, triple-sharp,
 	triple-flat, slash-quarter-sharp, slash-sharp, slash-flat,
 	double-slash-flat, sharp-1, sharp-2, sharp-3, sharp-5,
@@ -257,8 +257,8 @@
 	MusicXML semantics.
 
 	Editorial and cautionary indications are indicated
-	by attributes. Values for these attributes are "no" if not 
-	present. Specific graphic display such as parentheses, 
+	by attributes. Values for these attributes are "no" if not
+	present. Specific graphic display such as parentheses,
 	brackets, and size are controlled by the level-display
 	entity defined in the common.mod file.
 -->
@@ -275,10 +275,10 @@
 	Time modification indicates tuplets, double-note tremolos,
 	and other durational changes. A time-modification element
 	shows how the cumulative, sounding effect of tuplets and
-	double-note tremolos compare to the written note type 
+	double-note tremolos compare to the written note type
 	represented by the type and dot elements. The child elements
 	are defined in the common.mod file. Nested tuplets and other
-	notations that use more detailed information need both the 
+	notations that use more detailed information need both the
 	time-modification and tuplet elements to be represented
 	accurately.
 -->
@@ -292,7 +292,7 @@
 	stem relative to the program default. Default values
 	specify an absolute end stem position. Negative values of
 	relative-y that would flip a stem instead of shortening
-	it are ignored. A stem element associated with a rest 
+	it are ignored. A stem element associated with a rest
 	refers to a stemlet.
 -->
 <!ELEMENT stem (#PCDATA)>
@@ -314,23 +314,23 @@
 	with downstems or no stems.
 
 	The arrow shapes differ from triangle and inverted triangle
-	by being centered on the stem. Slashed and back slashed 
-	notes include both the normal notehead and a slash. The 
+	by being centered on the stem. Slashed and back slashed
+	notes include both the normal notehead and a slash. The
 	triangle shape has the tip of the triangle pointing up;
-	the inverted triangle shape has the tip of the triangle 
+	the inverted triangle shape has the tip of the triangle
 	pointing down. The left triangle shape is a right triangle
 	with the hypotenuse facing up and to the left.
-	
+
 	For the enclosed shapes, the default is to be hollow for
 	half notes and longer, and filled otherwise. The filled
 	attribute can be set to change this if needed.
-	
+
 	If the parentheses attribute is set to yes, the notehead
 	is parenthesized. It is no by default.
 
 	The notehead-text element indicates text that is displayed
-	inside a notehead, as is done in some educational music. 
-	It is not needed for the numbers used in tablature or jianpu 
+	inside a notehead, as is done in some educational music.
+	It is not needed for the numbers used in tablature or jianpu
 	notation. The presence of a TAB or jianpu clefs is sufficient
 	to indicate that numbers are used. The display-text and
 	accidental-text elements allow display of fully formatted
@@ -365,7 +365,7 @@
 	fan attribute may also be used with a continue value if the
 	fanning direction changes on that note. The value is "none"
 	if not specified.
-	
+
 	The repeater attribute has been deprecated in MusicXML 3.0.
 	Formerly used for tremolos, it needs to be specified with a
 	"yes" value for each beam using it.
@@ -386,23 +386,23 @@
 	such as fingerings, without having them appear in the score.
 -->
 <!ELEMENT notations
-	(%editorial;, 
-	 (tied | slur | tuplet | glissando | slide | 
+	(%editorial;,
+	 (tied | slur | tuplet | glissando | slide |
 	  ornaments | technical | articulations | dynamics |
-	  fermata | arpeggiate | non-arpeggiate | 
+	  fermata | arpeggiate | non-arpeggiate |
 	  accidental-mark | other-notation)*)>
 <!ATTLIST notations
     %print-object;
 >
 
 <!--
-	The tied element represents the notated tie. The tie element 
+	The tied element represents the notated tie. The tie element
 	represents the tie sound.
 
 	The number attribute is rarely needed to disambiguate ties,
 	since note pitches will usually suffice. The attribute is
-	implied rather than defaulting to 1 as with most elements. 
-	It is available for use in more complex tied notation 
+	implied rather than defaulting to 1 as with most elements.
+	It is available for use in more complex tied notation
 	situations.
 -->
 <!ELEMENT tied EMPTY>
@@ -448,7 +448,7 @@
 	attribute is used to specify whether the bracket is straight
 	or in the older curved or slurred style. It is straight by
 	default.
-	
+
 	Whereas a time-modification element shows how the cumulative,
 	sounding effect of tuplets and double-note tremolos compare to
 	the written note type, the tuplet element describes how this
@@ -461,7 +461,7 @@
 	(including dots) describing a single tuplet. If any of
 	these elements are absent, their values are based on the
 	time-modification element.
-	
+
 	The show-number attribute is used to display either the
 	number of actual notes, the number of both actual and
 	normal notes, or neither. It is actual by default. The
@@ -515,22 +515,22 @@
     type %start-stop; #REQUIRED
     number %number-level; "1"
     %line-type;
-    %dashed-formatting; 
-    %print-style; 
+    %dashed-formatting;
+    %print-style;
 >
 <!ELEMENT slide (#PCDATA)>
 <!ATTLIST slide
     type %start-stop; #REQUIRED
     number %number-level; "1"
-    %line-type; 
-    %dashed-formatting; 
-    %print-style; 
+    %line-type;
+    %dashed-formatting;
+    %print-style;
     %bend-sound;
 >
 
 <!--
 	The other-notation element is used to define any notations not
-	yet in the MusicXML format. It handles notations where more 
+	yet in the MusicXML format. It handles notations where more
 	specific extension elements such as other-dynamics and
 	other-technical are not appropriate. The smufl attribute can
 	be used to specify a particular notation, allowing application
@@ -544,7 +544,7 @@
     type %start-stop-single; #REQUIRED
     number %number-level; "1"
     %print-object;
-    %print-style; 
+    %print-style;
     %placement;
     %smufl;
 >
@@ -557,15 +557,15 @@
 -->
 <!ELEMENT ornaments
 	(((trill-mark | turn | delayed-turn | inverted-turn |
-	   delayed-inverted-turn | vertical-turn | 
-	   inverted-vertical-turn | shake | wavy-line | 
+	   delayed-inverted-turn | vertical-turn |
+	   inverted-vertical-turn | shake | wavy-line |
 	   mordent | inverted-mordent | schleifer | tremolo |
 	   haydn | other-ornament), accidental-mark*)*)>
 <!ELEMENT trill-mark EMPTY>
 <!ATTLIST trill-mark
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
 >
 
 <!--
@@ -581,51 +581,51 @@
 -->
 <!ELEMENT turn EMPTY>
 <!ATTLIST turn
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
     slash %yes-no; #IMPLIED
 >
 <!ELEMENT delayed-turn EMPTY>
 <!ATTLIST delayed-turn
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
     slash %yes-no; #IMPLIED
 >
 <!ELEMENT inverted-turn EMPTY>
 <!ATTLIST inverted-turn
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
     slash %yes-no; #IMPLIED
 >
 <!ELEMENT delayed-inverted-turn EMPTY>
 <!ATTLIST delayed-inverted-turn
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
     slash %yes-no; #IMPLIED
 >
 <!ELEMENT vertical-turn EMPTY>
 <!ATTLIST vertical-turn
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
 >
 
 <!ELEMENT inverted-vertical-turn EMPTY>
 <!ATTLIST inverted-vertical-turn
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
 >
 
 <!ELEMENT shake EMPTY>
 <!ATTLIST shake
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
 >
 
 <!--
@@ -633,7 +633,7 @@
 	as it applies to more than just note elements.
 -->
 
-<!-- 
+<!--
 	The long attribute for the mordent and inverted-mordent
 	elements is "no" by default. The mordent element represents
 	the mordent sign with the vertical line; the inverted-mordent
@@ -649,18 +649,18 @@
     long %yes-no; #IMPLIED
     approach %above-below; #IMPLIED
     departure %above-below; #IMPLIED
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
 >
 <!ELEMENT inverted-mordent EMPTY>
 <!ATTLIST inverted-mordent
     long %yes-no; #IMPLIED
     approach %above-below; #IMPLIED
     departure %above-below; #IMPLIED
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
 >
 
 <!--
@@ -670,12 +670,12 @@
 -->
 <!ELEMENT schleifer EMPTY>
 <!ATTLIST schleifer
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
-	The tremolo ornament can be used to indicate either 
+	The tremolo ornament can be used to indicate either
 	single-note or double-note tremolos. Single-note tremolos
 	use the single type, while double-note tremolos use the
 	start and stop types. The default is "single" for
@@ -698,19 +698,19 @@
 <!ELEMENT tremolo (#PCDATA)>
 <!ATTLIST tremolo
     type %start-stop-single; "single"
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
 	The haydn element represents the Haydn ornament. This is
-	defined in SMuFL as ornamentHaydn. 
+	defined in SMuFL as ornamentHaydn.
 -->
 <!ELEMENT haydn EMPTY>
 <!ATTLIST haydn
-    %print-style; 
-    %placement; 
-    %trill-sound; 
+    %print-style;
+    %placement;
+    %trill-sound;
 >
 
 <!--
@@ -724,9 +724,9 @@
 -->
 <!ELEMENT other-ornament (#PCDATA)>
 <!ATTLIST other-ornament
-    %print-style; 
+    %print-style;
     %placement;
-    %smufl; 
+    %smufl;
 >
 
 <!--
@@ -737,7 +737,7 @@
 -->
 <!ELEMENT accidental-mark (#PCDATA)>
 <!ATTLIST accidental-mark
-    %print-style; 
+    %print-style;
     %placement;
     %smufl;
 >
@@ -751,7 +751,7 @@
 	  thumb-position | fingering | pluck | double-tongue |
 	  triple-tongue | stopped | snap-pizzicato | fret |
 	  string | hammer-on | pull-off | bend | tap | heel |
-	  toe | fingernails | hole | arrow | handbell | 
+	  toe | fingernails | hole | arrow | handbell |
 	  other-technical)*)>
 
 <!--
@@ -761,8 +761,8 @@
 -->
 <!ELEMENT up-bow EMPTY>
 <!ATTLIST up-bow
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -772,8 +772,8 @@
 -->
 <!ELEMENT down-bow EMPTY>
 <!ATTLIST down-bow
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -791,12 +791,12 @@
 	but not always used with natural harmonics.
 -->
 <!ELEMENT harmonic
-	((natural | artificial)?, 
+	((natural | artificial)?,
 	 (base-pitch | touching-pitch | sounding-pitch)?)>
 <!ATTLIST harmonic
     %print-object;
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT natural EMPTY>
 <!ELEMENT artificial EMPTY>
@@ -805,13 +805,13 @@
 <!ELEMENT sounding-pitch EMPTY>
 
 <!--
-	The open-string element represents the zero-shaped 
+	The open-string element represents the zero-shaped
 	open string symbol.
 -->
 <!ELEMENT open-string EMPTY>
 <!ATTLIST open-string
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -822,8 +822,8 @@
 -->
 <!ELEMENT thumb-position EMPTY>
 <!ATTLIST thumb-position
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -835,8 +835,8 @@
 -->
 <!ELEMENT pluck (#PCDATA)>
 <!ATTLIST pluck
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -845,8 +845,8 @@
 -->
 <!ELEMENT double-tongue EMPTY>
 <!ATTLIST double-tongue
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -855,8 +855,8 @@
 -->
 <!ELEMENT triple-tongue EMPTY>
 <!ATTLIST triple-tongue
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -865,8 +865,8 @@
 -->
 <!ELEMENT stopped EMPTY>
 <!ATTLIST stopped
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -877,8 +877,8 @@
 -->
 <!ELEMENT snap-pizzicato EMPTY>
 <!ATTLIST snap-pizzicato
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -920,7 +920,7 @@
 <!ELEMENT bend
 	(bend-alter, (pre-bend | release)?, with-bar?)>
 <!ATTLIST bend
-    %print-style; 
+    %print-style;
     %bend-sound;
 >
 <!ELEMENT bend-alter (#PCDATA)>
@@ -928,8 +928,8 @@
 <!ELEMENT release EMPTY>
 <!ELEMENT with-bar (#PCDATA)>
 <!ATTLIST with-bar
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -940,35 +940,35 @@
 -->
 <!ELEMENT tap (#PCDATA)>
 <!ATTLIST tap
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
-<!-- 
+<!--
 	The heel and toe element are used with organ pedals. The
 	substitution value is "no" if the attribute is not present.
 -->
 <!ELEMENT heel EMPTY>
 <!ATTLIST heel
     substitution %yes-no; #IMPLIED
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT toe EMPTY>
 <!ATTLIST toe
     substitution %yes-no; #IMPLIED
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
-<!-- 
+<!--
 	The fingernails element is used in notation for harp and
 	other plucked string instruments.
 -->
 <!ELEMENT fingernails EMPTY>
 <!ATTLIST fingernails
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -985,17 +985,17 @@
 -->
 <!ELEMENT hole (hole-type?, hole-closed, hole-shape?)>
 <!ATTLIST hole
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT hole-type (#PCDATA)>
 <!ELEMENT hole-closed (#PCDATA)>
 <!ATTLIST hole-closed
-    location (right | bottom | left | top) #IMPLIED 
+    location (right | bottom | left | top) #IMPLIED
 >
 <!ELEMENT hole-shape (#PCDATA)>
 
-<!-- 
+<!--
 	The arrow element represents an arrow used for a musical
 	technical indication. Straight arrows are represented with
 	an arrow-direction element and an optional arrow-style
@@ -1021,24 +1021,24 @@
 <!ELEMENT arrow
 	((arrow-direction, arrow-style?) | circular-arrow)>
 <!ATTLIST arrow
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT arrow-direction (#PCDATA)>
 <!ELEMENT arrow-style (#PCDATA)>
 <!ELEMENT circular-arrow (#PCDATA)>
 
-<!-- 
+<!--
 	The handbell element represents notation for various
 	techniques used in handbell and handchime music. Valid
 	values are damp, echo, gyro, hand martellato, mallet lift,
-	mallet table, martellato, martellato lift, 
+	mallet table, martellato, martellato lift,
 	muted martellato, pluck lift, and swing.
 -->
 <!ELEMENT handbell (#PCDATA)>
 <!ATTLIST handbell
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -1053,9 +1053,9 @@
 -->
 <!ELEMENT other-technical (#PCDATA)>
 <!ATTLIST other-technical
-    %print-style; 
+    %print-style;
     %placement;
-    %smufl; 
+    %smufl;
 >
 
 <!--
@@ -1064,39 +1064,40 @@
 <!ELEMENT articulations
 	((accent | strong-accent | staccato | tenuto |
 	  detached-legato | staccatissimo | spiccato |
-	  scoop | plop | doit | falloff | breath-mark | 
-	  caesura | stress | unstress | other-articulation)*)>
+	  scoop | plop | doit | falloff | breath-mark |
+	  caesura | stress | unstress | soft-accent |
+	  other-articulation)*)>
 
 <!ELEMENT accent EMPTY>
 <!ATTLIST accent
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT strong-accent EMPTY>
 <!ATTLIST strong-accent
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
     type %up-down; "up"
 >
 
-<!-- 
+<!--
 	The staccato element is used for a dot articulation, as
 	opposed to a stroke or a wedge.
 -->
 <!ELEMENT staccato EMPTY>
 <!ATTLIST staccato
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT tenuto EMPTY>
 <!ATTLIST tenuto
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT detached-legato EMPTY>
 <!ATTLIST detached-legato
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -1105,8 +1106,8 @@
 -->
 <!ELEMENT staccatissimo EMPTY>
 <!ATTLIST staccatissimo
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -1115,11 +1116,11 @@
 -->
 <!ELEMENT spiccato EMPTY>
 <!ATTLIST spiccato
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
-<!-- 
+<!--
 	The scoop, plop, doit, and falloff elements are
 	indeterminate slides attached to a single note.
 	Scoops and plops come before the main note, coming
@@ -1132,7 +1133,7 @@
     %line-shape;
     %line-type;
     %dashed-formatting;
-    %print-style; 
+    %print-style;
     %placement;
 >
 <!ELEMENT plop EMPTY>
@@ -1140,15 +1141,15 @@
     %line-shape;
     %line-type;
     %dashed-formatting;
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT doit EMPTY>
 <!ATTLIST doit
     %line-shape;
     %line-type;
     %dashed-formatting;
-    %print-style; 
+    %print-style;
     %placement;
 >
 <!ELEMENT falloff EMPTY>
@@ -1156,8 +1157,8 @@
     %line-shape;
     %line-type;
     %dashed-formatting;
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -1167,24 +1168,36 @@
 -->
 <!ELEMENT breath-mark (#PCDATA)>
 <!ATTLIST breath-mark
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 
 <!ELEMENT caesura EMPTY>
 <!ATTLIST caesura
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT stress EMPTY>
 <!ATTLIST stress
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
 >
 <!ELEMENT unstress EMPTY>
 <!ATTLIST unstress
-    %print-style; 
-    %placement; 
+    %print-style;
+    %placement;
+>
+
+<!--
+The soft-accent element indicates a soft accent that is not
+as heavy as a normal accent. It is often notated as &lt;&gt;.
+It can be combined with other articulations to implement the
+entire SMuFL Articulation Supplement range.
+-->
+<!ELEMENT soft-accent EMPTY>
+<!ATTLIST soft-accent
+    %print-style;
+    %placement;
 >
 
 <!--
@@ -1199,9 +1212,9 @@
 -->
 <!ELEMENT other-articulation (#PCDATA)>
 <!ATTLIST other-articulation
-    %print-style; 
+    %print-style;
     %placement;
-    %smufl; 
+    %smufl;
 >
 
 <!--
@@ -1223,12 +1236,12 @@
 <!ATTLIST arpeggiate
     number %number-level; #IMPLIED
     direction %up-down; #IMPLIED
-    %position; 
+    %position;
     %placement;
-    %color; 
+    %color;
 >
 
-<!-- 
+<!--
 	The non-arpeggiate element indicates that this note is at
 	the top or bottom of a bracket indicating to not arpeggiate
 	these notes. Since this does not involve playback, it is
@@ -1239,9 +1252,9 @@
 <!ATTLIST non-arpeggiate
     type %top-bottom; #REQUIRED
     number %number-level; #IMPLIED
-    %position; 
+    %position;
     %placement;
-    %color; 
+    %color;
 >
 
 <!--
@@ -1249,8 +1262,8 @@
 	for other formats. The lyric number indicates multiple
 	lines, though a name can be used as well (as in Finale's
 	verse/chorus/section specification). Word extensions are
-	represented using the extend element. Hyphenation is 
-	indicated by the syllabic element, which can be single, 
+	represented using the extend element. Hyphenation is
+	indicated by the syllabic element, which can be single,
 	begin, end, or middle. These represent single-syllable
 	words, word-beginning syllables, word-ending syllables,
 	and mid-word syllables. Multiple syllables on a single
@@ -1312,7 +1325,7 @@
 >
 
 <!--
-	The extend element represents lyric word extension / 
+	The extend element represents lyric word extension /
 	melisma lines as well as figured bass extensions. The
 	optional type and position attributes are added in
 	Version 3.0 to provide better formatting control.
@@ -1332,7 +1345,7 @@
 	Figured bass elements take their position from the first
 	regular note (not a grace note or chord note) that follows
 	in score order. The optional duration element is used to
-	indicate changes of figures under a note.	
+	indicate changes of figures under a note.
 
 	Figures are ordered from top to bottom. A figure-number is a
 	number. Values for prefix and suffix include the accidental
@@ -1348,7 +1361,7 @@
 -->
 <!ELEMENT figured-bass (figure+, duration?, %editorial;)>
 <!ATTLIST figured-bass
-    %print-style; 
+    %print-style;
     %printout;
     parentheses %yes-no; #IMPLIED
 >
