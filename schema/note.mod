@@ -1189,10 +1189,10 @@
 >
 
 <!--
-The soft-accent element indicates a soft accent that is not
-as heavy as a normal accent. It is often notated as &lt;&gt;.
-It can be combined with other articulations to implement the
-entire SMuFL Articulation Supplement range.
+	The soft-accent element indicates a soft accent that is
+	not as heavy as a normal accent. It is often notated as 
+	&lt;&gt;. It can be combined with other articulations to
+	implement the entire SMuFL Articulation Supplement range.
 -->
 <!ELEMENT soft-accent EMPTY>
 <!ATTLIST soft-accent
