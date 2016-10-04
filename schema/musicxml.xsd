@@ -1433,9 +1433,13 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 	<xs:simpleType name="notehead-value">
 		<xs:annotation>
 			<xs:documentation>
-The notehead type indicates shapes other than the open and closed ovals associated with note durations. The values do, re, mi, fa, fa up, so, la, and ti correspond to Aikin's 7-shape system.  The fa up shape is typically used with upstems; the fa shape is typically used with downstems or no stems.
+The notehead-value type indicates shapes other than the open and closed ovals associated with note durations. 
 
-The arrow shapes differ from triangle and inverted triangle by being centered on the stem. Slashed and back slashed notes include both the normal notehead and a slash. The triangle shape has the tip of the triangle pointing up; the inverted triangle shape has the tip of the triangle pointing down. The left triangle shape is a right triangle with the hypotenuse facing up and to the left.</xs:documentation>
+The values do, re, mi, fa, fa up, so, la, and ti correspond to Aikin's 7-shape system.  The fa up shape is typically used with upstems; the fa shape is typically used with downstems or no stems.
+
+The arrow shapes differ from triangle and inverted triangle by being centered on the stem. Slashed and back slashed notes include both the normal notehead and a slash. The triangle shape has the tip of the triangle pointing up; the inverted triangle shape has the tip of the triangle pointing down. The left triangle shape is a right triangle with the hypotenuse facing up and to the left.
+
+The other notehead covers noteheads other than those listed here. It is usually used in combination with the smufl attribute to specify a particular SMuFL notehead. The smufl attribute may be used with any notehead value to help specify the appearance of symbols that share the same MusicXML semantics. Noteheads in the SMuFL "Note name noteheads" range (U+E150–U+E1AF) should not use the smufl attribute or the "other" value, but instead use the notehead-text element.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="slash"/>
@@ -1464,6 +1468,7 @@ The arrow shapes differ from triangle and inverted triangle by being centered on
 			<xs:enumeration value="so"/>
 			<xs:enumeration value="la"/>
 			<xs:enumeration value="ti"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -4337,7 +4342,9 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 
 	<xs:complexType name="notehead">
 		<xs:annotation>
-			<xs:documentation>The notehead element indicates shapes other than the open and closed ovals associated with note durations.
+			<xs:documentation>The notehead type indicates shapes other than the open and closed ovals associated with note durations. 
+
+The smufl attribute can be used to specify a particular notehead, allowing application interoperability without requiring every SMuFL glyph to have a MusicXML element equivalent. This attribute can be used either with the "other" value, or to refine a specific notehead value such as "cluster". Noteheads in the SMuFL "Note name noteheads" range (U+E150–U+E1AF) should not use the smufl attribute or the "other" value, but instead use the notehead-text element.
 
 For the enclosed shapes, the default is to be hollow for half notes and longer, and filled otherwise. The filled attribute can be set to change this if needed.
 
@@ -4349,6 +4356,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				<xs:attribute name="parentheses" type="yes-no"/>
 				<xs:attributeGroup ref="font"/>
 				<xs:attributeGroup ref="color"/>
+				<xs:attributeGroup ref="smufl"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>

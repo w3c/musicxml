@@ -71,12 +71,18 @@
 			. = 'flat-flat-up' or . = 'arrow-down' or
 			. = 'arrow-up' or . = 'other']"/>
 
+  <!--
+    Remove notehead elements with new notehead values.
+  -->
+  <xsl:template
+    match="notehead[. = 'other']"/>
 
   <!-- Remove smufl attributes -->
   <xsl:template
     match="accidental/@smufl | accidental-mark/@smufl |
 			other-articulation/@smufl | other-notation/@smufl |
-			other-ornament/@smufl | other-technical/@smufl"/>
+			other-ornament/@smufl | other-technical/@smufl |
+			notehead/@smufl"/>
 
   <!-- Additions in attributes.mod -->
 
