@@ -718,9 +718,11 @@
 	lines are one way to indicate trills; when used with a
 	barline element, they should always have type="continue"
 	set. The fermata text content represents the shape of the
-	fermata sign and may be normal, angled, or square.
-	An empty fermata element represents a normal fermata.
-	The fermata type is upright if not specified.
+	fermata sign and may be normal, angled, square,
+	double-angled, double-square, double-dot, half-curve,
+	curlew, or an empty string. An empty fermata element 
+	represents a normal fermata. The fermata type is upright
+	if not specified.
 -->
 <!ELEMENT fermata  (#PCDATA)>
 <!ATTLIST fermata

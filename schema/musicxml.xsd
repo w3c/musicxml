@@ -114,6 +114,11 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 			<xs:enumeration value="normal"/>
 			<xs:enumeration value="angled"/>
 			<xs:enumeration value="square"/>
+			<xs:enumeration value="double-angled"/>
+			<xs:enumeration value="double-square"/>
+			<xs:enumeration value="double-dot"/>
+			<xs:enumeration value="half-curve"/>
+			<xs:enumeration value="curlew"/>
 			<xs:enumeration value=""/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -1342,9 +1347,25 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 			<xs:enumeration value=""/>
 			<xs:enumeration value="comma"/>
 			<xs:enumeration value="tick"/>
+			<xs:enumeration value="upbow"/>
+			<xs:enumeration value="salzedo"/>
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="caesura-value">
+		<xs:annotation>
+			<xs:documentation>The caesura-value type represents the shape of the caesura sign.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="normal"/>
+			<xs:enumeration value="thick"/>
+			<xs:enumeration value="short"/>
+			<xs:enumeration value="curved"/>
+			<xs:enumeration value="single"/>
+			<xs:enumeration value=""/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:simpleType name="circular-arrow">
 		<xs:annotation>
 			<xs:documentation>The circular-arrow type represents the direction in which a circular arrow points, using Unicode arrow terminology.</xs:documentation>
@@ -3835,11 +3856,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="breath-mark" type="breath-mark"/>
-			<xs:element name="caesura" type="empty-placement">
-				<xs:annotation>
-					<xs:documentation>The caesura element indicates a slight pause. It is notated using a "railroad tracks" symbol.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element name="caesura" type="caesura"/>
 			<xs:element name="stress" type="empty-placement">
 				<xs:annotation>
 					<xs:documentation>The stress element indicates a stressed note.</xs:documentation>
@@ -3952,6 +3969,18 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="caesura">
+		<xs:annotation>
+			<xs:documentation>The caesura element indicates a slight pause. It is notated using a "railroad tracks" symbol or other variations specified in the element content.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="caesura-value">
+				<xs:attributeGroup ref="print-style"/>
+				<xs:attributeGroup ref="placement"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="empty-line">
 		<xs:annotation>
 			<xs:documentation>The empty-line type represents an empty element with line-shape, line-type, dashed-formatting, print-style and placement attributes.</xs:documentation>
