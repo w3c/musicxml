@@ -84,6 +84,17 @@
 			other-ornament/@smufl | other-technical/@smufl |
 			notehead/@smufl"/>
 
+  <!--
+    Do not copy text for caesura elements, or for breath-mark 
+    elements with new values.
+  -->
+  <xsl:template
+    match="caesura | breath-mark[. = 'upbow' or . = 'salzedo']">
+    <xsl:copy><xsl:apply-templates
+      select="*|@*|comment()|processing-instruction()"
+    /></xsl:copy>
+  </xsl:template>
+  
   <!-- Additions in attributes.mod -->
 
   <!--
@@ -115,6 +126,18 @@
   <xsl:template
     match="accidental-text/@smufl | other-dynamics/@smufl"/>
 
+  <!--
+    Do not copy text for fermata elements with new values.
+  -->
+  <xsl:template
+    match="fermata[. = 'double-angled' or
+      . = 'double-square' or . = 'double-dot' or
+      . = 'half-curve' or . = 'curlew']">
+    <xsl:copy><xsl:apply-templates
+      select="*|@*|comment()|processing-instruction()"
+    /></xsl:copy>
+  </xsl:template>
+    
   <!-- Additions in direction.mod -->
 
   <!--

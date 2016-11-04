@@ -1176,7 +1176,7 @@
 <!--
 	The breath-mark element may have a text value to
 	indicate the symbol used for the mark. Valid values are
-	comma, tick, and an empty string.
+	comma, tick, upbow, salzedo, and an empty string.
 -->
 <!ELEMENT breath-mark (#PCDATA)>
 <!ATTLIST breath-mark
@@ -1184,7 +1184,13 @@
     %placement;
 >
 
-<!ELEMENT caesura EMPTY>
+<!--
+	The caesura element indicates a slight pause. It is notated
+	using a "railroad tracks" symbol or other variations
+	specified in the element content. Valid values are normal,
+	thick, short, curved, single, and an empty string.
+-->
+<!ELEMENT caesura (#PCDATA)>
 <!ATTLIST caesura
     %print-style;
     %placement;
