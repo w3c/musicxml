@@ -1302,6 +1302,8 @@
 	a note's print-lyric attribute in cases where only some
 	lyrics on a note are printed, as when lyrics for later verses
 	are printed in a block of text rather than with each note.
+	The time-only attribute precisely specifies which lyrics are
+	to be sung which time through a repeated section.
 -->
 <!ELEMENT lyric
 	((((syllabic?, text),
@@ -1316,6 +1318,7 @@
     %placement;
     %color;
     %print-object;
+    %time-only;
 >
 
 <!ELEMENT text (#PCDATA)>

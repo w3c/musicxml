@@ -77,6 +77,12 @@
   <xsl:template
     match="notehead[. = 'other']"/>
 
+  <!--
+    Remove time-only attribute from lyric element.
+  -->
+  <xsl:template
+    match="lyrics/@time-only"/>
+
   <!-- Remove smufl attributes -->
   <xsl:template
     match="accidental/@smufl | accidental-mark/@smufl |
@@ -94,7 +100,7 @@
       select="*|@*|comment()|processing-instruction()"
     /></xsl:copy>
   </xsl:template>
-  
+
   <!-- Additions in attributes.mod -->
 
   <!--
