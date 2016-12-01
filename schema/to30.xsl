@@ -163,6 +163,10 @@
 
   <!-- Additions in layout.mod -->
 
+  <!-- Remove glyph elements -->
+  <xsl:template
+    match="glyph"/>
+
   <!-- Additions in score.mod -->
 
   <!-- Remove new image attributes -->
