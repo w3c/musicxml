@@ -198,13 +198,44 @@
 	type of distance is being defined. Values include hyphen
 	(for hyphens in lyrics) and beam.
 
+	The glyph element represents what SMuFL glyph should be used
+	for different variations of symbols that are semantically
+	identical. The type attribute specifies what type of glyph
+	is being defined. The element value specifies what
+	SMuFL glyph to use, including recommended stylistic
+	alternates.
+
+	Glyph type attribute values include quarter-rest, 
+	g-clef-ottava-bassa, c-clef, f-clef, percussion-clef,
+	octave-shift-up-8, octave-shift-down-8,
+	octave-shift-continue-8, octave-shift-down-15,
+	octave-shift-up-15, octave-shift-continue-15,
+	octave-shift-down-22, octave-shift-up-22, and 
+	octave-shift-continue-22. A quarter-rest type specifies the
+	glyph to use when a note has a rest element and a type value
+	of quarter. The c-clef, f-clef, and percussion-clef types
+	specify the glyph to use when a clef sign element value is C,
+	F, or percussion respectively. The g-clef-ottava-bassa type
+	specifies the glyph to use when a clef sign element value is
+	G and the clef-octave-change element value is -1. The
+	octave-shift types specify the glyph to use when an
+	octave-shift type attribute value is up, down, or continue
+	and the octave-shift size attribute value is 8, 15, or 22.
+
+	The SMuFL glyph name should match the type. For instance,
+	a type of quarter-rest would use values restQuarter,
+	restQuarterOld, or restQuarterZ. A type of g-clef-ottava-bassa
+	would use values gClef8vb, gClef8vbOld, or gClef8vbCClef. A
+	type of octave-shift-up-8 would use values ottava, ottavaBassa,
+	ottavaBassaBa, ottavaBassaVb, or octaveBassa.
+
 	The other-appearance element is used to define any
 	graphical settings not yet in the current version of the
 	MusicXML format. This allows extended representation,
 	though without application interoperability.
 -->
 <!ELEMENT appearance
-	(line-width*, note-size*, distance*, 
+	(line-width*, note-size*, distance*, glyph*, 
 	 other-appearance*)>
 <!ELEMENT line-width %layout-tenths;>
 <!ATTLIST line-width
@@ -216,6 +247,10 @@
 >
 <!ELEMENT distance %layout-tenths;>
 <!ATTLIST distance
+    type CDATA #REQUIRED
+>
+<!ELEMENT glyph (#PCDATA)>
+<!ATTLIST glyph
     type CDATA #REQUIRED
 >
 <!ELEMENT other-appearance (#PCDATA)>
