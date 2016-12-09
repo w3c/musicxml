@@ -834,7 +834,7 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 
 	<xs:simpleType name="effect">
 		<xs:annotation>
-			<xs:documentation>The effect type represents pictograms for sound effect percussion instruments. The cannon value is in addition to Stone's list.</xs:documentation>
+			<xs:documentation>The effect type represents pictograms for sound effect percussion instruments. The cannon, lotus flute, and megaphone values are in addition to Stone's list.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="anvil"/>
@@ -845,6 +845,8 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 			<xs:enumeration value="gun shot"/>
 			<xs:enumeration value="klaxon horn"/>
 			<xs:enumeration value="lions roar"/>
+			<xs:enumeration value="lotus flute"/>
+			<xs:enumeration value="megaphone"/>
 			<xs:enumeration value="police whistle"/>
 			<xs:enumeration value="siren"/>
 			<xs:enumeration value="slide whistle"/>
