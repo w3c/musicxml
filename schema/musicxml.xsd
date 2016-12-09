@@ -4018,7 +4018,8 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 			<xs:documentation>The extend type represents lyric word extension / melisma lines as well as figured bass extensions. The optional type and position attributes are added in Version 3.0 to provide better formatting control.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="type" type="start-stop-continue"/>
-		<xs:attributeGroup ref="print-style"/>
+		<xs:attributeGroup ref="position"/>
+		<xs:attributeGroup ref="color"/>
 	</xs:complexType>
 
 	<xs:complexType name="figure">

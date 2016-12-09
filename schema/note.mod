@@ -1354,7 +1354,8 @@
 <!ELEMENT extend EMPTY>
 <!ATTLIST extend
     type %start-stop-continue; #IMPLIED
-    %print-style;
+    %position;
+    %color;
 >
 
 <!ELEMENT laughing EMPTY>
