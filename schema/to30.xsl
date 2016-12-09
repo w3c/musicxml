@@ -155,7 +155,7 @@
 
   <!-- 
     For safety, remove entire direction that has a new 
-	enumeration value in percussion child elements.
+    enumeration value in percussion child elements.
   -->
   <xsl:template 
     match="direction[direction-type[percussion[effect[
