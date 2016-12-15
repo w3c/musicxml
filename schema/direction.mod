@@ -463,9 +463,10 @@
 	The effect element represents pictograms for sound effect
 	percussion instruments. Valid values are anvil, auto horn,
 	bird whistle, cannon, duck call, gun shot, klaxon horn,
-	lions roar, police whistle, siren, slide whistle,
-	thunder sheet, wind machine, and wind whistle. The cannon
-	value is in addition to Stone's list.
+	lions roar, lotus flute, megaphone, police whistle, siren,
+	slide whistle, thunder sheet, wind machine, and wind whistle.
+	The cannon, lotus flute, and megaphone values are in addition
+	to Stone's list.
 -->
 <!ELEMENT effect (#PCDATA)>
 

@@ -153,6 +153,14 @@
   <xsl:template
     match="direction[direction-type[staff-divide]]"/>
 
+  <!-- 
+    For safety, remove entire direction that has a new 
+    enumeration value in percussion child elements.
+  -->
+  <xsl:template 
+    match="direction[direction-type[percussion[effect[
+        . = 'lotus flute' or . = 'megaphone']]]]"/>
+
   <!-- Remove new image attributes -->
   <xsl:template
     match="image/@height | image/@width"/>
