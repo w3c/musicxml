@@ -415,15 +415,15 @@
 
 <!--
 	The metal element represents pictograms for metal
-	percussion instruments. Valid values are almglocken, bell,
-	bell plate, brake drum, Chinese cymbal, cowbell,
-	crash cymbals, crotale, cymbal tongs, domed gong,
-	finger cymbals, flexatone, gong, hi-hat, high-hat cymbals,
-	handbell, sistrum, sizzle cymbal, sleigh bells,
-	suspended cymbal, tam tam, triangle, and Vietnamese hat.
-	The hi-hat value refers to a pictogram like Stone's
-	high-hat cymbals, but without the long vertical line
-	at the bottom.
+	percussion instruments. Valid values are agogo, almglocken,
+	bell, bell plate, bell tree, brake drum, cencerro, 
+	Chinese cymbal, cowbell, crash cymbals, crotale, cymbal tongs,
+	domed gong, finger cymbals, flexatone, gong, hi-hat,
+	high-hat cymbals, handbell, jingle bells, shell bells, sistrum,
+	sizzle cymbal, sleigh bells, suspended cymbal, tam tam,
+	triangle, and Vietnamese hat. The hi-hat value refers to a
+	pictogram like Stone's high-hat cymbals, but without the long
+	vertical line at the bottom.
 -->
 <!ELEMENT metal (#PCDATA)>
 
