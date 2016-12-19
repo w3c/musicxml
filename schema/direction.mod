@@ -407,9 +407,9 @@
 >
 
 <!--
-	The glass element represents pictograms for glass
-	percussion instruments. The one valid value is
-	wind chimes.
+	The glass element represents pictograms for glass percussion
+	instruments. Valid values are glass harmonica, glass harp,
+	and wind chimes.
 -->
 <!ELEMENT glass (#PCDATA)>
 
@@ -419,11 +419,11 @@
 	bell, bell plate, bell tree, brake drum, cencerro, 
 	Chinese cymbal, cowbell, crash cymbals, crotale, cymbal tongs,
 	domed gong, finger cymbals, flexatone, gong, hi-hat,
-	high-hat cymbals, handbell, jingle bells, shell bells, sistrum,
-	sizzle cymbal, sleigh bells, suspended cymbal, tam tam,
-	triangle, and Vietnamese hat. The hi-hat value refers to a
-	pictogram like Stone's high-hat cymbals, but without the long
-	vertical line at the bottom.
+	high-hat cymbals, handbell, jaw harp, jingle bells,
+	musical saw, shell bells, sistrum, sizzle cymbal, sleigh bells,
+	suspended cymbal, tam tam, triangle, and Vietnamese hat. The
+	hi-hat value refers to a pictogram like Stone's high-hat
+	cymbals, but without the long vertical line at the bottom.
 -->
 <!ELEMENT metal (#PCDATA)>
 

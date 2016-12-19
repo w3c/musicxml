@@ -861,6 +861,8 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 			<xs:documentation>The glass type represents pictograms for glass percussion instruments.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="glass harmonica"/>
+			<xs:enumeration value="glass harp"/>
 			<xs:enumeration value="wind chimes"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -1028,7 +1030,9 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 			<xs:enumeration value="hi-hat"/>
 			<xs:enumeration value="high-hat cymbals"/>
 			<xs:enumeration value="handbell"/>
+			<xs:enumeration value="jaw harp"/>
 			<xs:enumeration value="jingle bells"/>
+			<xs:enumeration value="musical saw"/>
 			<xs:enumeration value="shell bells"/>
 			<xs:enumeration value="sistrum"/>
 			<xs:enumeration value="sizzle cymbal"/>
