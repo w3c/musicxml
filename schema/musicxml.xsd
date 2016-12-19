@@ -1009,10 +1009,13 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 			<xs:documentation>The metal type represents pictograms for metal percussion instruments. The hi-hat value refers to a pictogram like Stone's high-hat cymbals but without the long vertical line at the bottom.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="agogo"/>
 			<xs:enumeration value="almglocken"/>
 			<xs:enumeration value="bell"/>
 			<xs:enumeration value="bell plate"/>
+			<xs:enumeration value="bell tree"/>
 			<xs:enumeration value="brake drum"/>
+			<xs:enumeration value="cencerro"/>
 			<xs:enumeration value="Chinese cymbal"/>
 			<xs:enumeration value="cowbell"/>
 			<xs:enumeration value="crash cymbals"/>
@@ -1025,6 +1028,8 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 			<xs:enumeration value="hi-hat"/>
 			<xs:enumeration value="high-hat cymbals"/>
 			<xs:enumeration value="handbell"/>
+			<xs:enumeration value="jingle bells"/>
+			<xs:enumeration value="shell bells"/>
 			<xs:enumeration value="sistrum"/>
 			<xs:enumeration value="sizzle cymbal"/>
 			<xs:enumeration value="sleigh bells"/>

@@ -161,6 +161,12 @@
     match="direction[direction-type[percussion[effect[
         . = 'lotus flute' or . = 'megaphone']]]]"/>
 
+  <xsl:template 
+    match="direction[direction-type[percussion[metal[
+        . = 'agogo' or . = 'bell tree' or
+        . = 'cencerro' or . = 'jingle bells' or
+        . = 'shell bells']]]]"/>
+
   <!-- Remove new image attributes -->
   <xsl:template
     match="image/@height | image/@width"/>
