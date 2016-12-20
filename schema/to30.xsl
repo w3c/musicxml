@@ -162,9 +162,14 @@
         . = 'lotus flute' or . = 'megaphone']]]]"/>
 
   <xsl:template 
+    match="direction[direction-type[percussion[glass[
+        . = 'glass harmonica' or . = 'glass harp']]]]"/>
+
+  <xsl:template 
     match="direction[direction-type[percussion[metal[
         . = 'agogo' or . = 'bell tree' or
-        . = 'cencerro' or . = 'jingle bells' or
+        . = 'cencerro' or . = 'jaw harp' or
+        . = 'jingle bells' or . = 'musical saw' or
         . = 'shell bells']]]]"/>
 
   <!-- Remove new image attributes -->
