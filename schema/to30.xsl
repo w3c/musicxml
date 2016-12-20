@@ -166,6 +166,12 @@
         . = 'glass harmonica' or . = 'glass harp']]]]"/>
 
   <xsl:template 
+    match="direction[direction-type[percussion[membrane[
+        . = 'Chinese tomtom' or . = 'cuica' or
+        . = 'Indo-American tomtom' or . = 'Japanese tomtom' or
+        . = 'tabla']]]]"/>
+
+  <xsl:template 
     match="direction[direction-type[percussion[metal[
         . = 'agogo' or . = 'bell tree' or
         . = 'cencerro' or . = 'jaw harp' or
