@@ -452,10 +452,10 @@
 <!--
 	The membrane element represents pictograms for membrane
 	percussion instruments. Valid values are bass drum,
-	bass drum on side, bongos, conga drum, goblet drum,
-	military drum, snare drum, snare drum snares off,
-	tambourine, tenor drum, timbales, and tomtom. The
-	goblet drum value is in addition to Stone's list.
+	bass drum on side, bongos, Chinese tomtom, conga drum,
+	cuica, goblet drum, Indo-American tomtom, Japanese tomtom,
+	military drum, snare drum, snare drum snares off, tabla,
+	tambourine, tenor drum, timbales, and tomtom.
 -->
 <!ELEMENT membrane (#PCDATA)>
 
