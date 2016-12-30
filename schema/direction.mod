@@ -428,14 +428,13 @@
 <!ELEMENT metal (#PCDATA)>
 
 <!--
-	The wood element represents pictograms for wood
-	percussion instruments. Valid values are board clapper,
-	cabasa, castanets, claves, guiro, log drum, maraca,
-	maracas, ratchet, sandpaper blocks, slit drum,
-	temple block, vibraslap, and wood block. The maraca
-	and maracas values distinguish the one- and two-maraca
-	versions of the pictogram. The castanets and vibraslap
-	values are in addition to Stone's list.
+	The wood element represents pictograms for wood percussion
+	instruments. Valid values are bamboo scraper, board clapper,
+	cabasa, castanets, castanets with handle, claves,
+	football rattle, guiro, log drum, maraca, maracas, quijada,
+	ratchet, reco-reco, sandpaper blocks, slit drum, temple block,
+	vibraslap, whip, and wood block. The maraca and maracas values
+	distinguish the one- and two-maraca versions of the pictogram.
 -->
 <!ELEMENT wood (#PCDATA)>
 

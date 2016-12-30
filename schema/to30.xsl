@@ -178,6 +178,12 @@
         . = 'jingle bells' or . = 'musical saw' or
         . = 'shell bells']]]]"/>
 
+  <xsl:template 
+    match="direction[direction-type[percussion[wood[
+        . = 'bamboo scraper' or . = 'castanets with handle' or
+        . = 'football rattle' or . = 'quijada' or
+        . = 'reco-reco' or . = 'whip']]]]"/>
+
   <!-- Remove new image attributes -->
   <xsl:template
     match="image/@height | image/@width"/>

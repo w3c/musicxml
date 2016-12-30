@@ -1190,22 +1190,28 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 
 	<xs:simpleType name="wood">
 		<xs:annotation>
-			<xs:documentation>The wood type represents pictograms for wood percussion instruments. The maraca and maracas values distinguish the one- and two-maraca versions of the pictogram. The vibraslap and castanets values are in addition to Stone's list.</xs:documentation>
+			<xs:documentation>The wood type represents pictograms for wood percussion instruments. The maraca and maracas values distinguish the one- and two-maraca versions of the pictogram.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="bamboo scraper"/>
 			<xs:enumeration value="board clapper"/>
 			<xs:enumeration value="cabasa"/>
 			<xs:enumeration value="castanets"/>
+			<xs:enumeration value="castanets with handle"/>
 			<xs:enumeration value="claves"/>
+			<xs:enumeration value="football rattle"/>
 			<xs:enumeration value="guiro"/>
 			<xs:enumeration value="log drum"/>
 			<xs:enumeration value="maraca"/>
 			<xs:enumeration value="maracas"/>
+			<xs:enumeration value="quijada"/>
 			<xs:enumeration value="ratchet"/>
+			<xs:enumeration value="reco-reco"/>
 			<xs:enumeration value="sandpaper blocks"/>
 			<xs:enumeration value="slit drum"/>
 			<xs:enumeration value="temple block"/>
 			<xs:enumeration value="vibraslap"/>
+			<xs:enumeration value="whip"/>
 			<xs:enumeration value="wood block"/>
 		</xs:restriction>
 	</xs:simpleType>
