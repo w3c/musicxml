@@ -414,9 +414,9 @@
 <!ELEMENT glass (#PCDATA)>
 
 <!--
-	The metal element represents pictograms for metal
-	percussion instruments. Valid values are agogo, almglocken,
-	bell, bell plate, bell tree, brake drum, cencerro, 
+	The metal element represents pictograms for metal percussion
+	instruments. Valid values are agogo, almglocken, bell,
+	bell plate, bell tree, brake drum, cencerro, chain rattle,
 	Chinese cymbal, cowbell, crash cymbals, crotale, cymbal tongs,
 	domed gong, finger cymbals, flexatone, gong, hi-hat,
 	high-hat cymbals, handbell, jaw harp, jingle bells,
@@ -432,9 +432,10 @@
 	instruments. Valid values are bamboo scraper, board clapper,
 	cabasa, castanets, castanets with handle, claves,
 	football rattle, guiro, log drum, maraca, maracas, quijada,
-	ratchet, reco-reco, sandpaper blocks, slit drum, temple block,
-	vibraslap, whip, and wood block. The maraca and maracas values
-	distinguish the one- and two-maraca versions of the pictogram.
+	rainstick, ratchet, reco-reco, sandpaper blocks, slit drum,
+	temple block, vibraslap, whip, and wood block. The maraca and
+	maracas values distinguish the one- and two-maraca versions
+	of the pictogram.
 -->
 <!ELEMENT wood (#PCDATA)>
 
