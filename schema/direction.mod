@@ -366,8 +366,10 @@
 	the presence of one or more dots in the registration
 	diagram. The accordion-middle element may have text
 	values of 1, 2, or 3, corresponding to have 1 to 3 dots
-	in the middle section. An accordion-registration element
-	needs to have at least one of the child elements present.
+	in the middle section. If not dots are present in a section
+	of the registration diagram, the corresponding element is
+	omitted. An accordion-registration element needs to have at
+	least one of the child elements present.
 -->
 <!ELEMENT accordion-registration
 	(accordion-high?, accordion-middle?, accordion-low?)>
