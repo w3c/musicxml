@@ -174,15 +174,16 @@
   <xsl:template 
     match="direction[direction-type[percussion[metal[
         . = 'agogo' or . = 'bell tree' or
-        . = 'cencerro' or . = 'jaw harp' or
-        . = 'jingle bells' or . = 'musical saw' or
-        . = 'shell bells']]]]"/>
+        . = 'cencerro' or . = 'chain rattle' or
+        . = 'jaw harp' or . = 'jingle bells' or
+        . = 'musical saw' or . = 'shell bells']]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[wood[
         . = 'bamboo scraper' or . = 'castanets with handle' or
         . = 'football rattle' or . = 'quijada' or
-        . = 'reco-reco' or . = 'whip']]]]"/>
+        . = 'rainstick' or . = 'reco-reco' or
+        . = 'whip']]]]"/>
 
   <!-- Remove new image attributes -->
   <xsl:template

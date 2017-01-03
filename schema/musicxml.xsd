@@ -1023,6 +1023,7 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 			<xs:enumeration value="bell tree"/>
 			<xs:enumeration value="brake drum"/>
 			<xs:enumeration value="cencerro"/>
+			<xs:enumeration value="chain rattle"/>
 			<xs:enumeration value="Chinese cymbal"/>
 			<xs:enumeration value="cowbell"/>
 			<xs:enumeration value="crash cymbals"/>
@@ -1205,6 +1206,7 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 			<xs:enumeration value="maraca"/>
 			<xs:enumeration value="maracas"/>
 			<xs:enumeration value="quijada"/>
+			<xs:enumeration value="rainstick"/>
 			<xs:enumeration value="ratchet"/>
 			<xs:enumeration value="reco-reco"/>
 			<xs:enumeration value="sandpaper blocks"/>
