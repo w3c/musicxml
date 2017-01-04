@@ -5,7 +5,7 @@
 
 Version 3.1 Draft
 
-Copyright © 2004-2016 the Contributors to the MusicXML Specification, published by the W3C Music Notation Community Group under the W3C Community Contributor License Agreement (CLA):
+Copyright © 2004-2017 the Contributors to the MusicXML Specification, published by the W3C Music Notation Community Group under the W3C Community Contributor License Agreement (CLA):
 
 	https://www.w3.org/community/about/agreements/cla/
 
@@ -775,7 +775,7 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 
 	<xs:simpleType name="accordion-middle">
 		<xs:annotation>
-			<xs:documentation>The accordion-middle type may have values of 1, 2, or 3, corresponding to having 1 to 3 dots in the middle section of the accordion registration symbol.</xs:documentation>
+			<xs:documentation>The accordion-middle type may have values of 1, 2, or 3, corresponding to having 1 to 3 dots in the middle section of the accordion registration symbol. This type is not used if no dots are present.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:positiveInteger">
 			<xs:minInclusive value="1"/>
@@ -2815,17 +2815,17 @@ The number attribute reflects the numeric values of what is under the ending lin
 		<xs:sequence>
 			<xs:element name="accordion-high" type="empty" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The accordion-high element indicates the presence of a dot in the high (4') section of the registration symbol.</xs:documentation>
+					<xs:documentation>The accordion-high element indicates the presence of a dot in the high (4') section of the registration symbol. This element is omitted if no dot is present.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="accordion-middle" type="accordion-middle" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The accordion-middle element indicates the presence of 1 to 3 dots in the middle (8') section of the registration symbol.</xs:documentation>
+					<xs:documentation>The accordion-middle element indicates the presence of 1 to 3 dots in the middle (8') section of the registration symbol. This element is omitted if no dots are present.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="accordion-low" type="empty" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The accordion-low element indicates the presence of a dot in the low (16') section of the registration symbol.</xs:documentation>
+					<xs:documentation>The accordion-low element indicates the presence of a dot in the low (16') section of the registration symbol. This element is omitted if no dot is present.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
