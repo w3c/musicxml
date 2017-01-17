@@ -102,6 +102,12 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 			<xs:enumeration value="bracket"/>
 			<xs:enumeration value="triangle"/>
 			<xs:enumeration value="diamond"/>
+			<xs:enumeration value="pentagon"/>
+			<xs:enumeration value="hexagon"/>
+			<xs:enumeration value="heptagon"/>
+			<xs:enumeration value="octagon"/>
+			<xs:enumeration value="nonagon"/>
+			<xs:enumeration value="decagon"/>
 			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>

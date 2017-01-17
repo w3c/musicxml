@@ -146,7 +146,9 @@
 -->
 <!ENTITY % enclosure-shape 
 	"(rectangle | square | oval | circle | 
-	  bracket | triangle | diamond | none)">
+	  bracket | triangle | diamond | pentagon |
+	  hexagon | heptagon | octagon | nonagon |
+	  decagon | none)">
 
 <!--
 	Slurs, tuplets, and many other features can be
