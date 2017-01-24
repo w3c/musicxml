@@ -132,6 +132,15 @@
   <xsl:template
     match="accidental-text/@smufl | other-dynamics/@smufl"/>
 
+  <!-- 
+    Remove enclosure attributes that have values of pentagon,
+    hexagon, heptagon, octagon, nonagon, or decagon.
+  -->
+  <xsl:template 
+    match="@enclosure[. = 'pentagon' or . = 'hexagon' or
+		. = 'heptagon' or . = 'octagon' or
+		. = 'nonagon' or . = 'decagon']"/>
+
   <!--
     Do not copy text for fermata elements with new values.
   -->
