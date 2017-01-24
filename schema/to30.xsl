@@ -167,6 +167,10 @@
     enumeration value in percussion child elements.
   -->
   <xsl:template 
+    match="direction[direction-type[percussion[beater[
+        . = 'slide brush on gong']]]]"/>
+
+  <xsl:template 
     match="direction[direction-type[percussion[effect[
         . = 'lotus flute' or . = 'megaphone']]]]"/>
 
@@ -185,7 +189,8 @@
         . = 'agogo' or . = 'bell tree' or
         . = 'cencerro' or . = 'chain rattle' or
         . = 'jaw harp' or . = 'jingle bells' or
-        . = 'musical saw' or . = 'shell bells']]]]"/>
+        . = 'musical saw' or . = 'shell bells' or
+        . = 'tam tam with beater']]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[wood[

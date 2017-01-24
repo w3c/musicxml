@@ -806,6 +806,7 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 			<xs:enumeration value="jazz stick"/>
 			<xs:enumeration value="knitting needle"/>
 			<xs:enumeration value="metal hammer"/>
+			<xs:enumeration value="slide brush on gong"/>
 			<xs:enumeration value="snare stick"/>
 			<xs:enumeration value="spoon mallet"/>
 			<xs:enumeration value="triangle beater"/>
@@ -1051,6 +1052,7 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 			<xs:enumeration value="sleigh bells"/>
 			<xs:enumeration value="suspended cymbal"/>
 			<xs:enumeration value="tam tam"/>
+			<xs:enumeration value="tam tam with beater"/>
 			<xs:enumeration value="triangle"/>
 			<xs:enumeration value="Vietnamese hat"/>
 		</xs:restriction>
