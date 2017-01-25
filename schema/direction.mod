@@ -423,9 +423,10 @@
 	domed gong, finger cymbals, flexatone, gong, hi-hat,
 	high-hat cymbals, handbell, jaw harp, jingle bells,
 	musical saw, shell bells, sistrum, sizzle cymbal, sleigh bells,
-	suspended cymbal, tam tam, triangle, and Vietnamese hat. The
-	hi-hat value refers to a pictogram like Stone's high-hat
-	cymbals, but without the long vertical line at the bottom.
+	suspended cymbal, tam tam, tam tam with beater, triangle, and
+	Vietnamese hat. The hi-hat value refers to a pictogram like
+	Stone's high-hat cymbals, but without the long vertical line
+	at the bottom.
 -->
 <!ELEMENT metal (#PCDATA)>
 
@@ -483,13 +484,12 @@
 	represented in the pictogram. Valid values are bow,
 	chime hammer, coin, finger, fingernail, fist,
 	guiro scraper, hammer, hand, jazz stick, knitting needle,
-	metal hammer, snare stick, spoon mallet, triangle beater,
-	triangle beater plain, and wire brush. The jazz stick value
-	refers to Stone's plastic tip snare stick. The triangle
-	beater plain value refers to the plain line version of the
-	pictogram. The finger and hammer values are in addition
-	to Stone's list. The tip attribute represents the direction
-	in which the tip of a beater points.
+	metal hammer, slide brush on gong, snare stick, spoon mallet,
+	triangle beater, triangle beater plain, and wire brush. The
+	jazz stick value refers to Stone's plastic tip snare stick.
+	The triangle beater plain value refers to the plain line
+	version of the pictogram. The tip attribute represents the
+	direction in which the tip of a beater points.
 -->
 
 <!ELEMENT beater (#PCDATA)>
