@@ -305,9 +305,9 @@
 	The notehead element indicates shapes other than the open
 	and closed ovals associated with note durations. The element
 	value can be slash, triangle, diamond, square, cross, x,
-	circle-x, inverted triangle, arrow down, arrow up, slashed,
-	back slashed, normal, cluster, circle dot, left triangle,
-	rectangle, other, or none. 
+	circle-x, inverted triangle, arrow down, arrow up, circled,
+	slashed, back slashed, normal, cluster, circle dot,
+	left triangle, rectangle, other, or none. 
 
 	For shape note music, the element values do, re, mi, fa,
 	fa up, so, la, and ti are also used, corresponding to Aikin's

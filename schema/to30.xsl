@@ -75,7 +75,7 @@
     Remove notehead elements with new notehead values.
   -->
   <xsl:template
-    match="notehead[. = 'other']"/>
+    match="notehead[. = 'circled' or . = 'other']"/>
 
   <!--
     Remove time-only attribute from lyric element.
