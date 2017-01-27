@@ -168,7 +168,8 @@
   -->
   <xsl:template 
     match="direction[direction-type[percussion[beater[
-        . = 'slide brush on gong']]]]"/>
+        . = 'drum stick' or . = 'slide brush on gong' or
+        . = 'superball']]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[effect[
@@ -193,11 +194,21 @@
         . = 'tam tam with beater']]]]"/>
 
   <xsl:template 
+    match="direction[direction-type[percussion[stick[stick-type[
+        . = 'glockenspiel' or . = 'gum' or
+        . = 'hammer' or . = 'superball' or
+        . = 'wound']]]]]"/>
+
+  <xsl:template 
     match="direction[direction-type[percussion[wood[
         . = 'bamboo scraper' or . = 'castanets with handle' or
         . = 'football rattle' or . = 'quijada' or
         . = 'rainstick' or . = 'reco-reco' or
         . = 'whip']]]]"/>
+
+  <!-- Remove stick attributes -->
+  <xsl:template
+    match="stick/@parentheses | stick/@dashed-circle"/>
 
   <!-- Remove new image attributes -->
   <xsl:template
