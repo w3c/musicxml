@@ -1514,6 +1514,7 @@ The other notehead covers noteheads other than those listed here. It is usually 
 			<xs:enumeration value="inverted triangle"/>
 			<xs:enumeration value="arrow down"/>
 			<xs:enumeration value="arrow up"/>
+			<xs:enumeration value="circled"/>
 			<xs:enumeration value="slashed"/>
 			<xs:enumeration value="back slashed"/>
 			<xs:enumeration value="normal"/>
