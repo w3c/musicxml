@@ -797,6 +797,7 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 			<xs:enumeration value="bow"/>
 			<xs:enumeration value="chime hammer"/>
 			<xs:enumeration value="coin"/>
+			<xs:enumeration value="drum stick"/>
 			<xs:enumeration value="finger"/>
 			<xs:enumeration value="fingernail"/>
 			<xs:enumeration value="fist"/>
@@ -809,6 +810,7 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 			<xs:enumeration value="slide brush on gong"/>
 			<xs:enumeration value="snare stick"/>
 			<xs:enumeration value="spoon mallet"/>
+			<xs:enumeration value="superball"/>
 			<xs:enumeration value="triangle beater"/>
 			<xs:enumeration value="triangle beater plain"/>
 			<xs:enumeration value="wire brush"/>
@@ -1167,7 +1169,12 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="bass drum"/>
 			<xs:enumeration value="double bass drum"/>
+			<xs:enumeration value="glockenspiel"/>
+			<xs:enumeration value="gum"/>
+			<xs:enumeration value="hammer"/>
+			<xs:enumeration value="superball"/>
 			<xs:enumeration value="timpani"/>
+			<xs:enumeration value="wound"/>
 			<xs:enumeration value="xylophone"/>
 			<xs:enumeration value="yarn"/>
 		</xs:restriction>
@@ -3524,13 +3531,15 @@ The offset element is used to indicate that the sound takes place offset from th
 
 	<xs:complexType name="stick">
 		<xs:annotation>
-			<xs:documentation>The stick type represents pictograms where the material of the stick, mallet, or beater is included.</xs:documentation>
+			<xs:documentation>The stick type represents pictograms where the material of the stick, mallet, or beater is included.The parentheses and dashed-circle attributes indicate the presence of these marks around the round beater part of a pictogram. Values for these attributes are "no" if not present.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="stick-type" type="stick-type"/>
 			<xs:element name="stick-material" type="stick-material"/>
 		</xs:sequence>
 		<xs:attribute name="tip" type="tip-direction"/>
+		<xs:attribute name="parentheses" type="yes-no"/>
+		<xs:attribute name="dashed-circle" type="yes-no"/>
 	</xs:complexType>
 
 	<xs:complexType name="string-mute">

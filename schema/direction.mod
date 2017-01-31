@@ -482,14 +482,14 @@
 	The beater element represents pictograms for beaters,
 	mallets, and sticks that do not have different materials
 	represented in the pictogram. Valid values are bow,
-	chime hammer, coin, finger, fingernail, fist,
+	chime hammer, coin, drum stick, finger, fingernail, fist,
 	guiro scraper, hammer, hand, jazz stick, knitting needle,
 	metal hammer, slide brush on gong, snare stick, spoon mallet,
-	triangle beater, triangle beater plain, and wire brush. The
-	jazz stick value refers to Stone's plastic tip snare stick.
-	The triangle beater plain value refers to the plain line
-	version of the pictogram. The tip attribute represents the
-	direction in which the tip of a beater points.
+	superball, triangle beater, triangle beater plain, and
+	wire brush. The jazz stick value refers to Stone's plastic
+	tip snare stick. The triangle beater plain value refers to
+	the plain line version of the pictogram. The tip attribute
+	represents the direction in which the tip of a beater points.
 -->
 
 <!ELEMENT beater (#PCDATA)>
@@ -500,17 +500,24 @@
 <!--
 	The stick element represents pictograms where the material
 	in the stick, mallet, or beater is included. Valid values
-	for stick-type are bass drum, double bass drum, timpani,
-	xylophone, and yarn. Valid values for stick-material are
-	soft, medium, hard, shaded, and x. The shaded and x values
-	reflect different uses for brass, wood, and steel core
-	beaters of different types. The tip attribute represents
-	the direction in which the tip of a stick points.
+	for stick-type are bass drum, double bass drum, glockenspiel,
+	gum, hammer, superball, timpani, wound, xylophone, and yarn.
+	Valid values for stick-material are soft, medium, hard,
+	shaded, and x. The shaded and x values reflect different
+	uses for brass, wood, and steel core beaters of different
+	types. The tip attribute represents the direction in which
+	the tip of a stick points. The parentheses and dashed-circle
+	attributes indicate the presence of these marks around the
+	round beater part of a pictogram. Values for these attributes
+	are "no" if not present.
+
 -->
 
 <!ELEMENT stick (stick-type, stick-material)>
 <!ATTLIST stick
 	tip %tip-direction; #IMPLIED
+	parentheses %yes-no; #IMPLIED 
+	dashed-circle %yes-no; #IMPLIED 
 >
 <!ELEMENT stick-type (#PCDATA)>
 <!ELEMENT stick-material (#PCDATA)>
