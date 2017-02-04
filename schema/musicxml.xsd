@@ -426,7 +426,7 @@ The values of start, stop, and continue refer to how an element appears in music
 
 	<xs:simpleType name="string-number">
 		<xs:annotation>
-			<xs:documentation>The string-number type indicates a string number. Strings are numbered from high to low, with 1 being the highest pitched string.</xs:documentation>
+			<xs:documentation>The string-number type indicates a string number. Strings are numbered from high to low, with 1 being the highest pitched full-length string.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:positiveInteger"/>
 	</xs:simpleType>
@@ -2363,7 +2363,7 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 
 	<xs:complexType name="string">
 		<xs:annotation>
-			<xs:documentation>The string type is used with tablature notation, regular notation (where it is often circled), and chord diagrams. String numbers start with 1 for the highest string.</xs:documentation>
+			<xs:documentation>The string type is used with tablature notation, regular notation (where it is often circled), and chord diagrams. String numbers start with 1 for the highest pitched full-length string.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="string-number">
