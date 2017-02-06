@@ -872,8 +872,8 @@
 	Fret and string are used with tablature notation and chord
 	symbols. Fret numbers start with 0 for an open string and
 	1 for the first fret. String numbers start with 1 for the
-	highest string. The string element can also be used in
-	regular notation.
+	highest pitched full-length string. The string element can
+	also be used in regular notation.
 -->
 <!ELEMENT fret (#PCDATA)>
 <!ATTLIST fret
