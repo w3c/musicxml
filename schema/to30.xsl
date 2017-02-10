@@ -162,6 +162,30 @@
   <xsl:template
     match="direction[direction-type[staff-divide]]"/>
 
+  <!--
+    Convert sostenuto pedal types to start (damper) pedal
+    types. We do this instead of removing the entire element
+    so that we do not leave a dangling pedal element with a
+    stop type after the conversion.
+  -->
+  <xsl:template 
+    match="pedal/@type[. = 'sostenuto']">
+    <xsl:attribute name="type">start</xsl:attribute>
+  </xsl:template>
+
+  <!-- 
+    Remove pedal elements that have a number greater
+    than 1, then remove the number and abbreviated
+	attributes altogether. Make sure the tests have
+    the right priority so the directions are removed
+    first, before the number attribute is removed.
+  -->
+  <xsl:template
+    match="pedal/@number | pedal/@abbreviated"/>
+
+  <xsl:template priority="1"
+    match="direction[direction-type[pedal[@number != '1']]]"/>
+
   <!-- 
     For safety, remove entire direction that has a new 
     enumeration value in percussion child elements.

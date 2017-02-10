@@ -1070,6 +1070,19 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="pedal-type">
+		<xs:annotation>
+			<xs:documentation>The pedal-type simple type is used to distinguish types of pedal directions. The start value indicates the start of a damper pedal, while the sostenuto value indicates the start of a sostenuto pedal. The change, continue, and stop values can be used with either the damper or sostenuto pedal. The soft pedal is not included here because there is no special symbol or graphic used for it beyond what can be specified with words and bracket elements.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="start"/>
+			<xs:enumeration value="stop"/>
+			<xs:enumeration value="sostenuto"/>
+			<xs:enumeration value="change"/>
+			<xs:enumeration value="continue"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:simpleType name="pitched">
 		<xs:annotation>
 			<xs:documentation>The pitched type represents pictograms for pitched percussion instruments. The chimes and tubular chimes values distinguish the single-line and double-line versions of the pictogram. The mallet value is in addition to Stone's list.</xs:documentation>
@@ -3333,11 +3346,15 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 
 	<xs:complexType name="pedal">
 		<xs:annotation>
-			<xs:documentation>The pedal type represents piano pedal marks. The line attribute is yes if pedal lines are used. The sign attribute is yes if Ped and * signs are used. For MusicXML 2.0 compatibility, the sign attribute is yes by default if the line attribute is no, and is no by default if the line attribute is yes. The change and continue types are used when the line attribute is yes. The change type indicates a pedal lift and retake indicated with an inverted V marking. The continue type allows more precise formatting across system breaks and for more complex pedaling lines. The alignment attributes are ignored if the line attribute is yes.</xs:documentation>
+			<xs:documentation>The pedal type represents piano pedal marks. In MusicXML 3.1 this includes sostenuto as well as damper pedal marks. The line attribute is yes if pedal lines are used. The sign attribute is yes if Ped, Sost, and * signs are used. For MusicXML 2.0 compatibility, the sign attribute is yes by default if the line attribute is no, and is no by default if the line attribute is yes. If the sign attribute is set to yes and the type is start or sostenuto, the abbreviated attribute is yes if the short P and S signs are used, and no if the full Ped and Sost signs are used. It is no by default. Otherwise the abbreviated attribute is ignored.
+
+The change and continue types are used when the line attribute is yes. The change type indicates a pedal lift and retake indicated with an inverted V marking. The continue type allows more precise formatting across system breaks and for more complex pedaling lines. The alignment attributes are ignored if the line attribute is yes.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="type" type="start-stop-change-continue" use="required"/>
+		<xs:attribute name="type" type="pedal-type" use="required"/>
+		<xs:attribute name="number" type="number-level"/>
 		<xs:attribute name="line" type="yes-no"/>
 		<xs:attribute name="sign" type="yes-no"/>
+		<xs:attribute name="abbreviated" type="yes-no"/>
 		<xs:attributeGroup ref="print-style-align"/>
 	</xs:complexType>
 
