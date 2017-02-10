@@ -208,27 +208,30 @@
 	font for the numeric value in cases where a single
 	metronome font is not used.
 
-	The metronome-note and metronome-relation elements
-	allow for the specification of more complicated metric
-	relationships, such as swing tempo marks where 
-	two eighths are equated to a quarter note / eighth note
-	triplet. The metronome-type, metronome-beam, and
-	metronome-dot elements work like the type, beam, and
-	dot elements. The metronome-tuplet element uses the
-	same element structure as the time-modification element
-	along with some attributes from the tuplet element. The
-	metronome-relation element describes the relationship
-	symbol that goes between the two sets of metronome-note
-	elements. The currently allowed value is equals, but this
-	may expand in future versions. If the element is empty,
-	the equals value is used. The metronome-relation and
-	the following set of metronome-note elements are optional
-	to allow display of an isolated Grundschlagnote.
+	The metronome-note and metronome-relation elements allow
+	for the specification of metric modulations and other metric
+	relationships, such as swing tempo marks where two eighths
+	are equated to a quarter note / eighth note triplet. If the
+	metronome-arrows element is present, it indicates that metric
+	modulation arrows are displayed on both sides of the metronome
+	mark. The metronome-type, metronome-beam, and metronome-dot
+	elements work like the type, beam, and dot elements. The
+	metronome-tuplet element uses the same element structure
+	as the time-modification element along with some attributes
+	from the tuplet element. The metronome-relation element
+	describes the relationship symbol that goes between the
+	two sets of metronome-note elements. The currently allowed
+	value is equals, but this may expand in future versions.
+	If the element is empty, the equals value is used. The 
+	metronome-relation and the following set of metronome-note
+	elements are optional to allow display of an isolated
+	Grundschlagnote.
 -->
 <!ELEMENT metronome 
 	((beat-unit, beat-unit-dot*, 
 	 (per-minute | (beat-unit, beat-unit-dot*))) |
-	(metronome-note+, (metronome-relation, metronome-note+)?))>
+	(metronome-arrows?, metronome-note+,
+	 (metronome-relation, metronome-note+)?))>
 <!ATTLIST metronome
     %print-style-align;
     %justify;
