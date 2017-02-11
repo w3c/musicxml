@@ -86,6 +86,7 @@
 >
 
 <!--
+	The words element specifies a standard text direction.
 	Left justification is assumed if not specified. 
 	Language is Italian ("it") by default. Enclosure
 	is none by default.
@@ -95,6 +96,18 @@
     %text-formatting;
 >
 
+<!--
+	The symbol element specifies a musical symbol using a
+	canonical SMuFL glyph name. It is used when an occasional
+	musical symbol is interspersed into text. It should not be
+	used in place of semantic markup, such as metronome marks
+	that mix text and symbols. Left justification is assumed
+	if not specified. Enclosure is none by default.
+-->
+<!ELEMENT symbol (#PCDATA)>
+<!ATTLIST symbol
+    %symbol-formatting;
+>
 <!--
 	Wedge spread is measured in tenths of staff line space.
 	The type is crescendo for the start of a wedge that is

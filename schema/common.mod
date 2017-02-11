@@ -570,6 +570,21 @@
 	 %enclosure;">
 
 <!--
+	The symbol-formatting entity contains the common formatting
+	attributes for musical symbols. Default values may differ
+	across the elements that use this entity.
+-->
+<!ENTITY % symbol-formatting
+	"%justify;
+	 %print-style-align;
+	 %text-decoration;
+	 %text-rotation;
+	 %letter-spacing;
+	 %line-height;
+	 %text-direction;
+	 %enclosure;">
+
+<!--
 	The level-display entity allows specification of three 
 	common ways to indicate editorial indications: putting
 	parentheses or square brackets around a symbol, or making

@@ -1903,6 +1903,20 @@ By default, all these attributes are set to yes. If print-object is set to no, t
 		<xs:attribute name="smufl" type="smufl-glyph-name"/>
 	</xs:attributeGroup>
 
+	<xs:attributeGroup name="symbol-formatting">
+		<xs:annotation>
+			<xs:documentation>The symbol-formatting attribute group collects the common formatting attributes for musical symbols. Default values may differ across the elements that use this group.</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="justify"/>
+		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="text-decoration"/>
+		<xs:attributeGroup ref="text-rotation"/>
+		<xs:attributeGroup ref="letter-spacing"/>
+		<xs:attributeGroup ref="line-height"/>
+		<xs:attributeGroup ref="text-direction"/>
+		<xs:attributeGroup ref="enclosure"/>
+	</xs:attributeGroup>
+	
 	<xs:attributeGroup name="text-decoration">
 		<xs:annotation>
 			<xs:documentation>The text-decoration attribute group is based on the similar feature in XHTML and CSS. It allows for text to be underlined, overlined, or struck-through. It extends the CSS version by allow double or triple lines instead of just being on or off.</xs:documentation>
@@ -2235,6 +2249,17 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="formatted-symbol">
+		<xs:annotation>
+			<xs:documentation>The formatted-symbol type represents a SMuFL musical symbol element with formatting attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="smufl-glyph-name">
+				<xs:attributeGroup ref="symbol-formatting"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="formatted-text">
 		<xs:annotation>
 			<xs:documentation>The formatted-text type represents a text element with text-formatting attributes.</xs:documentation>
@@ -3023,11 +3048,21 @@ By default, a series of direction-type elements and a series of child elements o
 					<xs:documentation>The segno element is the visual indicator of a segno sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="words" type="formatted-text" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The words element specifies a standard text direction. Left justification is assumed if not specified. Language is Italian ("it") by default. Enclosure is none by default.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:sequence>
+				<xs:element name="words" type="formatted-text" minOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The words element specifies a standard text direction. Left justification is assumed if not specified. Language is Italian ("it") by default. Enclosure is none by default.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="words" type="formatted-text"/>
+					<xs:element name="symbol" type="formatted-symbol">
+						<xs:annotation>
+							<xs:documentation>The symbol element specifies a musical symbol using a canonical SMuFL glyph name. It is used when an occasional musical symbol is interspersed into text. It should not be used in place of semantic markup, such as metronome marks that mix text and symbols. Left justification is assumed if not specified. Enclosure is none by default.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
 			<xs:element name="coda" type="empty-print-style-align" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The coda element is the visual indicator of a coda sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
@@ -4983,13 +5018,13 @@ The show-number attribute is used to display either the number of actual notes, 
 
 	<xs:complexType name="credit">
 		<xs:annotation>
-			<xs:documentation>The credit type represents the appearance of the title, composer, arranger, lyricist, copyright, dedication, and other text and graphics that commonly appears on the first page of a score. The credit-words and credit-image elements are similar to the words and image elements for directions. However, since the credit is not part of a measure, the default-x and default-y attributes adjust the origin relative to the bottom left-hand corner of the first page. The enclosure for credit-words is none by default.
+			<xs:documentation>The credit type represents the appearance of the title, composer, arranger, lyricist, copyright, dedication, and other text, symbols, and graphics that commonly appear on the first page of a score. The credit-words, credit-symbol, and credit-image elements are similar to the words, symbol, and image elements for directions. However, since the credit is not part of a measure, the default-x and default-y attributes adjust the origin relative to the bottom left-hand corner of the page. The enclosure for credit-words and credit-symbol is none by default.
 
-By default, a series of credit-words elements within a single credit element follow one another in sequence visually. Non-positional formatting attributes are carried over from the previous element by default.
+By default, a series of credit-words and credit-symbol elements within a single credit element follow one another in sequence visually. Non-positional formatting attributes are carried over from the previous element by default.
 
-The page attribute for the credit element, new in Version 2.0, specifies the page number where the credit should appear. This is an integer value that starts with 1 for the first page. Its value is 1 by default. Since credits occur before the music, these page numbers do not refer to the page numbering specified by the print element's page-number attribute.
+The page attribute for the credit element specifies the page number where the credit should appear. This is an integer value that starts with 1 for the first page. Its value is 1 by default. Since credits occur before the music, these page numbers do not refer to the page numbering specified by the print element's page-number attribute.
 
-The credit-type element, new in Version 3.0, indicates the purpose behind a credit. Multiple types of data may be combined in a single credit, so multiple elements may be used. Standard values include page number, title, subtitle, composer, arranger, lyricist, and rights.
+The credit-type element indicates the purpose behind a credit. Multiple types of data may be combined in a single credit, so multiple elements may be used. Standard values include page number, title, subtitle, composer, arranger, lyricist, and rights.
 </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
@@ -5003,7 +5038,10 @@ The credit-type element, new in Version 3.0, indicates the purpose behind a cred
 					<xs:sequence minOccurs="0" maxOccurs="unbounded">
 						<xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:element name="bookmark" type="bookmark" minOccurs="0" maxOccurs="unbounded"/>
-						<xs:element name="credit-words" type="formatted-text"/>
+						<xs:choice>
+							<xs:element name="credit-words" type="formatted-text"/>
+							<xs:element name="credit-symbol" type="formatted-symbol"/>
+						</xs:choice>
 					</xs:sequence>
 				</xs:sequence>
 			</xs:choice>
