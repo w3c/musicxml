@@ -63,12 +63,12 @@
 	used in the notations element, and is defined in the
 	common.mod file.
 -->
-<!ELEMENT direction-type (rehearsal+ | segno+ | words+ |
-	coda+ | wedge | dynamics+ | dashes | bracket | pedal | 
-	metronome | octave-shift | harp-pedals | damp | damp-all |
-	eyeglasses | string-mute | scordatura | image |
-	principal-voice | accordion-registration | staff-divide | 
-	percussion+ | other-direction)>
+<!ELEMENT direction-type (rehearsal+ | segno+ | coda+ | 
+	(words, (words | symbol)*) | wedge | dynamics+ | dashes |
+	bracket | pedal | metronome | octave-shift | harp-pedals |
+	damp | damp-all |	eyeglasses | string-mute | 
+	scordatura | image | principal-voice | percussion+ |
+	accordion-registration | staff-divide | other-direction)>
 
 <!--
 	Entities related to print suggestions apply to the

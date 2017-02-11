@@ -3048,6 +3048,11 @@ By default, a series of direction-type elements and a series of child elements o
 					<xs:documentation>The segno element is the visual indicator of a segno sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="coda" type="empty-print-style-align" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The coda element is the visual indicator of a coda sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:sequence>
 				<xs:element name="words" type="formatted-text" minOccurs="1">
 					<xs:annotation>
@@ -3063,11 +3068,6 @@ By default, a series of direction-type elements and a series of child elements o
 					</xs:element>
 				</xs:choice>
 			</xs:sequence>
-			<xs:element name="coda" type="empty-print-style-align" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The coda element is the visual indicator of a coda sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="wedge" type="wedge"/>
 			<xs:element name="dynamics" type="dynamics" maxOccurs="unbounded"/>
 			<xs:element name="dashes" type="dashes"/>
@@ -3095,9 +3095,9 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:element name="scordatura" type="scordatura"/>
 			<xs:element name="image" type="image"/>
 			<xs:element name="principal-voice" type="principal-voice"/>
+			<xs:element name="percussion" type="percussion" maxOccurs="unbounded"/>
 			<xs:element name="accordion-registration" type="accordion-registration"/>
 			<xs:element name="staff-divide" type="staff-divide"/>
-			<xs:element name="percussion" type="percussion" maxOccurs="unbounded"/>
 			<xs:element name="other-direction" type="other-direction"/>
 		</xs:choice>
 	</xs:complexType>
