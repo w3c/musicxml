@@ -103,7 +103,7 @@
 	(credit-type*, link*, bookmark*, 
 	(credit-image | 
 	 (credit-words, (link*, bookmark*,
-					 (credit-words | credit-symbol))*)))>
+	                 (credit-words | credit-symbol))*)))>
 <!ATTLIST credit
     page NMTOKEN #IMPLIED
 >

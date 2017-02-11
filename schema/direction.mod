@@ -63,7 +63,7 @@
 	used in the notations element, and is defined in the
 	common.mod file.
 -->
-<!ELEMENT direction-type (rehearsal+ | segno+ | coda+ | 
+<!ELEMENT direction-type (rehearsal+ | segno+ | coda+ |
 	(words, (words | symbol)*) | wedge | dynamics+ | dashes |
 	bracket | pedal | metronome | octave-shift | harp-pedals |
 	damp | damp-all |	eyeglasses | string-mute | 
