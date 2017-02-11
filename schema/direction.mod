@@ -66,7 +66,7 @@
 <!ELEMENT direction-type (rehearsal+ | segno+ | coda+ |
 	(words, (words | symbol)*) | wedge | dynamics+ | dashes |
 	bracket | pedal | metronome | octave-shift | harp-pedals |
-	damp | damp-all | eyeglasses | string-mute | 
+	damp | damp-all | eyeglasses | string-mute |
 	scordatura | image | principal-voice | percussion+ |
 	accordion-registration | staff-divide | other-direction)>
 
