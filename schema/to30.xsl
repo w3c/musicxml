@@ -186,9 +186,9 @@
   <xsl:template priority="1"
     match="direction[direction-type[pedal[@number != '1']]]"/>
 
-  <!-- Remove metronome-arrows elements -->
+  <!-- Remove metronome-arrows and symbol elements -->
   <xsl:template
-    match="metronome-arrows"/>
+    match="metronome-arrows | symbol"/>
 
   <!-- 
     For safety, remove entire direction that has a new 
@@ -253,6 +253,10 @@
     match="glyph"/>
 
   <!-- Additions in score.mod -->
+
+  <!-- Remove credit-symbol elements -->
+  <xsl:template
+    match="credit-symbol"/>
 
   <!-- Remove new image attributes -->
   <xsl:template

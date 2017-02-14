@@ -71,46 +71,59 @@
 
 <!--
 	Credit elements refer to the title, composer, arranger,
-	lyricist, copyright, dedication, and other text that usually
-	appears on the first page of a score. The credit-words
-	and credit-image elements are similar to the words and
-	image elements for directions. However, since the 
-	credit is not part of a measure, the default-x and 
-	default-y attributes adjust the origin relative to the 
-	bottom left-hand corner of the first page. The 
-	enclosure for credit-words is none by default.
+	lyricist, copyright, dedication, and other text, symbols,
+	and graphics that commonly appear on the first page of a
+	score. The credit-words, credit-symbol, and credit-image
+	elements are similar to the words, symbol, and image
+	elements for directions. However, since the credit is not
+	part of a measure, the default-x and default-y attributes
+	adjust the origin relative to the bottom left-hand corner
+	of the page. The  enclosure for credit-words and
+	credit-symbol is none by default.
 
-	By default, a series of credit-words elements within a
-	single credit element follow one another in sequence
-	visually. Non-positional formatting attributes are carried
-	over from the previous element by default.
+	By default, a series of credit-words and credit-symbol
+	elements within a single credit element follow one another
+	in sequence visually. Non-positional formatting attributes
+	are carried over from the previous element by default.
 
-	The page attribute for the credit element, new in Version
-	2.0, specifies the page number where the credit should
-	appear. This is an integer value that starts with 1 for the
-	first page. Its value is 1 by default. Since credits occur
-	before the music, these page numbers do not refer to the
-	page numbering specified by the print element's page-number
-	attribute.
+	The page attribute for the credit element specifies the page
+	number where the credit should appear. This is an integer
+	value that starts with 1 for the first page. Its value is 1
+	by default. Since credits occur before the music, these page
+	numbers do not refer to the page numbering specified by the
+	print element's page-number attribute.
 
-	The credit-type element, new in Version 3.0, indicates the
-	purpose behind a credit. Multiple types of data may be
-	combined in a single credit, so multiple elements may be
-	used. Standard values include page number, title, subtitle,
-	composer, arranger, lyricist, and rights.
+	The credit-type element indicates the purpose behind a
+	credit. Multiple types of data may be combined in a single
+	credit, so multiple elements may be used. Standard values
+	include page number, title, subtitle, composer, arranger,
+	lyricist, and rights.
 -->
 <!ELEMENT credit
 	(credit-type*, link*, bookmark*, 
 	(credit-image | 
-	 (credit-words, (link*, bookmark*, credit-words)*)))>
+	 (credit-words, (link*, bookmark*,
+	                 (credit-words | credit-symbol))*)))>
 <!ATTLIST credit
     page NMTOKEN #IMPLIED
 >
+
 <!ELEMENT credit-type (#PCDATA)>
+
 <!ELEMENT credit-words (#PCDATA)>
 <!ATTLIST credit-words
     %text-formatting;
 >
+
+<!--
+	The credit-symbol element specifies a musical symbol
+	using a canonical SMuFL glyph name.
+-->
+<!ELEMENT credit-symbol (#PCDATA)>
+<!ATTLIST credit-symbol
+    %symbol-formatting;
+>
+
 <!ELEMENT credit-image EMPTY>
 <!ATTLIST credit-image
     source CDATA #REQUIRED
