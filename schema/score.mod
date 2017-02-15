@@ -106,6 +106,7 @@
 	                 (credit-words | credit-symbol))*)))>
 <!ATTLIST credit
     page NMTOKEN #IMPLIED
+    %optional-unique-id;
 >
 
 <!ELEMENT credit-type (#PCDATA)>
@@ -113,6 +114,7 @@
 <!ELEMENT credit-words (#PCDATA)>
 <!ATTLIST credit-words
     %text-formatting;
+    %optional-unique-id;
 >
 
 <!--
@@ -122,6 +124,7 @@
 <!ELEMENT credit-symbol (#PCDATA)>
 <!ATTLIST credit-symbol
     %symbol-formatting;
+    %optional-unique-id;
 >
 
 <!ELEMENT credit-image EMPTY>
@@ -133,6 +136,7 @@
     %position; 
     %halign;
     %valign-image;
+    %optional-unique-id;
 >
 
 <!--
@@ -427,4 +431,5 @@
     implicit %yes-no; #IMPLIED
     non-controlling %yes-no; #IMPLIED
     width %tenths; #IMPLIED
+    %optional-unique-id;
 >

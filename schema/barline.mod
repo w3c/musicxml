@@ -53,6 +53,7 @@
     segno CDATA #IMPLIED
     coda CDATA #IMPLIED
     divisions CDATA #IMPLIED
+    %optional-unique-id;
 >
 
 <!--
