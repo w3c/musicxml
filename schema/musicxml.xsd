@@ -4701,6 +4701,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				<xs:attributeGroup ref="print-style"/>
 				<xs:attributeGroup ref="placement"/>
 				<xs:attributeGroup ref="smufl"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -5120,13 +5121,13 @@ The credit-type element indicates the purpose behind a credit. Multiple types of
 			<xs:choice>
 				<xs:element name="credit-image" type="image"/>
 				<xs:sequence>
-					<xs:element name="credit-words" type="formatted-text"/>
+					<xs:element name="credit-words" type="formatted-text-id"/>
 					<xs:sequence minOccurs="0" maxOccurs="unbounded">
 						<xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:element name="bookmark" type="bookmark" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:choice>
-							<xs:element name="credit-words" type="formatted-text"/>
-							<xs:element name="credit-symbol" type="formatted-symbol"/>
+							<xs:element name="credit-words" type="formatted-text-id"/>
+							<xs:element name="credit-symbol" type="formatted-symbol-id"/>
 						</xs:choice>
 					</xs:sequence>
 				</xs:sequence>
