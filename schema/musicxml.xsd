@@ -2278,6 +2278,18 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 		</xs:simpleContent>
 	</xs:complexType>
 	
+	<xs:complexType name="formatted-symbol-id">
+		<xs:annotation>
+			<xs:documentation>The formatted-symbol-id type represents a SMuFL musical symbol element with formatting and id attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="smufl-glyph-name">
+				<xs:attributeGroup ref="symbol-formatting"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="formatted-text">
 		<xs:annotation>
 			<xs:documentation>The formatted-text type represents a text element with text-formatting attributes.</xs:documentation>
@@ -2285,6 +2297,18 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
 				<xs:attributeGroup ref="text-formatting"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="formatted-text-id">
+		<xs:annotation>
+			<xs:documentation>The formatted-text-id type represents a text element with text-formatting and id attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="text-formatting"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -3066,30 +3090,30 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:documentation>Textual direction types may have more than 1 component due to multiple fonts. The dynamics element may also be used in the notations element. Attribute groups related to print suggestions apply to the individual direction-type, not to the overall direction.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element name="rehearsal" type="formatted-text" maxOccurs="unbounded">
+			<xs:element name="rehearsal" type="formatted-text-id" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The rehearsal type specifies a rehearsal mark. Language is Italian ("it") by default. Enclosure is square by default. Left justification is assumed if not specified.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="segno" type="empty-print-style-align" maxOccurs="unbounded">
+			<xs:element name="segno" type="empty-print-style-align-id" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The segno element is the visual indicator of a segno sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="coda" type="empty-print-style-align" maxOccurs="unbounded">
+			<xs:element name="coda" type="empty-print-style-align-id" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The coda element is the visual indicator of a coda sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:sequence>
-				<xs:element name="words" type="formatted-text" minOccurs="1">
+				<xs:element name="words" type="formatted-text-id" minOccurs="1">
 					<xs:annotation>
 						<xs:documentation>The words element specifies a standard text direction. Left justification is assumed if not specified. Language is Italian ("it") by default. Enclosure is none by default.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:choice minOccurs="0" maxOccurs="unbounded">
-					<xs:element name="words" type="formatted-text"/>
-					<xs:element name="symbol" type="formatted-symbol">
+					<xs:element name="words" type="formatted-text-id"/>
+					<xs:element name="symbol" type="formatted-symbol-id">
 						<xs:annotation>
 							<xs:documentation>The symbol element specifies a musical symbol using a canonical SMuFL glyph name. It is used when an occasional musical symbol is interspersed into text. It should not be used in place of semantic markup, such as metronome marks that mix text and symbols. Left justification is assumed if not specified. Enclosure is none by default.</xs:documentation>
 						</xs:annotation>
@@ -3104,17 +3128,17 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:element name="metronome" type="metronome"/>
 			<xs:element name="octave-shift" type="octave-shift"/>
 			<xs:element name="harp-pedals" type="harp-pedals"/>
-			<xs:element name="damp" type="empty-print-style-align">
+			<xs:element name="damp" type="empty-print-style-align-id">
 				<xs:annotation>
 					<xs:documentation>The damp element specifies a harp damping mark.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="damp-all" type="empty-print-style-align">
+			<xs:element name="damp-all" type="empty-print-style-align-id">
 				<xs:annotation>
 					<xs:documentation>The damp-all element specifies a harp damping mark for all strings.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="eyeglasses" type="empty-print-style-align">
+			<xs:element name="eyeglasses" type="empty-print-style-align-id">
 				<xs:annotation>
 					<xs:documentation>The eyeglasses element specifies the eyeglasses symbol, common in commercial music.</xs:documentation>
 				</xs:annotation>
