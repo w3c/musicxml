@@ -53,9 +53,9 @@
 
   <!--
     Earlier versions of MusicXML allow notes to have a 
-	grace or cue element, but not both. Remove any cue
-	element that is not the first child element of a
-	note element.
+    grace or cue element, but not both. Remove any cue
+    element that is not the first child element of a
+    note element.
   -->  
   <xsl:template 
     match="note/cue[position() > 1]"/>
@@ -125,7 +125,7 @@
   <!--
     Convert grace-cue sizes to grace size. This is consistent
     with our removal of the cue element from notes that
-	contain both grace and cue elements.
+    contain both grace and cue elements.
   -->
   <xsl:template 
     match="@size[. = 'grace-cue']">
