@@ -433,11 +433,12 @@ The values of start, stop, and continue refer to how an element appears in music
 
 	<xs:simpleType name="symbol-size">
 		<xs:annotation>
-			<xs:documentation>The symbol-size type is used to indicate full vs. cue-sized vs. oversized symbols. The large value for oversized symbols was added in version 1.1.</xs:documentation>
+			<xs:documentation>The symbol-size type is used to distinguish between full, cue sized, grace cue sized, and oversized symbols.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="full"/>
 			<xs:enumeration value="cue"/>
+			<xs:enumeration value="grace cue"/>
 			<xs:enumeration value="large"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -1291,11 +1292,12 @@ A quarter-rest type specifies the glyph to use when a note has a rest element an
 
 	<xs:simpleType name="note-size-type">
 		<xs:annotation>
-			<xs:documentation>The note-size-type type indicates the type of note being defined by a note-size element. The grace type is used for notes of cue size that that include a grace element. The cue type is used for all other notes with cue size, whether defined explicitly or implicitly via a cue element. The large type is used for notes of large size.</xs:documentation>
+			<xs:documentation>The note-size-type type indicates the type of note being defined by a note-size element. The grace cue type is used for notes of grace cue size. The grace type is used for notes of cue size that include a grace element. The cue type is used for all other notes with cue size, whether defined explicitly or implicitly via a cue element. The large type is used for notes of large size.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="cue"/>
 			<xs:enumeration value="grace"/>
+			<xs:enumeration value="grace cue"/>
 			<xs:enumeration value="large"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -4516,8 +4518,16 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 			<xs:choice>
 				<xs:sequence>
 					<xs:element name="grace" type="grace"/>
-					<xs:group ref="full-note"/>
-					<xs:element name="tie" type="tie" minOccurs="0" maxOccurs="2"/>
+					<xs:choice>
+						<xs:sequence>
+							<xs:group ref="full-note"/>
+							<xs:element name="tie" type="tie" minOccurs="0" maxOccurs="2"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="cue" type="empty"/>
+							<xs:group ref="full-note"/>
+						</xs:sequence>
+					</xs:choice>
 				</xs:sequence>
 				<xs:sequence>
 					<xs:element name="cue" type="empty">
@@ -4568,7 +4578,7 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 
 	<xs:complexType name="note-type">
 		<xs:annotation>
-			<xs:documentation>The note-type type indicates the graphic note type. Values range from 1024th to maxima. The size attribute indicates full, cue, or large size, with full the default for regular notes and cue the default for cue and grace notes.</xs:documentation>
+			<xs:documentation>The note-type type indicates the graphic note type. Values range from 1024th to maxima. The size attribute indicates full, cue, grace cue, or large size. The default is full for regular notes, grace cue for notes that contain both grace and cue elements, and cue for notes that contain either a cue or a grace element, but not both.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="note-type-value">

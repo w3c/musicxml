@@ -50,7 +50,7 @@
 	readily than the other.
 -->
 <!ELEMENT note
-	(((grace, %full-note;, (tie, tie?)?) |
+	(((grace, ((%full-note;, (tie, tie?)?) | (cue, %full-note;))) |
 	  (cue, %full-note;, duration) |
 	  (%full-note;, duration, (tie, tie?)?)),
 	 instrument?, %editorial-voice;, type?, dot*,
@@ -209,8 +209,10 @@
 	shortest to longest) are 1024th, 512th, 256th, 128th,
 	64th, 32nd, 16th, eighth, quarter, half, whole, breve,
 	long, and maxima. The size attribute indicates full, cue,
-	or large size, with full the default for regular notes and
-	cue the default for cue and grace notes.
+	grace cue, or large size. The default is full for regular
+	notes, grace cue for notes that contain both grace and cue
+	elements, and cue for notes that contain either a cue or a
+	grace element, but not both.
 -->
 <!ELEMENT type (#PCDATA)>
 <!ATTLIST type
