@@ -1799,6 +1799,13 @@ The halign attribute is used in these situations. If it is not present, its valu
 		<xs:attribute name="line-type" type="line-type"/>
 	</xs:attributeGroup>
 
+	<xs:attributeGroup name="optional-unique-id">
+		<xs:annotation>
+			<xs:documentation>The optional-unique-id attribute group allows an element to optionally specify an ID that is unique to the entire document. This attribute group is not used for a required id attribute, or for an id attribute that specifies an id reference.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="id" type="xs:ID"/>
+	</xs:attributeGroup>
+
 	<xs:attributeGroup name="orientation">
 		<xs:annotation>
 			<xs:documentation>The orientation attribute indicates whether slurs and ties are overhand (tips down) or underhand (tips up). This is distinct from the placement attribute used by any notation type.</xs:documentation>
@@ -2095,6 +2102,7 @@ Measure width is specified in tenths. These are the global tenths specified in t
 		<xs:attribute name="implicit" type="yes-no"/>
 		<xs:attribute name="non-controlling" type="yes-no"/>
 		<xs:attribute name="width" type="tenths"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:attributeGroup>
 
 	<xs:attributeGroup name="part-attributes">
@@ -2166,6 +2174,7 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="text-decoration"/>
 		<xs:attributeGroup ref="enclosure"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="empty">
@@ -2194,6 +2203,14 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 			<xs:documentation>The empty-print-style-align type represents an empty element with print-style-align attribute group.</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="print-style-align"/>
+	</xs:complexType>
+
+	<xs:complexType name="empty-print-style-align-id">
+		<xs:annotation>
+			<xs:documentation>The empty-print-style-align-id type represents an empty element with print-style-align and optional-unique-id attribute groups.</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="empty-print-object-style-align">
@@ -2231,6 +2248,7 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 			<xs:extension base="fermata-shape">
 				<xs:attribute name="type" type="upright-inverted"/>
 				<xs:attributeGroup ref="print-style"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -2260,6 +2278,18 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 		</xs:simpleContent>
 	</xs:complexType>
 	
+	<xs:complexType name="formatted-symbol-id">
+		<xs:annotation>
+			<xs:documentation>The formatted-symbol-id type represents a SMuFL musical symbol element with formatting and id attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="smufl-glyph-name">
+				<xs:attributeGroup ref="symbol-formatting"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="formatted-text">
 		<xs:annotation>
 			<xs:documentation>The formatted-text type represents a text element with text-formatting attributes.</xs:documentation>
@@ -2267,6 +2297,18 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
 				<xs:attributeGroup ref="text-formatting"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="formatted-text-id">
+		<xs:annotation>
+			<xs:documentation>The formatted-text-id type represents a text element with text-formatting and id attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="text-formatting"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -2576,6 +2618,7 @@ Clefs appear at the start of each system unless the print-object attribute has b
 		<xs:attribute name="after-barline" type="yes-no"/>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="print-object"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="interchangeable">
@@ -2608,6 +2651,7 @@ Clefs appear at the start of each system unless the print-object attribute has b
 		<xs:attribute name="number" type="staff-number"/>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="print-object"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="key-accidental">
@@ -2662,6 +2706,7 @@ The multiple-rest and measure-repeat symbols indicate the number of measures cov
 		<xs:attribute name="number" type="staff-number"/>
 		<xs:attributeGroup ref="font"/>
 		<xs:attributeGroup ref="color"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="multiple-rest">
@@ -2758,6 +2803,7 @@ The print-object attribute allows a time signature to be specified but not print
 		<xs:attribute name="separator" type="time-separator"/>
 		<xs:attributeGroup ref="print-style-align"/>
 		<xs:attributeGroup ref="print-object"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="transpose">
@@ -2787,6 +2833,7 @@ The print-object attribute allows a time signature to be specified but not print
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="number" type="staff-number"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<!-- Complex types derived from barline.mod elements -->
@@ -2812,8 +2859,8 @@ Barlines have a location attribute to make it easier to process barlines indepen
 			<xs:element name="bar-style" type="bar-style-color" minOccurs="0"/>
 			<xs:group ref="editorial"/>
 			<xs:element name="wavy-line" type="wavy-line" minOccurs="0"/>
-			<xs:element name="segno" type="empty-print-style-align" minOccurs="0"/>
-			<xs:element name="coda" type="empty-print-style-align" minOccurs="0"/>
+			<xs:element name="segno" type="empty-print-style-align-id" minOccurs="0"/>
+			<xs:element name="coda" type="empty-print-style-align-id" minOccurs="0"/>
 			<xs:element name="fermata" type="fermata" minOccurs="0" maxOccurs="2"/>
 			<xs:element name="ending" type="ending" minOccurs="0"/>
 			<xs:element name="repeat" type="repeat" minOccurs="0"/>
@@ -2822,6 +2869,7 @@ Barlines have a location attribute to make it easier to process barlines indepen
 		<xs:attribute name="segno" type="xs:token"/>
 		<xs:attribute name="coda" type="xs:token"/>
 		<xs:attribute name="divisions" type="divisions"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="ending">
@@ -2884,6 +2932,7 @@ The number attribute reflects the numeric values of what is under the ending lin
 			</xs:element>
 		</xs:sequence>
 		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="barre">
@@ -2952,6 +3001,7 @@ The number attribute reflects the numeric values of what is under the ending lin
 		<xs:attributeGroup ref="dashed-formatting"/>
 		<xs:attributeGroup ref="position"/>
 		<xs:attributeGroup ref="color"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="dashes">
@@ -2963,6 +3013,7 @@ The number attribute reflects the numeric values of what is under the ending lin
 		<xs:attributeGroup ref="dashed-formatting"/>
 		<xs:attributeGroup ref="position"/>
 		<xs:attributeGroup ref="color"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="degree">
@@ -3031,6 +3082,7 @@ By default, a series of direction-type elements and a series of child elements o
 		</xs:sequence>
 		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="directive"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="direction-type">
@@ -3038,30 +3090,30 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:documentation>Textual direction types may have more than 1 component due to multiple fonts. The dynamics element may also be used in the notations element. Attribute groups related to print suggestions apply to the individual direction-type, not to the overall direction.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element name="rehearsal" type="formatted-text" maxOccurs="unbounded">
+			<xs:element name="rehearsal" type="formatted-text-id" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The rehearsal type specifies a rehearsal mark. Language is Italian ("it") by default. Enclosure is square by default. Left justification is assumed if not specified.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="segno" type="empty-print-style-align" maxOccurs="unbounded">
+			<xs:element name="segno" type="empty-print-style-align-id" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The segno element is the visual indicator of a segno sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="coda" type="empty-print-style-align" maxOccurs="unbounded">
+			<xs:element name="coda" type="empty-print-style-align-id" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The coda element is the visual indicator of a coda sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:sequence>
-				<xs:element name="words" type="formatted-text" minOccurs="1">
+				<xs:element name="words" type="formatted-text-id" minOccurs="1">
 					<xs:annotation>
 						<xs:documentation>The words element specifies a standard text direction. Left justification is assumed if not specified. Language is Italian ("it") by default. Enclosure is none by default.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:choice minOccurs="0" maxOccurs="unbounded">
-					<xs:element name="words" type="formatted-text"/>
-					<xs:element name="symbol" type="formatted-symbol">
+					<xs:element name="words" type="formatted-text-id"/>
+					<xs:element name="symbol" type="formatted-symbol-id">
 						<xs:annotation>
 							<xs:documentation>The symbol element specifies a musical symbol using a canonical SMuFL glyph name. It is used when an occasional musical symbol is interspersed into text. It should not be used in place of semantic markup, such as metronome marks that mix text and symbols. Left justification is assumed if not specified. Enclosure is none by default.</xs:documentation>
 						</xs:annotation>
@@ -3076,17 +3128,17 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:element name="metronome" type="metronome"/>
 			<xs:element name="octave-shift" type="octave-shift"/>
 			<xs:element name="harp-pedals" type="harp-pedals"/>
-			<xs:element name="damp" type="empty-print-style-align">
+			<xs:element name="damp" type="empty-print-style-align-id">
 				<xs:annotation>
 					<xs:documentation>The damp element specifies a harp damping mark.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="damp-all" type="empty-print-style-align">
+			<xs:element name="damp-all" type="empty-print-style-align-id">
 				<xs:annotation>
 					<xs:documentation>The damp-all element specifies a harp damping mark for all strings.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="eyeglasses" type="empty-print-style-align">
+			<xs:element name="eyeglasses" type="empty-print-style-align-id">
 				<xs:annotation>
 					<xs:documentation>The eyeglasses element specifies the eyeglasses symbol, common in commercial music.</xs:documentation>
 				</xs:annotation>
@@ -3100,6 +3152,7 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:element name="staff-divide" type="staff-divide"/>
 			<xs:element name="other-direction" type="other-direction"/>
 		</xs:choice>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="feature">
@@ -3150,6 +3203,7 @@ By default, a series of direction-type elements and a series of child elements o
 		<xs:attribute name="height" type="tenths"/>
 		<xs:attribute name="width" type="tenths"/>
 		<xs:attribute name="unplayed" type="xs:token"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="frame-note">
@@ -3176,6 +3230,7 @@ This element is flexible to allow for different types of analyses. Future versio
 		<xs:attribute name="type" type="start-stop-single" use="required"/>
 		<xs:attribute name="number" type="xs:token" default="1"/>
 		<xs:attribute name="member-of" type="xs:token"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="harmony">
@@ -3198,6 +3253,7 @@ The harmony object may be used for analysis or for chord symbols. The print-obje
 		<xs:attribute name="print-frame" type="yes-no"/>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="placement"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="harp-pedals">
@@ -3208,6 +3264,7 @@ The harmony object may be used for analysis or for chord symbols. The print-obje
 			<xs:element name="pedal-tuning" type="pedal-tuning" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="image">
@@ -3215,6 +3272,7 @@ The harmony object may be used for analysis or for chord symbols. The print-obje
 			<xs:documentation>The image type is used to include graphical images in a score.</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="image-attributes"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="inversion">
@@ -3303,6 +3361,7 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 		<xs:attributeGroup ref="print-style-align"/>
 		<xs:attributeGroup ref="justify"/>
 		<xs:attribute name="parentheses" type="yes-no"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="metronome-beam">
@@ -3358,6 +3417,7 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 		<xs:attribute name="size" type="xs:positiveInteger" default="8"/>
 		<xs:attributeGroup ref="dashed-formatting"/>
 		<xs:attributeGroup ref="print-style"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="offset">
@@ -3380,6 +3440,7 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 				<xs:attributeGroup ref="print-object"/>
 				<xs:attributeGroup ref="print-style-align"/>
 				<xs:attributeGroup ref="smufl"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -3396,6 +3457,7 @@ The change and continue types are used when the line attribute is yes. The chang
 		<xs:attribute name="sign" type="yes-no"/>
 		<xs:attribute name="abbreviated" type="yes-no"/>
 		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="pedal-tuning">
@@ -3446,6 +3508,7 @@ The change and continue types are used when the line attribute is yes. The chang
 		</xs:choice>
 		<xs:attributeGroup ref="print-style-align"/>
 		<xs:attributeGroup ref="enclosure"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="principal-voice">
@@ -3457,6 +3520,7 @@ The change and continue types are used when the line attribute is yes. The chang
 				<xs:attribute name="type" type="start-stop" use="required"/>
 				<xs:attribute name="symbol" type="principal-voice-symbol" use="required"/>
 				<xs:attributeGroup ref="print-style-align"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -3475,6 +3539,7 @@ Layout elements in a print statement only apply to the current page, system, sta
 			<xs:element name="part-abbreviation-display" type="name-display" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="print-attributes"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="root">
@@ -3519,6 +3584,7 @@ Layout elements in a print statement only apply to the current page, system, sta
 		<xs:sequence>
 			<xs:element name="accord" type="accord" maxOccurs="unbounded"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="sound">
@@ -3576,6 +3642,7 @@ The offset element is used to indicate that the sound takes place offset from th
 		<xs:attribute name="damper-pedal" type="yes-no-number"/>
 		<xs:attribute name="soft-pedal" type="yes-no-number"/>
 		<xs:attribute name="sostenuto-pedal" type="yes-no-number"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="staff-divide">
@@ -3584,6 +3651,7 @@ The offset element is used to indicate that the sound takes place offset from th
 		</xs:annotation>
 		<xs:attribute name="type" type="staff-divide-symbol" use="required"/>
 		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="stick">
@@ -3605,6 +3673,7 @@ The offset element is used to indicate that the sound takes place offset from th
 		</xs:annotation>
 		<xs:attribute name="type" type="on-off" use="required"/>
 		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="wedge">
@@ -3619,6 +3688,7 @@ The offset element is used to indicate that the sound takes place offset from th
 		<xs:attributeGroup ref="dashed-formatting"/>
 		<xs:attributeGroup ref="position"/>
 		<xs:attributeGroup ref="color"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<!-- Complex types derived from identity.mod elements -->
@@ -3900,6 +3970,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 				<xs:attributeGroup ref="print-style"/>
 				<xs:attributeGroup ref="placement"/>
 				<xs:attributeGroup ref="smufl"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -3913,6 +3984,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 		<xs:attributeGroup ref="position"/>
 		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="color"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="articulations">
@@ -3998,6 +4070,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="arrow">
@@ -4041,6 +4114,7 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 				<xs:attribute name="repeater" type="yes-no"/>
 				<xs:attribute name="fan" type="fan"/>
 				<xs:attributeGroup ref="color"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -4159,6 +4233,7 @@ Figures are ordered from top to bottom. The value of parentheses is "no" if not 
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="printout"/>
 		<xs:attribute name="parentheses" type="yes-no"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="forward">
@@ -4183,6 +4258,7 @@ Figures are ordered from top to bottom. The value of parentheses is "no" if not 
 				<xs:attributeGroup ref="line-type"/>
 				<xs:attributeGroup ref="dashed-formatting"/>
 				<xs:attributeGroup ref="print-style"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -4369,6 +4445,7 @@ Justification is center by default; placement is below by default. The print-obj
 		<xs:attributeGroup ref="color"/>
 		<xs:attributeGroup ref="print-object"/>
 		<xs:attribute name="time-only" type="time-only"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="mordent">
@@ -4393,6 +4470,7 @@ Justification is center by default; placement is below by default. The print-obj
 		<xs:attributeGroup ref="position"/>
 		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="color"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="notations">
@@ -4419,6 +4497,7 @@ Justification is center by default; placement is below by default. The print-obj
 			</xs:choice>
 		</xs:sequence>
 		<xs:attributeGroup ref="print-object"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="note">
@@ -4484,6 +4563,7 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 		<xs:attribute name="release" type="divisions"/>
 		<xs:attribute name="time-only" type="time-only"/>
 		<xs:attribute name="pizzicato" type="yes-no"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="note-type">
@@ -4606,6 +4686,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 			</xs:choice>
 			<xs:element name="accidental-mark" type="accidental-mark" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="other-notation">
@@ -4620,6 +4701,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				<xs:attributeGroup ref="print-style"/>
 				<xs:attributeGroup ref="placement"/>
 				<xs:attributeGroup ref="smufl"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -4693,6 +4775,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				<xs:attributeGroup ref="dashed-formatting"/>
 				<xs:attributeGroup ref="print-style"/>
 				<xs:attributeGroup ref="bend-sound"/>
+				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -4710,6 +4793,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 		<xs:attributeGroup ref="orientation"/>
 		<xs:attributeGroup ref="bezier"/>
 		<xs:attributeGroup ref="color"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="stem">
@@ -4824,6 +4908,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="text-element-data">
@@ -4883,6 +4968,7 @@ The number attribute is rarely needed to disambiguate ties, since note pitches w
 		<xs:attributeGroup ref="orientation"/>
 		<xs:attributeGroup ref="bezier"/>
 		<xs:attributeGroup ref="color"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="time-modification">
@@ -4960,6 +5046,7 @@ The show-number attribute is used to display either the number of actual notes, 
 		<xs:attributeGroup ref="line-shape"/>
 		<xs:attributeGroup ref="position"/>
 		<xs:attributeGroup ref="placement"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="tuplet-dot">
@@ -5034,19 +5121,20 @@ The credit-type element indicates the purpose behind a credit. Multiple types of
 			<xs:choice>
 				<xs:element name="credit-image" type="image"/>
 				<xs:sequence>
-					<xs:element name="credit-words" type="formatted-text"/>
+					<xs:element name="credit-words" type="formatted-text-id"/>
 					<xs:sequence minOccurs="0" maxOccurs="unbounded">
 						<xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:element name="bookmark" type="bookmark" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:choice>
-							<xs:element name="credit-words" type="formatted-text"/>
-							<xs:element name="credit-symbol" type="formatted-symbol"/>
+							<xs:element name="credit-words" type="formatted-text-id"/>
+							<xs:element name="credit-symbol" type="formatted-symbol-id"/>
 						</xs:choice>
 					</xs:sequence>
 				</xs:sequence>
 			</xs:choice>
 		</xs:sequence>
 		<xs:attribute name="page" type="xs:positiveInteger"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="defaults">

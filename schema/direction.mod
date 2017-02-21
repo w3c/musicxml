@@ -55,6 +55,7 @@
 <!ATTLIST direction
     %placement; 
     %directive;
+    %optional-unique-id;
 >
 
 <!--
@@ -69,6 +70,9 @@
 	damp | damp-all | eyeglasses | string-mute |
 	scordatura | image | principal-voice | percussion+ |
 	accordion-registration | staff-divide | other-direction)>
+<!ATTLIST direction-type
+    %optional-unique-id;
+>
 
 <!--
 	Entities related to print suggestions apply to the
@@ -83,6 +87,7 @@
 <!ELEMENT rehearsal (#PCDATA)>
 <!ATTLIST rehearsal
     %text-formatting;
+    %optional-unique-id;
 >
 
 <!--
@@ -94,6 +99,7 @@
 <!ELEMENT words (#PCDATA)>
 <!ATTLIST words
     %text-formatting;
+    %optional-unique-id;
 >
 
 <!--
@@ -107,6 +113,7 @@
 <!ELEMENT symbol (#PCDATA)>
 <!ATTLIST symbol
     %symbol-formatting;
+    %optional-unique-id;
 >
 <!--
 	Wedge spread is measured in tenths of staff line space.
@@ -134,6 +141,7 @@
     %dashed-formatting;
     %position;
     %color;
+    %optional-unique-id;
 >
 
 <!--
@@ -146,6 +154,7 @@
     %dashed-formatting;
     %position;
     %color;
+    %optional-unique-id;
 >
 
 <!--
@@ -167,6 +176,7 @@
     %dashed-formatting;
     %position;
     %color;
+    %optional-unique-id;
 >
 
 <!-- 
@@ -204,6 +214,7 @@
     sign %yes-no; #IMPLIED
     abbreviated %yes-no; #IMPLIED
     %print-style-align; 
+    %optional-unique-id;
 >
 
 <!--
@@ -249,6 +260,7 @@
     %print-style-align;
     %justify;
     parentheses %yes-no; #IMPLIED
+    %optional-unique-id;
 >
 <!ELEMENT beat-unit (#PCDATA)>
 <!ELEMENT beat-unit-dot EMPTY>
@@ -291,6 +303,7 @@
     size CDATA "8"
     %dashed-formatting;
     %print-style; 
+    %optional-unique-id;
 >
 
 <!-- 
@@ -304,6 +317,7 @@
 <!ELEMENT harp-pedals (pedal-tuning)+>
 <!ATTLIST harp-pedals
     %print-style-align; 
+    %optional-unique-id;
 >
 <!ELEMENT pedal-tuning (pedal-step, pedal-alter)>
 <!ELEMENT pedal-step (#PCDATA)>
@@ -313,16 +327,19 @@
 <!ELEMENT damp EMPTY>
 <!ATTLIST damp
     %print-style-align; 
+    %optional-unique-id;
 >
 <!ELEMENT damp-all EMPTY>
 <!ATTLIST damp-all
     %print-style-align; 
+    %optional-unique-id;
 >
 
 <!-- Eyeglasses, common in commercial music. -->
 <!ELEMENT eyeglasses EMPTY>
 <!ATTLIST eyeglasses
     %print-style-align; 
+    %optional-unique-id;
 >
 
 <!-- String mute on and mute off symbols -->
@@ -330,6 +347,7 @@
 <!ATTLIST string-mute
     type (on | off) #REQUIRED
     %print-style-align; 
+    %optional-unique-id;
 >
 
 <!-- 
@@ -340,6 +358,9 @@
 	file. Strings are numbered from high to low.
 -->
 <!ELEMENT scordatura (accord+)>
+<!ATTLIST scordatura
+    %optional-unique-id;
+>
 <!ELEMENT accord
 	(tuning-step, tuning-alter?, tuning-octave)>
 <!ATTLIST accord
@@ -368,6 +389,7 @@
     %position;
     %halign;
     %valign-image; 
+    %optional-unique-id;
 >
 
 <!-- 
@@ -387,6 +409,7 @@
     type %start-stop; #REQUIRED
     symbol (Hauptstimme | Nebenstimme | plain | none) #REQUIRED
     %print-style-align;
+    %optional-unique-id;
 >
 
 <!--
@@ -407,6 +430,7 @@
 	(accordion-high?, accordion-middle?, accordion-low?)>
 <!ATTLIST accordion-registration
     %print-style-align; 
+    %optional-unique-id;
 >
 <!ELEMENT accordion-high EMPTY>
 <!ELEMENT accordion-middle (#PCDATA)>
@@ -421,6 +445,7 @@
 <!ATTLIST staff-divide
     type (down | up | up-down) #REQUIRED
     %print-style-align; 
+    %optional-unique-id;
 >
 
 <!--
@@ -438,6 +463,7 @@
 <!ATTLIST percussion
     %print-style-align;
     %enclosure; 
+    %optional-unique-id;
 >
 
 <!--
@@ -586,6 +612,7 @@
 	%print-object;
     %print-style-align;
     %smufl; 
+    %optional-unique-id;
 >
 
 <!--
@@ -646,6 +673,7 @@
     print-frame  %yes-no; #IMPLIED
     %print-style;
     %placement;
+    %optional-unique-id;
 >
 
 <!--
@@ -890,6 +918,7 @@
     height  %tenths;  #IMPLIED
     width   %tenths;  #IMPLIED
     unplayed CDATA    #IMPLIED
+    %optional-unique-id;
 >
 <!ELEMENT frame-strings (#PCDATA)>
 <!ELEMENT frame-frets (#PCDATA)>
@@ -950,6 +979,7 @@
     type %start-stop-single; #REQUIRED
     number CDATA "1"
     member-of CDATA #IMPLIED
+    %optional-unique-id;
 >
 <!ELEMENT feature (#PCDATA)>
 <!ATTLIST feature
@@ -1001,6 +1031,7 @@
     new-page %yes-no; #IMPLIED
     blank-page NMTOKEN #IMPLIED
     page-number CDATA #IMPLIED	
+    %optional-unique-id;
 >
 
 <!--
@@ -1119,4 +1150,5 @@
     damper-pedal %yes-no-number; #IMPLIED
     soft-pedal %yes-no-number; #IMPLIED
     sostenuto-pedal %yes-no-number; #IMPLIED
+    %optional-unique-id;
 >

@@ -94,6 +94,7 @@
     release CDATA #IMPLIED
     %time-only;
     pizzicato %yes-no; #IMPLIED
+    %optional-unique-id;
 >
 
 <!--
@@ -388,6 +389,7 @@
     repeater %yes-no; #IMPLIED
     fan (accel | rit | none) #IMPLIED
     %color;
+    %optional-unique-id;
 >
 
 <!--
@@ -405,6 +407,7 @@
 	  accidental-mark | other-notation)*)>
 <!ATTLIST notations
     %print-object;
+    %optional-unique-id;
 >
 
 <!--
@@ -428,6 +431,7 @@
     %orientation;
     %bezier;
     %color;
+    %optional-unique-id;
 >
 
 <!--
@@ -448,6 +452,7 @@
     %orientation;
     %bezier;
     %color;
+    %optional-unique-id;
 >
 
 <!--
@@ -491,6 +496,7 @@
     %line-shape;
     %position;
     %placement;
+    %optional-unique-id;
 >
 <!ELEMENT tuplet-actual (tuplet-number?,
 	tuplet-type?, tuplet-dot*)>
@@ -529,6 +535,7 @@
     %line-type;
     %dashed-formatting;
     %print-style;
+    %optional-unique-id;
 >
 <!ELEMENT slide (#PCDATA)>
 <!ATTLIST slide
@@ -538,6 +545,7 @@
     %dashed-formatting;
     %print-style;
     %bend-sound;
+    %optional-unique-id;
 >
 
 <!--
@@ -559,6 +567,7 @@
     %print-style;
     %placement;
     %smufl;
+    %optional-unique-id;
 >
 
 <!--
@@ -573,6 +582,9 @@
 	   inverted-vertical-turn | shake | wavy-line |
 	   mordent | inverted-mordent | schleifer | tremolo |
 	   haydn | other-ornament), accidental-mark*)*)>
+<!ATTLIST ornaments
+    %optional-unique-id;
+>
 <!ELEMENT trill-mark EMPTY>
 <!ATTLIST trill-mark
     %print-style;
@@ -752,6 +764,7 @@
     %print-style;
     %placement;
     %smufl;
+    %optional-unique-id;
 >
 
 <!--
@@ -765,6 +778,9 @@
 	  string | hammer-on | pull-off | bend | tap | heel |
 	  toe | fingernails | hole | arrow | handbell |
 	  other-technical)*)>
+<!ATTLIST technical
+    %optional-unique-id;
+>
 
 <!--
 	The up-bow element represents the symbol that is used both
@@ -1079,6 +1095,9 @@
 	  scoop | plop | doit | falloff | breath-mark |
 	  caesura | stress | unstress | soft-accent |
 	  other-articulation)*)>
+<!ATTLIST articulations
+    %optional-unique-id;
+>
 
 <!ELEMENT accent EMPTY>
 <!ATTLIST accent
@@ -1257,6 +1276,7 @@
     %position;
     %placement;
     %color;
+    %optional-unique-id;
 >
 
 <!--
@@ -1273,6 +1293,7 @@
     %position;
     %placement;
     %color;
+    %optional-unique-id;
 >
 
 <!--
@@ -1319,6 +1340,7 @@
     %color;
     %print-object;
     %time-only;
+    %optional-unique-id;
 >
 
 <!ELEMENT text (#PCDATA)>
@@ -1386,6 +1408,7 @@
     %print-style;
     %printout;
     parentheses %yes-no; #IMPLIED
+    %optional-unique-id;
 >
 <!ELEMENT figure (prefix?, figure-number?, suffix?, extend?)>
 <!ELEMENT prefix (#PCDATA)>

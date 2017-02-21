@@ -681,7 +681,17 @@
 	earlier version files reliably. Programs that write
 	MusicXML 1.1 or later files should set this attribute.
 -->
-<!ENTITY % document-attributes "version  CDATA  '1.0'">
+<!ENTITY % document-attributes 
+	"version  CDATA  '1.0'">
+
+<!--
+	The optional-unique-id entity allows an element to optionally
+	specify an ID that is unique to the entire document. This
+	entity is not used for a required id attribute, or for an id
+	attribute that specifies an id reference.
+-->
+<!ENTITY % optional-unique-id
+	"id ID #IMPLIED">
 
 <!--
 	The smufl entity is used to indicate a particular Standard
@@ -745,6 +755,7 @@
 <!ATTLIST fermata
     type (upright | inverted) #IMPLIED
     %print-style;
+    %optional-unique-id;
 >
 <!ELEMENT wavy-line EMPTY>
 <!ATTLIST wavy-line
@@ -773,11 +784,13 @@
 <!ELEMENT segno EMPTY>
 <!ATTLIST segno
     %print-style-align; 
+    %optional-unique-id;
 >
 
 <!ELEMENT coda EMPTY>
 <!ATTLIST coda
     %print-style-align; 
+    %optional-unique-id;
 >
 
 <!--
@@ -828,6 +841,7 @@
     %placement;
     %text-decoration; 
     %enclosure;
+    %optional-unique-id;
 >
 <!ELEMENT p EMPTY>
 <!ELEMENT pp EMPTY>

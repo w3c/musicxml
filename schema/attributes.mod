@@ -127,6 +127,7 @@
     number CDATA #IMPLIED
     %print-style;
     %print-object;
+    %optional-unique-id;
 >
 <!ELEMENT cancel (#PCDATA)>
 <!ATTLIST cancel
@@ -206,6 +207,7 @@
     %time-separator;
     %print-style-align;
     %print-object;
+    %optional-unique-id;
 >
 <!ELEMENT interchangeable (time-relation?, (beats, beat-type)+)>
 <!ATTLIST interchangeable
@@ -301,6 +303,7 @@
     after-barline %yes-no; #IMPLIED
     %print-style;
     %print-object;
+    %optional-unique-id;
 >
 <!ELEMENT sign (#PCDATA)>
 <!ELEMENT line (#PCDATA)>
@@ -396,6 +399,7 @@
 	(diatonic?, chromatic, octave-change?, double?)>
 <!ATTLIST transpose
     number CDATA #IMPLIED
+    %optional-unique-id;
 >
 <!ELEMENT diatonic (#PCDATA)>
 <!ELEMENT chromatic (#PCDATA)>
@@ -437,6 +441,7 @@
     number CDATA #IMPLIED
     %font;
     %color;
+    %optional-unique-id;
 >
 
 <!--

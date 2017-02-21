@@ -55,6 +55,18 @@
   <xsl:template
     match="inverted-vertical-turn | haydn | soft-accent"/>
 
+  <!-- Remove new id attributes -->
+  <xsl:template 
+    match="note/@id | beam/@id | 
+			notations/@id | tied/@id |
+			slur/@id | tuplet/@id | 
+			glissando/@id | slide/@id |
+			other-notation/@id | ornaments/@id |
+			accidental-mark/@id | technical/@id |
+			articulations/@id | arpeggiate/@id |
+			non-arpeggiate/@id | lyric/@id | 
+			figured-bass/@id"/>
+
   <!--
     Remove accidental and accidental-mark elements with
     the new accidental values.
@@ -103,6 +115,12 @@
 
   <!-- Additions in attributes.mod -->
 
+  <!-- Remove new id attributes -->
+  <xsl:template 
+    match="key/@id | time/@id | 
+			clef/@id | transpose/@id |
+			measure-style/@id"/>
+
   <!--
     Remove key-accidental elements with new accidental values.
   -->
@@ -118,11 +136,20 @@
 
   <!-- Additions in barline.mod -->
 
+  <!-- Remove new id attributes -->
+  <xsl:template 
+    match="barline/@id"/>
+
   <!-- Additions in common.mod -->
 
   <!-- Remove n, pf, and sfzp elements -->
   <xsl:template
     match="n | pf | sfzp"/>
+
+  <!-- Remove new id attributes -->
+  <xsl:template 
+    match="fermata/@id | segno/@id | 
+			coda/@id | dynamics/@id"/>
 
   <!-- Remove accidental-text elements with new other value -->
   <xsl:template
@@ -154,6 +181,23 @@
   </xsl:template>
     
   <!-- Additions in direction.mod -->
+
+  <!-- Remove new id attributes -->
+  <xsl:template 
+    match="direction/@id | direction-type/@id | 
+			rehearsal/@id | words/@id |
+			wedge/@id | dashes/@id |
+			bracket/@id | pedal/@id |
+			metronome/@id | octave-shift/@id |
+			harp-pedals/@id | damp/@id |
+			damp-all/@id | eyeglasses/@id |
+			string-mute/@id | scordatura/@id |
+			image/@id | principal-voice/@id |
+			accordion-registration/@id |
+			percussion/@id | other-direction/@id |
+			harmony/@id | frame/@id |
+			grouping/@id | print/@id |
+			sound/@id"/>
 
   <!--
     For safety, remove entire direction that has a new
@@ -257,6 +301,11 @@
   <!-- Remove credit-symbol elements -->
   <xsl:template
     match="credit-symbol"/>
+
+  <!-- Remove new id attributes -->
+  <xsl:template 
+    match="credit/@id | credit-image/@id | 
+			credit-words/@id | measure/@id"/>
 
   <!-- Remove new image attributes -->
   <xsl:template
