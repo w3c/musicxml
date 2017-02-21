@@ -104,7 +104,7 @@
 	The symbol-size entity is used to distinguish between
 	full, cue sized, grace cue sized, and oversized symbols.
 -->
-<!ENTITY % symbol-size "(full | cue | grace cue | large)">
+<!ENTITY % symbol-size "(full | cue | grace-cue | large)">
 
 <!--
 	The above-below type is used to indicate whether one

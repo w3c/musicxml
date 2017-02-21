@@ -123,12 +123,12 @@
   </xsl:template>
 
   <!--
-    Convert grace cue sizes to grace size. This is consistent
+    Convert grace-cue sizes to grace size. This is consistent
     with our removal of the cue element from notes that
 	contain both grace and cue elements.
   -->
   <xsl:template 
-    match="@size[. = 'grace cue']">
+    match="@size[. = 'grace-cue']">
     <xsl:attribute name="size">grace</xsl:attribute>
   </xsl:template>
 
@@ -316,10 +316,10 @@
     match="glyph"/>
 
   <!-- 
-    Remove note-size element with a grace cue type.
+    Remove note-size element with a grace-cue type.
   -->
   <xsl:template 
-    match="note-size[@type = 'grace cue']"/>
+    match="note-size[@type = 'grace-cue']"/>
 
   <!-- Additions in score.mod -->
 

@@ -209,8 +209,8 @@
 	shortest to longest) are 1024th, 512th, 256th, 128th,
 	64th, 32nd, 16th, eighth, quarter, half, whole, breve,
 	long, and maxima. The size attribute indicates full, cue,
-	grace cue, or large size. The default is full for regular
-	notes, grace cue for notes that contain both grace and cue
+	grace-cue, or large size. The default is full for regular
+	notes, grace-cue for notes that contain both grace and cue
 	elements, and cue for notes that contain either a cue or a
 	grace element, but not both.
 -->
