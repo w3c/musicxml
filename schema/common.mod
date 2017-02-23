@@ -101,11 +101,10 @@
 <!ENTITY % yes-no-number "NMTOKEN">
 
 <!--
-	The symbol-size entity is used to indicate full vs.
-	cue-sized vs. oversized symbols. The large value
-	for oversized symbols was added in version 1.1.
+	The symbol-size entity is used to distinguish between
+	full, cue sized, grace cue sized, and oversized symbols.
 -->
-<!ENTITY % symbol-size "(full | cue | large)">
+<!ENTITY % symbol-size "(full | cue | grace-cue | large)">
 
 <!--
 	The above-below type is used to indicate whether one

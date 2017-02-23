@@ -184,14 +184,15 @@
 
 	The note-size element indicates the percentage of the
 	regular note size to use for notes with a cue and large
-	size as defined in the type element. The grace type is
-	used for notes of cue size that that include a grace
-	element. The cue type is used for all other notes with 
-	cue size, whether defined explicitly or implicitly via a 
-	cue element. The large type is used for notes of large
-	size. The text content represent the numeric percentage.
-	A value of 100 would be identical to the size of a regular
-	note as defined by the music font.
+	size as defined in the type element. The grace-cue type
+	is used for notes of grace-cue size. The grace type is
+	used for notes of cue size that include a grace element.
+	The cue type is used for all other notes with cue size,
+	whether defined explicitly or implicitly via a cue element.
+	The large type is used for notes of large size. The text
+	content represent the numeric percentage. A value of 100
+	would be identical to the size of a regular note as defined
+	by the music font.
 
 	The distance element represents standard distances between
 	notation elements in tenths. The type attribute defines what
@@ -243,7 +244,7 @@
 >
 <!ELEMENT note-size (#PCDATA)>
 <!ATTLIST note-size
-    type (cue | grace | large) #REQUIRED
+    type (cue | grace | grace-cue | large) #REQUIRED
 >
 <!ELEMENT distance %layout-tenths;>
 <!ATTLIST distance

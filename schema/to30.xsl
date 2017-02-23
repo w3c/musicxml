@@ -51,6 +51,15 @@
 
   <!-- Additions in note.mod -->
 
+  <!--
+    Earlier versions of MusicXML allow notes to have a 
+    grace or cue element, but not both. Remove any cue
+    element that is not the first child element of a
+    note element.
+  -->  
+  <xsl:template 
+    match="note/cue[position() > 1]"/>
+
   <!-- Remove new MusicXML 3.1 elements -->
   <xsl:template
     match="inverted-vertical-turn | haydn | soft-accent"/>
@@ -111,6 +120,16 @@
     <xsl:copy><xsl:apply-templates
       select="*|@*|comment()|processing-instruction()"
     /></xsl:copy>
+  </xsl:template>
+
+  <!--
+    Convert grace-cue sizes to grace size. This is consistent
+    with our removal of the cue element from notes that
+    contain both grace and cue elements.
+  -->
+  <xsl:template 
+    match="@size[. = 'grace-cue']">
+    <xsl:attribute name="size">grace</xsl:attribute>
   </xsl:template>
 
   <!-- Additions in attributes.mod -->
@@ -295,6 +314,12 @@
   <!-- Remove glyph elements -->
   <xsl:template
     match="glyph"/>
+
+  <!-- 
+    Remove note-size element with a grace-cue type.
+  -->
+  <xsl:template 
+    match="note-size[@type = 'grace-cue']"/>
 
   <!-- Additions in score.mod -->
 
