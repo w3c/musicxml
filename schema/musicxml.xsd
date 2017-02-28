@@ -4532,7 +4532,7 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 				<xs:sequence>
 					<xs:element name="cue" type="empty">
 						<xs:annotation>
-							<xs:documentation>The cue element indicates the presence of a cue note.</xs:documentation>
+							<xs:documentation>The cue element indicates the presence of a cue note. In MusicXML, a cue note is a silent note with no playback. Normal notes that play can be specified as cue size using the type element. A cue note that is specified as full size using the type element will still remain silent.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:group ref="full-note"/>

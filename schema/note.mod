@@ -114,18 +114,26 @@
 <!ELEMENT octave (#PCDATA)>
 
 <!--
-	The cue and grace elements indicate the presence of cue and
-	grace notes. The slash attribute for a grace note is yes for
-	slashed eighth notes. The other grace note attributes come
-	from MuseData sound suggestions. The steal-time-previous
-	attribute indicates the percentage of time to steal from the
-	previous note for the grace note. The steal-time-following
-	attribute indicates the percentage of time to steal from the
-	following note for the grace note, as for appoggiaturas. The
-	make-time attribute indicates to make time, not steal time;
-	the units are in real-time divisions for the grace note.
+	The cue element indicates the presence of a cue note.
+	In MusicXML, a cue note is a silent note with no playback.
+	Normal notes that play can be specified as cue size using
+	the type element. A cue note that is specified as full size
+	using the type element will still remain silent.
 -->
 <!ELEMENT cue EMPTY>
+
+<!--
+	The grace element indicates the presence of a grace note. 
+	The slash attribute for a grace note is yes for slashed
+	eighth notes. The other grace note attributes come from
+	MuseData sound suggestions. The steal-time-previous attribute
+	indicates the percentage of time to steal from the previous
+	note for the grace note. The steal-time-following attribute
+	indicates the percentage of time to steal from the following
+	note for the grace note, as for appoggiaturas. The make-time
+	attribute indicates to make time, not steal time; the units
+	are in real-time divisions for the grace note.
+-->
 <!ELEMENT grace EMPTY>
 <!ATTLIST grace
     steal-time-previous CDATA #IMPLIED
