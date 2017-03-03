@@ -394,6 +394,15 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="smufl-lyrics-glyph-name">
+		<xs:annotation>
+			<xs:documentation>The smufl-lyrics-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) lyrics elision character. The value is a SMuFL canonical glyph name that starts with lyrics.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="smufl-glyph-name">
+			<xs:pattern value="lyrics\c+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:simpleType name="smufl-notehead-glyph-name">
 		<xs:annotation>
 			<xs:documentation>The smufl-notehead-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) notehead character. The value is a SMuFL canonical glyph name that starts with note.</xs:documentation>
@@ -4222,6 +4231,19 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 		</xs:simpleContent>
 	</xs:complexType>
 	
+	<xs:complexType name="elision">
+		<xs:annotation>
+			<xs:documentation>The elision type represents an elision between lyric syllables. The text content specifies the symbol used to display the elision. Common values are a no-break space (Unicode 00A0), an underscore (Unicode 005F), or an undertie (Unicode 203F). If the text content is empty, the smufl attribute is used to specify the symbol to use. Its value is a SMuFL canonical glyph name that starts with lyrics. The SMuFL attribute is ignored if the elision glyph is already specified by the text content. If neither text content nor a smufl attribute are present, the elision glyph is application-specific.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="font"/>
+				<xs:attributeGroup ref="color"/>
+				<xs:attribute name="smufl" type="smufl-lyrics-glyph-name"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
 	<xs:complexType name="empty-line">
 		<xs:annotation>
 			<xs:documentation>The empty-line type represents an empty element with line-shape, line-type, dashed-formatting, print-style and placement attributes.</xs:documentation>
@@ -4449,11 +4471,7 @@ Justification is center by default; placement is below by default. The print-obj
 					<xs:element name="text" type="text-element-data"/>
 					<xs:sequence minOccurs="0" maxOccurs="unbounded">
 						<xs:sequence minOccurs="0">
-							<xs:element name="elision" type="text-font-color">
-								<xs:annotation>
-									<xs:documentation>The content of the elision element specifies the symbol used to display the elision. Common values are a no-break space (Unicode 00A0), an underscore (Unicode 005F), or an undertie (Unicode 203F).</xs:documentation>
-								</xs:annotation>
-							</xs:element>
+							<xs:element name="elision" type="elision"/>
 							<xs:element name="syllabic" type="syllabic" minOccurs="0"/>
 						</xs:sequence>
 						<xs:element name="text" type="text-element-data"/>
@@ -4969,23 +4987,6 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 	<xs:complexType name="text-element-data">
 		<xs:annotation>
 			<xs:documentation>The text-element-data type represents a syllable or portion of a syllable for lyric text underlay. A hyphen in the string content should only be used for an actual hyphenated word. Language names for text elements come from ISO 639, with optional country subcodes from ISO 3166.</xs:documentation>
-		</xs:annotation>
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attributeGroup ref="font"/>
-				<xs:attributeGroup ref="color"/>
-				<xs:attributeGroup ref="text-decoration"/>
-				<xs:attributeGroup ref="text-rotation"/>
-				<xs:attributeGroup ref="letter-spacing"/>
-				<xs:attribute ref="xml:lang"/>
-				<xs:attributeGroup ref="text-direction"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-
-	<xs:complexType name="text-font-color">
-		<xs:annotation>
-			<xs:documentation>The text-font-color type represents text with optional font and color information. It is used for the elision element.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:string">

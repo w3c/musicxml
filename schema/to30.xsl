@@ -109,7 +109,7 @@
     match="accidental/@smufl | accidental-mark/@smufl |
 			other-articulation/@smufl | other-notation/@smufl |
 			other-ornament/@smufl | other-technical/@smufl |
-			notehead/@smufl"/>
+			notehead/@smufl | elision/@smufl"/>
 
   <!--
     Do not copy text for caesura elements, or for breath-mark 
