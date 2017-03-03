@@ -371,10 +371,45 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 
 	<xs:simpleType name="smufl-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-glyph-name type is used for attributes that reference a specific Standard Music Font Layout (SMuFL) character. The value is a SMuFL canonical glyph name, not a code point. For instance, the value for a standard
-	piano pedal mark would be keyboardPedalPed, not U+E650.</xs:documentation>
+			<xs:documentation>The smufl-glyph-name type is used for attributes that reference a specific Standard Music Font Layout (SMuFL) character. The value is a SMuFL canonical glyph name, not a code point. For instance, the value for a standard piano pedal mark would be keyboardPedalPed, not U+E650.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:NMTOKEN"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="smufl-accidental-glyph-name">
+		<xs:annotation>
+			<xs:documentation>The smufl-accidental-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) accidental character. The value is a SMuFL canonical glyph name that starts with acc.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="smufl-glyph-name">
+			<xs:pattern value="acc\c+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="smufl-coda-glyph-name">
+		<xs:annotation>
+			<xs:documentation>The smufl-coda-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) coda character. The value is a SMuFL canonical glyph name that starts with coda.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="smufl-glyph-name">
+			<xs:pattern value="coda\c*"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="smufl-notehead-glyph-name">
+		<xs:annotation>
+			<xs:documentation>The smufl-notehead-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) notehead character. The value is a SMuFL canonical glyph name that starts with note.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="smufl-glyph-name">
+			<xs:pattern value="note\c+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="smufl-segno-glyph-name">
+		<xs:annotation>
+			<xs:documentation>The smufl-segno-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) segno character. The value is a SMuFL canonical glyph name that starts with segno.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="smufl-glyph-name">
+			<xs:pattern value="segno\c*"/>
+		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="start-note">
@@ -2132,9 +2167,18 @@ Measure width is specified in tenths. These are the global tenths specified in t
 		<xs:simpleContent>
 			<xs:extension base="accidental-value">
 				<xs:attributeGroup ref="text-formatting"/>
-				<xs:attributeGroup ref="smufl"/>
+				<xs:attribute name="smufl" type="smufl-accidental-glyph-name"/>
 			</xs:extension>
 		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="coda">
+		<xs:annotation>
+			<xs:documentation>The coda type is the visual indicator of a coda sign. The exact glyph can be specified with the smufl attribute. A sound element is also needed to guide playback applications reliably.</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
+		<xs:attribute name="smufl" type="smufl-coda-glyph-name"/>
 	</xs:complexType>
 
 	<xs:complexType name="dynamics">
@@ -2443,6 +2487,15 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 		<xs:attribute name="id" type="xs:IDREF"/>
 	</xs:complexType>
 
+	<xs:complexType name="segno">
+		<xs:annotation>
+			<xs:documentation>The segno type is the visual indicator of a segno sign. The exact glyph can be specified with the smufl attribute. A sound element is also needed to guide playback applications reliably.</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
+		<xs:attribute name="smufl" type="smufl-segno-glyph-name"/>
+	</xs:complexType>
+
 	<xs:complexType name="string">
 		<xs:annotation>
 			<xs:documentation>The string type is used with tablature notation, regular notation (where it is often circled), and chord diagrams. String numbers start with 1 for the highest pitched full-length string.</xs:documentation>
@@ -2662,7 +2715,7 @@ Clefs appear at the start of each system unless the print-object attribute has b
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="accidental-value">
-				<xs:attributeGroup ref="smufl"/>
+				<xs:attribute name="smufl" type="smufl-accidental-glyph-name"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -2861,8 +2914,8 @@ Barlines have a location attribute to make it easier to process barlines indepen
 			<xs:element name="bar-style" type="bar-style-color" minOccurs="0"/>
 			<xs:group ref="editorial"/>
 			<xs:element name="wavy-line" type="wavy-line" minOccurs="0"/>
-			<xs:element name="segno" type="empty-print-style-align-id" minOccurs="0"/>
-			<xs:element name="coda" type="empty-print-style-align-id" minOccurs="0"/>
+			<xs:element name="segno" type="segno" minOccurs="0"/>
+			<xs:element name="coda" type="coda" minOccurs="0"/>
 			<xs:element name="fermata" type="fermata" minOccurs="0" maxOccurs="2"/>
 			<xs:element name="ending" type="ending" minOccurs="0"/>
 			<xs:element name="repeat" type="repeat" minOccurs="0"/>
@@ -3097,16 +3150,8 @@ By default, a series of direction-type elements and a series of child elements o
 					<xs:documentation>The rehearsal type specifies a rehearsal mark. Language is Italian ("it") by default. Enclosure is square by default. Left justification is assumed if not specified.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="segno" type="empty-print-style-align-id" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The segno element is the visual indicator of a segno sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="coda" type="empty-print-style-align-id" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The coda element is the visual indicator of a coda sign. A sound element is needed to guide playback applications reliably.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element name="segno" type="segno" maxOccurs="unbounded"/>
+			<xs:element name="coda" type="coda" maxOccurs="unbounded"/>
 			<xs:sequence>
 				<xs:element name="words" type="formatted-text-id" minOccurs="1">
 					<xs:annotation>
@@ -3958,7 +4003,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 				<xs:attribute name="editorial" type="yes-no"/>
 				<xs:attributeGroup ref="level-display"/>
 				<xs:attributeGroup ref="print-style"/>
-				<xs:attributeGroup ref="smufl"/>
+				<xs:attribute name="smufl" type="smufl-accidental-glyph-name"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -3971,7 +4016,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 			<xs:extension base="accidental-value">
 				<xs:attributeGroup ref="print-style"/>
 				<xs:attributeGroup ref="placement"/>
-				<xs:attributeGroup ref="smufl"/>
+				<xs:attribute name="smufl" type="smufl-accidental-glyph-name"/>
 				<xs:attributeGroup ref="optional-unique-id"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -4603,7 +4648,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				<xs:attribute name="parentheses" type="yes-no"/>
 				<xs:attributeGroup ref="font"/>
 				<xs:attributeGroup ref="color"/>
-				<xs:attributeGroup ref="smufl"/>
+				<xs:attribute name="smufl" type="smufl-notehead-glyph-name"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>

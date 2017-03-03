@@ -777,19 +777,23 @@
 <!--
 	Segno and coda signs can be associated with a measure
 	or a general musical direction. These are visual
-	indicators only; a sound element is needed to guide
-	playback applications reliably.
+	indicators only; a sound element is also needed to guide
+	playback applications reliably. The exact glyph can be
+	specified with the smufl attribute using a SMuFL canonical
+	glyph name that starts with segno or coda respectively.
 -->
 <!ELEMENT segno EMPTY>
 <!ATTLIST segno
     %print-style-align; 
     %optional-unique-id;
+    %smufl;
 >
 
 <!ELEMENT coda EMPTY>
 <!ATTLIST coda
     %print-style-align; 
     %optional-unique-id;
+    %smufl;
 >
 
 <!--

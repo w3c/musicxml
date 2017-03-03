@@ -168,7 +168,7 @@
   <!-- Remove new id attributes -->
   <xsl:template 
     match="fermata/@id | segno/@id | 
-			coda/@id | dynamics/@id"/>
+		coda/@id | dynamics/@id"/>
 
   <!-- Remove accidental-text elements with new other value -->
   <xsl:template
@@ -176,7 +176,8 @@
 
   <!-- Remove smufl attributes -->
   <xsl:template
-    match="accidental-text/@smufl | other-dynamics/@smufl"/>
+    match="accidental-text/@smufl | other-dynamics/@smufl |
+		coda/@smufl | segno/@smufl"/>
 
   <!-- 
     Remove enclosure attributes that have values of pentagon,
