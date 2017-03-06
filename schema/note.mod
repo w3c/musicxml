@@ -340,7 +340,7 @@
 	smufl attribute may be used with any notehead value to
 	help specify the appearance of symbols that share the
 	sameMusicXML semantics. Its value is a SMuFL canonical
-	glpyh name that starts with note. Noteheads in the SMuFL
+	glyph name that starts with note. Noteheads in the SMuFL
 	"Note name noteheads" range (U+E150–U+E1AF) should not use
 	the smufl attribute or the "other" value, but instead use
 	the notehead-text element.
@@ -1368,15 +1368,23 @@
 <!ELEMENT syllabic (#PCDATA)>
 
 <!--
-	The elision element text specifies the symbol used to
+	The elision element represents an elision between lyric
+	syllables. The text content specifies the symbol used to
 	display the elision. Common values are a no-break space
 	(Unicode 00A0), an underscore (Unicode 005F), or an undertie
-	(Unicode 203F).
+	(Unicode 203F). If the text content is empty, the smufl
+	attribute is used to specify the symbol to use. Its value
+	is a SMuFL canonical glyph name that starts with lyrics.
+	The SMuFL attribute is ignored if the elision glyph is
+	already specified by the text content. If neither text
+	content nor a smufl attribute are present, the elision
+	glyph is application-specific.
 -->
 <!ELEMENT elision (#PCDATA)>
 <!ATTLIST elision
     %font;
     %color;
+    %smufl;
 >
 
 <!--
