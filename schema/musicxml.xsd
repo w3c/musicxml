@@ -457,6 +457,18 @@ The values of start, stop, and continue refer to how an element appears in music
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="start-stop-continue-let-ring">
+		<xs:annotation>
+			<xs:documentation>The start-stop-continue-let-ring type extends the start-stop-continue type by adding the let-ring value. This is used for ties that start on one note, but do not attach to a following note. The most common example of this is a small tie after a note to indicate that the performer should allow the instrument to sustain without dampening.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="start"/>
+			<xs:enumeration value="stop"/>
+			<xs:enumeration value="continue"/>
+			<xs:enumeration value="let-ring"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:simpleType name="start-stop-single">
 		<xs:annotation>
 			<xs:documentation>The start-stop-single type is used for an attribute of musical elements that can be used for either multi-note or single-note musical elements, as for tremolos.</xs:documentation>
@@ -5015,7 +5027,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 
 The number attribute is rarely needed to disambiguate ties, since note pitches will usually suffice. The attribute is implied rather than defaulting to 1 as with most elements. It is available for use in more complex tied notation situations.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="type" type="start-stop-continue" use="required"/>
+		<xs:attribute name="type" type="start-stop-continue-let-ring" use="required"/>
 		<xs:attribute name="number" type="number-level"/>
 		<xs:attributeGroup ref="line-type"/>
 		<xs:attributeGroup ref="dashed-formatting"/>
