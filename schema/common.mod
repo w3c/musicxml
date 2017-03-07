@@ -94,7 +94,7 @@
 <!ENTITY % start-stop "(start | stop)">
 <!ENTITY % start-stop-continue "(start | stop | continue)">
 <!ENTITY % start-stop-single "(start | stop | single)">
-<!ENTITY % start-stop-single-let-ring "(start | stop | single | let-ring)">
+<!ENTITY % start-stop-continue-let-ring "(start | stop | continue | let-ring)">
 
 <!--
 	The yes-no entity is used for boolean-like attributes.
