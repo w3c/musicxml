@@ -434,7 +434,7 @@
 -->
 <!ELEMENT tied EMPTY>
 <!ATTLIST tied
-    type %start-stop-continue; #REQUIRED
+    type %start-stop-continue-let-ring; #REQUIRED
     number %number-level; #IMPLIED
     %line-type;
     %dashed-formatting;

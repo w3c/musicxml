@@ -83,10 +83,18 @@
 	in multi-staff music. For example, the stopping point for
 	a slur may appear in staff 1 before the starting point for
 	the slur appears in staff 2 later in the document.
+
+	The start-stop-continue-let-ring type extends the
+	start-stop-continue type by adding the let-ring value.
+	This is used for ties that start on one note, but do not
+	attach to a following note. The most common example of this
+	is a small tie after a note to indicate that the performer
+	should allow the instrument to sustain without dampening.
 -->
 <!ENTITY % start-stop "(start | stop)">
 <!ENTITY % start-stop-continue "(start | stop | continue)">
 <!ENTITY % start-stop-single "(start | stop | single)">
+<!ENTITY % start-stop-single-let-ring "(start | stop | single | let-ring)">
 
 <!--
 	The yes-no entity is used for boolean-like attributes.
