@@ -84,17 +84,21 @@
 	a slur may appear in staff 1 before the starting point for
 	the slur appears in staff 2 later in the document.
 
-	The start-stop-continue-let-ring type extends the
-	start-stop-continue type by adding the let-ring value.
-	This is used for ties that start on one note, but do not
-	attach to a following note. The most common example of this
-	is a small tie after a note to indicate that the performer
-	should allow the instrument to sustain without dampening.
+	The tied-type type is used as an attribute of the tied
+	element to specify where the visual representation of a
+	tie begins and ends. A tied element which joins two notes
+	of the same pitch can be specified with tied-type start on
+	the first note and tied-type stop on the second note. To
+	indicate a note should be undamped, use a single tied
+	element with tied-type let-ring. For other ties that are
+	visually attached to a single note, such as a tie leading
+	into or out of a repeated section or coda, use two tied
+	elements on the same note, one start and one stop.
 -->
 <!ENTITY % start-stop "(start | stop)">
 <!ENTITY % start-stop-continue "(start | stop | continue)">
 <!ENTITY % start-stop-single "(start | stop | single)">
-<!ENTITY % start-stop-continue-let-ring "(start | stop | continue | let-ring)">
+<!ENTITY % tied-type "(start | stop | continue | let-ring)">
 
 <!--
 	The yes-no entity is used for boolean-like attributes.
