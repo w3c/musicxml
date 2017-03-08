@@ -5023,7 +5023,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 
 	<xs:complexType name="tied">
 		<xs:annotation>
-			<xs:documentation>The tied type represents the notated tie. The tie element represents the tie sound.
+			<xs:documentation>The tied element represents the notated tie. The tie element represents the tie sound.
 
 The number attribute is rarely needed to disambiguate ties, since note pitches will usually suffice. The attribute is implied rather than defaulting to 1 as with most elements. It is available for use in more complex tied notation situations.
 

@@ -423,7 +423,7 @@
 >
 
 <!--
-	The tied type represents the notated tie. The tie element
+	The tied element represents the notated tie. The tie element
 	represents the tie sound.
 
 	The number attribute is rarely needed to disambiguate ties,
