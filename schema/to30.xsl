@@ -226,6 +226,11 @@
 			grouping/@id | print/@id |
 			sound/@id"/>
 
+  <!-- Remove smufl attributes -->
+  <xsl:template
+    match="glass/@smufl | other-direction/@smufl |
+			other-percussion/@smufl"/>
+
   <!--
     For safety, remove entire direction that has a new
     MusicXML 3.1 direction-type child.
@@ -312,10 +317,6 @@
   <!-- Remove new image attributes -->
   <xsl:template
     match="image/@height | image/@width"/>
-
-  <!-- Remove smufl attributes -->
-  <xsl:template
-    match="other-direction/@smufl | other-percussion/@smufl"/>
 
   <!-- Additions in layout.mod -->
 

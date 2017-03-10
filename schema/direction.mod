@@ -469,9 +469,14 @@
 <!--
 	The glass element represents pictograms for glass percussion
 	instruments. Valid values are glass harmonica, glass harp,
-	and wind chimes.
+	and wind chimes. The smufl attribute is used to distinguish
+	different SMuFL glyphs for wind chimes in the chimes pictograms
+	range, including those made of materials other than glass.
 -->
 <!ELEMENT glass (#PCDATA)>
+<!ATTLIST glass
+    %smufl;
+>
 
 <!--
 	The metal element represents pictograms for metal percussion
