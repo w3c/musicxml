@@ -92,6 +92,13 @@
 			. = 'flat-flat-up' or . = 'arrow-down' or
 			. = 'arrow-up' or . = 'other']"/>
 
+<!--
+    Remove tied elements which use the new let-ring
+    attribute for single-ended ties.
+  -->
+  <xsl:template
+    match="tied[. = 'let-ring']"/>
+
   <!--
     Remove notehead elements with new notehead values.
   -->
