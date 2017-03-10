@@ -94,7 +94,7 @@
 
 <!--
     Remove tied elements which use the new let-ring
-    attribue for single-ended ties.
+    attribute for single-ended ties.
   -->
   <xsl:template
     match="tied[. = 'let-ring']"/>

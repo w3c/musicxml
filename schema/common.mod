@@ -84,16 +84,21 @@
 	a slur may appear in staff 1 before the starting point for
 	the slur appears in staff 2 later in the document.
 
-	The tied-type type is used as an attribute of the tied
+	The tied-type entity is used as an attribute of the tied
 	element to specify where the visual representation of a
 	tie begins and ends. A tied element which joins two notes
-	of the same pitch can be specified with tied-type start on
-	the first note and tied-type stop on the second note. To
-	indicate a note should be undamped, use a single tied
-	element with tied-type let-ring. For other ties that are
-	visually attached to a single note, such as a tie leading
-	into or out of a repeated section or coda, use two tied
-	elements on the same note, one start and one stop.
+	can be specified with tied-type start on the first note and
+	tied-type stop on the second note. To indicate a note
+	should be undamped, use a single tied element with
+	tied-type let-ring. For other ties that are visually
+	attached to a single note, such as a tie leading into or
+	out of a repeated section or coda, use two tied elements on
+	the same note, one start and one stop.
+
+	In start-stop cases, ties can add more elements using a
+	continue type. This is typically used to specify the
+	formatting of cross-system ties, or to specify the shape of
+	very complex ties.
 -->
 <!ENTITY % start-stop "(start | stop)">
 <!ENTITY % start-stop-continue "(start | stop | continue)">
