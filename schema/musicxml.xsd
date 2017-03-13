@@ -412,6 +412,15 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="smufl-pictogram-glyph-name">
+		<xs:annotation>
+			<xs:documentation>The smufl-notehead-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) percussion pictogram character. The value is a SMuFL canonical glyph name that starts with pict.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="smufl-glyph-name">
+			<xs:pattern value="pict\c+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:simpleType name="smufl-segno-glyph-name">
 		<xs:annotation>
 			<xs:documentation>The smufl-segno-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) segno character. The value is a SMuFL canonical glyph name that starts with segno.</xs:documentation>
@@ -924,9 +933,9 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="glass">
+	<xs:simpleType name="glass-value">
 		<xs:annotation>
-			<xs:documentation>The glass type represents pictograms for glass percussion instruments.</xs:documentation>
+			<xs:documentation>The glass-value type represents pictograms for glass percussion instruments.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="glass harmonica"/>
@@ -3286,6 +3295,17 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:element name="fingering" type="fingering" minOccurs="0"/>
 			<xs:element name="barre" type="barre" minOccurs="0"/>
 		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="glass">
+		<xs:annotation>
+			<xs:documentation>The glass type represents pictograms for glass percussion instruments. The smufl attribute is used to distinguish different SMuFL glyphs for wind chimes in the chimes pictograms range, including those made of materials other than glass.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="glass-value">
+				<xs:attribute name="smufl" type="smufl-pictogram-glyph-name"/>
+			</xs:extension>
+		</xs:simpleContent>
 	</xs:complexType>
 
 	<xs:complexType name="grouping">
