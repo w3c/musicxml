@@ -507,13 +507,19 @@
 
 <!--
 	The pitched element represents pictograms for pitched
-	percussion instruments. Valid values are chimes,
-	glockenspiel, mallet, marimba, tubular chimes, vibraphone,
-	and xylophone. The chimes and tubular chimes values
-	distinguish the single-line and double-line versions of the
-	pictogram. The mallet value is in addition to Stone's list.
+	percussion instruments. Valid values are celesta, chimes,
+	glockenspiel, lithophone, mallet, marimba, steel drums,
+	tubaphone, tubular chimes, vibraphone, and xylophone.
+	The chimes and tubular chimes values distinguish the
+	single-line and double-line versions of the pictogram.
+	The smufl attribute is used to distinguish different SMuFL
+	glyphs for a particular pictogram within the tuned mallet
+	percussion pictograms range.
 -->
 <!ELEMENT pitched (#PCDATA)>
+<!ATTLIST pitched
+    %smufl;
+>
 
 <!--
 	The membrane element represents pictograms for membrane
