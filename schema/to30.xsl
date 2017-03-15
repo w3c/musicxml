@@ -228,7 +228,8 @@
 
   <!-- Remove smufl attributes -->
   <xsl:template
-    match="glass/@smufl | other-direction/@smufl |
+    match="glass/@smufl | pitched/@smufl |
+			other-direction/@smufl | 
 			other-percussion/@smufl"/>
 
   <!--
