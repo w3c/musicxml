@@ -222,15 +222,16 @@
 	
 	The beat-unit values are the same as for a type element,
 	and the beat-unit-dot works like the dot element. The
-	per-minute element can be a number, or a text description
-	including numbers. The parentheses attribute indicates
-	whether or not to put the metronome mark in parentheses;
-	its value is no if not specified. If a font is specified for
-	the per-minute element, it overrides the font specified for
-	the overall metronome element. This allows separate
-	specification of a music font for beat-unit and a text
-	font for the numeric value in cases where a single
-	metronome font is not used.
+	beat-unit-tied type indicates a beat-unit that is tied to
+	the preceding beat-unit. The per-minute element can be a
+	number, or a text description including numbers. The
+	parentheses attribute indicates whether or not to put the
+	metronome mark in parentheses; its value is no if not
+	specified. If a font is specified for the per-minute element,
+	it overrides the font specified for the overall metronome
+	element. This allows separate specification of a music font
+	for beat-unit and a text font for the numeric value in cases
+	where a single metronome font is not used.
 
 	The metronome-note and metronome-relation elements allow
 	for the specification of metric modulations and other metric
@@ -238,12 +239,12 @@
 	are equated to a quarter note / eighth note triplet. If the
 	metronome-arrows element is present, it indicates that metric
 	modulation arrows are displayed on both sides of the metronome
-	mark. The metronome-type, metronome-beam, and metronome-dot
-	elements work like the type, beam, and dot elements. The
-	metronome-tuplet element uses the same element structure
-	as the time-modification element along with some attributes
-	from the tuplet element. The metronome-relation element
-	describes the relationship symbol that goes between the
+	mark. The metronome-type, metronome-beam, metronome-dot, and
+	metronome-tied elements work like the type, beam, dot, and tied
+	elements. The metronome-tuplet element uses the same element
+	structure as the time-modification element along with some
+	attributes from the tuplet element. The metronome-relation
+	element describes the relationship symbol that goes between the
 	two sets of metronome-note elements. The currently allowed
 	value is equals, but this may expand in future versions.
 	If the element is empty, the equals value is used. The 
@@ -252,8 +253,9 @@
 	Grundschlagnote.
 -->
 <!ELEMENT metronome 
-	((beat-unit, beat-unit-dot*, 
-	 (per-minute | (beat-unit, beat-unit-dot*))) |
+	((beat-unit, beat-unit-dot*, beat-unit-tied*,
+	 (per-minute | 
+	  (beat-unit, beat-unit-dot*, beat-unit-tied*))) |
 	(metronome-arrows?, metronome-note+,
 	 (metronome-relation, metronome-note+)?))>
 <!ATTLIST metronome
@@ -264,6 +266,8 @@
 >
 <!ELEMENT beat-unit (#PCDATA)>
 <!ELEMENT beat-unit-dot EMPTY>
+<!ELEMENT beat-unit-tied
+	(beat-unit, beat-unit-dot*)>
 <!ELEMENT per-minute (#PCDATA)> 
 <!ATTLIST per-minute
     %font;
@@ -271,13 +275,18 @@
 
 <!ELEMENT metronome-note
 	(metronome-type, metronome-dot*,
-	 metronome-beam*, metronome-tuplet?)>
+	 metronome-beam*, metronome-tied?, 
+	 metronome-tuplet?)>
 <!ELEMENT metronome-relation (#PCDATA)>
 <!ELEMENT metronome-type (#PCDATA)>
 <!ELEMENT metronome-dot EMPTY>
 <!ELEMENT metronome-beam (#PCDATA)>
 <!ATTLIST metronome-beam
     number %beam-level; "1"
+>
+<!ELEMENT metronome-tied EMPTY>
+<!ATTLIST metronome-tied
+    type %start-stop; #REQUIRED
 >
 <!ELEMENT metronome-tuplet
 	(actual-notes, normal-notes, 
