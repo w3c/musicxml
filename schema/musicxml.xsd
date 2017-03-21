@@ -1526,6 +1526,7 @@ A quarter-rest type specifies the glyph to use when a note has a rest element an
 			<xs:documentation>The handbell-value type represents the type of handbell technique being notated.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="belltree"/>
 			<xs:enumeration value="damp"/>
 			<xs:enumeration value="echo"/>
 			<xs:enumeration value="gyro"/>
@@ -2268,6 +2269,14 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 	<xs:complexType name="empty-placement">
 		<xs:annotation>
 			<xs:documentation>The empty-placement type represents an empty element with print-style and placement attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="print-style"/>
+		<xs:attributeGroup ref="placement"/>
+	</xs:complexType>
+
+	<xs:complexType name="empty-placement-smufl">
+		<xs:annotation>
+			<xs:documentation>The empty-placement-smufl type represents an empty element with print-style, placement, and smufl attributes.</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="placement"/>
@@ -4180,7 +4189,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 
 	<xs:complexType name="arrow">
 		<xs:annotation>
-			<xs:documentation>The arrow element represents an arrow used for a musical technical indication..</xs:documentation>
+			<xs:documentation>The arrow element represents an arrow used for a musical technical indication. It can represent both Unicode and SMuFL arrows. The smufl attribute distinguishes different SMuFL glyphs that have an arrow appearance such as arrowBlackUp, guitarStrumUp, or handbellsSwingUp. The specified glyph should match the descriptive representation.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:sequence>
@@ -4191,6 +4200,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 		</xs:choice>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="placement"/>
+		<xs:attributeGroup ref="smufl"/>
 	</xs:complexType>
 
 	<xs:complexType name="backup">
@@ -4994,14 +5004,14 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 					<xs:documentation>The triple-tongue element represents the triple tongue symbol (three dots arranged horizontally).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="stopped" type="empty-placement">
+			<xs:element name="stopped" type="empty-placement-smufl">
 				<xs:annotation>
-					<xs:documentation>The stopped element represents the stopped symbol, which looks like a plus sign.</xs:documentation>
+					<xs:documentation>The stopped element represents the stopped symbol, which looks like a plus sign. The smufl attribute distinguishes different SMuFL glyphs that have a similar appearance such as handbellsMalletBellSuspended and guitarClosePedal. If not present, the default glyph is brassMuteClosed.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="snap-pizzicato" type="empty-placement">
 				<xs:annotation>
-					<xs:documentation>	The snap-pizzicato element represents the snap pizzicato symbol. This is a circle with a line, where the line comes inside the circle. It is distinct from the thumb-position symbol, where the line does not come inside the circle.</xs:documentation>
+					<xs:documentation>The snap-pizzicato element represents the snap pizzicato symbol. This is a circle with a line, where the line comes inside the circle. It is distinct from the thumb-position symbol, where the line does not come inside the circle.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="fret" type="fret"/>

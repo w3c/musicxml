@@ -106,6 +106,12 @@
     match="notehead[. = 'circled' or . = 'other']"/>
 
   <!--
+    Remove handbell elements with new handbell values.
+  -->
+  <xsl:template
+    match="handbell[. = 'belltree']"/>
+
+  <!--
     Remove time-only attribute from lyric element.
   -->
   <xsl:template
@@ -114,9 +120,10 @@
   <!-- Remove smufl attributes -->
   <xsl:template
     match="accidental/@smufl | accidental-mark/@smufl |
+			arrow/@smufl | elision/@smful |
+			notehead/@smufl | stopped/@smufl |
 			other-articulation/@smufl | other-notation/@smufl |
-			other-ornament/@smufl | other-technical/@smufl |
-			notehead/@smufl | elision/@smufl"/>
+			other-ornament/@smufl | other-technical/@smufl"/>
 
   <!--
     Do not copy text for caesura elements, or for breath-mark 
