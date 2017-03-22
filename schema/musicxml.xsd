@@ -3089,6 +3089,13 @@ The number attribute reflects the numeric values of what is under the ending lin
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="beat-unit-tied">
+		<xs:annotation>
+			<xs:documentation>The beat-unit-tied type indicates a beat-unit within a metronome mark that is tied to the preceding beat-unit. This allows or two or more tied notes to be associated with a per-minute value in a metronome mark, whereas the metronome-tied element is restricted to metric relationship marks.</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="beat-unit"/>
+	</xs:complexType>
+
 	<xs:complexType name="bracket">
 		<xs:annotation>
 			<xs:documentation>Brackets are combined with words in a variety of modern directions. The line-end attribute specifies if there is a jog up or down (or both), an arrow, or nothing at the start or end of the bracket. If the line-end is up or down, the length of the jog can be specified using the end-length attribute. The line-type is solid by default.</xs:documentation>
@@ -3434,14 +3441,18 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 
 	<xs:complexType name="metronome">
 		<xs:annotation>
-			<xs:documentation>The metronome type represents metronome marks and other metric relationships. The beat-unit group and per-minute element specify regular metronome marks. The metronome-note and metronome-relation elements allow for the specification of metric modulations and other metric relationships, such as swing tempo marks where two eighths are equated to a quarter note / eighth note triplet. The parentheses attribute indicates whether or not to put the metronome mark in parentheses; its value is no if not specified.</xs:documentation>
+			<xs:documentation>The metronome type represents metronome marks and other metric relationships. The beat-unit group and per-minute element specify regular metronome marks. The metronome-note and metronome-relation elements allow for the specification of metric modulations and other metric relationships, such as swing tempo marks where two eighths are equated to a quarter note / eighth note triplet. Tied notes can be represented in both types of metronome marks by using the beat-unit-tied and metronome-tied elements. The parentheses attribute indicates whether or not to put the metronome mark in parentheses; its value is no if not specified.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:sequence>
 				<xs:group ref="beat-unit"/>
+				<xs:element name="beat-unit-tied" type="beat-unit-tied" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:choice>
 					<xs:element name="per-minute" type="per-minute"/>
-					<xs:group ref="beat-unit"/>
+					<xs:sequence>
+						<xs:group ref="beat-unit"/>
+						<xs:element name="beat-unit-tied" type="beat-unit-tied" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
 				</xs:choice>
 			</xs:sequence>
 			<xs:sequence>
@@ -3494,10 +3505,18 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="metronome-beam" type="metronome-beam" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="metronome-tied" type="metronome-tied" minOccurs="0"/>
 			<xs:element name="metronome-tuplet" type="metronome-tuplet" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="metronome-tied">
+		<xs:annotation>
+			<xs:documentation>The metronome-tied indicates the presence of a tie within a metric relationship mark. As with the tied element, both the start and stop of the tie should be specified, in this case within separate metronome-note elements.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="type" type="start-stop" use="required"/>
+	</xs:complexType>
+	
 	<xs:complexType name="metronome-tuplet">
 		<xs:annotation>
 			<xs:documentation>The metronome-tuplet type uses the same element structure as the time-modification element along with some attributes from the tuplet element.</xs:documentation>

@@ -270,9 +270,10 @@
   <xsl:template priority="1"
     match="direction[direction-type[pedal[@number != '1']]]"/>
 
-  <!-- Remove metronome-arrows and symbol elements -->
+  <!-- Remove new optional elements -->
   <xsl:template
-    match="metronome-arrows | symbol"/>
+    match="beat-unit-tied | metronome-arrows | 
+			metronome-tied | symbol"/>
 
   <!-- 
     For safety, remove entire direction that has a new 
