@@ -17,8 +17,8 @@
 
 <!--
 	This direction DTD module contains the direction element
-	and its children. Directions are not note-specific, but
-	instead are associated with a part or the overall score.
+	and its children. Directions are generally not note-specific,
+	but instead are associated with a part or the overall score.
 	
 	Harmony indications and general print and sound
 	suggestions are likewise not necessarily attached to
@@ -39,9 +39,13 @@
 <!-- Elements -->
 
 <!--
-	A direction is a musical indication that is not attached
-	to a specific note. Two or more may be combined to
-	indicate starts and stops of wedges, dashes, etc.
+	A direction is a musical indication that is not necessarily
+	attached to a specific note. Two or more may be combined to
+	indicate starts and stops of wedges, dashes, etc. For
+	applications where a specific direction is indeed attached
+	to a specific note, the direction element can be associated
+	with the note element that follows it in score order that
+	is not in a different voice.
 
 	By default, a series of direction-type elements and a 
 	series of child elements of a direction-type within a 
