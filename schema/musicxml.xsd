@@ -4208,12 +4208,13 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 
 	<xs:complexType name="arrow">
 		<xs:annotation>
-			<xs:documentation>The arrow element represents an arrow used for a musical technical indication. It can represent both Unicode and SMuFL arrows. The smufl attribute distinguishes different SMuFL glyphs that have an arrow appearance such as arrowBlackUp, guitarStrumUp, or handbellsSwingUp. The specified glyph should match the descriptive representation.</xs:documentation>
+			<xs:documentation>The arrow element represents an arrow used for a musical technical indication. It can represent both Unicode and SMuFL arrows. The presence of an arrowhead element indicates that only the arrowhead is displayed, not the arrow stem. The smufl attribute distinguishes different SMuFL glyphs that have an arrow appearance such as arrowBlackUp, guitarStrumUp, or handbellsSwingUp. The specified glyph should match the descriptive representation.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:sequence>
 				<xs:element name="arrow-direction" type="arrow-direction"/>
 				<xs:element name="arrow-style" type="arrow-style" minOccurs="0"/>
+				<xs:element name="arrowhead" type="empty" minOccurs="0"/>
 			</xs:sequence>
 			<xs:element name="circular-arrow" type="circular-arrow"/>
 		</xs:choice>
