@@ -62,7 +62,8 @@
 
   <!-- Remove new MusicXML 3.1 elements -->
   <xsl:template
-    match="inverted-vertical-turn | haydn | soft-accent"/>
+    match="arrowhead | haydn | 
+			inverted-vertical-turn | soft-accent"/>
 
   <!-- Remove new id attributes -->
   <xsl:template 

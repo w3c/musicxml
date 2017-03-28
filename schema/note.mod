@@ -1079,13 +1079,16 @@
 	anticlockwise.
 
 	The arrow element can represent both Unicode and SMuFL arrows.
-	The smufl attribute distinguishes different SMuFL glyphs that
-	have an arrow appearance such as arrowBlackUp, guitarStrumUp,
+	The presence of an arrowhead element indicates that only the
+	arrowhead is displayed, not the arrow stem. The smufl
+	attribute distinguishes different SMuFL glyphs that have
+	an arrow appearance such as arrowBlackUp, guitarStrumUp,
 	or handbellsSwingUp. The specified glyph should match the
 	descriptive representation.
 -->
 <!ELEMENT arrow
-	((arrow-direction, arrow-style?) | circular-arrow)>
+	((arrow-direction, arrow-style?, arrowhead?) | 
+	 circular-arrow)>
 <!ATTLIST arrow
     %print-style;
     %placement;
@@ -1093,6 +1096,7 @@
 >
 <!ELEMENT arrow-direction (#PCDATA)>
 <!ELEMENT arrow-style (#PCDATA)>
+<!ELEMENT arrowhead EMPTY>
 <!ELEMENT circular-arrow (#PCDATA)>
 
 <!--
