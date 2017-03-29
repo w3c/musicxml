@@ -61,6 +61,13 @@
 	The position and printout entities for printing suggestions
 	are defined in the common.mod file.
 
+	The print-leger attribute is used to indicate whether leger
+	lines are printed. Notes without leger lines are used to
+	indicate indeterminate high and low notes. By default, it
+	is set to yes. If print-object is set to no, print-leger
+	is interpreted to also be set to no if not present. This
+	attribute is ignored for rests.
+
 	The dynamics and end-dynamics attributes correspond to
 	MIDI 1.0's Note On and Note Off velocities, respectively.
 	They are expressed in terms of percentages of the default
@@ -88,6 +95,7 @@
 <!ATTLIST note
     %print-style;
     %printout;
+    print-leger %yes-no; #IMPLIED
     dynamics CDATA #IMPLIED
     end-dynamics CDATA #IMPLIED
     attack CDATA #IMPLIED
