@@ -177,6 +177,17 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="line-length">
+		<xs:annotation>
+			<xs:documentation>The line-length type distinguishes between different line lengths for doit, falloff, plop, and scoop articulations.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="short"/>
+			<xs:enumeration value="medium"/>
+			<xs:enumeration value="long"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:simpleType name="line-shape">
 		<xs:annotation>
 			<xs:documentation>The line-shape type distinguishes between straight and curved lines.</xs:documentation>
@@ -1541,6 +1552,29 @@ A quarter-rest type specifies the glyph to use when a note has a rest element an
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="harmon-closed-location">
+		<xs:annotation>
+			<xs:documentation>The harmon-closed-location type indicates which portion of the symbol is filled in when the corresponding harmon-closed-value is half.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="right"/>
+			<xs:enumeration value="bottom"/>
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="top"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="harmon-closed-value">
+		<xs:annotation>
+			<xs:documentation>The harmon-closed-value type represents whether the harmon mute is closed, open, or half-open.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="yes"/>
+			<xs:enumeration value="no"/>
+			<xs:enumeration value="half"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:simpleType name="hole-closed-location">
 		<xs:annotation>
 			<xs:documentation>The hole-closed-location type indicates which portion of the hole is filled in when the corresponding hole-closed-value is half.</xs:documentation>
@@ -1857,6 +1891,13 @@ The halign attribute is used in these situations. If it is not present, its valu
 			<xs:documentation>The line-height attribute specifies text leading. Values are either "normal" or a number representing the percentage of the current font height to use for leading. The default is "normal". The exact normal value is implementation-dependent, but values between 100 and 120 are recommended.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="line-height" type="number-or-normal"/>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="line-length">
+		<xs:annotation>
+			<xs:documentation>The line-length attribute distinguishes between different line lengths for doit, falloff, plop, and scoop articulations.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="line-length" type="line-length"/>
 	</xs:attributeGroup>
 
 	<xs:attributeGroup name="line-shape">
@@ -4325,10 +4366,11 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 
 	<xs:complexType name="empty-line">
 		<xs:annotation>
-			<xs:documentation>The empty-line type represents an empty element with line-shape, line-type, dashed-formatting, print-style and placement attributes.</xs:documentation>
+			<xs:documentation>The empty-line type represents an empty element with line-shape, line-type, line-length, dashed-formatting, print-style and placement attributes.</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="line-shape"/>
 		<xs:attributeGroup ref="line-type"/>
+		<xs:attributeGroup ref="line-length"/>
 		<xs:attributeGroup ref="dashed-formatting"/>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="placement"/>
@@ -4445,6 +4487,28 @@ Figures are ordered from top to bottom. The value of parentheses is "no" if not 
 				<xs:attributeGroup ref="placement"/>
 			</xs:extension>
 		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="harmon-closed">
+		<xs:annotation>
+			<xs:documentation>The harmon-closed type represents whether the harmon mute is closed, open, or half-open. The optional location attribute indicates which portion of the symbol is filled in when the element value is half.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="harmon-closed-value">
+				<xs:attribute name="location" type="harmon-closed-location"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="harmon-mute">
+		<xs:annotation>
+			<xs:documentation>The harmon-mute type represents the symbols used for harmon mutes in brass notation.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="harmon-closed" type="harmon-closed"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="print-style"/>
+		<xs:attributeGroup ref="placement"/>
 	</xs:complexType>
 
 	<xs:complexType name="harmonic">
@@ -5054,6 +5118,32 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 			<xs:element name="hole" type="hole"/>
 			<xs:element name="arrow" type="arrow"/>
 			<xs:element name="handbell" type="handbell"/>
+			<xs:element name="brass-bend" type="empty-placement">
+				<xs:annotation>
+					<xs:documentation>The brass-bend element represents the u-shaped bend symbol used in brass notation, distinct from the bend element used in guitar music.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="flip" type="empty-placement">
+				<xs:annotation>
+					<xs:documentation>The flip element represents the flip symbol used in brass notation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="smear" type="empty-placement">
+				<xs:annotation>
+					<xs:documentation>The smear element represents the tilde-shaped smear symbol used in brass notation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="open" type="empty-placement-smufl">
+				<xs:annotation>
+					<xs:documentation>The open element represents the open symbol, which looks like a circle. The smufl attribute can be used to distinguish different SMuFL glyphs that have a similar appearance such as brassMuteOpen and guitarOpenPedal. If not present, the default glyph is brassMuteOpen.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="half-muted" type="empty-placement-smufl">
+				<xs:annotation>
+					<xs:documentation>The half-muted element represents the half-muted symbol, which looks like a circle with a plus sign inside. The smufl attribute can be used to distinguish different SMuFL glyphs that have a similar appearance such as brassMuteHalfClosed and guitarHalfOpenPedal. If not present, the default glyph is brassMuteHalfClosed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="harmon-mute" type="harmon-mute"/>
 			<xs:element name="other-technical" type="other-placement-text">
 				<xs:annotation>
 					<xs:documentation>The other-technical element is used to define any technical indications not yet in the MusicXML format. The smufl attribute can be used to specify a particular glyph, allowing application interoperability without requiring every SMuFL technical indication to have a MusicXML element equivalent. Using the other-technical element without the smufl attribute allows for extended representation, though without application interoperability.</xs:documentation>

@@ -521,13 +521,18 @@
 	The line-shape entity is used to distinguish between
 	straight and curved lines. The line-type entity
 	distinguishes between solid, dashed, dotted, and
-	wavy lines.
+	wavy lines. The line-length entity distinguishes
+	between different line lengths for doit, falloff,
+	plop, and scoop articulations.
 -->
 <!ENTITY % line-shape
 	"line-shape (straight | curved) #IMPLIED">
 
 <!ENTITY % line-type
 	"line-type (solid | dashed | dotted | wavy) #IMPLIED">
+
+<!ENTITY % line-length
+	"line-length (short | medium | long) #IMPLIED">
 
 <!--
 	The dashed-formatting entity represents the length of

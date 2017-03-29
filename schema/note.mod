@@ -804,7 +804,8 @@
 	  triple-tongue | stopped | snap-pizzicato | fret |
 	  string | hammer-on | pull-off | bend | tap | heel |
 	  toe | fingernails | hole | arrow | handbell |
-	  other-technical)*)>
+	  brass-bend | flip | smear | open | half-muted |
+	  harmon-mute | other-technical)*)>
 <!ATTLIST technical
     %optional-unique-id;
 >
@@ -1113,6 +1114,84 @@
 >
 
 <!--
+	The brass-bend element represents the u-shaped bend symbol
+	used in brass notation, distinct from the bend element used
+	in guitar music.
+-->
+<!ELEMENT brass-bend EMPTY>
+<!ATTLIST brass-bend
+    %print-style;
+    %placement;
+>
+
+<!--
+	The flip element represents the flip symbol used in
+	brass notation.
+-->
+<!ELEMENT flip EMPTY>
+<!ATTLIST flip
+    %print-style;
+    %placement;
+>
+
+<!--
+	The smear element represents the tilde-shaped smear symbol
+	used in brass notation.
+-->
+<!ELEMENT smear EMPTY>
+<!ATTLIST smear
+    %print-style;
+    %placement;
+>
+
+<!--
+	The open element represents the open symbol, which
+	looks like a circle. The smufl attribute can be used to 
+	distinguish different SMuFL glyphs that have a similar
+	appearance such as brassMuteOpen and guitarOpenPedal.
+	If not present, the default glyph is brassMuteOpen.
+-->
+<!ELEMENT open EMPTY>
+<!ATTLIST open
+    %print-style;
+    %placement;
+    %smufl;
+>
+
+<!--
+	The half-muted element represents the half-muted symbol,
+	which looks like a circle with a plus sign inside. The
+	smufl attribute can be used to distinguish different
+	SMuFL glyphs that have a similar appearance such as
+	brassMuteHalfClosed and guitarHalfOpenPedal. If not
+	present, the default glyph is brassMuteHalfClosed.
+-->
+<!ELEMENT half-muted EMPTY>
+<!ATTLIST half-muted
+    %print-style;
+    %placement;
+    %smufl;
+>
+
+<!--
+	The harmon-mute element represents the symbols used for
+	harmon mutes in brass notation. The harmon-closed element
+	represents whether the mute is closed, open, or half-open.
+	Valid element values are yes, no, and half. The optional
+	location attribute indicates which portion of the symbol
+	is filled in when the element value is half.
+-->
+<!ELEMENT harmon-mute (harmon-closed)>
+<!ATTLIST harmon-mute
+    %print-style;
+    %placement;
+>
+<!ELEMENT harmon-closed (#PCDATA)>
+<!ATTLIST harmon-closed
+    location (right | bottom | left | top) #IMPLIED
+>
+
+<!--
 	The other-technical element is used to define any technical
 	indications not yet in the MusicXML format. The smufl attribute
 	can be used to specify a particular glyph, allowing application
@@ -1206,6 +1285,7 @@
 <!ATTLIST scoop
     %line-shape;
     %line-type;
+    %line-length;
     %dashed-formatting;
     %print-style;
     %placement;
@@ -1214,6 +1294,7 @@
 <!ATTLIST plop
     %line-shape;
     %line-type;
+    %line-length;
     %dashed-formatting;
     %print-style;
     %placement;
@@ -1222,6 +1303,7 @@
 <!ATTLIST doit
     %line-shape;
     %line-type;
+    %line-length;
     %dashed-formatting;
     %print-style;
     %placement;
@@ -1230,6 +1312,7 @@
 <!ATTLIST falloff
     %line-shape;
     %line-type;
+    %line-length;
     %dashed-formatting;
     %print-style;
     %placement;

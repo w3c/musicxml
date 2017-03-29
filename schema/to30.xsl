@@ -62,8 +62,9 @@
 
   <!-- Remove new MusicXML 3.1 elements -->
   <xsl:template
-    match="arrowhead | haydn | 
-			inverted-vertical-turn | soft-accent"/>
+    match="arrowhead | brass-bend | flip | half-muted |
+			harmon-mute | haydn | inverted-vertical-turn |
+			open | smear | soft-accent"/>
 
   <!-- Remove new id attributes -->
   <xsl:template 
@@ -118,10 +119,17 @@
   <xsl:template
     match="lyrics/@time-only"/>
 
+  <!--
+    Remove line-length attribute from articulation elements.
+  -->
+  <xsl:template
+    match="doit/@line-length | falloff/@line-length |
+			plop/@line-length | scoop/@line-length"/>
+
   <!-- Remove smufl attributes -->
   <xsl:template
     match="accidental/@smufl | accidental-mark/@smufl |
-			arrow/@smufl | elision/@smful |
+			arrow/@smufl | elision/@smufl |
 			notehead/@smufl | stopped/@smufl |
 			other-articulation/@smufl | other-notation/@smufl |
 			other-ornament/@smufl | other-technical/@smufl"/>
