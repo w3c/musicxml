@@ -120,6 +120,12 @@
     match="lyrics/@time-only"/>
 
   <!--
+    Remove print-leger attribute from note element.
+  -->
+  <xsl:template
+    match="note/@print-leger"/>
+
+  <!--
     Remove line-length attribute from articulation elements.
   -->
   <xsl:template
