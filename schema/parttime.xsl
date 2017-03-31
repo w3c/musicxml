@@ -123,6 +123,11 @@
           <xsl:attribute name="number">
             <xsl:value-of select="$measure-number"/>
           </xsl:attribute>
+          <xsl:if test="@text">
+            <xsl:attribute name="text">
+              <xsl:value-of select="@text"/>
+            </xsl:attribute>
+          </xsl:if>
           <xsl:if test="@implicit[. = 'yes']">
             <xsl:attribute name="implicit">
               <xsl:value-of select="@implicit"/>

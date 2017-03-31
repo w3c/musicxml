@@ -117,7 +117,7 @@
     Remove time-only attribute from lyric element.
   -->
   <xsl:template
-    match="lyrics/@time-only"/>
+    match="lyric/@time-only"/>
 
   <!--
     Remove print-leger attribute from note element.
@@ -368,6 +368,10 @@
   <!-- Remove new image attributes -->
   <xsl:template
     match="credit-image/@height | credit-image/@width"/>
+
+  <!-- Remove new measure attributes -->
+  <xsl:template
+    match="measure/@text"/>
 
   <!--
     Convert score version attribute to 3.0

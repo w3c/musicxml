@@ -1766,6 +1766,15 @@ The other notehead covers noteheads other than those listed here. It is usually 
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="measure-text">
+		<xs:annotation>
+			<xs:documentation>The measure-text type is used for the text attribute of measure elements. It has at least one character. The implicit attribute of the measure element should be set to "yes" rather than setting the text attribute to an empty string.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 	<!-- Attribute groups derived from common.mod elements -->
 
 	<xs:attributeGroup name="bend-sound">
@@ -2209,11 +2218,14 @@ The implicit attribute is set to "yes" for measures where the measure number sho
 
 The non-controlling attribute is intended for use in multimetric music like the Don Giovanni minuet. If set to "yes", the left barline in this measure does not coincide with the left barline of measures in other parts. The value is "no" if not specified.
 
-In partwise files, the number attribute should be the same for measures in different parts that share the same left barline. While the number attribute is often numeric, it does not have to be. Non-numeric values are typically used together with the implicit or non-controlling attributes being set to "yes". For a pickup measure, the number attribute is typically set to "0" and the implicit attribute is typically set to "yes". Further details about measure numbering can be defined using the measure-numbering element.
+In partwise files, the number attribute should be the same for measures in different parts that share the same left barline. While the number attribute is often numeric, it does not have to be. Non-numeric values are typically used together with the implicit or non-controlling attributes being set to "yes". For a pickup measure, the number attribute is typically set to "0" and the implicit attribute is typically set to "yes". 
+
+If measure numbers are not unique within a part, this can cause problems for conversions between partwise and timewise formats. The text attribute allows specification of displayed measure numbers that are different than what is used in the number attribute. This attribute is ignored for measures where the implicit attribute is set to "yes". Further details about measure numbering can be specified using the measure-numbering element.
 
 Measure width is specified in tenths. These are the global tenths specified in the scaling element, not local tenths as modified by the staff-size element.	The width covers the entire measure from barline or system start to barline or system end.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="number" type="xs:token" use="required"/>
+		<xs:attribute name="text" type="measure-text" use="required"/>
 		<xs:attribute name="implicit" type="yes-no"/>
 		<xs:attribute name="non-controlling" type="yes-no"/>
 		<xs:attribute name="width" type="tenths"/>

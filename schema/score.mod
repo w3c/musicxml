@@ -416,9 +416,18 @@
 	together with the implicit or non-controlling attributes
 	being set to "yes". For a pickup measure, the number
 	attribute is typically set to "0" and the implicit attribute
-	is typically set to "yes". Further details about measure
-	numbering can be defined using the measure-numbering
-	element defined in the direction.mod file
+	is typically set to "yes". 
+
+	If measure numbers are not unique within a part, this can
+	cause problems for conversions between partwise and timewise
+	formats. The text attribute allows specification of displayed
+	measure numbers that are different than what is used in the
+	number attribute. This attribute is ignored for measures
+	where the implicit attribute is set to "yes". The text
+	attribute for a measure element has at least one character.
+	Further details about measure numbering can be specified
+	using the measure-numbering element defined in the
+	direction.mod file.
 
 	Measure width is specified in tenths. These are the
 	global tenths specified in the scaling element, not
@@ -428,6 +437,7 @@
 -->
 <!ATTLIST measure
     number CDATA #REQUIRED
+    text CDATA #IMPLIED
     implicit %yes-no; #IMPLIED
     non-controlling %yes-no; #IMPLIED
     width %tenths; #IMPLIED
