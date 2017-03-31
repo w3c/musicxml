@@ -1798,16 +1798,18 @@ The other notehead covers noteheads other than those listed here. It is usually 
 
 Normal slurs, S-shaped slurs, and ties need only two bezier points: one associated with the start of the slur or tie, the other with the stop. Complex slurs and slurs divided over system breaks can specify additional bezier data at slur elements with a continue type.
 
-The bezier-offset, bezier-x, and bezier-y attributes describe the outgoing bezier point for slurs and ties with a start type, and the incoming bezier point for slurs and ties with types of stop or continue. The attributes bezier-offset2, bezier-x2, and bezier-y2 are only valid with slurs of type continue, and describe the outgoing bezier point.
+The bezier-x, bezier-y, and bezier-offset attributes describe the outgoing bezier point for slurs and ties with a start type, and the incoming bezier point for slurs and ties with types of stop or continue. The bezier-x2, bezier-y2, and bezier-offset2 attributes are only valid with slurs of type continue, and describe the outgoing bezier point.
 
-The bezier-offset and bezier-offset2 attributes are measured in terms of musical divisions, like the offset element. These are the recommended attributes for specifying horizontal position. The other attributes are specified in tenths, relative to any position settings associated with the slur or tied element.</xs:documentation>
+The bezier-x, bezier-y, bezier-x2, and bezier-y2 attributes are specified in tenths, relative to any position settings associated with the slur or tied element. The bezier-offset and bezier-offset2 attributes are measured in terms of musical divisions, like the offset element. 
+
+The bezier-offset and bezier-offset2 attributes are deprecated as of MusicXML 3.1. If both the bezier-x and bezier-offset attributes are present, the bezier-x attribute takes priority. Similarly, the bezier-x2 attribute takes priority over the bezier-offset2 attribute. The two types of bezier attributes are not additive.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="bezier-offset" type="divisions"/>
-		<xs:attribute name="bezier-offset2" type="divisions"/>
 		<xs:attribute name="bezier-x" type="tenths"/>
 		<xs:attribute name="bezier-y" type="tenths"/>
 		<xs:attribute name="bezier-x2" type="tenths"/>
 		<xs:attribute name="bezier-y2" type="tenths"/>
+		<xs:attribute name="bezier-offset" type="divisions"/>
+		<xs:attribute name="bezier-offset2" type="divisions"/>
 	</xs:attributeGroup>
 
 	<xs:attributeGroup name="color">
