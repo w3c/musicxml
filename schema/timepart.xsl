@@ -144,6 +144,11 @@
                 <xsl:attribute name="number">
                   <xsl:value-of select="parent::measure/@number"/>
                 </xsl:attribute>
+                <xsl:if test="parent::measure/@text">
+                  <xsl:attribute name="text">
+                    <xsl:value-of select="parent::measure/@text"/>
+                  </xsl:attribute>
+                </xsl:if>
                 <xsl:if test="parent::measure/@implicit[. = 'yes']">
                   <xsl:attribute name="implicit">
                     <xsl:value-of select="parent::measure/@implicit"/>
@@ -157,8 +162,7 @@
                 </xsl:if>
                 <xsl:if test="parent::measure/@width">
                   <xsl:attribute name="width">
-                    <xsl:value-of
-                      select="parent::measure/@width"/>
+                    <xsl:value-of select="parent::measure/@width"/>
                   </xsl:attribute>
                 </xsl:if>
 								
