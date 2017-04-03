@@ -318,28 +318,36 @@
 	divided over system breaks can specify additional 
 	bezier data at slur elements with a continue type.
 	
-	The bezier-offset, bezier-x, and bezier-y attributes
+	The bezier-x, bezier-y, and bezier-offset attributes
 	describe the outgoing bezier point for slurs and ties 
 	with a start type, and the incoming bezier point for
 	slurs and ties with types of stop or continue. The 
-	attributes bezier-offset2, bezier-x2, and bezier-y2 
+	bezier-x2, bezier-y2, and bezier-offset2 attributes 
 	are only valid with slurs of type continue, and 
 	describe the outgoing bezier point.
 	
+	The bezier-x, bezier-y, bezier-x2, and bezier-y2
+	attributes are specified in tenths, relative to any
+	position settings associated with the slur or tied
+	element. The bezier-offset and bezier-offset2
+	attributes are measured in terms of musical divisions,
+	like the offset element. 
+
 	The bezier-offset and bezier-offset2 attributes are
-	measured in terms of musical divisions, like the offset
-	element. These are the recommended attributes for
-	specifying horizontal position. The other attributes
-	are specified in tenths, relative to any position 
-	settings associated with the slur or tied element.
+	deprecated as of MusicXML 3.1. If both the bezier-x
+	and bezier-offset attributes are present, the bezier-x
+	attribute takes priority. Similarly, the bezier-x2
+	attribute takes priority over the bezier-offset2
+	attribute. The two types of bezier attributes are
+	not additive.
 -->
 <!ENTITY % bezier
-	"bezier-offset  CDATA     #IMPLIED
-	 bezier-offset2 CDATA     #IMPLIED
-	 bezier-x       %tenths;  #IMPLIED
+	"bezier-x       %tenths;  #IMPLIED
 	 bezier-y       %tenths;  #IMPLIED
 	 bezier-x2      %tenths;  #IMPLIED
-	 bezier-y2      %tenths;  #IMPLIED">
+	 bezier-y2      %tenths;  #IMPLIED
+	 bezier-offset  CDATA     #IMPLIED
+	 bezier-offset2 CDATA     #IMPLIED">
 
 <!--
 	The font entity gathers together attributes for
