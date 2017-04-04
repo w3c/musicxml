@@ -735,14 +735,16 @@
 
 <!--
 	The tremolo ornament can be used to indicate either
-	single-note or double-note tremolos. Single-note tremolos
-	use the single type, while double-note tremolos use the
-	start and stop types. The default is "single" for
-	compatibility with Version 1.1. The text of the element
+	single-note, double-note, or unmeasured tremolos.
+	Single-note tremolos use the single type, double-note
+	tremolos use the start and stop types, and unmeasured
+	tremolos use the unmeasured type. The default is "single"
+	for compatibility with Version 1.1. The text of the element
 	indicates the number of tremolo marks and is an integer
-	from 0 to 8. Note that the number of attached beams is
-	not included in this value, but is represented separately
-	using the beam element.
+	from 0 to 8. Note that the number of attached beams is not
+	included in this value, but is represented separately using
+	the beam element. The value should be 0 for unmeasured
+	tremolos.
 
 	When using double-note tremolos, the duration of each note
 	in the tremolo should correspond to half of the notated type
@@ -751,14 +753,20 @@
 	used within a tuplet, this 2/1 ratio should be multiplied by
 	the existing tuplet ratio.
 
+	The smufl attribute specifies the glyph to use from the SMuFL
+	tremolos range for an unmeasured tremolo. It is ignored for
+	other tremolo types. The SMuFL buzzRoll glyph is used by
+	default if the attribute is missing.
+
 	Using repeater beams for indicating tremolos is deprecated as
 	of MusicXML 3.0.
 -->
 <!ELEMENT tremolo (#PCDATA)>
 <!ATTLIST tremolo
-    type %start-stop-single; "single"
+    type %tremolo-type; "single"
     %print-style;
     %placement;
+    %smufl;
 >
 
 <!--

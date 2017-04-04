@@ -71,9 +71,12 @@
 	entity is used when there is a need to refer to an
 	intermediate point in the symbol, as for complex slurs
 	or for specifying formatting of symbols across system
-	breaks. The start-stop-single entity is used when the same
-	element is used for multi-note and single-note notations,
-	as for tremolos.
+	breaks. 
+
+	The start-stop-single entity is used when the same element
+	is used for multi-note and single-note notations, as for
+	groupings. The tremolo-type entity is used to distinguish
+	multi-note, single-note, and unmeasured tremolos.
 
 	The values of start, stop, and continue refer to how an
 	element appears in musical score order, not in MusicXML
@@ -97,13 +100,13 @@
 
 	In start-stop cases, ties can add more elements using a
 	continue type. This is typically used to specify the
-	formatting of cross-system ties, or to specify the shape of
-	very complex ties.
+	formatting of cross-system ties.
 -->
 <!ENTITY % start-stop "(start | stop)">
 <!ENTITY % start-stop-continue "(start | stop | continue)">
 <!ENTITY % start-stop-single "(start | stop | single)">
 <!ENTITY % tied-type "(start | stop | continue | let-ring)">
+<!ENTITY % tremolo-type "(start | stop | single | unmeasured)">
 
 <!--
 	The yes-no entity is used for boolean-like attributes.
