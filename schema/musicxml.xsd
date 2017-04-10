@@ -477,23 +477,9 @@ The values of start, stop, and continue refer to how an element appears in music
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="tied-type">
-		<xs:annotation>
-			<xs:documentation>The tied-type type is used as an attribute of the tied element to specify where the visual representation of a tie begins and ends. A tied element which joins two notes of the same pitch can be specified with tied-type start on the first note and tied-type stop on the second note. To indicate a note should be undamped, use a single tied element with tied-type let-ring. For other ties that are visually attached to a single note, such as a tie leading into or out of a repeated section or coda, use two tied elements on the same note, one start and one stop.
-
-In start-stop cases, ties can add more elements using a continue type. This is typically used to specify the formatting of cross-system ties, or to specify the shape of very complex ties.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:token">
-			<xs:enumeration value="start"/>
-			<xs:enumeration value="stop"/>
-			<xs:enumeration value="continue"/>
-			<xs:enumeration value="let-ring"/>
-		</xs:restriction>
-	</xs:simpleType>
-
 	<xs:simpleType name="start-stop-single">
 		<xs:annotation>
-			<xs:documentation>The start-stop-single type is used for an attribute of musical elements that can be used for either multi-note or single-note musical elements, as for tremolos.</xs:documentation>
+			<xs:documentation>The start-stop-single type is used for an attribute of musical elements that can be used for either multi-note or single-note musical elements, as for groupings.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="start"/>
@@ -542,6 +528,20 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="tied-type">
+		<xs:annotation>
+			<xs:documentation>The tied-type type is used as an attribute of the tied element to specify where the visual representation of a tie begins and ends. A tied element which joins two notes of the same pitch can be specified with tied-type start on the first note and tied-type stop on the second note. To indicate a note should be undamped, use a single tied element with tied-type let-ring. For other ties that are visually attached to a single note, such as a tie leading into or out of a repeated section or coda, use two tied elements on the same note, one start and one stop.
+
+In start-stop cases, ties can add more elements using a continue type. This is typically used to specify the formatting of cross-system ties.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="start"/>
+			<xs:enumeration value="stop"/>
+			<xs:enumeration value="continue"/>
+			<xs:enumeration value="let-ring"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:simpleType name="time-only">
 		<xs:annotation>
 			<xs:documentation>The time-only type is used to indicate that a particular playback-related element only applies particular times through a repeated section. The value is a comma-separated list of positive integers arranged in ascending order, indicating which times through the repeated section that the element applies.</xs:documentation>
@@ -558,6 +558,18 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="top"/>
 			<xs:enumeration value="bottom"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="tremolo-type">
+		<xs:annotation>
+			<xs:documentation>The tremolo-type is used to distinguish multi-note, single-note, and unmeasured tremolos.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="start"/>
+			<xs:enumeration value="stop"/>
+			<xs:enumeration value="single"/>
+			<xs:enumeration value="unmeasured"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -5251,17 +5263,20 @@ Ties that are visually attached to only one note, other than undamped ties, shou
 
 	<xs:complexType name="tremolo">
 		<xs:annotation>
-			<xs:documentation>	The tremolo ornament can be used to indicate either single-note or double-note tremolos. Single-note tremolos use the single type, while double-note tremolos use the start and stop types. The default is "single" for compatibility with Version 1.1. The text of the element indicates the number of tremolo marks and is an integer from 0 to 8. Note that the number of attached beams is not included in this value, but is represented separately using the beam element.
-
-When using double-note tremolos, the duration of each note in the tremolo should correspond to half of the notated type value. A time-modification element should also be added with an actual-notes value of 2 and a normal-notes value of 1. If used within a tuplet, this 2/1 ratio should be multiplied by the existing tuplet ratio.
-
-Using repeater beams for indicating tremolos is deprecated as of MusicXML 3.0.</xs:documentation>
+			<xs:documentation>The tremolo ornament can be used to indicate single-note, double-note, or unmeasured tremolos. Single-note tremolos use the single type, double-note tremolos use the start and stop types, and unmeasured tremolos use the unmeasured type. The default is "single" for compatibility with Version 1.1. The text of the element indicates the number of tremolo marks and is an integer from 0 to 8. Note that the number of attached beams is not included in this value, but is represented separately using the beam element. The value should be 0 for unmeasured tremolos.
+	
+	When using double-note tremolos, the duration of each note in the tremolo should correspond to half of the notated type value. A time-modification element should also be added with an actual-notes value of 2 and a normal-notes value of 1. If used within a tuplet, this 2/1 ratio should be multiplied by the existing tuplet ratio.
+	
+	The smufl attribute specifies the glyph to use from the SMuFL tremolos range for an unmeasured tremolo. It is ignored for other tremolo types. The SMuFL buzzRoll glyph is used by default if the attribute is missing.
+	
+	Using repeater beams for indicating tremolos is deprecated as of MusicXML 3.0.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="tremolo-marks">
-				<xs:attribute name="type" type="start-stop-single" default="single"/>
+				<xs:attribute name="type" type="tremolo-type" default="single"/>
 				<xs:attributeGroup ref="print-style"/>
 				<xs:attributeGroup ref="placement"/>
+				<xs:attributeGroup ref="smufl"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>

@@ -96,10 +96,17 @@
 
 <!--
     Remove tied elements which use the new let-ring
-    attribute for single-ended ties.
+    type for single-ended ties.
   -->
   <xsl:template
-    match="tied[. = 'let-ring']"/>
+    match="tied[@type = 'let-ring']"/>
+
+<!--
+    Remove tremolo elements which use the new unmeasured
+    type for unmeasured tremolos.
+  -->
+  <xsl:template
+    match="tremolo[@type = 'unmeasured']"/>
 
   <!--
     Remove notehead elements with new notehead values.
@@ -137,6 +144,7 @@
     match="accidental/@smufl | accidental-mark/@smufl |
 			arrow/@smufl | elision/@smufl |
 			notehead/@smufl | stopped/@smufl |
+			tremolo/@smufl |
 			other-articulation/@smufl | other-notation/@smufl |
 			other-ornament/@smufl | other-technical/@smufl"/>
 
