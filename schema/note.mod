@@ -821,7 +821,7 @@
 	  string | hammer-on | pull-off | bend | tap | heel |
 	  toe | fingernails | hole | arrow | handbell |
 	  brass-bend | flip | smear | open | half-muted |
-	  harmon-mute | other-technical)*)>
+	  harmon-mute | golpe | other-technical)*)>
 <!ATTLIST technical
     %optional-unique-id;
 >
@@ -992,7 +992,9 @@
 	to distinguish what is intended. A with-bar element
 	indicates that the bend is to be done at the bridge
 	with a whammy or vibrato bar. The content of the
-	element indicates how this should be notated.
+	element indicates how this should be notated. Content
+	values of "scoop" and "dip" refer to the SMuFL
+	guitarVibratoBarScoop and guitarVibratoBarDip glyphs.
 -->
 <!ELEMENT bend
 	(bend-alter, (pre-bend | release)?, with-bar?)>
@@ -1011,12 +1013,18 @@
 
 <!--
 	The tap element indicates a tap on the fretboard. The
-	element content allows specification of the notation;
-	+ and T are common choices. If empty, the display is
-	application-specific.
+	text content allows specification of the notation; + and
+	T are common choices. If the element is empty, the hand
+	attribute is used to specify the symbol to use. The left
+	and right values refer to the SMuFL guitarLeftHandTapping
+	and guitarRightHandTapping glyphs respectively. The hand
+	attribute is ignored if the tap glyph is already specified
+	by the text content. If neither text content nor the hand
+	attribute are present, the display is application-specific.
 -->
 <!ELEMENT tap (#PCDATA)>
 <!ATTLIST tap
+    hand (left | right) #IMPLIED	
     %print-style;
     %placement;
 >
@@ -1205,6 +1213,16 @@
 <!ELEMENT harmon-closed (#PCDATA)>
 <!ATTLIST harmon-closed
     location (right | bottom | left | top) #IMPLIED
+>
+
+<!--
+	The golpe element represents the golpe symbol that is used
+	for tapping the pick guard in guitar music.
+-->
+<!ELEMENT golpe EMPTY>
+<!ATTLIST golpe
+    %print-style;
+    %placement;
 >
 
 <!--

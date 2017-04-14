@@ -1742,6 +1742,16 @@ The other notehead covers noteheads other than those listed here. It is usually 
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="tap-hand">
+		<xs:annotation>
+			<xs:documentation>The tap-hand type represents the symbol to use for a tap element. The left and right values refer to the SMuFL guitarLeftHandTapping and guitarRightHandTapping glyphs respectively.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="right"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:simpleType name="tremolo-marks">
 		<xs:annotation>
 			<xs:documentation>The number of tremolo marks is represented by a number from 0 to 8: the same as beam-level with 0 added.</xs:documentation>
@@ -4345,7 +4355,7 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 			</xs:choice>
 			<xs:element name="with-bar" type="placement-text" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The with-bar element indicates that the bend is to be done at the bridge with a whammy or vibrato bar. The content of the element indicates how this should be notated.</xs:documentation>
+					<xs:documentation>The with-bar element indicates that the bend is to be done at the bridge with a whammy or vibrato bar. The content of the element indicates how this should be notated. Content values of "scoop" and "dip" refer to the SMuFL guitarVibratoBarScoop and guitarVibratoBarDip glyphs.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -5075,6 +5085,19 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="tap">
+		<xs:annotation>
+			<xs:documentation>The tap type indicates a tap on the fretboard. The text content allows specification of the notation; + and T are common choices. If the element is empty, the hand attribute is used to specify the symbol to use. The hand attribute is ignored if the tap glyph is already specified by the text content. If neither text content nor the hand attribute are present, the display is application-specific.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="hand" type="tap-hand"/>
+				<xs:attributeGroup ref="print-style"/>
+				<xs:attributeGroup ref="placement"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
 	<xs:complexType name="technical">
 		<xs:annotation>
 			<xs:documentation>Technical indications give performance information for individual instruments.</xs:documentation>
@@ -5132,11 +5155,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 			<xs:element name="hammer-on" type="hammer-on-pull-off"/>
 			<xs:element name="pull-off" type="hammer-on-pull-off"/>
 			<xs:element name="bend" type="bend"/>
-			<xs:element name="tap" type="placement-text">
-				<xs:annotation>
-					<xs:documentation>The tap element indicates a tap on the fretboard. The element content allows specification of the notation; + and T are common choices. If empty, the display is application-specific.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element name="tap" type="tap"/>
 			<xs:element name="heel" type="heel-toe"/>
 			<xs:element name="toe" type="heel-toe"/>
 			<xs:element name="fingernails" type="empty-placement">
@@ -5173,6 +5192,11 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="harmon-mute" type="harmon-mute"/>
+			<xs:element name="golpe" type="empty-placement">
+				<xs:annotation>
+					<xs:documentation>The golpe element represents the golpe symbol that is used for tapping the pick guard in guitar music.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="other-technical" type="other-placement-text">
 				<xs:annotation>
 					<xs:documentation>The other-technical element is used to define any technical indications not yet in the MusicXML format. The smufl attribute can be used to specify a particular glyph, allowing application interoperability without requiring every SMuFL technical indication to have a MusicXML element equivalent. Using the other-technical element without the smufl attribute allows for extended representation, though without application interoperability.</xs:documentation>

@@ -62,9 +62,10 @@
 
   <!-- Remove new MusicXML 3.1 elements -->
   <xsl:template
-    match="arrowhead | brass-bend | flip | half-muted |
-			harmon-mute | haydn | inverted-vertical-turn |
-			open | smear | soft-accent"/>
+    match="arrowhead | brass-bend | flip | golpe | 
+			half-muted | harmon-mute | haydn |
+			inverted-vertical-turn | open | 
+			smear | soft-accent"/>
 
   <!-- Remove new id attributes -->
   <xsl:template 
@@ -121,16 +122,11 @@
     match="handbell[. = 'belltree']"/>
 
   <!--
-    Remove time-only attribute from lyric element.
+    Remove new element-specific attributes.
   -->
   <xsl:template
-    match="lyric/@time-only"/>
-
-  <!--
-    Remove print-leger attribute from note element.
-  -->
-  <xsl:template
-    match="note/@print-leger"/>
+    match="lyric/@time-only | note/@print-leger |
+			tap/@hand"/>
 
   <!--
     Remove line-length attribute from articulation elements.
