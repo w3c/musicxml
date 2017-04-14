@@ -4428,7 +4428,7 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 		<xs:sequence>
 			<xs:element name="prefix" type="style-text" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Values for the prefix element include the accidental values sharp, flat, natural, double-sharp, flat-flat, and sharp-sharp. The prefix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>
+					<xs:documentation>Values for the prefix element include plus and the accidental values sharp, flat, natural, double-sharp, flat-flat, and sharp-sharp. The prefix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="figure-number" type="style-text" minOccurs="0">
@@ -4438,10 +4438,11 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 			</xs:element>
 			<xs:element name="suffix" type="style-text" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Values for the suffix element include the accidental values sharp, flat, natural, double-sharp, flat-flat, and sharp-sharp. Suffixes include both symbols that come after the figure number and those that overstrike the figure number. The suffix value slash is used for slashed numbers indicating chromatic alteration. The orientation and display of the slash usually depends on the figure number. The suffix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>
+					<xs:documentation>Values for the suffix element include plus and the accidental values sharp, flat, natural, double-sharp, flat-flat, and sharp-sharp. Suffixes include both symbols that come after the figure number and those that overstrike the figure number. The suffix values slash, back-slash, and vertical are used for slashed numbers indicating chromatic alteration. The orientation and display of the slash usually depends on the figure number. The suffix element may contain additional values for symbols specific to particular figured bass styles.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="extend" type="extend" minOccurs="0"/>
+			<xs:group ref="editorial"/>
 		</xs:sequence>
 	</xs:complexType>
 

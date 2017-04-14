@@ -1559,16 +1559,17 @@
 	in score order. The optional duration element is used to
 	indicate changes of figures under a note.
 
-	Figures are ordered from top to bottom. A figure-number is a
-	number. Values for prefix and suffix include the accidental
-	values sharp, flat, natural, double-sharp, flat-flat, and
-	sharp-sharp. Suffixes include both symbols that come after
-	the figure number and those that overstrike the figure number.
-	The suffix value slash is used for slashed numbers indicating
-	chromatic alteration. The orientation and display of the slash
-	usually depends on the figure number. The prefix and suffix
-	elements may contain additional values for symbols specific
-	to particular figured bass styles. The value of parentheses
+	Figures are ordered from top to bottom. A figure-number is
+	a number. Values for prefix and suffix include plus and
+	the accidental values sharp, flat, natural, double-sharp,
+	flat-flat, and sharp-sharp. Suffixes include both symbols
+	that come after the figure number and those that overstrike
+	the figure number. The suffix values slash, back-slash, and
+	vertical are used for slashed numbers indicating chromatic
+	alteration. The orientation and display of the slash usually
+	depends on the figure number. The prefix and suffix elements
+	may contain additional values for symbols specific to
+	particular figured bass styles. The value of parentheses
 	is "no" if not present.
 -->
 <!ELEMENT figured-bass (figure+, duration?, %editorial;)>
@@ -1578,7 +1579,8 @@
     parentheses %yes-no; #IMPLIED
     %optional-unique-id;
 >
-<!ELEMENT figure (prefix?, figure-number?, suffix?, extend?)>
+<!ELEMENT figure
+	(prefix?, figure-number?, suffix?, extend?, %editorial;)>
 <!ELEMENT prefix (#PCDATA)>
 <!ATTLIST prefix
     %print-style;
