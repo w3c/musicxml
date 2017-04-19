@@ -122,6 +122,12 @@
     match="handbell[. = 'belltree']"/>
 
   <!--
+    Remove new figured bass elements.
+  -->
+  <xsl:template
+    match="figure/footnote | figure/level"/>
+
+  <!--
     Remove new element-specific attributes.
   -->
   <xsl:template
