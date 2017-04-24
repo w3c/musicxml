@@ -72,12 +72,12 @@
 	mimetype file or a file with different mimetype contents, such
 	as the older media type application/vnd.recordare.musicxml.
 
-	The recommended file suffix for compressed MusicXML files is
-	.mxl. The recommended file suffix for uncompressed MusicXML
-	files is .musicxml. Older versions of MusicXML use .xml as
-	the suffix for uncompressed MusicXML files, so it is
-	recommended that applications be prepared to read files with
-	the .xml suffix as well.
+	The recommended file extension for compressed MusicXML files
+	is .mxl. The recommended file extension for uncompressed
+	MusicXML files is .musicxml. Older versions of MusicXML use
+	.xml as the extension for uncompressed MusicXML files, so it
+	is recommended that applications be prepared to read files
+	with the .xml extension as well.
 
 	It is recommended that applications that run on macOS and iOS
 	use the following Uniform Type Identifier for MusicXML files:
