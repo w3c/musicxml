@@ -2357,6 +2357,7 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 		</xs:annotation>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="placement"/>
+		<xs:attributeGroup ref="smufl"/>
 	</xs:complexType>
 
 	<xs:complexType name="empty-print-style">
