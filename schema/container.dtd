@@ -46,31 +46,26 @@
 
 	The recommended media type for a compressed MusicXML file is:
 
-		application/musicxml+zip
+		application/vnd.recordare.musicxml
 
 	The recommended media type for an uncompressed MusicXML
 	file is:
 
-		application/musicxml+xml
-
-	Older versions of MusicXML used the media types 
-	application/vnd.recordare.musicxml and 
-	application/vnd.recordare.musicxml+xml, respectively.
+		application/vnd.recordare.musicxml+xml
 
 	The first file in the zip container should be a file named
 	mimetype. The contents of this file should be the MIME media
 	type string 
 	
-		application/musicxml+zip
+		application/vnd.recordare.musicxml
 	
 	encoded in US-ASCII. The mimetype file must not be compressed
 	or encrypted, and there must not be an extra field in its zip
 	header. The contents of the mimetype file must not contain any
 	leading padding or white space and must not begin with a byte
 	order mark. Older versions of MusicXML did not specify this
-	mimetype file, so applications may see containers with no
-	mimetype file or a file with different mimetype contents, such
-	as the older media type application/vnd.recordare.musicxml.
+	mimetype file, so applications may see containers without a
+	mimetype file.
 
 	The recommended file extension for compressed MusicXML files
 	is .mxl. The recommended file extension for uncompressed
@@ -85,7 +80,7 @@
 		<array>
 			<dict>
 				<key>UTTypeIdentifier</key>
-				<string>org.w3c.music-notation.musicxml.uncompressed</string>
+				<string>com.recordare.musicxml.uncompressed</string>
 				<key>UTTypeReferenceURL</key>
 				<string>http://www.musicxml.org/</string>
 				<key>UTTypeDescription</key>
@@ -98,7 +93,7 @@
 					</array>
 					<key>public.mime-type</key>
 					<array>
-						<string>application/musicxml+xml</string>
+						<string>application/vnd.recordare.musicxml+xml</string>
 					</array>
 				</dict>
 				<key>UTTypeConformsTo</key>
@@ -108,7 +103,7 @@
 			</dict>
 			<dict>
 				<key>UTTypeIdentifier</key>
-				<string>org.w3c.music-notation.musicxml</string>
+				<string>com.recordare.musicxml</string>
 				<key>UTTypeReferenceURL</key>
 				<string>http://www.musicxml.org/</string>
 				<key>UTTypeDescription</key>
@@ -121,7 +116,7 @@
 					</array>
 					<key>public.mime-type</key>
 					<array>
-						<string>application/musicxml+zip</string>
+						<string>application/vnd.recordare.musicxml</string>
 					</array>
 				</dict>
 				<key>UTTypeConformsTo</key>
