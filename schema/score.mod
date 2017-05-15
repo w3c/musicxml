@@ -101,9 +101,9 @@
 -->
 <!ELEMENT credit
 	(credit-type*, link*, bookmark*, 
-	(credit-image | 
-	 (credit-words, (link*, bookmark*,
-	                 (credit-words | credit-symbol))*)))>
+	 (credit-image | 
+	  ((credit-words | credit-symbol),
+	   (link*, bookmark*, (credit-words | credit-symbol))*)))>
 <!ATTLIST credit
     page NMTOKEN #IMPLIED
     %optional-unique-id;

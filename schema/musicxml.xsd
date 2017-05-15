@@ -3282,21 +3282,18 @@ By default, a series of direction-type elements and a series of child elements o
 			</xs:element>
 			<xs:element name="segno" type="segno" maxOccurs="unbounded"/>
 			<xs:element name="coda" type="coda" maxOccurs="unbounded"/>
-			<xs:sequence>
-				<xs:element name="words" type="formatted-text-id" minOccurs="1">
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="words" type="formatted-text-id">
 					<xs:annotation>
 						<xs:documentation>The words element specifies a standard text direction. Left justification is assumed if not specified. Language is Italian ("it") by default. Enclosure is none by default.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:choice minOccurs="0" maxOccurs="unbounded">
-					<xs:element name="words" type="formatted-text-id"/>
-					<xs:element name="symbol" type="formatted-symbol-id">
-						<xs:annotation>
-							<xs:documentation>The symbol element specifies a musical symbol using a canonical SMuFL glyph name. It is used when an occasional musical symbol is interspersed into text. It should not be used in place of semantic markup, such as metronome marks that mix text and symbols. Left justification is assumed if not specified. Enclosure is none by default.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-				</xs:choice>
-			</xs:sequence>
+				<xs:element name="symbol" type="formatted-symbol-id">
+					<xs:annotation>
+						<xs:documentation>The symbol element specifies a musical symbol using a canonical SMuFL glyph name. It is used when an occasional musical symbol is interspersed into text. It should not be used in place of semantic markup, such as metronome marks that mix text and symbols. A single symbol element should also not be used on its own in a direction-type. The other-direction element should be used instead for a single direction symbol that cannot be otherwise represented by a MusicXML element. Left justification is assumed if not specified. Enclosure is none by default.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
 			<xs:element name="wedge" type="wedge"/>
 			<xs:element name="dynamics" type="dynamics" maxOccurs="unbounded"/>
 			<xs:element name="dashes" type="dashes"/>
@@ -5410,7 +5407,10 @@ The credit-type element indicates the purpose behind a credit. Multiple types of
 			<xs:choice>
 				<xs:element name="credit-image" type="image"/>
 				<xs:sequence>
-					<xs:element name="credit-words" type="formatted-text-id"/>
+					<xs:choice>
+						<xs:element name="credit-words" type="formatted-text-id"/>
+						<xs:element name="credit-symbol" type="formatted-symbol-id"/>
+					</xs:choice>
 					<xs:sequence minOccurs="0" maxOccurs="unbounded">
 						<xs:element name="link" type="link" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:element name="bookmark" type="bookmark" minOccurs="0" maxOccurs="unbounded"/>
