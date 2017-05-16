@@ -2249,7 +2249,7 @@ If measure numbers are not unique within a part, this can cause problems for con
 Measure width is specified in tenths. These are the global tenths specified in the scaling element, not local tenths as modified by the staff-size element.	The width covers the entire measure from barline or system start to barline or system end.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="number" type="xs:token" use="required"/>
-		<xs:attribute name="text" type="measure-text" use="required"/>
+		<xs:attribute name="text" type="measure-text"/>
 		<xs:attribute name="implicit" type="yes-no"/>
 		<xs:attribute name="non-controlling" type="yes-no"/>
 		<xs:attribute name="width" type="tenths"/>
