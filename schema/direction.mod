@@ -69,7 +69,7 @@
 	common.mod file.
 -->
 <!ELEMENT direction-type (rehearsal+ | segno+ | coda+ |
-	(words, (words | symbol)*) | wedge | dynamics+ | dashes |
+	(words | symbol)+ | wedge | dynamics+ | dashes |
 	bracket | pedal | metronome | octave-shift | harp-pedals |
 	damp | damp-all | eyeglasses | string-mute |
 	scordatura | image | principal-voice | percussion+ |
@@ -111,8 +111,12 @@
 	canonical SMuFL glyph name. It is used when an occasional
 	musical symbol is interspersed into text. It should not be
 	used in place of semantic markup, such as metronome marks
-	that mix text and symbols. Left justification is assumed
-	if not specified. Enclosure is none by default.
+	that mix text and symbols. A single symbol element should
+	also not be used on its own in a direction-type. The
+	other-direction element should be used instead for a single
+	direction symbol that cannot be otherwise represented by a
+	MusicXML element. Left justification is assumed if not
+	specified. Enclosure is none by default.
 -->
 <!ELEMENT symbol (#PCDATA)>
 <!ATTLIST symbol
