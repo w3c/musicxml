@@ -200,10 +200,25 @@
 
   <!-- Additions in common.mod -->
 
-  <!-- Remove n, pf, and sfzp elements -->
-  <xsl:template
-    match="n | pf | sfzp"/>
-
+  <!-- Replace the n, pf, and sfzp elements with other-dynamics -->
+  <xsl:template match="n">
+    <xsl:element name="other-dynamics">
+      <xsl:text>n</xsl:text>
+    </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="pf">
+    <xsl:element name="other-dynamics">
+      <xsl:text>pf</xsl:text>
+    </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="sfzp">
+    <xsl:element name="other-dynamics">
+      <xsl:text>sfzp</xsl:text>
+    </xsl:element>
+  </xsl:template>
+  
   <!-- Remove new id attributes -->
   <xsl:template 
     match="fermata/@id | segno/@id | 
@@ -285,7 +300,7 @@
   <!-- 
     Remove pedal elements that have a number greater
     than 1, then remove the number and abbreviated
-	attributes altogether. Make sure the tests have
+    attributes altogether. Make sure the tests have
     the right priority so the directions are removed
     first, before the number attribute is removed.
   -->
