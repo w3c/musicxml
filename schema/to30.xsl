@@ -131,7 +131,9 @@
     Remove new element-specific attributes.
   -->
   <xsl:template
-    match="lyric/@time-only | note/@print-leger |
+    match="accidental-mark/@parentheses | 
+			accidental-mark/@bracket | accidental-mark/@size | 
+			lyric/@time-only | note/@print-leger |
 			tap/@hand"/>
 
   <!--
