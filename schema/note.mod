@@ -804,6 +804,7 @@
 -->
 <!ELEMENT accidental-mark (#PCDATA)>
 <!ATTLIST accidental-mark
+    %level-display;
     %print-style;
     %placement;
     %smufl;

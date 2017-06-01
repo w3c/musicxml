@@ -4175,6 +4175,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="accidental-value">
+				<xs:attributeGroup ref="level-display"/>
 				<xs:attributeGroup ref="print-style"/>
 				<xs:attributeGroup ref="placement"/>
 				<xs:attribute name="smufl" type="smufl-accidental-glyph-name"/>
