@@ -288,6 +288,9 @@
   <xsl:template
     match="direction[direction-type[staff-divide]]"/>
 
+  <xsl:template
+    match="direction[direction-type[symbol]]"/>
+
   <!--
     Convert sostenuto pedal types to start (damper) pedal
     types. We do this instead of removing the entire element
@@ -315,7 +318,7 @@
   <!-- Remove new optional elements -->
   <xsl:template
     match="beat-unit-tied | metronome-arrows | 
-			metronome-tied | symbol"/>
+			metronome-tied"/>
 
   <!-- 
     For safety, remove entire direction that has a new 
