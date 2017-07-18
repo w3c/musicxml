@@ -346,12 +346,11 @@
 	here. It is usually used in combination with the smufl
 	attribute to specify a particular SMuFL notehead. The
 	smufl attribute may be used with any notehead value to
-	help specify the appearance of symbols that share the
-	sameMusicXML semantics. Its value is a SMuFL canonical
-	glyph name that starts with note. Noteheads in the SMuFL
-	"Note name noteheads" range (U+E150–U+E1AF) should not use
-	the smufl attribute or the "other" value, but instead use
-	the notehead-text element.
+	help specify the appearance of symbols that share the same
+	MusicXML semantics. Its value is a SMuFL canonical glyph
+	name. Noteheads in the SMuFL "Note name noteheads" range
+	(U+E150–U+E1AF) should not use the smufl attribute or the
+	"other" value, but instead use the notehead-text element.
 
 	For the enclosed shapes, the default is to be hollow for
 	half notes and longer, and filled otherwise. The filled

@@ -414,18 +414,9 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="smufl-notehead-glyph-name">
-		<xs:annotation>
-			<xs:documentation>The smufl-notehead-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) notehead character. The value is a SMuFL canonical glyph name that starts with note.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="smufl-glyph-name">
-			<xs:pattern value="note\c+"/>
-		</xs:restriction>
-	</xs:simpleType>
-
 	<xs:simpleType name="smufl-pictogram-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-notehead-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) percussion pictogram character. The value is a SMuFL canonical glyph name that starts with pict.</xs:documentation>
+			<xs:documentation>The smufl-pictogram-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) percussion pictogram character. The value is a SMuFL canonical glyph name that starts with pict.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="smufl-glyph-name">
 			<xs:pattern value="pict\c+"/>
@@ -4848,7 +4839,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				<xs:attribute name="parentheses" type="yes-no"/>
 				<xs:attributeGroup ref="font"/>
 				<xs:attributeGroup ref="color"/>
-				<xs:attribute name="smufl" type="smufl-notehead-glyph-name"/>
+				<xs:attributeGroup ref="smufl"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
