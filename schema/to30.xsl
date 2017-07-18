@@ -54,11 +54,10 @@
   <!--
     Earlier versions of MusicXML allow notes to have a 
     grace or cue element, but not both. Remove any cue
-    element that is not the first child element of a
-    note element.
+    element that follows a grace element.
   -->  
   <xsl:template 
-    match="note/cue[position() > 1]"/>
+    match="note/cue[preceding-sibling::grace]"/>
 
   <!-- Remove new MusicXML 3.1 elements -->
   <xsl:template
