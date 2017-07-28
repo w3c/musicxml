@@ -455,11 +455,13 @@
 <!ELEMENT slash-dot EMPTY>
 
 <!--
-	The only-voice element is used to restrict slashes to the
-	specified voice. Multiple instances of the element can be
-	used to restrict slashes to multiple voices.
+	The except-voice element is used to specify a combination
+	of slash notation and regular notation. Any note elements
+	that are in voices specified by the except-voice elements
+	are displayed in normal notation, in addition to the slash
+	notation that is always displayed.
 -->
-<!ELEMENT only-voice (#PCDATA)>
+<!ELEMENT except-voice (#PCDATA)>
 
 <!--
 	The text of the multiple-rest element indicates the number
@@ -505,7 +507,7 @@
 	patterns). By default, the value for slashes is 1 and the
 	value for use-dots is no.
 -->
-<!ELEMENT beat-repeat ((slash-type, slash-dot*, only-voice*)?)>
+<!ELEMENT beat-repeat ((slash-type, slash-dot*, except-voice*)?)>
 <!ATTLIST beat-repeat
     type %start-stop; #REQUIRED
     slashes NMTOKEN #IMPLIED
@@ -521,7 +523,7 @@
 	style. The use-dots attribute works as for the beat-repeat
 	element, and only has effect if use-stems is no.
 -->
-<!ELEMENT slash ((slash-type, slash-dot*, only-voice*)?)>
+<!ELEMENT slash ((slash-type, slash-dot*, except-voice*)?)>
 <!ATTLIST slash
     type %start-stop; #REQUIRED
     use-dots %yes-no; #IMPLIED

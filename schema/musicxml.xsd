@@ -5795,9 +5795,9 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 					<xs:documentation>The slash-dot element is used to specify any augmentation dots in the note type used to display repetition marks.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="only-voice" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="except-voice" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>The only-voice element is used to restrict slashes to the specified voice. Multiple instances of the element can be used to restrict slashes to multiple voices.</xs:documentation>
+					<xs:documentation>The except-voice element is used to specify a combination of slash notation and regular notation. Any note elements that are in voices specified by the except-voice elements are displayed in normal notation, in addition to the slash notation that is always displayed.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>

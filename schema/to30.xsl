@@ -192,9 +192,9 @@
   <xsl:template
     match="key-accidental/@smufl"/>
 
-  <!-- Remove only-voice elements. -->
+  <!-- Remove except-voice elements -->
   <xsl:template
-    match="only-voice"/>
+    match="except-voice"/>
 
   <!-- Additions in barline.mod -->
 
