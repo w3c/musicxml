@@ -354,6 +354,11 @@
         . = 'tam tam with beater']]]]"/>
 
   <xsl:template 
+    match="direction[direction-type[percussion[pitched[
+        . = 'celesta' or . = 'lithophone' or
+        . = 'steel drums' or . = 'tubaphone']]]]"/>
+
+  <xsl:template 
     match="direction[direction-type[percussion[stick[stick-type[
         . = 'glockenspiel' or . = 'gum' or
         . = 'hammer' or . = 'superball' or
