@@ -5785,16 +5785,18 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 			<xs:documentation>The slash group combines elements used for more complete specification of the slash and beat-repeat measure-style elements. They have the same values as the type and dot elements, and define what the beat is for the display of repetition marks. If not present, the beat is based on the current time signature.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="slash-type" type="note-type-value">
-				<xs:annotation>
-					<xs:documentation>The slash-type element indicates the graphical note type to use for the display of repetition marks.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="slash-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>The slash-dot element is used to specify any augmentation dots in the note type used to display repetition marks.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:sequence minOccurs="0">
+				<xs:element name="slash-type" type="note-type-value">
+					<xs:annotation>
+						<xs:documentation>The slash-type element indicates the graphical note type to use for the display of repetition marks.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="slash-dot" type="empty" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>The slash-dot element is used to specify any augmentation dots in the note type used to display repetition marks.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
 			<xs:element name="except-voice" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The except-voice element is used to specify a combination of slash notation and regular notation. Any note elements that are in voices specified by the except-voice elements are displayed in normal notation, in addition to the slash notation that is always displayed.</xs:documentation>

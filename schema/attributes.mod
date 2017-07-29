@@ -507,7 +507,7 @@
 	patterns). By default, the value for slashes is 1 and the
 	value for use-dots is no.
 -->
-<!ELEMENT beat-repeat ((slash-type, slash-dot*, except-voice*)?)>
+<!ELEMENT beat-repeat ((slash-type, slash-dot*)?, except-voice*)>
 <!ATTLIST beat-repeat
     type %start-stop; #REQUIRED
     slashes NMTOKEN #IMPLIED
@@ -523,7 +523,7 @@
 	style. The use-dots attribute works as for the beat-repeat
 	element, and only has effect if use-stems is no.
 -->
-<!ELEMENT slash ((slash-type, slash-dot*, except-voice*)?)>
+<!ELEMENT slash ((slash-type, slash-dot*)?, except-voice*)>
 <!ATTLIST slash
     type %start-stop; #REQUIRED
     use-dots %yes-no; #IMPLIED
