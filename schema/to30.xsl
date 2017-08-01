@@ -183,7 +183,6 @@
   <!--
     Remove key-accidental elements with new accidental values.
   -->
-
   <xsl:template
     match="key-accidental[. = 'double-sharp-down' or
 			. = 'double-sharp-up' or . = 'flat-flat-down' or
@@ -192,6 +191,10 @@
 
   <xsl:template
     match="key-accidental/@smufl"/>
+
+  <!-- Remove except-voice elements -->
+  <xsl:template
+    match="except-voice"/>
 
   <!-- Additions in barline.mod -->
 
