@@ -3,15 +3,15 @@
 	<xs:annotation>
 		<xs:documentation>MusicXML Opus W3C XML schema (XSD)
 
-Version 3.1 Draft
+Version 3.1
 
-Copyright © 2004-2017 the Contributors to the MusicXML Specification, published by the W3C Music Notation Community Group under the W3C Community Contributor License Agreement (CLA): 
+Copyright © 2004-2017 the Contributors to the MusicXML Specification, published by the W3C Music Notation Community Group under the W3C Community Final Specification Agreement (FSA):
 
-	https://www.w3.org/community/about/agreements/cla/
+	https://www.w3.org/community/about/agreements/final/
 
 A human-readable summary is available:
 
-	https://www.w3.org/community/about/agreements/cla-deed/
+	https://www.w3.org/community/about/agreements/fsa-deed/
 
 This is the W3C XML Schema (XSD) version of the MusicXML 3.1 language. Validation is tightened by moving MusicXML definitions from comments into schema data types and definitions. Character entities and other entity usages that are not supported in W3C XML Schema have also been removed. However, the features of W3C XML Schema make it easier to define variations of the MusicXML format, either via extension or restriction.
 
