@@ -1,104 +1,388 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<style>
-*{margin:0;padding:0;}
-body {
-	font:13.34px helvetica,arial,freesans,clean,sans-serif;
-	color:black;
-	line-height:1.4em;
-	background-color: #F8F8F8;
-	padding: 0.7em;
-}
-p {
-	margin:1em 0;
-	line-height:1.5em;
-}
-table {
-	font-size:inherit;
-	font:100%;
-	margin:1em;
-}
-table th{border-bottom:1px solid #bbb;padding:.2em 1em;}
-table td{border-bottom:1px solid #ddd;padding:.2em 1em;}
-input[type=text],input[type=password],input[type=image],textarea{font:99% helvetica,arial,freesans,sans-serif;}
-select,option{padding:0 .25em;}
-optgroup{margin-top:.5em;}
-pre,code{font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;}
-pre {
-	margin:1em 0;
-	font-size:12px;
-	background-color:#eee;
-	border:1px solid #ddd;
-	padding:5px;
-	line-height:1.5em;
-	color:#444;
-	overflow:auto;
-	-webkit-box-shadow:rgba(0,0,0,0.07) 0 1px 2px inset;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;border-radius:3px;
-}
-pre code {
-	padding:0;
-	font-size:12px;
-	background-color:#eee;
-	border:none;
-}
-code {
-	font-size:12px;
-	background-color:#f8f8ff;
-	color:#444;
-	padding:0 .2em;
-	border:1px solid #dedede;
-}
-img{border:0;max-width:100%;}
-abbr{border-bottom:none;}
-a{color:#4183c4;text-decoration:none;}
-a:hover{text-decoration:underline;}
-a code,a:link code,a:visited code{color:#4183c4;}
-h2,h3{margin:1em 0;}
-h1,h2,h3,h4,h5,h6{border:0;}
-h1{font-size:170%;border-top:4px solid #aaa;padding-top:.5em;margin-top:1.5em;}
-h1:first-child{margin-top:0;padding-top:.25em;border-top:none;}
-h2{font-size:150%;margin-top:1.5em;border-top:4px solid #e0e0e0;padding-top:.5em;}
-h3{margin-top:1em;}
-hr{border:1px solid #ddd;}
-ul{margin:1em 0 1em 2em;}
-ol{margin:1em 0 1em 2em;}
-ul li,ol li{margin-top:.5em;margin-bottom:.5em;}
-ul ul,ul ol,ol ol,ol ul{margin-top:0;margin-bottom:0;}
-blockquote{margin:1em 0;border-left:5px solid #ddd;padding-left:.6em;color:#555;}
-dt{font-weight:bold;margin-left:1em;}
-dd{margin-left:2em;margin-bottom:1em;}
-sup {
-    font-size: 0.83em;
-    vertical-align: super;
-    line-height: 0;
-}
-* {
-	-webkit-print-color-adjust: exact;
-}
-@media screen and (min-width: 914px) {
-    body {
-        width: 854px;
-        margin:0 auto;
-    }
-}
-@media print {
-	table, pre {
-		page-break-inside: avoid;
-	}
-	pre {
-		word-wrap: break-word;
-	}
-}
-</style>
-<title>MusicXML Specification</title>
+<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 18.3.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>MusicXML</title>
+    
+    
+  <style id="respec-mainstyle">/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
 
-</head>
-<body>
-<p>The current draft MusicXML 3.1 schema is available at the <a href="https://github.com/w3c/musicxml">W3C GitHub repository</a>. The <a href="http://www.musicxml.com/UserManuals/MusicXML/MusicXML.htm">current MusicXML 3.0 specification</a> is available at MakeMusic's' <a href="http://www.musicxml.com/">MusicXML site</a>, pending group discussion on how to proceed with the written specification.</p>
-</body>
-</html>
+/* Override code highlighter background */
+.hljs {
+  background: transparent !important;
+}
+
+/* --- INLINES --- */
+h1 abbr,
+h2 abbr,
+h3 abbr,
+h4 abbr,
+h5 abbr,
+h6 abbr,
+a abbr {
+  border: none;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+a.internalDFN {
+  color: inherit;
+  border-bottom: 1px solid #99c;
+  text-decoration: none;
+}
+
+a.externalDFN {
+  color: inherit;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+a.bibref {
+  text-decoration: none;
+}
+
+cite .bibref {
+  font-style: normal;
+}
+
+code {
+  color: #c83500;
+}
+
+th code {
+  color: inherit;
+}
+
+/* --- TOC --- */
+
+.toc a,
+.tof a {
+  text-decoration: none;
+}
+
+a .secno,
+a .figno {
+  color: #000;
+}
+
+ul.tof,
+ol.tof {
+  list-style: none outside none;
+}
+
+.caption {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* --- TABLE --- */
+
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 3px solid #005a9c;
+}
+
+.simple th {
+  background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th[scope="row"] {
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ddd;
+}
+
+.simple td {
+  padding: 3px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+/* --- DL --- */
+
+.section dd > p:first-child {
+  margin-top: 0;
+}
+
+.section dd > p:last-child {
+  margin-bottom: 0;
+}
+
+.section dd {
+  margin-bottom: 1em;
+}
+
+.section dl.attrs dd,
+.section dl.eldef dd {
+  margin-bottom: 0;
+}
+
+#issue-summary > ul,
+.respec-dfn-list {
+  column-count: 2;
+}
+
+#issue-summary li,
+.respec-dfn-list li {
+  list-style: none;
+}
+
+details.respec-tests-details {
+  margin-left: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+details.respec-tests-details > * {
+  padding-right: 2em;
+}
+
+details.respec-tests-details[open] {
+  z-index: 999999;
+  position: absolute;
+  border: thin solid #cad3e2;
+  border-radius: .3em;
+  background-color: white;
+  padding-bottom: .5em;
+}
+
+details.respec-tests-details[open] > summary {
+  border-bottom: thin solid #cad3e2;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  line-height: 2em;
+}
+
+details.respec-tests-details > ul {
+  width: 100%;
+  margin-top: -0.3em;
+}
+
+details.respec-tests-details > li {
+  padding-left: 1em;
+}
+
+@media print {
+  .removeOnSave {
+    display: none;
+  }
+}
+</style><style>/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/cg-final"><link rel="canonical" href="https://www.w3.org/TR/musicxml31/"><script id="initialUserConfig" type="application/json">{
+  "specStatus": "CG-FINAL",
+  "editors": [
+    {
+      "name": "Michael Good",
+      "company": "MakeMusic",
+      "companyURL": "http://www.makemusic.com/",
+      "w3cid": 44824
+    }
+  ],
+  "processVersion": 2017,
+  "shortName": "musicxml31",
+  "github": {
+    "repoURL": "https://github.com/w3c/musicxml"
+  },
+  "copyrightStart": 2004,
+  "publishDate": "2017-11-20",
+  "subtitle": "Version 3.1",
+  "wg": "Music Notation Community Group",
+  "wgURI": "https://www.w3.org/community/music-notation/",
+  "wgPublicList": "public-music-notation-contrib",
+  "noTOC": true,
+  "publishISODate": "2017-11-20T00:00:00.000Z",
+  "generatedSubtitle": "Final Community Group Report 20 November 2017"
+}</script><meta name="description" content="MusicXML is a standard open format for exchanging digital sheet music. It is designed for 
+        sharing sheet music files between applications, and for archiving sheet music files for use in the future.
+        As of this publication date it is supported by over 200 applications."></head>
+  <body aria-busy="false" class="h-entry"><div class="head">
+  <p>
+    <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
+  </p>
+  <h1 class="title p-name" id="title">MusicXML</h1>
+    <h2 id="subtitle">Version 3.1</h2>
+  <h2 id="final-community-group-report-20-november-2017">Final Community Group Report <time class="dt-published" datetime="2017-11-20">20 November 2017</time></h2>
+  <dl>
+      <dt>Latest editor's draft:</dt>
+      <dd><a href="https://w3c.github.io/musicxml/">https://w3c.github.io/musicxml/</a></dd>
+    <dt>Editor:</dt>
+    <dd class="p-author h-card vcard" data-editor-id="44824"><span class="p-name fn">Michael Good</span>, <a class="p-org org h-org h-card" href="http://www.makemusic.com/">MakeMusic</a></dd>
+
+          <dt>Participate:</dt>
+                  <dd>
+                    <a href="https://github.com/w3c/musicxml">
+                      GitHub w3c/musicxml
+                    </a>
+                  </dd>
+                  <dd>
+                    <a href="https://github.com/w3c/musicxml/issues/">
+                      File a bug
+                    </a>
+                  </dd>
+                  <dd>
+                    <a href="https://github.com/w3c/musicxml/commits/gh-pages">
+                      Commit history
+                    </a>
+                  </dd>
+  </dl>
+  <p class="copyright">
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
+    2004-2017
+    the Contributors to the MusicXML Specification, published by the
+    <a href="https://www.w3.org/community/music-notation/">Music Notation Community Group</a> under the
+      <a href="https://www.w3.org/community/about/agreements/fsa/">W3C Community Final Specification Agreement (FSA)</a>. 
+      A human-readable <a href="https://www.w3.org/community/about/agreements/fsa-deed/">summary</a> is available.
+  </p>
+  <hr title="Separator for header">
+</div>
+    <section id="abstract" class="introductory"><h2 id="abstract-0">Abstract</h2>
+      <p>
+        MusicXML is a standard open format for exchanging digital sheet music. It is designed for 
+        sharing sheet music files between applications, and for archiving sheet music files for use in the future.
+        As of this publication date it is supported by over 200 applications.
+      </p>
+      <p>
+        Version 3.1 is the first version released by the W3C Music Notation Community Group. 
+		Previous MusicXML versions were released by the Recordare and MakeMusic 
+		companies.</p>
+    </section>
+    <section id="sotd" class="introductory"><h2 id="status-of-this-document">Status of This Document</h2>
+<p>
+  This specification was published by the <a href="https://www.w3.org/community/music-notation/">Music Notation Community Group</a>.
+  It is not a W3C Standard nor is it on the W3C Standards Track.
+    Please note that under the
+    <a href="https://www.w3.org/community/about/agreements/final/">W3C Community Final Specification Agreement (FSA)</a>
+    other conditions apply.
+  Learn more about
+  <a href="https://www.w3.org/community/">W3C Community and Business Groups</a>.
+</p>
+  
+    
+    <p>If you wish to make comments regarding this document, please send them to
+    <a href="mailto:public-music-notation-contrib@w3.org">public-music-notation-contrib@w3.org</a>
+    (<a href="mailto:public-music-notation-contrib-request@w3.org?subject=subscribe">subscribe</a>,
+    <a href="https://lists.w3.org/Archives/Public/public-music-notation-contrib/">archives</a>).</p>
+
+</section>
+    <section>
+      <h2 id="musicxml-schema-files">MusicXML Schema Files</h2>
+      <p>MusicXML 3.1 does not have a specification document separate from its schema files. 
+      The schema files for MusicXML 3.1 are available on the GitHub repository at 
+      <a href="https://github.com/w3c/musicxml/releases/tag/v3.1">https://github.com/w3c/musicxml/releases/tag/v3.1</a>.</p>
+      <h2 id="changes-from-musicxml-3-0">Changes From MusicXML 3.0</h2>
+      <p>Details of the changes from MusicXML 3.0 to MusicXML 3.1 are found in the 
+		<a href="https://github.com/w3c/musicxml/issues?q=is%3Aclosed+milestone%3AV3.1">
+		GitHub issue list for the v3.1 milestone</a>.
+	  </p>
+    </section>
+  
+
+<script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
