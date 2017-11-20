@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="16.1">
+<project version="19.1">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options/>
@@ -8,5 +8,6 @@
         <folder path="schema/"/>
         <file name="index.html"/>
         <file name="README.md"/>
+        <file name="respec.html"/>
     </projectTree>
 </project>
