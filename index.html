@@ -276,7 +276,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/cg-final"><link rel="canonical" href="https://www.w3.org/2017/11/musicxml31/"><script id="initialUserConfig" type="application/json">{
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/cg-final"><link rel="canonical" href="https://www.w3.org/TR/musicxml31/"><script id="initialUserConfig" type="application/json">{
   "specStatus": "CG-FINAL",
   "editors": [
     {
@@ -292,14 +292,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     "repoURL": "https://github.com/w3c/musicxml"
   },
   "copyrightStart": 2004,
-  "publishDate": "2017-11-20",
+  "publishDate": "2017-11-29",
   "subtitle": "Version 3.1",
   "wg": "Music Notation Community Group",
   "wgURI": "https://www.w3.org/community/music-notation/",
   "wgPublicList": "public-music-notation-contrib",
-  "noTOC": true,
-  "publishISODate": "2017-11-20T00:00:00.000Z",
-  "generatedSubtitle": "Final Community Group Report 20 November 2017"
+  "maxTocLevel": 3,
+  "publishISODate": "2017-11-29T00:00:00.000Z",
+  "generatedSubtitle": "Final Community Group Report 29 November 2017"
 }</script><meta name="description" content="MusicXML is a standard open format for exchanging digital sheet music. It is designed for 
         sharing sheet music files between applications, and for archiving sheet music files for use in the future.
         As of this publication date it is supported by over 200 applications."></head>
@@ -309,7 +309,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </p>
   <h1 class="title p-name" id="title">MusicXML</h1>
     <h2 id="subtitle">Version 3.1</h2>
-  <h2 id="final-community-group-report-20-november-2017">Final Community Group Report <time class="dt-published" datetime="2017-11-20">20 November 2017</time></h2>
+  <h2 id="final-community-group-report-29-november-2017">Final Community Group Report <time class="dt-published" datetime="2017-11-29">29 November 2017</time></h2>
   <dl>
       <dt>Latest editor's draft:</dt>
       <dd><a href="https://w3c.github.io/musicxml/">https://w3c.github.io/musicxml/</a></dd>
@@ -351,8 +351,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       </p>
       <p>
         Version 3.1 is the first version released by the W3C Music Notation Community Group. 
-		Previous MusicXML versions were released by the Recordare and MakeMusic 
-		companies.</p>
+        Previous MusicXML versions were released by the Recordare and MakeMusic 
+        companies.</p>
     </section>
     <section id="sotd" class="introductory"><h2 id="status-of-this-document">Status of This Document</h2>
 <p>
@@ -371,18 +371,327 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     (<a href="mailto:public-music-notation-contrib-request@w3.org?subject=subscribe">subscribe</a>,
     <a href="https://lists.w3.org/Archives/Public/public-music-notation-contrib/">archives</a>).</p>
 
-</section>
-    <section>
-      <h2 id="musicxml-schema-files">MusicXML Schema Files</h2>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#musicxml-schema-files" class="tocxref"><span class="secno">1. </span>MusicXML Schema Files</a></li><li class="tocline"><a href="#changes-from-musicxml-3-0" class="tocxref"><span class="secno">2. </span>Changes From MusicXML 3.0</a><ol class="toc"><li class="tocline"><a href="#licensing-changes" class="tocxref"><span class="secno">2.1 </span>Licensing Changes</a></li><li class="tocline"><a href="#packaging-changes" class="tocxref"><span class="secno">2.2 </span>Packaging Changes</a></li><li class="tocline"><a href="#schema-additions" class="tocxref"><span class="secno">2.3 </span>Schema Additions</a><ol class="toc"><li class="tocline"><a href="#changes-in-attributes-mod" class="tocxref"><span class="secno">2.3.1 </span>Changes in attributes.mod</a><ol class="toc"></ol></li><li class="tocline"><a href="#changes-in-barline-mod" class="tocxref"><span class="secno">2.3.2 </span>Changes in barline.mod</a><ol class="toc"></ol></li><li class="tocline"><a href="#changes-in-common-mod" class="tocxref"><span class="secno">2.3.3 </span>Changes in common.mod</a><ol class="toc"></ol></li><li class="tocline"><a href="#changes-in-direction-mod" class="tocxref"><span class="secno">2.3.4 </span>Changes in direction.mod</a><ol class="toc"></ol></li><li class="tocline"><a href="#changes-in-layout-mod" class="tocxref"><span class="secno">2.3.5 </span>Changes in layout.mod</a><ol class="toc"></ol></li><li class="tocline"><a href="#changes-in-note-mod" class="tocxref"><span class="secno">2.3.6 </span>Changes in note.mod</a><ol class="toc"></ol></li><li class="tocline"><a href="#changes-in-score-mod" class="tocxref"><span class="secno">2.3.7 </span>Changes in score.mod</a><ol class="toc"></ol></li></ol></li><li class="tocline"><a href="#removed-and-deprecated-features" class="tocxref"><span class="secno">2.4 </span>Removed and Deprecated Features</a></li><li class="tocline"><a href="#documentation-changes" class="tocxref"><span class="secno">2.5 </span>Documentation Changes</a></li></ol></li></ol></nav>
+    <section id="musicxml-schema-files">
+      <!--OddPage--><h2 id="x1-musicxml-schema-files"><span class="secno">1. </span>MusicXML Schema Files</h2>
       <p>MusicXML 3.1 does not have a specification document separate from its schema files. 
       The schema files for MusicXML 3.1 are available on the GitHub repository at 
       <a href="https://github.com/w3c/musicxml/releases/tag/v3.1">https://github.com/w3c/musicxml/releases/tag/v3.1</a>.</p>
-      <h2 id="changes-from-musicxml-3-0">Changes From MusicXML 3.0</h2>
-      <p>Details of the changes from MusicXML 3.0 to MusicXML 3.1 are found in the 
-		<a href="https://github.com/w3c/musicxml/issues?q=is%3Aclosed+milestone%3AV3.1">
-		GitHub issue list for the v3.1 milestone</a>.
-	  </p>
     </section>
-  
-
+    <section id="changes-from-musicxml-3-0">
+      <!--OddPage--><h2 id="x2-changes-from-musicxml-3-0"><span class="secno">2. </span>Changes From MusicXML 3.0</h2>
+      <section id="licensing-changes">
+        <h3 id="x2-1-licensing-changes"><span class="secno">2.1 </span>Licensing Changes</h3>
+        <p>MusicXML 3.1 is now licensed under the W3C Community Final Specification 
+    Agreement rather than the MusicXML Public License 3.0.</p>
+      </section>
+      <section id="packaging-changes">
+        <h3 id="x2-2-packaging-changes"><span class="secno">2.2 </span>Packaging Changes</h3>
+        <p>MusicXML 3.1 now recommends .musicxml rather than .xml as the file 
+        extension for uncompressed MusicXML files.</p>
+        <p>MusicXML 3.1 adds a new file called mimetype as the first file in the zip container of 
+        a compressed MusicXML file. The file is uncompressed and has the string 
+		application/vnd.recordare.musicxml as its content.</p>
+      </section>
+      <section id="schema-additions">
+        <h3 id="x2-3-schema-additions"><span class="secno">2.3 </span>Schema Additions</h3>
+        <p>MusicXML 3.1 adds new features to MusicXML 3.0 score-partwise and score-timewise 
+        documents. These changes are included in the musicxml.xsd and to30.xsl 
+        files, as well as the following DTD module files.</p>
+        <section id="changes-in-attributes-mod">
+          <h4 id="x2-3-1-changes-in-attributes-mod"><span class="secno">2.3.1 </span>Changes in attributes.mod</h4>
+          <section id="new-elements">
+            <h5 id="x2-3-1-1-new-elements"><span class="secno">2.3.1.1 </span>New Elements</h5>
+            <ul>
+                <li>The except-voice element is used to specify a combination of slash 
+                notation and regular notation.</li>
+            </ul>
+          </section>
+          <section id="new-attributes">
+            <h5 id="x2-3-1-2-new-attributes"><span class="secno">2.3.1.2 </span>New Attributes</h5>
+            <ul>
+              <li>The id attribute has been added to the clef, key, measure-style, 
+              time, and transpose elements.</li>
+              <li>The smufl attribute has been added to the key-accidental element.</li>
+            </ul>
+          </section>
+          <section id="new-values">
+            <h5 id="x2-3-1-3-new-values"><span class="secno">2.3.1.3 </span>New Values</h5>
+            <ul>
+              <li>New values double-sharp-down, double-sharp-up, flat-flat-down, 
+              flat-flat-up, arrow-down, arrow-up, and other have been added to the 
+              accidental-value type, used by the key-accidental element.</li>
+            </ul>
+          </section>
+        </section>
+        <section id="changes-in-barline-mod">
+          <h4 id="x2-3-2-changes-in-barline-mod"><span class="secno">2.3.2 </span>Changes in barline.mod</h4>
+          <section id="new-attributes-0">
+            <h5 id="x2-3-2-1-new-attributes"><span class="secno">2.3.2.1 </span>New Attributes</h5>
+            <ul>
+              <li>The id attribute has been added to the barline element.</li>
+            </ul>
+          </section>
+        </section>
+        <section id="changes-in-common-mod">
+          <h4 id="x2-3-3-changes-in-common-mod"><span class="secno">2.3.3 </span>Changes in common.mod</h4>
+          <section id="new-elements-0">
+            <h5 id="x2-3-3-1-new-elements"><span class="secno">2.3.3.1 </span>New Elements</h5>
+            <ul>
+              <li>The n element represents an n dynamic.</li>
+              <li>The pf element represents a pf dynamic.</li>
+              <li>The sfzp element represents an sfzp dynamic.</li>
+            </ul>
+          </section>
+          <section id="new-attributes-1">
+            <h5 id="x2-3-3-2-new-attributes"><span class="secno">2.3.3.2 </span>New Attributes</h5>
+            <ul>
+              <li>The id attribute has been added to the coda, dynamics, fermata, and 
+              segno elements.</li>
+              <li>The smufl attribute has been added to the accidental-text, coda, 
+              other-dynamics, and segno elements.</li>
+            </ul>
+          </section>
+          <section id="new-values-0">
+            <h5 id="x2-3-3-3-new-values"><span class="secno">2.3.3.3 </span>New Values</h5>
+            <ul>
+              <li>New values double-sharp-down, double-sharp-up, flat-flat-down, 
+              flat-flat-up, arrow-down, arrow-up, and other have been added to the 
+              accidental-value type, used by the accidental-text element.</li>
+              <li>New values pentagon, hexagon, heptagon, octagon, nonagon, and 
+              decagon have been added to the enclosure-shape type, used by the 
+              enclosure attribute.</li>
+              <li>New values double-angled, double-square, double-dot, half-curve, and 
+              curlew have been added to the fermata-shape type, used by the fermata 
+              element.</li>
+            </ul>
+          </section>
+        </section>
+        <section id="changes-in-direction-mod">
+          <h4 id="x2-3-4-changes-in-direction-mod"><span class="secno">2.3.4 </span>Changes in direction.mod</h4>
+          <section id="new-elements-1">
+            <h5 id="x2-3-4-1-new-elements"><span class="secno">2.3.4.1 </span>New Elements</h5>
+            <ul>
+              <li>The beat-unit-tied element represents tied notes in regular 
+              metronome marks.</li>
+              <li>The metronome-arrows element indicates the presence of metric 
+              modulation arrows on both sides of the metronome mark.</li>
+              <li>The metronome-tied element represents tied-notes in metric 
+              modulations and other metric relationships.</li>
+              <li>The staff-divide element represents staff division arrow symbols.</li>
+              <li>The symbol element specifies a musical symbol using a canonical 
+              SMuFL glyph name. It is used when an occasional musical symbol is 
+              interspersed into text.</li>
+            </ul>
+          </section>
+          <section id="new-attributes-2">
+            <h5 id="x2-3-4-2-new-attributes"><span class="secno">2.3.4.2 </span>New Attributes</h5>
+            <ul>
+              <li>The id attribute has been added to the direction, direction-type, 
+              rehearsal, words, wedge, dashes, bracket, pedal, metronome, 
+              octave-shift, harp-pedals, damp, damp-all, eyeglasses, string-mute, 
+              scordatura, image, principal-voice, accordion-registration, percussion, 
+              other-direction , harmony, frame, grouping, print, and sound elements.</li>
+              <li>The smufl attribute has been added to the glass, pitched, 
+              other-direction, and other-percussion elements.</li>
+              <li>The height and width attributes have been added to the image 
+              element.</li>
+              <li>The abbreviated and number attributes have been added to the pedal 
+              element.</li>
+              <li>The parentheses and dashed-circle attributes have been added to the 
+              stick element.</li>
+            </ul>
+          </section>
+          <section id="new-values-1">
+            <h5 id="x2-3-4-3-new-values"><span class="secno">2.3.4.3 </span>New Values</h5>
+            <ul>
+              <li>The sostenuto value has been added to the pedal-type type, used by 
+              the type attribute of the pedal element.</li>
+              <li>New values drum stick, slide brush on gong, and superball have been 
+              added to the beater-value type, used by the beater element.</li>
+              <li>New values lotus flute and megaphone have been added to the effect 
+              type, used by the effect element.</li>
+              <li>New values glass harmonica and glass harp have been added to the 
+              glass-value type, used by the glass element.</li>
+              <li>New values Chinese tomtom, cuica, Indo-American tomtom, Japanese 
+              tomtom, and tabla have been added to the membrane type, used by the 
+              membrane element.</li>
+              <li>New values agogo, bell tree, cencerro, chain rattle, jaw harp, 
+              jingle bells, musical saw, shell bells, and tam tam with beater have 
+              been added to the metal type, used by the metal element.</li>
+              <li>New values celesta, lithophone, steel drums, and tubaphone have been 
+              added to the pitched-value type, used by the pitched element.</li>
+              <li>New values glockenspiel, gum, hammer, superball, and wound have been 
+              added to the stick-type type, used by the stick-type element.</li>
+              <li>New values bamboo scraper, castanets with handle, football rattle, 
+              quijada, rainstick, reco-reco, and whip have been added to the wood 
+              type, used by the wood element.</li>
+            </ul>
+          </section>
+        </section>
+        <section id="changes-in-layout-mod">
+          <h4 id="x2-3-5-changes-in-layout-mod"><span class="secno">2.3.5 </span>Changes in layout.mod</h4>
+          <section id="new-elements-2">
+            <h5 id="x2-3-5-1-new-elements"><span class="secno">2.3.5.1 </span>New Elements</h5>
+            <ul>
+              <li>The glyph element represents what SMuFL glyph should be used for 
+              different variations of symbols that are semantically identical.</li>
+            </ul>
+          </section>
+        </section>
+        <section id="changes-in-note-mod">
+          <h4 id="x2-3-6-changes-in-note-mod"><span class="secno">2.3.6 </span>Changes in note.mod</h4>
+          <section id="new-elements-3">
+            <h5 id="x2-3-6-1-new-elements"><span class="secno">2.3.6.1 </span>New Elements</h5>
+            <ul>
+              <li>A single note element may now have both cue and grace child 
+              elements.</li>
+              <li>The arrowhead element represents arrowheads without an arrow stem.</li>
+              <li>The brass-bend element represents the u-shaped bend symbol used in 
+              brass notation.</li>
+              <li>The flip element represents the flip symbol used in brass notation.</li>
+              <li>The golpe element represents the golpe symbol that is used for 
+              tapping the pick guard in guitar music.</li>
+              <li>The half-muted element represents the half-muted symbol which looks 
+              like a circle with a plus sign inside.</li>
+              <li>The harmon-mute element represents the symbols used for harmon mutes 
+              in brass notation.</li>
+              <li>The haydn element represents the Haydn ornament, defined in SMuFL as 
+              ornamentHaydn.</li>
+              <li>The inverted-vertical-turn element represents the turn symbol shape 
+              arranged vertically going from upper left to lower right.</li>
+              <li>The open element represents the open symbol, which looks like a 
+              circle.</li>
+              <li>The smear element represents the tilde-shaped smear symbol used in 
+              brass notation.</li>
+              <li>The soft-accent element indicates a soft accent that is not as heavy 
+              as a normal accent. It is often notated as &lt;&gt;.</li>
+              <li>The figure element may now have the footnote and level elements as 
+              optional child elements.</li>
+            </ul>
+          </section>
+          <section id="new-attributes-3">
+            <h5 id="x2-3-6-2-new-attributes"><span class="secno">2.3.6.2 </span>New Attributes</h5>
+            <ul>
+              <li>The id attribute has been added to the note, beam, notations, tied, 
+              slur, tuplet, glissando, slide, other-notation, ornaments, 
+              accidental-mark, technical, articulations, arpeggiate, non-arpeggiate, 
+              lyric, and figured-bass elements.</li>
+              <li>The bracket, parentheses, and size attributes have been added to the 
+              accidental-mark element.</li>
+              <li>The time-only attribute has been added to the lyric element.</li>
+              <li>The print-leger attribute has been added to the note element.</li>
+              <li>The hand attribute has been added to the tap element.</li>
+              <li>The line-length attribute has been added to the doit, falloff, plop, 
+              and scoop elements.</li>
+              <li>The smufl attribute has been added to the accidental, 
+              accidental-mark, arrow, elision, notehead, stopped, tremolo, 
+              other-articulation, other-notation, other-ornament, and other-technical 
+              elements.</li>
+            </ul>
+          </section>
+          <section id="new-values-2">
+            <h5 id="x2-3-6-3-new-values"><span class="secno">2.3.6.3 </span>New Values</h5>
+            <ul>
+              <li>New values double-sharp-down, double-sharp-up, flat-flat-down, 
+              flat-flat-up, arrow-down, arrow-up, and other have been added to the 
+              accidental-value type, used by the accidental and accidental-mark 
+              elements.</li>
+              <li>The let-ring value has been added to the type attribute of the tied 
+              element.</li>
+              <li>The unmeasured value has been added to the type attribute of the 
+              tremolo element.</li>
+              <li>The circled and other values have been added to notehead-value type, 
+              used by the notehead element.</li>
+              <li>The belltree value has been added to the handbell-value type, used 
+              by the handbell element.</li>
+              <li>The salzedo and upbow values have been added to the 
+              breath-mark-value type, used by the breath-mark element.</li>
+              <li>The caesura element uses the new caesura-vale type with values of 
+              normal, thick, short, curved, and single. An empty string value is 
+              included for compatibility with MusicXML 3.0.</li>
+              <li>The grace-cue value has been added to the symbol-size type, used by 
+              the size attribute.</li>
+            </ul>
+          </section>
+        </section>
+        <section id="changes-in-score-mod">
+          <h4 id="x2-3-7-changes-in-score-mod"><span class="secno">2.3.7 </span>Changes in score.mod</h4>
+          <section id="new-elements-4">
+            <h5 id="x2-3-7-1-new-elements"><span class="secno">2.3.7.1 </span>New Elements</h5>
+            <ul>
+              <li>The credit-symbol element specifies a musical symbol using a 
+              canonical SMuFL glyph name. It is used when an occasional musical symbol 
+              is interspersed into text.</li>
+            </ul>
+          </section>
+          <section id="new-attributes-4">
+            <h5 id="x2-3-7-2-new-attributes"><span class="secno">2.3.7.2 </span>New Attributes</h5>
+            <ul>
+              <li>The id attribute has been added to the credit, credit-image, 
+              credit-words, and measure elements.</li>
+              <li>The height and width attributes have been added to the credit-image 
+              element.</li>
+              <li>The text attribute has been added to the measure element.</li>
+            </ul>
+          </section>
+        </section>
+      </section>
+      <section id="removed-and-deprecated-features">
+        <h3 id="x2-4-removed-and-deprecated-features"><span class="secno">2.4 </span>Removed and Deprecated Features</h3>
+        <ul>
+          <li>The font-family, font-size, font-style, and font-weight attributes 
+          have been removed from the extend element in the note.mod and 
+          musicxml.xsd files. The extend element contains no text, and these 
+          attributes were added by mistake in MusicXML 1.1.</li>
+          <li>The bezier-offset and bezier-offset2 attributes in the common.mod 
+          and musicxml.xsd files are deprecated as of MusicXML 3.1. </li>
+        </ul>
+      </section>
+      <section id="documentation-changes">
+        <h3 id="x2-5-documentation-changes"><span class="secno">2.5 </span>Documentation Changes</h3>
+        <p>MusicXML 3.1 made the following changes to the XSD and DTD schema 
+        documentation.</p>
+        <ul>
+          <li>The DTD documentation for the actual-notes and normal-notes elements 
+          has been corrected to fix a typo.</li>
+          <li>The XSD and DTD documentation for the accordion-high, accordion-low, 
+          and accordion-middle elements clarifies that the elements are omitted if 
+          no dots are present.</li>
+          <li>The XSD and DTD documentation for the attack and release attributes 
+          and their interrelationship has been clarified.</li>
+          <li>The XSD and DTD documentation for the bezier-x, bezier-y, bezier-x2, 
+          bezier-y2, bezier-offset, and bezier-offset2 attributes and their 
+          interrelationships has been clarified.</li>
+          <li>The cancel complex type XSD documentation now describes the location 
+          attribute correctly.</li>
+          <li>The cue element XSD and DTD documentation clarifies that the cue 
+          element indicates silent notes.</li>
+          <li>The direction element XSD and DTD documentation clarifies the 
+          relationship between direction and note elements.</li>
+          <li>The falloff element XSD documentation has been corrected to indicate 
+          the falloff comes after the note.</li>
+          <li>The interchangeable complex type XSD documentation no longer refers 
+          to a non-existent parentheses attribute.</li>
+          <li>The key-octave element XSD and DTD documentation clarifies the 
+          behavior of the cancel attribute.</li>
+          <li>The multiple-rest complex type XSD documentation no longer refers to 
+          a non-existent type attribute.</li>
+          <li>The note-type complex type XSD documentation now refers to 1024th to 
+          maxima instead of 256th to long.</li>
+          <li>The number-level simple type XSD documentation now refers to an 
+          optional rather than implied value.</li>
+          <li>The string-number simple type and string element XSD and DTD 
+          documentation clarifies how string numbers are ordered.</li>
+          <li>The tied element XSD and DTD documentation clarifies how to 
+          represent different types of single-ended tie symbols.</li>
+          <li>The wavy-line XSD and DTD documentation now refers to barline rather 
+          than measure elements.</li>
+        </ul>
+        <p>The history of all the changes from MusicXML 3.0 to MusicXML 3.1 can be found in the 
+        <a href="https://github.com/w3c/musicxml/issues?q=is%3Aclosed+milestone%3AV3.1">
+        GitHub issue list for the v3.1 milestone</a>.
+        </p>
+      </section>
+    </section>
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
