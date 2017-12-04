@@ -228,9 +228,14 @@
     match="fermata/@id | segno/@id | 
 		coda/@id | dynamics/@id"/>
 
-  <!-- Remove accidental-text elements with new other value -->
+  <!--
+    Remove accidental-text elements with new accidental values.
+  -->
   <xsl:template
-    match="accidental-text[.='other']"/>
+    match="accidental-text[. = 'double-sharp-down' or
+			. = 'double-sharp-up' or . = 'flat-flat-down' or
+			. = 'flat-flat-up' or . = 'arrow-down' or
+			. = 'arrow-up' or . = 'other']"/>
 
   <!-- Remove smufl attributes -->
   <xsl:template
