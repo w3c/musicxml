@@ -777,8 +777,8 @@
    <sound id="wind.flutes.whistle.low-irish"/>
    <sound id="wind.flutes.whistle.shiva"/>
    <sound id="wind.flutes.whistle.slide"/>
-   <sound id="wind.flutes.whistle.tin"/>
    <sound id="wind.flutes.whistle.tin.bflat"/>
+   <sound id="wind.flutes.whistle.tin.c"/>
    <sound id="wind.flutes.whistle.tin.d"/>
    <sound id="wind.flutes.xiao"/>
    <sound id="wind.flutes.xun"/>
