@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sounds PUBLIC "-//Recordare//DTD MusicXML 3.1 Sounds//EN" "http://www.musicxml.org/dtds/sounds.dtd">
+<!DOCTYPE sounds PUBLIC "-//Recordare//DTD MusicXML 4.0 Sounds//EN" "http://www.musicxml.org/dtds/sounds.dtd">
 
 <!--
 	MusicXML sounds file
 
-	Version 3.1
+	Version 4.0 Draft
 	
-	Copyright © 2004-2017 the Contributors to the MusicXML 
+	Copyright © 2004-2020 the Contributors to the MusicXML 
 	Specification, published by the W3C Music Notation Community
-	Group under the W3C Community Final Specification Agreement 
-	(FSA): 
+	Group under the W3C Community Contributor License Agreement 
+	(CLA): 
 	
-	   https://www.w3.org/community/about/agreements/final/
+	   https://www.w3.org/community/about/agreements/cla/
 	
 	A human-readable summary is available:
 	
-	   https://www.w3.org/community/about/agreements/fsa-deed/
+	   https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
 <!--
@@ -25,7 +25,7 @@
 	element.
 
 	This sounds.xml file contains the standard sounds that are
-	included in MusicXML 3.1. The required id attribute
+	included in MusicXML 4.0. The required id attribute
 	lists the MusicXML sound identifier string used by
 	the instrument-sound element.
 

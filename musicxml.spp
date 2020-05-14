@@ -11,6 +11,7 @@
 		<File FilePath="schema\to11.xsl" HomeFolder="Yes"/>
 		<File FilePath="schema\to20.xsl" HomeFolder="Yes"/>
 		<File FilePath="schema\to30.xsl" HomeFolder="Yes"/>
+		<File FilePath="schema\to31.xsl" HomeFolder="Yes"/>
 	</Folder>
 	<Folder FolderName="XQuery Files" ExtStr="xq;xql;xquery"/>
 	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp">
