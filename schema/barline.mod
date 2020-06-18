@@ -89,14 +89,18 @@
 	of the ending text appears, relative to the start of the
 	ending line.
 
-	The number attribute reflects the numeric values of what
-	is under the ending line. Single endings such as "1" or 
-	comma-separated multiple endings such as "1, 2" may be
-	used. The ending element text is used when the text 
-	displayed in the ending is different than what appears in
-	the number attribute. The print-object element is used to
-	indicate when an ending is present but not printed, as is
-	often the case for many parts in a full score.
+	The number attribute indicates which times the ending is
+	played, similar to the time-only attribute used by other
+	elements. While this often represents the numeric values for
+	what is under the ending line, it can also indicate whether
+	an ending is played during a larger dal segno or da capo
+	repeat. Single endings such as "1" or comma-separated
+	multiple endings such as "1, 2" may be used. The ending
+	element text is used when the text displayed in the ending
+	is different than what appears in the number attribute. The
+	print-object element is used to indicate when an ending is
+	present but not printed, as is often the case for many parts
+	in a full score.
 -->
 <!ELEMENT ending (#PCDATA)>
 <!ATTLIST ending
