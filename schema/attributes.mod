@@ -484,12 +484,16 @@
 -->
 
 <!--
-	The measure-repeat element is used for both single and
-	multiple measure repeats. The text of the element indicates
-	the number of measures to be repeated in a single pattern.
-	The slashes attribute specifies the number of slashes to
-	use in the repeat sign. It is 1 if not specified. Both the
-	start and the stop of the measure-repeat must be specified.
+	The measure-repeat element specifies a notation style for 
+	repetitions. The actual music being repeated needs to be 
+	repeated within each measure of the MusicXML file. This 
+	element specifies the notation that indicates the repeat.
+	It is used for both single and multiple measure repeats.
+	The text of the element indicates the number of measures
+	to be repeated in a single pattern. The slashes attribute
+	specifies the number of slashes to use in the repeat sign.
+	It is 1 if not specified. Both the start and the stop of
+	the measure-repeat must be specified.
 -->
 <!ELEMENT measure-repeat (#PCDATA)>
 <!ATTLIST measure-repeat
