@@ -4177,7 +4177,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 
 	<xs:complexType name="arpeggiate">
 		<xs:annotation>
-			<xs:documentation>The arpeggiate type indicates that this note is part of an arpeggiated chord. The number attribute can be used to distinguish between two simultaneous chords arpeggiated separately (different numbers) or together (same number). The up-down attribute is used if there is an arrow on the arpeggio sign. By default, arpeggios go from the lowest to highest note.</xs:documentation>
+			<xs:documentation>The arpeggiate type indicates that this note is part of an arpeggiated chord. The number attribute can be used to distinguish between two simultaneous chords arpeggiated separately (different numbers) or together (same number). The up-down attribute is used if there is an arrow on the arpeggio sign. By default, arpeggios go from the lowest to highest note.  The length of the sign can be determined from the position attributes for the arpeggiate elements used with the top and bottom notes of the arpeggiated chord.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="number" type="number-level"/>
 		<xs:attribute name="direction" type="up-down"/>
