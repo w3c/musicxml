@@ -1427,7 +1427,9 @@
 	separately (different numbers) or together (same number).
 	The up-down attribute is used if there is an arrow on the
 	arpeggio sign. By default, arpeggios go from the lowest to
-	highest note.
+	highest note. The length of the sign can be determined from
+	the position attributes for the arpeggiate elements used
+	with the top and bottom notes of the arpeggiated chord.
 -->
 <!ELEMENT arpeggiate EMPTY>
 <!ATTLIST arpeggiate
