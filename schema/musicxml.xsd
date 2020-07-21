@@ -3728,7 +3728,7 @@ The change and continue types are used when the line attribute is yes. The chang
 		<xs:annotation>
 			<xs:documentation>The print type contains general printing parameters, including the layout elements defined in the layout.mod file. The part-name-display and part-abbreviation-display elements used in the score.mod file may also be used here to change how a part name or abbreviation is displayed over the course of a piece. They take effect when the current measure or a succeeding measure starts a new system.
 
-Layout elements in a print statement only apply to the current page, system, staff, or measure. Music that follows continues to take the default values from the layout included in the defaults element.</xs:documentation>
+Layout group elements in a print statement only apply to the current page, system, or staff. Music that follows continues to take the default values from the layout determined by the defaults element.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:group ref="layout"/>
@@ -4015,7 +4015,7 @@ The offset element is used to indicate that the sound takes place offset from th
 
 	<xs:complexType name="measure-layout">
 		<xs:annotation>
-			<xs:documentation>The measure-layout type includes the horizontal distance from the previous measure.</xs:documentation>
+			<xs:documentation>The measure-layout type includes the horizontal distance from the previous measure. It applies to the current measure only.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="measure-distance" type="tenths" minOccurs="0">
@@ -4050,7 +4050,11 @@ The offset element is used to indicate that the sound takes place offset from th
 
 	<xs:complexType name="page-layout">
 		<xs:annotation>
-			<xs:documentation>Page layout can be defined both in score-wide defaults and in the print element. Page margins are specified either for both even and odd pages, or via separate odd and even page number values. The type is not needed when used as part of a print element. If omitted when used in the defaults element, "both" is the default.</xs:documentation>
+			<xs:documentation>Page layout can be defined both in score-wide defaults and in the print element. Page margins are specified either for both even and odd pages, or via separate odd and even page number values. The type is not needed when used as part of a print element. If omitted when used in the defaults element, "both" is the default.
+				
+If no page-layout element is present in the defaults element, default page layout values are chosen by the application.
+				
+When used in the print element, the page-layout element affects the appearance of the current page only. All other pages use the default values as determined by the defaults element. If any child elements are missing from the page-layout element in a print element, the values determined by the defaults element are used there as well.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:sequence minOccurs="0">
@@ -4081,7 +4085,9 @@ The offset element is used to indicate that the sound takes place offset from th
 
 	<xs:complexType name="staff-layout">
 		<xs:annotation>
-			<xs:documentation>Staff layout includes the vertical distance from the bottom line of the previous staff in this system to the top line of the staff specified by the number attribute. The optional number attribute refers to staff numbers within the part, from top to bottom on the system. A value of 1 is assumed if not present. When used in the defaults element, the values apply to all parts. This value is ignored for the first staff in a system.</xs:documentation>
+			<xs:documentation>Staff layout includes the vertical distance from the bottom line of the previous staff in this system to the top line of the staff specified by the number attribute. The optional number attribute refers to staff numbers within the part, from top to bottom on the system. A value of 1 is assumed if not present.
+
+When used in the defaults element, the values apply to all systems in all parts. When used in the print element, the values apply to the current system only. This value is ignored for the first staff in a system.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="staff-distance" type="tenths" minOccurs="0"/>
@@ -4105,7 +4111,11 @@ When used in the print element, the system-dividers element affects the dividers
 		<xs:annotation>
 			<xs:documentation>A system is a group of staves that are read and played simultaneously. System layout includes left and right margins and the vertical distance from the previous system. The system distance is measured from the bottom line of the previous system to the top line of the current system. It is ignored for the first system on a page. The top system distance is measured from the page's top margin to the top line of the first system. It is ignored for all but the first system on a page.
 
-Sometimes the sum of measure widths in a system may not equal the system width specified by the layout elements due to roundoff or other errors. The behavior when reading MusicXML files in these cases is application-dependent. For instance, applications may find that the system layout data is more reliable than the sum of the measure widths, and adjust the measure widths accordingly.</xs:documentation>
+Sometimes the sum of measure widths in a system may not equal the system width specified by the layout elements due to roundoff or other errors. The behavior when reading MusicXML files in these cases is application-dependent. For instance, applications may find that the system layout data is more reliable than the sum of the measure widths, and adjust the measure widths accordingly.
+
+When used in the defaults element, the system-layout element defines a default appearance for all systems in the score. If no system-layout element is present in the defaults element, default system layout values are chosen by the application.
+
+When used in the print element, the system-layout element affects the appearance of the current system only. All other systems use the default values as determined by the defaults element. If any child elements are missing from the system-layout element in a print element, the values determined by the defaults element are used there as well.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="system-margins" type="system-margins" minOccurs="0"/>
@@ -5420,7 +5430,7 @@ The credit-type element indicates the purpose behind a credit. Multiple types of
 
 	<xs:complexType name="defaults">
 		<xs:annotation>
-			<xs:documentation>The defaults type specifies score-wide defaults for scaling, layout, and appearance.</xs:documentation>
+			<xs:documentation>The defaults type specifies score-wide defaults for scaling, layout, and appearance. If any defaults are missing, the choice of what to use is determined by the application.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="scaling" type="scaling" minOccurs="0"/>

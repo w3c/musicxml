@@ -1041,14 +1041,13 @@
 	should be used instead. If both are present, the
 	staff-layout values take priority.
 
-	Layout elements in a print statement only apply to the
-	current page, system, staff, or measure. Music that
-	follows continues to take the default values from the
-	layout included in the defaults element.
+	Layout entity elements in a print statement only apply
+	to the current page, system, or staff. Music that follows
+	continues to take the default values from the layout
+	determined by the defaults element.
 -->
-<!ELEMENT print (page-layout?, system-layout?, staff-layout*,
-    measure-layout?, measure-numbering?, part-name-display?, 
-    part-abbreviation-display?)>
+<!ELEMENT print (%layout;, measure-layout?, measure-numbering?,
+    part-name-display?, part-abbreviation-display?)>
 <!ATTLIST print
     staff-spacing %tenths; #IMPLIED
     new-system %yes-no; #IMPLIED
