@@ -33,11 +33,12 @@
 <!-- Entities -->
 
 <!--
-	The layout entity specifies the sequence of page, system,
-	and staff layout elements that is common to both the
-	defaults and print elementss.
+	The common-layout entity specifies the sequence of page,
+	system, and staff layout elements that is common to both
+	the defaults and print elements.
 -->
-<!ENTITY % layout "(page-layout?, system-layout?, staff-layout*)">
+<!ENTITY % common-layout 
+ 	"(page-layout?, system-layout?, staff-layout*)">
 
 <!-- Elements -->
 

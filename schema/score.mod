@@ -45,7 +45,7 @@
 	numbers and names. If any defaults are missing, the
 	choice of what to use is determined by the application.
 -->
-<!ELEMENT defaults (scaling?, %layout;, appearance?, 
+<!ELEMENT defaults (scaling?, %common-layout;, appearance?, 
 	music-font?, word-font?, lyric-font*, lyric-language*)>
 
 <!ELEMENT music-font EMPTY>
