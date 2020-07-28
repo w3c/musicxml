@@ -42,10 +42,10 @@
 	used when lyrics are provided in multiple languages.
 	If the number and name attributes are omitted, the 
 	lyric-font and lyric-language values apply to all 
-	numbers and names.
+	numbers and names. If any defaults are missing, the
+	choice of what to use is determined by the application.
 -->
-<!ELEMENT defaults (scaling?, page-layout?,
-	system-layout?, staff-layout*, appearance?, 
+<!ELEMENT defaults (scaling?, %common-layout;, appearance?, 
 	music-font?, word-font?, lyric-font*, lyric-language*)>
 
 <!ELEMENT music-font EMPTY>

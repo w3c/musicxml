@@ -30,6 +30,16 @@
 	not the local tenths as adjusted by the staff-size element.
 -->
 
+<!-- Entities -->
+
+<!--
+	The common-layout entity specifies the sequence of page,
+	system, and staff layout elements that is common to both
+	the defaults and print elements.
+-->
+<!ENTITY % common-layout 
+ 	"(page-layout?, system-layout?, staff-layout*)">
+
 <!-- Elements -->
 
 <!--
@@ -63,6 +73,17 @@
 	page number values. The type is not needed when used as
 	part of a print element. If omitted when used in the
 	defaults element, "both" is the default.
+
+	If no page-layout element is present in the defaults
+	element, default page layout values are chosen by the
+	application.
+	
+	When used in the print element, the page-layout element
+	affects the appearance of the current page only. All
+	other pages use the default values as determined by the
+	defaults element. If any child elements are missing from
+	the page-layout element in a print element, the values 
+	determined by the defaults element are used there as well.
 -->
 <!ELEMENT page-layout ((page-height, page-width)?, 
 	(page-margins, page-margins?)?)>
@@ -97,14 +118,18 @@
 	data is more reliable than the sum of the measure widths,
 	and adjust the measure widths accordingly.
 
-	When used in the layout element, the system-layout element
+	When used in the defaults element, the system-layout element
 	defines a default appearance for all systems in the score.
-	When used in the print element, the system layout element
+	If no system-layout element is present in the defaults
+	element, default system layout values are chosen by the
+	application.
+	
+	When used in the print element, the system-layout element
 	affects the appearance of the current system only. All
-	other systems use the default values provided in the
+	other systems use the default values as determined by the
 	defaults element. If any child elements are missing from
 	the system-layout element in a print element, the values 
-	from the defaults element are used there as well.
+	determined by the defaults element are used there as well.
 -->
 <!ELEMENT system-layout
 	(system-margins?, system-distance?, 
@@ -146,8 +171,11 @@
 	of the staff specified by the number attribute. The
 	optional number attribute refers to staff numbers within
 	the part, from top to bottom on the system. A value of 1
-	is assumed if not present. When used in the defaults
-	element, the values apply to all parts. This value is
+	is assumed if not present. 
+	
+	When used in the defaults element, the values apply to all
+	systems in all parts. When used in the print element, the
+	values apply to the current system only. This value is
 	ignored for the first staff in a system.
 -->
 <!ELEMENT staff-layout (staff-distance?)>
@@ -158,10 +186,11 @@
 
 <!--
 	Measure layout includes the horizontal distance from the
-	previous measure. This value is only used for systems
-	where there is horizontal whitespace in the middle of a
-	system, as in systems with codas. To specify the measure
-	width, use the width attribute of the measure element.
+	previous measure. It applies to the current measure only.
+	This value is only used for systems where there is 
+	horizontal whitespace in the middle of a system, as in
+	systems with codas. To specify the measure width,
+	use the width attribute of the measure element.
 -->
 <!ELEMENT measure-layout (measure-distance?)>
 <!ELEMENT measure-distance %layout-tenths;>
