@@ -222,7 +222,7 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 
 	<xs:simpleType name="midi-128">
 		<xs:annotation>
-			<xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 128.</xs:documentation>
+			<xs:documentation>The midi-128 type is used to express MIDI 1.0 values that range from 1 to 128.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:positiveInteger">
 			<xs:minInclusive value="1"/>
@@ -232,7 +232,7 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 
 	<xs:simpleType name="midi-16384">
 		<xs:annotation>
-			<xs:documentation>The midi-16 type is used to express MIDI 1.0 values that range from 1 to 16,384.</xs:documentation>
+			<xs:documentation>The midi-16384 type is used to express MIDI 1.0 values that range from 1 to 16,384.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:positiveInteger">
 			<xs:minInclusive value="1"/>
