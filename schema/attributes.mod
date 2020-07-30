@@ -492,8 +492,12 @@
 	The text of the element indicates the number of measures
 	to be repeated in a single pattern. The slashes attribute
 	specifies the number of slashes to use in the repeat sign.
-	It is 1 if not specified. Both the start and the stop of
-	the measure-repeat must be specified.
+	It is 1 if not specified. 
+	
+	The stop attribute indicates the first measure where the 
+	repeats are no longer displayed. Both the start and the
+	stop of the measure-repeat should be specified unless the
+	repeats are displayed through the end of the part.
 -->
 <!ELEMENT measure-repeat (#PCDATA)>
 <!ATTLIST measure-repeat
@@ -503,13 +507,18 @@
 
 <!--
 	The beat-repeat element is used to indicate that a single
-	beat (but possibly many notes) is repeated. Both the start
-	and stop of the beat being repeated should be specified.
-	The slashes attribute specifies the number of slashes to
-	use in the symbol. The use-dots attribute indicates whether
-	or not to use dots as well (for instance, with mixed rhythm
-	patterns). By default, the value for slashes is 1 and the
-	value for use-dots is no.
+	beat (but possibly many notes) is repeated. The slashes
+	attribute specifies the number of slashes to use in the 
+	symbol. The use-dots attribute indicates whether or not to
+	use dots as well (for instance, with mixed rhythm patterns).
+	By default, the value for slashes is 1 and the value for
+	use-dots is no.
+	
+	The stop attribute indicates the first beat where the
+	repeats are no longer displayed. Both the start and stop
+	of the beat being repeated should be specified unless the
+	repeats are displayed through the end of the part.
+	
 -->
 <!ELEMENT beat-repeat ((slash-type, slash-dot*)?, except-voice*)>
 <!ATTLIST beat-repeat
