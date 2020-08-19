@@ -291,46 +291,18 @@
 	An initial midi-instrument assignment can also
 	be made here.
 
-	The instrument-sound and virtual-instrument elements
-	are new as of Version 3.0. The instrument-sound element
-	describes the default timbre of the score-instrument. This
-	description is independent of a particular virtual or
-	MIDI instrument specification and allows playback to be
-	shared more easily between applications and libraries.
-	The virtual-instrument element defines a specific virtual
-	instrument used for an instrument sound. The
-	virtual-library element indicates the virtual instrument
-	library name, and the virtual-name element indicates the
-	library-specific name for the virtual instrument.
-
-	The solo and ensemble elements are new as of Version
-	2.0. The solo element is present if performance is
-	intended by a solo instrument. The ensemble element
-	is present if performance is intended by an ensemble
-	such as an orchestral section. The text of the 
-	ensemble element contains the size of the section,
-	or is empty if the ensemble size is not specified.
-	
-	The midi-instrument element is defined in the common.mod
-	file, as it can be used within both the score-part and
-	sound elements.
+	The virtual-instrument-data entity is defined in the 
+	common.mod file, as it can be used within both the 
+	score-part and instrument-change elements.
 -->
 <!ELEMENT score-instrument
-	(instrument-name, instrument-abbreviation?,
-	 instrument-sound?, (solo | ensemble)?,
-	 virtual-instrument?)>
+	(instrument-name, instrument-abbreviation?, 
+	%virtual-instrument-data;)>
 <!ATTLIST score-instrument
     id ID #REQUIRED
 >
 <!ELEMENT instrument-name (#PCDATA)>
 <!ELEMENT instrument-abbreviation (#PCDATA)>
-<!ELEMENT instrument-sound (#PCDATA)>
-<!ELEMENT solo EMPTY>
-<!ELEMENT ensemble (#PCDATA)>
-<!ELEMENT virtual-instrument
-	(virtual-library?, virtual-name?)>
-<!ELEMENT virtual-library (#PCDATA)>
-<!ELEMENT virtual-name (#PCDATA)>
 
 <!--
 	The group element allows the use of different versions of

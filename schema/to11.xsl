@@ -209,7 +209,7 @@
     Convert score version attribute to 1.1
   -->
   <xsl:template 
-    match="score-partwise/@version | score-timewise/@version">
+    match="score-partwise/@version">
     <xsl:attribute name="version">1.1</xsl:attribute>
   </xsl:template>
 

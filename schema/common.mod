@@ -746,6 +746,15 @@
 <!ENTITY % editorial "(footnote?, level?)">
 <!ENTITY % editorial-voice "(footnote?, level?, voice?)">
 
+<!--
+    Virtual instrument data can be part of either the 
+    score-instrument element at the start of a part,
+    or an instrument-change element within a part.
+-->
+<!ENTITY % virtual-instrument-data 
+    "(instrument-sound?, (solo | ensemble)?, 
+     virtual-instrument?)">
+
 <!-- Elements -->
 
 <!--
@@ -1005,6 +1014,36 @@
 <!ATTLIST part-abbreviation-display
     %print-object;
 >
+
+<!--
+	The instrument-sound and virtual-instrument elements
+	were added in Version 3.0. The instrument-sound element
+	describes the default timbre of the score-instrument. This
+	description is independent of a particular virtual or
+	MIDI instrument specification and allows playback to be
+	shared more easily between applications and libraries.
+	
+	The virtual-instrument element defines a specific virtual
+	instrument used for an instrument sound. The
+	virtual-library element indicates the virtual instrument
+	library name, and the virtual-name element indicates the
+	library-specific name for the virtual instrument.
+
+	The solo and ensemble elements were added in Version
+	2.0. The solo element is present if performance is
+	intended by a solo instrument. The ensemble element
+	is present if performance is intended by an ensemble
+	such as an orchestral section. The text of the 
+	ensemble element contains the size of the section,
+	or is empty if the ensemble size is not specified.
+-->
+<!ELEMENT instrument-sound (#PCDATA)>
+<!ELEMENT solo EMPTY>
+<!ELEMENT ensemble (#PCDATA)>
+<!ELEMENT virtual-instrument
+	(virtual-library?, virtual-name?)>
+<!ELEMENT virtual-library (#PCDATA)>
+<!ELEMENT virtual-name (#PCDATA)>
 
 <!--
 	The midi-device content corresponds to the DeviceName

@@ -152,7 +152,7 @@
            part-name/@* | part-abbreviation/@* |
            group-name/@* | group-abbreviation/@* |
            group-symbol/@* | group-barline/@* |
-           score-partwise/@* | score-timewise/@*"/>
+           score-partwise/@*"/>
 
   <!--
     Do not copy text for glissando or slide elements.
