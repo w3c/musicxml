@@ -3454,6 +3454,14 @@ The harmony object may be used for analysis or for chord symbols. The print-obje
 		<xs:attributeGroup ref="image-attributes"/>
 		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
+	
+	<xs:complexType name="instrument-change">
+		<xs:annotation>
+			<xs:documentation>The instrument-change element type represents a change to the virtual instrument sound for a given score-instrument. The id attribute refers to the score-instrument affected by the change. All members of the instrument-change type can also be initially specified within the score-instrument element.</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="virtual-instrument-data"/>
+		<xs:attribute name="id" type="xs:IDREF" use="required"/>
+	</xs:complexType>
 
 	<xs:complexType name="inversion">
 		<xs:annotation>
@@ -3816,12 +3824,13 @@ The pan and elevation attributes are deprecated in Version 2.0. The pan and elev
 
 The damper-pedal, soft-pedal, and sostenuto-pedal attributes effect playback of the three common piano pedals and their MIDI controller equivalents. The yes value indicates the pedal is depressed; no indicates the pedal is released. A numeric value from 0 to 100 may also be used for half pedaling. This value is the percentage that the pedal is depressed. A value of 0 is equivalent to no, and a value of 100 is equivalent to yes.
 
-MIDI devices, MIDI instruments, and playback techniques are changed using the midi-device, midi-instrument, and play elements. When there are multiple instances of these elements, they should be grouped together by instrument using the id attribute values.
+Instrument changes, MIDI devices, MIDI instruments, and playback techniques are changed using the instrument-change, midi-device, midi-instrument, and play elements. When there are multiple instances of these elements, they should be grouped together by instrument using the id attribute values.
 
 The offset element is used to indicate that the sound takes place offset from the current score position. If the sound element is a child of a direction element, the sound offset element overrides the direction offset element if both elements are present. Note that the offset reflects the intended musical position for the change in sound. It should not be used to compensate for latency issues in particular hardware configurations.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="instrument-change" type="instrument-change" minOccurs="0"/>
 				<xs:element name="midi-device" type="midi-device" minOccurs="0"/>
 				<xs:element name="midi-instrument" type="midi-instrument" minOccurs="0"/>
 				<xs:element name="play" type="play" minOccurs="0"/>
@@ -5589,25 +5598,8 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 					<xs:documentation>The optional instrument-abbreviation element is typically used within a software application, rather than appearing on the printed page of a score.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="instrument-sound" type="xs:string" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>The instrument-sound element describes the default timbre of the score-instrument. This description is independent of a particular virtual or MIDI instrument specification and allows playback to be shared more easily between applications and libraries.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:choice minOccurs="0">
-				<xs:element name="solo" type="empty">
-					<xs:annotation>
-						<xs:documentation>The solo element was added in Version 2.0. It is present if performance is intended by a solo instrument.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element name="ensemble" type="positive-integer-or-empty">
-					<xs:annotation>
-						<xs:documentation>The ensemble element was added in Version 2.0. It is present if performance is intended by an ensemble such as an orchestral section. The text of the ensemble element contains the size of the section, or is empty if the ensemble size is not specified.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-			</xs:choice>
-			<xs:element name="virtual-instrument" type="virtual-instrument" minOccurs="0"/>
-		</xs:sequence>
+			<xs:group ref="virtual-instrument-data"/>
+			</xs:sequence>
 		<xs:attribute name="id" type="xs:ID" use="required"/>
 	</xs:complexType>
 
@@ -5760,6 +5752,32 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 		</xs:sequence>
 	</xs:group>
 
+	<xs:group name="virtual-instrument-data">
+		<xs:annotation>
+			<xs:documentation>Virtual instrument data can be part of either the score-instrument element at the start of a part, or an instrument-change element within a part.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="instrument-sound" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The instrument-sound element was added in Version 3.0. It describes the default timbre of the score-instrument. This description is independent of a particular virtual or MIDI instrument specification and allows playback to be shared more easily between applications and libraries.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice minOccurs="0">
+				<xs:element name="solo" type="empty">
+					<xs:annotation>
+						<xs:documentation>The solo element was added in Version 2.0. It is present if performance is intended by a solo instrument.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ensemble" type="positive-integer-or-empty">
+					<xs:annotation>
+						<xs:documentation>The ensemble element was added in Version 2.0. It is present if performance is intended by an ensemble such as an orchestral section. The text of the ensemble element contains the size of the section, or is empty if the ensemble size is not specified.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="virtual-instrument" type="virtual-instrument" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	
 	<xs:group name="voice">
 		<xs:annotation>
 			<xs:documentation>The voice is used to distinguish between multiple voices (what MuseData calls tracks) in individual parts. It is defined within a group due to its multiple uses within the MusicXML schema.</xs:documentation>

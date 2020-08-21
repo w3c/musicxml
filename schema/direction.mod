@@ -1139,11 +1139,12 @@
 	percentage that the pedal is depressed. A value of 0 is
 	equivalent to no, and a value of 100 is equivalent to yes.
 	
-	MIDI devices, MIDI instruments, and playback techniques are
-	changed using the midi-device, midi-instrument, and play 
-	elements defined in the common.mod file. When there are
-	multiple instances of these elements, they should be grouped
-	together by instrument using the id attribute values.
+	Instrument changes, MIDI devices, MIDI instruments, and
+	playback techniques are changed using the instrument-change
+	element and elements defined in the common.mod file. When
+	there are multiple instances of these elements, they should
+	be grouped together by instrument using the id attribute
+	values.
 
 	The offset element is used to indicate that the sound takes
 	place offset from the current score position. If the sound
@@ -1154,8 +1155,8 @@
 	should not be used to compensate for latency issues in 
 	particular hardware configurations.
 -->
-<!ELEMENT sound ((midi-device?, midi-instrument?, play?)*,
-	offset?)>
+<!ELEMENT sound ((instrument-change?, midi-device?, 
+    midi-instrument?, play?)*, offset?)>
 <!ATTLIST sound
     tempo CDATA #IMPLIED
     dynamics CDATA #IMPLIED
@@ -1176,3 +1177,18 @@
     sostenuto-pedal %yes-no-number; #IMPLIED
     %optional-unique-id;
 >
+
+<!--
+	The instrument-change element changes the virtual instrument
+	sound for a given score-instrument. The id attribute refers
+	to the score-instrument affected by the change. The
+    virtual-instrument-data entity is defined in the common.mod
+    file. All members of the instrument-change element can also
+    be initially specified within the score-instrument element.
+-->
+<!ELEMENT instrument-change %virtual-instrument-data;>
+<!ATTLIST instrument-change
+    id IDREF #REQUIRED
+>
+
+

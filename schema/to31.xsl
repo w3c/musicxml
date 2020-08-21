@@ -59,13 +59,17 @@
 
   <!-- Additions in direction.mod -->
 
+  <!-- Remove new MusicXML 3.1 elements -->
+  <xsl:template
+    match="instrument-change"/>
+  
   <!-- Additions in score.mod -->
 
   <!--
     Convert score version attribute to 3.1
   -->
   <xsl:template
-    match="score-partwise/@version | score-timewise/@version">
+    match="score-partwise/@version">
     <xsl:attribute name="version">3.1</xsl:attribute>
   </xsl:template>
 
