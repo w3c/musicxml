@@ -92,7 +92,7 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 
 	<xs:simpleType name="enclosure-shape">
 		<xs:annotation>
-			<xs:documentation>The enclosure-shape type describes the shape and presence / absence of an enclosure around text or symbols. A bracket enclosure is similar to a rectangle with the bottom line missing, as is common in jazz notation.</xs:documentation>
+			<xs:documentation>The enclosure-shape type describes the shape and presence / absence of an enclosure around text or symbols. A bracket enclosure is similar to a rectangle with the bottom line missing, as is common in jazz notation. An inverted-bracket enclosure is similar to a rectangle with the top line missing.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="rectangle"/>
@@ -100,6 +100,7 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 			<xs:enumeration value="oval"/>
 			<xs:enumeration value="circle"/>
 			<xs:enumeration value="bracket"/>
+			<xs:enumeration value="inverted-bracket"/>
 			<xs:enumeration value="triangle"/>
 			<xs:enumeration value="diamond"/>
 			<xs:enumeration value="pentagon"/>

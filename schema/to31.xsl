@@ -57,6 +57,12 @@
 
   <!-- Additions in common.mod -->
 
+  <!-- 
+    Remove enclosure attributes with inverted-bracket value.
+  -->
+  <xsl:template 
+    match="@enclosure[. = 'inverted-bracket']"/>
+
   <!-- Additions in direction.mod -->
 
   <!-- Remove new MusicXML 3.1 elements -->
