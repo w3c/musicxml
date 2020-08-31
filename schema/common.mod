@@ -161,13 +161,15 @@
 	The enclosure-shape entity describes the shape and 
 	presence / absence of an enclosure around text. A bracket
 	enclosure is similar to a rectangle with the bottom line
-	missing, as is common in jazz notation.
+	missing, as is common in jazz notation. An inverted-bracket
+	enclosure is similar to a rectangle with the top line 
+	missing.
 -->
 <!ENTITY % enclosure-shape 
 	"(rectangle | square | oval | circle | 
-	  bracket | triangle | diamond | pentagon |
-	  hexagon | heptagon | octagon | nonagon |
-	  decagon | none)">
+	  bracket | inverted-bracket | triangle | 
+	  diamond | pentagon | hexagon | heptagon |
+	  octagon | nonagon | decagon | none)">
 
 <!--
 	Slurs, tuplets, and many other features can be

@@ -94,14 +94,14 @@
 			. = 'flat-flat-up' or . = 'arrow-down' or
 			. = 'arrow-up' or . = 'other']"/>
 
-<!--
+  <!--
     Remove tied elements which use the new let-ring
     type for single-ended ties.
   -->
   <xsl:template
     match="tied[@type = 'let-ring']"/>
 
-<!--
+  <!--
     Remove tremolo elements which use the new unmeasured
     type for unmeasured tremolos.
   -->
