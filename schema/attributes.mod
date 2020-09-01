@@ -276,6 +276,10 @@
 	sign indicates that the music that follows should be in
 	tablature notation. Unlike TAB, a jianpu sign does not
 	correspond to a visual clef notation.
+	
+	The none sign is deprecated as of MusicXML 4.0. Use the clef
+	element's print-object attribute instead. When the none sign
+	is used, notes should be displayed as if in treble clef.
 
 	Sometimes clefs are added to the staff in non-standard
 	line positions, either to indicate cue passages, or when
