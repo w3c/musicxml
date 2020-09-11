@@ -390,10 +390,10 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 
 	<xs:simpleType name="smufl-accidental-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-accidental-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) accidental character. The value is a SMuFL canonical glyph name that starts with acc.</xs:documentation>
+			<xs:documentation>The smufl-accidental-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) accidental character. The value is a SMuFL canonical glyph name that starts with one of the strings used at the start of glyph names for SMuFL accidentals.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="smufl-glyph-name">
-			<xs:pattern value="acc\c+"/>
+			<xs:pattern value="(acc|medRenFla|medRenNatura|medRenShar|kievanAccidental)(\c+)"/>
 		</xs:restriction>
 	</xs:simpleType>
 
