@@ -51,6 +51,12 @@
 
   <!-- Additions in note.mod -->
 
+  <!-- 
+    Remove accidental SMuFL attributes with new values.
+  -->
+  <xsl:template 
+    match="accidental/@smufl[not(starts-with(., 'acc'))]"/>
+
   <!-- Additions in attributes.mod -->
 
   <!-- Additions in barline.mod -->
