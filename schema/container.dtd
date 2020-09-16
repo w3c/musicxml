@@ -146,6 +146,12 @@
 	must be described in the first rootfile element. Additional
 	rootfile elements can describe alternate versions such as
 	PDF and audio files.
+	
+	When a MusicXML file contains both a score file and
+	separate files for individual parts, the score file is
+	the one that is referenced in the first rootfile element.
+	The part files can be linked from within the score file
+	and need not be listed here.
 -->
 <!ELEMENT rootfiles (rootfile+)>
 

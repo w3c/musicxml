@@ -77,6 +77,10 @@
   
   <!-- Additions in score.mod -->
 
+  <!-- Remove new MusicXML 3.1 elements -->
+  <xsl:template
+    match="part-link"/>
+  
   <!--
     Convert score version attribute to 3.1
   -->
