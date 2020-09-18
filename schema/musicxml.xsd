@@ -2207,7 +2207,7 @@ The staff-spacing attribute specifies spacing between multiple staves in tenths 
 
 	<xs:attributeGroup name="link-attributes">
 		<xs:annotation>
-			<xs:documentation>The link-attributes group includes all the simple XLink attributes supported in the MusicXML format.</xs:documentation>
+			<xs:documentation>The link-attributes group includes all the simple XLink attributes supported in the MusicXML format. It is also used to connect a MusicXML score with MusicXML parts or a MusicXML opus.</xs:documentation>
 		</xs:annotation>
 		<!--<xs:attribute ref="xmnls:xlink" fixed="http://www.w3.org/1999/xlink"/>-->
 		<xs:attribute ref="xlink:href" use="required"/>
@@ -4161,7 +4161,7 @@ When used in the print element, the system-layout element affects the appearance
 
 	<xs:complexType name="link">
 		<xs:annotation>
-			<xs:documentation>The link type serves as an outgoing simple XLink. It is also used to connect a MusicXML score with a MusicXML opus. If a relative link is used within a document that is part of a compressed MusicXML file, the link is relative to the  root folder of the zip file.</xs:documentation>
+			<xs:documentation>The link type serves as an outgoing simple XLink. If a relative link is used within a document that is part of a compressed MusicXML file, the link is relative to the root folder of the zip file.</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="link-attributes"/>
 		<xs:attribute name="name" type="xs:token"/>
@@ -5559,6 +5559,17 @@ A part-group element is not needed for a single multi-staff part. By default, mu
 		<xs:attribute name="number" type="xs:token" default="1"/>
 	</xs:complexType>
 
+	<xs:complexType name="part-link">
+		<xs:annotation>
+			<xs:documentation>The part-link type allows MusicXML data for both score and parts to be contained within a single compressed MusicXML file. It links a score-part from a score file to a MusicXML files that contain parts data. In the case of a single compressed MusicXML file, the link href values are paths that are relative to the root folder of the zip file.
+				
+The score-part containing the part-link should include a group element with a score value. The MusicXML file that is the target of the part-link should have score-part elements that include a group element with a parts value.
+				
+Multiple part-link elements can link a condensed part within a score file to multiple MusicXML parts files. For example, a "Clarinet 1 and 2" part in a score file could link to separate "Clarinet 1" and "Clarinet 2" part files.</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="link-attributes"/>
+	</xs:complexType>
+	
 	<xs:complexType name="part-list">
 		<xs:annotation>
 			<xs:documentation>The part-list identifies the different musical parts in this movement. Each part has an ID that is used later within the musical data. Since parts may be encoded separately and combined later, identification elements are present at both the score and score-part levels. There must be at least one score-part, combined as desired with part-group elements that indicate braces and brackets. Parts are ordered from top to bottom in a score based on the order in which they appear in the part-list.</xs:documentation>
@@ -5612,6 +5623,7 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="identification" type="identification" minOccurs="0"/>
+			<xs:element name="part-link" type="part-link" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="part-name" type="part-name"/>
 			<xs:element name="part-name-display" type="name-display" minOccurs="0"/>
 			<xs:element name="part-abbreviation" type="part-name" minOccurs="0"/>

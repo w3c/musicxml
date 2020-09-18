@@ -166,13 +166,34 @@
 <!ELEMENT part-list (part-group*, score-part,
 	(part-group | score-part)*)>
 <!ELEMENT score-part (identification?,
-	part-name, part-name-display?,
+	part-link*, part-name, part-name-display?,
 	part-abbreviation?, part-abbreviation-display?, 
 	group*, score-instrument*, 
 	(midi-device?, midi-instrument?)*)>
 <!ATTLIST score-part
     id ID #REQUIRED
 >
+
+<!--
+	The part-link element allows MusicXML data for both score
+	and parts to be contained within a single compressed
+	MusicXML file. It links a score-part from a score file to
+	a MusicXML files that contain parts data. In the case of a
+	single compressed MusicXML file, the link href values are
+	paths that are relative to the root folder of the zip file.
+	
+	The score-part containing the part-link should include a
+	group element with a score value. The MusicXML file that is
+	the target of the part-link should have score-part elements
+	that include a group element with a parts value.
+	
+	Multiple part-link elements can link a condensed part within
+	a score file to multiple MusicXML parts files. For example,
+	a "Clarinet 1 and 2" part in a score file could link to
+	separate "Clarinet 1" and "Clarinet 2" part files.
+-->
+<!ELEMENT part-link EMPTY>
+<!ATTLIST part-link %link-attributes;>
 
 <!--
 	The part-name indicates the full name of the musical part.

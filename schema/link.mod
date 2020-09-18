@@ -19,11 +19,11 @@
 	This DTD module describes the entity and elements used for
 	simple XLink support. The link element serves as an outgoing
 	XLink. The bookmark element serves as a well-defined target
-	for an incoming XLink. The entity for link-attributes is
-	also used to connect a MusicXML score with a MusicXML opus.
-	If a relative link is used within a document that is part of
-	a compressed MusicXML file, the link is relative to the 
-	root folder of the zip file.
+	for an incoming XLink. The link-attributes entity is also
+	used to connect a MusicXML score with MusicXML parts or a 
+	MusicXML opus. If a relative link is used within a document
+	that is part of a compressed MusicXML file, the link is 
+	relative to the root folder of the zip file.
 -->
 
 <!-- Entities -->
