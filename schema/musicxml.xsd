@@ -2731,6 +2731,12 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 				</xs:annotation>
 			</xs:element>
 
+			<xs:element name="for-part" type="for-part" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The for-part element is used in a concert score to indicate the transposition for a transposed part created from that score. It is only used in score files that contain a concert-score element in the defaults. This allows concert scores with transposed parts to be represented in a single uncompressed MusicXML file.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
 		</xs:sequence>
 	</xs:complexType>
 
@@ -2769,23 +2775,7 @@ Sometimes clefs at the start of a measure need to appear after the barline rathe
 
 Clefs appear at the start of each system unless the print-object attribute has been set to "no" or the additional attribute has been set to "yes".</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="sign" type="clef-sign">
-				<xs:annotation>
-					<xs:documentation>The sign element represents the clef symbol.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="line" type="staff-line" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Line numbers are counted from the bottom of the staff. Standard values are 2 for the G sign (treble clef), 4 for the F sign (bass clef), 3 for the C sign (alto clef) and 5 for TAB (on a 6-line staff).</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="clef-octave-change" type="xs:integer" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>The clef-octave-change element is used for transposing clefs. A treble clef for tenors would have a value of -1.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
+		<xs:group ref="clef"/>
 		<xs:attribute name="number" type="staff-number"/>
 		<xs:attribute name="additional" type="yes-no"/>
 		<xs:attribute name="size" type="symbol-size"/>
@@ -2795,6 +2785,26 @@ Clefs appear at the start of each system unless the print-object attribute has b
 		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
+	<xs:complexType name="for-part">
+		<xs:annotation>
+			<xs:documentation>The for-part element is used in a concert score to indicate the transposition for a transposed part created from that score. It is only used in score files that contain a concert-score element in the defaults. This allows concert scores with transposed parts to be represented in a single uncompressed MusicXML file.
+
+The attributes and child elements for the part-clef and part-transpose elements have the same meaning as for the clef and transpose elements. However that meaning applies to a transposed part created from the existing score file.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="part-clef" type="clef" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The part-clef element is used for transpositions that also include a change of clef, as for instruments such as bass clarinet.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="part-transpose" type="transpose" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The chromatic element in a part-transpose element should have a non-zero value, since octave transpositions can be represented in concert scores using the transpose element.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>	
+	</xs:complexType>
+	
 	<xs:complexType name="interchangeable">
 		<xs:annotation>
 			<xs:documentation>The interchangeable type is used to represent the second in a pair of interchangeable dual time signatures, such as the 6/8 in 3/4 (6/8). A separate symbol attribute value is available compared to the time element's symbol attribute, which applies to the first of the dual time signatures.</xs:documentation>
@@ -2894,6 +2904,15 @@ The multiple-rest and measure-repeat symbols indicate the number of measures cov
 				<xs:attribute name="use-symbols" type="yes-no"/>
 			</xs:extension>
 		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="part-clef">
+		<xs:annotation>
+			<xs:documentation>Clefs are represented by a combination of sign, line, and clef-octave-change elements. The optional number attribute refers to staff numbers within the part. A value of 1 is assumed if not present.</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="clef"/>
+		<xs:attribute name="number" type="staff-number"/>
+		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="part-symbol">
@@ -5446,10 +5465,17 @@ The credit-type element indicates the purpose behind a credit. Multiple types of
 
 	<xs:complexType name="defaults">
 		<xs:annotation>
-			<xs:documentation>The defaults type specifies score-wide defaults for scaling, layout, and appearance. If any defaults are missing, the choice of what to use is determined by the application.</xs:documentation>
+			<xs:documentation>The defaults type specifies score-wide defaults for scaling; whether or not the file is a concert score; layout; and default values for the music font, word font, lyric font, and lyric language. Except for the concert-score element, if any defaults are missing, the choice of what to use is determined by the application.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="scaling" type="scaling" minOccurs="0"/>
+			<xs:element name="concert-score" type="empty" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The presence of a concert score element indicates that a score is displayed in concert pitch. It is used for scores that contain parts for transposing instruments.
+
+A file with a concert-score element may not contain any transpose elements that have non-zero values for either the diatonic or chromatic elements. Concert scores may include octave transpositions, so transpose elements with a double element or a non-zero octave-change element value are permitted.</xs:documentation>
+				</xs:annotation>				
+			</xs:element>
 			<xs:group ref="layout"/>
 			<xs:element name="appearance" type="appearance" minOccurs="0"/>
 			<xs:element name="music-font" type="empty-font" minOccurs="0"/>
@@ -5804,6 +5830,29 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 
 	<!-- Element groups derived from attributes.mod elements -->
 
+	<xs:group name="clef">
+		<xs:annotation>
+			<xs:documentation>Clefs are represented by a combination of sign, line, and clef-octave-change elements.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sign" type="clef-sign">
+				<xs:annotation>
+					<xs:documentation>The sign element represents the clef symbol.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="line" type="staff-line" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Line numbers are counted from the bottom of the staff. Standard values are 2 for the G sign (treble clef), 4 for the F sign (bass clef), 3 for the C sign (alto clef) and 5 for TAB (on a 6-line staff).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="clef-octave-change" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The clef-octave-change element is used for transposing clefs. A treble clef for tenors would have a value of -1.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	
 	<xs:group name="non-traditional-key">
 		<xs:annotation>
 			<xs:documentation>The non-traditional-key group represents a single alteration within a non-traditional key signature. A sequence of these groups makes up a non-traditional key signature</xs:documentation>

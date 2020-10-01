@@ -59,6 +59,10 @@
 
   <!-- Additions in attributes.mod -->
 
+  <!-- Remove new MusicXML 3.1 elements -->
+  <xsl:template
+    match="for-part"/>
+  
   <!-- Additions in barline.mod -->
 
   <!-- Additions in common.mod -->
@@ -79,7 +83,7 @@
 
   <!-- Remove new MusicXML 3.1 elements -->
   <xsl:template
-    match="part-link"/>
+    match="concert-score | part-link"/>
   
   <!--
     Convert score version attribute to 3.1
