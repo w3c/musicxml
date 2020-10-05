@@ -59,7 +59,7 @@
 
   <!-- Additions in attributes.mod -->
 
-  <!-- Remove new MusicXML 3.1 elements -->
+  <!-- Remove new MusicXML 4.0 elements -->
   <xsl:template
     match="for-part"/>
   
@@ -75,13 +75,13 @@
 
   <!-- Additions in direction.mod -->
 
-  <!-- Remove new MusicXML 3.1 elements -->
+  <!-- Remove new MusicXML 4.0 elements -->
   <xsl:template
     match="instrument-change"/>
   
   <!-- Additions in score.mod -->
 
-  <!-- Remove new MusicXML 3.1 elements -->
+  <!-- Remove new MusicXML 4.0 elements -->
   <xsl:template
     match="concert-score | part-link"/>
   
