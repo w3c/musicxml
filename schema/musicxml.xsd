@@ -2705,12 +2705,20 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 				</xs:annotation>
 			</xs:element>
 
-			<xs:element name="transpose" type="transpose" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>If the part is being encoded for a transposing instrument in written vs. concert pitch, the transposition must be encoded in the transpose element using the transpose type.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-
+			<xs:choice>
+				<xs:element name="transpose" type="transpose" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>If the part is being encoded for a transposing instrument in written vs. concert pitch, the transposition must be encoded in the transpose element using the transpose type.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+	
+				<xs:element name="for-part" type="for-part" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>The for-part element is used in a concert score to indicate the transposition for a transposed part created from that score. It is only used in score files that contain a concert-score element in the defaults. This allows concert scores with transposed parts to be represented in a single uncompressed MusicXML file.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			
 			<xs:element name="directive" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Directives are like directions, but can be grouped together with attributes for convenience. This is typically used for tempo markings at the beginning of a piece of music. This element has been deprecated in Version 2.0 in favor of the directive attribute for direction elements. Language names come from ISO 639, with optional country subcodes from ISO 3166.</xs:documentation>
@@ -2728,12 +2736,6 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 			<xs:element name="measure-style" type="measure-style" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A measure-style indicates a special way to print partial to multiple measures within a part. This includes multiple rests over several measures, repeats of beats, single, or multiple measures, and use of slash notation.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-
-			<xs:element name="for-part" type="for-part" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>The for-part element is used in a concert score to indicate the transposition for a transposed part created from that score. It is only used in score files that contain a concert-score element in the defaults. This allows concert scores with transposed parts to be represented in a single uncompressed MusicXML file.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 
@@ -2787,19 +2789,19 @@ Clefs appear at the start of each system unless the print-object attribute has b
 
 	<xs:complexType name="for-part">
 		<xs:annotation>
-			<xs:documentation>The for-part element is used in a concert score to indicate the transposition for a transposed part created from that score. It is only used in score files that contain a concert-score element in the defaults. This allows concert scores with transposed parts to be represented in a single uncompressed MusicXML file.
+			<xs:documentation>The for-part type is used in a concert score to indicate the transposition for a transposed part created from that score. It is only used in score files that contain a concert-score element in the defaults. This allows concert scores with transposed parts to be represented in a single uncompressed MusicXML file.
 
-The attributes and child elements for the part-clef and part-transpose elements have the same meaning as for the clef and transpose elements. However that meaning applies to a transposed part created from the existing score file.</xs:documentation>
+The optional number attribute refers to staff numbers, from top to bottom on the system. If absent, the child elements apply to all staves in the created part.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="part-clef" type="clef" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="part-clef" type="part-clef" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The part-clef element is used for transpositions that also include a change of clef, as for instruments such as bass clarinet.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="part-transpose" type="transpose" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="part-transpose" type="part-transpose">
 				<xs:annotation>
-					<xs:documentation>The chromatic element in a part-transpose element should have a non-zero value, since octave transpositions can be represented in concert scores using the transpose element.</xs:documentation>
+					<xs:documentation>The chromatic element in a part-transpose element will usually have a non-zero value, since octave transpositions can be represented in concert scores using the transpose element.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>	
@@ -2908,11 +2910,9 @@ The multiple-rest and measure-repeat symbols indicate the number of measures cov
 
 	<xs:complexType name="part-clef">
 		<xs:annotation>
-			<xs:documentation>Clefs are represented by a combination of sign, line, and clef-octave-change elements. The optional number attribute refers to staff numbers within the part. A value of 1 is assumed if not present.</xs:documentation>
+			<xs:documentation>The child elements of the part-clef type have the same meaning as for the clef type. However that meaning applies to a transposed part created from the existing score file.</xs:documentation>
 		</xs:annotation>
 		<xs:group ref="clef"/>
-		<xs:attribute name="number" type="staff-number"/>
-		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
 	<xs:complexType name="part-symbol">
@@ -2927,6 +2927,13 @@ The multiple-rest and measure-repeat symbols indicate the number of measures cov
 				<xs:attributeGroup ref="color"/>
 			</xs:extension>
 		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="part-transpose">
+		<xs:annotation>
+			<xs:documentation>The child elements of the part-transpose type have the same meaning as for the transpose type. However that meaning applies to a transposed part created from the existing score file.</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="transpose"/>
 	</xs:complexType>
 
 	<xs:complexType name="slash">
@@ -3005,28 +3012,7 @@ The print-object attribute allows a time signature to be specified but not print
 		<xs:annotation>
 			<xs:documentation>The transpose type represents what must be added to a written pitch to get a correct sounding pitch. The optional number attribute refers to staff numbers, from top to bottom on the system. If absent, the transposition applies to all staves in the part. Per-staff transposition is most often used in parts that represent multiple instruments.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="diatonic" type="xs:integer" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>The diatonic element specifies the number of pitch steps needed to go from written to sounding pitch. This allows for correct spelling of enharmonic transpositions.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="chromatic" type="semitones">
-				<xs:annotation>
-					<xs:documentation>The chromatic element represents the number of semitones needed to get from written to sounding pitch. This value does not include octave-change values; the values for both elements need to be added to the written pitch to get the correct sounding pitch.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="octave-change" type="xs:integer" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>The octave-change element indicates how many octaves to add to get from written pitch to sounding pitch.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="double" type="empty" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>If the double element is present, it indicates that the music is doubled one octave down from what is currently written (as is the case for mixed cello / bass parts in orchestral literature).</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
+		<xs:group ref="transpose"/>
 		<xs:attribute name="number" type="staff-number"/>
 		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
@@ -5930,6 +5916,34 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 		</xs:sequence>
 	</xs:group>
 
+	<xs:group name="transpose">
+		<xs:annotation>
+			<xs:documentation>The transpose group represents what must be added to a written pitch to get a correct sounding pitch.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="diatonic" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The diatonic element specifies the number of pitch steps needed to go from written to sounding pitch. This allows for correct spelling of enharmonic transpositions.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="chromatic" type="semitones">
+				<xs:annotation>
+					<xs:documentation>The chromatic element represents the number of semitones needed to get from written to sounding pitch. This value does not include octave-change values; the values for both elements need to be added to the written pitch to get the correct sounding pitch.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="octave-change" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The octave-change element indicates how many octaves to add to get from written pitch to sounding pitch.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="double" type="empty" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If the double element is present, it indicates that the music is doubled one octave down from what is currently written (as is the case for mixed cello / bass parts in orchestral literature).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	
 	<!-- Element groups derived from direction.mod entities and elements -->
 
 	<xs:group name="beat-unit">
