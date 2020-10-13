@@ -66,7 +66,7 @@
 -->
 <!ELEMENT attributes (%editorial;, divisions?, key*, time*,
 	staves?, part-symbol?, instruments?, clef*, staff-details*,
-	transpose*, directive*, measure-style*)>
+	(transpose* | for-part*), directive*, measure-style*)>
 
 <!--	
 	Traditional key signatures are represented by the number
@@ -409,6 +409,43 @@
 <!ELEMENT chromatic (#PCDATA)>
 <!ELEMENT octave-change (#PCDATA)>
 <!ELEMENT double EMPTY>
+
+<!--
+	The for-part element is used in a concert score to indicate
+	the transposition for a transposed part created from that
+	score. It is only used in score files that contain a
+	concert-score element in the defaults. This allows concert
+	scores with transposed parts to be represented in a single
+	uncompressed MusicXML file.
+
+	The child elements for the part-clef and part-transpose
+	elements have the same meaning as for the clef and transpose
+	elements. However that meaning applies to a transposed part
+	created from the existing score file.
+
+	The optional number attribute refers to staff numbers, 
+	from top to bottom on the system. If absent, the child
+	elements apply to all staves in the created part.
+
+	The chromatic element in a part-transpose element will 
+	usually have a non-zero value, since octave transpositions
+	can be represented in concert scores using the transpose
+	element.
+
+	The part-clef element is used for transpositions that also
+	include a change of clef, as for instruments such as
+	bass clarinet.
+-->
+<!ELEMENT for-part (part-clef?, part-transpose)>
+<!ATTLIST for-part
+    number CDATA #IMPLIED
+    %optional-unique-id;
+>
+
+<!ELEMENT part-clef (sign, line?, clef-octave-change?)>
+
+<!ELEMENT part-transpose
+	(diatonic?, chromatic, octave-change?, double?)>
 
 <!--
 	Directives are like directions, but can be grouped together 

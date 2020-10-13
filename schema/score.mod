@@ -34,19 +34,35 @@
 <!ELEMENT movement-title (#PCDATA)>
 
 <!--
-	Collect score-wide defaults. This includes scaling
-	and layout, defined in layout.mod, and default values
-	for the music font, word font, lyric font, and 
-	lyric language. The number and name attributes in
-	lyric-font and lyric-language elements are typically
-	used when lyrics are provided in multiple languages.
-	If the number and name attributes are omitted, the 
-	lyric-font and lyric-language values apply to all 
-	numbers and names. If any defaults are missing, the
-	choice of what to use is determined by the application.
+	Collect score-wide defaults. This includes scaling and
+	layout, defined in layout.mod; whether or not the file
+	is a concert score; and default values for the music font,
+	word font, lyric font, and lyric language. The number and
+	name attributes in lyric-font and lyric-language elements
+	are typically used when lyrics are provided in multiple
+	languages. If the number and name attributes are omitted,
+	the lyric-font and lyric-language values apply to all
+	numbers and names. Except for the concert-score element,
+	if any defaults are missing, the choice of what to use
+	is determined by the application.
 -->
-<!ELEMENT defaults (scaling?, %common-layout;, appearance?, 
-	music-font?, word-font?, lyric-font*, lyric-language*)>
+<!ELEMENT defaults
+	(scaling?, concert-score?, %common-layout;, appearance?, 
+	 music-font?, word-font?, lyric-font*, lyric-language*)>
+
+<!--  
+	The presence of a concert score element indicates that
+	a score is displayed in concert pitch. It is used for
+	scores that contain parts for transposing instruments.
+
+	A file with a concert-score element may not contain any 
+	transpose elements that have non-zero values for either
+	the diatonic or chromatic elements. Concert scores may 
+	include octave transpositions, so transpose elements with
+	a double element or a non-zero octave-change element value
+	are permitted.
+-->
+<!ELEMENT concert-score EMPTY>
 
 <!ELEMENT music-font EMPTY>
 <!ATTLIST music-font
