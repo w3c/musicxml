@@ -4479,6 +4479,7 @@ Figures are ordered from top to bottom. The value of parentheses is "no" if not 
 			<xs:group ref="editorial"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="print-style"/>
+		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="printout"/>
 		<xs:attribute name="parentheses" type="yes-no"/>
 		<xs:attributeGroup ref="optional-unique-id"/>
