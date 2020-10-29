@@ -57,6 +57,12 @@
   <xsl:template 
     match="accidental/@smufl[not(starts-with(., 'acc'))]"/>
 
+  <!-- 
+    Remove placement attribute from figured-bass element.
+  -->
+  <xsl:template 
+    match="figured-bass/@placement"/>
+
   <!-- Additions in attributes.mod -->
 
   <!-- Remove new MusicXML 4.0 elements -->
