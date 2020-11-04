@@ -46,7 +46,7 @@
 	
 	<!DOCTYPE score-partwise PUBLIC
 		"-//Recordare//DTD MusicXML 4.0 Partwise//EN"
-		"http://www.musicxml.org/dtds/partwise.dtd">
+		"https://www.musicxml.org/dtds/partwise.dtd">
 	
 	This DTD is made up of a series of component DTD modules,
 	all of which are included here.

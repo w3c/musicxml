@@ -46,7 +46,7 @@
 	
 	<!DOCTYPE score-timewise PUBLIC
 		"-//Recordare//DTD MusicXML 4.0 Timewise//EN"
-		"http://www.musicxml.org/dtds/timewise.dtd">
+		"https://www.musicxml.org/dtds/timewise.dtd">
 	
 	This DTD is made up of a series of component DTD modules,
 	all of which are included here.

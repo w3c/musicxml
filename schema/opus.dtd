@@ -29,7 +29,7 @@
 	
 	<!DOCTYPE opus PUBLIC
 		"-//Recordare//DTD MusicXML 4.0 Opus//EN"
-		"http://www.musicxml.org/dtds/opus.dtd">
+		"https://www.musicxml.org/dtds/opus.dtd">
 -->
 
 <!-- Component DTD modules -->

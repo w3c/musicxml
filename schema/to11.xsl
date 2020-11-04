@@ -33,7 +33,7 @@
 
   <xsl:output method="xml" indent="yes" encoding="UTF-8"
 	omit-xml-declaration="no" standalone="no"
-	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
+	doctype-system="https://www.musicxml.org/dtds/partwise.dtd"
 	doctype-public="-//Recordare//DTD MusicXML 1.1 Partwise//EN" />
 
   <!--
