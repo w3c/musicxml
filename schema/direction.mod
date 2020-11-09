@@ -1156,7 +1156,7 @@
 	particular hardware configurations.
 -->
 <!ELEMENT sound ((instrument-change?, midi-device?, 
-    midi-instrument?, play?)*, offset?)>
+    midi-instrument?, play?)*, swing?, offset?)>
 <!ATTLIST sound
     tempo CDATA #IMPLIED
     dynamics CDATA #IMPLIED
@@ -1182,13 +1182,52 @@
 	The instrument-change element changes the virtual instrument
 	sound for a given score-instrument. The id attribute refers
 	to the score-instrument affected by the change. The
-    virtual-instrument-data entity is defined in the common.mod
-    file. All members of the instrument-change element can also
-    be initially specified within the score-instrument element.
+	virtual-instrument-data entity is defined in the common.mod
+	file. All members of the instrument-change element can also
+	be initially specified within the score-instrument element.
 -->
 <!ELEMENT instrument-change %virtual-instrument-data;>
 <!ATTLIST instrument-change
     id IDREF #REQUIRED
 >
 
+<!--
+	The swing element specifies whether or not to use swing
+	playback, where consecutive on-beat / off-beat eighth or 
+	16th notes are played with unequal nominal durations. 
+	
+	The straight element specifies that no swing is present,
+	so consecutive notes have equal durations.
+	
+	The first and second elements are positive integers that 
+	specify the ratio between durations of consecutive notes.
+	For example, a first element with a value of 2 and a second
+	element with a value of 1 applied to eighth notes specifies
+	a quarter note / eighth note tuplet playback, where the
+	first note is twice as long as the second note. Ratios
+	should be specified with the smallest integers possible.
+	For example, a ratio of 6 to 4 should be specified as 3 to 2
+	instead.
+	
+	The optional swing-type element specifies the note type, 
+	either eighth or 16th, to which the ratio is applied. The
+	value is eighth if this element is not present.
+	
+	The optional swing-style element is a string describing the
+	style of swing used.
 
+	The swing element has no effect for playback of grace notes,
+	notes where a type element is not present, and notes where
+	the specified duration is different than the nominal value
+	associated with the specified type. If a swung note has
+	attack and release attributes, those values modify the
+	swung playback.
+-->
+<!ELEMENT swing ((straight | (first, second, swing-type?)),
+    swing-style?)>
+
+<!ELEMENT straight EMPTY>
+<!ELEMENT first (#PCDATA)>
+<!ELEMENT second (#PCDATA)>
+<!ELEMENT swing-type (#PCDATA)>
+<!ELEMENT swing-style (#PCDATA)>

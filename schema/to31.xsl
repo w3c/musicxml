@@ -83,7 +83,7 @@
 
   <!-- Remove new MusicXML 4.0 elements -->
   <xsl:template
-    match="instrument-change"/>
+    match="instrument-change | swing"/>
   
   <!-- Additions in score.mod -->
 
