@@ -1606,7 +1606,7 @@ A quarter-rest type specifies the glyph to use when a note has a rest element an
 
 	<xs:simpleType name="note-type-value">
 		<xs:annotation>
-			<xs:documentation>The note-type type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
+			<xs:documentation>The note-type-value type is used for the MusicXML type element and represents the graphic note type, from 1024th (shortest) to maxima (longest).</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="1024th"/>
@@ -2052,6 +2052,16 @@ By default, all these attributes are set to yes. If print-object is set to no, t
 		<xs:attribute name="smufl" type="smufl-glyph-name"/>
 	</xs:attributeGroup>
 
+	<xs:simpleType name="swing-type-value">
+		<xs:annotation>
+			<xs:documentation>The swing-type-value type specifies the note type, either eighth or 16th, to which the ratio defined in the swing element is applied.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="note-type-value">
+			<xs:enumeration value="16th"/>
+			<xs:enumeration value="eighth"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:attributeGroup name="symbol-formatting">
 		<xs:annotation>
 			<xs:documentation>The symbol-formatting attribute group collects the common formatting attributes for musical symbols. Default values may differ across the elements that use this group.</xs:documentation>
@@ -3843,6 +3853,7 @@ The offset element is used to indicate that the sound takes place offset from th
 				<xs:element name="midi-instrument" type="midi-instrument" minOccurs="0"/>
 				<xs:element name="play" type="play" minOccurs="0"/>
 			</xs:sequence>
+			<xs:element name="swing" type="swing" minOccurs="0"/>
 			<xs:element name="offset" type="offset" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="tempo" type="non-negative-decimal"/>
@@ -3896,6 +3907,33 @@ The offset element is used to indicate that the sound takes place offset from th
 		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
+	<xs:complexType name="swing">
+		<xs:annotation>
+			<xs:documentation>The swing element specifies whether or not to use swing playback, where consecutive on-beat / off-beat eighth or 16th notes are played with unequal nominal durations. 
+				
+The straight element specifies that no swing is present, so consecutive notes have equal durations.
+				
+The first and second elements are positive integers that specify the ratio between durations of consecutive notes. For example, a first element with a value of 2 and a second element with a value of 1 applied to eighth notes specifies a quarter note / eighth note tuplet playback, where the first note is twice as long as the second note. Ratios should be specified with the smallest integers possible. For example, a ratio of 6 to 4 should be specified as 3 to 2 instead.
+				
+The optional swing-type element specifies the note type, either eighth or 16th, to which the ratio is applied. The value is eighth if this element is not present.
+				
+The optional swing-style element is a string describing the style of swing used.
+				
+The swing element has no effect for playback of grace notes, notes where a type element is not present, and notes where the specified duration is different than the nominal value associated with the specified type. If a swung note has attack and release attributes, those values modify the swung playback.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="straight" type="empty"/>
+				<xs:sequence>
+					<xs:element name="first" type="xs:positiveInteger"/>
+					<xs:element name="second" type="xs:positiveInteger"/>
+					<xs:element name="swing-type" type="swing-type-value" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="swing-style" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
 	<xs:complexType name="wedge">
 		<xs:annotation>
 			<xs:documentation>The wedge type represents crescendo and diminuendo wedge symbols. The type attribute is crescendo for the start of a wedge that is closed at the left side, and diminuendo for the start of a wedge that is closed on the right side. Spread values are measured in tenths; those at the start of a crescendo wedge or end of a diminuendo wedge are ignored. The niente attribute is yes if a circle appears at the point of the wedge, indicating a crescendo from nothing or diminuendo to nothing. It is no by default, and used only when the type is crescendo, or the type is stop for a wedge that began with a diminuendo type. The line-type is solid by default.</xs:documentation>
@@ -6030,7 +6068,7 @@ A root is a pitch name like C, D, E, where a function is an indication like I, I
 		<xs:sequence>
 			<xs:element name="duration" type="positive-divisions">
 				<xs:annotation>
-					<xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance, swing eighths vs. even eighths, or differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation>
+					<xs:documentation>Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance, differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the note element's attack and release attributes.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
