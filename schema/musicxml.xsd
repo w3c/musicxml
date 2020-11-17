@@ -2603,7 +2603,7 @@ These letter dynamic symbols are separated from crescendo, decrescendo, and wedg
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element name="ipa" type="xs:string">
 					<xs:annotation>
-						<xs:documentation>The ipa element represents International Phonetic Alphabet (IPA) sounds for vocal music. String content is limited to IPA 2005 symbols represented in Unicode 6.0.</xs:documentation>
+						<xs:documentation>The ipa element represents International Phonetic Alphabet (IPA) sounds for vocal music. String content is limited to IPA 2015 symbols represented in Unicode 13.0.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="mute" type="mute"/>

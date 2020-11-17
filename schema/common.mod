@@ -1141,7 +1141,7 @@
 <!-- 
 	The ipa element represents International Phonetic Alphabet
 	(IPA) sounds for vocal music. String content is limited to
-	IPA 2005 symbols represented in Unicode 6.0.
+	IPA 2015 symbols represented in Unicode 13.0.
 -->
 <!ELEMENT ipa (#PCDATA)>
 
