@@ -1492,7 +1492,7 @@ A quarter-rest type specifies the glyph to use when a note has a rest element an
 
 	<xs:simpleType name="bend-shape">
 		<xs:annotation>
-			<xs:documentation>The bend-shape type distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in tablature.</xs:documentation>
+			<xs:documentation>The bend-shape type distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in both tablature and standard notation.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="angled"/>
@@ -4402,7 +4402,7 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 
 	<xs:complexType name="bend">
 		<xs:annotation>
-			<xs:documentation>The bend type is used in guitar notation and tablature. The bend-alter element indicates the number of steps in the bend, similar to the alter element. As with the alter element, numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended. The shape attribute distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in tablature.</xs:documentation>
+			<xs:documentation>The bend type is used in guitar notation and tablature. The bend-alter element indicates the number of steps in the bend, similar to the alter element. As with the alter element, numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended. The shape attribute distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in both tablature and standard notation.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="bend-alter" type="semitones">

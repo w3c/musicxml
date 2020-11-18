@@ -991,7 +991,7 @@
 	to distinguish what is intended. The shape attribute
 	distinguishes between the angled bend symbols commonly
 	used in standard notation and the curved bend symbols
-	commonly used in tablature.
+	commonly used in both tablature and standard notation.
 	
 	A with-bar element indicates that the bend is to be done
 	at the bridge with a whammy or vibrato bar. The content
