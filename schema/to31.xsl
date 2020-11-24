@@ -58,10 +58,10 @@
     match="accidental/@smufl[not(starts-with(., 'acc'))]"/>
 
   <!-- 
-    Remove placement attribute from figured-bass element.
+    Remove new attributes.
   -->
   <xsl:template 
-    match="figured-bass/@placement"/>
+    match="bend/@shape | figured-bass/@placement"/>
 
   <!-- Additions in attributes.mod -->
 

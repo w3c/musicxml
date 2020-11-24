@@ -982,22 +982,27 @@
 >
 
 <!--
-	The bend element is used in guitar and tablature. The
-	bend-alter element indicates the number of steps in the
-	bend, similar to the alter element. As with the alter
+	The bend element is used in guitar notation and tablature.
+	The bend-alter element indicates the number of steps in
+	the bend, similar to the alter element. As with the alter
 	element, numbers like 0.5 can be used to indicate
 	microtones. Negative numbers indicate pre-bends or
 	releases; the pre-bend and release elements are used
-	to distinguish what is intended. A with-bar element
-	indicates that the bend is to be done at the bridge
-	with a whammy or vibrato bar. The content of the
-	element indicates how this should be notated. Content
-	values of "scoop" and "dip" refer to the SMuFL
+	to distinguish what is intended. The shape attribute
+	distinguishes between the angled bend symbols commonly
+	used in standard notation and the curved bend symbols
+	commonly used in both tablature and standard notation.
+	
+	A with-bar element indicates that the bend is to be done
+	at the bridge with a whammy or vibrato bar. The content
+	of the element indicates how this should be notated.
+	Content values of "scoop" and "dip" refer to the SMuFL
 	guitarVibratoBarScoop and guitarVibratoBarDip glyphs.
 -->
 <!ELEMENT bend
 	(bend-alter, (pre-bend | release)?, with-bar?)>
 <!ATTLIST bend
+    shape (angled | curved) #IMPLIED
     %print-style;
     %bend-sound;
 >
