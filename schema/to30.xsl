@@ -59,24 +59,24 @@
   <xsl:template 
     match="note/cue[preceding-sibling::grace]"/>
 
-  <!-- Remove new MusicXML 3.1 elements -->
+  <!-- Remove new elements. -->
   <xsl:template
     match="arrowhead | brass-bend | flip | golpe | 
-			half-muted | harmon-mute | haydn |
-			inverted-vertical-turn | open | 
-			smear | soft-accent"/>
+      half-muted | harmon-mute | haydn |
+      inverted-vertical-turn | open | 
+      smear | soft-accent"/>
 
-  <!-- Remove new id attributes -->
+  <!-- Remove new id attributes. -->
   <xsl:template 
     match="note/@id | beam/@id | 
-			notations/@id | tied/@id |
-			slur/@id | tuplet/@id | 
-			glissando/@id | slide/@id |
-			other-notation/@id | ornaments/@id |
-			accidental-mark/@id | technical/@id |
-			articulations/@id | arpeggiate/@id |
-			non-arpeggiate/@id | lyric/@id | 
-			figured-bass/@id"/>
+      notations/@id | tied/@id |
+      slur/@id | tuplet/@id | 
+      glissando/@id | slide/@id |
+      other-notation/@id | ornaments/@id |
+      accidental-mark/@id | technical/@id |
+      articulations/@id | arpeggiate/@id |
+      non-arpeggiate/@id | lyric/@id | 
+      figured-bass/@id"/>
 
   <!--
     Remove accidental and accidental-mark elements with
@@ -84,15 +84,15 @@
   -->
   <xsl:template
     match="accidental[. = 'double-sharp-down' or
-			. = 'double-sharp-up' or . = 'flat-flat-down' or
-			. = 'flat-flat-up' or . = 'arrow-down' or
-			. = 'arrow-up' or . = 'other']"/>
+      . = 'double-sharp-up' or . = 'flat-flat-down' or
+      . = 'flat-flat-up' or . = 'arrow-down' or
+      . = 'arrow-up' or . = 'other']"/>
 
   <xsl:template
     match="accidental-mark[. = 'double-sharp-down' or
-			. = 'double-sharp-up' or . = 'flat-flat-down' or
-			. = 'flat-flat-up' or . = 'arrow-down' or
-			. = 'arrow-up' or . = 'other']"/>
+      . = 'double-sharp-up' or . = 'flat-flat-down' or
+      . = 'flat-flat-up' or . = 'arrow-down' or
+      . = 'arrow-up' or . = 'other']"/>
 
   <!--
     Remove tied elements which use the new let-ring
@@ -131,25 +131,25 @@
   -->
   <xsl:template
     match="accidental-mark/@parentheses | 
-			accidental-mark/@bracket | accidental-mark/@size | 
-			lyric/@time-only | note/@print-leger |
-			tap/@hand"/>
+      accidental-mark/@bracket | accidental-mark/@size | 
+      lyric/@time-only | note/@print-leger |
+      tap/@hand"/>
 
   <!--
     Remove line-length attribute from articulation elements.
   -->
   <xsl:template
     match="doit/@line-length | falloff/@line-length |
-			plop/@line-length | scoop/@line-length"/>
+      plop/@line-length | scoop/@line-length"/>
 
-  <!-- Remove smufl attributes -->
+  <!-- Remove smufl attributes. -->
   <xsl:template
     match="accidental/@smufl | accidental-mark/@smufl |
-			arrow/@smufl | elision/@smufl |
-			notehead/@smufl | stopped/@smufl |
-			tremolo/@smufl |
-			other-articulation/@smufl | other-notation/@smufl |
-			other-ornament/@smufl | other-technical/@smufl"/>
+      arrow/@smufl | elision/@smufl |
+      notehead/@smufl | stopped/@smufl |
+      tremolo/@smufl |
+      other-articulation/@smufl | other-notation/@smufl |
+      other-ornament/@smufl | other-technical/@smufl"/>
 
   <!--
     Do not copy text for caesura elements, or for breath-mark 
@@ -174,11 +174,11 @@
 
   <!-- Additions in attributes.mod -->
 
-  <!-- Remove new id attributes -->
+  <!-- Remove new id attributes. -->
   <xsl:template 
     match="key/@id | time/@id | 
-			clef/@id | transpose/@id |
-			measure-style/@id"/>
+      clef/@id | transpose/@id |
+      measure-style/@id"/>
 
   <!--
     Remove key-accidental elements with new accidental values.
@@ -192,13 +192,13 @@
   <xsl:template
     match="key-accidental/@smufl"/>
 
-  <!-- Remove except-voice elements -->
+  <!-- Remove except-voice elements. -->
   <xsl:template
     match="except-voice"/>
 
   <!-- Additions in barline.mod -->
 
-  <!-- Remove new id attributes -->
+  <!-- Remove new id attributes. -->
   <xsl:template 
     match="barline/@id"/>
 
@@ -223,24 +223,24 @@
     </xsl:element>
   </xsl:template>
   
-  <!-- Remove new id attributes -->
+  <!-- Remove new id attributes. -->
   <xsl:template 
     match="fermata/@id | segno/@id | 
-		coda/@id | dynamics/@id"/>
+		  coda/@id | dynamics/@id"/>
 
   <!--
     Remove accidental-text elements with new accidental values.
   -->
   <xsl:template
     match="accidental-text[. = 'double-sharp-down' or
-			. = 'double-sharp-up' or . = 'flat-flat-down' or
-			. = 'flat-flat-up' or . = 'arrow-down' or
-			. = 'arrow-up' or . = 'other']"/>
+      . = 'double-sharp-up' or . = 'flat-flat-down' or
+      . = 'flat-flat-up' or . = 'arrow-down' or
+      . = 'arrow-up' or . = 'other']"/>
 
-  <!-- Remove smufl attributes -->
+  <!-- Remove smufl attributes. -->
   <xsl:template
     match="accidental-text/@smufl | other-dynamics/@smufl |
-		coda/@smufl | segno/@smufl"/>
+		  coda/@smufl | segno/@smufl"/>
 
   <!-- 
     Remove enclosure attributes that have values of pentagon,
@@ -248,8 +248,8 @@
   -->
   <xsl:template 
     match="@enclosure[. = 'pentagon' or . = 'hexagon' or
-		. = 'heptagon' or . = 'octagon' or
-		. = 'nonagon' or . = 'decagon']"/>
+      . = 'heptagon' or . = 'octagon' or
+      . = 'nonagon' or . = 'decagon']"/>
 
   <!--
     Do not copy text for fermata elements with new values.
@@ -265,28 +265,28 @@
     
   <!-- Additions in direction.mod -->
 
-  <!-- Remove new id attributes -->
+  <!-- Remove new id attributes. -->
   <xsl:template 
     match="direction/@id | direction-type/@id | 
-			rehearsal/@id | words/@id |
-			wedge/@id | dashes/@id |
-			bracket/@id | pedal/@id |
-			metronome/@id | octave-shift/@id |
-			harp-pedals/@id | damp/@id |
-			damp-all/@id | eyeglasses/@id |
-			string-mute/@id | scordatura/@id |
-			image/@id | principal-voice/@id |
-			accordion-registration/@id |
-			percussion/@id | other-direction/@id |
-			harmony/@id | frame/@id |
-			grouping/@id | print/@id |
-			sound/@id"/>
+      rehearsal/@id | words/@id |
+      wedge/@id | dashes/@id |
+      bracket/@id | pedal/@id |
+      metronome/@id | octave-shift/@id |
+      harp-pedals/@id | damp/@id |
+      damp-all/@id | eyeglasses/@id |
+      string-mute/@id | scordatura/@id |
+      image/@id | principal-voice/@id |
+      accordion-registration/@id |
+      percussion/@id | other-direction/@id |
+      harmony/@id | frame/@id |
+      grouping/@id | print/@id |
+      sound/@id"/>
 
-  <!-- Remove smufl attributes -->
+  <!-- Remove smufl attributes. -->
   <xsl:template
     match="glass/@smufl | pitched/@smufl |
-			other-direction/@smufl | 
-			other-percussion/@smufl"/>
+      other-direction/@smufl | 
+      other-percussion/@smufl"/>
 
   <!--
     For safety, remove entire direction that has a new
@@ -322,7 +322,7 @@
   <xsl:template priority="1"
     match="direction[direction-type[pedal[@number != '1']]]"/>
 
-  <!-- Remove new optional elements -->
+  <!-- Remove new optional elements. -->
   <xsl:template
     match="beat-unit-tied | metronome-arrows | 
 			metronome-tied"/>
@@ -376,17 +376,17 @@
         . = 'rainstick' or . = 'reco-reco' or
         . = 'whip']]]]"/>
 
-  <!-- Remove stick attributes -->
+  <!-- Remove stick attributes. -->
   <xsl:template
     match="stick/@parentheses | stick/@dashed-circle"/>
 
-  <!-- Remove new image attributes -->
+  <!-- Remove new image attributes. -->
   <xsl:template
     match="image/@height | image/@width"/>
 
   <!-- Additions in layout.mod -->
 
-  <!-- Remove glyph elements -->
+  <!-- Remove glyph elements. -->
   <xsl:template
     match="glyph"/>
 
@@ -398,25 +398,25 @@
 
   <!-- Additions in score.mod -->
 
-  <!-- Remove credit-symbol elements -->
+  <!-- Remove credit-symbol elements. -->
   <xsl:template
     match="credit-symbol"/>
 
-  <!-- Remove new id attributes -->
+  <!-- Remove new id attributes. -->
   <xsl:template 
     match="credit/@id | credit-image/@id | 
 			credit-words/@id | measure/@id"/>
 
-  <!-- Remove new image attributes -->
+  <!-- Remove new image attributes. -->
   <xsl:template
     match="credit-image/@height | credit-image/@width"/>
 
-  <!-- Remove new measure attributes -->
+  <!-- Remove new measure attributes. -->
   <xsl:template
     match="measure/@text"/>
 
   <!--
-    Convert score version attribute to 3.0
+    Convert score version attribute to 3.0.
   -->
   <xsl:template
     match="score-partwise/@version">
