@@ -108,6 +108,7 @@
     type (start | stop | discontinue) #REQUIRED
     %print-object;
     %print-style;
+    %system-relation;
     end-length %tenths; #IMPLIED
     text-x %tenths; #IMPLIED
     text-y %tenths; #IMPLIED

@@ -53,25 +53,13 @@
 	visually. For a series of direction-type children, non-
 	positional formatting attributes are carried over from
 	the previous element by default.
-	
-	The optional system attribute distinguishes directions that
-	are associated with a system rather than the particular part
-	where the element appears. A value of only-top indicates
-	that the direction should appear only on the top part of the
-	current system. A value of also-top indicates that the
-	direction should appear on both the current part and the
-	top part of the current system. If this value appears in
-	a score, when parts are created the direction should only
-	appear once in this part, not twice. A value of none
-	indicates that the direction is associated only with the
-	current part, not with the system.
 -->
 <!ELEMENT direction (direction-type+, offset?,
 	%editorial-voice;, staff?, sound?)>
 <!ATTLIST direction
     %placement; 
     %directive;
-    system (none | only-top | also-top) #IMPLIED
+    %system-relation;
     %optional-unique-id;
 >
 
@@ -710,6 +698,7 @@
     print-frame  %yes-no; #IMPLIED
     %print-style;
     %placement;
+    %system-relation;
     %optional-unique-id;
 >
 

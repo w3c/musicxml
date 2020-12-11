@@ -69,6 +69,10 @@
   
   <!-- Additions in barline.mod -->
 
+  <!-- Remove new attributes. -->
+  <xsl:template 
+    match="ending/@system"/>
+
   <!-- Additions in common.mod -->
 
   <!-- 
@@ -85,8 +89,8 @@
   
   <!-- Remove new attributes. -->
   <xsl:template 
-    match="direction/@system | measure-numbering/@system |
-      measure-numbering/@staff"/>
+    match="direction/@system | harmony/@system |
+      measure-numbering/@system | measure-numbering/@staff"/>
   
   <!-- Additions in score.mod -->
 
