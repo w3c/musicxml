@@ -3570,7 +3570,7 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 
 	<xs:complexType name="measure-numbering">
 		<xs:annotation>
-			<xs:documentation>The measure-numbering type describes how frequently measure numbers are displayed on this part. The number attribute from the measure element is used for printing. Measures with an implicit attribute set to "yes" never display a measure number, regardless of the measure-numbering setting. The optional staff attribute refers to staff numbers within the part, from top to bottom on the system. It indicates which staff is used as the reference point for vertical positioning. A value of 1 is assumed if not present.</xs:documentation>
+			<xs:documentation>The measure-numbering type describes how frequently measure numbers are displayed on this part. The text attribute from the measure element is used for display, or the number attribute if the text attribute is not present. Measures with an implicit attribute set to "yes" never display a measure number, regardless of the measure-numbering setting. The optional staff attribute refers to staff numbers within the part, from top to bottom on the system. It indicates which staff is used as the reference point for vertical positioning. A value of 1 is assumed if not present.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="measure-numbering-value">

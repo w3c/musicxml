@@ -1061,16 +1061,17 @@
 >
 
 <!--
-	The measure-numbering element describes how measure
-	numbers are displayed on this part. Values may be none,
-	measure, or system. The number attribute from the measure
-	element is used for printing. Measures with an implicit
-	attribute set to "yes" never display a measure number,
-	regardless of the measure-numbering setting. The optional 
-	staff attribute refers to staff numbers within the part,
-	from top to bottom on the system. It indicates which staff
-	is used as the reference point for vertical positioning. 
-	A value of 1 is assumed if not present.
+	The measure-numbering element describes how measure numbers
+	are displayed on this part. Values may be none, measure, or
+	system. The text attribute from the measure element is used 
+	for display, or the number attribute if the text attribute
+	is not present. Measures with an implicit attribute set to 
+	"yes" never display a measure number, regardless of the 
+	measure-numbering setting. The optional staff attribute 
+	refers to staff numbers within the part, from top to bottom
+	on the system. It indicates which staff is used as the
+	reference point for vertical positioning. A value of 1 is
+	assumed if not present.
 
 	The optional system attribute distinguishes measure numbers
 	that are associated with a system rather than the particular
