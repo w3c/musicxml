@@ -59,6 +59,7 @@
 <!ATTLIST direction
     %placement; 
     %directive;
+    %system-relation;
     %optional-unique-id;
 >
 
@@ -697,6 +698,7 @@
     print-frame  %yes-no; #IMPLIED
     %print-style;
     %placement;
+    %system-relation;
     %optional-unique-id;
 >
 
@@ -903,7 +905,7 @@
 <!ELEMENT degree-value (#PCDATA)>
 <!ATTLIST degree-value
     symbol (major | minor | augmented | 
-		diminished | half-diminished) #IMPLIED
+            diminished | half-diminished) #IMPLIED
     text CDATA #IMPLIED
     %print-style;
 >
@@ -1059,15 +1061,36 @@
 >
 
 <!--
-	The measure-numbering element describes how measure
-	numbers are displayed on this part. Values may be none,
-	measure, or system. The number attribute from the measure
-	element is used for printing. Measures with an implicit
-	attribute set to "yes" never display a measure number,
-	regardless of the measure-numbering setting.
+	The measure-numbering element describes how measure numbers
+	are displayed on this part. Values may be none, measure, or
+	system. The text attribute from the measure element is used 
+	for display, or the number attribute if the text attribute
+	is not present. Measures with an implicit attribute set to 
+	"yes" never display a measure number, regardless of the 
+	measure-numbering setting. The optional staff attribute 
+	refers to staff numbers within the part, from top to bottom
+	on the system. It indicates which staff is used as the
+	reference point for vertical positioning. A value of 1 is
+	assumed if not present.
+
+	The optional system attribute distinguishes measure numbers
+	that are associated with a system rather than the particular
+	part where the element appears. A value of only-top or
+	only-bottom indicates that the number should appear only on
+	the top or bottom part of the current system, respectively.
+	A value of also-top or also-bottom indicates that the number
+	should appear on both the current part and the top or bottom
+	part of the current system, respectively. If these values
+	appear in a score, when parts are created the number should
+	only appear once in this part, not twice. A value of none
+	indicates that the number is associated only with the
+	current part, not with the system.
 -->
 <!ELEMENT measure-numbering (#PCDATA)>
 <!ATTLIST measure-numbering
+    system (none | only-top | also-top | 
+            only-bottom | also-bottom) #IMPLIED
+    staff CDATA #IMPLIED
     %print-style-align;
 >
 

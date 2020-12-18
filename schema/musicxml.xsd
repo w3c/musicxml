@@ -1222,6 +1222,30 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="system-relation-number">
+		<xs:annotation>
+			<xs:documentation>The system-relation-number type distinguishes measure numbers that are associated with a system rather than the particular part where the element appears. A value of only-top or only-bottom indicates that the number should appear only on the top or bottom part of the current system, respectively. A value of also-top or also-bottom indicates that the number should appear on both the current part and the top or bottom part of the current system, respectively. If these values appear in a score, when parts are created the number should only appear once in this part, not twice. A value of none indicates that the number is associated only with the current part, not with the system.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="only-top"/>
+			<xs:enumeration value="only-bottom"/>
+			<xs:enumeration value="also-top"/>
+			<xs:enumeration value="also-bottom"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="system-relation">
+		<xs:annotation>
+			<xs:documentation>The system-relation type distinguishes elements that are associated with a system rather than the particular part where the element appears. A value of only-top indicates that the element should appear only on the top part of the current system. A value of also-top indicates that the element should appear on both the current part and the top part of the current system. If this value appears in a score, when parts are created the element should only appear once in this part, not twice. A value of none indicates that the element is associated only with the current part, not with the system.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="system-relation-number">
+			<xs:enumeration value="only-top"/>
+			<xs:enumeration value="also-top"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
 	<xs:simpleType name="tip-direction">
 		<xs:annotation>
 			<xs:documentation>The tip-direction type represents the direction in which the tip of a stick or beater points, using Unicode arrow terminology.</xs:documentation>
@@ -2062,9 +2086,16 @@ By default, all these attributes are set to yes. If print-object is set to no, t
 		<xs:attribute name="smufl" type="smufl-glyph-name"/>
 	</xs:attributeGroup>
 
+	<xs:attributeGroup name="system-relation">
+		<xs:annotation>
+			<xs:documentation>The system-relation attribute group distinguishes elements that are associated with a system rather than the particular part where the element appears.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="system" type="system-relation"/>
+	</xs:attributeGroup>
+	
 	<xs:simpleType name="swing-type-value">
 		<xs:annotation>
-			<xs:documentation>The swing-type-value type specifies the note type, either eighth or 16th, to which the ratio defined in the swing element is applied.</xs:documentation>
+			<xs:documentation>The swing-type-value attribute group specifies the note type, either eighth or 16th, to which the ratio defined in the swing element is applied.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="note-type-value">
 			<xs:enumeration value="16th"/>
@@ -3085,6 +3116,7 @@ The number attribute indicates which times the ending is played, similar to the 
 				<xs:attribute name="type" type="start-stop-discontinue" use="required"/>
 				<xs:attributeGroup ref="print-object"/>
 				<xs:attributeGroup ref="print-style"/>
+				<xs:attributeGroup ref="system-relation"/>
 				<xs:attribute name="end-length" type="tenths"/>
 				<xs:attribute name="text-x" type="tenths"/>
 				<xs:attribute name="text-y" type="tenths"/>
@@ -3290,6 +3322,7 @@ By default, a series of direction-type elements and a series of child elements o
 		</xs:sequence>
 		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="directive"/>
+		<xs:attributeGroup ref="system-relation"/>
 		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
@@ -3461,6 +3494,7 @@ The harmony object may be used for analysis or for chord symbols. The print-obje
 		<xs:attribute name="print-frame" type="yes-no"/>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="placement"/>
+		<xs:attributeGroup ref="system-relation"/>
 		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
@@ -3536,10 +3570,12 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 
 	<xs:complexType name="measure-numbering">
 		<xs:annotation>
-			<xs:documentation>The measure-numbering type describes how frequently measure numbers are displayed on this part. The number attribute from the measure element is used for printing. Measures with an implicit attribute set to "yes" never display a measure number, regardless of the measure-numbering setting.</xs:documentation>
+			<xs:documentation>The measure-numbering type describes how frequently measure numbers are displayed on this part. The text attribute from the measure element is used for display, or the number attribute if the text attribute is not present. Measures with an implicit attribute set to "yes" never display a measure number, regardless of the measure-numbering setting. The optional staff attribute refers to staff numbers within the part, from top to bottom on the system. It indicates which staff is used as the reference point for vertical positioning. A value of 1 is assumed if not present.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="measure-numbering-value">
+				<xs:attribute name="system" type="system-relation-number"/>
+				<xs:attribute name="staff" type="staff-number"/>
 				<xs:attributeGroup ref="print-style-align"/>
 			</xs:extension>
 		</xs:simpleContent>

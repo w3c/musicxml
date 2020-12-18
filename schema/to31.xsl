@@ -57,19 +57,21 @@
   <xsl:template 
     match="accidental/@smufl[not(starts-with(., 'acc'))]"/>
 
-  <!-- 
-    Remove new attributes.
-  -->
+  <!-- Remove new attributes. -->
   <xsl:template 
     match="bend/@shape | figured-bass/@placement"/>
 
   <!-- Additions in attributes.mod -->
 
-  <!-- Remove new MusicXML 4.0 elements -->
+  <!-- Remove new elements. -->
   <xsl:template
     match="for-part"/>
   
   <!-- Additions in barline.mod -->
+
+  <!-- Remove new attributes. -->
+  <xsl:template 
+    match="ending/@system"/>
 
   <!-- Additions in common.mod -->
 
@@ -81,18 +83,23 @@
 
   <!-- Additions in direction.mod -->
 
-  <!-- Remove new MusicXML 4.0 elements -->
+  <!-- Remove new elements. -->
   <xsl:template
     match="instrument-change | swing"/>
   
+  <!-- Remove new attributes. -->
+  <xsl:template 
+    match="direction/@system | harmony/@system |
+      measure-numbering/@system | measure-numbering/@staff"/>
+  
   <!-- Additions in score.mod -->
 
-  <!-- Remove new MusicXML 4.0 elements -->
+  <!-- Remove new elements. -->
   <xsl:template
     match="concert-score | part-link"/>
   
   <!--
-    Convert score version attribute to 3.1
+    Convert score version attribute to 3.1.
   -->
   <xsl:template
     match="score-partwise/@version">
