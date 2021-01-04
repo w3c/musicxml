@@ -6,7 +6,7 @@
 
 	Version 4.0 Draft
 	
-	Copyright © 2004-2020 the Contributors to the MusicXML 
+	Copyright © 2004-2021 the Contributors to the MusicXML 
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement 
 	(CLA): 
