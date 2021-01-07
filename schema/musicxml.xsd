@@ -1073,7 +1073,7 @@ The "other" kind is used when the harmony is entirely composed of add elements. 
 		<xs:annotation>
 			<xs:documentation>The measure-numbering-value type describes how measure numbers are displayed on this part: no numbers, numbers every measure, or numbers every system.</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:string">
+		<xs:restriction base="xs:token">
 			<xs:enumeration value="none"/>
 			<xs:enumeration value="measure"/>
 			<xs:enumeration value="system"/>
@@ -3570,12 +3570,18 @@ The text attribute describes how the kind should be spelled in a score. If use-s
 
 	<xs:complexType name="measure-numbering">
 		<xs:annotation>
-			<xs:documentation>The measure-numbering type describes how frequently measure numbers are displayed on this part. The text attribute from the measure element is used for display, or the number attribute if the text attribute is not present. Measures with an implicit attribute set to "yes" never display a measure number, regardless of the measure-numbering setting. The optional staff attribute refers to staff numbers within the part, from top to bottom on the system. It indicates which staff is used as the reference point for vertical positioning. A value of 1 is assumed if not present.</xs:documentation>
+			<xs:documentation>The measure-numbering type describes how frequently measure numbers are displayed on this part. The text attribute from the measure element is used for display, or the number attribute if the text attribute is not present. Measures with an implicit attribute set to "yes" never display a measure number, regardless of the measure-numbering setting.
+
+The optional staff attribute refers to staff numbers within the part, from top to bottom on the system. It indicates which staff is used as the reference point for vertical positioning. A value of 1 is assumed if not present.
+
+The optional multiple-rest-always and multiple-rest-range attributes describe how measure numbers are shown on multiple rests when the measure-numbering value is not set to none. The multiple-rest-always attribute is set to yes when the measure number should always be shown, even if the multiple rest starts midway through a system when measure numbering is set to system level. The multiple-rest-range attribute is set to yes when measure numbers on multiple rests display the range of numbers for the first and last measure, rather than just the number of the first measure.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="measure-numbering-value">
 				<xs:attribute name="system" type="system-relation-number"/>
 				<xs:attribute name="staff" type="staff-number"/>
+				<xs:attribute name="multiple-rest-always" type="yes-no"/>
+				<xs:attribute name="multiple-rest-range" type="yes-no"/>
 				<xs:attributeGroup ref="print-style-align"/>
 			</xs:extension>
 		</xs:simpleContent>

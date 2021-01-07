@@ -1067,11 +1067,12 @@
 	for display, or the number attribute if the text attribute
 	is not present. Measures with an implicit attribute set to 
 	"yes" never display a measure number, regardless of the 
-	measure-numbering setting. The optional staff attribute 
-	refers to staff numbers within the part, from top to bottom
-	on the system. It indicates which staff is used as the
-	reference point for vertical positioning. A value of 1 is
-	assumed if not present.
+	measure-numbering setting. 
+	
+	The optional staff attribute refers to staff numbers within
+	the part, from top to bottom on the system. It indicates
+	which staff is used as the reference point for vertical
+	positioning. A value of 1 is assumed if not present.
 
 	The optional system attribute distinguishes measure numbers
 	that are associated with a system rather than the particular
@@ -1085,12 +1086,25 @@
 	only appear once in this part, not twice. A value of none
 	indicates that the number is associated only with the
 	current part, not with the system.
+	
+	The optional multiple-rest-always and multiple-rest-range 
+	attributes describe how measure numbers are shown on 
+	multiple rests when the measure-numbering value is not set
+	to none. The multiple-rest-always attribute is set to yes
+	when the measure number should always be shown, even if the
+	multiple rest starts midway through a system when measure
+	numbering is set to system level. The multiple-rest-range
+	attribute is set to yes when measure numbers on multiple
+	rests display the range of numbers for the first and last
+	measure, rather than just the number of the first measure.
 -->
 <!ELEMENT measure-numbering (#PCDATA)>
 <!ATTLIST measure-numbering
     system (none | only-top | also-top | 
             only-bottom | also-bottom) #IMPLIED
     staff CDATA #IMPLIED
+    multiple-rest-always %yes-no; #IMPLIED
+    multiple-rest-range %yes-no; #IMPLIED
     %print-style-align;
 >
 
