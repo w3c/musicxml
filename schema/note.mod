@@ -1485,12 +1485,14 @@
 	similar applications. Language names for text elements
 	come from ISO 639, with optional country subcodes from
 	ISO 3166. Justification is center by default; placement is
-	below by default. The print-object attribute can override
-	a note's print-lyric attribute in cases where only some
-	lyrics on a note are printed, as when lyrics for later verses
-	are printed in a block of text rather than with each note.
-	The time-only attribute precisely specifies which lyrics are
-	to be sung which time through a repeated section.
+	below by default. Vertical alignment is to the baseline of
+	the text and horizontal alignment matches justification. 
+	The print-object attribute can override a note's print-lyric
+	attribute in cases where only some lyrics on a note are
+	printed, as when lyrics for later verses are printed in a
+	block of text rather than with each note. The time-only
+	attribute precisely specifies which lyrics are to be sung
+	which time through a repeated section.
 -->
 <!ELEMENT lyric
 	((((syllabic?, text),
