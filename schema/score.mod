@@ -113,7 +113,7 @@
 	credit. Multiple types of data may be combined in a single
 	credit, so multiple elements may be used. Standard values
 	include page number, title, subtitle, composer, arranger,
-	lyricist, and rights.
+	lyricist, rights, and part name.
 -->
 <!ELEMENT credit
 	(credit-type*, link*, bookmark*, 
