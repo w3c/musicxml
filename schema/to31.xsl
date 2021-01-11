@@ -90,7 +90,9 @@
   <!-- Remove new attributes. -->
   <xsl:template 
     match="direction/@system | harmony/@system |
-      measure-numbering/@system | measure-numbering/@staff"/>
+      measure-numbering/@system | measure-numbering/@staff |
+      measure-numbering/@multiple-rest-always | 
+      measure-numbering/@multiple-rest-range"/>
   
   <!-- Additions in score.mod -->
 
