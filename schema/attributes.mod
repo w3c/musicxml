@@ -387,12 +387,25 @@
 
 	The transposition is represented by chromatic steps
 	(required) and three optional elements: diatonic pitch
-	steps, octave changes, and doubling an octave down. The
-	chromatic and octave-change elements are numeric values
-	added to the encoded pitch data to create the sounding
-	pitch. The diatonic element is also numeric and allows
-	for correct spelling of enharmonic transpositions.
-
+	steps, octave changes, and doubling an octave down. 
+	
+	The chromatic element represents the number of semitones
+	needed to get from written to sounding pitch. The diatonic
+	element specifies the number of pitch steps needed to go
+	from written to sounding pitch. This allows for correct
+	spelling of enharmonic transpositions. The octave-change
+	element indicates how many octaves to add to get from
+	written pitch to sounding pitch. Neither the chromatic nor
+	the diatonic element include octave-change values; the
+	values for both elements need to be added to the written
+	pitch to get the correct sounding pitch. The octave-change
+	element should be included when using transposition
+	intervals of an octave or more, and should not be present
+	for intervals of less than an octave. If the double element
+	is present, it indicates that the music is doubled one
+	octave down from what is currently written (as is the case
+	for mixed cello / bass parts in orchestral literature).
+	
 	The optional number attribute refers to staff numbers, 
 	from top to bottom on the system. If absent, the
 	transposition applies to all staves in the part. Per-staff 
