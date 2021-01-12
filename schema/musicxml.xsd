@@ -6015,7 +6015,7 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 		<xs:sequence>
 			<xs:element name="diatonic" type="xs:integer" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The diatonic element specifies the number of pitch steps needed to go from written to sounding pitch. This allows for correct spelling of enharmonic transpositions.</xs:documentation>
+					<xs:documentation>The diatonic element specifies the number of pitch steps needed to go from written to sounding pitch. This allows for correct spelling of enharmonic transpositions. This value does not include octave-change values; the values for both elements need to be added to the written pitch to get the correct sounding pitch.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="chromatic" type="semitones">
@@ -6025,7 +6025,7 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 			</xs:element>
 			<xs:element name="octave-change" type="xs:integer" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The octave-change element indicates how many octaves to add to get from written pitch to sounding pitch.</xs:documentation>
+					<xs:documentation>The octave-change element indicates how many octaves to add to get from written pitch to sounding pitch. The octave-change element should be included when using transposition intervals of an octave or more, and should not be present for intervals of less than an octave.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="double" type="empty" minOccurs="0">
