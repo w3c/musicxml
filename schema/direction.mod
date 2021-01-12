@@ -185,14 +185,15 @@
 >
 
 <!-- 
-	The pedal element represents piano pedal marks. In MusicXML
-	3.1 this includes sostenuto as well as damper pedal marks.
-	The start type indicates the start of a damper pedal, while
-	the sostenuto type indicates the start of a sostenuto pedal.
-	The change, continue, and stop types can be used with either
-	the damper or sostenuto pedal. The soft pedal is not included
-	here because there is no special symbol or graphic used for it
-	beyond what can be specified with words and bracket elements.
+	The pedal element represents piano pedal marks. Starting
+	with MusicXML 3.1 this includes sostenuto as well as damper
+	pedal marks. The start type indicates the start of a damper
+	pedal, while the sostenuto type indicates the start of a
+	sostenuto pedal. The change, continue, discontinue, and stop
+	types can be used with either the damper or sostenuto pedal.
+	The soft pedal is not included here because there is no
+	special symbol or graphic used for it beyond what can be
+	specified with words and bracket elements.
 
 	The line attribute is yes if pedal lines are used. The sign
 	attribute is yes if Ped, Sost, and * signs are used. For
@@ -203,17 +204,21 @@
 	attribute is yes if the short P and S signs are used, and
 	no if the full Ped and Sost signs are used. It is no by
 	default. Otherwise the abbreviated attribute is ignored.
+	The alignment attributes are ignored if the line attribute
+	is yes.
 
-	The change and continue types are used when the line attribute
-	is yes. The change type indicates a pedal lift and retake
-	indicated with an inverted V marking. The continue type
-	allows more precise formatting across system breaks and for
-	more complex pedaling lines. The alignment attributes are
-	ignored if the line attribute is yes.
+	The change, continue, and discontinue types are used when
+	the line attribute is yes. The change type indicates a pedal
+	lift and retake indicated with an inverted V marking. The
+	continue type allows more precise formatting across system
+	breaks and for more complex pedaling lines. The discontinue
+	type indicates the end of a pedal line that does not include
+	the explicit lift represented by the stop type.
 -->
 <!ELEMENT pedal EMPTY>
 <!ATTLIST pedal
-    type (start | stop | sostenuto | continue | change) #REQUIRED
+    type (start | stop | sostenuto | 
+          continue | change | discontinue) #REQUIRED
     number %number-level; #IMPLIED
     line %yes-no; #IMPLIED
     sign %yes-no; #IMPLIED
