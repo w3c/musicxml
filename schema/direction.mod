@@ -790,9 +790,13 @@
 	    Tristan
 	
 	The "other" kind is used when the harmony is entirely
-	composed of add elements. The "none" kind is used to
-	explicitly encode absence of chords or functional
-	harmony.
+	composed of add elements. 
+	
+	The "none" kind is used to explicitly encode absence of
+	chords or functional harmony. In this case, the root or
+	function element has no meaning. When using the root
+	element, the text attribute should be set to the empty
+	string to keep the root from being displayed.
 
 	The attributes are used to indicate the formatting
 	of the symbol. Since the kind element is the constant
@@ -824,6 +828,12 @@
 	If not specified, these values are implementation-specific.
 	The alignment attributes are for the entire harmony-chord
 	entity of which this kind element is a part.
+	
+	The text attribute may use strings such as "13sus" that
+	refer to both the kind and one or more degree elements.
+	In this case, the corresponding degree elements should
+	have the print-object attribute set to "no" to keep 
+	redundant alterations from being displayed.
 -->
 <!ELEMENT kind (#PCDATA)>
 <!ATTLIST kind
