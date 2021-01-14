@@ -1019,7 +1019,7 @@ Other:
 
 The "other" kind is used when the harmony is entirely composed of add elements.
 
-The "none" kind is used to explicitly encode absence of chords or functional harmony. In this case, the root or function element has no meaning. When using the root element, the text attribute should be set to the empty string to keep the root from being displayed.</xs:documentation>
+The "none" kind is used to explicitly encode absence of chords or functional harmony. In this case, the root or function element has no meaning. When using the root element, the root-step text attribute should be set to the empty string to keep the root from being displayed.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="major"/>

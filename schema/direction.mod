@@ -795,8 +795,8 @@
 	The "none" kind is used to explicitly encode absence of
 	chords or functional harmony. In this case, the root or
 	function element has no meaning. When using the root
-	element, the text attribute should be set to the empty
-	string to keep the root from being displayed.
+	element, the root-step text attribute should be set to
+	the empty string to keep the root from being displayed.
 
 	The attributes are used to indicate the formatting
 	of the symbol. Since the kind element is the constant
