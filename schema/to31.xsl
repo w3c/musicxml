@@ -83,6 +83,13 @@
 
   <!-- Additions in direction.mod -->
 
+  <!-- 
+    For safety, remove entire direction that has a new
+    pedal type.
+  -->
+  <xsl:template priority="1"
+    match="direction[direction-type[pedal[@type = 'discontinue']]]"/>
+  
   <!-- Remove new elements. -->
   <xsl:template
     match="instrument-change | swing"/>
