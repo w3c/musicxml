@@ -894,6 +894,11 @@
 	dynamics. The MusicXML format captures what is in the score,
 	but does not try to be optimal for analysis or synthesis of
 	dynamics.
+	
+	The placement attribute is used when the dynamics are
+	associated with a note. It is ignored when the dynamics
+	are associated with a direction. In that case the direction
+	element's placement attribute is used instead.
 -->
 <!ELEMENT dynamics ((p | pp | ppp | pppp | ppppp | pppppp |
 	f | ff | fff | ffff | fffff | ffffff | mp | mf | sf |
