@@ -315,24 +315,37 @@
 
 <!--
 	The staff-details element is used to indicate different
-	types of staves. The staff-type element can be ossia,
-	cue, editorial, regular, or alternate. An alternate staff
-	indicates one that shares the same musical data as the
-	prior staff, but displayed differently (e.g., treble and
-	bass clef, standard notation and tab). The staff-lines
-	element specifies the number of lines for a non 5-line
-	staff. The staff-tuning and capo elements are used to
-	specify tuning when using tablature notation. The optional
-	number attribute specifies the staff number from top to
-	bottom on the system, as with clef. The optional show-frets
-	attribute indicates whether to show tablature frets as
-	numbers (0, 1, 2) or letters (a, b, c). The default choice
-	is numbers. The print-object attribute is used to indicate
-	when a staff is not printed in a part, usually in large
-	scores where empty parts are omitted. It is yes by default.
-	If print-spacing is yes while print-object is no, the score
-	is printed in cutaway format where vertical space is left
-	for the empty part.
+	types of staves. 
+	
+	The staff-type element can be ossia, editorial, cue,
+	alternate, or regular. An ossia staff represents music
+	that can be played instead of what appears on the regular
+	staff. An editorial staff also represents musical 
+	alternatives, but is created by an editor rather than the
+	composer. It can be used for suggested interpretations or
+	alternatives from other sources. A cue staff represents
+	music from another part. An alternate staff shares the
+	same music as the prior staff, but displayed differently
+	(e.g., treble and bass clef, standard notation and
+	tablature). It is not included in playback. An alternate
+	staff provides more information to an application reading a
+	file than encoding the same music in separate parts, so its
+	use is preferred in this situation if feasible. A regular
+	staff is the standard default staff-stype.
+	
+	The staff-lines element specifies the number of lines for
+	a non 5-line staff. The staff-tuning and capo elements are
+	used to specify tuning when using tablature notation. The
+	optional number attribute specifies the staff number from
+	top to bottom on the system, as with clef. The optional
+	show-frets attribute indicates whether to show tablature
+	frets as numbers (0, 1, 2) or letters (a, b, c). The default
+	choice is numbers. The print-object attribute is used to
+	indicate when a staff is not printed in a part, usually in
+	large scores where empty parts are omitted. It is yes by 
+	default. If print-spacing is yes while print-object is no,
+	the score is printed in cutaway format where vertical space
+	is left for the empty part.
 -->
 <!ELEMENT staff-details (staff-type?, staff-lines?, 
 	staff-tuning*, capo?, staff-size?)>
