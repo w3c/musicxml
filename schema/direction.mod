@@ -85,9 +85,11 @@
 -->
 
 <!--
-	Language is Italian ("it") by default. Enclosure is
-	square by default. Left justification is assumed if
-	not specified.
+	The rehearsal element specifies letters, numbers, and 
+	section names that are notated in the score for reference
+	during rehearsal. The enclosure is square by default. The
+	language is Italian ("it") by default. Left justification
+	is assumed if not specified.
 -->
 <!ELEMENT rehearsal (#PCDATA)>
 <!ATTLIST rehearsal
@@ -96,10 +98,9 @@
 >
 
 <!--
-	The words element specifies a standard text direction.
-	Left justification is assumed if not specified. 
-	Language is Italian ("it") by default. Enclosure
-	is none by default.
+	The words element specifies a standard text direction. The
+	enclosure is none by default. The language is Italian ("it")
+	by default. Left justification is assumed if not specified. 
 -->
 <!ELEMENT words (#PCDATA)>
 <!ATTLIST words
