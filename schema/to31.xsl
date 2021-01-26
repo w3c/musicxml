@@ -75,6 +75,10 @@
 
   <!-- Additions in common.mod -->
 
+  <!-- Remove new attributes. -->
+  <xsl:template 
+    match="level/@type"/>
+  
   <!-- 
     Remove enclosure attributes with inverted-bracket value.
   -->

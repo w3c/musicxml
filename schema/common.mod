@@ -780,12 +780,24 @@
 	information, while voice is used to distinguish between
 	multiple voices (what MuseData calls tracks) in individual
 	parts. These elements are used throughout the different
-	MusicXML DTD modules. If the reference attribute for the
-	level element is yes, this indicates editorial information
-	that is for display only and should not affect playback.
-	For instance, a modern edition of older music may set
-	reference="yes" on the attributes containing the music's
-	original clef, key, and time signature. It is no by default.
+	MusicXML DTD modules. The footnote element specifies
+	editorial information that appears in footnotes in the
+	printed score. The content of the level element contains
+	identifying and/or descriptive text about the editorial
+	status of the parent element.
+	
+	If the reference attribute for the level element is yes,
+	this indicates editorial information that is for display
+	only and should not affect playback. For instance, a modern
+	edition of older music may set reference="yes" on the
+	attributes containing the music's original clef, key, and
+	time signature. It is no by default. 
+	
+	The type attribute for the level element indicates whether
+	the editorial information applies to the start of a series
+	of symbols, the end of a series of symbols, or a single
+	symbol. It is single by default for compatibility with
+	earlier MusicXML versions.
 -->
 <!ELEMENT footnote (#PCDATA)>
 <!ATTLIST footnote
@@ -794,6 +806,7 @@
 <!ELEMENT level (#PCDATA)>
 <!ATTLIST level
     reference %yes-no; #IMPLIED
+    type %start-stop-single; #IMPLIED
     %level-display;
 >
 <!ELEMENT voice (#PCDATA)>
