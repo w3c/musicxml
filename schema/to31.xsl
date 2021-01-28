@@ -63,6 +63,19 @@
 
   <!-- Additions in attributes.mod -->
 
+  <!-- 
+    Remove double elements that have an above value
+    different than yes, then remove the above attribute
+    altogether. Make sure the tests have the right
+    priority so the doubles are removed first, before
+    the above attribute is removed.
+  -->
+  <xsl:template
+    match="double/@above"/>
+
+  <xsl:template priority="1"
+    match="double[@above != 'yes']"/>
+
   <!-- Remove new elements. -->
   <xsl:template
     match="for-part"/>
