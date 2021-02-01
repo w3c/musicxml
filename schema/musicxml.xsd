@@ -2845,6 +2845,13 @@ Clefs appear at the start of each system unless the print-object attribute has b
 		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
+	<xs:complexType name="double">
+		<xs:annotation>
+			<xs:documentation>The double type indicates that the music is doubled one octave from what is currently written. If the above attribute is set to yes, the doubling is one octave above what is written, as for mixed flute / piccolo parts in band literature. Otherwise the doubling is one octave below what is written, as for mixed cello / bass parts in orchestral literature.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="above" type="yes-no"/>
+	</xs:complexType>
+
 	<xs:complexType name="for-part">
 		<xs:annotation>
 			<xs:documentation>The for-part type is used in a concert score to indicate the transposition for a transposed part created from that score. It is only used in score files that contain a concert-score element in the defaults. This allows concert scores with transposed parts to be represented in a single uncompressed MusicXML file.
@@ -6035,9 +6042,9 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 					<xs:documentation>The octave-change element indicates how many octaves to add to get from written pitch to sounding pitch. The octave-change element should be included when using transposition intervals of an octave or more, and should not be present for intervals of less than an octave.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="double" type="empty" minOccurs="0">
+			<xs:element name="double" type="double" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>If the double element is present, it indicates that the music is doubled one octave down from what is currently written (as is the case for mixed cello / bass parts in orchestral literature).</xs:documentation>
+					<xs:documentation>If the double element is present, it indicates that the music is doubled one octave from what is currently written.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>

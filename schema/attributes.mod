@@ -414,10 +414,15 @@
 	pitch to get the correct sounding pitch. The octave-change
 	element should be included when using transposition
 	intervals of an octave or more, and should not be present
-	for intervals of less than an octave. If the double element
-	is present, it indicates that the music is doubled one
-	octave down from what is currently written (as is the case
-	for mixed cello / bass parts in orchestral literature).
+	for intervals of less than an octave. 
+	
+	If the double element is present, it indicates that the
+	music is doubled one octave from what is currently written.
+	If the above attribute is set to yes, the doubling is one
+	octave above what is written, as for mixed flute / piccolo
+	parts in band literature. Otherwise the doubling is one
+	octave below what is written, as for mixed cello / bass
+	parts in orchestral literature.
 	
 	The optional number attribute refers to staff numbers, 
 	from top to bottom on the system. If absent, the
@@ -435,6 +440,9 @@
 <!ELEMENT chromatic (#PCDATA)>
 <!ELEMENT octave-change (#PCDATA)>
 <!ELEMENT double EMPTY>
+<!ATTLIST double
+    above %yes-no; #IMPLIED
+>
 
 <!--
 	The for-part element is used in a concert score to indicate
