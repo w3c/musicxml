@@ -2548,11 +2548,16 @@ The placement attribute is used when the dynamics are associated with a note. It
 
 	<xs:complexType name="level">
 		<xs:annotation>
-			<xs:documentation>The level type is used to specify editorial information for different MusicXML elements. If the reference attribute for the level element is yes, this indicates editorial information that is for display only and should not affect playback. For instance, a modern edition of older music may set reference="yes" on the attributes containing the music's original clef, key, and time signature. It is no by default.</xs:documentation>
+			<xs:documentation>The level type is used to specify editorial information for different MusicXML elements. The content contains identifying and/or descriptive text about the editorial status of the parent element.
+
+If the reference attribute is yes, this indicates editorial information that is for display only and should not affect playback. For instance, a modern edition of older music may set reference="yes" on the attributes containing the music's original clef, key, and time signature. It is no by default.
+
+The type attribute indicates whether the editorial information applies to the start of a series of symbols, the end of a series of symbols, or a single symbol. It is single by default for compatibility with earlier MusicXML versions.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
 				<xs:attribute name="reference" type="yes-no"/>
+				<xs:attribute name="type" type="start-stop-single"/>
 				<xs:attributeGroup ref="level-display"/>
 			</xs:extension>
 		</xs:simpleContent>

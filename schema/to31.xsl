@@ -89,6 +89,19 @@
   <!-- Additions in common.mod -->
 
   <!-- 
+    Remove level elements that have a type other than
+    single, then remove the type attribute altogether.
+    Make sure the tests have the right priority so the
+    levels are removed first, before the type attribute
+    is removed.
+  -->
+  <xsl:template 
+    match="level/@type"/>
+
+  <xsl:template priority="1"
+    match="level[@type != 'single']"/>
+
+  <!-- 
     Remove enclosure attributes with inverted-bracket value.
   -->
   <xsl:template 
