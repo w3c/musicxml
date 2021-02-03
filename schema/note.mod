@@ -55,7 +55,8 @@
 	  (%full-note;, duration, (tie, tie?)?)),
 	 instrument?, %editorial-voice;, type?, dot*,
 	 accidental?, time-modification?, stem?, notehead?,
-	 notehead-text?, staff?, beam*, notations*, lyric*, play?)>
+	 notehead-text?, staff?, beam*, notations*, lyric*, 
+	 play?, listen?)>
 
 <!--
 	The position and printout entities for printing suggestions
@@ -1560,6 +1561,68 @@
 <!ELEMENT humming EMPTY>
 <!ELEMENT end-line EMPTY>
 <!ELEMENT end-paragraph EMPTY>
+
+<!-- 
+	The listen and listening elements, new in Version 4.0,
+	specify different ways that a score following or machine
+	listening application can interact with a performer. The
+	listen element handles interactions that are specific to a
+	note. When multiple child elements of the same type are
+	present, they should have distinct player and/or time-only
+	attributes.
+-->
+<!ELEMENT listen ((assess | wait | other-listen)+)>
+
+<!-- 
+	By default, an assessment application should assess all
+	notes without a cue child element, and not assess any note
+	with a cue child element. The assess element allows this
+	default assessment to be overridden for individual notes.
+	The optional player and time-only attributes restrict the
+	element to apply to a single player or set of times through
+	a repeated section, respectively. If missing, the element
+	applies to all players or all times through the repeated
+	section, respectively. The player attribute references the
+	id attribute of a player element defined within the matching
+	score-part.
+-->
+<!ELEMENT assess EMPTY>
+<!ATTLIST assess
+    type %yes-no; #REQUIRED
+    player IDREF #IMPLIED
+    %time-only;
+>
+
+<!-- 
+	The wait element specifies a point where the accompaniment
+	should wait for a performer event before continuing. This
+	typically happens at the start of new sections or after a
+	held note or indeterminate music. These waiting points
+	cannot always be inferred reliably from the contents of
+	the displayed score. The optional player and time-only
+	attributes restrict the element to apply to a single player
+	or set of times through a repeated section, respectively.
+-->
+<!ELEMENT wait EMPTY>
+<!ATTLIST wait
+    player IDREF #IMPLIED
+    %time-only;
+>
+
+<!-- 
+	The other-listen element represents other types of listening 
+	control and interaction. The required type attribute
+	indicates the type of listening to which the element content
+	applies. The optional player and time-only attributes
+	restrict the element to apply to a single player or set of
+	times through a repeated section, respectively.
+-->
+<!ELEMENT other-listen (#PCDATA)>
+<!ATTLIST other-listen
+    type CDATA #REQUIRED
+    player IDREF #IMPLIED
+    %time-only;
+>
 
 <!--
 	Figured bass elements take their position from the first

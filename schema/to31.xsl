@@ -51,6 +51,10 @@
 
   <!-- Additions in note.mod -->
 
+  <!-- Remove new elements. -->
+  <xsl:template
+    match="listen"/>
+  
   <!-- 
     Remove accidental SMuFL attributes with new values.
   -->
@@ -118,7 +122,7 @@
   
   <!-- Remove new elements. -->
   <xsl:template
-    match="instrument-change | swing"/>
+    match="instrument-change | listening | swing"/>
   
   <!-- Remove new attributes. -->
   <xsl:template 
@@ -131,7 +135,7 @@
 
   <!-- Remove new elements. -->
   <xsl:template
-    match="concert-score | part-link"/>
+    match="concert-score | part-link | player"/>
   
   <!--
     Convert score version attribute to 3.1.
