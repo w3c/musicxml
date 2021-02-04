@@ -1304,7 +1304,7 @@
 	state. It should not be used to compensate for latency
 	issues in particular hardware configurations.
 -->
-<!ELEMENT listening ((sync | other-listening)+), offset?>
+<!ELEMENT listening ((sync | other-listening)+, offset?)>
 
 <!-- 
 	The sync element specifies the style that a score following
