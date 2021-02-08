@@ -203,9 +203,11 @@
    <sound id="drum.tabla"/>
    <sound id="drum.tabla.bayan"/>
    <sound id="drum.tabla.dayan"/>
+   <sound id="drum.tabor"/>
    <sound id="drum.taiko"/>
    <sound id="drum.talking"/>
    <sound id="drum.tama"/>
+   <sound id="drum.tamborim"/>
    <sound id="drum.tamborita"/>
    <sound id="drum.tambourine"/>
    <sound id="drum.tamte"/>
@@ -418,6 +420,7 @@
    <sound id="pitched-percussion.gyil"/>
    <sound id="pitched-percussion.hammer-dulcimer"/>
    <sound id="pitched-percussion.handbells"/>
+   <sound id="pitched-percussion.handchimes"/>
    <sound id="pitched-percussion.kalimba"/>
    <sound id="pitched-percussion.kantil"/>
    <sound id="pitched-percussion.khim"/>
@@ -492,6 +495,7 @@
    <sound id="pluck.bordonua"/>
    <sound id="pluck.bouzouki"/>
    <sound id="pluck.bouzouki.irish"/>
+   <sound id="pluck.cavaquinho"/>
    <sound id="pluck.celtic-harp"/>
    <sound id="pluck.charango"/>
    <sound id="pluck.chitarra-battente"/>
@@ -808,7 +812,10 @@
    <sound id="wind.reed.clarinet.bflat"/>
    <sound id="wind.reed.clarinet.contra-alto"/>
    <sound id="wind.reed.clarinet.contrabass"/>
+   <sound id="wind.reed.clarinet.d"/>
    <sound id="wind.reed.clarinet.eflat"/>
+   <sound id="wind.reed.clarinet.g"/>
+   <sound id="wind.reed.clarinet.piccolo"/>
    <sound id="wind.reed.clarinet.piccolo.aflat"/>
    <sound id="wind.reed.clarinette-damour"/>
    <sound id="wind.reed.contrabass"/>
