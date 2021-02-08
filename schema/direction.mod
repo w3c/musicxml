@@ -55,7 +55,7 @@
 	the previous element by default.
 -->
 <!ELEMENT direction (direction-type+, offset?,
-	%editorial-voice;, staff?, sound?)>
+	%editorial-voice;, staff?, sound?, listening?)>
 <!ATTLIST direction
     %placement; 
     %directive;
@@ -1284,3 +1284,71 @@
 <!ELEMENT second (#PCDATA)>
 <!ELEMENT swing-type (#PCDATA)>
 <!ELEMENT swing-style (#PCDATA)>
+
+<!-- 
+	The listen and listening elements, new in Version 4.0,
+	specify different ways that a score following or machine
+	listening application can interact with a performer. The
+	listening element handles interactions that change the state
+	of the listening application from the specified point in
+	the performance onward. If multiple child elements of the
+	same type are present, they should have distinct player
+	and/or time-only attributes.
+	
+	The offset element is used to indicate that the listening
+	change takes place offset from the current score position.
+	If the listening element is a child of a direction element,
+	the listening offset element overrides the direction offset
+	element if both elements are present. Note that the offset
+	reflects the intended musical position for the change in
+	state. It should not be used to compensate for latency
+	issues in particular hardware configurations.
+-->
+<!ELEMENT listening ((sync | other-listening)+, offset?)>
+
+<!-- 
+	The sync element specifies the style that a score following
+	application should use to synchronize an accompaniment with
+	a performer. The none type indicates no synchronization to
+	the performer. The tempo type indicates synchronization
+	based on the performer tempo rather than individual events
+	in the score. The event type indicates synchronization by
+	following the performance of individual events in the score
+	rather than the performer tempo. The mostly-tempo and
+	mostly-event types combine these two approaches, with
+	mostly-tempo giving more weight to tempo and mostly-event
+	giving more weight to performed events. The always-event
+	type provides the strictest synchronization by not being
+	forgiving of missing performed events. If this element is
+	not included in a score, default synchronization depends
+	on the application.
+	
+	The optional latency attribute specifies a time in 
+	milliseconds that the listening application should expect
+	from the performer. The optional player and time-only
+	attributes restrict the element to apply to a single player
+	or set of times through a repeated section, respectively.
+-->
+<!ELEMENT sync EMPTY>
+<!ATTLIST sync
+    type (none | tempo | mostly-tempo | 
+          mostly-event | event | always-event) #REQUIRED
+    latency CDATA #IMPLIED
+    player IDREF #IMPLIED
+    %time-only;
+>
+
+<!-- 
+	The other-listening element represents other types of
+	listening control and interaction. The required type
+	attribute indicates the type of listening to which the
+	element content applies. The optional player and time-only
+	attributes restrict the element to apply to a single player
+	or set of times through a repeated section, respectively.
+-->
+<!ELEMENT other-listening (#PCDATA)>
+<!ATTLIST other-listening
+    type CDATA #REQUIRED
+    player IDREF #IMPLIED
+    %time-only;
+>

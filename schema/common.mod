@@ -688,11 +688,12 @@
 	 last-beat     CDATA    #IMPLIED">
 
 <!--
-	The time-only entity is used to indicate that a particular
-	playback-related element only applies particular times through
-	a repeated section. The value is a comma-separated list of
-	positive integers arranged in ascending order, indicating which
-	times through the repeated section that the element applies.
+	The time-only entity is used to indicate that a specific
+	playback- or listening-related element only applies specific
+	times through a repeated section. The value is a comma-
+	separated list of positive integers arranged in ascending
+	order, indicating which times through the repeated section
+	that the element applies.
 -->
 <!ENTITY % time-only
 	"time-only CDATA #IMPLIED">
@@ -1131,10 +1132,10 @@
 
 <!--
 	For unpitched instruments, specify a MIDI 1.0 note number
-	ranging from 1 to 128. It is usually used with MIDI banks for
-	percussion. Note that MIDI 1.0 note numbers are generally
-	specified from 0 to 127 rather than the 1 to 128 numbering
-	used in this element.
+	ranging from 1 to 128. It is usually used with MIDI banks
+	for percussion. Note that MIDI 1.0 note numbers are
+	generally specified from 0 to 127 rather than the 1 to 128
+	numbering used in this element.
 -->
 <!ELEMENT midi-unpitched (#PCDATA)>
 
@@ -1160,12 +1161,12 @@
 
 <!-- 
 	The play element, new in Version 3.0, specifies playback
-	techniques to be used in conjunction with the instrument-sound
-	element. When used as part of a sound element, it applies to
-	all notes going forward in score order. In multi-instrument
-	parts, the affected instrument should be specified using the
-	id attribute. When used as part of a note element, it applies
-	to the current note only.
+	techniques to be used in conjunction with the 
+	instrument-sound element. When used as part of a sound
+	element, it applies to all notes going forward in score
+	order. In multi-instrument parts, the affected instrument
+	should be specified using the id attribute. When used as
+	part of a note element, it applies to the current note only.
 -->
 <!ELEMENT play ((ipa | mute | semi-pitched | other-play)*)>
 <!ATTLIST play
@@ -1180,26 +1181,26 @@
 <!ELEMENT ipa (#PCDATA)>
 
 <!-- 
-	The mute element represents muting for different instruments,
-	including brass, winds, and strings. The on and off values
-	are used for undifferentiated mutes. The remaining values
-	represent specific mutes: straight, cup, harmon-no-stem, 
-	harmon-stem, bucket, plunger, hat, solotone, practice,
-	stop-mute, stop-hand, echo, and palm.
+	The mute element represents muting for different
+	instruments, including brass, winds, and strings. The on
+	and off values are used for undifferentiated mutes. The
+	remaining values represent specific mutes: straight, cup,
+	harmon-no-stem, harmon-stem, bucket, plunger, hat, solotone,
+	practice, stop-mute, stop-hand, echo, and palm.
 -->
 <!ELEMENT mute (#PCDATA)>
 
 <!-- 
 	The semi-pitched element represents categories of indefinite
-	pitch for percussion instruments. Values are high, medium-high,
-	medium, medium-low, low, and very-low.
+	pitch for percussion instruments. Values are high,
+	medium-high, medium, medium-low, low, and very-low.
 -->
 <!ELEMENT semi-pitched (#PCDATA)>
 
 <!-- 
-	The other-play element represents other types of playback. The
-	required type attribute indicates the type of playback to which
-	the element content applies.
+	The other-play element represents other types of playback.
+	The required type attribute indicates the type of playback
+	to which the element content applies.
 -->
 <!ELEMENT other-play (#PCDATA)>
 <!ATTLIST other-play

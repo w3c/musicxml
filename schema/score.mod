@@ -184,7 +184,7 @@
 <!ELEMENT score-part (identification?,
 	part-link*, part-name, part-name-display?,
 	part-abbreviation?, part-abbreviation-display?, 
-	group*, score-instrument*, 
+	group*, score-instrument*, player*,
 	(midi-device?, midi-instrument?)*)>
 <!ATTLIST score-part
     id ID #REQUIRED
@@ -351,14 +351,30 @@
 <!ELEMENT group (#PCDATA)>
 
 <!--
+	The player element allows for multiple players per
+	score-part for use in listening applications. One player
+	may play multiple instruments, while a single instrument
+	may include multiple players in divisi sections. 
+	
+	The player-name element is typically used within a software
+	application, rather than appearing on the printed page of a
+	score.
+-->
+<!ELEMENT player (player-name)>
+<!ATTLIST player
+    id ID #REQUIRED
+>
+<!ELEMENT player-name (#PCDATA)>
+
+<!--
 	Here is the basic musical data that is either associated
 	with a part or a measure, depending on whether partwise
 	or timewise hierarchy is used.
 -->
 <!ENTITY % music-data
 	"(note | backup | forward | direction | attributes |
-	  harmony | figured-bass | print | sound | barline | 
-	  grouping | link | bookmark)*">
+	  harmony | figured-bass | print | sound | listening |
+	  barline | grouping | link | bookmark)*">
 
 <!--
 	The score-header entity contains basic score metadata

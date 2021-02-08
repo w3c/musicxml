@@ -536,7 +536,7 @@ In start-stop cases, ties can add more elements using a continue type. This is t
 
 	<xs:simpleType name="time-only">
 		<xs:annotation>
-			<xs:documentation>The time-only type is used to indicate that a particular playback-related element only applies particular times through a repeated section. The value is a comma-separated list of positive integers arranged in ascending order, indicating which times through the repeated section that the element applies.</xs:documentation>
+			<xs:documentation>The time-only type is used to indicate that a particular playback- or listening-related element only applies particular times through a repeated section. The value is a comma-separated list of positive integers arranged in ascending order, indicating which times through the repeated section that the element applies.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:pattern value="[1-9][0-9]*(, ?[1-9][0-9]*)*"/>
@@ -1147,6 +1147,13 @@ The "none" kind is used to explicitly encode absence of chords or functional har
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="milliseconds">
+		<xs:annotation>
+			<xs:documentation>The milliseconds type represents an integral number of milliseconds.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	
 	<xs:simpleType name="on-off">
 		<xs:annotation>
 			<xs:documentation>The on-off type is used for notation elements such as string mutes.</xs:documentation>
@@ -1227,6 +1234,20 @@ The change, continue, and discontinue types are used when the line attribute is 
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="sync-type">
+		<xs:annotation>
+			<xs:documentation>The sync-type type specifies the style that a score following application should use to synchronize an accompaniment with a performer. The none type indicates no synchronization to the performer. The tempo type indicates synchronization based on the performer tempo rather than individual events in the score. The event type indicates synchronization by following the performance of individual events in the score rather than the performer tempo. The mostly-tempo and mostly-event types combine these two approaches, with mostly-tempo giving more weight to tempo and mostly-event giving more weight to performed events. The always-event type provides the strictest synchronization by not being forgiving of missing performed events.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="tempo"/>
+			<xs:enumeration value="mostly-tempo"/>
+			<xs:enumeration value="mostly-event"/>
+			<xs:enumeration value="event"/>
+			<xs:enumeration value="always-event"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:simpleType name="system-relation-number">
 		<xs:annotation>
 			<xs:documentation>The system-relation-number type distinguishes measure numbers that are associated with a system rather than the particular part where the element appears. A value of only-top or only-bottom indicates that the number should appear only on the top or bottom part of the current system, respectively. A value of also-top or also-bottom indicates that the number should appear on both the current part and the top or bottom part of the current system, respectively. If these values appear in a score, when parts are created the number should only appear once in this part, not twice. A value of none indicates that the number is associated only with the current part, not with the system.</xs:documentation>
@@ -3338,6 +3359,7 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:group ref="editorial-voice-direction"/>
 			<xs:group ref="staff" minOccurs="0"/>
 			<xs:element name="sound" type="sound" minOccurs="0"/>
+			<xs:element name="listening" type="listening" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="directive"/>
@@ -3589,6 +3611,21 @@ The text attribute may use strings such as "13sus" that refer to both the kind a
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="listening">
+		<xs:annotation>
+			<xs:documentation>The listen and listening types, new in Version 4.0, specify different ways that a score following or machine listening application can interact with a performer. The listening type handles interactions that change the state of the listening application from the specified point in the performance onward. If multiple child elements of the same type are present, they should have distinct player and/or time-only attributes.
+				
+The offset element is used to indicate that the listening change takes place offset from the current score position. If the listening element is a child of a direction element, the listening offset element overrides the direction offset element if both elements are present. Note that the offset reflects the intended musical position for the change in state. It should not be used to compensate for latency issues in particular hardware configurations.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="sync" type="sync"/>
+				<xs:element name="other-listening" type="other-listening"/>
+			</xs:choice>
+			<xs:element name="offset" type="offset" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
 	<xs:complexType name="measure-numbering">
 		<xs:annotation>
 			<xs:documentation>The measure-numbering type describes how frequently measure numbers are displayed on this part. The text attribute from the measure element is used for display, or the number attribute if the text attribute is not present. Measures with an implicit attribute set to "yes" never display a measure number, regardless of the measure-numbering setting.
@@ -3736,6 +3773,19 @@ The optional multiple-rest-always and multiple-rest-range attributes describe ho
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="other-listening">
+		<xs:annotation>
+			<xs:documentation>TThe other-listening type represents other types of listening control and interaction. The required type attribute indicates the type of listening to which the element content applies. The optional player and time-only attributes restrict the element to apply to a single player or set of times through a repeated section, respectively.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:token" use="required"/>
+				<xs:attribute name="player" type="xs:IDREF"/>
+				<xs:attribute name="time-only" type="time-only"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="pedal">
 		<xs:annotation>
 			<xs:documentation>The pedal type represents piano pedal marks. Starting with MusicXML 3.1 this includes sostenuto as well as damper pedal marks. The line attribute is yes if pedal lines are used. The sign attribute is yes if Ped, Sost, and * signs are used. For MusicXML 2.0 compatibility, the sign attribute is yes by default if the line attribute is no, and is no by default if the line attribute is yes. If the sign attribute is set to yes and the type is start or sostenuto, the abbreviated attribute is yes if the short P and S signs are used, and no if the full Ped and Sost signs are used. It is no by default. Otherwise the abbreviated attribute is ignored. The alignment attributes are ignored if the line attribute is yes.</xs:documentation>
@@ -4003,6 +4053,18 @@ The swing element has no effect for playback of grace notes, notes where a type 
 			</xs:choice>
 			<xs:element name="swing-style" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="sync">
+		<xs:annotation>
+			<xs:documentation>The sync type specifies the style that a score following application should use the synchronize an accompaniment with a performer. If this type is not included in a score, default synchronization depends on the application.
+			
+The optional latency attribute specifies a time in milliseconds that the listening application should expect from the performer. The optional player and time-only attributes restrict the element to apply to a single player or set of times through a repeated section, respectively.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="type" type="sync-type" use="required"/>
+		<xs:attribute name="latency" type="milliseconds"/>
+		<xs:attribute name="player" type="xs:IDREF"/>
+		<xs:attribute name="time-only" type="time-only"/>
 	</xs:complexType>
 	
 	<xs:complexType name="wedge">
@@ -4430,6 +4492,15 @@ When used in the print element, the system-layout element affects the appearance
 		<xs:attributeGroup ref="smufl"/>
 	</xs:complexType>
 
+	<xs:complexType name="assess">
+		<xs:annotation>
+			<xs:documentation>By default, an assessment application should assess all notes without a cue child element, and not assess any note with a cue child element. The assess type allows this default assessment to be overridden for individual notes. The optional player and time-only attributes restrict the type to apply to a single player or set of times through a repeated section, respectively. If missing, the type applies to all players or all times through the repeated section, respectively. The player attribute references the id attribute of a player element defined within the matching score-part.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="type" type="yes-no" use="required"/>
+		<xs:attribute name="player" type="xs:IDREF"/>
+		<xs:attribute name="time-only" type="time-only"/>
+	</xs:complexType>
+	
 	<xs:complexType name="backup">
 		<xs:annotation>
 			<xs:documentation>The backup and forward elements are required to coordinate multiple voices in one part, including music on multiple staves. The backup type is generally used to move between voices and staves. Thus the backup element does not include voice or staff elements. Duration values should always be positive, and should not cross measure boundaries or mid-measure changes in the divisions value.</xs:documentation>
@@ -4770,6 +4841,17 @@ Figures are ordered from top to bottom. The value of parentheses is "no" if not 
 		<xs:attribute name="id" type="xs:IDREF" use="required"/>
 	</xs:complexType>
 
+	<xs:complexType name="listen">
+		<xs:annotation>
+			<xs:documentation>The listen and listening types, new in Version 4.0, specify different ways that a score following or machine listening application can interact with a performer. The listen type handles interactions that are specific to a note. If multiple child elements of the same type are present, they should have distinct player and/or time-only attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="assess" type="assess"/>
+			<xs:element name="wait" type="wait"/>
+			<xs:element name="other-listen" type="other-listening"/>
+		</xs:choice>
+	</xs:complexType>
+	
 	<xs:complexType name="lyric">
 		<xs:annotation>
 			<xs:documentation>The lyric type represents text underlays for lyrics, based on Humdrum with support for other formats. Two text elements that are not separated by an elision element are part of the same syllable, but may have different text formatting. The MusicXML XSD is more strict than the DTD in enforcing this by disallowing a second syllabic element unless preceded by an elision element. The lyric number indicates multiple lines, though a name can be used as well (as in Finale's verse / chorus / section specification). 
@@ -4939,6 +5021,7 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 			<xs:element name="notations" type="notations" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="lyric" type="lyric" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="play" type="play" minOccurs="0"/>
+			<xs:element name="listen" type="listen" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="x-position"/>
 		<xs:attributeGroup ref="font"/>
@@ -5521,6 +5604,14 @@ The show-number attribute is used to display either the number of actual notes, 
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="wait">
+		<xs:annotation>
+			<xs:documentation>The wait type specifies a point where the accompaniment should wait for a performer event before continuing. This typically happens at the start of new sections or after a held note or indeterminate music. These waiting points cannot always be inferred reliably from the contents of the displayed score. The optional player and time-only attributes restrict the type to apply to a single player or set of times through a repeated section, respectively.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="player" type="xs:IDREF"/>
+		<xs:attribute name="time-only" type="time-only"/>
+	</xs:complexType>
+	
 	<!-- Complex types derived from score.mod elements -->
 
 	<xs:complexType name="credit">
@@ -5718,6 +5809,20 @@ Multiple part-link elements can link a condensed part within a score file to mul
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="player">
+		<xs:annotation>
+			<xs:documentation>The player type allows for multiple players per score-part for use in listening applications. One player may play multiple instruments, while a single instrument may include multiple players in divisi sections.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="player-name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The player-name element is typically used within a software application, rather than appearing on the printed page of a score.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	
 	<xs:complexType name="score-instrument">
 		<xs:annotation>
 			<xs:documentation>The score-instrument type represents a single instrument within a score-part. As with the score-part type, each score-instrument has a required ID attribute, a name, and an optional abbreviation.
@@ -5757,6 +5862,7 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="score-instrument" type="score-instrument" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="player" type="player" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:sequence minOccurs="0" maxOccurs="unbounded">
 				<xs:element name="midi-device" type="midi-device" minOccurs="0"/>
 				<xs:element name="midi-instrument" type="midi-instrument" minOccurs="0"/>
@@ -6191,6 +6297,7 @@ A root is a pitch name like C, D, E, where a function is an indication like I, I
 				<xs:element name="figured-bass" type="figured-bass"/>
 				<xs:element name="print" type="print"/>
 				<xs:element name="sound" type="sound"/>
+				<xs:element name="listening" type="listening"/>
 				<xs:element name="barline" type="barline"/>
 				<xs:element name="grouping" type="grouping"/>
 				<xs:element name="link" type="link"/>
