@@ -434,7 +434,8 @@
 
 	The halign attribute is used in these situations. If it 
 	is not present, its value is the same as for the justify
-	attribute.
+	attribute. For elements where a justify attribute is not
+	allowed, the default is implementation-dependent.
 -->
 <!ENTITY % halign
 	"halign (left | center | right) #IMPLIED">
@@ -442,7 +443,10 @@
 <!--
 	The valign entity is used to indicate vertical
 	alignment to the top, middle, bottom, or baseline 
-	of the text. Defaults are implementation-dependent.
+	of the text. If the text is on multiple lines, 
+	baseline alignment refers to the baseline of the
+	lowest line of text. Defaults are implementation-
+	dependent.
 -->
 <!ENTITY % valign
 	"valign (top | middle | bottom | baseline) #IMPLIED">

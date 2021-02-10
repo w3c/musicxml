@@ -1645,7 +1645,7 @@
 -->
 <!ELEMENT figured-bass (figure+, duration?, %editorial;)>
 <!ATTLIST figured-bass
-    %print-style;
+    %print-style-align;
     %placement;
     %printout;
     parentheses %yes-no; #IMPLIED
