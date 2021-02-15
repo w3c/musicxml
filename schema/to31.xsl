@@ -63,7 +63,8 @@
 
   <!-- Remove new attributes. -->
   <xsl:template 
-    match="bend/@shape | figured-bass/@placement"/>
+    match="bend/@shape | figured-bass/@placement | 
+      figured-bass/@halign | figured-bass/@valign"/>
 
   <!-- Additions in attributes.mod -->
 
@@ -122,11 +123,13 @@
   
   <!-- Remove new elements. -->
   <xsl:template
-    match="instrument-change | listening | swing"/>
+    match="bass-separator | instrument-change | 
+      listening | swing"/>
   
   <!-- Remove new attributes. -->
   <xsl:template 
     match="direction/@system | harmony/@system |
+      harmony/@arrangement | bass/@arrangement |
       measure-numbering/@system | measure-numbering/@staff |
       measure-numbering/@multiple-rest-always | 
       measure-numbering/@multiple-rest-range"/>

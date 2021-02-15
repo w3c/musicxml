@@ -618,7 +618,7 @@ In start-stop cases, ties can add more elements using a continue type. This is t
 
 	<xs:simpleType name="valign">
 		<xs:annotation>
-			<xs:documentation>The valign type is used to indicate vertical alignment to the top, middle, bottom, or baseline of the text. Defaults are implementation-dependent.</xs:documentation>
+			<xs:documentation>The valign type is used to indicate vertical alignment to the top, middle, bottom, or baseline of the text. If the text is on multiple lines, baseline alignment refers to the baseline of the lowest line of text. Defaults are implementation-dependent.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="top"/>
@@ -961,6 +961,17 @@ The none sign is deprecated as of MusicXML 4.0. Use the clef element's print-obj
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="harmony-arrangement">
+		<xs:annotation>
+			<xs:documentation>The harmony-arrangement type indicates how stacked chords and bass notes are displayed within a harmony element. The vertical value specifies that the second element appears below the first. The horizontal value specifies that the second element appears to the right of the first. The diagonal value specifies that the second element appears both below and to the right of the first.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="vertical"/>
+			<xs:enumeration value="horizontal"/>
+			<xs:enumeration value="diagonal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:simpleType name="harmony-type">
 		<xs:annotation>
 			<xs:documentation>The harmony-type type differentiates different types of harmonies when alternate harmonies are possible. Explicit harmonies have all note present in the music; implied have some notes missing but implied; alternate represents alternate analyses.</xs:documentation>
@@ -1946,7 +1957,7 @@ The version attribute was added in Version 1.1 for the score-partwise and score-
 
 Typically this type of credit is aligned to the right, so that the position information refers to the right-most part of the text. But in this example, the text is center-justified, not right-justified.
 
-The halign attribute is used in these situations. If it is not present, its value is the same as for the justify attribute.</xs:documentation>
+The halign attribute is used in these situations. If it is not present, its value is the same as for the justify attribute. For elements where a justify attribute is not allowed, the default is implementation-dependent.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="halign" type="left-center-right"/>
 	</xs:attributeGroup>
@@ -3219,12 +3230,18 @@ The number attribute indicates which times the ending is played, similar to the 
 
 	<xs:complexType name="bass">
 		<xs:annotation>
-			<xs:documentation>The bass type is used to indicate a bass note in popular music chord symbols, e.g. G/C. It is generally not used in functional harmony, as inversion is generally not used in pop chord symbols. As with root, it is divided into step and alter elements, similar to pitches.</xs:documentation>
+			<xs:documentation>The bass type is used to indicate a bass note in popular music chord symbols, e.g. G/C. It is generally not used in functional harmony, as inversion is generally not used in pop chord symbols. As with root, it is divided into step and alter elements, similar to pitches. The arrangement attribute specifies where the bass is displayed relative to what precedes it.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="bass-separator" type="style-text" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The optional bass-separator element indicates that text, rather than a line or slash, separates the bass from what precedes it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="bass-step" type="bass-step"/>
 			<xs:element name="bass-alter" type="bass-alter" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attribute name="arrangement" type="harmony-arrangement"/>
 	</xs:complexType>
 
 	<xs:complexType name="bass-alter">
@@ -3522,7 +3539,7 @@ This element is flexible to allow for different types of analyses. Future versio
 
 If there are alternate harmonies possible, this can be specified using multiple harmony elements differentiated by type. Explicit harmonies have all note present in the music; implied have some notes missing but implied; alternate represents alternate analyses.
 
-The harmony object may be used for analysis or for chord symbols. The print-object attribute controls whether or not anything is printed due to the harmony element. The print-frame attribute controls printing of a frame or fretboard diagram. The print-style attribute group sets the default for the harmony, but individual elements can override this with their own print-style values.</xs:documentation>
+The harmony object may be used for analysis or for chord symbols. The print-object attribute controls whether or not anything is printed due to the harmony element. The print-frame attribute controls printing of a frame or fretboard diagram. The print-style attribute group sets the default for the harmony, but individual elements can override this with their own print-style values. The arrangement attribute specifies how multiple harmony-chord groups are arranged relative to each other.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:group ref="harmony-chord" maxOccurs="unbounded"/>
@@ -3534,6 +3551,7 @@ The harmony object may be used for analysis or for chord symbols. The print-obje
 		<xs:attribute name="type" type="harmony-type"/>
 		<xs:attributeGroup ref="print-object"/>
 		<xs:attribute name="print-frame" type="yes-no"/>
+		<xs:attribute name="arrangement" type="harmony-arrangement"/>
 		<xs:attributeGroup ref="print-style"/>
 		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="system-relation"/>
@@ -3751,7 +3769,9 @@ The optional multiple-rest-always and multiple-rest-range attributes describe ho
 
 	<xs:complexType name="offset">
 		<xs:annotation>
-			<xs:documentation>An offset is represented in terms of divisions, and indicates where the direction will appear relative to the current musical location. This affects the visual appearance of the direction. If the sound attribute is "yes", then the offset affects playback too. If the sound attribute is "no", then any sound associated with the direction takes effect at the current location. The sound attribute is "no" by default for compatibility with earlier versions of the MusicXML format. If an element within a direction includes a default-x attribute, the offset value will be ignored when determining the appearance of that element.</xs:documentation>
+			<xs:documentation>An offset is represented in terms of divisions, and indicates where the direction will appear relative to the current musical location. The current musical location is always within the current measure, even at the end of a measure.
+				
+The offset affects the visual appearance of the direction. If the sound attribute is "yes", then the offset affects playback and listening too. If the sound attribute is "no", then any sound or listening associated with the direction takes effect at the current location. The sound attribute is "no" by default for compatibility with earlier versions of the MusicXML format. If an element within a direction includes a default-x attribute, the offset value will be ignored when determining the appearance of that element.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="divisions">
@@ -4660,7 +4680,7 @@ Figures are ordered from top to bottom. The value of parentheses is "no" if not 
 			<xs:group ref="duration" minOccurs="0"/>
 			<xs:group ref="editorial"/>
 		</xs:sequence>
-		<xs:attributeGroup ref="print-style"/>
+		<xs:attributeGroup ref="print-style-align"/>
 		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="printout"/>
 		<xs:attribute name="parentheses" type="yes-no"/>
