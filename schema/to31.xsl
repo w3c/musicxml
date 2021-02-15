@@ -63,7 +63,8 @@
 
   <!-- Remove new attributes. -->
   <xsl:template 
-    match="bend/@shape | figured-bass/@placement"/>
+    match="bend/@shape | figured-bass/@placement | 
+      figured-bass/@halign | figured-bass/@valign"/>
 
   <!-- Additions in attributes.mod -->
 

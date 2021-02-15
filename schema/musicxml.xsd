@@ -618,7 +618,7 @@ In start-stop cases, ties can add more elements using a continue type. This is t
 
 	<xs:simpleType name="valign">
 		<xs:annotation>
-			<xs:documentation>The valign type is used to indicate vertical alignment to the top, middle, bottom, or baseline of the text. Defaults are implementation-dependent.</xs:documentation>
+			<xs:documentation>The valign type is used to indicate vertical alignment to the top, middle, bottom, or baseline of the text. If the text is on multiple lines, baseline alignment refers to the baseline of the lowest line of text. Defaults are implementation-dependent.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="top"/>
@@ -1956,7 +1956,7 @@ The version attribute was added in Version 1.1 for the score-partwise and score-
 
 Typically this type of credit is aligned to the right, so that the position information refers to the right-most part of the text. But in this example, the text is center-justified, not right-justified.
 
-The halign attribute is used in these situations. If it is not present, its value is the same as for the justify attribute.</xs:documentation>
+The halign attribute is used in these situations. If it is not present, its value is the same as for the justify attribute. For elements where a justify attribute is not allowed, the default is implementation-dependent.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="halign" type="left-center-right"/>
 	</xs:attributeGroup>
@@ -4677,7 +4677,7 @@ Figures are ordered from top to bottom. The value of parentheses is "no" if not 
 			<xs:group ref="duration" minOccurs="0"/>
 			<xs:group ref="editorial"/>
 		</xs:sequence>
-		<xs:attributeGroup ref="print-style"/>
+		<xs:attributeGroup ref="print-style-align"/>
 		<xs:attributeGroup ref="placement"/>
 		<xs:attributeGroup ref="printout"/>
 		<xs:attribute name="parentheses" type="yes-no"/>
