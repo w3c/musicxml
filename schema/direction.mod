@@ -28,6 +28,18 @@
 <!-- Entities -->
 
 <!--
+	The harmony-arrangement entity indicates how stacked chords
+	and bass notes are displayed within a harmony element. The
+	vertical value specifies that the second element appears
+	below the first. The horizontal value specifies that the
+	second element appears to the right of the first. The 
+	diagonal value specifies that the second element appears
+	both below and to the right of the first.
+-->
+<!ENTITY % harmony-arrangement
+	"arrangement (vertical | horizontal | diagonal) #IMPLIED">
+
+<!--
 	The tip-direction entity represents the direction in which
 	the tip of a stick or beater points, using Unicode arrow
 	terminology.
@@ -691,7 +703,9 @@
 	V of II). A sequence of harmony-chord entities is used
 	for this type of secondary function, where V of II would
 	be represented by a harmony-chord with a V function
-	followed by a harmony-chord with a II function.
+	followed by a harmony-chord with a II function. The
+	arrangement attribute specifies how multiple harmony-chord
+	entities are arranged relative to each other.
 -->
 <!ENTITY % harmony-chord "((root | function), kind,
 	inversion?, bass?, degree*)">
@@ -702,6 +716,7 @@
     type (explicit | implied | alternate) #IMPLIED
     %print-object;
     print-frame  %yes-no; #IMPLIED
+    %harmony-arrangement;
     %print-style;
     %placement;
     %system-relation;
@@ -870,8 +885,21 @@
 	step and alter elements, similar to pitches. The attributes
 	for bass-step and bass-alter work the same way as
 	the corresponding attributes for root-step and root-alter.
+	The arrangement attribute specifies where the bass is
+	displayed relative to what precedes it. The optional
+	bass-separator element indicates that text, rather than a
+	line or slash, separates the bass from what precedes it.
 -->
-<!ELEMENT bass (bass-step, bass-alter?)>
+<!ELEMENT bass (bass-separator?, bass-step, bass-alter?)>
+<!ATTLIST bass
+    %harmony-arrangement;
+>
+
+<!ELEMENT bass-separator (#PCDATA)>
+<!ATTLIST bass-separator
+    %print-style;
+>
+
 <!ELEMENT bass-step (#PCDATA)>
 <!ATTLIST bass-step
     text CDATA #IMPLIED
