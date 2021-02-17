@@ -1707,7 +1707,7 @@ The values do, re, mi, fa, fa up, so, la, and ti correspond to Aikin's 7-shape s
 
 The arrow shapes differ from triangle and inverted triangle by being centered on the stem. Slashed and back slashed notes include both the normal notehead and a slash. The triangle shape has the tip of the triangle pointing up; the inverted triangle shape has the tip of the triangle pointing down. The left triangle shape is a right triangle with the hypotenuse facing up and to the left.
 
-The other notehead covers noteheads other than those listed here. It is usually used in combination with the smufl attribute to specify a particular SMuFL notehead. The smufl attribute may be used with any notehead value to help specify the appearance of symbols that share the same MusicXML semantics. Noteheads in the SMuFL "Note name noteheads" range (U+E150–U+E1AF) should not use the smufl attribute or the "other" value, but instead use the notehead-text element.</xs:documentation>
+The other notehead covers noteheads other than those listed here. It is usually used in combination with the smufl attribute to specify a particular SMuFL notehead. The smufl attribute may be used with any notehead value to help specify the appearance of symbols that share the same MusicXML semantics. Noteheads in the SMuFL Note name noteheads and Note name noteheads supplement ranges (U+E150–U+E1AF and U+EEE0–U+EEFF) should not use the smufl attribute or the "other" value, but instead use the notehead-text element.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="slash"/>
@@ -3509,7 +3509,7 @@ By default, a series of direction-type elements and a series of child elements o
 
 	<xs:complexType name="glass">
 		<xs:annotation>
-			<xs:documentation>The glass type represents pictograms for glass percussion instruments. The smufl attribute is used to distinguish different SMuFL glyphs for wind chimes in the chimes pictograms range, including those made of materials other than glass.</xs:documentation>
+			<xs:documentation>The glass type represents pictograms for glass percussion instruments. The smufl attribute is used to distinguish different SMuFL glyphs for wind chimes in the Chimes pictograms range, including those made of materials other than glass.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="glass-value">
@@ -3873,7 +3873,7 @@ The offset affects the visual appearance of the direction. If the sound attribut
 
 	<xs:complexType name="pitched">
 		<xs:annotation>
-			<xs:documentation>The pitched-value type represents pictograms for pitched percussion instruments. The smufl attribute is used to distinguish different SMuFL glyphs for a particular pictogram within the tuned mallet percussion pictograms range.</xs:documentation>
+			<xs:documentation>The pitched-value type represents pictograms for pitched percussion instruments. The smufl attribute is used to distinguish different SMuFL glyphs for a particular pictogram within the Tuned mallet percussion pictograms range.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="pitched-value">
@@ -4484,7 +4484,7 @@ When used in the print element, the system-layout element affects the appearance
 			</xs:element>
 			<xs:element name="soft-accent" type="empty-placement">
 				<xs:annotation>
-					<xs:documentation>The soft-accent element indicates a soft accent that is not as heavy as a normal accent. It is often notated as &lt;&gt;. It can be combined with other articulations to implement the entire SMuFL Articulation Supplement range.</xs:documentation>
+					<xs:documentation>The soft-accent element indicates a soft accent that is not as heavy as a normal accent. It is often notated as &lt;&gt;. It can be combined with other articulations to implement the entire SMuFL Articulation supplement range.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="other-articulation" type="other-placement-text">
@@ -5073,7 +5073,7 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 		<xs:annotation>
 			<xs:documentation>The notehead type indicates shapes other than the open and closed ovals associated with note durations. 
 
-The smufl attribute can be used to specify a particular notehead, allowing application interoperability without requiring every SMuFL glyph to have a MusicXML element equivalent. This attribute can be used either with the "other" value, or to refine a specific notehead value such as "cluster". Noteheads in the SMuFL "Note name noteheads" range (U+E150–U+E1AF) should not use the smufl attribute or the "other" value, but instead use the notehead-text element.
+The smufl attribute can be used to specify a particular notehead, allowing application interoperability without requiring every SMuFL glyph to have a MusicXML element equivalent. This attribute can be used either with the "other" value, or to refine a specific notehead value such as "cluster". Noteheads in the SMuFL Note name noteheads and Note name noteheads supplement ranges (U+E150–U+E1AF and U+EEE0–U+EEFF) should not use the smufl attribute or the "other" value, but instead use the notehead-text element.
 
 For the enclosed shapes, the default is to be hollow for half notes and longer, and filled otherwise. The filled attribute can be set to change this if needed.
 
@@ -5528,7 +5528,7 @@ Ties that are visually attached to only one note, other than undamped ties, shou
 	
 When using double-note tremolos, the duration of each note in the tremolo should correspond to half of the notated type value. A time-modification element should also be added with an actual-notes value of 2 and a normal-notes value of 1. If used within a tuplet, this 2/1 ratio should be multiplied by the existing tuplet ratio.
 	
-The smufl attribute specifies the glyph to use from the SMuFL tremolos range for an unmeasured tremolo. It is ignored for other tremolo types. The SMuFL buzzRoll glyph is used by default if the attribute is missing.
+The smufl attribute specifies the glyph to use from the SMuFL Tremolos range for an unmeasured tremolo. It is ignored for other tremolo types. The SMuFL buzzRoll glyph is used by default if the attribute is missing.
 	
 Using repeater beams for indicating tremolos is deprecated as of MusicXML 3.0.</xs:documentation>
 		</xs:annotation>
