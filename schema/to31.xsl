@@ -119,7 +119,7 @@
     pedal type.
   -->
   <xsl:template priority="1"
-    match="direction[direction-type[pedal[@type = 'discontinue']]]"/>
+    match="direction[direction-type[pedal[@type = 'discontinue' or @type = 'resume']]]"/>
   
   <!-- Remove new elements. -->
   <xsl:template

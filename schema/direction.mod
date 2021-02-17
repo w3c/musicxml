@@ -202,11 +202,11 @@
 	with MusicXML 3.1 this includes sostenuto as well as damper
 	pedal marks. The start type indicates the start of a damper
 	pedal, while the sostenuto type indicates the start of a
-	sostenuto pedal. The change, continue, discontinue, and stop
-	types can be used with either the damper or sostenuto pedal.
-	The soft pedal is not included here because there is no
-	special symbol or graphic used for it beyond what can be
-	specified with words and bracket elements.
+	sostenuto pedal. The other types can be used with either the
+	damper or sostenuto pedal. The soft pedal is not included
+	here because there is no special symbol or graphic used for
+	it beyond what can be specified with words and bracket
+	elements.
 
 	The line attribute is yes if pedal lines are used. The sign
 	attribute is yes if Ped, Sost, and * signs are used. For
@@ -220,18 +220,23 @@
 	The alignment attributes are ignored if the line attribute
 	is yes.
 
-	The change, continue, and discontinue types are used when
-	the line attribute is yes. The change type indicates a pedal
-	lift and retake indicated with an inverted V marking. The
-	continue type allows more precise formatting across system
-	breaks and for more complex pedaling lines. The discontinue
-	type indicates the end of a pedal line that does not include
-	the explicit lift represented by the stop type.
+	The change, continue, discontinue, and resume types are used
+	when the line attribute is yes. The change type indicates a
+	pedal lift and retake indicated with an inverted V marking.
+	The continue type allows more precise formatting across
+	system breaks and for more complex pedaling lines. The
+	discontinue type indicates the end of a pedal line that does
+	not include the explicit lift represented by the stop type.
+	The resume type indicates the start of a pedal line that
+	does not include the downstroke represented by the start
+	type. It can be used when a line resumes after being
+	discontinued, or to start a pedal line that is preceded
+	by a text or symbol representation of the pedal.
 -->
 <!ELEMENT pedal EMPTY>
 <!ATTLIST pedal
-    type (start | stop | sostenuto | 
-          continue | change | discontinue) #REQUIRED
+    type (start | stop | sostenuto | change |
+          continue | discontinue | resume) #REQUIRED
     number %number-level; #IMPLIED
     line %yes-no; #IMPLIED
     sign %yes-no; #IMPLIED
