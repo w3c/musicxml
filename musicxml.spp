@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project ValidFileSet="Yes" ValidFile="schema\musicxml.xsd">
 	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml">
+		<File FilePath="schema\catalog.xml" HomeFolder="Yes"/>
 		<File FilePath="schema\sounds.xml" HomeFolder="Yes"/>
 	</Folder>
 	<Folder FolderName="XSL Files" ExtStr="xsl;xslt">
