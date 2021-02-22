@@ -15,7 +15,9 @@ A human-readable summary is available:
 
 This is the W3C XML Schema (XSD) version of the MusicXML 4.0 language. Validation is tightened by moving MusicXML definitions from comments into schema data types and definitions. Character entities and other entity usages that are not supported in W3C XML Schema have been removed. The features of W3C XML Schema make it easier to define variations of the MusicXML format, either via extension or restriction.
 
-This file defines the MusicXML 4.0 XSD, including the score-partwise and score-timewise document elements.</xs:documentation>
+This file defines the MusicXML 4.0 XSD, including the score-partwise and score-timewise document elements.
+		
+The XML catalog at catalog.xml supports validating against a local copy of this XSD rather than the networked version. Software often has trouble using system IDs due to factors such as restrictions on network access, or resources having moved from the original specified location. To validate with the MusicXML XSD, use a schema URI of "http://www.musicxml.org/xsd/musicxml.xsd".</xs:documentation>
 	</xs:annotation>
 
 	<xs:annotation>

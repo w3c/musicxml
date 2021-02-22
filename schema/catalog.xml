@@ -21,7 +21,7 @@
 <!--
 	This XML catalog makes it easier to validate MusicXML files
 	using a local copy of the W3C XML Schema or DTD, rather than
-	a networked version provided by a URL or system ID. Software
+	a networked version provided by a URI or system ID. Software
 	often has trouble using system IDs due to factors such as
 	restrictions on network access, or resources having moved
 	from the original specified location.

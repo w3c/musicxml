@@ -50,6 +50,12 @@
 	
 	This DTD is made up of a series of component DTD modules,
 	all of which are included here.
+	
+	The XML catalog at catalog.xml supports validating against a
+	local copy of this DTD rather than the networked version in
+	the system ID. Software often has trouble using system IDs
+	due to factors such as restrictions on network access, or
+	resources having moved from the original specified location.
 -->
 
 <!-- Entities -->
