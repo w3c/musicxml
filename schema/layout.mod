@@ -130,6 +130,8 @@
 	defaults element. If any child elements are missing from
 	the system-layout element in a print element, the values 
 	determined by the defaults element are used there as well.
+	This type of system-layout element need only be read from 
+	or written to the first visible part in the score.
 -->
 <!ELEMENT system-layout
 	(system-margins?, system-distance?, 
