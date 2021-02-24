@@ -3506,7 +3506,29 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:element name="barre" type="barre" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
+	
+	<xs:complexType name="function">
+		<xs:annotation>
+			<xs:documentation>The function type is used to represent classical functional harmony with an indication like I, II, III rather than C, D, E. The function element represents the roman numeral part of a functional harmony rather than the complete function itself. It requires that the key be specified in the encoding. The function-key element is used when the key for the function is different than the key specified by the key signature. The text attribute indicates how the numeral should appear in a score if not using the element contents.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="text" type="xs:token"/>
+				<xs:attributeGroup ref="print-style"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 
+	<xs:complexType name="function-key">
+		<xs:annotation>
+			<xs:documentation>The function-key element is used when the key for the function is different than the key specified by the key signature.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="fifths" type="fifths"/>
+			<xs:element name="mode" type="mode"/>
+		</xs:sequence>
+	</xs:complexType>
+	
 	<xs:complexType name="glass">
 		<xs:annotation>
 			<xs:documentation>The glass type represents pictograms for glass percussion instruments. The smufl attribute is used to distinguish different SMuFL glyphs for wind chimes in the chimes pictograms range, including those made of materials other than glass.</xs:documentation>
@@ -3587,10 +3609,11 @@ The harmony object may be used for analysis or for chord symbols. The print-obje
 
 	<xs:complexType name="inversion">
 		<xs:annotation>
-			<xs:documentation>The inversion type represents harmony inversions. The value is a number indicating which inversion is used: 0 for root position, 1 for first inversion, etc.</xs:documentation>
+			<xs:documentation>The inversion type represents harmony inversions. The value is a number indicating which inversion is used: 0 for root position, 1 for first inversion, etc.  The text attribute indicates how the inversion should be displayed in a score.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:nonNegativeInteger">
+				<xs:attribute name="text" type="xs:token"/>
 				<xs:attributeGroup ref="print-style"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -6211,11 +6234,10 @@ A root is a pitch name like C, D, E, where a function is an indication like I, I
 		<xs:sequence>
 			<xs:choice>
 				<xs:element name="root" type="root"/>
-				<xs:element name="function" type="style-text">
-					<xs:annotation>
-						<xs:documentation>The function element is used to represent classical functional harmony with an indication like I, II, III rather than C, D, E. It is relative to the key that is specified in the MusicXML encoding.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
+				<xs:sequence>
+					<xs:element name="function" type="function"/>
+					<xs:element name="function-key" type="function-key"/>
+				</xs:sequence>	
 			</xs:choice>
 			<xs:element name="kind" type="kind"/>
 			<xs:element name="inversion" type="inversion" minOccurs="0"/>

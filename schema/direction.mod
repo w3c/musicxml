@@ -715,8 +715,8 @@
 	arrangement attribute specifies how multiple harmony-chord
 	entities are arranged relative to each other.
 -->
-<!ENTITY % harmony-chord "((root | function), kind,
-	inversion?, bass?, degree*)">
+<!ENTITY % harmony-chord "((root | (function, function-key?)),
+	kind, inversion?, bass?, degree*)">
 
 <!ELEMENT harmony ((%harmony-chord;)+, frame?, 
 	offset?, %editorial;, staff?)>
@@ -736,13 +736,21 @@
 	is an indication like I, II, III. Root is generally
 	used with pop chord symbols, function with classical
 	functional harmony. It is an either/or choice to avoid
-	data inconsistency. Function requires that the key be
-	specified in the encoding. 
+	data inconsistency.
+	
+	The function element represents the roman numeral part
+	of a functional harmony rather than the complete function
+	itself. It requires that the key be specified in the
+	encoding. The function-key element is used when the key for
+	the function is different than the key specified by the key
+	signature. The function text attribute indicates how the
+	numeral should appear in a score if not using the element
+	contents.
 
 	The root element has a root-step and optional root-alter 
 	similar to the step and alter elements in a pitch, but
 	renamed to distinguish the different musical meanings.
-	The root-step text element indicates how the root should
+	The root-step text attribute indicates how the root should
 	appear in a score if not using the element contents.
 	In some chord styles, this will include the root-alter
 	information as well. In that case, the print-object
@@ -765,8 +773,11 @@
 >
 <!ELEMENT function (#PCDATA)>
 <!ATTLIST function
+    text CDATA #IMPLIED
     %print-style;
 >
+
+<!ELEMENT function-key (fifths, mode)>
 
 <!--
 	Kind indicates the type of chord. Degree elements
@@ -878,10 +889,13 @@
 
 <!--
 	Inversion is a number indicating which inversion is used:
-	0 for root position, 1 for first inversion, etc.
+	0 for root position, 1 for first inversion, etc. The text
+	attribute indicates how the inversion should be displayed
+	in a score.
 -->
 <!ELEMENT inversion (#PCDATA)>
 <!ATTLIST inversion
+    text CDATA #IMPLIED
     %print-style;
 >
 

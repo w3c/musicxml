@@ -123,13 +123,14 @@
   
   <!-- Remove new elements. -->
   <xsl:template
-    match="bass-separator | instrument-change | 
+    match="bass-separator | function-key | instrument-change | 
       listening | swing"/>
   
   <!-- Remove new attributes. -->
   <xsl:template 
     match="direction/@system | harmony/@system |
       harmony/@arrangement | bass/@arrangement |
+      function/@text | inversion/@text |
       measure-numbering/@system | measure-numbering/@staff |
       measure-numbering/@multiple-rest-always | 
       measure-numbering/@multiple-rest-range"/>
