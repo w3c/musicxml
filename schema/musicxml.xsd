@@ -4328,7 +4328,7 @@ Sometimes the sum of measure widths in a system may not equal the system width s
 
 When used in the defaults element, the system-layout element defines a default appearance for all systems in the score. If no system-layout element is present in the defaults element, default system layout values are chosen by the application.
 
-When used in the print element, the system-layout element affects the appearance of the current system only. All other systems use the default values as determined by the defaults element. If any child elements are missing from the system-layout element in a print element, the values determined by the defaults element are used there as well.</xs:documentation>
+When used in the print element, the system-layout element affects the appearance of the current system only. All other systems use the default values as determined by the defaults element. If any child elements are missing from the system-layout element in a print element, the values determined by the defaults element are used there as well. This type of system-layout element need only be read from or written to the first visible part in the score.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="system-margins" type="system-margins" minOccurs="0"/>
