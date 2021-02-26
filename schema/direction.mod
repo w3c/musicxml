@@ -708,14 +708,14 @@
 	can override this with their own print-style values.
 	
 	A harmony element can contain many stacked chords (e.g.
-	V of II). A sequence of harmony-chord entities is used
-	for this type of secondary function, where V of II would
-	be represented by a harmony-chord with a V function
-	followed by a harmony-chord with a II function. The
-	arrangement attribute specifies how multiple harmony-chord
-	entities are arranged relative to each other.
+	V of II). A sequence of harmony-chord entities is used for
+	this type of secondary function, where V of II would be
+	represented by a harmony-chord with a 5 numeral followed by
+	a harmony-chord with a 2 numeral. The arrangement attribute
+	specifies how multiple harmony-chord entities are arranged
+	relative to each other.
 -->
-<!ENTITY % harmony-chord "((root | (function, function-key?)),
+<!ENTITY % harmony-chord "((root | numeral | function),
 	kind, inversion?, bass?, degree*)">
 
 <!ELEMENT harmony ((%harmony-chord;)+, frame?, 
@@ -732,24 +732,18 @@
 >
 
 <!--
-	A root is a pitch name like C, D, E, where a function
-	is an indication like I, II, III. Root is generally
-	used with pop chord symbols, function with classical
-	functional harmony. It is an either/or choice to avoid
-	data inconsistency.
-	
-	The function element represents the roman numeral part
-	of a functional harmony rather than the complete function
-	itself. It requires that the key be specified in the
-	encoding. The function-key element is used when the key for
-	the function is different than the key specified by the key
-	signature. The function text attribute indicates how the
-	numeral should appear in a score if not using the element
-	contents.
+	A root is a pitch name like C, D, E, while a numeral is
+	a scale degree like 1, 2, 3. The root element is generally
+	used with pop chord symbols, while the numeral element
+	is generally used with classical functional harmony and
+	Nashville numbers. It is an either/or choice to avoid data
+	inconsistency. The function element, which represents Roman
+	numerals with roman numeral text, has been deprecated as of
+	MusicXML 4.0.
 
 	The root element has a root-step and optional root-alter 
-	similar to the step and alter elements in a pitch, but
-	renamed to distinguish the different musical meanings.
+	element similar to the step and alter elements in a pitch,
+	but renamed to distinguish the different musical meanings.
 	The root-step text attribute indicates how the root should
 	appear in a score if not using the element contents.
 	In some chord styles, this will include the root-alter
@@ -771,13 +765,78 @@
     %print-style;
     location %left-right; #IMPLIED
 >
-<!ELEMENT function (#PCDATA)>
-<!ATTLIST function
+	
+<!--
+	The numeral element represents the Roman numeral or 
+	Nashville number part of a harmony. It requires that the
+	key be specified in the encoding, either with a key or
+	numeral-key element.
+	
+	The numeral-root element represents the Roman numeral or
+	Nashville number as a positive integer from 1 to 7. The
+	text attribute indicates how the numeral should appear in
+	the score. A numeral-root value of 5 would have a text
+	attribute of "V" if displayed as a Roman numeral, and "5"
+	if displayed as a Nashville number. If the text attribute
+	is not specified, the display is application-dependent.
+	
+	The numeral-alter element represents an alteration to the
+	numeral-root, similar to the alter element for a pitch.
+	The location attribute specifies if the alteration appears
+	to the left or the right of the numeral-root data. The
+	print-object attribute can be used to hide an alteration
+	in cases such as when the MusicXML encoding of a 6 or 7
+	numeral-root in a minor key requires an alteration that
+	is not displayed in the score. The numeral-alter location
+	attribute indicates whether the alteration should appear
+	to the left or the right of the numeral-root; it is right
+	by default.
+	
+	The numeral-key element is used when the key for the numeral
+	is different than the key specified by the key signature.
+	The numeral-fifths element specifies the key in the same way
+	as the fifths element. The numeral-mode element specifies
+	the mode similar to the mode element, but with a restricted
+	set of values: major, minor, natural minor, melodic minor,
+	and harmonic minor. The different minor values are used to
+	interpret numeral-root values of 6 and 7 when present in
+	a minor key. The harmonic minor value sharpens the 7 and
+	the melodic minor value sharpens both 6 and 7. If a minor
+	mode is used without qualification, either in the mode or
+	numeral-mode elements, natural minor is used.
+-->
+<!ELEMENT numeral (numeral-root, numeral-alter?, numeral-key?)>
+<!ELEMENT numeral-root (#PCDATA)>
+<!ATTLIST numeral-root
     text CDATA #IMPLIED
     %print-style;
 >
+<!ELEMENT numeral-alter (#PCDATA)>
+<!ATTLIST numeral-alter
+    %print-object;
+    %print-style;
+    location %left-right; #IMPLIED
+>
 
-<!ELEMENT function-key (fifths, mode)>
+<!ELEMENT numeral-key (numeral-fifths, numeral-mode)>
+<!ATTLIST numeral-key
+    %print-object;
+>
+<!ELEMENT numeral-fifths (#PCDATA)>
+<!ELEMENT numeral-mode (#PCDATA)>
+
+<!--
+	The function element represents classical functional
+	harmony with an indication like I, II, III rather than
+	C, D, E. It represents the Roman numeral part of a
+	functional harmony rather than the complete function
+	itself. It has been deprecated as of MusicXML 4.0 in
+	favor of the numeral element.
+-->
+<!ELEMENT function (#PCDATA)>
+<!ATTLIST function
+    %print-style;
+>
 
 <!--
 	Kind indicates the type of chord. Degree elements
@@ -905,8 +964,8 @@
 	functional harmony, as inversion is generally not used
 	in pop chord symbols. As with root, it is divided into
 	step and alter elements, similar to pitches. The attributes
-	for bass-step and bass-alter work the same way as
-	the corresponding attributes for root-step and root-alter.
+	for bass-step and bass-alter work the same way as the
+	corresponding attributes for root-step and root-alter.
 	The arrangement attribute specifies where the bass is
 	displayed relative to what precedes it. The optional
 	bass-separator element indicates that text, rather than a
@@ -931,7 +990,7 @@
 <!ATTLIST bass-alter
     %print-object;
     %print-style;
-    location (left | right) #IMPLIED
+    location %left-right; #IMPLIED
 >
 
 <!--
