@@ -713,7 +713,10 @@
 	represented by a harmony-chord with a 5 numeral followed by
 	a harmony-chord with a 2 numeral. The arrangement attribute
 	specifies how multiple harmony-chord entities are arranged
-	relative to each other.
+	relative to each other. Harmony-chords with vertical
+	arrangement are separated by horizontal lines. Harmony-
+	chords with diagonal or horizontal arrangement are separated
+	by diagonal lines or slashes.
 -->
 <!ENTITY % harmony-chord "((root | numeral | function),
 	kind, inversion?, bass?, degree*)">
