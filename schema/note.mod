@@ -348,8 +348,9 @@
 	smufl attribute may be used with any notehead value to
 	help specify the appearance of symbols that share the same
 	MusicXML semantics. Its value is a SMuFL canonical glyph
-	name. Noteheads in the SMuFL "Note name noteheads" range
-	(U+E150–U+E1AF) should not use the smufl attribute or the
+	name. Noteheads in the SMuFL Note name noteheads and
+	Note name noteheads supplement ranges (U+E150–U+E1AF and
+	U+EEE0–U+EEFF) should not use the smufl attribute or the
 	"other" value, but instead use the notehead-text element.
 
 	For the enclosed shapes, the default is to be hollow for
@@ -753,7 +754,7 @@
 	the existing tuplet ratio.
 
 	The smufl attribute specifies the glyph to use from the SMuFL
-	tremolos range for an unmeasured tremolo. It is ignored for
+	Tremolos range for an unmeasured tremolo. It is ignored for
 	other tremolo types. The SMuFL buzzRoll glyph is used by
 	default if the attribute is missing.
 
@@ -1394,7 +1395,7 @@
 	The soft-accent element indicates a soft accent that is
 	not as heavy as a normal accent. It is often notated as 
 	&lt;&gt;. It can be combined with other articulations to
-	implement the entire SMuFL Articulation Supplement range.
+	implement the entire SMuFL Articulation supplement range.
 -->
 <!ELEMENT soft-accent EMPTY>
 <!ATTLIST soft-accent
