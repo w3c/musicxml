@@ -15,14 +15,16 @@ A human-readable summary is available:
 
 This is the W3C XML Schema (XSD) version of the MusicXML 4.0 language. Validation is tightened by moving MusicXML definitions from comments into schema data types and definitions. Character entities and other entity usages that are not supported in W3C XML Schema have been removed. The features of W3C XML Schema make it easier to define variations of the MusicXML format, either via extension or restriction.
 
-This file defines the MusicXML 4.0 XSD, including the score-partwise and score-timewise document elements.</xs:documentation>
+This file defines the MusicXML 4.0 XSD, including the score-partwise and score-timewise document elements.
+		
+The XML catalog at catalog.xml supports validating against a local copy of this XSD rather than the networked version. Software often has trouble using system IDs due to factors such as restrictions on network access, or resources having moved from the original specified location. To validate with the MusicXML XSD, use a schema URI of "http://www.musicxml.org/xsd/musicxml.xsd".</xs:documentation>
 	</xs:annotation>
 
 	<xs:annotation>
 		<xs:documentation>The MusicXML 4.0 DTD has no namespace, so for compatibility the MusicXML 4.0 XSD has no namespace either. Those who need to import the MusicXML XSD into another schema are advised to create a new version that uses "http://www.musicxml.org/xsd/MusicXML" as the namespace.</xs:documentation>
 	</xs:annotation>
-	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
-	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/>
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.musicxml.org/xsd/xml.xsd"/>
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.musicxml.org/xsd/xlink.xsd"/>
 
 	<!-- Simple types derived from common.mod entities and elements -->
 
