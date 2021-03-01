@@ -144,7 +144,7 @@
   
   <!-- Remove new elements. -->
   <xsl:template
-    match="bass-separator | function-key | instrument-change | 
+    match="bass-separator | instrument-change | 
       listening | swing"/>
   
   <!-- Remove new attributes. -->

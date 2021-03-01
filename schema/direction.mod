@@ -778,10 +778,11 @@
 	The numeral-root element represents the Roman numeral or
 	Nashville number as a positive integer from 1 to 7. The
 	text attribute indicates how the numeral should appear in
-	the score. A numeral-root value of 5 would have a text
-	attribute of "V" if displayed as a Roman numeral, and "5"
-	if displayed as a Nashville number. If the text attribute
-	is not specified, the display is application-dependent.
+	the score. A numeral-root value of 5 with a kind of major
+	would have a text attribute of "V" if displayed as a Roman
+	numeral, and "5" if displayed as a Nashville number. If the
+	text attribute is not specified, the display is application-
+	dependent.
 	
 	The numeral-alter element represents an alteration to the
 	numeral-root, similar to the alter element for a pitch.
@@ -790,10 +791,9 @@
 	print-object attribute can be used to hide an alteration
 	in cases such as when the MusicXML encoding of a 6 or 7
 	numeral-root in a minor key requires an alteration that
-	is not displayed in the score. The numeral-alter location
-	attribute indicates whether the alteration should appear
-	to the left or the right of the numeral-root; it is right
-	by default.
+	is not displayed. The numeral-alter location attribute 
+	indicates whether the alteration should appear to the left
+	or the right of the numeral-root; it is right by default.
 	
 	The numeral-key element is used when the key for the numeral
 	is different than the key specified by the key signature.
