@@ -3793,7 +3793,7 @@ The optional multiple-rest-always and multiple-rest-range attributes describe ho
 			<xs:element name="numeral-root" type="numeral-root"/>
 			<xs:element name="numeral-alter" type="harmony-alter" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The numeral-alter element represents an alteration to the numeral-root, similar to the alter element for a pitch. The print-object attribute can be used to hide an alteration in cases such as when the MusicXML encoding of a 6 or 7 numeral-root in a minor key requires an alteration that is not displayed. The location attribute indicates whether the alteration should appear to the left or the right of the numeral-root; it is right by default.></xs:documentation>
+					<xs:documentation>The numeral-alter element represents an alteration to the numeral-root, similar to the alter element for a pitch. The print-object attribute can be used to hide an alteration in cases such as when the MusicXML encoding of a 6 or 7 numeral-root in a minor key requires an alteration that is not displayed. The location attribute indicates whether the alteration should appear to the left or the right of the numeral-root; it is left by default.></xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="numeral-key" type="numeral-key" minOccurs="0"/>

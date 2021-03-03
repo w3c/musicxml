@@ -791,7 +791,7 @@
 	numeral-root in a minor key requires an alteration that
 	is not displayed. The location attribute indicates whether
 	the alteration should appear to the left or the right of
-	the numeral-root; it is right by default.
+	the numeral-root; it is left by default.
 	
 	The numeral-key element is used when the key for the numeral
 	is different than the key specified by the key signature.
