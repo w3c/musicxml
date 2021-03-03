@@ -114,13 +114,6 @@
 
   <!-- Additions in direction.mod -->
 
-  <!-- 
-    For safety, remove entire direction that has a new
-    pedal type.
-  -->
-  <xsl:template priority="1"
-    match="direction[direction-type[pedal[@type = 'discontinue' or @type = 'resume']]]"/>
-  
   <!--
     Convert discontinue pedal types to stop pedal types,
     and resume pedal types to start pedal types. We do this
