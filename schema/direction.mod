@@ -786,14 +786,12 @@
 	
 	The numeral-alter element represents an alteration to the
 	numeral-root, similar to the alter element for a pitch.
-	The location attribute specifies if the alteration appears
-	to the left or the right of the numeral-root data. The
-	print-object attribute can be used to hide an alteration
+	The print-object attribute can be used to hide an alteration
 	in cases such as when the MusicXML encoding of a 6 or 7
 	numeral-root in a minor key requires an alteration that
-	is not displayed. The numeral-alter location attribute 
-	indicates whether the alteration should appear to the left
-	or the right of the numeral-root; it is right by default.
+	is not displayed. The location attribute indicates whether
+	the alteration should appear to the left or the right of
+	the numeral-root; it is right by default.
 	
 	The numeral-key element is used when the key for the numeral
 	is different than the key specified by the key signature.
