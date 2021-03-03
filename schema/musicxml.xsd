@@ -3535,7 +3535,7 @@ By default, a series of direction-type elements and a series of child elements o
 			<xs:element name="barre" type="barre" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	
+
 	<xs:complexType name="glass">
 		<xs:annotation>
 			<xs:documentation>The glass type represents pictograms for glass percussion instruments. The smufl attribute is used to distinguish different SMuFL glyphs for wind chimes in the Chimes pictograms range, including those made of materials other than glass.</xs:documentation>
