@@ -1181,7 +1181,7 @@ The "none" kind is used to explicitly encode absence of chords or functional har
 		<xs:annotation>
 			<xs:documentation>The numeral-mode type specifies the mode similar to the mode type, but with a restricted set of values. The different minor values are used to interpret numeral-root values of 6 and 7 when present in a minor key. The harmonic minor value sharpens the 7 and the melodic minor value sharpens both 6 and 7. If a minor mode is used without qualification, either in the mode or numeral-mode elements, natural minor is used.</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="mode">
+		<xs:restriction base="xs:string">
 			<xs:enumeration value="major"/>
 			<xs:enumeration value="minor"/>
 			<xs:enumeration value="natural minor"/>
