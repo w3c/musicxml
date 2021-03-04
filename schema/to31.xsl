@@ -114,12 +114,26 @@
 
   <!-- Additions in direction.mod -->
 
-  <!-- 
-    For safety, remove entire direction that has a new
-    pedal type.
+  <!--
+    Convert discontinue pedal types to stop pedal types,
+    and resume pedal types to start pedal types. We do this
+    instead of removing the entire element so that we do not
+    leave dangling pedal elements after the conversion.
   -->
-  <xsl:template priority="1"
-    match="direction[direction-type[pedal[@type = 'discontinue' or @type = 'resume']]]"/>
+  <xsl:template 
+    match="pedal/@type[. = 'discontinue']">
+    <xsl:attribute name="type">stop</xsl:attribute>
+  </xsl:template>
+  <xsl:template 
+    match="pedal/@type[. = 'resume']">
+    <xsl:attribute name="type">start</xsl:attribute>
+  </xsl:template>
+  
+  <!-- 
+    Remove entire harmony that has a new numeral child element.
+  -->
+  <xsl:template
+    match="harmony[numeral]"/>
   
   <!-- Remove new elements. -->
   <xsl:template
@@ -129,8 +143,9 @@
   <!-- Remove new attributes. -->
   <xsl:template 
     match="direction/@system | harmony/@system |
-      harmony/@arrangement | bass/@arrangement |
-      measure-numbering/@system | measure-numbering/@staff |
+      harmony/@arrangement | bass/@arrangement | 
+      inversion/@text | measure-numbering/@system |
+      measure-numbering/@staff |
       measure-numbering/@multiple-rest-always | 
       measure-numbering/@multiple-rest-range"/>
   

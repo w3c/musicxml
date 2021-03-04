@@ -308,6 +308,16 @@ As in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).<
 		</xs:union>
 	</xs:simpleType>
 
+	<xs:simpleType name="numeral-value">
+		<xs:annotation>
+			<xs:documentation>The numeral-value type represents a Roman numeral or Nashville number value as a positive integer from 1 to 7.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:simpleType name="over-under">
 		<xs:annotation>
 			<xs:documentation>The over-under type is used to indicate whether the tips of curved lines such as slurs and ties are overhand (tips down) or underhand (tips up).</xs:documentation>
@@ -1165,6 +1175,19 @@ The "none" kind is used to explicitly encode absence of chords or functional har
 			<xs:documentation>The milliseconds type represents an integral number of milliseconds.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:nonNegativeInteger"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="numeral-mode">
+		<xs:annotation>
+			<xs:documentation>The numeral-mode type specifies the mode similar to the mode type, but with a restricted set of values. The different minor values are used to interpret numeral-root values of 6 and 7 when present in a minor key. The harmonic minor value sharpens the 7 and the melodic minor value sharpens both 6 and 7. If a minor mode is used without qualification, either in the mode or numeral-mode elements, natural minor is used.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="major"/>
+			<xs:enumeration value="minor"/>
+			<xs:enumeration value="natural minor"/>
+			<xs:enumeration value="melodic minor"/>
+			<xs:enumeration value="harmonic minor"/>
+		</xs:restriction>
 	</xs:simpleType>
 	
 	<xs:simpleType name="on-off">
@@ -3241,14 +3264,18 @@ The number attribute indicates which times the ending is played, similar to the 
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="bass-step" type="bass-step"/>
-			<xs:element name="bass-alter" type="bass-alter" minOccurs="0"/>
+			<xs:element name="bass-alter" type="harmony-alter" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The bass-alter element represents the chromatic alteration of the bass of the current chord within the harmony element. In some chord styles, the text for the bass-step element may include bass-alter information. In that case, the print-object attribute of the bass-alter element can be set to no. The location attribute indicates whether the alteration should appear to the left or the right of the bass-step; it is right by default.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="arrangement" type="harmony-arrangement"/>
 	</xs:complexType>
 
-	<xs:complexType name="bass-alter">
+	<xs:complexType name="harmony-alter">
 		<xs:annotation>
-			<xs:documentation>The bass-alter type represents the chromatic alteration of the bass of the current chord within the harmony element. In some chord styles, the text for the bass-step element may include bass-alter information. In that case, the print-object attribute of the bass-alter element can be set to no. The location attribute indicates whether the alteration should appear to the left or the right of the bass-step; it is right by default.</xs:documentation>
+			<xs:documentation>The harmony-alter type represents the chromatic alteration of the root, numeral, or bass of the current harmony-chord group within the harmony element. In some chord styles, the text of the preceding element may include alteration information. In that case, the print-object attribute of this type can be set to no. The location attribute indicates whether the alteration should appear to the left or the right of the preceding element. Its default value varies by element.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="semitones">
@@ -3541,7 +3568,7 @@ This element is flexible to allow for different types of analyses. Future versio
 
 If there are alternate harmonies possible, this can be specified using multiple harmony elements differentiated by type. Explicit harmonies have all note present in the music; implied have some notes missing but implied; alternate represents alternate analyses.
 
-The harmony object may be used for analysis or for chord symbols. The print-object attribute controls whether or not anything is printed due to the harmony element. The print-frame attribute controls printing of a frame or fretboard diagram. The print-style attribute group sets the default for the harmony, but individual elements can override this with their own print-style values. The arrangement attribute specifies how multiple harmony-chord groups are arranged relative to each other.</xs:documentation>
+The harmony object may be used for analysis or for chord symbols. The print-object attribute controls whether or not anything is printed due to the harmony element. The print-frame attribute controls printing of a frame or fretboard diagram. The print-style attribute group sets the default for the harmony, but individual elements can override this with their own print-style values. The arrangement attribute specifies how multiple harmony-chord groups are arranged relative to each other. Harmony-chords with vertical arrangement are separated by horizontal lines. Harmony-chords with diagonal or horizontal arrangement are separated by diagonal lines or slashes.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:group ref="harmony-chord" maxOccurs="unbounded"/>
@@ -3589,10 +3616,11 @@ The harmony object may be used for analysis or for chord symbols. The print-obje
 
 	<xs:complexType name="inversion">
 		<xs:annotation>
-			<xs:documentation>The inversion type represents harmony inversions. The value is a number indicating which inversion is used: 0 for root position, 1 for first inversion, etc.</xs:documentation>
+			<xs:documentation>The inversion type represents harmony inversions. The value is a number indicating which inversion is used: 0 for root position, 1 for first inversion, etc.  The text attribute indicates how the inversion should be displayed in a score.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:nonNegativeInteger">
+				<xs:attribute name="text" type="xs:token"/>
 				<xs:attributeGroup ref="print-style"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -3757,6 +3785,44 @@ The optional multiple-rest-always and multiple-rest-range attributes describe ho
 		</xs:complexContent>
 	</xs:complexType>
 
+	<xs:complexType name="numeral">
+		<xs:annotation>
+			<xs:documentation>The numeral type represents the Roman numeral or Nashville number part of a harmony. It requires that the key be specified in the encoding, either with a key or numeral-key element.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="numeral-root" type="numeral-root"/>
+			<xs:element name="numeral-alter" type="harmony-alter" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The numeral-alter element represents an alteration to the numeral-root, similar to the alter element for a pitch. The print-object attribute can be used to hide an alteration in cases such as when the MusicXML encoding of a 6 or 7 numeral-root in a minor key requires an alteration that is not displayed. The location attribute indicates whether the alteration should appear to the left or the right of the numeral-root; it is left by default.></xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="numeral-key" type="numeral-key" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="numeral-key">
+		<xs:annotation>
+			<xs:documentation>The numeral-key type is used when the key for the numeral is different than the key specified by the key signature. The numeral-fifths element specifies the key in the same way as the fifths element. The numeral-mode element specifies the mode similar to the mode element, but with a restricted set of values</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="numeral-fifths" type="fifths"/>
+			<xs:element name="numeral-mode" type="numeral-mode"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="print-object"/>
+	</xs:complexType>
+	
+	<xs:complexType name="numeral-root">
+		<xs:annotation>
+			<xs:documentation>The numeral-root type represents the Roman numeral or Nashville number as a positive integer from 1 to 7. The text attribute indicates how the numeral should appear in the score. A numeral-root value of 5 with a kind of major would have a text attribute of "V" if displayed as a Roman numeral, and "5" if displayed as a Nashville number. If the text attribute is not specified, the display is application-dependent.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="numeral-value">
+				<xs:attribute name="text" type="xs:token"/>
+				<xs:attributeGroup ref="print-style"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="octave-shift">
 		<xs:annotation>
 			<xs:documentation>The octave shift type indicates where notes are shifted up or down from their true pitched values because of printing difficulty. Thus a treble clef line noted with 8va will be indicated with an octave-shift down from the pitch data indicated in the notes. A size of 8 indicates one octave; a size of 15 indicates two octaves.</xs:documentation>
@@ -3917,25 +3983,16 @@ Layout group elements in a print statement only apply to the current page, syste
 
 	<xs:complexType name="root">
 		<xs:annotation>
-			<xs:documentation>The root type indicates a pitch like C, D, E vs. a function indication like I, II, III. It is used with chord symbols in popular music. The root element has a root-step and optional root-alter element similar to the step and alter elements, but renamed to distinguish the different musical meanings.</xs:documentation>
+			<xs:documentation>The root type indicates a pitch like C, D, E vs. a scale degree like 1, 2, 3. It is used with chord symbols in popular music. The root element has a root-step and optional root-alter element similar to the step and alter elements, but renamed to distinguish the different musical meanings.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="root-step" type="root-step"/>
-			<xs:element name="root-alter" type="root-alter" minOccurs="0"/>
+			<xs:element name="root-alter" type="harmony-alter" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The root-alter element represents the chromatic alteration of the root of the current chord within the harmony element. In some chord styles, the text for the root-step element may include root-alter information. In that case, the print-object attribute of the root-alter element can be set to no. The location attribute indicates whether the alteration should appear to the left or the right of the root-step; it is right by default.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="root-alter">
-		<xs:annotation>
-			<xs:documentation>The root-alter type represents the chromatic alteration of the root of the current chord within the harmony element. In some chord styles, the text for the root-step element may include root-alter information. In that case, the print-object attribute of the root-alter element can be set to no. The location attribute indicates whether the alteration should appear to the left or the right of the root-step; it is right by default.</xs:documentation>
-		</xs:annotation>
-		<xs:simpleContent>
-			<xs:extension base="semitones">
-				<xs:attributeGroup ref="print-object"/>
-				<xs:attributeGroup ref="print-style"/>
-				<xs:attribute name="location" type="left-right"/>
-			</xs:extension>
-		</xs:simpleContent>
 	</xs:complexType>
 
 	<xs:complexType name="root-step">
@@ -6208,11 +6265,12 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 		<xs:annotation>
 			<xs:documentation>A harmony element can contain many stacked chords (e.g. V of II). A sequence of harmony-chord groups is used for this type of secondary function, where V of II would be represented by a harmony-chord with a V function followed by a harmony-chord with a II function.
 
-A root is a pitch name like C, D, E, where a function is an indication like I, II, III. It is an either/or choice to avoid data inconsistency.</xs:documentation>
+A root is a pitch name like C, D, E, while a numeral is a scale degree like 1, 2, 3. The root element is generally used with pop chord symbols, while the numeral element is generally used with classical functional harmony and Nashville numbers. It is an either/or choice to avoid data inconsistency. The function element, which represents Roman numerals with roman numeral text, has been deprecated as of MusicXML 4.0.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:choice>
 				<xs:element name="root" type="root"/>
+				<xs:element name="numeral" type="numeral"/>
 				<xs:element name="function" type="style-text">
 					<xs:annotation>
 						<xs:documentation>The function element is used to represent classical functional harmony with an indication like I, II, III rather than C, D, E. It is relative to the key that is specified in the MusicXML encoding.</xs:documentation>
