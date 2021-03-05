@@ -3203,10 +3203,11 @@ The number attribute indicates which times the ending is played, similar to the 
 
 	<xs:complexType name="repeat">
 		<xs:annotation>
-			<xs:documentation>The repeat type represents repeat marks. The start of the repeat has a forward direction while the end of the repeat has a backward direction. Backward repeats that are not part of an ending can use the times attribute to indicate the number of times the repeated section is played.</xs:documentation>
+			<xs:documentation>The repeat type represents repeat marks. The start of the repeat has a forward direction while the end of the repeat has a backward direction. The times and after-jump attributes are only used with backward repeats that are not part of an ending. The times attribute indicates the number of times the repeated section is played. The after-jump attribute indicates if the repeats are played after a jump due to a da capo or dal segno.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="direction" type="backward-forward" use="required"/>
 		<xs:attribute name="times" type="xs:nonNegativeInteger"/>
+		<xs:attribute name="after-jump" type="yes-no"/>
 		<xs:attribute name="winged" type="winged"/>
 	</xs:complexType>
 
@@ -4031,7 +4032,7 @@ Segno and dalsegno are used for backwards jumps to a segno sign; coda and tocoda
 
 By default, a dalsegno or dacapo attribute indicates that the jump should occur the first time through, while a tocoda attribute indicates the jump should occur the second time through. The time that jumps occur can be changed by using the time-only attribute.
 
-Forward-repeat is used when a forward repeat sign is implied, and usually follows a bar line. When used it always has the value of "yes".
+The forward-repeat attribute indicates that a forward repeat sign is implied but not displayed. It is used for example in two-part forms with repeats, such as a minuet and trio where no repeat is displayed at the start of the trio. This usually occurs after a barline. When used it always has the value of "yes".
 
 The fine attribute follows the final note or rest in a movement with a da capo or dal segno direction. If numeric, the value represents the actual duration of the final note or rest, which can be ambiguous in written notation and different among parts and voices. The value may also be "yes" to indicate no change to the final duration.
 

@@ -89,7 +89,7 @@
 
   <!-- Remove new attributes. -->
   <xsl:template 
-    match="ending/@system"/>
+    match="ending/@system | repeat/@after-jump"/>
 
   <!-- Additions in common.mod -->
 
