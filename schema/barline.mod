@@ -119,6 +119,7 @@
 	the repeat has a forward direction while the end of the
 	repeat has a backward direction. The times and after-jump
 	attributes are only used with backward repeats that are not
+	part of an ending. The times attribute indicates the number
 	of times the repeated section is played. The after-jump
 	attribute indicates if the repeats are played after a
 	jump due to a da capo or dal segno. The winged attribute
