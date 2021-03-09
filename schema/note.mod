@@ -995,6 +995,16 @@
 	used in standard notation and the curved bend symbols
 	commonly used in both tablature and standard notation.
 	
+	The bend-alter value is relative to the pitch of the
+	ancestor note element. In tablature, a bend and release
+	are often notated as if there were one note with the bend
+	followed by the release. In MusicXML documents, there need
+	to be separate notes for the bend and the release. The
+	bend-alter value is relative to those separate notes. In
+	tablature this means that the ancestor note for the release
+	element will often have a notehead element with a value of
+	none.
+	
 	A with-bar element indicates that the bend is to be done
 	at the bridge with a whammy or vibrato bar. The content
 	of the element indicates how this should be notated.

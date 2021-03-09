@@ -4614,7 +4614,9 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 
 	<xs:complexType name="bend">
 		<xs:annotation>
-			<xs:documentation>The bend type is used in guitar notation and tablature. The bend-alter element indicates the number of steps in the bend, similar to the alter element. As with the alter element, numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended. The shape attribute distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in both tablature and standard notation.</xs:documentation>
+			<xs:documentation>The bend type is used in guitar notation and tablature. The bend-alter element indicates the number of steps in the bend, similar to the alter element. As with the alter element, numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended. The shape attribute distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in both tablature and standard notation.
+
+The bend-alter value is relative to the pitch of the ancestor note element. In tablature, a bend and release are often notated as if there were one note with the bend followed by the release. In MusicXML documents, there need to be separate notes for the bend and the release. The bend-alter value is relative to those separate notes. In tablature this means that the ancestor note for the release element will often have a notehead element with a value of none.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="bend-alter" type="semitones">
