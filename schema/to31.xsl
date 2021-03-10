@@ -83,7 +83,11 @@
 
   <!-- Remove new elements. -->
   <xsl:template
-    match="for-part"/>
+    match="for-part | line-detail"/>
+  
+  <!-- Remove new attributes. -->
+  <xsl:template 
+    match="staff-size/@scaling"/>
   
   <!-- Additions in barline.mod -->
 
