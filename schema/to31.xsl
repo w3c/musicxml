@@ -144,8 +144,8 @@
   <xsl:template 
     match="direction/@system | harmony/@system |
       harmony/@arrangement | bass/@arrangement | 
-      inversion/@text | measure-numbering/@system |
-      measure-numbering/@staff |
+      inversion/@text | metronome/@print-object | 
+      measure-numbering/@system | measure-numbering/@staff |
       measure-numbering/@multiple-rest-always | 
       measure-numbering/@multiple-rest-range"/>
   
