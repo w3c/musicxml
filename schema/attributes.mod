@@ -348,7 +348,8 @@
 	is used in special situations such as a widely-spaced
 	percussion staff where a note placed below the higher line
 	is distinct from a note placed above the lower line. Hidden
-	staff lines are included when specifying clef lines, but are
+	staff lines are included when specifying clef lines and
+	determining display-step / display-octave values, but are
 	not counted as lines for the purposes of the system-layout
 	and staff-layout elements.
 	

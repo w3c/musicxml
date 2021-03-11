@@ -3000,7 +3000,7 @@ The optional number attribute refers to staff numbers, from top to bottom on the
 
 	<xs:complexType name="line-detail">
 		<xs:annotation>
-			<xs:documentation>If the staff-lines element is present, the appearance of each line may be individually specified with a line-detail type. Staff lines are numbered from bottom to top. The print-object attribute allows lines to be hidden within a staff. This is used in special situations such as a widely-spaced percussion staff where a note placed below the higher line is distinct from a note placed above the lower line. Hidden staff lines are included when specifying clef lines, but are not counted as lines for the purposes of the system-layout and staff-layout elements.</xs:documentation>
+			<xs:documentation>If the staff-lines element is present, the appearance of each line may be individually specified with a line-detail type. Staff lines are numbered from bottom to top. The print-object attribute allows lines to be hidden within a staff. This is used in special situations such as a widely-spaced percussion staff where a note placed below the higher line is distinct from a note placed above the lower line. Hidden staff lines are included when specifying clef lines and determining display-step / display-octave values, but are not counted as lines for the purposes of the system-layout and staff-layout elements.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="line" type="staff-line" use="required"/>
 		<xs:attribute name="width" type="tenths"/>
