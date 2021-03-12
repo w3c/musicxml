@@ -985,15 +985,27 @@
 
 <!--
 	The bend element is used in guitar notation and tablature.
-	The bend-alter element indicates the number of steps in
-	the bend, similar to the alter element. As with the alter
-	element, numbers like 0.5 can be used to indicate
-	microtones. Negative numbers indicate pre-bends or
-	releases; the pre-bend and release elements are used
-	to distinguish what is intended. The shape attribute
-	distinguishes between the angled bend symbols commonly
-	used in standard notation and the curved bend symbols
-	commonly used in both tablature and standard notation.
+	The bend-alter element indicates the number of semitones
+	in the bend, similar to the alter element. As with the
+	alter element, numbers like 0.5 can be used to indicate
+	microtones. 
+	
+	Negative bend-alter values indicate pre-bends or releases.
+	The pre-bend and release elements are used to distinguish
+	what is intended. Notes with a bend and release will have
+	two bend elements, with the release following the bend.
+	The offset attribute of the release element specifies where
+	the release starts in terms of divisions. The first-beat and
+	last-beat attributes of the parent bend element are relative
+	to the original note position, not this offset value.
+	Because the bend-alter element represents the number of
+	steps in the bend, a release after a bend has a negative
+	bend-alter value, not a zero value.
+	
+	The shape attribute distinguishes between the angled bend
+	symbols commonly used in standard notation and the curved
+	bend symbols commonly used in both tablature and standard
+	notation.
 	
 	A with-bar element indicates that the bend is to be done
 	at the bridge with a whammy or vibrato bar. The content
@@ -1011,6 +1023,9 @@
 <!ELEMENT bend-alter (#PCDATA)>
 <!ELEMENT pre-bend EMPTY>
 <!ELEMENT release EMPTY>
+<!ATTLIST release
+    offset CDATA #IMPLIED
+>
 <!ELEMENT with-bar (#PCDATA)>
 <!ATTLIST with-bar
     %print-style;
