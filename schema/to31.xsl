@@ -165,11 +165,11 @@
     Remove elements with number attributes greater than 6.
   -->
   <xsl:template 
-    match="bracket[number(@number) > 6] |
-    dashes[number(@number) > 6] |
-    octave-shift[number(@number) > 6] |
-    pedal[number(@number) > 6] |
-    wedge[number(@number) > 6]"/>
+    match="direction[direction-type/bracket[number(@number) > 6]] |
+      direction[direction-type/dashes[number(@number) > 6]] |
+      direction[direction-type/octave-shift[number(@number) > 6]] |
+      direction[direction-type/pedal[number(@number) > 6]] |
+      direction[direction-type/wedge[number(@number) > 6]]"/>
   
   <!-- Remove new elements. -->
   <xsl:template
