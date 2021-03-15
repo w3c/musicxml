@@ -115,20 +115,25 @@
 >
 
 <!--
-	Repeat marks. The start of the repeat has a forward direction
-	while the end of the repeat has a backward direction. Backward
-	repeats that are not part of an ending can use the times
-	attribute to indicate the number of times the repeated section
-	is played. The winged attribute indicates whether the repeat
-	has winged extensions that appear above and below the barline.
-	The straight and curved values represent single wings, while
-	the double-straight and double-curved values represent double
-	wings. The none value indicates no wings and is the default.
+	The repeat element represents repeat marks. The start of
+	the repeat has a forward direction while the end of the
+	repeat has a backward direction. The times and after-jump
+	attributes are only used with backward repeats that are not
+	part of an ending. The times attribute indicates the number
+	of times the repeated section is played. The after-jump
+	attribute indicates if the repeats are played after a
+	jump due to a da capo or dal segno. The winged attribute
+	indicates whether the repeat has winged extensions that
+	appear above and below the barline. The straight and curved
+	values represent single wings, while the double-straight and
+	double-curved values represent double wings. The none value
+	indicates no wings and is the default.
 -->
 <!ELEMENT repeat EMPTY>
 <!ATTLIST repeat
     direction (backward | forward) #REQUIRED
     times CDATA #IMPLIED
+    after-jump %yes-no; #IMPLIED
     winged (none | straight | curved | 
 		double-straight | double-curved) #IMPLIED
 >

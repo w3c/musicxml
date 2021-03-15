@@ -1264,8 +1264,11 @@
 	time through. The time that jumps occur can be changed by
 	using the time-only attribute.
 	
-	Forward-repeat is used when a forward repeat sign is
-	implied, and usually follows a bar line. When used it
+	The forward-repeat attribute indicates that a forward
+	repeat sign is implied but not displayed. It is used for
+	example in two-part forms with repeats, such as a minuet
+	and trio where no repeat is displayed at the start of the
+	trio. This usually occurs after a barline. When used it
 	always has the value of "yes".
 	
 	The fine attribute follows the final note or rest in a
