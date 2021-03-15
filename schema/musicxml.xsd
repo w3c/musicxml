@@ -749,7 +749,14 @@ The none sign is deprecated as of MusicXML 4.0. Use the clef element's print-obj
 
 	<xs:simpleType name="staff-line">
 		<xs:annotation>
-			<xs:documentation>The staff-line type indicates the line on a given staff. Staff lines are numbered from bottom to top, with 1 being the bottom line on a staff. Staff line values can be used to specify positions outside the staff, such as a C clef positioned in the middle of a grand staff.</xs:documentation>
+			<xs:documentation>The staff-line type indicates the line on a given staff. Staff lines are numbered from bottom to top, with 1 being the bottom line on a staff.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="staff-line-position">
+		<xs:annotation>
+			<xs:documentation>The staff-line-position type indicates the line position on a given staff. Staff lines are numbered from bottom to top, with 1 being the bottom line on a staff. A staff-line-position value can extend beyond the range of the lines on the current staff.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:integer"/>
 	</xs:simpleType>
@@ -3007,6 +3014,17 @@ The optional number attribute refers to staff numbers, from top to bottom on the
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="line-detail">
+		<xs:annotation>
+			<xs:documentation>If the staff-lines element is present, the appearance of each line may be individually specified with a line-detail type. Staff lines are numbered from bottom to top. The print-object attribute allows lines to be hidden within a staff. This is used in special situations such as a widely-spaced percussion staff where a note placed below the higher line is distinct from a note placed above the lower line. Hidden staff lines are included when specifying clef lines and determining display-step / display-octave values, but are not counted as lines for the purposes of the system-layout and staff-layout elements.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="line" type="staff-line" use="required"/>
+		<xs:attribute name="width" type="tenths"/>
+		<xs:attributeGroup ref="color"/>
+		<xs:attributeGroup ref="line-type"/>
+		<xs:attributeGroup ref="print-object"/>
+	</xs:complexType>
+	
 	<xs:complexType name="measure-repeat">
 		<xs:annotation>
 			<xs:documentation>The measure-repeat type is used for both single and multiple measure repeats. The text of the element indicates the number of measures to be repeated in a single pattern. The slashes attribute specifies the number of slashes to use in the repeat sign. It is 1 if not specified. The text of the element is ignored when the type is stop.
@@ -3096,22 +3114,21 @@ The multiple-rest and measure-repeat symbols indicate the number of measures cov
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="staff-type" type="staff-type" minOccurs="0"/>
-			<xs:element name="staff-lines" type="xs:nonNegativeInteger" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>The staff-lines element specifies the number of lines for a non 5-line staff.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:sequence minOccurs="0">
+				<xs:element name="staff-lines" type="xs:nonNegativeInteger">
+					<xs:annotation>
+						<xs:documentation>The staff-lines element specifies the number of lines and is usually used for a non 5-line staff. If the staff-lines element is present, the appearance of each line may be individually specified with a line-detail element. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="line-detail" type="line-detail" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
 			<xs:element name="staff-tuning" type="staff-tuning" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="capo" type="xs:nonNegativeInteger" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The capo element indicates at which fret a capo should be placed on a fretted instrument. This changes the open tuning of the strings specified by staff-tuning by the specified number of half-steps.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="staff-size" type="non-negative-decimal" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>The staff-size element indicates how large a staff space is on this staff, expressed as a percentage of the work's default scaling. Values less than 100 make the staff space smaller while values over 100 make the staff space larger. A staff-type of cue, ossia, or editorial implies a staff-size of less than 100, but the exact value is implementation-dependent unless specified here. Staff size affects staff height only, not the relationship of the staff to the left and right margins.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element name="staff-size" type="staff-size" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="number" type="staff-number"/>
 		<xs:attribute name="show-frets" type="show-frets"/>
@@ -3119,12 +3136,25 @@ The multiple-rest and measure-repeat symbols indicate the number of measures cov
 		<xs:attributeGroup ref="print-spacing"/>
 	</xs:complexType>
 
+	<xs:complexType name="staff-size">
+		<xs:annotation>
+			<xs:documentation>The staff-size element indicates how large a staff space is on this staff, expressed as a percentage of the work's default scaling. Values less than 100 make the staff space smaller while values over 100 make the staff space larger. A staff-type of cue, ossia, or editorial implies a staff-size of less than 100, but the exact value is implementation-dependent unless specified here. Staff size affects staff height only, not the relationship of the staff to the left and right margins.
+			
+In some cases, a staff-size different than 100 also scales the notation on the staff, such as with a cue staff. In other cases, such as percussion staves, the lines may be more widely spaced without scaling the notation on the staff. The scaling attribute allows these two cases to be distinguished. It specifies the percentage scaling that applies to the notation. Values less that 100 make the notation smaller while values over 100 make the notation larger. The staff-size content and scaling attribute are both non-negative decimal values.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="non-negative-decimal">
+				<xs:attribute name="scaling" type="non-negative-decimal"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="staff-tuning">
 		<xs:annotation>
 			<xs:documentation>The staff-tuning type specifies the open, non-capo tuning of the lines on a tablature staff.</xs:documentation>
 		</xs:annotation>
 		<xs:group ref="tuning"/>
-		<xs:attribute name="line" type="staff-line"/>
+		<xs:attribute name="line" type="staff-line" use="required"/>
 	</xs:complexType>
 
 	<xs:complexType name="time">
@@ -5695,7 +5725,7 @@ The show-number attribute is used to display either the number of actual notes, 
 
 	<xs:complexType name="unpitched">
 		<xs:annotation>
-			<xs:documentation>The unpitched type represents musical elements that are notated on the staff but lack definite pitch, such as unpitched percussion and speaking voice.</xs:documentation>
+			<xs:documentation>The unpitched type represents musical elements that are notated on the staff but lack definite pitch, such as unpitched percussion and speaking voice. If the child elements are not present, the note is placed on the middle line of the staff. This is generally used with a one-line staff. Notes in percussion clef should always use an unpitched element rather than a pitch element.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:group ref="display-step-octave" minOccurs="0"/>
@@ -6141,9 +6171,9 @@ A score-instrument type is also required if the score specifies MIDI 1.0 channel
 					<xs:documentation>The sign element represents the clef symbol.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="line" type="staff-line" minOccurs="0">
+			<xs:element name="line" type="staff-line-position" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Line numbers are counted from the bottom of the staff. Standard values are 2 for the G sign (treble clef), 4 for the F sign (bass clef), 3 for the C sign (alto clef) and 5 for TAB (on a 6-line staff).</xs:documentation>
+					<xs:documentation>Line numbers are counted from the bottom of the staff. They are only needed with the G, F, and C signs in order to position a pitch correctly on the staff. Standard values are 2 for the G sign (treble clef), 4 for the F sign (bass clef), and 3 for the C sign (alto clef). Line values can be used to specify positions outside the staff, such as a C clef positioned in the middle of a grand staff.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="clef-octave-change" type="xs:integer" minOccurs="0">
@@ -6353,7 +6383,7 @@ A root is a pitch name like C, D, E, while a numeral is a scale degree like 1, 2
 
 	<xs:group name="display-step-octave">
 		<xs:annotation>
-			<xs:documentation>The display-step-octave group contains the sequence of elements used by both the rest and unpitched elements. This group is used to place rests and unpitched elements on the staff without implying that these elements have pitch. Positioning follows the current clef. If percussion clef is used, the display-step and display-octave elements are interpreted as if in treble clef, with a G in octave 4 on line 2. If not present, the note is placed on the middle line of the staff, generally used for a one-line staff.</xs:documentation>
+			<xs:documentation>The display-step-octave group contains the sequence of elements used by both the rest and unpitched elements. This group is used to place rests and unpitched elements on the staff without implying that these elements have pitch. Positioning follows the current clef. If percussion clef is used, the display-step and display-octave elements are interpreted as if in treble clef, with a G in octave 4 on line 2.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="display-step" type="step"/>

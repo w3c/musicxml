@@ -169,8 +169,10 @@
 	staff, following the current clef. If percussion clef is
 	used, the display-step and display-octave elements are
 	interpreted as if in treble clef, with a G in octave 4 on
-	line 2. If not present, the note is placed on the middle
-	line of the staff, generally used for a one-line staff.
+	line 2. If the child elements are not present, the note is
+	placed on the middle line of the staff. This is generally
+	used with a one-line staff. Notes in percussion clef should
+	always use an unpitched element rather than a pitch element.
 -->
 <!ELEMENT unpitched ((display-step, display-octave)?)>
 <!ELEMENT display-step (#PCDATA)>
