@@ -3713,7 +3713,7 @@ The optional multiple-rest-always and multiple-rest-range attributes describe ho
 
 	<xs:complexType name="metronome">
 		<xs:annotation>
-			<xs:documentation>The metronome type represents metronome marks and other metric relationships. The beat-unit group and per-minute element specify regular metronome marks. The metronome-note and metronome-relation elements allow for the specification of metric modulations and other metric relationships, such as swing tempo marks where two eighths are equated to a quarter note / eighth note triplet. Tied notes can be represented in both types of metronome marks by using the beat-unit-tied and metronome-tied elements. The parentheses attribute indicates whether or not to put the metronome mark in parentheses; its value is no if not specified.</xs:documentation>
+			<xs:documentation>The metronome type represents metronome marks and other metric relationships. The beat-unit group and per-minute element specify regular metronome marks. The metronome-note and metronome-relation elements allow for the specification of metric modulations and other metric relationships, such as swing tempo marks where two eighths are equated to a quarter note / eighth note triplet. Tied notes can be represented in both types of metronome marks by using the beat-unit-tied and metronome-tied elements. The parentheses attribute indicates whether or not to put the metronome mark in parentheses; its value is no if not specified. The print-object attribute is set to no in cases where the metronome element represents a relationship or range that is not displayed in the music notation.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:sequence>
@@ -3745,6 +3745,7 @@ The optional multiple-rest-always and multiple-rest-range attributes describe ho
 			</xs:sequence>
 		</xs:choice>
 		<xs:attributeGroup ref="print-style-align"/>
+		<xs:attributeGroup ref="print-object"/>
 		<xs:attributeGroup ref="justify"/>
 		<xs:attribute name="parentheses" type="yes-no"/>
 		<xs:attributeGroup ref="optional-unique-id"/>
