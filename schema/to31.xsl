@@ -61,10 +61,26 @@
   <xsl:template 
     match="accidental/@smufl[not(starts-with(., 'acc'))]"/>
 
+  <!-- 
+    Remove elements with number attributes greater than 6.
+  -->
+  <xsl:template 
+    match="arpeggiate[number(@number) > 6] |
+    glissando[number(@number) > 6] |
+    hammer-on[number(@number) > 6] |
+    non-arpeggiate[number(@number) > 6] |
+    other-notation[number(@number) > 6] |
+    pull-off[number(@number) > 6] |
+    slide[number(@number) > 6] |
+    slur[number(@number) > 6] |
+    tied[number(@number) > 6] |
+    tuplet[number(@number) > 6]"/>
+
   <!-- Remove new attributes. -->
   <xsl:template 
-    match="bend/@shape | figured-bass/@placement | 
-      figured-bass/@halign | figured-bass/@valign"/>
+    match="arpeggiate/@unbroken | bend/@shape | 
+      figured-bass/@halign | figured-bass/@valign |
+      figured-bass/@placement"/>
 
   <!-- Additions in attributes.mod -->
 
@@ -116,6 +132,12 @@
   <xsl:template 
     match="@enclosure[. = 'inverted-bracket']"/>
 
+  <!-- 
+    Remove elements with number attributes greater than 6.
+  -->
+  <xsl:template 
+    match="wavy-line[number(@number) > 6]"/>
+  
   <!-- Additions in direction.mod -->
 
   <!--
@@ -138,6 +160,16 @@
   -->
   <xsl:template
     match="harmony[numeral]"/>
+  
+  <!-- 
+    Remove elements with number attributes greater than 6.
+  -->
+  <xsl:template 
+    match="bracket[number(@number) > 6] |
+    dashes[number(@number) > 6] |
+    octave-shift[number(@number) > 6] |
+    pedal[number(@number) > 6] |
+    wedge[number(@number) > 6]"/>
   
   <!-- Remove new elements. -->
   <xsl:template
