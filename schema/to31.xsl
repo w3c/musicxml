@@ -55,6 +55,10 @@
   <xsl:template
     match="listen"/>
   
+  <!-- Remove all but the first instrument element -->
+  <xsl:template 
+    match="instrument[position() > 1]"/>
+
   <!-- 
     Remove accidental SMuFL attributes with new values.
   -->

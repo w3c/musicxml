@@ -4964,7 +4964,7 @@ Figures are ordered from top to bottom. The value of parentheses is "no" if not 
 
 	<xs:complexType name="instrument">
 		<xs:annotation>
-			<xs:documentation>The instrument type distinguishes between score-instrument elements in a score-part. The id attribute is an IDREF back to the score-instrument ID. If multiple score-instruments are specified on a score-part, there should be an instrument element for each note in the part.</xs:documentation>
+			<xs:documentation>The instrument type distinguishes between score-instrument elements in a score-part. The id attribute is an IDREF back to the score-instrument ID. If multiple score-instruments are specified on a score-part, there should be an instrument element for each note in the part. Notes that are shared between multiple score-instruments can have more than one instrument element.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="id" type="xs:IDREF" use="required"/>
 	</xs:complexType>
@@ -5131,7 +5131,7 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 					<xs:element name="tie" type="tie" minOccurs="0" maxOccurs="2"/>
 				</xs:sequence>
 			</xs:choice>
-			<xs:element name="instrument" type="instrument" minOccurs="0"/>
+			<xs:element name="instrument" type="instrument" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:group ref="editorial-voice"/>
 			<xs:element name="type" type="note-type" minOccurs="0"/>
 			<xs:element name="dot" type="empty-placement" minOccurs="0" maxOccurs="unbounded">
@@ -5787,7 +5787,7 @@ The credit-type element indicates the purpose behind a credit. Multiple types of
 			<xs:element name="scaling" type="scaling" minOccurs="0"/>
 			<xs:element name="concert-score" type="empty" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The presence of a concert score element indicates that a score is displayed in concert pitch. It is used for scores that contain parts for transposing instruments.
+					<xs:documentation>The presence of a concert-score element indicates that a score is displayed in concert pitch. It is used for scores that contain parts for transposing instruments.
 
 A file with a concert-score element may not contain any transpose elements that have non-zero values for either the diatonic or chromatic elements. Concert scores may include octave transpositions, so transpose elements with a double element or a non-zero octave-change element value are permitted.</xs:documentation>
 				</xs:annotation>				
@@ -5842,6 +5842,13 @@ A file with a concert-score element may not contain any transpose elements that 
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="instrument-link">
+		<xs:annotation>
+			<xs:documentation>Multiple part-link elements can link a condensed part within a score file to multiple MusicXML parts files. For example, a "Clarinet 1 and 2" part in a score file could link to separate "Clarinet 1" and "Clarinet 2" part files. The instrument-link type distinguish which of the score-instruments within a score-part are in which part file. The instrument-link id attribute refers to a score-instrument id attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="id" type="xs:IDREF" use="required"/>
+	</xs:complexType>
+	
 	<xs:complexType name="lyric-font">
 		<xs:annotation>
 			<xs:documentation>The lyric-font type specifies the default font for a particular name and number of lyric.</xs:documentation>
@@ -5903,12 +5910,16 @@ A part-group element is not needed for a single multi-staff part. By default, mu
 
 	<xs:complexType name="part-link">
 		<xs:annotation>
-			<xs:documentation>The part-link type allows MusicXML data for both score and parts to be contained within a single compressed MusicXML file. It links a score-part from a score file to a MusicXML files that contain parts data. In the case of a single compressed MusicXML file, the link href values are paths that are relative to the root folder of the zip file.
-				
-The score-part containing the part-link should include a group element with a score value. The MusicXML file that is the target of the part-link should have score-part elements that include a group element with a parts value.
-				
-Multiple part-link elements can link a condensed part within a score file to multiple MusicXML parts files. For example, a "Clarinet 1 and 2" part in a score file could link to separate "Clarinet 1" and "Clarinet 2" part files.</xs:documentation>
+			<xs:documentation>The part-link type allows MusicXML data for both score and parts to be contained within a single compressed MusicXML file. It links a score-part from a score file to a MusicXML files that contain parts data. In the case of a single compressed MusicXML file, the link href values are paths that are relative to the root folder of the zip file.</xs:documentation>
 		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="instrument-link" type="instrument-link" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="group-link" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Multiple part-link elements can reference different types of linked files, such as parts and condensed score. The optional group-link elements identify the groups used in the linked file. The content of a group-link element should match the content of a group element in the linked file.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
 		<xs:attributeGroup ref="link-attributes"/>
 	</xs:complexType>
 	
@@ -5955,7 +5966,9 @@ Multiple part-link elements can link a condensed part within a score file to mul
 		<xs:annotation>
 			<xs:documentation>The score-instrument type represents a single instrument within a score-part. As with the score-part type, each score-instrument has a required ID attribute, a name, and an optional abbreviation.
 
-A score-instrument type is also required if the score specifies MIDI 1.0 channels, banks, or programs. An initial midi-instrument assignment can also be made here. MusicXML software should be able to automatically assign reasonable channels and instruments without these elements in simple cases, such as where part names match General MIDI instrument names.</xs:documentation>
+A score-instrument type is also required if the score specifies MIDI 1.0 channels, banks, or programs. An initial midi-instrument assignment can also be made here. MusicXML software should be able to automatically assign reasonable channels and instruments without these elements in simple cases, such as where part names match General MIDI instrument names.
+
+The score-instrument element can also distinguish multiple instruments of the same type that are on the same part, such as Clarinet 1 and Clarinet 2 instruments within a Clarinets 1 and 2 part.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="instrument-name" type="xs:string">
