@@ -992,15 +992,16 @@
 	
 	Negative bend-alter values indicate pre-bends or releases.
 	The pre-bend and release elements are used to distinguish
-	what is intended. Notes with a bend and release will have
-	two bend elements, with the release following the bend.
-	The offset attribute of the release element specifies where
-	the release starts in terms of divisions. The first-beat and
-	last-beat attributes of the parent bend element are relative
-	to the original note position, not this offset value.
-	Because the bend-alter element represents the number of
-	steps in the bend, a release after a bend has a negative
-	bend-alter value, not a zero value.
+	what is intended. A single note with a bend and release
+	will contain two bend elements: the first to represent the
+	bend and the second to represent the release. The offset
+	attribute of the release element specifies where the release
+	starts in terms of divisions relative to the current note.
+	The first-beat and last-beat attributes of the parent bend
+	element are relative to the original note position, not this
+	offset value. Because the bend-alter element represents the
+	number of steps in the bend, a release after a bend has a
+	negative bend-alter value, not a zero value.
 	
 	The shape attribute distinguishes between the angled bend
 	symbols commonly used in standard notation and the curved

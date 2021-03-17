@@ -4630,7 +4630,7 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 
 	<xs:complexType name="bend">
 		<xs:annotation>
-			<xs:documentation>The bend type is used in guitar notation and tablature. Notes with a bend and release will have two bend elements, with the release following the bend. The shape attribute distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in both tablature and standard notation.</xs:documentation>
+			<xs:documentation>The bend type is used in guitar notation and tablature. A single note with a bend and release will contain two bend elements: the first to represent the bend and the second to represent the release. The shape attribute distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in both tablature and standard notation.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="bend-alter" type="semitones">
@@ -5318,7 +5318,7 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 
 	<xs:complexType name="release">
 		<xs:annotation>
-			<xs:documentation>The release type indicates that a bend is a release rather than a normal bend or pre-bend. The offset attribute specifies where the release starts in terms of divisions. The first-beat and last-beat attributes of the parent bend element are relative to the original note position, not this offset value.</xs:documentation>
+			<xs:documentation>The release type indicates that a bend is a release rather than a normal bend or pre-bend. The offset attribute specifies where the release starts in terms of divisions relative to the current note. The first-beat and last-beat attributes of the parent bend element are relative to the original note position, not this offset value.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="empty">
