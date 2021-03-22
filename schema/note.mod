@@ -53,7 +53,7 @@
 	(((grace, ((%full-note;, (tie, tie?)?) | (cue, %full-note;))) |
 	  (cue, %full-note;, duration) |
 	  (%full-note;, duration, (tie, tie?)?)),
-	 instrument?, %editorial-voice;, type?, dot*,
+	 instrument*, %editorial-voice;, type?, dot*,
 	 accidental?, time-modification?, stem?, notehead?,
 	 notehead-text?, staff?, beam*, notations*, lyric*, 
 	 play?, listen?)>
@@ -215,7 +215,9 @@
 	If multiple score-instruments are specified on a
 	score-part, there should be an instrument element for
 	each note in the part. The id attribute is an IDREF back
-	to the score-instrument ID.
+	to the score-instrument ID. Notes that are shared between
+	multiple score-instruments can have more than one instrument
+	element.
 -->
 <!ELEMENT instrument EMPTY>
 <!ATTLIST instrument
