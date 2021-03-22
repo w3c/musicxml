@@ -1438,11 +1438,16 @@
 	highest note. The length of the sign can be determined from
 	the position attributes for the arpeggiate elements used
 	with the top and bottom notes of the arpeggiated chord.
+	If the unbroken attribute is set to yes, it indicates that
+	the arpeggio continues onto another staff within the part.
+	This serves as a hint to applications and is not required
+	for cross-staff arpeggios.
 -->
 <!ELEMENT arpeggiate EMPTY>
 <!ATTLIST arpeggiate
     number %number-level; #IMPLIED
     direction %up-down; #IMPLIED
+    unbroken %yes-no; #IMPLIED
     %position;
     %placement;
     %color;
