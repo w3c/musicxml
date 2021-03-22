@@ -4662,25 +4662,21 @@ The repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tr
 
 	<xs:complexType name="bend">
 		<xs:annotation>
-			<xs:documentation>The bend type is used in guitar notation and tablature. The bend-alter element indicates the number of steps in the bend, similar to the alter element. As with the alter element, numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended. The shape attribute distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in both tablature and standard notation.</xs:documentation>
+			<xs:documentation>The bend type is used in guitar notation and tablature. A single note with a bend and release will contain two bend elements: the first to represent the bend and the second to represent the release. The shape attribute distinguishes between the angled bend symbols commonly used in standard notation and the curved bend symbols commonly used in both tablature and standard notation.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="bend-alter" type="semitones">
 				<xs:annotation>
-					<xs:documentation>The bend-alter element indicates the number of steps in the bend, similar to the alter element. As with the alter element, numbers like 0.5 can be used to indicate microtones. Negative numbers indicate pre-bends or releases; the pre-bend and release elements are used to distinguish what is intended.</xs:documentation>
+					<xs:documentation>The bend-alter element indicates the number of semitones in the bend, similar to the alter element. As with the alter element, numbers like 0.5 can be used to indicate microtones. Negative values indicate pre-bends or releases. The pre-bend and release elements are used to distinguish what is intended. Because the bend-alter element represents the number of steps in the bend, a release after a bend has a negative bend-alter value, not a zero value.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:choice minOccurs="0">
 				<xs:element name="pre-bend" type="empty">
 					<xs:annotation>
-						<xs:documentation>The pre-bend element indicates that this is a pre-bend rather than a normal bend or a release.</xs:documentation>
+						<xs:documentation>The pre-bend element indicates that a bend is a pre-bend rather than a normal bend or a release.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="release" type="empty">
-					<xs:annotation>
-						<xs:documentation>The release element indicates that this is a release rather than a normal bend or pre-bend.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
+				<xs:element name="release" type="release"/>
 			</xs:choice>
 			<xs:element name="with-bar" type="placement-text" minOccurs="0">
 				<xs:annotation>
@@ -5350,6 +5346,17 @@ If the parentheses attribute is set to yes, the notehead is parenthesized. It is
 				<xs:attributeGroup ref="placement"/>
 			</xs:extension>
 		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="release">
+		<xs:annotation>
+			<xs:documentation>The release type indicates that a bend is a release rather than a normal bend or pre-bend. The offset attribute specifies where the release starts in terms of divisions relative to the current note. The first-beat and last-beat attributes of the parent bend element are relative to the original note position, not this offset value.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="empty">
+				<xs:attribute name="offset" type="divisions"/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 
 	<xs:complexType name="rest">

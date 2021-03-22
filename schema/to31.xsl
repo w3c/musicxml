@@ -84,7 +84,7 @@
   <xsl:template 
     match="arpeggiate/@unbroken | bend/@shape | 
       figured-bass/@halign | figured-bass/@valign |
-      figured-bass/@placement"/>
+      figured-bass/@placement | release/@offset"/>
 
   <!-- Additions in attributes.mod -->
 
