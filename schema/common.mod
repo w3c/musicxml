@@ -184,10 +184,13 @@
 <!--
 	Slurs, tuplets, and many other features can be concurrent
 	and overlap within a single musical part. The number-level
-	entity distinguishes up to six concurrent objects of the
+	entity distinguishes up to 16 concurrent objects of the
 	same type when the objects overlap in MusicXML document
-	order. When a number-level value is implied, the value is
-	1 by default.
+	order. Values greater than 6 are usually only needed for
+	music with a large number of divisi staves in a single
+	part, or if there are more than 6 cross-staff arpeggios
+	in a single measure. When a number-level value is implied,
+	the value is 1 by default.
 	
 	When polyphonic parts are involved, the ordering within a
 	MusicXML document can differ from musical score order. As
@@ -224,7 +227,9 @@
 	stopping point of an object earlier in the MusicXML document
 	than it will find its starting point.
 -->
-<!ENTITY % number-level "(1 | 2 | 3 | 4 | 5 | 6)">
+<!ENTITY % number-level 
+    "(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 
+      9 | 10 | 11 | 12 | 13 | 14 | 15 | 16)">
 
 <!--
 	The MusicXML format supports eight levels of beaming, up

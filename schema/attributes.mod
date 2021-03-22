@@ -259,19 +259,10 @@
 
 <!--
 	Clefs are represented by the sign, line, and
-	clef-octave-change elements. Sign values include G, F, C,
-	percussion, TAB, jianpu, and none. Line numbers are
-	counted from the bottom of the staff. Standard values are
-	2 for the G sign (treble clef), 4 for the F sign (bass clef), 
-	3 for the C sign (alto clef) and 5 for TAB (on a 6-line
-	staff). The clef-octave-change element is used for
-	transposing clefs (e.g., a treble clef for tenors would
-	have a clef-octave-change value of -1). The optional 
-	number attribute refers to staff numbers within the part,
-	from top to bottom on the system. A value of 1 is 
-	assumed if not present. 
-
-	The jianpu sign indicates that the music that follows 
+	clef-octave-change elements. Sign values include G,
+	F, C, percussion, TAB, jianpu, and none. 
+	
+	The jianpu sign indicates that the music that follows
 	should be in jianpu numbered notation, just as the TAB
 	sign indicates that the music that follows should be in
 	tablature notation. Unlike TAB, a jianpu sign does not
@@ -280,6 +271,21 @@
 	The none sign is deprecated as of MusicXML 4.0. Use the clef
 	element's print-object attribute instead. When the none sign
 	is used, notes should be displayed as if in treble clef.
+
+	Line numbers are counted from the bottom of the staff.
+	They are only needed with the G, F, and C signs in order
+	to position a pitch correctly on the staff. Standard
+	values are 2 for the G sign (treble clef), 4 for the F
+	sign (bass clef), and 3 for the C sign (alto clef). Line
+	values can be used to specify positions outside the staff,
+	such as a C clef positioned in the middle of a grand staff.
+	
+	The clef-octave-change element is used for transposing
+	clefs. A treble clef for tenors would have a value of -1.
+	
+	The optional number attribute refers to staff numbers
+	within the part, from top to bottom on the system. A
+	value of 1 is assumed if not present. 
 
 	Sometimes clefs are added to the staff in non-standard
 	line positions, either to indicate cue passages, or when
@@ -333,10 +339,24 @@
 	use is preferred in this situation if feasible. A regular
 	staff is the standard default staff-stype.
 	
-	The staff-lines element specifies the number of lines for
-	a non 5-line staff. The staff-tuning and capo elements are
-	used to specify tuning when using tablature notation. The
-	optional number attribute specifies the staff number from
+	The staff-lines element specifies the number of lines and
+	is usually used for a non 5-line staff. If the staff-lines
+	element is present, the appearance of each line may be
+	individually specified with a line-detail element. Staff
+	lines are numbered from bottom to top. The print-object
+	attribute allows lines to be hidden within a staff. This
+	is used in special situations such as a widely-spaced
+	percussion staff where a note placed below the higher line
+	is distinct from a note placed above the lower line. Hidden
+	staff lines are included when specifying clef lines and
+	determining display-step / display-octave values, but are
+	not counted as lines for the purposes of the system-layout
+	and staff-layout elements.
+	
+	The staff-tuning and capo elements are used to specify tuning
+	when using tablature notation.
+	
+	The optional number attribute specifies the staff number from
 	top to bottom on the system, as with clef. The optional
 	show-frets attribute indicates whether to show tablature
 	frets as numbers (0, 1, 2) or letters (a, b, c). The default
@@ -347,8 +367,9 @@
 	the score is printed in cutaway format where vertical space
 	is left for the empty part.
 -->
-<!ELEMENT staff-details (staff-type?, staff-lines?, 
-	staff-tuning*, capo?, staff-size?)>
+<!ELEMENT staff-details
+    (staff-type?, (staff-lines, line-detail*)?, staff-tuning*,
+     capo?, staff-size?)>
 <!ATTLIST staff-details
     number         CDATA                #IMPLIED
     show-frets     (numbers | letters)  #IMPLIED
@@ -357,6 +378,15 @@
 >
 <!ELEMENT staff-type (#PCDATA)>
 <!ELEMENT staff-lines (#PCDATA)>
+
+<!ELEMENT line-detail EMPTY>
+<!ATTLIST line-detail
+    line    CDATA       #REQUIRED
+    width   %tenths;    #IMPLIED
+    %color;
+    %line-type;
+    %print-object;
+>
 
 <!--
 	The tuning-step, tuning-alter, and tuning-octave
@@ -378,18 +408,31 @@
 <!ELEMENT capo (#PCDATA)>
 
 <!--
-	The staff-size element indicates how large a staff
-	space is on this staff, expressed as a percentage of 
-	the work's default scaling. Values less than 100 make
-	the staff space smaller while values over 100 make the
-	staff space larger. A staff-type of cue, ossia, or 
-	editorial implies a staff-size of less than 100, but
-	the exact value is implementation-dependent unless
-	specified here. Staff size affects staff height only,
-	not the relationship of the staff to the left and
-	right margins.
+	The staff-size element indicates how large a staff space
+	is on this staff, expressed as a percentage of the work's
+	default scaling. Values less than 100 make the staff space
+	smaller while values over 100 make the staff space larger.
+	A staff-type of cue, ossia, or editorial implies a
+	staff-size of less than 100, but the exact value is
+	implementation-dependent unless specified here. Staff size
+	affects staff height only, not the relationship of the staff
+	to the left and right margins.
+	
+	In some cases, a staff-size different than 100 also scales
+	the notation on the staff, such as with a cue staff. In
+	other cases, such as percussion staves, the lines may be
+	more widely spaced without scaling the notation on the
+	staff. The scaling attribute allows these two cases to be
+	distinguished. It specifies the percentage scaling that 
+	applies to the notation. Values less that 100 make the
+	notation smaller while values over 100 make the notation
+	larger. The staff-size content and scaling attribute are
+	both non-negative decimal values.
 -->
 <!ELEMENT staff-size (#PCDATA)>
+<!ATTLIST staff-size
+    scaling CDATA #IMPLIED
+>
 
 <!--
 	If the part is being encoded for a transposing instrument

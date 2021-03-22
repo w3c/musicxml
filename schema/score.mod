@@ -34,24 +34,24 @@
 <!ELEMENT movement-title (#PCDATA)>
 
 <!--
-	Collect score-wide defaults. This includes scaling and
-	layout, defined in layout.mod; whether or not the file
-	is a concert score; and default values for the music font,
-	word font, lyric font, and lyric language. The number and
-	name attributes in lyric-font and lyric-language elements
-	are typically used when lyrics are provided in multiple
-	languages. If the number and name attributes are omitted,
-	the lyric-font and lyric-language values apply to all
-	numbers and names. Except for the concert-score element,
-	if any defaults are missing, the choice of what to use
-	is determined by the application.
+	The defaults element collects score-wide defaults. This
+	includes scaling and layout, defined in layout.mod;
+	whether or not the file is a concert score; and default
+	values for the music font, word font, lyric font, and lyric
+	language. The number and name attributes in lyric-font and
+	lyric-language elements are typically used when lyrics are
+	provided in multiple languages. If the number and name
+	attributes are omitted, the lyric-font and lyric-language
+	values apply to all numbers and names. Except for the
+	concert-score element, if any defaults are missing, the
+	choice of what to use is determined by the application.
 -->
 <!ELEMENT defaults
 	(scaling?, concert-score?, %common-layout;, appearance?, 
 	 music-font?, word-font?, lyric-font*, lyric-language*)>
 
 <!--  
-	The presence of a concert score element indicates that
+	The presence of a concert-score element indicates that
 	a score is displayed in concert pitch. It is used for
 	scores that contain parts for transposing instruments.
 
@@ -198,18 +198,32 @@
 	single compressed MusicXML file, the link href values are
 	paths that are relative to the root folder of the zip file.
 	
-	The score-part containing the part-link should include a
-	group element with a score value. The MusicXML file that is
-	the target of the part-link should have score-part elements
-	that include a group element with a parts value.
-	
 	Multiple part-link elements can link a condensed part within
 	a score file to multiple MusicXML parts files. For example,
 	a "Clarinet 1 and 2" part in a score file could link to
-	separate "Clarinet 1" and "Clarinet 2" part files.
+	separate "Clarinet 1" and "Clarinet 2" part files. The
+	optional instrument-link elements distinguish which of
+	the score-instruments within a score-part are in which
+	part file. The instrument-link id attribute refers to a
+	score-instrument id attribute.
+	
+	Multiple part-link elements can reference different types
+	of linked files, such as parts and condensed score. The
+	optional group-link elements identify the groups used in
+	the linked file. The content of a group-link element should
+	match the content of a group element in the linked file.
 -->
-<!ELEMENT part-link EMPTY>
-<!ATTLIST part-link %link-attributes;>
+<!ELEMENT part-link (instrument-link*, group-link*)>
+<!ATTLIST part-link
+    %link-attributes;
+>
+
+<!ELEMENT instrument-link EMPTY>
+<!ATTLIST instrument-link
+    id IDREF #REQUIRED
+>
+
+<!ELEMENT group-link (#PCDATA)>
 
 <!--
 	The part-name indicates the full name of the musical part.
@@ -315,18 +329,26 @@
 <!ELEMENT group-time EMPTY>
 
 <!--
-	The score-instrument element allows for multiple
-	instruments per score-part. As with the score-part
-	element, each score-instrument has a required ID
-	attribute, a name, and an optional abbreviation. The
-	instrument-name and instrument-abbreviation are
-	typically used within a software application, rather
-	than appearing on the printed page of a score.
+	The score-instrument element allows for multiple instruments
+	per score-part. As with the score-part element, each
+	score-instrument has a required ID attribute, a name,
+	and an optional abbreviation. The instrument-name and
+	instrument-abbreviation are typically used within a software
+	application, rather than appearing on the printed page of a
+	score.
 
-	A score-instrument element is also required if the
-	score specifies MIDI 1.0 channels, banks, or programs.
-	An initial midi-instrument assignment can also
-	be made here.
+	A score-instrument element is also required if the score
+	specifies MIDI 1.0 channels, banks, or programs. An initial
+	midi-instrument assignment can also be made here. MusicXML
+	software should be able to automatically assign reasonable
+	channels and instruments without these elements in simple
+	cases, such as where part names match General MIDI
+	instrument names.
+	
+	The score-instrument element can also distinguish multiple
+	instruments of the same type that are on the same part,
+	such as Clarinet 1 and Clarinet 2 instruments within a
+	Clarinets 1 and 2 part.
 
 	The virtual-instrument-data entity is defined in the 
 	common.mod file, as it can be used within both the 
@@ -344,9 +366,9 @@
 <!--
 	The group element allows the use of different versions of
 	the part for different purposes. Typical values include
-	score, parts, sound, and data. Ordering information that is
-	directly encoded in MuseData can be derived from the
-	ordering within a MusicXML score or opus.
+	score, condensed score, parts, sound, and data. Ordering
+	information that is directly encoded in MuseData can be
+	derived from the ordering within a MusicXML score or opus.
 -->
 <!ELEMENT group (#PCDATA)>
 

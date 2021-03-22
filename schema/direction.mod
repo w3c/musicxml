@@ -255,7 +255,11 @@
 	number, or a text description including numbers. The
 	parentheses attribute indicates whether or not to put the
 	metronome mark in parentheses; its value is no if not
-	specified. If a font is specified for the per-minute element,
+	specified. The print-object attribute is set to no in
+	cases where the metronome element represents a relationship
+	or range that is not displayed in the music notation.
+	
+	If a font is specified for the per-minute element,
 	it overrides the font specified for the overall metronome
 	element. This allows separate specification of a music font
 	for beat-unit and a text font for the numeric value in cases
@@ -288,6 +292,7 @@
 	 (metronome-relation, metronome-note+)?))>
 <!ATTLIST metronome
     %print-style-align;
+    %print-object;
     %justify;
     parentheses %yes-no; #IMPLIED
     %optional-unique-id;
@@ -1264,8 +1269,11 @@
 	time through. The time that jumps occur can be changed by
 	using the time-only attribute.
 	
-	Forward-repeat is used when a forward repeat sign is
-	implied, and usually follows a bar line. When used it
+	The forward-repeat attribute indicates that a forward
+	repeat sign is implied but not displayed. It is used for
+	example in two-part forms with repeats, such as a minuet
+	and trio where no repeat is displayed at the start of the
+	trio. This usually occurs after a barline. When used it
 	always has the value of "yes".
 	
 	The fine attribute follows the final note or rest in a

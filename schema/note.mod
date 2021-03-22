@@ -53,7 +53,7 @@
 	(((grace, ((%full-note;, (tie, tie?)?) | (cue, %full-note;))) |
 	  (cue, %full-note;, duration) |
 	  (%full-note;, duration, (tie, tie?)?)),
-	 instrument?, %editorial-voice;, type?, dot*,
+	 instrument*, %editorial-voice;, type?, dot*,
 	 accidental?, time-modification?, stem?, notehead?,
 	 notehead-text?, staff?, beam*, notations*, lyric*, 
 	 play?, listen?)>
@@ -169,8 +169,10 @@
 	staff, following the current clef. If percussion clef is
 	used, the display-step and display-octave elements are
 	interpreted as if in treble clef, with a G in octave 4 on
-	line 2. If not present, the note is placed on the middle
-	line of the staff, generally used for a one-line staff.
+	line 2. If the child elements are not present, the note is
+	placed on the middle line of the staff. This is generally
+	used with a one-line staff. Notes in percussion clef should
+	always use an unpitched element rather than a pitch element.
 -->
 <!ELEMENT unpitched ((display-step, display-octave)?)>
 <!ELEMENT display-step (#PCDATA)>
@@ -213,7 +215,9 @@
 	If multiple score-instruments are specified on a
 	score-part, there should be an instrument element for
 	each note in the part. The id attribute is an IDREF back
-	to the score-instrument ID.
+	to the score-instrument ID. Notes that are shared between
+	multiple score-instruments can have more than one instrument
+	element.
 -->
 <!ELEMENT instrument EMPTY>
 <!ATTLIST instrument
@@ -1452,11 +1456,16 @@
 	highest note. The length of the sign can be determined from
 	the position attributes for the arpeggiate elements used
 	with the top and bottom notes of the arpeggiated chord.
+	If the unbroken attribute is set to yes, it indicates that
+	the arpeggio continues onto another staff within the part.
+	This serves as a hint to applications and is not required
+	for cross-staff arpeggios.
 -->
 <!ELEMENT arpeggiate EMPTY>
 <!ATTLIST arpeggiate
     number %number-level; #IMPLIED
     direction %up-down; #IMPLIED
+    unbroken %yes-no; #IMPLIED
     %position;
     %placement;
     %color;
