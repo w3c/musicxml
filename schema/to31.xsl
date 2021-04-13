@@ -139,8 +139,12 @@
   <!-- 
     Remove elements with number attributes greater than 6.
   -->
-  <xsl:template 
+  <xsl:template priority="1"
     match="wavy-line[number(@number) > 6]"/>
+  
+  <!-- Remove new attributes. -->
+  <xsl:template 
+    match="wavy-line/@smufl"/>
   
   <!-- Additions in direction.mod -->
 

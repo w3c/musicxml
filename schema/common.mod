@@ -864,16 +864,20 @@
 <!ELEMENT voice (#PCDATA)>
 
 <!--
-	Fermata and wavy-line elements can be applied both to
-	notes and to barlines, so they are defined here. Wavy
-	lines are one way to indicate trills; when used with a
-	barline element, they should always have type="continue"
-	set. The fermata text content represents the shape of the
-	fermata sign and may be normal, angled, square,
-	double-angled, double-square, double-dot, half-curve,
-	curlew, or an empty string. An empty fermata element 
-	represents a normal fermata. The fermata type is upright
-	if not specified.
+	Fermata and wavy-line elements can be applied both to notes
+	and to barlines, so they are defined here. 
+	
+	Wavy lines are one way to indicate trills and vibrato.
+	When used with a barline element, they should always have
+	type="continue" set. The smufl attribute specifies a
+	particular wavy line glyph from the SMuFL Multi-segment
+	lines range.
+	
+	The fermata text content represents the shape of the fermata
+	sign and may be normal, angled, square, double-angled,
+	double-square, double-dot, half-curve, curlew, or an empty
+	string. An empty fermata element represents a normal
+	fermata. The fermata type is upright if not specified.
 -->
 <!ELEMENT fermata  (#PCDATA)>
 <!ATTLIST fermata
@@ -885,6 +889,7 @@
 <!ATTLIST wavy-line
     type %start-stop-continue; #REQUIRED
     number %number-level; #IMPLIED
+    %smufl;
     %position;
     %placement; 
     %color;
