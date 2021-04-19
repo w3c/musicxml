@@ -71,12 +71,12 @@
 
 <!--
 	The score elements provide the links to the individual 
-	movements. The new-page attribute, added in Version
-	2.0, is used to indicate if the first page of the score is 
-	different than the last page of the previous score. If
-	new-page is "yes", then a different page is used; if
-	"no", then the same page is used. The default value is
-	implementation-dependent.
+	scores within an opus. The new-page attribute is used
+	to indicate if the first page of the score is different
+	than the last page of the previous score. If new-page is
+	"yes", then a different page is used; if "no", then the
+	same page is used. The default value is implementation-
+	dependent.
 -->
 <!ELEMENT score EMPTY>
 <!ATTLIST score
