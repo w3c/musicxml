@@ -1545,7 +1545,7 @@
     %text-decoration;
     %text-rotation;
     %letter-spacing;
-    xml:lang NMTOKEN #IMPLIED
+    xml:lang CDATA #IMPLIED
     %text-direction;
 >
 <!ELEMENT syllabic (#PCDATA)>

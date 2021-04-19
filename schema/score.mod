@@ -82,7 +82,7 @@
 <!ATTLIST lyric-language
     number NMTOKEN #IMPLIED
     name CDATA #IMPLIED
-    xml:lang NMTOKEN #REQUIRED
+    xml:lang CDATA #REQUIRED
 >
 
 <!--

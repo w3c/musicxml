@@ -41,7 +41,8 @@
 <!-- Elements -->
 
 <!--
-	Sounds is the document element.
+	The sounds element is the document element for the
+	sounds.xml file.
 -->
 <!ELEMENT sounds (sound+)>
 

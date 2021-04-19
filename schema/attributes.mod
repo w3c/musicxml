@@ -536,7 +536,7 @@
 <!ELEMENT directive (#PCDATA)>
 <!ATTLIST directive
     %print-style;
-    xml:lang NMTOKEN #IMPLIED
+    xml:lang CDATA #IMPLIED
 >
 
 <!--

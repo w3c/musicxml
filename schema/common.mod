@@ -649,7 +649,7 @@
 	 %text-rotation;
 	 %letter-spacing;
 	 %line-height;
-	 xml:lang NMTOKEN #IMPLIED
+	 xml:lang CDATA #IMPLIED
 	 xml:space (default | preserve) #IMPLIED
 	 %text-direction;
 	 %enclosure;">
