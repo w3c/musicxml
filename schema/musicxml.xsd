@@ -545,7 +545,7 @@ Distances in a MusicXML file are measured in tenths of staff space. Tenths are t
 
 	<xs:simpleType name="text-direction">
 		<xs:annotation>
-			<xs:documentation>The text-direction type is used to adjust and override the Unicode bidirectional text algorithm, similar to the W3C Internationalization Tag Set recommendation. Values are ltr (left-to-right embed), rtl (right-to-left embed), lro (left-to-right bidi-override), and rlo (right-to-left bidi-override). The default value is ltr. This type is typically used by applications that store text in left-to-right visual order rather than logical order. Such applications can use the lro value to better communicate with other applications that more fully support bidirectional text.</xs:documentation>
+			<xs:documentation>The text-direction type is used to adjust and override the Unicode bidirectional text algorithm, similar to the Directionality data category in the W3C Internationalization Tag Set recommendation. Values are ltr (left-to-right embed), rtl (right-to-left embed), lro (left-to-right bidi-override), and rlo (right-to-left bidi-override). The default value is ltr. This type is typically used by applications that store text in left-to-right visual order rather than logical order. Such applications can use the lro value to better communicate with other applications that more fully support bidirectional text.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="ltr"/>
@@ -717,7 +717,7 @@ When multiple elements with the same tag are used within the same note, their or
 
 	<xs:simpleType name="clef-sign">
 		<xs:annotation>
-			<xs:documentation>The clef-sign element represents the different clef symbols. The jianpu sign indicates that the music that follows should be in jianpu numbered notation, just as the TAB sign indicates that the music that follows should be in tablature notation. Unlike TAB, a jianpu sign does not correspond to a visual clef notation.
+			<xs:documentation>The clef-sign type represents the different clef symbols. The jianpu sign indicates that the music that follows should be in jianpu numbered notation, just as the TAB sign indicates that the music that follows should be in tablature notation. Unlike TAB, a jianpu sign does not correspond to a visual clef notation.
 
 The none sign is deprecated as of MusicXML 4.0. Use the clef element's print-object attribute instead. When the none sign is used, notes should be displayed as if in treble clef.</xs:documentation>
 		</xs:annotation>
@@ -1923,7 +1923,7 @@ The other notehead covers noteheads other than those listed here. It is usually 
 
 	<xs:attributeGroup name="bend-sound">
 		<xs:annotation>
-			<xs:documentation>The bend-sound type is used for bend and slide elements, and is similar to the trill-sound attribute group. Here the beats element refers to the number of discrete elements (like MIDI pitch bends) used to represent a continuous bend or slide. The first-beat indicates the percentage of the direction for starting a bend; the last-beat the percentage for ending it. The default choices are:
+			<xs:documentation>The bend-sound type is used for bend and slide elements, and is similar to the trill-sound attribute group. Here the beats element refers to the number of discrete elements (like MIDI pitch bends) used to represent a continuous bend or slide. The first-beat indicates the percentage of the duration for starting a bend; the last-beat the percentage for ending it. The default choices are:
 
 	accelerate = "no"
 	beats = "4"
@@ -2222,7 +2222,7 @@ By default, all these attributes are set to yes. If print-object is set to no, t
 
 	<xs:attributeGroup name="text-direction">
 		<xs:annotation>
-			<xs:documentation>The text-direction attribute is used to adjust and override the Unicode bidirectional text algorithm, similar to the W3C Internationalization Tag Set recommendation.</xs:documentation>
+			<xs:documentation>The text-direction attribute is used to adjust and override the Unicode bidirectional text algorithm, similar to the Directionality data category in the W3C Internationalization Tag Set recommendation.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="dir" type="text-direction"/>
 	</xs:attributeGroup>

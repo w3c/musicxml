@@ -30,7 +30,7 @@
 	the instrument-sound element.
 
 	Applications may wish to provide a modified version of this
-	file where the element content includes an application's
+	file, where the element content includes an application's
 	method for identifying sounds.
 -->
 

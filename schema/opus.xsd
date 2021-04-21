@@ -89,7 +89,7 @@ The version attribute was added in Version 2.0 for opus documents. It provides a
 
 	<xs:complexType name="score">
 		<xs:annotation>
-			<xs:documentation>The score elements provide the links to the individual movements. The new-page attribute, added in Version 2.0, is used to indicate if the first page of the score is different than the last page of the previous score. If new-page is "yes", then a different page is used; if "no", then the same page is used. The default value is implementation-dependent.</xs:documentation>
+			<xs:documentation>The score elements provide the links to the individual scores within an opus. The new-page attribute, added in Version 2.0, is used to indicate if the first page of the score is different than the last page of the previous score. If new-page is "yes", then a different page is used; if "no", then the same page is used. The default value is implementation-dependent.</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="link-attributes"/>
 		<xs:attribute name="new-page" type="yes-no"/>

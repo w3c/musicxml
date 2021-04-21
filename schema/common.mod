@@ -531,15 +531,15 @@
 <!--
 	The text-direction entity is used to adjust and override
 	the Unicode bidirectional text algorithm, similar to the
-	W3C Internationalization Tag Set recommendation. Values
-	are ltr (left-to-right embed), rtl (right-to-left embed),
-	lro (left-to-right bidi-override), and rlo (right-to-left
-	bidi-override). The default value is ltr. This entity
-	is typically used by applications that store text in
-	left-to-right visual order rather than logical order.
-	Such applications can use the lro value to better
-	communicate with other applications that more fully
-	support bidirectional text.
+	Directionality data category in the W3C Internationalization
+	Tag Set recommendation. Values are ltr (left-to-right
+	embed), rtl (right-to-left embed), lro (left-to-right
+	bidi-override), and rlo (right-to-left bidi-override).
+	The default value is ltr. This entity is typically used by
+	applications that store text in left-to-right visual order
+	rather than logical order. Such applications can use the
+	lro value to better communicate with other applications
+	that more fully support bidirectional text.
 -->
 <!ENTITY % text-direction
 	"dir (ltr | rtl | lro | rlo) #IMPLIED">
@@ -649,7 +649,7 @@
 	 %text-rotation;
 	 %letter-spacing;
 	 %line-height;
-	 xml:lang NMTOKEN #IMPLIED
+	 xml:lang CDATA #IMPLIED
 	 xml:space (default | preserve) #IMPLIED
 	 %text-direction;
 	 %enclosure;">
@@ -723,7 +723,7 @@
 	and is similar to the trill-sound. Here the beats element
 	refers to the number of discrete elements (like MIDI pitch
 	bends) used to represent a continuous bend or slide. The
-	first-beat indicates the percentage of the direction for
+	first-beat indicates the percentage of the duration for
 	starting a bend; the last-beat the percentage for ending it.
 	The default choices are:
 	
