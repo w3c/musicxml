@@ -26,7 +26,7 @@
 
 <div class="content">
     <nav class="sidenav">
-        <img src="/static/images/back-cg-draft.png"/>
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
 <ul>
     <li><b><a href="../../"/>Introduction</a></b></li>
     <li><b><a href="../introduction/">Tutorial</a></b></li>
@@ -94,7 +94,7 @@
 
 <p>The answer is different for every music application. David Huron, a music cognition specialist and the inventor of Humdrum, advised us to make sure we could represent music both ways, and be able to switch between them easily.</p>
 
-<p>This is why MusicXML has two different top-level DTDs, each with its own root element. If you use the partwise DTD, the root element is <a href="/musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a>. The musical part is primary, and measures are contained within each part. If you use the timewise DTD, the root element is <a href="/musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a>. The measure is primary, and musical parts are contained within each measure. The MusicXML XSD includes both of the top-level document elements in a single XSD file.</p>
+<p>This is why MusicXML has two different top-level DTDs, each with its own root element. If you use the partwise DTD, the root element is <a href="../../musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a>. The musical part is primary, and measures are contained within each part. If you use the timewise DTD, the root element is <a href="../../musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a>. The measure is primary, and musical parts are contained within each measure. The MusicXML XSD includes both of the top-level document elements in a single XSD file.</p>
 
 <p>Having two different structures does not work well if there is no automatic way to switch between them. MusicXML provides two XSLT stylesheets to convert back and forth between the two document types. The parttime.xsl stylesheet converts from &lt;score-partwise&gt; to &lt;score-timewise&gt;, while the timepart.xsl stylesheet converts from &lt;score-timewise&gt; to &lt;score-partwise&gt;.</p>
 
