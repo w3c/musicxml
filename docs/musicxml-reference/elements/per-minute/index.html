@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The &lt;per-minute&gt; element | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../../"/>Introduction</a></b></li>
+    <li><b><a href="../../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../">Elements</a></li>
+        <li><a href="../../data-types/">Data Types</a></li>
+        <li><a href="../../examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../">MusicXML reference</a> &gt;
+    <a href="../">Elements</a> &gt;
+    per-minute
+</p>
+
+<h1>The &lt;per-minute&gt; element</h1>
+
+<p>Parent element:
+    
+        
+        <a href="../metronome/">&lt;metronome&gt;</a>
+        
+    
+</p>
+
+
+<p>The &ltper-minute&gt; element can be a number, or a text description including numbers. If a font is specified, it overrides the font specified for the overall &lt;metronome&gt; element. This allows separate specification of a music font for the &lt;beat-unit&gt; and a text font for the numeric value, in cases where a single metronome font is not used.</p>
+
+
+<h2>Content</h2>
+
+
+    <p><a href="../../data-types/xsd-string/">string</a></p>
+
+
+<h2>Attributes</h2>
+
+
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Required?</th>
+    <th>Description</th>
+</tr>
+</thead>
+
+<tr>
+    <th class="nobr">font-family</th>
+    <td><a href="../../data-types/font-family/">font-family</a></td>
+    <td>No</td>
+    <td>A comma-separated list of font names.</td>
+</tr>
+
+<tr>
+    <th class="nobr">font-size</th>
+    <td><a href="../../data-types/font-size/">font-size</a></td>
+    <td>No</td>
+    <td>One of the CSS sizes or a numeric point size.</td>
+</tr>
+
+<tr>
+    <th class="nobr">font-style</th>
+    <td><a href="../../data-types/font-style/">font-style</a></td>
+    <td>No</td>
+    <td>Normal or italic style.</td>
+</tr>
+
+<tr>
+    <th class="nobr">font-weight</th>
+    <td><a href="../../data-types/font-weight/">font-weight</a></td>
+    <td>No</td>
+    <td>Normal or bold weight.</td>
+</tr>
+
+</table>
+
+
+
+
+
+<h2>Examples</h2>
+
+<p>This element is used in the following examples:</p>
+<p>
+    <nobr><a href="../../examples/beat-unit-element/">&lt;beat-unit&gt;</a></nobr>, <nobr><a href="../../examples/metronome-element/">&lt;metronome&gt;</a></nobr>, <nobr><a href="../../examples/per-minute-element/">&lt;per-minute&gt;</a></nobr>
+</p>
+
+
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>

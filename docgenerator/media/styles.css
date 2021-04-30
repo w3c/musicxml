@@ -1,0 +1,261 @@
+
+/* Reset */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: baseline; background: transparent; }
+table { border-spacing: 0; border-collapse: collapse; }
+caption, th, td { text-align: left; font-weight: normal; }
+blockquote, q { quotes: none; }
+* { margin: 0; }
+
+/* Type */
+html {
+    color: #24292e;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: inherit;
+    line-height: 1.6125;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.25;
+}
+body {
+    margin: 0;
+}
+h1 {
+    font-size: 36px;
+    margin: 0 0 20px;
+}
+h2 {
+    margin: 0 0 15px;
+}
+h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+a:link {
+    color: #0366d6;
+    text-decoration: none;
+}
+code {
+    white-space: nowrap;
+    display: none;
+}
+img {
+    max-width: 100%;
+}
+
+/* Styles */
+li {
+    margin-left: 1.75em;
+}
+p, ul, table {
+    margin: 0 0 20px;
+}
+.nestedul {
+    margin-bottom: 0;
+}
+.xmlmarkup {
+    display: block;
+    white-space: pre;
+    font: 14px "courier new",courier,fixed-width;
+    color: #333;
+}
+.xmlmarkup .tag, .xmlmarkup .attr {
+    color: #000;
+}
+.xmlmarkup a:link {
+    color: #000;
+    text-decoration: none;
+}
+.xmlmarkup a:hover {
+    color: #f00;
+}
+.nobr {
+    white-space: nowrap;
+}
+table {
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+th, td {
+    padding: 20px 20px 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+th {
+    font-weight: bold;
+    vertical-align: top;
+}
+thead th {
+    font-size: 14px;
+    padding: 5px 5px 5px 0;
+}
+
+/* Custom styles */
+
+
+html,
+body {
+    height: 100%;
+}
+
+.content {
+    position: relative; /* For .sidenav */
+    min-height: 100%;
+    display: flex;
+}
+main {
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 800px;
+    padding-right: 40px;
+    padding-left: 40px;
+    flex-grow: 999;
+    flex-basis: 0;
+}
+
+/* Topnav */
+.topnav {
+    padding: 14px 20px;
+    border-bottom: 1px solid hsl(0, 0%, 92%);
+    color: inherit;
+    display: flex;
+    justify-content: center;
+}
+.logo {
+    line-height: 1;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sidenav */
+.sidenav {
+    flex-grow: 1;
+    max-width: 200px;
+    flex-basis: 20%;
+    padding: 30px 20px 20px;
+    background-color: #F8F5F5;
+    border-right: 1px solid hsl(0, 0%, 92%);
+}
+.sidenav li {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 6px;
+}
+.sidenav li li {
+    margin-left: 20px;
+}
+.sidenav ul ul li {
+    margin-left: 20px;
+}
+.sidenav li a {
+    text-decoration: none;
+    color: inherit;
+}
+.sidenav li a:hover {
+    text-decoration: underline;
+}
+
+.sidenav {
+    position: absolute;
+    transform: translateX(-100%);
+}
+.has-sidenav .sidenav {
+    position: static;
+    transform: translateX(0%);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    color: hsl(0, 0%, 34%, 0.7);
+    margin-bottom: 10px;
+}
+.breadcrumb a {
+    color: hsla(0, 0%, 34%);
+    text-decoration: none;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Utils */
+.xmlmarkup {
+    border: 1px solid hsla(0, 0%, 0%, 0.15);
+    border-radius: 6px;
+    padding: 15px;
+    background: white;
+    overflow: auto;
+}
+.markupcode .xmlmarkup {
+    border: none;
+    padding: 0;
+}
+
+.toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: inherit;
+    opacity: 0.8;
+
+    position: absolute;
+    left: 20px;
+}
+
+@font-face {
+    font-family: 'smufl';
+    src: url('fonts/BravuraText.woff2') format('woff2'),
+         url('fonts/BravuraText.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.smufl {
+    font: 40px smufl,sans-serif;
+}
+
+.w3c-logo {
+    display: inline-flex;
+    background: #1a5e9a;
+    padding: 0.75em;
+    border-radius: 0.4em;
+    float: right;
+}
+.w3c-logo-homepage svg {
+    width: 62px;
+}
+
+@media (max-width: 800px) {
+    .w3c-logo {
+        float: none;
+        margin-bottom: 10px;
+        padding: 0.5em;
+    }
+    .w3c-logo-homepage svg {
+        width: 34px;
+        height: 22px;
+    }
+
+    main {
+        max-width: 100%;
+    }
+
+    .has-sidenav .sidenav {
+        width: 50%;
+        z-index: 1;
+        position: absolute;
+        transform: translateX(0%);
+        min-height: 100%;
+    }
+}

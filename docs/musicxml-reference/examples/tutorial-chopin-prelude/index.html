@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MusicXML example: Tutorial: Chopin Prelude | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../../static/styles.css">
+
+<style>
+.diff * { font-weight: bold; color: blue !important; }
+</style>
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../../"/>Introduction</a></b></li>
+    <li><b><a href="../../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../elements/">Elements</a></li>
+        <li><a href="../../data-types/">Data Types</a></li>
+        <li><a href="../">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../">MusicXML reference</a> &gt;
+    <a href="../">Examples</a> &gt;
+    Tutorial: Chopin Prelude
+</p>
+
+<h1>Tutorial: Chopin Prelude</h1>
+
+
+<p><img src="../../../static/tutorial/chopin.png"/></p>
+
+
+
+
+
+
+
+
+<div class="xmlmarkup"><span class="">&lt;<a class="tag" href="../../elements/score-partwise/">score-partwise</a> <span class="attr">version="<a href="../../data-types/xsd-token/">4.0</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/identification/">identification</a>&gt;
+      &lt;<a class="tag" href="../../elements/encoding/">encoding</a>&gt;
+         &lt;<a class="tag" href="../../elements/software/">software</a>&gt;<span class="xmltxt">Finale for Mac</span>&lt;/<a class="tag" href="../../elements/software/">software</a>&gt;
+         &lt;<a class="tag" href="../../elements/encoding-date/">encoding-date</a>&gt;<span class="xmltxt">2021-04-16</span>&lt;/<a class="tag" href="../../elements/encoding-date/">encoding-date</a>&gt;
+         &lt;<a class="tag" href="../../elements/supports/">supports</a> <span class="attr">element="<a href="../../data-types/xsd-NMTOKEN/">print</a>"</span> <span class="attr">attribute="<a href="../../data-types/xsd-NMTOKEN/">new-system</a>"</span> <span class="attr">type="<a href="../../data-types/yes-no/">yes</a>"</span> <span class="attr">value="<a href="../../data-types/xsd-token/">yes</a>"</span>/&gt;
+         &lt;<a class="tag" href="../../elements/supports/">supports</a> <span class="attr">element="<a href="../../data-types/xsd-NMTOKEN/">print</a>"</span> <span class="attr">attribute="<a href="../../data-types/xsd-NMTOKEN/">new-page</a>"</span> <span class="attr">type="<a href="../../data-types/yes-no/">yes</a>"</span> <span class="attr">value="<a href="../../data-types/xsd-token/">yes</a>"</span>/&gt;
+         &lt;<a class="tag" href="../../elements/supports/">supports</a> <span class="attr">element="<a href="../../data-types/xsd-NMTOKEN/">accidental</a>"</span> <span class="attr">type="<a href="../../data-types/yes-no/">yes</a>"</span>/&gt;
+         &lt;<a class="tag" href="../../elements/supports/">supports</a> <span class="attr">element="<a href="../../data-types/xsd-NMTOKEN/">beam</a>"</span> <span class="attr">type="<a href="../../data-types/yes-no/">yes</a>"</span>/&gt;
+         &lt;<a class="tag" href="../../elements/supports/">supports</a> <span class="attr">element="<a href="../../data-types/xsd-NMTOKEN/">stem</a>"</span> <span class="attr">type="<a href="../../data-types/yes-no/">yes</a>"</span>/&gt;
+      &lt;/<a class="tag" href="../../elements/encoding/">encoding</a>&gt;
+   &lt;/<a class="tag" href="../../elements/identification/">identification</a>&gt;
+   &lt;<a class="tag" href="../../elements/defaults/">defaults</a>&gt;
+      &lt;<a class="tag" href="../../elements/scaling/">scaling</a>&gt;
+         &lt;<a class="tag" href="../../elements/millimeters/">millimeters</a>&gt;<span class="xmltxt">6.35</span>&lt;/<a class="tag" href="../../elements/millimeters/">millimeters</a>&gt;
+         &lt;<a class="tag" href="../../elements/tenths/">tenths</a>&gt;<span class="xmltxt">40</span>&lt;/<a class="tag" href="../../elements/tenths/">tenths</a>&gt;
+      &lt;/<a class="tag" href="../../elements/scaling/">scaling</a>&gt;
+      &lt;<a class="tag" href="../../elements/page-layout/">page-layout</a>&gt;
+         &lt;<a class="tag" href="../../elements/page-height/">page-height</a>&gt;<span class="xmltxt">1760</span>&lt;/<a class="tag" href="../../elements/page-height/">page-height</a>&gt;
+         &lt;<a class="tag" href="../../elements/page-width/">page-width</a>&gt;<span class="xmltxt">1360</span>&lt;/<a class="tag" href="../../elements/page-width/">page-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/page-margins/">page-margins</a> <span class="attr">type="<a href="../../data-types/margin-type/">both</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;<span class="xmltxt">80</span>&lt;/<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;
+            &lt;<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;<span class="xmltxt">80</span>&lt;/<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;
+            &lt;<a class="tag" href="../../elements/top-margin/">top-margin</a>&gt;<span class="xmltxt">80</span>&lt;/<a class="tag" href="../../elements/top-margin/">top-margin</a>&gt;
+            &lt;<a class="tag" href="../../elements/bottom-margin/">bottom-margin</a>&gt;<span class="xmltxt">80</span>&lt;/<a class="tag" href="../../elements/bottom-margin/">bottom-margin</a>&gt;
+         &lt;/<a class="tag" href="../../elements/page-margins/">page-margins</a>&gt;
+      &lt;/<a class="tag" href="../../elements/page-layout/">page-layout</a>&gt;
+      &lt;<a class="tag" href="../../elements/system-layout/">system-layout</a>&gt;
+         &lt;<a class="tag" href="../../elements/system-margins/">system-margins</a>&gt;
+            &lt;<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;<span class="xmltxt">0</span>&lt;/<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;
+            &lt;<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;<span class="xmltxt">0</span>&lt;/<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;
+         &lt;/<a class="tag" href="../../elements/system-margins/">system-margins</a>&gt;
+         &lt;<a class="tag" href="../../elements/system-distance/">system-distance</a>&gt;<span class="xmltxt">130</span>&lt;/<a class="tag" href="../../elements/system-distance/">system-distance</a>&gt;
+         &lt;<a class="tag" href="../../elements/top-system-distance/">top-system-distance</a>&gt;<span class="xmltxt">70</span>&lt;/<a class="tag" href="../../elements/top-system-distance/">top-system-distance</a>&gt;
+      &lt;/<a class="tag" href="../../elements/system-layout/">system-layout</a>&gt;
+      &lt;<a class="tag" href="../../elements/staff-layout/">staff-layout</a>&gt;
+         &lt;<a class="tag" href="../../elements/staff-distance/">staff-distance</a>&gt;<span class="xmltxt">60</span>&lt;/<a class="tag" href="../../elements/staff-distance/">staff-distance</a>&gt;
+      &lt;/<a class="tag" href="../../elements/staff-layout/">staff-layout</a>&gt;
+      &lt;<a class="tag" href="../../elements/appearance/">appearance</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">stem</a>"</span>&gt;<span class="xmltxt">0.8333</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">beam</a>"</span>&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">staff</a>"</span>&gt;<span class="xmltxt">1.25</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">light barline</a>"</span>&gt;<span class="xmltxt">1.875</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">heavy barline</a>"</span>&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">leger</a>"</span>&gt;<span class="xmltxt">1.875</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">ending</a>"</span>&gt;<span class="xmltxt">0.8333</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">wedge</a>"</span>&gt;<span class="xmltxt">1.25</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">enclosure</a>"</span>&gt;<span class="xmltxt">1.25</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">tuplet bracket</a>"</span>&gt;<span class="xmltxt">0.8333</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+         &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attr">type="<a href="../../data-types/note-size-type/">grace</a>"</span>&gt;<span class="xmltxt">60</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
+         &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attr">type="<a href="../../data-types/note-size-type/">cue</a>"</span>&gt;<span class="xmltxt">60</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
+         &lt;<a class="tag" href="../../elements/distance/">distance</a> <span class="attr">type="<a href="../../data-types/distance-type/">hyphen</a>"</span>&gt;<span class="xmltxt">60</span>&lt;/<a class="tag" href="../../elements/distance/">distance</a>&gt;
+         &lt;<a class="tag" href="../../elements/distance/">distance</a> <span class="attr">type="<a href="../../data-types/distance-type/">beam</a>"</span>&gt;<span class="xmltxt">7.5</span>&lt;/<a class="tag" href="../../elements/distance/">distance</a>&gt;
+      &lt;/<a class="tag" href="../../elements/appearance/">appearance</a>&gt;
+      &lt;<a class="tag" href="../../elements/music-font/">music-font</a> <span class="attr">font-family="<a href="../../data-types/font-family/">Maestro,engraved</a>"</span> <span class="attr">font-size="<a href="../../data-types/font-size/">18</a>"</span>/&gt;
+      &lt;<a class="tag" href="../../elements/word-font/">word-font</a> <span class="attr">font-family="<a href="../../data-types/font-family/">Times New Roman</a>"</span> <span class="attr">font-size="<a href="../../data-types/font-size/">9</a>"</span>/&gt;
+   &lt;/<a class="tag" href="../../elements/defaults/">defaults</a>&gt;
+   &lt;<a class="tag" href="../../elements/part-list/">part-list</a>&gt;
+      &lt;<a class="tag" href="../../elements/score-part/">score-part</a> <span class="attr">id="<a href="../../data-types/xsd-ID/">P1</a>"</span>&gt;
+         &lt;<a class="tag" href="../../elements/part-name/">part-name</a> <span class="attr">print-object="<a href="../../data-types/yes-no/">no</a>"</span>&gt;<span class="xmltxt">Piano</span>&lt;/<a class="tag" href="../../elements/part-name/">part-name</a>&gt;
+         &lt;<a class="tag" href="../../elements/group/">group</a>&gt;<span class="xmltxt">score</span>&lt;/<a class="tag" href="../../elements/group/">group</a>&gt;
+         &lt;<a class="tag" href="../../elements/score-instrument/">score-instrument</a> <span class="attr">id="<a href="../../data-types/xsd-ID/">P1-I2</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/instrument-name/">instrument-name</a>&gt;<span class="xmltxt">Acoustic Grand Piano</span>&lt;/<a class="tag" href="../../elements/instrument-name/">instrument-name</a>&gt;
+         &lt;/<a class="tag" href="../../elements/score-instrument/">score-instrument</a>&gt;
+         &lt;<a class="tag" href="../../elements/midi-instrument/">midi-instrument</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P1-I2</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/midi-channel/">midi-channel</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/midi-channel/">midi-channel</a>&gt;
+            &lt;<a class="tag" href="../../elements/midi-program/">midi-program</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/midi-program/">midi-program</a>&gt;
+            &lt;<a class="tag" href="../../elements/volume/">volume</a>&gt;<span class="xmltxt">80</span>&lt;/<a class="tag" href="../../elements/volume/">volume</a>&gt;
+            &lt;<a class="tag" href="../../elements/pan/">pan</a>&gt;<span class="xmltxt">0</span>&lt;/<a class="tag" href="../../elements/pan/">pan</a>&gt;
+         &lt;/<a class="tag" href="../../elements/midi-instrument/">midi-instrument</a>&gt;
+      &lt;/<a class="tag" href="../../elements/score-part/">score-part</a>&gt;
+   &lt;/<a class="tag" href="../../elements/part-list/">part-list</a>&gt;
+   &lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P1</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">1</a>"</span> <span class="attr">width="<a href="../../data-types/tenths/">457</a>"</span>&gt;
+         &lt;<a class="tag" href="../../elements/print/">print</a>&gt;
+            &lt;<a class="tag" href="../../elements/page-layout/">page-layout</a>&gt;
+               &lt;<a class="tag" href="../../elements/page-height/">page-height</a>&gt;<span class="xmltxt">1760</span>&lt;/<a class="tag" href="../../elements/page-height/">page-height</a>&gt;
+               &lt;<a class="tag" href="../../elements/page-width/">page-width</a>&gt;<span class="xmltxt">1360</span>&lt;/<a class="tag" href="../../elements/page-width/">page-width</a>&gt;
+               &lt;<a class="tag" href="../../elements/page-margins/">page-margins</a>&gt;
+                  &lt;<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;<span class="xmltxt">80</span>&lt;/<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;
+                  &lt;<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;<span class="xmltxt">703</span>&lt;/<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;
+                  &lt;<a class="tag" href="../../elements/top-margin/">top-margin</a>&gt;<span class="xmltxt">80</span>&lt;/<a class="tag" href="../../elements/top-margin/">top-margin</a>&gt;
+                  &lt;<a class="tag" href="../../elements/bottom-margin/">bottom-margin</a>&gt;<span class="xmltxt">80</span>&lt;/<a class="tag" href="../../elements/bottom-margin/">bottom-margin</a>&gt;
+               &lt;/<a class="tag" href="../../elements/page-margins/">page-margins</a>&gt;
+            &lt;/<a class="tag" href="../../elements/page-layout/">page-layout</a>&gt;
+            &lt;<a class="tag" href="../../elements/system-layout/">system-layout</a>&gt;
+               &lt;<a class="tag" href="../../elements/system-margins/">system-margins</a>&gt;
+                  &lt;<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;<span class="xmltxt">120</span>&lt;/<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;
+                  &lt;<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;<span class="xmltxt">0</span>&lt;/<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;
+               &lt;/<a class="tag" href="../../elements/system-margins/">system-margins</a>&gt;
+               &lt;<a class="tag" href="../../elements/top-system-distance/">top-system-distance</a>&gt;<span class="xmltxt">230</span>&lt;/<a class="tag" href="../../elements/top-system-distance/">top-system-distance</a>&gt;
+            &lt;/<a class="tag" href="../../elements/system-layout/">system-layout</a>&gt;
+            &lt;<a class="tag" href="../../elements/measure-numbering/">measure-numbering</a>&gt;<span class="xmltxt">system</span>&lt;/<a class="tag" href="../../elements/measure-numbering/">measure-numbering</a>&gt;
+         &lt;/<a class="tag" href="../../elements/print/">print</a>&gt;
+         &lt;<a class="tag" href="../../elements/attributes/">attributes</a>&gt;
+            &lt;<a class="tag" href="../../elements/divisions/">divisions</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/divisions/">divisions</a>&gt;
+            &lt;<a class="tag" href="../../elements/key/">key</a>&gt;
+               &lt;<a class="tag" href="../../elements/fifths/">fifths</a>&gt;<span class="xmltxt">-3</span>&lt;/<a class="tag" href="../../elements/fifths/">fifths</a>&gt;
+               &lt;<a class="tag" href="../../elements/mode/">mode</a>&gt;<span class="xmltxt">minor</span>&lt;/<a class="tag" href="../../elements/mode/">mode</a>&gt;
+            &lt;/<a class="tag" href="../../elements/key/">key</a>&gt;
+            &lt;<a class="tag" href="../../elements/time/">time</a> <span class="attr">symbol="<a href="../../data-types/time-symbol/">common</a>"</span>&gt;
+               &lt;<a class="tag" href="../../elements/beats/">beats</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/beats/">beats</a>&gt;
+               &lt;<a class="tag" href="../../elements/beat-type/">beat-type</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/beat-type/">beat-type</a>&gt;
+            &lt;/<a class="tag" href="../../elements/time/">time</a>&gt;
+            &lt;<a class="tag" href="../../elements/staves/">staves</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staves/">staves</a>&gt;
+            &lt;<a class="tag" href="../../elements/clef/">clef</a> <span class="attr">number="<a href="../../data-types/staff-number/">1</a>"</span>&gt;
+               &lt;<a class="tag" href="../../elements/sign/">sign</a>&gt;<span class="xmltxt">F</span>&lt;/<a class="tag" href="../../elements/sign/">sign</a>&gt;
+               &lt;<a class="tag" href="../../elements/line/">line</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/line/">line</a>&gt;
+            &lt;/<a class="tag" href="../../elements/clef/">clef</a>&gt;
+            &lt;<a class="tag" href="../../elements/clef/">clef</a> <span class="attr">number="<a href="../../data-types/staff-number/">2</a>"</span>&gt;
+               &lt;<a class="tag" href="../../elements/sign/">sign</a>&gt;<span class="xmltxt">F</span>&lt;/<a class="tag" href="../../elements/sign/">sign</a>&gt;
+               &lt;<a class="tag" href="../../elements/line/">line</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/line/">line</a>&gt;
+            &lt;/<a class="tag" href="../../elements/clef/">clef</a>&gt;
+         &lt;/<a class="tag" href="../../elements/attributes/">attributes</a>&gt;
+         &lt;<a class="tag" href="../../elements/sound/">sound</a> <span class="attr">tempo="<a href="../../data-types/non-negative-decimal/">40</a>"</span>/&gt;
+         &lt;<a class="tag" href="../../elements/direction/">direction</a> <span class="attr">placement="<a href="../../data-types/above-below/">below</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/direction-type/">direction-type</a>&gt;
+               &lt;<a class="tag" href="../../elements/dynamics/">dynamics</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-72</a>"</span> <span class="attr">halign="<a href="../../data-types/left-center-right/">left</a>"</span> <span class="attr">relative-x="<a href="../../data-types/tenths/">-10</a>"</span>&gt;
+                  &lt;<a class="tag" href="../../elements/ff/">ff</a>/&gt;
+               &lt;/<a class="tag" href="../../elements/dynamics/">dynamics</a>&gt;
+            &lt;/<a class="tag" href="../../elements/direction-type/">direction-type</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+            &lt;<a class="tag" href="../../elements/sound/">sound</a> <span class="attr">dynamics="<a href="../../data-types/non-negative-decimal/">112</a>"</span>/&gt;
+         &lt;/<a class="tag" href="../../elements/direction/">direction</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">136</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-40</a>"</span>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+            &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
+               &lt;<a class="tag" href="../../elements/slur/">slur</a> <span class="attr">number="<a href="../../data-types/number-level/">1</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop-continue/">start</a>"</span> <span class="attr">placement="<a href="../../data-types/above-below/">above</a>"</span> <span class="attr">default-x="<a href="../../data-types/tenths/">6</a>"</span> <span class="attr">default-y="<a href="../../data-types/tenths/">50</a>"</span> <span class="attr">bezier-x="<a href="../../data-types/tenths/">38</a>"</span> <span class="attr">bezier-y="<a href="../../data-types/tenths/">50</a>"</span>/&gt;
+            &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">136</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">136</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">E</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/alter/">alter</a>&gt;<span class="xmltxt">-1</span>&lt;/<a class="tag" href="../../elements/alter/">alter</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">136</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">211</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">A</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/alter/">alter</a>&gt;<span class="xmltxt">-1</span>&lt;/<a class="tag" href="../../elements/alter/">alter</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-35</a>"</span>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">211</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">211</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">E</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/alter/">alter</a>&gt;<span class="xmltxt">-1</span>&lt;/<a class="tag" href="../../elements/alter/">alter</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">211</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">A</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/alter/">alter</a>&gt;<span class="xmltxt">-1</span>&lt;/<a class="tag" href="../../elements/alter/">alter</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">288</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">E</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/alter/">alter</a>&gt;<span class="xmltxt">-1</span>&lt;/<a class="tag" href="../../elements/alter/">alter</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">eighth</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/dot/">dot</a>/&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">63</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+            &lt;<a class="tag" href="../../elements/beam/">beam</a> <span class="attr">number="<a href="../../data-types/beam-level/">1</a>"</span>&gt;<span class="xmltxt">begin</span>&lt;/<a class="tag" href="../../elements/beam/">beam</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">288</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">eighth</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/dot/">dot</a>/&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">349</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">D</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">16th</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">60</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+            &lt;<a class="tag" href="../../elements/beam/">beam</a> <span class="attr">number="<a href="../../data-types/beam-level/">1</a>"</span>&gt;<span class="xmltxt">end</span>&lt;/<a class="tag" href="../../elements/beam/">beam</a>&gt;
+            &lt;<a class="tag" href="../../elements/beam/">beam</a> <span class="attr">number="<a href="../../data-types/beam-level/">2</a>"</span>&gt;<span class="xmltxt">backward hook</span>&lt;/<a class="tag" href="../../elements/beam/">beam</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">349</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">F</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">16th</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">379</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">E</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/alter/">alter</a>&gt;<span class="xmltxt">-1</span>&lt;/<a class="tag" href="../../elements/alter/">alter</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-50</a>"</span>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+            &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
+               &lt;<a class="tag" href="../../elements/slur/">slur</a> <span class="attr">number="<a href="../../data-types/number-level/">1</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop-continue/">stop</a>"</span> <span class="attr">default-x="<a href="../../data-types/tenths/">6</a>"</span> <span class="attr">default-y="<a href="../../data-types/tenths/">40</a>"</span> <span class="attr">bezier-x="<a href="../../data-types/tenths/">-21</a>"</span> <span class="attr">bezier-y="<a href="../../data-types/tenths/">58</a>"</span>/&gt;
+            &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">379</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">379</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">379</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">E</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/alter/">alter</a>&gt;<span class="xmltxt">-1</span>&lt;/<a class="tag" href="../../elements/alter/">alter</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/backup/">backup</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">16</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+         &lt;/<a class="tag" href="../../elements/backup/">backup</a>&gt;
+         &lt;<a class="tag" href="../../elements/forward/">forward</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">8</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/forward/">forward</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">288</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-40</a>"</span>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">288</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">B</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/accidental/">accidental</a>&gt;<span class="xmltxt">natural</span>&lt;/<a class="tag" href="../../elements/accidental/">accidental</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/forward/">forward</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/forward/">forward</a>&gt;
+         &lt;<a class="tag" href="../../elements/backup/">backup</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">16</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+         &lt;/<a class="tag" href="../../elements/backup/">backup</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">136</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">10</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">136</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">211</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">F</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-10</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">211</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">F</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">288</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-5</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">288</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">379</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">10</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">379</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">379</a>"</span>&gt;
+            &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
+            &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+               &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+               &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+            &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+            &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">4</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+            &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+            &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+            &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+            &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+         &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
+      &lt;/<a class="tag" href="../../elements/measure-partwise/">measure</a>&gt;
+   &lt;/<a class="tag" href="../../elements/part-partwise/">part</a>&gt;
+&lt;/<a class="tag" href="../../elements/score-partwise/">score-partwise</a>&gt;</span></div>
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>

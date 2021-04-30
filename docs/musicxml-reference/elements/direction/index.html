@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The &lt;direction&gt; element | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../../"/>Introduction</a></b></li>
+    <li><b><a href="../../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../">Elements</a></li>
+        <li><a href="../../data-types/">Data Types</a></li>
+        <li><a href="../../examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../">MusicXML reference</a> &gt;
+    <a href="../">Elements</a> &gt;
+    direction
+</p>
+
+<h1>The &lt;direction&gt; element</h1>
+
+<p>Parent elements:
+    
+        
+        <a href="../measure-partwise/">&lt;measure&gt; (partwise)</a>
+        
+        <a href="../part-timewise/">&lt;part&gt; (timewise)</a>
+        
+    
+</p>
+
+
+<p>A direction is a musical indication that is not necessarily attached to a specific note. Two or more may be combined to indicate words followed by the start of a dashed line, the end of a wedge followed by dynamics, etc. For applications where a specific direction is indeed attached to a specific note, the &lt;direction&gt; element can be associated with the first &lt;note&gt; element that follows it in score order that is not in a different voice.</p>
+
+<p>By default, a series of &lt;direction-type&gt; elements and a series of child elements of a &lt;direction-type&gt; within a single &lt;direction&gt; element follow one another in sequence visually. For a series of &lt;direction-type&gt; children, non-positional formatting attributes are carried over from the previous element by default.</p>
+
+
+<h2>Content</h2>
+
+
+    
+
+
+
+    
+    
+        
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                <a href="../direction-type/">&lt;direction-type&gt;</a> (One or more times)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../offset/">&lt;offset&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../footnote/">&lt;footnote&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../level/">&lt;level&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../voice/">&lt;voice&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../staff/">&lt;staff&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                <a href="../sound/">&lt;sound&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../listening/">&lt;listening&gt;</a> (Optional)
+            
+        </li>
+        
+    </ul>
+
+
+
+
+    
+    
+
+
+
+
+
+
+<h2>Attributes</h2>
+
+
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Required?</th>
+    <th>Description</th>
+</tr>
+</thead>
+
+<tr>
+    <th class="nobr">directive</th>
+    <td><a href="../../data-types/yes-no/">yes-no</a></td>
+    <td>No</td>
+    <td>Changes the default-x position of a direction. It indicates that the left-hand side of the direction is aligned with the left-hand side of the time signature. If no time signature is present, the direction is aligned with the left-hand side of the first music notational element in the measure. If a default-x, justify, or halign attribute is present, it overrides this attribute.</td>
+</tr>
+
+<tr>
+    <th class="nobr">id</th>
+    <td><a href="../../data-types/xsd-ID/">ID</a></td>
+    <td>No</td>
+    <td>Specifies an ID that is unique to the entire document.</td>
+</tr>
+
+<tr>
+    <th class="nobr">placement</th>
+    <td><a href="../../data-types/above-below/">above-below</a></td>
+    <td>No</td>
+    <td>Indicates whether something is above or below another element, such as a note or a notation.</td>
+</tr>
+
+<tr>
+    <th class="nobr">system</th>
+    <td><a href="../../data-types/system-relation/">system-relation</a></td>
+    <td>No</td>
+    <td>Distinguishes elements that are associated with a system rather than the particular part where the element appears.</td>
+</tr>
+
+</table>
+
+
+
+
+
+<h2>Examples</h2>
+
+<p>This element is used in the following examples:</p>
+<p>
+    <nobr><a href="../../examples/attributes-element/">&lt;attributes&gt;</a></nobr>, <nobr><a href="../../examples/bracket-element/">&lt;bracket&gt;</a></nobr>, <nobr><a href="../../examples/coda-element/">&lt;coda&gt;</a></nobr>, <nobr><a href="../../examples/dashes-element/">&lt;dashes&gt;</a></nobr>, <nobr><a href="../../examples/effect-element/">&lt;effect&gt;</a></nobr>, <nobr><a href="../../examples/f-element/">&lt;f&gt;</a></nobr>, <nobr><a href="../../examples/ff-element/">&lt;ff&gt;</a></nobr>, <nobr><a href="../../examples/fff-element/">&lt;fff&gt;</a></nobr>, <nobr><a href="../../examples/ffff-element/">&lt;ffff&gt;</a></nobr>, <nobr><a href="../../examples/fffff-element/">&lt;fffff&gt;</a></nobr>, <nobr><a href="../../examples/ffffff-element/">&lt;ffffff&gt;</a></nobr>, <nobr><a href="../../examples/forward-element/">&lt;forward&gt;</a></nobr>, <nobr><a href="../../examples/grouping-element/">&lt;grouping&gt;</a></nobr>, <nobr><a href="../../examples/metronome-note-element/">&lt;metronome-note&gt;</a></nobr>, <nobr><a href="../../examples/metronome-element/">&lt;metronome&gt;</a></nobr>, <nobr><a href="../../examples/mf-element/">&lt;mf&gt;</a></nobr>, <nobr><a href="../../examples/mp-element/">&lt;mp&gt;</a></nobr>, <nobr><a href="../../examples/octave-shift-element/">&lt;octave-shift&gt;</a></nobr>, <nobr><a href="../../examples/p-element/">&lt;p&gt;</a></nobr>, <nobr><a href="../../examples/per-minute-element/">&lt;per-minute&gt;</a></nobr>, <nobr><a href="../../examples/percussion-element/">&lt;percussion&gt;</a></nobr>, <nobr><a href="../../examples/pitched-element/">&lt;pitched&gt;</a></nobr>, <nobr><a href="../../examples/pp-element/">&lt;pp&gt;</a></nobr>, <nobr><a href="../../examples/ppp-element/">&lt;ppp&gt;</a></nobr>, <nobr><a href="../../examples/pppp-element/">&lt;pppp&gt;</a></nobr>, <nobr><a href="../../examples/ppppp-element/">&lt;ppppp&gt;</a></nobr>, <nobr><a href="../../examples/pppppp-element/">&lt;pppppp&gt;</a></nobr>, <nobr><a href="../../examples/rehearsal-element/">&lt;rehearsal&gt;</a></nobr>, <nobr><a href="../../examples/stick-location-element/">&lt;stick-location&gt;</a></nobr>, <nobr><a href="../../examples/string-mute-element-off/">&lt;string-mute&gt; (Off)</a></nobr>, <nobr><a href="../../examples/string-mute-element-on/">&lt;string-mute&gt; (On)</a></nobr>, <nobr><a href="../../examples/timpani-element/">&lt;timpani&gt;</a></nobr>, <nobr><a href="../../examples/wedge-element/">&lt;wedge&gt;</a></nobr>, <nobr><a href="../../examples/wood-element/">&lt;wood&gt;</a></nobr>, <nobr><a href="../../examples/tutorial-apres-un-reve/">Tutorial: Après un rêve</a></nobr>, <nobr><a href="../../examples/tutorial-chopin-prelude/">Tutorial: Chopin Prelude</a></nobr>
+</p>
+
+
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>

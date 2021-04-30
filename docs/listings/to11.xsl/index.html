@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>to11.xsl | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../xml.xsd/">xml.xsd</a></li>
+        <li><a href="../container.dtd/">container.dtd</a></li>
+        <li><a href="../opus.xsd/">opus.xsd</a></li>
+        <li><a href="../sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../sounds.xml/">sounds.xml</a></li>
+        <li><a href="../catalog.xml/">catalog.xml</a></li>
+        <li><a href="../to31.xsl/">to31.xsl</a></li>
+        <li><a href="../to30.xsl/">to30.xsl</a></li>
+        <li><a href="../to20.xsl/">to20.xsl</a></li>
+        <li><a href="./">to11.xsl</a></li>
+        <li><a href="../to10.xsl/">to10.xsl</a></li>
+        <li><a href="../parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">File Listings</a> &gt;
+    to11.xsl
+</p>
+
+<h1>to11.xsl</h1>
+
+<p><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!--
+	MusicXML to11.xsl stylesheet
+	
+	Version 4.0 Draft
+	
+	Copyright © 2004-2021 the Contributors to the MusicXML 
+	Specification, published by the W3C Music Notation Community
+	Group under the W3C Community Contributor License Agreement 
+	(CLA): 
+	
+	   https://www.w3.org/community/about/agreements/cla/
+	
+	A human-readable summary is available:
+	
+	   https://www.w3.org/community/about/agreements/cla-deed/
+--&gt;
+
+&lt;!--
+	To11.xsl converts from MusicXML 2.0 to 1.1 for
+	compatibility with older products.
+--&gt;
+
+&lt;xsl:stylesheet
+	version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;!--
+    XML output, with a DOCTYPE refering the partwise DTD.
+    Here we use the full Internet URL.
+  --&gt;
+
+  &lt;xsl:output method="xml" indent="yes" encoding="UTF-8"
+	omit-xml-declaration="no" standalone="no"
+	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
+	doctype-public="-//Recordare//DTD MusicXML 1.1 Partwise//EN" /&gt;
+
+  &lt;!--
+    For the root, only look for score-partwise. Anything else 
+    as a root element gets ignored.
+  --&gt;  
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:apply-templates select="./score-partwise"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;!--
+    Transformations that remove post-1.1 elements and 
+    attributes.
+  --&gt;
+  
+  &lt;!-- Additions in note.mod --&gt;
+  &lt;xsl:template 
+    match="dot/@placement | tremolo/@type |
+			harmonic/@print-object | 
+			other-notation/@print-object |
+			stress | unstress | inverted-turn | 
+			pluck/text() | elision/text()"/&gt;
+    
+  &lt;!--
+    If there is no elision element, remove all but the first
+    text and syllabic elements.
+  --&gt;  
+  &lt;xsl:template 
+    match="lyric[not (elision)]/text[position() &gt; 1] |
+		lyric[not (elision)]/syllabic[position() &gt; 1]"/&gt;
+
+  &lt;!-- Remove other-notation elements with a single type. --&gt;
+  &lt;xsl:template 
+    match="other-notation[@type = 'single']"/&gt;
+
+  &lt;!-- Additions in attributes.mod --&gt;
+  &lt;xsl:template 
+    match="key/@font-family | key/@font-style |
+			key/@font-size | key/@font-weight |
+			key/@default-x | key/@default-y |
+			key/@relative-x | key/@relative-y |
+			time/@font-family | time/@font-style |
+			time/@font-size | time/@font-weight |
+			time/@default-x | time/@default-y |
+			time/@relative-x | time/@relative-y |
+			clef/@font-family | clef/@font-style |
+			clef/@font-size | clef/@font-weight |
+			clef/@default-x | clef/@default-y |
+			clef/@relative-x | clef/@relative-y | clef/@size |
+			key/@print-object | clef/@print-object |
+			cancel/@location | part-symbol | key-octave |
+			slash-type | slash-dot"/&gt;
+
+  &lt;!-- Remove additional clefs altogether --&gt;
+  &lt;xsl:template 
+    match="clef[@additional]"/&gt;
+
+  &lt;!-- Remove all but first key and time element --&gt;
+  &lt;xsl:template 
+    match="attributes/key[position() &gt; 1] | 
+			attributes/time[position() &gt; 1]"/&gt;
+
+  &lt;!-- Additions in barline.mod --&gt;
+  &lt;xsl:template 
+    match="ending/@print-object | ending/@text-x |
+			ending/@text-y | barline/@segno |
+			barline/@coda | barline/@divisions"/&gt;
+
+  &lt;xsl:template 
+    match="bar-style[(. = 'tick') or (. = 'short')]"/&gt;
+
+  &lt;!-- Additions in common.mod --&gt;
+  &lt;xsl:template 
+    match="volume | pan | elevation | @directive |
+			part-name-display | part-abbreviation-display | 
+			@rotation | @dir | @letter-spacing | @line-height |
+			@overline | @underline | @line-through |
+			footnote/@xml:lang | footnote/@enclosure |
+			fermata/text()"/&gt;
+  
+  &lt;!-- Additions in identity.mod --&gt;
+  &lt;xsl:template 
+    match="relation"/&gt;
+
+  &lt;!--
+    Remove a supports element that contains an attribute or
+    value attribute
+  --&gt;
+  &lt;xsl:template 
+    match="supports[@attribute | @value]"/&gt;
+
+  &lt;!-- Additions in layout.mod --&gt;
+  &lt;xsl:template 
+    match="appearance"/&gt;
+
+  &lt;!-- 
+    Remove a page-layout element that does not have a
+    page-height child
+  --&gt;
+  &lt;xsl:template 
+    match="page-layout[not (page-height)]"/&gt;
+  
+  &lt;!-- Additions in direction.mod --&gt;
+  &lt;xsl:template 
+    match="offset/@sound | sound/offset |
+			measure-numbering | print/@blank-page |
+			print/part-name | print/part-abbreviation |
+			root-step/@* | root-alter/@* |
+			bass-step/@* | bass-alter/@* |
+			function/@* | inversion/@* | 
+			kind/@default-x | kind/@default-y |
+			kind/@relative-x | kind/@relative-y |
+			kind/@font-family | kind/@font-style |
+			kind/@font-size | kind/@font-weight | 
+			kind/@color | kind/@halign | kind/@valign |
+			degree-value/@* | degree-alter/@* | 
+			degree-type/@* | per-minute/@* |
+			frame/@halign | frame/@valign |
+			first-fret/@* | other-direction/@print-object"/&gt;
+
+  &lt;!-- 
+    For safety, remove entire direction that has a new
+    MusicXML 2.0 direction-type child, or a new style
+	of metronome element.
+  --&gt;
+  &lt;xsl:template 
+    match="direction[direction-type[image]]"/&gt;
+
+  &lt;xsl:template 
+    match="direction[direction-type[accordion-registration]]"/&gt;
+
+  &lt;xsl:template 
+    match="direction[direction-type[metronome[metronome-note]]]"/&gt;
+
+  &lt;!-- 
+    Remove pedal attributes that have values other than 
+	yes or no.
+  --&gt;
+  &lt;xsl:template 
+    match="@damper-pedal[. != 'yes' and . != 'no'] "/&gt;
+  &lt;xsl:template 
+    match="@soft-pedal[. != 'yes' and . != 'no'] "/&gt;
+  &lt;xsl:template 
+    match="@sostenuto-pedal[. != 'yes' and . != 'no'] "/&gt;
+
+  &lt;!-- 
+    Remove grouping type attributes that have values other than 
+	start or stop.
+  --&gt;
+  &lt;xsl:template 
+    match="grouping/@typel[. != 'start' and . != 'stop'] "/&gt;
+
+  &lt;!-- Additions in link.mod --&gt;
+  &lt;xsl:template 
+    match="link/@element | link/@position | 
+			bookmark/@element | bookmark/@position"/&gt;
+
+  &lt;!-- Additions in score.mod --&gt;
+  &lt;xsl:template 
+    match="group-name-display | group-abbreviation-display |
+			group-time | solo | ensemble | credit[credit-image] |
+			credit/link | credit/bookmark"/&gt;
+  
+  &lt;!-- Remove a credit that is not on page 1 --&gt;
+  &lt;xsl:template 
+    match="credit[@page != '1']"/&gt;
+
+  &lt;!-- Remove the page attribute for page 1 credits --&gt;
+  &lt;xsl:template 
+    match="credit/@page[. = '1']"/&gt;
+  
+&lt;!--
+    Convert score version attribute to 1.1
+  --&gt;
+  &lt;xsl:template 
+    match="score-partwise/@version"&gt;
+    &lt;xsl:attribute name="version"&gt;1.1&lt;/xsl:attribute&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;!--
+    Do not copy text for elision, pluck, or fermata elements.
+  --&gt;
+  &lt;xsl:template match="elision | pluck | fermata"&gt;
+    &lt;xsl:copy&gt;&lt;xsl:apply-templates
+        select="*|@*|comment()|processing-instruction()"
+    /&gt;&lt;/xsl:copy&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;!--
+    The identity transformation. Used for everything that
+    stays the same in 1.1.
+  --&gt;
+
+  &lt;xsl:template match="text()"&gt;
+    &lt;xsl:value-of select="." /&gt;
+  &lt;/xsl:template&gt;
+  
+  &lt;!--
+    Whitespace within an xsl:copy could cause problems with 
+    empty elements.
+  --&gt;
+  &lt;xsl:template match="*|@*|comment()|processing-instruction()"&gt;
+    &lt;xsl:copy&gt;&lt;xsl:apply-templates
+        select="*|@*|comment()|processing-instruction()|text()"
+    /&gt;&lt;/xsl:copy&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</pre></p>
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>

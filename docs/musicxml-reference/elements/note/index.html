@@ -1,0 +1,1052 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The &lt;note&gt; element | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../../"/>Introduction</a></b></li>
+    <li><b><a href="../../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../">Elements</a></li>
+        <li><a href="../../data-types/">Data Types</a></li>
+        <li><a href="../../examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../">MusicXML reference</a> &gt;
+    <a href="../">Elements</a> &gt;
+    note
+</p>
+
+<h1>The &lt;note&gt; element</h1>
+
+<p>Parent elements:
+    
+        
+        <a href="../measure-partwise/">&lt;measure&gt; (partwise)</a>
+        
+        <a href="../part-timewise/">&lt;part&gt; (timewise)</a>
+        
+    
+</p>
+
+
+<p>Notes are the most common type of MusicXML data. The MusicXML format distinguishes between elements used for sound information and elements used for notation information (e.g., &lt;tie&gt; is used for sound, &lt;tied&gt; for notation). Thus grace notes do not have a &lt;duration&gt; element. Cue notes have a &lt;duration&gt; element, as do &lt;forward&gt; elements, but no &lt;tie&gt; elements. Having these two types of information available can make interchange easier, as some programs handle one type of information more readily than the other.</p>
+
+
+<h2>Content</h2>
+
+
+    
+
+
+
+    
+    
+        
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                <a href="../grace/">&lt;grace&gt;</a> (Required)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                <a href="../chord/">&lt;chord&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    Exactly one of the following
+    <ul>
+        
+        <li>
+            
+                <a href="../pitch/">&lt;pitch&gt;</a> 
+            
+        </li>
+        
+        <li>
+            
+                <a href="../unpitched/">&lt;unpitched&gt;</a> 
+            
+        </li>
+        
+        <li>
+            
+                <a href="../rest/">&lt;rest&gt;</a> 
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                <a href="../tie/">&lt;tie&gt;</a> (0 to 2 times)
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                <a href="../cue/">&lt;cue&gt;</a> (Required)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                <a href="../chord/">&lt;chord&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    Exactly one of the following
+    <ul>
+        
+        <li>
+            
+                <a href="../pitch/">&lt;pitch&gt;</a> 
+            
+        </li>
+        
+        <li>
+            
+                <a href="../unpitched/">&lt;unpitched&gt;</a> 
+            
+        </li>
+        
+        <li>
+            
+                <a href="../rest/">&lt;rest&gt;</a> 
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                <a href="../cue/">&lt;cue&gt;</a> (Required)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                <a href="../chord/">&lt;chord&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    Exactly one of the following
+    <ul>
+        
+        <li>
+            
+                <a href="../pitch/">&lt;pitch&gt;</a> 
+            
+        </li>
+        
+        <li>
+            
+                <a href="../unpitched/">&lt;unpitched&gt;</a> 
+            
+        </li>
+        
+        <li>
+            
+                <a href="../rest/">&lt;rest&gt;</a> 
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../duration/">&lt;duration&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                <a href="../chord/">&lt;chord&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    Exactly one of the following
+    <ul>
+        
+        <li>
+            
+                <a href="../pitch/">&lt;pitch&gt;</a> 
+            
+        </li>
+        
+        <li>
+            
+                <a href="../unpitched/">&lt;unpitched&gt;</a> 
+            
+        </li>
+        
+        <li>
+            
+                <a href="../rest/">&lt;rest&gt;</a> 
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../duration/">&lt;duration&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                <a href="../tie/">&lt;tie&gt;</a> (0 to 2 times)
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                <a href="../instrument/">&lt;instrument&gt;</a> (Zero or more times)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    In this order
+    <ul>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../footnote/">&lt;footnote&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../level/">&lt;level&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../voice/">&lt;voice&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+    </ul>
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                <a href="../type/">&lt;type&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../dot/">&lt;dot&gt;</a> (Zero or more times)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../accidental/">&lt;accidental&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../time-modification/">&lt;time-modification&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../stem/">&lt;stem&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../notehead/">&lt;notehead&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../notehead-text/">&lt;notehead-text&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                
+
+
+
+    
+    
+        
+
+
+
+    
+    
+        <a href="../staff/">&lt;staff&gt;</a> (Required)
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+            
+        </li>
+        
+        <li>
+            
+                <a href="../beam/">&lt;beam&gt;</a> (0 to 8 times)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../notations/">&lt;notations&gt;</a> (Zero or more times)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../lyric/">&lt;lyric&gt;</a> (Zero or more times)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../play/">&lt;play&gt;</a> (Optional)
+            
+        </li>
+        
+        <li>
+            
+                <a href="../listen/">&lt;listen&gt;</a> (Optional)
+            
+        </li>
+        
+    </ul>
+
+
+
+
+    
+    
+
+
+
+
+
+
+<h2>Attributes</h2>
+
+
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Required?</th>
+    <th>Description</th>
+</tr>
+</thead>
+
+<tr>
+    <th class="nobr">attack</th>
+    <td><a href="../../data-types/divisions/">divisions</a></td>
+    <td>No</td>
+    <td>Alters the starting time of the note from when it would otherwise occur based on the flow of durations - information that is specific to a performance. It is expressed in terms of divisions, either positive or negative. A &lt;note&gt; that stops a tie should not have an attack attribute. The attack and release attributes are independent of each other. The attack attribute only changes the starting time of a note.</td>
+</tr>
+
+<tr>
+    <th class="nobr">color</th>
+    <td><a href="../../data-types/color/">color</a></td>
+    <td>No</td>
+    <td>Indicates the color of an element.</td>
+</tr>
+
+<tr>
+    <th class="nobr">default-x</th>
+    <td><a href="../../data-types/tenths/">tenths</a></td>
+    <td>No</td>
+    <td>Changes the computation of the default horizontal position. The origin is changed relative to the start of the entire current measure, at either the left barline or the start of the system. Positive x is right and negative x is left.<br><br>This attribute provides higher-resolution positioning data than the &lt;offset&gt; element. Applications reading a MusicXML file that can understand both features should generally rely on this attribute for its greater accuracy.</td>
+</tr>
+
+<tr>
+    <th class="nobr">default-y</th>
+    <td><a href="../../data-types/tenths/">tenths</a></td>
+    <td>No</td>
+    <td>Changes the computation of the default vertical position. The origin is changed relative to the top line of the staff. Positive y is up and negative y is down.<br><br>This attribute provides higher-resolution positioning data than the placement attribute. Applications reading a MusicXML file that can understand both attributes should generally rely on this attribute for its greater accuracy.</td>
+</tr>
+
+<tr>
+    <th class="nobr">dynamics</th>
+    <td><a href="../../data-types/non-negative-decimal/">non-negative-decimal</a></td>
+    <td>No</td>
+    <td>Corresponds to MIDI 1.0's Note On velocity, expressed in terms of percentage of the default forte value (90 for MIDI 1.0).</td>
+</tr>
+
+<tr>
+    <th class="nobr">end-dynamics</th>
+    <td><a href="../../data-types/non-negative-decimal/">non-negative-decimal</a></td>
+    <td>No</td>
+    <td>Corresponds to MIDI 1.0's Note Off velocity, expressed in terms of percentage of the default forte value (90 for MIDI 1.0).</td>
+</tr>
+
+<tr>
+    <th class="nobr">font-family</th>
+    <td><a href="../../data-types/font-family/">font-family</a></td>
+    <td>No</td>
+    <td>A comma-separated list of font names.</td>
+</tr>
+
+<tr>
+    <th class="nobr">font-size</th>
+    <td><a href="../../data-types/font-size/">font-size</a></td>
+    <td>No</td>
+    <td>One of the CSS sizes or a numeric point size.</td>
+</tr>
+
+<tr>
+    <th class="nobr">font-style</th>
+    <td><a href="../../data-types/font-style/">font-style</a></td>
+    <td>No</td>
+    <td>Normal or italic style.</td>
+</tr>
+
+<tr>
+    <th class="nobr">font-weight</th>
+    <td><a href="../../data-types/font-weight/">font-weight</a></td>
+    <td>No</td>
+    <td>Normal or bold weight.</td>
+</tr>
+
+<tr>
+    <th class="nobr">id</th>
+    <td><a href="../../data-types/xsd-ID/">ID</a></td>
+    <td>No</td>
+    <td>Specifies an ID that is unique to the entire document.</td>
+</tr>
+
+<tr>
+    <th class="nobr">pizzicato</th>
+    <td><a href="../../data-types/yes-no/">yes-no</a></td>
+    <td>No</td>
+    <td>Used when just this note is sounded pizzicato, vs. the &lt;pizzicato&gt; element which changes overall playback between pizzicato and arco.</td>
+</tr>
+
+<tr>
+    <th class="nobr">print-dot</th>
+    <td><a href="../../data-types/yes-no/">yes-no</a></td>
+    <td>No</td>
+    <td>Controls the printing of an augmentation dot separately from the rest of the note or rest. This is especially useful for notes that overlap in different voices, or for chord sheets that contain lyrics and chords but no melody. If print-object is set to no, this attribute is also interpreted as being set to no if not present.</td>
+</tr>
+
+<tr>
+    <th class="nobr">print-leger</th>
+    <td><a href="../../data-types/yes-no/">yes-no</a></td>
+    <td>No</td>
+    <td>Indicates whether leger lines are printed. Notes without leger lines are used to indicate indeterminate high and low notes. It is yes if not present unless print-object is set to no. This attribute is ignored for rests.</td>
+</tr>
+
+<tr>
+    <th class="nobr">print-lyric</th>
+    <td><a href="../../data-types/yes-no/">yes-no</a></td>
+    <td>No</td>
+    <td>Controls the printing of a lyric separately from the rest of the note or rest. This is especially useful for notes that overlap in different voices, or for chord sheets that contain lyrics and chords but no melody. If print-object is set to no, this attribute is also interpreted as being set to no if not present.</td>
+</tr>
+
+<tr>
+    <th class="nobr">print-object</th>
+    <td><a href="../../data-types/yes-no/">yes-no</a></td>
+    <td>No</td>
+    <td>Specifies whether or not to print an object. It is yes if not specified.</td>
+</tr>
+
+<tr>
+    <th class="nobr">print-spacing</th>
+    <td><a href="../../data-types/yes-no/">yes-no</a></td>
+    <td>No</td>
+    <td>Controls whether or not spacing is left for an invisible note or object. It is used only if no note, dot, or lyric is being printed. The value is yes (leave spacing) if not specified.</td>
+</tr>
+
+<tr>
+    <th class="nobr">relative-x</th>
+    <td><a href="../../data-types/tenths/">tenths</a></td>
+    <td>No</td>
+    <td>Changes the horizontal position relative to the default position, either as computed by the individual program, or as overridden by the default-x attribute.  Positive x is right and negative x is left. It should be interpreted in the context of the &lt;offset&gt; element or directive attribute if those are present.</td>
+</tr>
+
+<tr>
+    <th class="nobr">relative-y</th>
+    <td><a href="../../data-types/tenths/">tenths</a></td>
+    <td>No</td>
+    <td>Changes the vertical position relative to the default position, either as computed by the individual program, or as overridden by the default-y attribute. Positive y is up and negative y is down. It should be interpreted in the context of the placement attribute if that is present.</td>
+</tr>
+
+<tr>
+    <th class="nobr">release</th>
+    <td><a href="../../data-types/divisions/">divisions</a></td>
+    <td>No</td>
+    <td>Alters the stopping time of the note from when it would otherwise occur based on the flow of durations - information that is specific to a performance. It is expressed in terms of divisions, either positive or negative. A &lt;note&gt; that starts a tie should not have a release attribute. The attack and release attributes are independent of each other. The release attribute only changes the stopping time of a note.</td>
+</tr>
+
+<tr>
+    <th class="nobr">time-only</th>
+    <td><a href="../../data-types/time-only/">time-only</a></td>
+    <td>No</td>
+    <td>Shows which times to play the note during a repeated section.</td>
+</tr>
+
+</table>
+
+
+
+
+
+<h2>Examples</h2>
+
+<p>This element is used in the following examples:</p>
+<p>
+    <nobr><a href="../../examples/accent-element/">&lt;accent&gt;</a></nobr>, <nobr><a href="../../examples/accidental-mark-element-notation/">&lt;accidental-mark&gt; (Notation)</a></nobr>, <nobr><a href="../../examples/accidental-mark-element-ornament/">&lt;accidental-mark&gt; (Ornament)</a></nobr>, <nobr><a href="../../examples/accidental-element/">&lt;accidental&gt;</a></nobr>, <nobr><a href="../../examples/alter-semitones/">&lt;alter&gt; (Semitones)</a></nobr>, <nobr><a href="../../examples/arpeggiate-element/">&lt;arpeggiate&gt;</a></nobr>, <nobr><a href="../../examples/artificial-element/">&lt;artificial&gt;</a></nobr>, <nobr><a href="../../examples/attributes-element/">&lt;attributes&gt;</a></nobr>, <nobr><a href="../../examples/backup-element/">&lt;backup&gt;</a></nobr>, <nobr><a href="../../examples/beam-element/">&lt;beam&gt;</a></nobr>, <nobr><a href="../../examples/beat-repeat-element/">&lt;beat-repeat&gt;</a></nobr>, <nobr><a href="../../examples/bracket-element/">&lt;bracket&gt;</a></nobr>, <nobr><a href="../../examples/chord-element/">&lt;chord&gt;</a></nobr>, <nobr><a href="../../examples/cue-element/">&lt;cue&gt;</a></nobr>, <nobr><a href="../../examples/divisions-and-duration-elements/">&lt;divisions&gt; and &lt;duration&gt;</a></nobr>, <nobr><a href="../../examples/dot-element/">&lt;dot&gt;</a></nobr>, <nobr><a href="../../examples/ending-element/">&lt;ending&gt;</a></nobr>, <nobr><a href="../../examples/extend-element-figure/">&lt;extend&gt; (Figured Bass)</a></nobr>, <nobr><a href="../../examples/extend-element-lyric/">&lt;extend&gt; (Lyric)</a></nobr>, <nobr><a href="../../examples/forward-element/">&lt;forward&gt;</a></nobr>, <nobr><a href="../../examples/glissando-multiple/">&lt;glissando&gt; (Multiple)</a></nobr>, <nobr><a href="../../examples/glissando-element-single/">&lt;glissando&gt; (Single)</a></nobr>, <nobr><a href="../../examples/grace-element/">&lt;grace&gt;</a></nobr>, <nobr><a href="../../examples/grouping-element/">&lt;grouping&gt;</a></nobr>, <nobr><a href="../../examples/ipa-element/">&lt;ipa&gt;</a></nobr>, <nobr><a href="../../examples/lyric-element/">&lt;lyric&gt;</a></nobr>, <nobr><a href="../../examples/measure-repeat-element/">&lt;measure-repeat&gt;</a></nobr>, <nobr><a href="../../examples/non-arpeggiate-element/">&lt;non-arpeggiate&gt;</a></nobr>, <nobr><a href="../../examples/octave-element/">&lt;octave&gt;</a></nobr>, <nobr><a href="../../examples/pitch-element/">&lt;pitch&gt;</a></nobr>, <nobr><a href="../../examples/plop-element/">&lt;plop&gt;</a></nobr>, <nobr><a href="../../examples/pluck-element/">&lt;pluck&gt;</a></nobr>, <nobr><a href="../../examples/rest-element/">&lt;rest&gt;</a></nobr>, <nobr><a href="../../examples/slash-element/">&lt;slash&gt;</a></nobr>, <nobr><a href="../../examples/slide-element/">&lt;slide&gt;</a></nobr>, <nobr><a href="../../examples/slur-element/">&lt;slur&gt;</a></nobr>, <nobr><a href="../../examples/staff-element/">&lt;staff&gt;</a></nobr>, <nobr><a href="../../examples/step-element/">&lt;step&gt;</a></nobr>, <nobr><a href="../../examples/stopped-element/">&lt;stopped&gt;</a></nobr>, <nobr><a href="../../examples/syllabic-element/">&lt;syllabic&gt;</a></nobr>, <nobr><a href="../../examples/technical-element-tablature/">&lt;technical&gt; (Tablature)</a></nobr>, <nobr><a href="../../examples/time-modification-element/">&lt;time-modification&gt;</a></nobr>, <nobr><a href="../../examples/tremolo-element-single/">&lt;tremolo&gt; (Single)</a></nobr>, <nobr><a href="../../examples/tuplet-element-nested/">&lt;tuplet&gt; (Nested)</a></nobr>, <nobr><a href="../../examples/tuplet-element-regular/">&lt;tuplet&gt; (Regular)</a></nobr>, <nobr><a href="../../examples/turn-element/">&lt;turn&gt;</a></nobr>, <nobr><a href="../../examples/unpitched-element/">&lt;unpitched&gt;</a></nobr>, <nobr><a href="../../examples/up-bow-element/">&lt;up-bow&gt;</a></nobr>, <nobr><a href="../../examples/vertical-turn-element/">&lt;vertical-turn&gt;</a></nobr>, <nobr><a href="../../examples/voice-element/">&lt;voice&gt;</a></nobr>, <nobr><a href="../../examples/wavy-line-element/">&lt;wavy-line&gt;</a></nobr>, <nobr><a href="../../examples/wedge-element/">&lt;wedge&gt;</a></nobr>, <nobr><a href="../../examples/tutorial-apres-un-reve/">Tutorial: Après un rêve</a></nobr>, <nobr><a href="../../examples/tutorial-chopin-prelude/">Tutorial: Chopin Prelude</a></nobr>, <nobr><a href="../../examples/tutorial-chord-symbols/">Tutorial: Chord Symbols</a></nobr>, <nobr><a href="../../examples/tutorial-hello-world/">Tutorial: Hello, World</a></nobr>, <nobr><a href="../../examples/tutorial-percussion/">Tutorial: Percussion</a></nobr>, <nobr><a href="../../examples/tutorial-tablature/">Tutorial: Tablature</a></nobr>
+</p>
+
+
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>

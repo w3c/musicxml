@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Overview | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="./">File Listings</a></b></li>
+    <ul>
+        <li><a href="../musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../xml.xsd/">xml.xsd</a></li>
+        <li><a href="../container.dtd/">container.dtd</a></li>
+        <li><a href="../opus.xsd/">opus.xsd</a></li>
+        <li><a href="../sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../sounds.xml/">sounds.xml</a></li>
+        <li><a href="../catalog.xml/">catalog.xml</a></li>
+        <li><a href="../to31.xsl/">to31.xsl</a></li>
+        <li><a href="../to30.xsl/">to30.xsl</a></li>
+        <li><a href="../to20.xsl/">to20.xsl</a></li>
+        <li><a href="../to11.xsl/">to11.xsl</a></li>
+        <li><a href="../to10.xsl/">to10.xsl</a></li>
+        <li><a href="../parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">File Listings</a> &gt;
+    Overview
+</p>
+
+<h1>Overview</h1>
+
+<p>The MusicXML 4.0 schemas and stylesheets are contained in the schema folder within the release. The key files are listed here:</p>
+<ul>
+<li>musicxml.xsd, the MusicXML W3C XML Schema</li>
+<li>xlink.xsd, the W3C XML Schema for the xlink namespace subset used in MusicXML</li>
+<li>xml.xsd, the W3C XML Schema for the xml namespace subset used in MusicXML</li>
+<li>container.dtd, the MusicXML container Document Type Definition</li>
+<li>opus.xsd, the MusicXML opus W3C XML Schema</li>
+<li>sounds.dtd, the MusicXML sounds Document Type Definition</li>
+<li>sounds.xml, listing all the MusicXML standard sound identifiers</li>
+<li>catalog.xml, the standard XML catalog for use with reading MusicXML files</li>
+<li>to31.xsl, the XSLT stylesheet for converting from MusicXML 4.0 to MusicXML 3.1</li>
+<li>to30.xsl, the XSLT stylesheet for converting from MusicXML 3.1 to MusicXML 3.0</li>
+<li>to20.xsl, the XSLT stylesheet for converting from MusicXML 3.0 to MusicXML 2.0</li>
+<li>to11.xsl, the XSLT stylesheet for converting from MusicXML 2.0 to MusicXML 1.1</li>
+<li>to10.xsl, the XSLT stylesheet for converting from MusicXML 1.1 to MusicXML 1.0</li>
+<li>parttime.xsl, the XSLT stylesheet for converting from &lt;score-partwise&gt; to &lt;score-timewise&gt; files</li>
+<li>timepart.xsl, the XSLT stylesheet for converting from &lt;score-timewise&gt; to &lt;score-partwise&gt; files</li>
+</ul>
+<p>Several older files are also included in the schema folder for compatibility with older software. The contents of these files are not included this report.</p>
+<p>The following files make up the Document Type Definition version of MusicXML 4.0:</p>
+<ul>
+<li>partwise.dtd</li>
+<li>timewise.dtd</li>
+<li>opus.dtd</li>
+<li>attributes.mod</li>
+<li>barline.mod</li>
+<li>common.mod</li>
+<li>direction.mod</li>
+<li>identity.mod</li>
+<li>layout.mod</li>
+<li>link.mod</li>
+<li>note.mod</li>
+<li>score.mod</li>
+<li>isolat1.ent</li>
+<li>isolat2.ent</li>
+</ul>
+<p>The following files are used for an XML representation of Standard MIDI 1.0 Files:</p>
+<ul>
+<li>midixml.dtd</li>
+<li>midixml.xsl</li>
+</ul>
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>

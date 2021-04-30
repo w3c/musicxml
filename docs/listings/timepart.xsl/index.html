@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>timepart.xsl | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../xml.xsd/">xml.xsd</a></li>
+        <li><a href="../container.dtd/">container.dtd</a></li>
+        <li><a href="../opus.xsd/">opus.xsd</a></li>
+        <li><a href="../sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../sounds.xml/">sounds.xml</a></li>
+        <li><a href="../catalog.xml/">catalog.xml</a></li>
+        <li><a href="../to31.xsl/">to31.xsl</a></li>
+        <li><a href="../to30.xsl/">to30.xsl</a></li>
+        <li><a href="../to20.xsl/">to20.xsl</a></li>
+        <li><a href="../to11.xsl/">to11.xsl</a></li>
+        <li><a href="../to10.xsl/">to10.xsl</a></li>
+        <li><a href="../parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="./">timepart.xsl</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">File Listings</a> &gt;
+    timepart.xsl
+</p>
+
+<h1>timepart.xsl</h1>
+
+<p><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!--
+	MusicXML timepart.xsl stylesheet
+
+	Version 4.0 Draft
+	
+	Copyright © 2004-2021 the Contributors to the MusicXML 
+	Specification, published by the W3C Music Notation Community
+	Group under the W3C Community Contributor License Agreement 
+	(CLA): 
+	
+	   https://www.w3.org/community/about/agreements/cla/
+	
+	A human-readable summary is available:
+	
+	   https://www.w3.org/community/about/agreements/cla-deed/
+--&gt;
+
+&lt;!-- 
+	Timepart.xsl is an XSLT stylesheet for transforming
+	timewise MusicXML scores into partwise scores. Thus
+	instead of having parts included within each measure,
+	the transformed score includes measures within each part.
+	This type of transformation allows the 2-dimensional
+	nature of a musical score to be adequately represented
+	within a hierarchical format like XML.
+--&gt;
+
+&lt;xsl:stylesheet
+	version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;!--
+    XML output, with a DOCTYPE refering the partwise DTD.
+    Here we use the full Internet URL.
+  --&gt;
+  &lt;xsl:output method="xml" indent="yes" encoding="UTF-8"
+	omit-xml-declaration="no" standalone="no"
+	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
+	doctype-public="-//Recordare//DTD MusicXML 4.0 Partwise//EN" /&gt;
+
+  &lt;!--
+    For the root, only look for score-partwise and
+    score-timewise. Anything else as a root element gets
+    ignored.
+  --&gt;  
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:apply-templates select="./score-partwise"/&gt;
+    &lt;xsl:apply-templates select="./score-timewise"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;!--
+    If we have a partwise score, we really shouldn't be
+    applying this stylesheet. Copy everthing as-is without
+    triggering templates.
+  --&gt;
+  &lt;xsl:template match="score-partwise"&gt;
+    &lt;xsl:copy-of select="." /&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;!-- The identity transformation. Used by default. --&gt;
+  &lt;xsl:template match="text()"&gt;
+    &lt;xsl:value-of select="." /&gt;
+  &lt;/xsl:template&gt;
+	
+  &lt;!--
+    Whitespace within an xsl:copy could cause problems with 
+    empty elements.
+  --&gt;
+  &lt;xsl:template match="*|@*|comment()|processing-instruction()"&gt;
+    &lt;xsl:copy&gt;&lt;xsl:apply-templates
+		select="*|@*|comment()|processing-instruction()|text()"
+	/&gt;&lt;/xsl:copy&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;!--
+    We need to take control at the document element level
+    explicitly to redo the tree. The header elements should
+    all be copied. After that, we loop through the parts in
+    measure 1, and create the part elements (for measure 1
+    and all others) from within that loop.
+  --&gt;
+  &lt;xsl:template match="score-timewise"&gt;
+	
+    &lt;!-- Create the score-partwise element. --&gt;
+    &lt;xsl:element name="score-partwise"&gt;
+		
+      &lt;!--
+        Copy the seven score header elements and their
+        children. The DTD specifies that these occur, if
+        present, in a fixed order.
+      --&gt;
+      &lt;xsl:apply-templates select="@version[.!='1.0']"/&gt;
+      &lt;xsl:apply-templates select="work"/&gt;
+      &lt;xsl:apply-templates select="movement-number"/&gt;
+      &lt;xsl:apply-templates select="movement-title"/&gt;
+      &lt;xsl:apply-templates select="identification"/&gt;
+      &lt;xsl:apply-templates select="defaults"/&gt;
+      &lt;xsl:apply-templates select="credit"/&gt;
+      &lt;xsl:apply-templates select="part-list"/&gt;
+			
+      &lt;!--
+        Now loop through all parts in the first measure.
+      --&gt;
+      &lt;xsl:for-each select="measure[1]/part"&gt;
+			
+        &lt;!--
+          Bind part ID to a variable for use throughout the
+          loop, including inner loop where we will lose the
+          immediate context.
+        --&gt;
+        &lt;xsl:variable name="part-id"&gt;
+          &lt;xsl:value-of select="@id"/&gt;
+        &lt;/xsl:variable&gt;
+				
+        &lt;!-- Create the part element. --&gt;
+        &lt;xsl:element name="part"&gt;
+				
+          &lt;!--
+            Now we need to copy the part id attribute.
+          --&gt;
+          &lt;xsl:copy-of select="@id" /&gt;
+					
+          &lt;!--
+            Now for the inner loop. We go back to the root
+            ancestor, and loop through each measure and
+            part, looking for the ones that match the part
+            ID, and add it here.
+						
+            This is inefficient. but it provides a working
+            starting point.
+          --&gt;
+          &lt;xsl:for-each select="../../measure/part"&gt;
+            &lt;xsl:if test="@id=$part-id"&gt;
+						
+              &lt;!-- Create the measure element. --&gt;
+              &lt;xsl:element name="measure"&gt;
+							
+                &lt;!--
+                  Copy the attributes from the parent 
+                  measure element. 
+                --&gt;
+                &lt;xsl:attribute name="number"&gt;
+                  &lt;xsl:value-of select="parent::measure/@number"/&gt;
+                &lt;/xsl:attribute&gt;
+                &lt;xsl:if test="parent::measure/@text"&gt;
+                  &lt;xsl:attribute name="text"&gt;
+                    &lt;xsl:value-of select="parent::measure/@text"/&gt;
+                  &lt;/xsl:attribute&gt;
+                &lt;/xsl:if&gt;
+                &lt;xsl:if test="parent::measure/@implicit[. = 'yes']"&gt;
+                  &lt;xsl:attribute name="implicit"&gt;
+                    &lt;xsl:value-of select="parent::measure/@implicit"/&gt;
+                  &lt;/xsl:attribute&gt;
+                &lt;/xsl:if&gt;
+                &lt;xsl:if test="parent::measure/@non-controlling[. = 'yes']"&gt;
+                  &lt;xsl:attribute name="non-controlling"&gt;
+                    &lt;xsl:value-of
+                      select="parent::measure/@non-controlling"/&gt;
+                  &lt;/xsl:attribute&gt;
+                &lt;/xsl:if&gt;
+                &lt;xsl:if test="parent::measure/@width"&gt;
+                  &lt;xsl:attribute name="width"&gt;
+                    &lt;xsl:value-of select="parent::measure/@width"/&gt;
+                  &lt;/xsl:attribute&gt;
+                &lt;/xsl:if&gt;
+								
+                &lt;!--
+                  Now copy all the descendants using
+                  identity transforms.
+                --&gt;
+                &lt;xsl:apply-templates /&gt;
+              &lt;/xsl:element&gt;
+            &lt;/xsl:if&gt;
+          &lt;/xsl:for-each&gt;
+					
+        &lt;/xsl:element&gt;
+      &lt;/xsl:for-each&gt;
+    &lt;/xsl:element&gt;       
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre></p>
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>

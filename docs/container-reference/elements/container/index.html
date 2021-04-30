@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The &lt;container&gt; element | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../../"/>Introduction</a></b></li>
+    <li><b><a href="../../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../">Container reference</a> &gt;
+    <a href="../">Elements</a> &gt;
+    container
+</p>
+
+<h1>The &lt;container&gt; element</h1>
+
+<p>Parent elements:
+    
+        None
+    
+</p>
+
+
+<p>Starting with Version 2.0, the MusicXML format includes a standard zip compressed version. These zip files can contain multiple MusicXML files as well as other media files for images and sound. The container element is the document element for the META-INF/container.xml file. The container describes the starting point for the MusicXML version of the file, as well as alternate renditions such as PDF and audio versions of the musical score.</p>
+
+<p>The MusicXML zip file format is compatible with the zip format used by the java.util.zip package and Java JAR files. It is based on the Info-ZIP format described at:</p>
+
+<p><a href="http://www.info-zip.org/doc/appnote-19970311-iz.zip" target="_blank">http://www.info-zip.org/doc/appnote-19970311-iz.zip</a></p>
+
+<p>The JAR file format is specified at:</p>
+
+<p><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html" target="_blank">https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html</a></p>
+
+<p>Note that, compatible with JAR files, file names should be encoded in UTF-8 format. </p>
+
+<p>Files with the zip container are compressed the DEFLATE algorithm. The DEFLATE Compressed Data Format (RFC 1951) is specified at:</p>
+
+<p><a href="https://www.ietf.org/rfc/rfc1951.txt" target="_blank">https://www.ietf.org/rfc/rfc1951.txt</a></p>
+
+<p>The recommended media type for a compressed MusicXML file is:<br><pre>    application/vnd.recordare.musicxml</pre></p>
+
+<p>The recommended media type for an uncompressed MusicXML file is:<br><pre>    application/vnd.recordare.musicxml+xml</pre></p>
+
+<p>The first file in the zip container should be a file named mimetype. The contents of this file should be the MIME media type string </p>
+
+<p><pre>    application/vnd.recordare.musicxml</pre><br>encoded in US-ASCII. The mimetype file must not be compressed or encrypted, and there must not be an extra field in its zip header. The contents of the mimetype file must not contain any leading padding or white space and must not begin with a byte order mark. Older versions of MusicXML did not specify this mimetype file, so applications may see containers without a mimetype file.</p>
+
+<p>The recommended file extension for compressed MusicXML files is .mxl. The recommended file extension for uncompressed MusicXML files is .musicxml. Older versions of MusicXML use .xml as the extension for uncompressed MusicXML files, so it is recommended that applications be prepared to read files with the .xml extension as well.</p>
+
+<p>It is recommended that applications that run on macOS and iOS use the following Uniform Type Identifier for MusicXML files:<br><pre>&lt;array&gt;<br>    &lt;dict&gt;<br>        &lt;key&gt;UTTypeIdentifier&lt;/key&gt;<br>        &lt;string&gt;com.recordare.musicxml.uncompressed&lt;/string&gt;<br>        &lt;key&gt;UTTypeReferenceURL&lt;/key&gt;<br>        &lt;string&gt;http://www.musicxml.org/&lt;/string&gt;<br>        &lt;key&gt;UTTypeDescription&lt;/key&gt;<br>        &lt;string&gt;MusicXML File&lt;/string&gt;<br>        &lt;key&gt;UTTypeTagSpecification&lt;/key&gt;<br>        &lt;dict&gt;<br>            &lt;key&gt;public.filename-extension&lt;/key&gt;<br>            &lt;array&gt;<br>                &lt;string&gt;musicxml&lt;/string&gt;<br>            &lt;/array&gt;<br>            &lt;key&gt;public.mime-type&lt;/key&gt;<br>            &lt;array&gt;<br>                &lt;string&gt;application/vnd.recordare.musicxml+xml&lt;/string&gt;<br>            &lt;/array&gt;<br>        &lt;/dict&gt;<br>        &lt;key&gt;UTTypeConformsTo&lt;/key&gt;<br>        &lt;array&gt;<br>            &lt;string&gt;public.xml&lt;/string&gt;<br>        &lt;/array&gt;<br>    &lt;/dict&gt;<br>    &lt;dict&gt;<br>        &lt;key&gt;UTTypeIdentifier&lt;/key&gt;<br>        &lt;string&gt;com.recordare.musicxml&lt;/string&gt;<br>        &lt;key&gt;UTTypeReferenceURL&lt;/key&gt;<br>        &lt;string&gt;http://www.musicxml.org/&lt;/string&gt;<br>        &lt;key&gt;UTTypeDescription&lt;/key&gt;<br>        &lt;string&gt;MusicXML File&lt;/string&gt;<br>        &lt;key&gt;UTTypeTagSpecification&lt;/key&gt;<br>        &lt;dict&gt;<br>            &lt;key&gt;public.filename-extension&lt;/key&gt;<br>            &lt;array&gt;<br>                &lt;string&gt;mxl&lt;/string&gt;<br>            &lt;/array&gt;<br>            &lt;key&gt;public.mime-type&lt;/key&gt;<br>            &lt;array&gt;<br>                &lt;string&gt;application/vnd.recordare.musicxml&lt;/string&gt;<br>            &lt;/array&gt;<br>        &lt;/dict&gt;<br>        &lt;key&gt;UTTypeConformsTo&lt;/key&gt;<br>        &lt;array&gt;<br>            &lt;string&gt;public.zip-archive&lt;/string&gt;<br>        &lt;/array&gt;<br>    &lt;/dict&gt;<br>&lt;/array&gt;</pre><br>Suggested use:</p>
+
+<p><pre>&lt;!DOCTYPE container PUBLIC<br>    "-//Recordare//DTD MusicXML 4.0 Container//EN"<br>    "http://www.musicxml.org/dtds/container.dtd"&gt;</pre><br>The XML catalog at catalog.xml supports validating against a local copy of this DTD rather than the networked version in the system ID. Software often has trouble using system IDs due to factors such as restrictions on network access, or resources having moved from the original specified location.</p>
+
+
+<h2>Content</h2>
+
+
+    
+
+
+
+    
+    
+        <a href="../rootfiles/">&lt;rootfiles&gt;</a> (Required)
+    
+    
+
+
+
+
+
+
+<h2>Attributes</h2>
+
+
+<p>None.</p>
+
+
+
+
+
+
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>
