@@ -39,15 +39,14 @@
 
 <!--
 	Notes are the most common type of MusicXML data. The
-	MusicXML format keeps the MuseData distinction between
-	elements used for sound information and elements used for
-	notation information (e.g., tie is used for sound, tied for
-	notation). Thus grace notes do not have a duration element.
-	Cue notes have a duration element, as do forward elements,
-	but no tie elements. Having these two types of information
-	available can make interchange considerably easier, as
-	some programs handle one type of information much more
-	readily than the other.
+	MusicXML format distinguishes between elements used for
+	sound information and elements used for notation information
+	(e.g., tie is used for sound, tied for notation). Thus grace
+	notes do not have a duration element. Cue notes have a
+	duration element, as do forward elements, but no tie
+	elements. Having these two types of information available
+	can make interchange easier, as some programs handle one
+	type of information more readily than the other.
 -->
 <!ELEMENT note
 	(((grace, ((%full-note;, (tie, tie?)?) | (cue, %full-note;))) |
@@ -134,14 +133,13 @@
 <!--
 	The grace element indicates the presence of a grace note. 
 	The slash attribute for a grace note is yes for slashed
-	eighth notes. The other grace note attributes come from
-	MuseData sound suggestions. The steal-time-previous attribute
-	indicates the percentage of time to steal from the previous
-	note for the grace note. The steal-time-following attribute
-	indicates the percentage of time to steal from the following
-	note for the grace note, as for appoggiaturas. The make-time
-	attribute indicates to make time, not steal time; the units
-	are in real-time divisions for the grace note.
+	grace notes. The steal-time-previous attribute indicates the
+	percentage of time to steal from the previous note for the
+	grace note. The steal-time-following attribute indicates the
+	percentage of time to steal from the following note for the
+	grace note, as for appoggiaturas. The make-time attribute
+	indicates to make time, not steal time; the units are in
+	real-time divisions for the grace note.
 -->
 <!ELEMENT grace EMPTY>
 <!ATTLIST grace
@@ -154,10 +152,7 @@
 <!--
 	The chord element indicates that this note is an additional
 	chord tone with the preceding note. The duration of this
-	note can be no longer than the preceding note. In MuseData,
-	a missing duration indicates the same length as the previous
-	note, but the MusicXML format requires a duration for chord
-	notes too.
+	note can be no longer than the preceding note.
 -->
 <!ELEMENT chord EMPTY>
 
@@ -212,7 +207,7 @@
 >
 
 <!--
-	If multiple score-instruments are specified on a
+	If multiple score-instruments are specified in a
 	score-part, there should be an instrument element for
 	each note in the part. The id attribute is an IDREF back
 	to the score-instrument ID. Notes that are shared between
@@ -241,7 +236,7 @@
 
 <!--
 	One dot element is used for each dot of prolongation.
-	The placement element is used to specify whether the
+	The placement attribute is used to specify whether the
 	dot should appear above or below the staff line. It is
 	ignored for notes that appear on a staff space.
 -->
@@ -559,13 +554,12 @@
 
 <!--
 	Glissando and slide elements both indicate rapidly moving
-	from one pitch to the other so that individual notes are not
-	discerned. The distinction is similar to that between NIFF's
-	glissando and portamento elements. A glissando sounds the
-	half notes in between the slide and defaults to a wavy line.
-	A slide is continuous between two notes and defaults to a
-	solid line. The optional text for a glissando or slide is
-	printed alongside the line.
+	from one pitch to the other so that individual notes are
+	not discerned. A glissando sounds the distinct notes
+	between the two pitches and defaults to a wavy line.
+	A slide is continuous between the two pitches and
+	defaults to a solid line. The optional text for a
+	glissando or slide is printed alongside the line.
 -->
 <!ELEMENT glissando (#PCDATA)>
 <!ATTLIST glissando
@@ -860,7 +854,7 @@
 	of pitch to be specified, combined with controls for
 	appearance/playback differences, allows both the notation
 	and the sound to be represented. Artificial harmonics can
-	add a notated touching-pitch; the pitch or fret at which
+	add a notated touching pitch; the pitch or fret at which
 	the string is touched lightly to produce the harmonic.
 	Artificial pinch harmonics will usually not notate a
 	touching pitch. The attributes for the harmonic element
@@ -1415,7 +1409,8 @@
 	The soft-accent element indicates a soft accent that is
 	not as heavy as a normal accent. It is often notated as 
 	&lt;&gt;. It can be combined with other articulations to
-	implement the entire SMuFL Articulation supplement range.
+	implement the first eight symbols in the SMuFL Articulation
+	supplement range.
 -->
 <!ELEMENT soft-accent EMPTY>
 <!ATTLIST soft-accent
@@ -1451,7 +1446,7 @@
 	an arpeggiated chord. The number attribute can be used to
 	distinguish between two simultaneous chords arpeggiated
 	separately (different numbers) or together (same number).
-	The up-down attribute is used if there is an arrow on the
+	The direction attribute is used if there is an arrow on the
 	arpeggio sign. By default, arpeggios go from the lowest to
 	highest note. The length of the sign can be determined from
 	the position attributes for the arpeggiate elements used
@@ -1490,10 +1485,9 @@
 >
 
 <!--
-	Text underlays for lyrics, based on Humdrum with support
-	for other formats. The lyric number indicates multiple
-	lines, though a name can be used as well (as in Finale's
-	verse/chorus/section specification). Word extensions are
+	Text underlays for lyrics. The lyric number indicates
+	multiple lines, though a name can be used as well. Common
+	name examples are verse and chorus. Word extensions are
 	represented using the extend element. Hyphenation is
 	indicated by the syllabic element, which can be single,
 	begin, end, or middle. These represent single-syllable
@@ -1505,9 +1499,9 @@
 	elision element are part of the same syllable, but may have
 	different text formatting.
 
-	Humming and laughing representations are taken from
-	Humdrum. The end-line and end-paragraph elements come
-	from RP-017 for Standard MIDI File Lyric meta-events;
+	Humming and laughing elements represent humming and
+	laughing voices. The end-line and end-paragraph elements
+	come from RP-017 for Standard MIDI File Lyric meta-events;
 	they help facilitate lyric display for Karaoke and
 	similar applications. Language names for text elements
 	come from ISO 639, with optional country subcodes from

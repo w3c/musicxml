@@ -255,10 +255,9 @@
 -->
 
 <!--
-	The position attributes are based on MuseData print
-	suggestions. For most elements, any program will compute
-	a default x and y position. The position attributes let
-	this be changed two ways. 
+	For most elements, any program will compute a default x
+	and y position. The position attributes let this be changed
+	two ways. 
 
 	The default-x and default-y attributes change the
 	computation of the default position. For most elements,
@@ -610,8 +609,7 @@
 	 space-length  %tenths;  #IMPLIED">
 
 <!--
-	The printout entity is based on MuseData print
-	suggestions. They allow a way to specify not to print
+	The printout entity allows a way to specify not to print
 	print an object (e.g. note or rest), its augmentation
 	dots, or its lyrics. This is especially useful for notes 
 	that overlap in different voices, or for chord sheets
@@ -689,8 +687,7 @@
 <!--
 	The trill-sound entity includes attributes used to guide
 	the sound of trills, mordents, turns, shakes, and wavy
-	lines, based on MuseData sound suggestions. The default
-	choices are:
+	lines. The default choices are:
 	
 		start-note = "upper"
 		trill-step = "whole"
@@ -830,25 +827,26 @@
 <!--
 	Footnote and level are used to specify editorial
 	information, while voice is used to distinguish between
-	multiple voices (what MuseData calls tracks) in individual
-	parts. These elements are used throughout the different
-	MusicXML DTD modules. The footnote element specifies
-	editorial information that appears in footnotes in the
-	printed score. The content of the level element contains
-	identifying and/or descriptive text about the editorial
-	status of the parent element.
+	multiple voices in individual parts. These elements are
+	used throughout the different MusicXML DTD modules. The
+	footnote element specifies editorial information that
+	appears in footnotes in the printed score. The content of
+	the level element contains identifying and/or descriptive
+	text about the editorial status of the parent element. A
+	voice is a sequence of musical events (e.g. notes, chords,
+	rests) that proceeds linearly in time. 
 	
 	If the reference attribute for the level element is yes,
 	this indicates editorial information that is for display
 	only and should not affect playback. For instance, a modern
 	edition of older music may set reference="yes" on the
 	attributes containing the music's original clef, key, and
-	time signature. It is no by default. 
+	time signature. It is no if not specified. 
 	
 	The type attribute for the level element indicates whether
 	the editorial information applies to the start of a series
 	of symbols, the end of a series of symbols, or a single
-	symbol. It is single by default for compatibility with
+	symbol. It is single if not specified for compatibility with
 	earlier MusicXML versions.
 -->
 <!ELEMENT footnote (#PCDATA)>
@@ -949,21 +947,16 @@
 	amongst the letter abbreviations for dynamics (what is sf
 	vs. sfz, standing alone or with a trailing dynamic that is
 	not always piano), we use the actual letters as the names
-	of these dynamic elements. The other-dynamics element
-	allows other dynamic marks that are not covered here, but
-	many of those should perhaps be included in a more general
-	musical direction element. Dynamics may also be combined as
-	in <sf/><mp/>.
+	of these dynamic elements. The other-dynamics element allows
+	other dynamic marks that are not covered here. Dynamics may
+	also be combined as in <sf/><mp/>.
 	
 	These letter dynamic symbols are separated from crescendo,
 	decrescendo, and wedge indications. Dynamic representation
 	is inconsistent in scores. Many things are assumed by the
 	composer and left out, such as returns to original dynamics.
-	Systematic representations are quite complex: for example,
-	Humdrum has at least 3 representation formats related to
-	dynamics. The MusicXML format captures what is in the score,
-	but does not try to be optimal for analysis or synthesis of
-	dynamics.
+	The MusicXML format captures what is in the score, but does
+	not try to be optimal for analysis or synthesis of dynamics.
 	
 	The placement attribute is used when the dynamics are
 	associated with a note. It is ignored when the dynamics
@@ -1056,8 +1049,9 @@
 <!--
 	The tuning-step, tuning-alter, and tuning-octave elements
 	are represented like the step, alter, and octave elements,
-	with different names to reflect their different function.
-	They are used in the staff-tuning and accord elements.
+	with different names to reflect their different function in
+	string tuning. They are used in the staff-tuning and accord
+	elements.
 -->
 <!ELEMENT tuning-step (#PCDATA)>
 <!ELEMENT tuning-alter (#PCDATA)>
@@ -1109,12 +1103,11 @@
 >
 
 <!--
-	The instrument-sound and virtual-instrument elements
-	were added in Version 3.0. The instrument-sound element
-	describes the default timbre of the score-instrument. This
-	description is independent of a particular virtual or
-	MIDI instrument specification and allows playback to be
-	shared more easily between applications and libraries.
+	The instrument-sound element describes the default timbre
+	of the score-instrument. This description is independent
+	of a particular virtual or MIDI instrument specification
+	and allows playback to be shared more easily between
+	applications and libraries.
 	
 	The virtual-instrument element defines a specific virtual
 	instrument used for an instrument sound. The
@@ -1122,13 +1115,12 @@
 	library name, and the virtual-name element indicates the
 	library-specific name for the virtual instrument.
 
-	The solo and ensemble elements were added in Version
-	2.0. The solo element is present if performance is
-	intended by a solo instrument. The ensemble element
-	is present if performance is intended by an ensemble
-	such as an orchestral section. The text of the 
-	ensemble element contains the size of the section,
-	or is empty if the ensemble size is not specified.
+	The solo element is present if performance is intended by
+	a solo instrument. The ensemble element is present if
+	performance is intended by an ensemble such as an orchestral
+	section. The text of the  ensemble element contains the
+	size of the section, or is empty if the ensemble size is
+	not specified.
 -->
 <!ELEMENT instrument-sound (#PCDATA)>
 <!ELEMENT solo EMPTY>
@@ -1142,13 +1134,12 @@
 	The midi-device content corresponds to the DeviceName
 	meta event in Standard MIDI Files. The optional port
 	attribute is a number from 1 to 16 that can be used
-	with the unofficial MIDI port (or cable) meta event.
-	Unlike the DeviceName meta event, there can be
-	multiple midi-device elements per MusicXML part
-	starting in MusicXML 3.0. The optional id attribute
-	refers to the score-instrument assigned to this
-	device. If missing, the device assignment affects
-	all score-instrument elements in the score-part.
+	with the unofficial MIDI 1.0 port (or cable) meta event.
+	Unlike the DeviceName meta event, there can be multiple
+	midi-device elements per MusicXML part. The optional id
+	attribute refers to the score-instrument assigned to this
+	device. If missing, the device assignment affects all
+	score-instrument elements in the score-part.
 -->
 <!ELEMENT midi-device (#PCDATA)>
 <!ATTLIST midi-device
@@ -1216,13 +1207,13 @@
 <!ELEMENT elevation (#PCDATA)>
 
 <!-- 
-	The play element, new in Version 3.0, specifies playback
-	techniques to be used in conjunction with the 
-	instrument-sound element. When used as part of a sound
-	element, it applies to all notes going forward in score
-	order. In multi-instrument parts, the affected instrument
-	should be specified using the id attribute. When used as
-	part of a note element, it applies to the current note only.
+	The play element specifies playback techniques to be used
+	in conjunction with the instrument-sound element. When used
+	as part of a sound element, it applies to all notes going
+	forward in score order. In multi-instrument parts, the
+	affected instrument should be specified using the id
+	attribute. When used as part of a note element, it applies
+	to the current note only.
 -->
 <!ELEMENT play ((ipa | mute | semi-pitched | other-play)*)>
 <!ATTLIST play

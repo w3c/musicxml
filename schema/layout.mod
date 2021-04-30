@@ -173,7 +173,7 @@
 	of the staff specified by the number attribute. The
 	optional number attribute refers to staff numbers within
 	the part, from top to bottom on the system. A value of 1
-	is assumed if not present. 
+	is used if not present. 
 	
 	When used in the defaults element, the values apply to all
 	systems in all parts. When used in the print element, the

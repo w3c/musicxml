@@ -55,12 +55,12 @@
 	a score is displayed in concert pitch. It is used for
 	scores that contain parts for transposing instruments.
 
-	A file with a concert-score element may not contain any 
-	transpose elements that have non-zero values for either
-	the diatonic or chromatic elements. Concert scores may 
-	include octave transpositions, so transpose elements with
-	a double element or a non-zero octave-change element value
-	are permitted.
+	A document with a concert-score element may not contain any 
+	transpose elements that have non-zero values for either the
+	diatonic or chromatic elements. Concert scores may include
+	octave transpositions, so transpose elements with a double
+	element or a non-zero octave-change element value are 
+	permitted.
 -->
 <!ELEMENT concert-score EMPTY>
 
@@ -157,7 +157,7 @@
 
 <!--
 	The part-list identifies the different musical parts in
-	this movement. Each part has an ID that is used later
+	this document. Each part has an ID that is used later
 	within the musical data. Since parts may be encoded
 	separately and combined later, identification elements
 	are present at both the score and score-part levels.
@@ -167,13 +167,13 @@
 	a score based on the order in which they appear in the
 	part-list.
 	
-	Each MusicXML part corresponds to a track in a Standard
-	MIDI Format 1 file. The score-instrument elements are
-	used when there are multiple instruments per track.
-	The midi-device element is used to make a MIDI device
-	or port assignment for the given track or specific MIDI
-	instruments. Initial midi-instrument assignments may be
-	made here as well.
+	Often each MusicXML part corresponds to a track in a
+	Standard MIDI Format 1 file. In this case, the midi-device
+	element is used to make a MIDI device or port assignment
+	for the given track or specific MIDI instruments. Initial
+	midi-instrument assignments may be made here as well. The
+	score-instrument elements are used when there are multiple
+	instruments per track.
 
 	The part-name-display and part-abbreviation-display
 	elements are defined in the common.mod file, as they can
@@ -193,25 +193,27 @@
 <!--
 	The part-link element allows MusicXML data for both score
 	and parts to be contained within a single compressed
-	MusicXML file. It links a score-part from a score file to
-	a MusicXML files that contain parts data. In the case of a
-	single compressed MusicXML file, the link href values are
-	paths that are relative to the root folder of the zip file.
+	MusicXML file. It links a score-part from a score document
+	to MusicXML documents that contain parts data. In the case
+	of a single compressed MusicXML file, the link href values
+	are paths that are relative to the root folder of the zip 
+	file.
 	
 	Multiple part-link elements can link a condensed part within
-	a score file to multiple MusicXML parts files. For example,
-	a "Clarinet 1 and 2" part in a score file could link to
-	separate "Clarinet 1" and "Clarinet 2" part files. The
-	optional instrument-link elements distinguish which of
+	a score document to multiple MusicXML parts documents. For
+	example, a "Clarinet 1 and 2" part in a score document could
+	link to separate "Clarinet 1" and "Clarinet 2" part documents.
+	The optional instrument-link elements distinguish which of
 	the score-instruments within a score-part are in which
-	part file. The instrument-link id attribute refers to a
+	part document. The instrument-link id attribute refers to a
 	score-instrument id attribute.
 	
 	Multiple part-link elements can reference different types
-	of linked files, such as parts and condensed score. The
+	of linked documents, such as parts and condensed score. The
 	optional group-link elements identify the groups used in
-	the linked file. The content of a group-link element should
-	match the content of a group element in the linked file.
+	the linked document. The content of a group-link element
+	should match the content of a group element in the linked
+	document.
 -->
 <!ELEMENT part-link (instrument-link*, group-link*)>
 <!ATTLIST part-link
@@ -367,8 +369,8 @@
 	The group element allows the use of different versions of
 	the part for different purposes. Typical values include
 	score, condensed score, parts, sound, and data. Ordering
-	information that is directly encoded in MuseData can be
-	derived from the ordering within a MusicXML score or opus.
+	information can be derived from the ordering within a
+	MusicXML score or opus.
 -->
 <!ELEMENT group (#PCDATA)>
 

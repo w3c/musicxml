@@ -25,10 +25,9 @@
 
 <!--
 	Identification contains basic metadata about the score.
-	It includes the information in MuseData headers that
-	may apply at a score-wide, movement-wide, or part-wide
-	level. The creator, rights, source, and relation elements
-	are based on Dublin Core.
+	It includes information that may apply at a score-wide,
+	movement-wide, or part-wide level. The creator, rights,
+	source, and relation elements are based on Dublin Core.
 -->
 <!ELEMENT identification (creator*, rights*, encoding?,
 	source?, relation*, miscellaneous?)>
@@ -51,14 +50,13 @@
 >
 
 <!--
-	Rights is borrowed from Dublin Core. It contains
-	copyright and other intellectual property notices.
-	Words, music, and derivatives can have different types,
-	so multiple rights tags with different type attributes
-	are supported. Standard type values are music, words,
-	and arrangement, but other types may be used. The
-	type attribute is only needed when there are multiple
-	rights elements.
+	Rights is borrowed from Dublin Core. It contains copyright
+	and other intellectual property notices. Words, music, and
+	derivatives can have different types, so multiple rights
+	elements with different type attributes are supported.
+	Standard type values are music, words, and arrangement, but
+	other types may be used. The type attribute is only needed
+	when there are multiple rights elements.
 -->
 <!ELEMENT rights (#PCDATA)>
 <!ATTLIST rights

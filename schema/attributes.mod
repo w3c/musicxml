@@ -88,16 +88,15 @@
 	elements, a cancel location of before-barline should be
 	treated like a cancel location of left.
 	
-	Non-traditional key signatures can be represented using
-	the Humdrum/Scot concept of a list of altered tones.
-	The key-step and key-alter elements are represented the
-	same way as the step and alter elements are in the pitch
-	element in the note.mod file. The optional key-accidental 
-	element is represented the same way as the accidental 
-	element in the note.mod file. It is used for disambiguating 
-	microtonal accidentals. The different element names
-	indicate the different meaning of altering notes in a scale
-	versus altering a sounding pitch.
+	Non-traditional key signatures are represented using a list
+	of altered tones. The key-step and key-alter elements are
+	represented the same way as the step and alter elements are
+	in the pitch element in the note.mod file. The optional
+	key-accidental element is represented the same way as the
+	accidental element in the note.mod file. It is used for
+	disambiguating microtonal accidentals. The different element
+	names indicate the different meaning of altering notes in a
+	scale versus altering a sounding pitch.
 	
 	Valid mode values include major, minor, dorian, phrygian,
 	lydian, mixolydian, aeolian, ionian, locrian, and none.
@@ -232,7 +231,7 @@
 	The part-symbol element indicates how a symbol for a
 	multi-staff part is indicated in the score. Values include
 	none, brace, line, bracket, and square; brace is the default.
-	The top-staff and bottom-staff elements are used when the
+	The top-staff and bottom-staff attributes are used when the
 	brace does not extend across the entire part. For example, in
 	a 3-staff organ part, the top-staff will typically be 1 for
 	the right hand, while the bottom-staff will typically be 2
@@ -337,7 +336,7 @@
 	staff provides more information to an application reading a
 	file than encoding the same music in separate parts, so its
 	use is preferred in this situation if feasible. A regular
-	staff is the standard default staff-stype.
+	staff is the standard default staff-type.
 	
 	The staff-lines element specifies the number of lines and
 	is usually used for a non 5-line staff. If the staff-lines
@@ -528,10 +527,10 @@
 	Directives are like directions, but can be grouped together 
 	with attributes for convenience. This is typically used for
 	tempo markings at the beginning of a piece of music. This
-	element has been deprecated in Version 2.0 in favor of
-	the directive attribute for direction elements. Language 
-	names come from ISO 639, with optional country subcodes
-	from ISO 3166.
+	element was deprecated in Version 2.0 in favor of the
+	direction element's directive attribute. Language names
+	come from ISO 639, with optional country subcodes from
+	ISO 3166.
 -->
 <!ELEMENT directive (#PCDATA)>
 <!ATTLIST directive
@@ -545,7 +544,7 @@
 	rests over several measures, repeats of beats, single, or
 	multiple measures, and use of slash notation.
 	
-	The multiple-rest and measure-repeat symbols indicate the
+	The multiple-rest and measure-repeat elements indicate the
 	number of measures covered in the element content. The
 	beat-repeat and slash elements can cover partial measures.
 	All but the multiple-rest element use a type attribute to 
@@ -612,10 +611,10 @@
 	specifies the number of slashes to use in the repeat sign.
 	It is 1 if not specified. 
 	
-	The stop attribute indicates the first measure where the 
-	repeats are no longer displayed. Both the start and the
-	stop of the measure-repeat should be specified unless the
-	repeats are displayed through the end of the part.
+	The stop type indicates the first measure where the repeats
+	are no longer displayed. Both the start and the stop of the
+	measure-repeat should be specified unless the repeats are
+	displayed through the end of the part.
 -->
 <!ELEMENT measure-repeat (#PCDATA)>
 <!ATTLIST measure-repeat
@@ -629,13 +628,13 @@
 	attribute specifies the number of slashes to use in the 
 	symbol. The use-dots attribute indicates whether or not to
 	use dots as well (for instance, with mixed rhythm patterns).
-	By default, the value for slashes is 1 and the value for
-	use-dots is no.
+	The value for slashes is 1 and the value for use-dots is no
+	if not specified.
 	
-	The stop attribute indicates the first beat where the
-	repeats are no longer displayed. Both the start and stop
-	of the beat being repeated should be specified unless the
-	repeats are displayed through the end of the part.
+	The stop type indicates the first beat where the repeats
+	are no longer displayed. Both the start and stop of the
+	beat being repeated should be specified unless the repeats
+	are displayed through the end of the part.
 	
 -->
 <!ELEMENT beat-repeat ((slash-type, slash-dot*)?, except-voice*)>

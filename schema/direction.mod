@@ -53,11 +53,12 @@
 <!--
 	A direction is a musical indication that is not necessarily
 	attached to a specific note. Two or more may be combined to
-	indicate starts and stops of wedges, dashes, etc. For
-	applications where a specific direction is indeed attached
-	to a specific note, the direction element can be associated
-	with the note element that follows it in score order that
-	is not in a different voice.
+	indicate words followed by the start of a dashed line, the
+	end of a wedge followed by dynamics, etc. For applications
+	where a specific direction is indeed attached to a specific
+	note, the direction element can be associated with the first
+	note element that follows it in score order that is not in a
+	different voice.
 
 	By default, a series of direction-type elements and a 
 	series of child elements of a direction-type within a 
@@ -99,9 +100,9 @@
 <!--
 	The rehearsal element specifies letters, numbers, and 
 	section names that are notated in the score for reference
-	during rehearsal. The enclosure is square by default. The
-	language is Italian ("it") by default. Left justification
-	is assumed if not specified.
+	during rehearsal. The enclosure is square if not specified.
+	The language is Italian ("it") if not specified. Left
+	justification is used if not specified.
 -->
 <!ELEMENT rehearsal (#PCDATA)>
 <!ATTLIST rehearsal
@@ -111,8 +112,9 @@
 
 <!--
 	The words element specifies a standard text direction. The
-	enclosure is none by default. The language is Italian ("it")
-	by default. Left justification is assumed if not specified. 
+	enclosure is none if not specified. The language is Italian
+	("it") if not specified. Left justification is used if not
+	specified. 
 -->
 <!ELEMENT words (#PCDATA)>
 <!ATTLIST words
@@ -125,8 +127,8 @@
 	canonical SMuFL glyph name. It is used when an occasional
 	musical symbol is interspersed into text. It should not be
 	used in place of semantic markup, such as metronome marks
-	that mix text and symbols. Left justification is assumed
-	if not specified. Enclosure is none by default.
+	that mix text and symbols. Left justification is used if
+	not specified. Enclosure is none if not specified.
 -->
 <!ELEMENT symbol (#PCDATA)>
 <!ATTLIST symbol
@@ -144,9 +146,9 @@
 	a crescendo from nothing or diminuendo to nothing. It is 
 	no by default, and used only when the type is crescendo,
 	or the type is stop for a wedge that began with a diminuendo
-	type. The line-type is solid by default. The continue type 
-	is used for formatting wedges over a system break, or for
-	other situations where a single wedge is divided into
+	type. The line-type is solid if not specified. The continue
+	type is used for formatting wedges over a system break, or
+	for other situations where a single wedge is divided into
 	multiple segments.
 -->
 <!ELEMENT wedge EMPTY>
@@ -182,7 +184,7 @@
 	or nothing at the start or end of the bracket. If
 	the line-end is up or down, the length of the jog
 	can be specified using the end-length attribute.
-	The line-type is solid by default.
+	The line-type is solid if not specified.
 -->
 <!ELEMENT bracket EMPTY>
 <!ATTLIST bracket
@@ -198,27 +200,28 @@
 >
 
 <!-- 
-	The pedal element represents piano pedal marks. Starting
-	with MusicXML 3.1 this includes sostenuto as well as damper
-	pedal marks. The start type indicates the start of a damper
-	pedal, while the sostenuto type indicates the start of a
-	sostenuto pedal. The other types can be used with either the
-	damper or sostenuto pedal. The soft pedal is not included
-	here because there is no special symbol or graphic used for
-	it beyond what can be specified with words and bracket
-	elements.
+	The pedal element represents piano pedal marks, including
+	damper and sostenuto pedal marks. The soft pedal is not
+	included here because there is no special symbol or graphic
+	used for it beyond what can be specified with words and
+	bracket elements.
+	
+	The start type indicates the start of a damper pedal, while
+	the sostenuto type indicates the start of a sostenuto pedal.
+	The other types can be used with either the damper or
+	sostenuto pedal.
 
 	The line attribute is yes if pedal lines are used. The sign
 	attribute is yes if Ped, Sost, and * signs are used. For
-	MusicXML 2.0 compatibility, the sign attribute is yes by
-	default if the line attribute is no, and is no by default
+	compatibility with older versions, the sign attribute is yes
+	by default if the line attribute is no, and is no by default
 	if the line attribute is yes. If the sign attribute is set
 	to yes and the type is start or sostenuto, the abbreviated
 	attribute is yes if the short P and S signs are used, and
 	no if the full Ped and Sost signs are used. It is no by
 	default. Otherwise the abbreviated attribute is ignored.
-	The alignment attributes are ignored if the line attribute
-	is yes.
+	The alignment attributes are ignored if the sign attribute
+	is no.
 
 	The change, continue, discontinue, and resume types are used
 	when the line attribute is yes. The change type indicates a
@@ -455,7 +458,7 @@
 >
 
 <!--
-	The accordion-registration element is use for accordion
+	The accordion-registration element is used for accordion
 	registration symbols. These are circular symbols divided
 	horizontally into high, middle, and low sections that
 	correspond to 4', 8', and 16' pipes. Each accordion-high,
@@ -693,10 +696,9 @@
 <!-- Harmony -->
 
 <!--
-	The harmony elements are based on Humdrum's **harm
-	encoding, extended to support chord symbols in popular
-	music as well as functional harmony analysis in classical
-	music.
+	The harmony element represents harmony analysis, including
+	chord symbols in popular music as well as functional harmony
+	analysis in classical music.
 	
 	If there are alternate harmonies possible, this can be
 	specified using multiple harmony elements differentiated
@@ -704,13 +706,12 @@
 	music; implied have some notes missing but implied;
 	alternate represents alternate analyses. 
 	
-	The harmony object may be used for analysis or for
-	chord symbols. The print-object attribute controls
-	whether or not anything is printed due to the harmony
-	element. The print-frame attribute controls printing
-	of a frame or fretboard diagram. The print-style entity
-	sets the default for the harmony, but individual elements
-	can override this with their own print-style values.
+	The print-object attribute controls whether or not anything
+	is printed due to the harmony element. The print-frame
+	attribute controls printing of a frame or fretboard diagram.
+	The print-style entity sets the default for the harmony,
+	but individual elements can override this with their own
+	print-style values.
 	
 	A harmony element can contain many stacked chords (e.g.
 	V of II). A sequence of harmony-chord entities is used for
@@ -759,7 +760,7 @@
 	attribute of the root-alter element can be set to no.
 	The root-alter location attribute indicates whether
 	the alteration should appear to the left or the right
-	of the root-step; it is right by default.
+	of the root-step; it is right if not specified.
 -->
 <!ELEMENT root (root-step, root-alter?)>
 <!ELEMENT root-step (#PCDATA)>
@@ -832,7 +833,7 @@
 <!ELEMENT numeral-mode (#PCDATA)>
 
 <!--
-	The function element represents classical functional
+    The function element represents classical functional
 	harmony with an indication like I, II, III rather than
 	C, D, E. It represents the Roman numeral part of a
 	functional harmony rather than the complete function
@@ -898,10 +899,11 @@
 	composed of add elements. 
 	
 	The "none" kind is used to explicitly encode absence of
-	chords or functional harmony. In this case, the root or
-	function element has no meaning. When using the root
-	element, the root-step text attribute should be set to
-	the empty string to keep the root from being displayed.
+	chords or functional harmony. In this case, the root,
+	numeral, or function element has no meaning. When using
+	the root or numeral element, the root-step or numeral-step
+	text attribute should be set to the empty string to keep
+	the root or numeral from being displayed.
 
 	The attributes are used to indicate the formatting
 	of the symbol. Since the kind element is the constant
@@ -1017,14 +1019,14 @@
 	the kind element. The plus-minus attribute is used to
 	indicate if plus and minus symbols should be used
 	instead of sharp and flat symbols to display the degree
-	alteration; it is no by default. 
+	alteration. It is no if not specified. 
 
 	The degree-value and degree-type text attributes specify
-	how the value and type of the degree should be displayed
-	in a score. The degree-value symbol attribute indicates
-	that a symbol should be used in specifying the degree.
-	If the symbol attribute is present, the value of the text
-	attribute follows the symbol. 
+	how the value and type of the degree should be displayed.
+	The degree-value symbol attribute indicates that a symbol
+	should be used in specifying the degree. If the symbol
+	attribute is present, the value of the text attribute
+	follows the symbol. 
 	
 	A harmony of kind "other" can be spelled explicitly by
 	using a series of degree elements together with a root.
@@ -1174,7 +1176,7 @@
 	should be used instead. If both are present, the
 	staff-layout values take priority.
 
-	Common-layout entity elements in a print statement only
+	Common-layout entity elements in a print element only
 	apply to the current page, system, or staff. Music that
 	follows continues to take the default values from the
 	layout determined by the defaults element.
@@ -1354,8 +1356,8 @@
 	sound for a given score-instrument. The id attribute refers
 	to the score-instrument affected by the change. The
 	virtual-instrument-data entity is defined in the common.mod
-	file. All members of the instrument-change element can also
-	be initially specified within the score-instrument element.
+	file. All instrument-change child elements can also be
+	initially specified within the score-instrument element.
 -->
 <!ELEMENT instrument-change %virtual-instrument-data;>
 <!ATTLIST instrument-change
