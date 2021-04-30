@@ -98,7 +98,7 @@
 	multiple endings such as "1, 2" may be used. The ending
 	element text is used when the text displayed in the ending
 	is different than what appears in the number attribute. The
-	print-object element is used to indicate when an ending is
+	print-object attribute is used to indicate when an ending is
 	present but not printed, as is often the case for many parts
 	in a full score.
 -->
