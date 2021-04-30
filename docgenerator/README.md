@@ -44,16 +44,16 @@ same directory that contains this README file.
 1. Install Python 3.7 or higher.
 
 2. (Optional but recommended) Create a Python virtual environment.
-Here's how to create one called `mnxdocs` in your home directory:
+Here's how to create one called `musicxmldocs` in your home directory:
 
 ```
-python3 -m venv ~/mnxdocs
+python3 -m venv ~/musicxmldocs
 ```
 
 3. Activate the virtual environment:
 
 ```
-source ~/mnxdocs/bin/activate
+source ~/musicxmldocs/bin/activate
 ```
 
 4. Install the required Python modules:
@@ -89,7 +89,7 @@ python manage.py runserver
 ```
 
 2. Go to http://127.0.0.1:8000/ in your web browser.
-You'll be able to browse the MNX documentation.
+You'll be able to browse the MusicXML documentation.
 
 ## Editing the documentation
 
