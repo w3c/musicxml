@@ -99,11 +99,11 @@
             <li>Alternate notehead shapes let multiple instruments to share a single line on the staff.</li>
         </ul>
         <h2 id="unpitched">Unpitched Notes</h2>
-        <p>To illustrate MusicXML's percussion features, here is a <a href="/musicxml-reference/examples/tutorial-percussion/">two-bar example</a> for two players: one on a drum kit, and one on cowbell:</p>
-        <p><img src="/static/tutorial/percussion.png"/></p>
+        <p>To illustrate MusicXML's percussion features, here is a <a href="../../musicxml-reference/examples/tutorial-percussion/">two-bar example</a> for two players: one on a drum kit, and one on cowbell:</p>
+        <p><img src="../../static/tutorial/percussion.png"/></p>
         <p>In the drum part, the top space (B in bass clef) is used for the cymbal (diamond notehead) and hi-hat (x notehead). The E space is used for the snare drum, and the bottom A space is used for the bass drum. The cowbell player has only one instrument, so it is represented on a one-line staff.</p>
-        <p>Since these notes have no definite pitch, it would be misleading to represent them using the <a href="/musicxml-reference/elements/pitch/">&lt;pitch&gt;</a> element. An analysis program looking for a series of repeated B's should not return this piece of music. Neither should a program looking for a series of repeated F-sharps, based on the General MIDI pitch for a closed hi-hat.</p>
-        <p>Instead, we represent percussion and other unpitched instruments with the <a href="/musicxml-reference/elements/unpitched/">&lt;unpitched&gt;</a> element. As with rests, there are <a href="/musicxml-reference/elements/display-step/">&lt;display-step&gt;</a> and <a href="/musicxml-reference/elements/display-octave/">&lt;display-octave&gt;</a> elements to indicate where the note should appear on the staff, based on the current clef. So the cymbal and hi-hat notes on this bass clef staff are represented as:</p>
+        <p>Since these notes have no definite pitch, it would be misleading to represent them using the <a href="../../musicxml-reference/elements/pitch/">&lt;pitch&gt;</a> element. An analysis program looking for a series of repeated B's should not return this piece of music. Neither should a program looking for a series of repeated F-sharps, based on the General MIDI pitch for a closed hi-hat.</p>
+        <p>Instead, we represent percussion and other unpitched instruments with the <a href="../../musicxml-reference/elements/unpitched/">&lt;unpitched&gt;</a> element. As with rests, there are <a href="../../musicxml-reference/elements/display-step/">&lt;display-step&gt;</a> and <a href="../../musicxml-reference/elements/display-octave/">&lt;display-octave&gt;</a> elements to indicate where the note should appear on the staff, based on the current clef. So the cymbal and hi-hat notes on this bass clef staff are represented as:</p>
         <p><pre xml:space="preserve">        &lt;unpitched&gt;
           &lt;display-step&gt;B&lt;/display-step&gt;
           &lt;display-octave&gt;3&lt;/display-octave&gt;
@@ -114,7 +114,7 @@
           &lt;display-octave&gt;5&lt;/display-octave&gt;
         &lt;/unpitched&gt;</pre></p>
         <h2 id="staff-lines">Staff Lines</h2>
-        <p>The cowbell part is an example where one player has one instrument, so the part is notated on one line both for clarity and saving space. The single line is specified within the <a href="/musicxml-reference/elements/attributes/">&lt;attributes&gt;</a> element for the part:</p>
+        <p>The cowbell part is an example where one player has one instrument, so the part is notated on one line both for clarity and saving space. The single line is specified within the <a href="../../musicxml-reference/elements/attributes/">&lt;attributes&gt;</a> element for the part:</p>
         <p><pre xml:space="preserve">      &lt;attributes&gt;
         &lt;divisions&gt;2&lt;/divisions&gt;
         &lt;key&gt;
@@ -138,8 +138,8 @@
           &lt;display-octave&gt;4&lt;/display-octave&gt;
         &lt;/unpitched&gt;</pre></p>
         <h2 id="multiple-instruments-per-part">Multiple Instruments Per Part</h2>
-        <p>Percussion parts are one case of many where multiple instruments are sharing the same part. This is represented in MusicXML by including more than one <a href="/musicxml-reference/elements/score-instrument/">&lt;score-instrument&gt;</a> element within a <a href="/musicxml-reference/elements/score-part/">&lt;score-part&gt;</a>. Each note can then contain an <a href="/musicxml-reference/elements/instrument/">&lt;instrument&gt;</a> element that refers back to the id of the &lt;score-instrument&gt;. Note that the &lt;score-instrument&gt; id must be unique throughout the entire piece. Two &lt;score-part&gt; elements cannot each have a &lt;score-instrument&gt; element with the same id.</p>
-        <p>To represent MIDI playback for each instrument, we add a <a href="/musicxml-reference/elements/midi-instrument/">&lt;midi-instrument&gt;</a> element for each &lt;score-instrument&gt;. In this case, we are using a General MIDI instrument, so we include a <a href="/musicxml-reference/elements/midi-channel/">&lt;midi-channel&gt;</a> of 10 for each instrument. We then use the <a href="/musicxml-reference/elements/midi-unpitched/">&lt;midi-unpitched&gt;</a> element to indicate the MIDI pitch that corresponds to a particular sound in a General MIDI drum kit.</p>
+        <p>Percussion parts are one case of many where multiple instruments are sharing the same part. This is represented in MusicXML by including more than one <a href="../../musicxml-reference/elements/score-instrument/">&lt;score-instrument&gt;</a> element within a <a href="../../musicxml-reference/elements/score-part/">&lt;score-part&gt;</a>. Each note can then contain an <a href="../../musicxml-reference/elements/instrument/">&lt;instrument&gt;</a> element that refers back to the id of the &lt;score-instrument&gt;. Note that the &lt;score-instrument&gt; id must be unique throughout the entire piece. Two &lt;score-part&gt; elements cannot each have a &lt;score-instrument&gt; element with the same id.</p>
+        <p>To represent MIDI playback for each instrument, we add a <a href="../../musicxml-reference/elements/midi-instrument/">&lt;midi-instrument&gt;</a> element for each &lt;score-instrument&gt;. In this case, we are using a General MIDI instrument, so we include a <a href="../../musicxml-reference/elements/midi-channel/">&lt;midi-channel&gt;</a> of 10 for each instrument. We then use the <a href="../../musicxml-reference/elements/midi-unpitched/">&lt;midi-unpitched&gt;</a> element to indicate the MIDI pitch that corresponds to a particular sound in a General MIDI drum kit.</p>
         <p>The part-list for our two-bar example looks like this:</p>
         <p><pre xml:space="preserve">  &lt;part-list&gt;
     &lt;score-part id="P1"&gt;
@@ -204,7 +204,7 @@
         <p>Finale creates these instrument names like "P1-X2" to make it easy to generate unique names for each score instrument. It would be better to use more readable names that are still unique across the entire piece.</p>
         <h2 id="notehead-shapes">Notehead Shapes</h2>
         <p>The one remaining task is to specify the alternate noteheads that distinguish the hi-hat from the cymbal. While the MusicXML playback can distinguish these by the use of different instruments, a drummer will certainly appreciate having different notehead shapes for different instruments on the same line.</p>
-        <p>The MusicXML <a href="/musicxml-reference/elements/notehead/">&lt;notehead&gt;</a> element specifies these different shapes. Values can be slash, triangle, diamond, square, cross, x, circle-x, normal, cluster, inverted triangle, arrow down, arrow up, slashed, back slashed, do, re, mi, fa, so, la, ti, and none. Enclosed shapes like normal, diamond, triangle, and square can use the filled attribute to indicate a filled or hollow shape. The first two notes of the cymbal/hi-hat line look like this:</p>
+        <p>The MusicXML <a href="../../musicxml-reference/elements/notehead/">&lt;notehead&gt;</a> element specifies these different shapes. Values can be slash, triangle, diamond, square, cross, x, circle-x, normal, cluster, inverted triangle, arrow down, arrow up, slashed, back slashed, do, re, mi, fa, so, la, ti, and none. Enclosed shapes like normal, diamond, triangle, and square can use the filled attribute to indicate a filled or hollow shape. The first two notes of the cymbal/hi-hat line look like this:</p>
         <p><pre xml:space="preserve">      &lt;note default-x="78"&gt;
         &lt;unpitched&gt;
           &lt;display-step&gt;B&lt;/display-step&gt;
@@ -233,14 +233,14 @@
       &lt;/note&gt;</pre></p>
         <p>The filled attribute on the &lt;notehead&gt; element is also useful for multi-part piano music. There are many cases where, for instance, a downstem half note shares a hollow notehead with an upstem eighth note. The eighth note can specify that it uses an unfilled normal notehead, making things display correctly when moving back and forth between notation programs.</p>
         <h2 id="measure-styles">Measure Styles</h2>
-        <p>Our cowbell part also shows the use of a one-bar repeat symbol. This and similar repeats and multimeasure rests are represented using the <a href="/musicxml-reference/elements/measure-style/">&lt;measure-style&gt;</a> element. The music in the second bar should be specified just as in the first bar (four notes with display-step E, display-octave 4, and instrument P2-X1). At the start of the bar, we indicate the beginning of the one-measure repeat style:</p>
+        <p>Our cowbell part also shows the use of a one-bar repeat symbol. This and similar repeats and multimeasure rests are represented using the <a href="../../musicxml-reference/elements/measure-style/">&lt;measure-style&gt;</a> element. The music in the second bar should be specified just as in the first bar (four notes with display-step E, display-octave 4, and instrument P2-X1). At the start of the bar, we indicate the beginning of the one-measure repeat style:</p>
         <p><pre xml:space="preserve">    &lt;measure number="2"&gt;
       &lt;attributes&gt;
         &lt;measure-style&gt;
           &lt;measure-repeat type="start"&gt;1&lt;/measure-repeat&gt;
         &lt;/measure-style&gt;
       &lt;/attributes&gt;</pre><p>
-        <p>Further details about the &lt;measure-style&gt; element can be found in the <a href="/musicxml-reference/elements/measure-style/">reference documentation</a>.</p>
+        <p>Further details about the &lt;measure-style&gt; element can be found in the <a href="../../musicxml-reference/elements/measure-style/">reference documentation</a>.</p>
 
     </main>
 </div>

@@ -92,7 +92,7 @@
 
 <p>In MusicXML, a song with the lyrics "hello, world" is actually more complicated than we need for a simple MusicXML file. Let us keep things even simpler: a one-measure piece of music that contains a whole note on middle C, based in 4/4 time:</p>
 
-<p><img src="/static/tutorial/hello-world.png" /></p>
+<p><img src="../../static/tutorial/hello-world.png" /></p>
 
 <p>Here it is in MusicXML:</p>
 
@@ -150,7 +150,7 @@
 
 <p><pre>&lt;score-partwise version="4.0"&gt;</pre></p>
 
-<p>This is the root document type. The <a href="/musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a> element is made up of parts, where each part is made up of measures. There is also a <a href="/musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a> option which is made up of measures, where each measure is made up of parts. The version attribute lets programs distinguish what version of MusicXML is being used more easily. Leave it out if you are writing MusicXML 1.0 files.</p>
+<p>This is the root document type. The <a href="../../musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a> element is made up of parts, where each part is made up of measures. There is also a <a href="../../musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a> option which is made up of measures, where each measure is made up of parts. The version attribute lets programs distinguish what version of MusicXML is being used more easily. Leave it out if you are writing MusicXML 1.0 files.</p>
 
 <p><pre>  &lt;part-list&gt;
     &lt;score-part id="P1"&gt;
@@ -158,7 +158,7 @@
     &lt;/score-part&gt;
   &lt;/part-list&gt;</pre></p>
 
-<p>Whether you have a partwise or timewise score, a MusicXML file starts off with a header that lists the different musical parts in the score. The above example is the minimal part-list possible: it contains one <a href="/musicxml-reference/elements/score-part/">&lt;score-part&gt;</a> element, the required id attribute for the score-part, and the required <a href="/musicxml-reference/elements/part-name/">&lt;part-name&gt;</a> element.</p>
+<p>Whether you have a partwise or timewise score, a MusicXML file starts off with a header that lists the different musical parts in the score. The above example is the minimal part-list possible: it contains one <a href="../../musicxml-reference/elements/score-part/">&lt;score-part&gt;</a> element, the required id attribute for the score-part, and the required <a href="../../musicxml-reference/elements/part-name/">&lt;part-name&gt;</a> element.</p>
 
 <p><pre>  &lt;part id="P1"&gt;</pre></p>
 
@@ -170,11 +170,11 @@
 
 <p><pre>      &lt;attributes&gt;</pre></p>
 
-<p>The <a href="/musicxml-reference/elements/attributes/">&lt;attributes&gt;</a> element contains key information needed to interpret the notes and musical data that follow in this part.</p>
+<p>The <a href="../../musicxml-reference/elements/attributes/">&lt;attributes&gt;</a> element contains key information needed to interpret the notes and musical data that follow in this part.</p>
 
 <p><pre>        &lt;divisions&gt;1&lt;/divisions&gt;</pre></p>
 
-<p>Each note in MusicXML has a <a href="/musicxml-reference/elements/duration/">&lt;duration&gt;</a> element. The <a href="/musicxml-reference/elements/divisions/">&lt;divisions&gt;</a> element provides the unit of measure for the duration element in terms of divisions per quarter note. Since all we have in this file is one whole note, we never have to divide a quarter note, so we set the divisions value to 1.</p>
+<p>Each note in MusicXML has a <a href="../../musicxml-reference/elements/duration/">&lt;duration&gt;</a> element. The <a href="../../musicxml-reference/elements/divisions/">&lt;divisions&gt;</a> element provides the unit of measure for the duration element in terms of divisions per quarter note. Since all we have in this file is one whole note, we never have to divide a quarter note, so we set the divisions value to 1.</p>
 
 <p>Musical durations are typically expressed as fractions, such as "quarter" and "eighth" notes. MusicXML durations are fractions, too. Since the denominator rarely needs to change, it is represented separately in the divisions element, so that only the numerator needs to be associated with each individual note. This is similar to the scheme used in MIDI to represent note durations.</p>
 
@@ -182,14 +182,14 @@
           &lt;fifths&gt;0&lt;/fifths&gt;
         &lt;/key&gt;</pre></p>
 
-<p>The <a href="/musicxml-reference/elements/key/">&lt;key&gt;</a> element is used to represent a key signature. Here we are in the key of C major, with no flats or sharps, so the <a href="/musicxml-reference/elements/fifths/">&lt;fifths&gt;</a> element is 0. If we were in the key of D major with 2 sharps, fifths would be set to 2. If we were in the key of F major with 1 flat, fifths would be set to -1. The name "fifths" comes from the representation of a key signature along the circle of fifths. It lets us represent standard key signatures with one element, instead of separate elements for sharps and flats.</p>
+<p>The <a href="../../musicxml-reference/elements/key/">&lt;key&gt;</a> element is used to represent a key signature. Here we are in the key of C major, with no flats or sharps, so the <a href="../../musicxml-reference/elements/fifths/">&lt;fifths&gt;</a> element is 0. If we were in the key of D major with 2 sharps, fifths would be set to 2. If we were in the key of F major with 1 flat, fifths would be set to -1. The name "fifths" comes from the representation of a key signature along the circle of fifths. It lets us represent standard key signatures with one element, instead of separate elements for sharps and flats.</p>
 
 <p><pre>        &lt;time&gt;
           &lt;beats&gt;4&lt;/beats&gt;
           &lt;beat-type&gt;4&lt;/beat-type&gt;
         &lt;/time&gt;</pre></p>
 
-<p>The <a href="/musicxml-reference/elements/time/">&lt;time&gt;</a> element represents a time signature. Its two component elements, <a href="/musicxml-reference/elements/beats/">&lt;beats&gt;</a> and <a href="/musicxml-reference/elements/beat-type/">&lt;beat-type&gt;</a>, are the numerator and denominator of the time signature, respectively.</p>
+<p>The <a href="../../musicxml-reference/elements/time/">&lt;time&gt;</a> element represents a time signature. Its two component elements, <a href="../../musicxml-reference/elements/beats/">&lt;beats&gt;</a> and <a href="../../musicxml-reference/elements/beat-type/">&lt;beat-type&gt;</a>, are the numerator and denominator of the time signature, respectively.</p>
 
 <p><pre>        &lt;clef&gt;
           &lt;sign&gt;G&lt;/sign&gt;
@@ -208,7 +208,7 @@
           &lt;octave>4&lt;/octave&gt;
         &lt;/pitch&gt;</pre></p>
 
-<p>The <a href="/musicxml-reference/elements/pitch/">&lt;pitch&gt;</a> element must have a <a href="/musicxml-reference/elements/step/">&lt;step&gt;</a> and an <a href="/musicxml-reference/elements/octave/">&lt;octave&gt;</a> element. Optionally it can have an <a href="/musicxml-reference/elements/alter/">&lt;alter&gt;</a> element, if there is a flat or sharp involved. These elements represent the pitch that is played, so the &lt;alter&gt; element must always be included if used, even if the alteration is in the key signature. In this case, we have no alteration. The pitch step is C. The octave of 4 indicates the octave that starts with middle C. Thus this note is a middle C.</p>
+<p>The <a href="../../musicxml-reference/elements/pitch/">&lt;pitch&gt;</a> element must have a <a href="../../musicxml-reference/elements/step/">&lt;step&gt;</a> and an <a href="../../musicxml-reference/elements/octave/">&lt;octave&gt;</a> element. Optionally it can have an <a href="../../musicxml-reference/elements/alter/">&lt;alter&gt;</a> element, if there is a flat or sharp involved. These elements represent the pitch that is played, so the &lt;alter&gt; element must always be included if used, even if the alteration is in the key signature. In this case, we have no alteration. The pitch step is C. The octave of 4 indicates the octave that starts with middle C. Thus this note is a middle C.</p>
 
 <p><pre>        &lt;duration&gt;4&lt;/duration&gt;</pre></p>
 
@@ -216,7 +216,7 @@
 
 <p><pre>        &lt;type&gt;whole&lt;/type&gt;</pre></p>
 
-<p>The <a href="/musicxml-reference/elements/type/">&lt;type&gt;</a> element tells us that this is notated as a whole note. You could probably derive this from the duration in this case, but it is much easier to work with both notation and performance applications if the notation and performance data is represented separately.</p>
+<p>The <a href="../../musicxml-reference/elements/type/">&lt;type&gt;</a> element tells us that this is notated as a whole note. You could probably derive this from the duration in this case, but it is much easier to work with both notation and performance applications if the notation and performance data is represented separately.</p>
 
 <p>In any event, the performance and notation data do not always match in practice. For example, Bach's music contains examples of shorthand notation where the actual note durations do not match the standard interpretation of the notes on the page, due to his use of a notational shorthand for certain rhythms.</p>
 

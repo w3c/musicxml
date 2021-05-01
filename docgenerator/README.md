@@ -114,7 +114,7 @@ We don't actually check in the SQLite database to Git.
 Instead, we serialize the data in two ways:
 
 1. The raw data itself lives in a JSON file called
-`musicxmldata.json` within this directory.
+`musicxmldoc.json` within this directory.
 
 2. The generated HTML of the whole website lives
 in the top-level `docs` of this Git repo.
@@ -124,13 +124,13 @@ We use two separate commands to generate this.
 ### Serializing the database
 
 To serialize the database, hence creating an updated
-`musicxmldata.json`, do the following:
+`musicxmldoc.json`, do the following:
 
 ```
-python manage.py freezedb musicxmldata.json
+python manage.py freezedb musicxmldoc.json
 ```
 
-(The `musicxmldata.json` in this command lets you 
+(The `musicxmldoc.json` in this command lets you 
 specify the filename.)
 
 ### Generating a static HTML version of the docs
@@ -173,12 +173,12 @@ on your local machine.
 
 ## Updating your local database with the latest changes
 
-Over time, we update the `musicxmldata.json` file with the
+Over time, we update the `musicxmldoc.json` file with the
 latest and greatest documentation. To update your local
 DB, use this command:
 
 ```
-python manage.py loaddb musicxmldata.json
+python manage.py loaddb musicxmldoc.json
 ```
 
 WARNING: This will delete any local changes you've made
@@ -192,15 +192,15 @@ here's our suggested workflow:
 1. Make sure your Git checkout is using the latest commit
 from the `master` branch.
 
-2. Update your local database with the latest `musicxmldata.json`
+2. Update your local database with the latest `musicxmldoc.json`
 (see above).
 
 3. Run the local web server and make (and preview) your changes.
 
 4. When you're ready to share, use `freezedb` to generate
-a new `musicxmldata.json` file.
+a new `musicxmldoc.json` file.
 
-5. Create a pull request with that new `musicxmldata.json` file.
+5. Create a pull request with that new `musicxmldoc.json` file.
 Due to pretty-printing of the JSON, it should be reasonably
 comprehensible to view a `diff` between your file and the
 master file.
