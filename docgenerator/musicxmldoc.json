@@ -13250,7 +13250,7 @@
         "base_element": 43,
         "is_abstract_element": false,
         "is_root": false,
-        "description": "<img src=\"../../../static/elements/chord.png\"/>\r\nThe &lt;chord&gt; element indicates that this note is an additional chord tone with the preceding note. The duration of this note can be no longer than the preceding note.",
+        "description": "<img src=\"../../../static/elements/chord.png\"/>\r\nThe &lt;chord&gt; element indicates that this note is an additional chord tone with the preceding note.\r\n\r\nThe &lt;duration&gt; of a &lt;chord&gt; note does not move the musical position within a &lt;measure&gt;. That is done by the &lt;duration&gt; of the first previous note without a &lt;chord&gt; element. Thus the &lt;duration&gt; of a &lt;chord&gt; note cannot be longer than the preceding note.\r\n\r\nIn most cases the &lt;duration&gt; will be the same as the preceding note. However it can be shorter in situations such as multiple stops for string instruments. Here is an example from Mozart's Concerto No. 3 for Violin, K. 216:\r\n<img src=\"../../../static/elements/chord-multiple-stop.png\"/>\r\nIf these first three notes are represented as a chord, the quarter notes must be the ones with the &lt;chord&gt; element.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -13700,7 +13700,7 @@
         "base_element": null,
         "is_abstract_element": false,
         "is_root": false,
-        "description": "Duration is a positive number specified in division units. The &lt;duration&gt; element represents the intended duration vs. the notated duration (for instance, differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should use the &lt;note&gt; element's attack and release attributes.",
+        "description": "Duration is a positive number specified in division units. The &lt;duration&gt; element represents the intended duration vs. the notated duration (for instance, differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should be represented using the &lt;note&gt; element's attack and release attributes.\r\n\r\nThe &lt;duration&gt; element moves the musical position when used in &lt;backup&gt; elements, &lt;forward&gt; elements, and &lt;note&gt; elements that do not contain a &lt;chord&gt; child element.",
         "content_data_type": 55,
         "is_featured": false,
         "children_type": 1,
@@ -41325,6 +41325,19 @@
     }
 },
 {
+    "model": "spec.exampledocument",
+    "pk": 208,
+    "fields": {
+        "name": "<chord> (Multiple Stop)",
+        "slug": "chord-element-multiple-stop",
+        "schema": 1,
+        "blurb": "Note that the half note with a <duration> of 8 must precede the <chord> quarter notes with a <duration> of 4. The first 16th note follows after the <duration> of the main note, not the shorter <duration> of the <chord> notes.",
+        "document": "<measure number=\"5\">\r\n      <note>\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <metadiff><duration>8</duration></metadiff>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem default-y=\"-73\">down</stem>\r\n      </note>\r\n      <note>\r\n        <metadiff><chord/></metadiff>\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <metadiff><duration>4</duration></metadiff>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem>down</stem>\r\n      </note>\r\n      <note>\r\n        <metadiff><chord/></metadiff>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <metadiff><duration>4</duration></metadiff>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n      </note>\r\n      <note>\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>16th</type>\r\n        <stem default-y=\"-35\">down</stem>\r\n        <beam number=\"1\">begin</beam>\r\n        <beam number=\"2\">begin</beam>\r\n        <notations>\r\n          <slur bezier-x=\"8\" bezier-y=\"6\" default-x=\"6\" default-y=\"20\" number=\"1\" placement=\"above\" type=\"start\"/>\r\n        </notations>\r\n      </note>\r\n      <note>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>16th</type>\r\n        <stem default-y=\"-35\">down</stem>\r\n        <beam number=\"1\">continue</beam>\r\n        <beam number=\"2\">continue</beam>\r\n        <notations>\r\n          <slur bezier-x=\"-4\" bezier-y=\"9\" default-x=\"6\" default-y=\"15\" number=\"1\" type=\"stop\"/>\r\n        </notations>\r\n      </note>\r\n      <note>\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>16th</type>\r\n        <stem default-y=\"-35\">down</stem>\r\n        <beam number=\"1\">continue</beam>\r\n        <beam number=\"2\">continue</beam>\r\n        <notations>\r\n          <articulations>\r\n            <staccato default-x=\"4\" default-y=\"10\" placement=\"above\"/>\r\n          </articulations>\r\n        </notations>\r\n      </note>\r\n      <note>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>16th</type>\r\n        <stem default-y=\"-35\">down</stem>\r\n        <beam number=\"1\">end</beam>\r\n        <beam number=\"2\">end</beam>\r\n        <notations>\r\n          <articulations>\r\n            <staccato default-x=\"4\" default-y=\"15\" placement=\"above\"/>\r\n          </articulations>\r\n        </notations>\r\n      </note>\r\n      <note>\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>16th</type>\r\n        <stem default-y=\"-25\">down</stem>\r\n        <beam number=\"1\">begin</beam>\r\n        <beam number=\"2\">begin</beam>\r\n        <notations>\r\n          <slur bezier-x=\"5\" bezier-y=\"9\" default-x=\"7\" default-y=\"20\" number=\"1\" placement=\"above\" type=\"start\"/>\r\n        </notations>\r\n      </note>\r\n      <note>\r\n        <pitch>\r\n          <step>B</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>16th</type>\r\n        <stem default-y=\"-25\">down</stem>\r\n        <beam number=\"1\">continue</beam>\r\n        <beam number=\"2\">continue</beam>\r\n        <notations>\r\n          <slur bezier-x=\"-9\" bezier-y=\"6\" default-x=\"7\" default-y=\"25\" number=\"1\" type=\"stop\"/>\r\n        </notations>\r\n      </note>\r\n      <note>\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>16th</type>\r\n        <stem default-y=\"-25\">down</stem>\r\n        <beam number=\"1\">continue</beam>\r\n        <beam number=\"2\">continue</beam>\r\n        <notations>\r\n          <slur bezier-x=\"5\" bezier-y=\"9\" default-x=\"6\" default-y=\"20\" number=\"1\" placement=\"above\" type=\"start\"/>\r\n        </notations>\r\n      </note>\r\n      <note>\r\n        <pitch>\r\n          <step>B</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>16th</type>\r\n        <stem default-y=\"-25\">down</stem>\r\n        <beam number=\"1\">end</beam>\r\n        <beam number=\"2\">end</beam>\r\n        <notations>\r\n          <slur bezier-x=\"-9\" bezier-y=\"6\" default-x=\"6\" default-y=\"25\" number=\"1\" type=\"stop\"/>\r\n        </notations>\r\n      </note>\r\n    </measure>",
+        "image_url": "/static/examples/chord-element-multiple-stop.png",
+        "is_featured": false
+    }
+},
+{
     "model": "spec.exampledocumentelement",
     "pk": 1,
     "fields": {
@@ -55658,6 +55671,134 @@
     "fields": {
         "example": 207,
         "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1921,
+    "fields": {
+        "example": 208,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1922,
+    "fields": {
+        "example": 208,
+        "element_name": "chord"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1923,
+    "fields": {
+        "example": 208,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1925,
+    "fields": {
+        "example": 208,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1926,
+    "fields": {
+        "example": 208,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1929,
+    "fields": {
+        "example": 208,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1930,
+    "fields": {
+        "example": 208,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1931,
+    "fields": {
+        "example": 208,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1935,
+    "fields": {
+        "example": 208,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1936,
+    "fields": {
+        "example": 208,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1937,
+    "fields": {
+        "example": 208,
+        "element_name": "staccato"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1938,
+    "fields": {
+        "example": 208,
+        "element_name": "slur"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1939,
+    "fields": {
+        "example": 208,
+        "element_name": "alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1940,
+    "fields": {
+        "example": 208,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1941,
+    "fields": {
+        "example": 208,
+        "element_name": "articulations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1942,
+    "fields": {
+        "example": 208,
+        "element_name": "beam"
     }
 },
 {
