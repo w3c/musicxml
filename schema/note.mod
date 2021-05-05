@@ -151,8 +151,17 @@
 
 <!--
 	The chord element indicates that this note is an additional
-	chord tone with the preceding note. The duration of this
-	note can be no longer than the preceding note.
+	chord tone with the preceding note.
+
+	The duration of a chord note does not move the musical
+	position within a measure. That is done by the duration
+	of the first preceding note without a chord element. Thus
+	the duration of a chord note cannot be longer than the
+	preceding note.
+
+    In most cases the duration will be the same as the
+    preceding note. However it can be shorter in situations
+    such as multiple stops for string instruments.
 -->
 <!ELEMENT chord EMPTY>
 
@@ -190,8 +199,12 @@
 	This is the intended duration vs. notated duration (for
 	instance, differences in dotted notes in Baroque-era music).
 	Differences in duration specific to an interpretation or
-	performance should use the note element's attack and 
-	release attributes.
+	performance should be represented using the note element's
+	attack and release attributes.
+
+	The duration element moves the musical position when used in
+	backup elements, forward elements, and note elements that do
+	not contain a chord child element.
 
 	The tie element indicates that a tie begins or ends with
 	this note. If the tie element applies only particular times
