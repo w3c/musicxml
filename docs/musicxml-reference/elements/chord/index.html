@@ -98,7 +98,11 @@
 </p>
 
 
-<p><img src="../../../static/elements/chord.png"/><br>The &lt;chord&gt; element indicates that this note is an additional chord tone with the preceding note. The duration of this note can be no longer than the preceding note.</p>
+<p><img src="../../../static/elements/chord.png"/><br>The &lt;chord&gt; element indicates that this note is an additional chord tone with the preceding note.</p>
+
+<p>The &lt;duration&gt; of a &lt;chord&gt; note does not move the musical position within a &lt;measure&gt;. That is done by the &lt;duration&gt; of the first preceding note without a &lt;chord&gt; element. Thus the &lt;duration&gt; of a &lt;chord&gt; note cannot be longer than the preceding note.</p>
+
+<p>In most cases the &lt;duration&gt; will be the same as the preceding note. However it can be shorter in situations such as multiple stops for string instruments. Here is an example from Mozart's Concerto No. 3 for Violin, K. 216:<br><img src="../../../static/elements/chord-multiple-stop.png"/><br>If these first three notes are represented as a chord, the quarter notes must be the ones with the &lt;chord&gt; element.</p>
 
 
 <h2>Content</h2>
@@ -120,7 +124,7 @@
 
 <p>This element is used in the following examples:</p>
 <p>
-    <nobr><a href="../../examples/arpeggiate-element/">&lt;arpeggiate&gt;</a></nobr>, <nobr><a href="../../examples/artificial-element/">&lt;artificial&gt;</a></nobr>, <nobr><a href="../../examples/beat-repeat-element/">&lt;beat-repeat&gt;</a></nobr>, <nobr><a href="../../examples/chord-element/">&lt;chord&gt;</a></nobr>, <nobr><a href="../../examples/glissando-multiple/">&lt;glissando&gt; (Multiple)</a></nobr>, <nobr><a href="../../examples/non-arpeggiate-element/">&lt;non-arpeggiate&gt;</a></nobr>, <nobr><a href="../../examples/pluck-element/">&lt;pluck&gt;</a></nobr>, <nobr><a href="../../examples/staff-element/">&lt;staff&gt;</a></nobr>, <nobr><a href="../../examples/tutorial-apres-un-reve/">Tutorial: Après un rêve</a></nobr>, <nobr><a href="../../examples/tutorial-chopin-prelude/">Tutorial: Chopin Prelude</a></nobr>, <nobr><a href="../../examples/tutorial-percussion/">Tutorial: Percussion</a></nobr>
+    <nobr><a href="../../examples/arpeggiate-element/">&lt;arpeggiate&gt;</a></nobr>, <nobr><a href="../../examples/artificial-element/">&lt;artificial&gt;</a></nobr>, <nobr><a href="../../examples/beat-repeat-element/">&lt;beat-repeat&gt;</a></nobr>, <nobr><a href="../../examples/chord-element/">&lt;chord&gt;</a></nobr>, <nobr><a href="../../examples/chord-element-multiple-stop/">&lt;chord&gt; (Multiple Stop)</a></nobr>, <nobr><a href="../../examples/glissando-multiple/">&lt;glissando&gt; (Multiple)</a></nobr>, <nobr><a href="../../examples/non-arpeggiate-element/">&lt;non-arpeggiate&gt;</a></nobr>, <nobr><a href="../../examples/pluck-element/">&lt;pluck&gt;</a></nobr>, <nobr><a href="../../examples/staff-element/">&lt;staff&gt;</a></nobr>, <nobr><a href="../../examples/tutorial-apres-un-reve/">Tutorial: Après un rêve</a></nobr>, <nobr><a href="../../examples/tutorial-chopin-prelude/">Tutorial: Chopin Prelude</a></nobr>, <nobr><a href="../../examples/tutorial-percussion/">Tutorial: Percussion</a></nobr>
 </p>
 
 
