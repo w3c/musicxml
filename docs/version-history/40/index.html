@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Version 4.0 | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../">Version History</a></b></li>
+    <ul>
+        <li><a href="./">Version 4.0</a></li>
+        <li><a href="../31/">Version 3.1</a></li>
+        <li><a href="../30/">Version 3.0</a></li>
+        <li><a href="../20/">Version 2.0</a></li>
+        <li><a href="../11/">Version 1.1</a></li>
+        <li><a href="../10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">Version History</a> &gt;
+    Version 4.0
+</p>
+
+<h1>Version 4.0</h1>
+
+<h2>Released May 2021</h2>
+
+<h2 id="packaging">Packaging Changes</h2>
+
+<ul>
+
+<li>MusicXML 4.0 specifies a standard way to represent both score and parts in a single compressed .mxl file. (<a href="https://github.com/w3c/musicxml/issues/278">Issue 278</a>)</li>
+</li>
+
+<li>MusicXML 4.0 now contains a standard XML catalog to make local validation easier. (<a href="https://github.com/w3c/musicxml/issues/259">Issue 259</a>)</li>
+
+</ul>
+
+<h2 id="schema">Schema Additions</h2>
+
+<h3 id="elements">New Elements</h3>
+
+<ul>
+
+<li>The <a href="../../musicxml-reference/elements/assess/">&lt;assess&gt;</a> element specifies how default assessment should be overridden for individual notes. (<a href="https://github.com/w3c/musicxml/issues/294">Issue 294</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/bass-separator/">&lt;bass-separator&gt;<a> element indicates that text, rather than a line or slash, separates the bass from what precedes it. (<a href="https://github.com/w3c/musicxml/issues/307">Issue 307</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/concert-score/">&lt;concert-score&gt;</a> element indicates that a score is displayed in concert pitch. (<a href="https://github.com/w3c/musicxml/issues/39">Issue 39</a>, <a href="https://github.com/w3c/musicxml/issues/279">Issue 279</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/first/">&lt;first&gt;</a> element represents the first of two consecutive notes in a swing ratio. (<a href="https://github.com/w3c/musicxml/issues/283">Issue 283</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/for-part/">&lt;for-part&gt;</a> element is used in a concert score to indicate the transposition for a transposed part created from that score. (<a href="https://github.com/w3c/musicxml/issues/279">Issue 279</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/instrument-change/">&lt;instrument-change&gt;</a> element represents a change to the virtual instrument sound for a given <a href="../../musicxml-reference/elements/score-instrument/">&lt;score-instrument&gt;</a>. (<a href="https://github.com/w3c/musicxml/issues/293">Issue 293</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/line-detail/">&lt;line-detail&gt;</a> element specifies the appearance of a line in the staff. (<a href="https://github.com/w3c/musicxml/issues/305">Issue 305</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/listen/">&lt;listen&gt;</a> element specifies different ways that a score following or machine listening application can interact with a performer. It represents interactions that are specific to a note. (<a href="https://github.com/w3c/musicxml/issues/294">Issue 294</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/listening/">&lt;listening&gt;</a> element specifies different ways that a score following or machine listening application can interact with a performer. It represents interactions that change the state of the listening application from the specified point in the performance onward. (<a href="https://github.com/w3c/musicxml/issues/294">Issue 294</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/note/">&lt;note&gt;</a> element may now contain multiple <a href="../../musicxml-reference/elements/instrument/">&lt;instrument&gt;</a> elements. (<a href="https://github.com/w3c/musicxml/issues/277">Issue 277</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/numeral/">&lt;numeral&gt;</a> element represents the Roman numeral or Nashville number part of a harmony. It requires that the key be specified in the encoding. (<a href="https://github.com/w3c/musicxml/issues/295">Issue 295</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/numeral-alter/">&lt;numeral-alter&gt;</a> element represents an alteration to the <a href="../../musicxml-reference/elements/numeral-root/">&lt;numeral-root&gt;</a>. (<a href="https://github.com/w3c/musicxml/issues/295">Issue 295</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/numeral-fifths/">&lt;numeral-fifths&gt;</a> element specifies the reference key for the <a href="../../musicxml-reference/elements/numeral/">&lt;numeral&gt;</a> in the same way as the <a href="../../musicxml-reference/elements/fifths/">&lt;fifths&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/295">Issue 295</a>)</li>
+
+<li>The<a href="../../musicxml-reference/elements/numeral-key/"> &lt;numeral-key&gt;</a> element  is used when the key for the <a href="../../musicxml-reference/elements/numeral/">&lt;numeral&gt;</a> is different than the key specified by the key signature. (<a href="https://github.com/w3c/musicxml/issues/295">Issue 295</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/numeral-mode/">&lt;numeral-mode&gt;</a> element specifies the scale that is used to interpret the <a href="../../musicxml-reference/elements/numeral-root/">&lt;numeral-root&gt;</a> element values. (<a href="https://github.com/w3c/musicxml/issues/295">Issue 295</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/numeral-root/">&lt;numeral-root&gt;</a> element represents the Roman numeral or Nashville number as a positive integer from 1 to 7. (<a href="https://github.com/w3c/musicxml/issues/295">Issue 295</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/other-listen/">&lt;other-listen&gt;</a> element represents other types of listening control and interaction that are specific to a note. (<a href="https://github.com/w3c/musicxml/issues/294">Issue 294</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/other-listening/">&lt;other-listening&gt;</a> element represents other types of listening control and interaction that change the state of the listening application from the specified point in the performance onward. (<a href="https://github.com/w3c/musicxml/issues/294">Issue 294</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/part-clef/">&lt;part-clef&gt;</a> element is used for transpositions from concert scores that also include a change of clef, as for instruments such as bass clarinet. (<a href="https://github.com/w3c/musicxml/issues/55">Issue 55</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/part-link/">&lt;part-link&gt;</a> element allows MusicXML data for both score and parts to be contained within a single compressed MusicXML file. It links a <a href="../../musicxml-reference/elements/score-part/">&lt;score-part&gt;</a> from a score document to MusicXML documents that contain parts data. (<a href="https://github.com/w3c/musicxml/issues/278">Issue 278</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/part-transpose/">&lt;part-transpose&gt;</a> element specifies the transposition for a transposed part created from the existing score file. (<a href="https://github.com/w3c/musicxml/issues/279">Issue 279</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/player/">&lt;player&gt;</a> element allows for multiple players per <a href="../../musicxml-reference/elements/score-part/">&lt;score-part&gt;</a> for use in listening applications. (<a href="https://github.com/w3c/musicxml/issues/294">Issue 294</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/second/">&lt;second&gt; </a>element represents the second of two consecutive notes in a swing ratio. (<a href="https://github.com/w3c/musicxml/issues/283">Issue 283</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/straight/">&lt;straight&gt;</a> element specifies that no swing is present, so consecutive notes have equal durations. (<a href="https://github.com/w3c/musicxml/issues/283">Issue 283</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/swing/">&lt;swing&gt;</a> element specifies whether or not to use swing playback, where consecutive on-beat / off-beat eighth or 16th notes are played with unequal nominal durations. (<a href="https://github.com/w3c/musicxml/issues/283">Issue 283</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/swing-style/">&lt;swing-style&gt;</a> element describes the style of swing used. (<a href="https://github.com/w3c/musicxml/issues/283">Issue 283</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/swing-type/">&lt;swing-type&gt;</a> element specifies the note type, either eighth or 16th, to which the <a href="../../musicxml-reference/elements/first/">&lt;first&gt;</a> to <a href="../../musicxml-reference/elements/second/">&lt;second&gt;</a> ratio is applied. (<a href="https://github.com/w3c/musicxml/issues/283">Issue 283</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/sync/">&lt;sync&gt;</a> element specifies the style that a score following application should use the synchronize an accompaniment with a performer. (<a href="https://github.com/w3c/musicxml/issues/294">Issue 294</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/wait/">&lt;wait&gt;</a> element specifies a point where the accompaniment should wait for a performer event before continuing. (<a href="https://github.com/w3c/musicxml/issues/294">Issue 294</a>)</li>
+</ul>
+
+<h3 id="attributes">New Attributes</h3>
+
+<ul>
+
+<li>The above attribute has been added to the <a href="../../musicxml-reference/elements/double/">&lt;double&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/368">Issue 368</a>)</li>
+
+<li>The arrangement attribute has been added to the <a href="../../musicxml-reference/elements/bass/">&lt;bass&gt;</a> and <a href="../../musicxml-reference/elements/harmony/">&lt;harmony&gt;</a> elements. (<a href="https://github.com/w3c/musicxml/issues/307">Issue 307</a>)</li>
+</li>
+
+<li>The after-jump attribute has been added to the <a href="../../musicxml-reference/elements/repeat/">&lt;repeat&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/322">Issue 322</a>)</li>
+
+<li>The halign and valign attributes have been added to the <a href="../../musicxml-reference/elements/figured-bass/">&lt;figured-bass&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/362">Issue 362</a>)</li>
+
+<li>The multiple-rest-always and multiple-rest-range attributes have been added to the <a href="../../musicxml-reference/elements/measure-numbering/">&lt;measure-numbering&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/310">Issue 310</a>)</li>
+
+<li>The offset attribute has been added to the <a href="../../musicxml-reference/elements/release/">&lt;release&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/203">Issue 203</a>)</li>
+
+<li>The placement attribute have been added to the <a href="../../musicxml-reference/elements/figured-bass/">&lt;figured-bass&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/336">Issue 336</a>)</li>
+
+<li>The print-object attribute has been added to the <a href="../../musicxml-reference/elements/metronome/">&lt;metronome&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/355">Issue 355</a>)</li>
+
+<li>The scaling attribute has been added to the <a href="../../musicxml-reference/elements/staff-size/">&lt;staff-size&gt</a> element.  (<a href="https://github.com/w3c/musicxml/issues/305">Issue 305</a>)</li>
+
+<li>The shape attribute has been added to the <a href="../../musicxml-reference/elements/bend/">&lt;bend&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/306">Issue 306</a>)</li>
+
+<li>The smufl attribute has been added to the <a href="../../musicxml-reference/elements/wavy-line/">&lt;wavy-line&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/397">Issue 397</a>)</li>
+
+<li>The staff attribute has been added to the <a href="../../musicxml-reference/elements/measure-numbering/">&lt;measure-numbering&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/23">Issue 23</a>)</li>
+
+<li>The system attribute has been added to the <a href="../../musicxml-reference/elements/direction/">&lt;direction&gt;</a>, <a href="../../musicxml-reference/elements/ending/">&lt;ending&gt;</a>, <a href="../../musicxml-reference/elements/harmony/">&lt;harmony&gt;</a>, and <a href="../../musicxml-reference/elements/measure-numbering/">&lt;measure-numbering&gt;</a> elements. (<a href="https://github.com/w3c/musicxml/issues/37">Issue 37</a>)</li>
+
+<li>The text attribute has been added to the <a href="../../musicxml-reference/elements/inversion/">&lt;inversion&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/295">Issue 295</a>)</li>
+
+<li>The type attribute has been added to the <a href="../../musicxml-reference/elements/level/">&lt;level&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/288">Issue 288</a>)</li>
+
+<li>The unbroken attribute has been added to the <a href="../../musicxml-reference/elements/arpeggiate/">&lt;arpeggiate&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/281">Issue 281</a>)</li>
+
+</ul>
+
+<h3 id="values">New Values</h3>
+
+<ul>
+
+<li>The <a href="../../musicxml-reference/data-types/smufl-accidental-glyph-name/">smufl-accidental-glyph-name</a> type used by the smufl attribute of the <a href="../../musicxml-reference/elements/accidental/">&lt;accidental&gt;</a>, <a href="../../musicxml-reference/elements/accidental-mark/">&lt;accidental-mark&gt;</a>, <a href="../../musicxml-reference/elements/accidental-text/">&lt;accidental-text&gt;</a>, and <a href="../../musicxml-reference/elements/key-accidental/">&lt;key-accidental&gt;</a> elements now allows SMuFL accidental glyphs from the <a href="https://www.w3.org/2021/03/smufl14/tables/medieval-and-renaissance-accidentals.html">Medieval and Renaissance accidentals</a> and <a href="https://www.w3.org/2021/03/smufl14/tables/kievan-square-notation.html">Kievan square notation</a> ranges. (<a href="https://github.com/w3c/musicxml/issues/330">Issue 330</a>)</li>
+
+<li>The part name value has been added to the list of standard <a href="../../musicxml-reference/elements/credit-type/">&lt;credit-type&gt;</a> element values. (<a href="https://github.com/w3c/musicxml/issues/282">Issue 282</a>)</li>
+
+<li>The inverted-bracket value has been added to the <a href="../../musicxml-reference/data-types/enclosure-shape/">enclosure-shape</a> type, used by the enclosure attribute. (<a href="https://github.com/w3c/musicxml/issues/308">Issue 308</a>)</li>
+
+<li>Eight new sound IDs have been added to the sounds.xml file for use by the <a href="../../musicxml-reference/elements/instrument-sound/">&lt;instrument-sound&gt;</a> element. They are wind.flutes.whistle.tin.c (<a href="https://github.com/w3c/musicxml/issues/289">Issue 289</a>) and drum.tabor, drum.tamborim, pitched-percussion.handchimes, pluck.cavaquinho, wind.reed.clarinet.d, wind.reed.clarinet.g, and wind.reed.clarinet.piccolo. (<a href="https://github.com/w3c/musicxml/issues/363">Issue 363</a>)</li>
+
+<li>Element content for the <a href="../../musicxml-reference/elements/ipa/">&lt;ipa&gt;</a> element has been updated to IPA 2015 symbols represented in Unicode 13.0. (<a href="https://github.com/w3c/musicxml/issues/345">Issue 345</a>)</li>
+
+<li>The highest value for the <a href="../../musicxml-reference/data-types/number-level/">number-level</a> type, used by the number attribute, has been raised from 6 to 16. (<a href="https://github.com/w3c/musicxml/issues/297">Issue 297</a>)</li>
+
+<li>The discontinue value has been added to the <a href="../../musicxml-reference/data-types/pedal-type/">pedal-type</a> type, used by the type attribute of the <a href="../../musicxml-reference/elements/pedal/">&lt;pedal&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/302">Issue 302</a>)</li>
+
+<li>The resume value has been added to the <a href="../../musicxml-reference/data-types/pedal-type/">pedal-type</a> type, used by the type attribute of the <a href="../../musicxml-reference/elements/pedal/">&lt;pedal&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/335">Issue 335</a>)</li>
+
+</ul>
+
+<h2 id="deprecated">Removed and Deprecated Features</h2>
+
+<ul>
+
+<li>Empty <a href="../../musicxml-reference/elements/multiple-rest/">&lt;multiple-rest&gt;</a> elements are no longer allowed. This was a mistake in the original definition of the element. (<a href="https://github.com/w3c/musicxml/issues/249">Issue 249</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/function/">&lt;function&gt;</a> element is deprecated as of MusicXML 4.0. Use the <a href="../../musicxml-reference/elements/numeral/">&lt;numeral&gt;</a> element instead. (<a href="https://github.com/w3c/musicxml/issues/295">Issue 295</a>)</li>
+
+<li>The none value in the <a href="../../musicxml-reference/data-types/clef-sign/">clef-sign</a> type used by the <a href="../../musicxml-reference/elements/sign/">&lt;sign&gt;</a> element is deprecated as of MusicXML 4.0. (<a href="https://github.com/w3c/musicxml/issues/304">Issue 304</a>)
+</ul>
+
+<h2 id="documentation">Documentation Changes</h2>
+
+<ul>
+
+<li>The W3C Music Notation Community Group Report for MusicXML 4.0 now includes complete documentation. Previously this was only available for MusicXML 3.0 on MakeMusic's musicxml.com site and had not been updated for Version 3.1. (<a href="https://github.com/w3c/musicxml/issues/353">Issue 353</a>)</li>
+
+<li>Help has been added for working around common code generation issues.   (<a href="https://github.com/w3c/musicxml/issues/280">Issue 280</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/arpeggiate/">&lt;arpeggiate&gt;</a> element documentation clarifies how to export the length of an arpeggio line. (<a href="https://github.com/w3c/musicxml/issues/62">Issue 62</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/beat-repeat/">&lt;beat-repeat&gt;</a> and <a href="../../musicxml-reference/elements/measure-repeat/">&lt;measure-repeat&gt;</a> element documentation clarifies the behavior of the type attribute.  (<a href="https://github.com/w3c/musicxml/issues/287">Issue 287</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/bend-alter/">&lt;bend-alter&gt;</a> element documentation clarifies the meaning of the element content when there are multiple bends on a single note. (<a href="https://github.com/w3c/musicxml/issues/204">Issue 204</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/chord/">&lt;chord&gt;</a> and <a href="../../musicxml-reference/elements/duration/">&lt;duration&gt;</a> element documentation clarifies the behavior of chords with notes of different durations. (<a href="https://github.com/w3c/musicxml/issues/106">Issue 106</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/defaults/">&lt;defaults&gt;</a>, <a href="../../musicxml-reference/elements/measure-layout/">&lt;measure-layout&gt;</a>, <a href="../../musicxml-reference/elements/page-layout/">&lt;page-layout&gt;</a>, <a href="../../musicxml-reference/elements/staff-layout/">&lt;staff-layout&gt;</a>, and <a href="../../musicxml-reference/elements/system-layout/">&lt;system-layout&gt;</a> element documentation clarifies the behavior when layout elements are missing from the <a href="../../musicxml-reference/elements/print/">&lt;print&gt;</a> element. (<a href="https://github.com/w3c/musicxml/issues/53">Issue 53</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/diatonic/">&lt;diatonic&gt;</a> and <a href="../../musicxml-reference/elements/octave-change/">&lt;octave-change&gt;</a> element documentation clarifies the representation of transpositions of an octave or more. (<a href="https://github.com/w3c/musicxml/issues/333">Issue 333</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/dynamics/">&lt;dynamics&gt;</a> element documentation clarifies how the relationship of the placement attributes in the &lt;dynamics&gt; and <a href="../../musicxml-reference/elements/direction/">&lt;direction&gt;</a> elements. (<a href="https://github.com/w3c/musicxml/issues/43">Issue 43</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/ending/">&lt;ending&gt;</a> element documentation now describes the number attribute correctly. (<a href="https://github.com/w3c/musicxml/issues/291">Issue 291</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/kind/">&lt;kind&gt;</a> element documentation clarifies how to represent suspended chord symbols. (<a href="https://github.com/w3c/musicxml/issues/352">Issue 352</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/kind/">&lt;kind&gt;</a> element documentation clarifies how to represent N.C. chord symbols. (<a href="https://github.com/w3c/musicxml/issues/349">Issue 349</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/level/">&lt;level&gt;</a> element documentation clarifies the purpose of the element content. (<a href="https://github.com/w3c/musicxml/issues/146">Issue 146</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/line/">&lt;line&gt;</a> element documentation clarifies that the element is only needed with G, F, and C signs.  (<a href="https://github.com/w3c/musicxml/issues/351">Issue 351</a>)
+
+<li>The <a href="../../musicxml-reference/elements/lyric/">&lt;lyric&gt;</a> element documentation clarifies how lyrics are aligned.  (<a href="https://github.com/w3c/musicxml/issues/261">Issue 261</a>)
+
+<li>The <a href="../../musicxml-reference/elements/measure-repeat/">&lt;measure-repeat&gt;</a> element documentation clarifies that the actual music should be repeated in each measure. (<a href="https://github.com/w3c/musicxml/issues/254">Issue 254</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/notehead/">&lt;notehead&gt;</a> element documentation now specifies the treatment of the <a href="https://www.w3.org/2021/03/smufl14/tables/note-name-noteheads-supplement.html">Note name noteheads supplement range</a> added in SMuFL 1.4. (<a href="https://github.com/w3c/musicxml/issues/382">Issue 382</a>)</li>
+
+<li>The <a href="../../musicxml-reference/data-types/number-level/">number-level</a> data type documentation clarifies that different values are used to distinguish elements that overlap in MusicXML document order rather than musical score order. (<a href="https://github.com/w3c/musicxml/issues/8">Issue 8</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/offset/">&lt;offset&gt;</a> element documentation clarifies the current musical location at the end of a measure. (<a href="https://github.com/w3c/musicxml/issues/28">Issue 28</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/rehearsal/">&lt;rehearsal&gt;</a> element documentation clarifies that it can be used to represent section names.  (<a href="https://github.com/w3c/musicxml/issues/311">Issue 311</a>)
+
+<li>The <a href="../../musicxml-reference/data-types/staff-type/">staff-type</a> data type documentation now describes the different options more completely. (<a href="https://github.com/w3c/musicxml/issues/292">Issue 292</a>)</li>
+
+<li>The <a href="../../musicxml-reference/data-types/staff-type/">staff-type</a> data type documentation now encourages the use of an alternate <a href="../../musicxml-reference/elements/staff-type/">&lt;staff-type&gt;</a> element where appropriate (<a href="https://github.com/w3c/musicxml/issues/205">Issue 205</a>)</li>
+
+<li>The documentation for the <a href="../../musicxml-reference/data-types/start-stop/">start-stop</a>, <a href="../../musicxml-reference/data-types/start-stop-continue/">start-stop-continue</a>, <a href="../../musicxml-reference/data-types/start-stop-single/">start-stop-single</a>, and <a href="../../musicxml-reference/data-types/tied-type/">tied-type</a> data types clarifies that multiple elements with the same tag on the same note should appear in musical score order. (<a href="https://github.com/w3c/musicxml/issues/8">Issue 8</a>)</li>
+
+<li>The <a href="../../musicxml-reference/elements/system-layout/">&lt;system-layout&gt;</a> element documentation clarifies usage within a <a href="../../musicxml-reference/elements/print/">&lt;print&gt;</a> element.  (<a href="https://github.com/w3c/musicxml/issues/339">Issue 339</a>)
+
+</ul>
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>

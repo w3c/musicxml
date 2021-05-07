@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Version 3.0 | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../">Version History</a></b></li>
+    <ul>
+        <li><a href="../40/">Version 4.0</a></li>
+        <li><a href="../31/">Version 3.1</a></li>
+        <li><a href="./">Version 3.0</a></li>
+        <li><a href="../20/">Version 2.0</a></li>
+        <li><a href="../11/">Version 1.1</a></li>
+        <li><a href="../10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">Version History</a> &gt;
+    Version 3.0
+</p>
+
+<h1>Version 3.0</h1>
+
+<h2>Released August 2011</h2>
+
+<h2 id="new-files">New Files</h2>
+<ul>
+<li>Added sounds.dtd file for a standard set of instrument sounds to identify musical timbre.</li>
+<li>Added sounds.xml file defining the initial set of 886 standard instrument sounds.</li>
+<li>Added to20.xsl file for transforming a MusicXML 3.0 file to a MusicXML 2.0 file.</li>
+</ul>
+
+<h2 id="new-elements">New Elements</h2>
+<ul>
+<li>Added &lt;instrument-sound&gt; element for describing timbre for playback. The standard sounds listed in the sounds.xml file may be used.</li>
+<li>Added &lt;virtual-instrument&gt;, &lt;virtual-library&gt;, and &lt;virtual-name&gt; elements for specifying a specific virtual instrument sound.</li>
+<li>Added &lt;sounds&gt;, &lt;sound&gt;, &lt;any&gt;, &lt;solo&gt;, and &lt;ensemble&gt; elements in new sounds.dtd file.</li>
+<li>Added &lt;play&gt; and &lt;other-play&gt; elements for playback techniques.</li>
+<li>Added &lt;ipa&gt; element for International Phonetic Alphabet sounds in vocal music.</li>
+<li>Added &lt;mute&gt; element for mute playback techniques with different instruments.</li>
+<li>Added &lt;semi-pitched&gt; element for playback categories of indefinite pitch.</li>
+<li>Added &lt;system-dividers&gt;, &lt;left-divider&gt;, and &lt;right-divider&gt; elements for system separation marks.</li>
+<li>Added &lt;string-mute&gt; element for string mute on/off symbols.</li>
+<li>Added &lt;principal-voice&gt; element for principal and secondary voices, including Hauptstimme and Nebenstimme.</li>
+<li>Added &lt;percussion&gt;, &lt;glass&gt;, &lt;metal&gt;, &lt;wood&gt;, &lt;pitched&gt;, &lt;membrane&gt;, &lt;effect&gt;, &lt;timpani&gt;, &lt;beater&gt;, &lt;stick&gt;, &lt;stick-material&gt;, &lt;stick-type&gt;, &lt;stick-location&gt;, and &lt;other-percussion&gt; elements for percussion pictogram symbols.</li>
+<li>Added &lt;distance&gt; element for standard distance between notation elements.</li>
+<li>Added &lt;credit-type&gt; element for purpose behind a &lt;credit&gt;.</li>
+<li>Added &lt;hole&gt;, &lt;hole-closed&gt;, &lt;hole-shape&gt;, and &lt;hole-type&gt; elements for woodwind/brass fingerings and other notations.</li>
+<li>Added &lt;handbell&gt; element for techniques used in handbell and handchime music.</li>
+<li>Added &lt;notehead-text&gt; element for text inside a notehead.</li>
+<li>Added &lt;arrow&gt;, &lt;arrow-direction&gt;, &lt;arrow-style&gt;, and &lt;circular-arrow&gt; elements for arrows used as musical technical indications.</li>
+<li>Added &lt;delayed-inverted-turn&gt; element for inverted turns delayed until the end of the current note.</li>
+<li>Added &lt;vertical-turn&gt; element for turn shape arranged vertically going from upper left to lower right.</li>
+<li>Added &lt;interchangeable&gt; and &lt;time-relation&gt; elements for specifying interchangeable or dual time signatures, such as 3/4 (6/8).</li>
+<li>Added &lt;key-accidental&gt; element for specifying accidentals in non-traditional key signatures.</li>
+</ul>
+
+<h2 id="new-attributes">New Attributes and Entities</h2>
+<ul>
+<li>Added measure attribute to the &lt;rest&gt; element.</li>
+<li>Added winged attribute to the &lt;repeat&gt; element.</li>
+<li>Added niente attribute to the &lt;wedge&gt; element.</li>
+<li>Added unplayed attribute to the &lt;frame&gt; element.</li>
+<li>Added symbol attribute to the &lt;degree-value&gt; element.</li>
+<li>Added dash-length and space-length attributes to the &lt;tied&gt;, &lt;slur&gt;, &lt;glissando&gt;, &lt;slide&gt;, &lt;scoop&gt;, &lt;plop&gt;, &lt;doit&gt;, &lt;falloff&gt;, &lt;wedge&gt;, &lt;bracket&gt;, &lt;dashes&gt;, and &lt;octave-shift&gt; elements.</li>
+<li>Added slash attribute to the &lt;turn&gt;, &lt;delayed-turn&gt;, and &lt;inverted-turn&gt; elements.</li>
+<li>Added approach and departure attributes to the &lt;mordent&gt; and &lt;inverted-mordent&gt; elements.</li>
+<li>Added time-separator and time-symbol entities for displaying time signatures.</li>
+<li>Added separator attribute to the &lt;time&gt; element for displaying the arrangement of beat and beat-type values.</li>
+<li>Added after-barline attribute to the &lt;clef&gt; element.</li>
+<li>Added xml:space attribute to the text-formatting entity.</li>
+</ul>
+
+<h2 id="additions-to-elements">Additions to Elements</h2>
+<ul>
+<li>Added comma and tick values to the &lt;breath-mark&gt; element.</li>
+<li>Added &lt;midi-device&gt; element to the &lt;sound&gt; element.</li>
+<li>Added multiple &lt;midi-device&gt; elements to the &lt;score-part&gt; element.</li>
+<li>Added default-x, default-y, relative-x, relative-y, and type attributes to the &lt;extend&gt; element.</li>
+<li>Added underline, overline, line-through, and enclosure attributes to the &lt;dynamics&gt; element.</li>
+<li>Added time-only attribute to the &lt;tie&gt; element.</li>
+<li>Added number attribute to the &lt;transpose&gt; element.</li>
+<li>Added optional content to the &lt;senza-misura&gt; element for specifying a symbol.</li>
+<li>Added print-object attributes to the &lt;notations&gt; and &lt;lyric&gt; elements.</li>
+<li>Added halign and valign attributes to the &lt;dynamics&gt;, &lt;coda&gt;, &lt;segno&gt;, &lt;rehearsal&gt;, &lt;metronome&gt;, &lt;accordion-registration&gt;, &lt;damp&gt;, &lt;damp-all&gt; &lt;eyeglasses&gt;, &lt;harp-pedals&gt;, &lt;pedal&gt;, &lt;other-direction&gt;, &lt;measure-numbering&gt;, and &lt;time&gt; elements.</li>
+<li>Added letter-spacing and line-height attributes to the &lt;rehearsal&gt; element.</li>
+<li>Added id attribute to the &lt;midi-device&gt; element.</li>
+</ul>
+
+<h2 id="new-values">New Values and Definitions</h2>
+<ul>
+<li>Added jianpu value to the &lt;sign&gt; element for clefs.</li>
+<li>Added square value to the &lt;group-symbol&gt; and &lt;part-symbol&gt; elements.</li>
+<li>Added square, circle, bracket, triangle, and diamond values to the enclosure attribute for the &lt;words&gt;, &lt;credit-words&gt;, &lt;display-text&gt;, and &lt;accidental-text&gt; elements.</li>
+<li>Added rectangle, oval, bracket, triangle, and diamond values to the enclosure attribute for the &lt;rehearsal&gt; element.</li>
+<li>Added 1024th, 512th, and maxima values to the &lt;type&gt; element.</li>
+<li>Added 7 and 8 to number attribute values for the &lt;beam&gt; and &lt;metronome-beam&gt; elements via the beam-level entity.</li>
+<li>Added 7 and 8 to the values for the &lt;tremolo&gt; element.</li>
+<li>Added fa up, circle dot, left triangle, and rectangle values to the &lt;notehead&gt; element.</li>
+<li>Added sharp-down, sharp-up, natural-down, natural-up, flat-down, flat-up, triple-sharp, triple-flat, slash-quarter-sharp, slash-sharp, slash-flat, double-slash-flat, sharp-1, sharp-2, sharp-3, sharp-5, flat-1, flat-2, flat-3, flat-4, sori, and koron values to the &lt;accidental&gt;, &lt;accidental-mark&gt;, and &lt;accidental-text&gt; elements.</li>
+<li>Added continue value to the type attribute for the &lt;tied&gt;, &lt;wedge&gt;, &lt;dashes&gt;, &lt;bracket&gt;, &lt;octave-shift&gt;, and &lt;pedal&gt; elements.</li>
+<li>Added before-barline value to the location attribute for the &lt;cancel&gt; element.</li>
+<li>Added note and dotted-note values to the symbol attribute for the &lt;time&gt; element.</li>
+</ul>
+
+<h2 id="deprecated">Deprecated</h2>
+<ul>
+<li>Deprecated the repeater attribute of the &lt;beam&gt; element. Use the &lt;tremolo&gt; element instead.</li>
+</ul>
+
+<h2 id="september-2011-update">Updated September 2011</h2>
+<ul>
+<li>Corrected the definition of the &lt;frame&gt; element’s unplayed attribute in the direction.mod and musicxml.xsd files to match the documentation.</li>
+</ul>
+
+<h2 id="june-2015-update">Updated June 2015</h2>
+<ul>
+<li>Corrected the parttime.xsl and timepart.xsl stylesheets to output the MusicXML 3.0 public ID rather than the MusicXML 2.0 public ID.</li>
+</ul>
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>

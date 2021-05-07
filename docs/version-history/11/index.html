@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Version 1.1 | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../">Version History</a></b></li>
+    <ul>
+        <li><a href="../40/">Version 4.0</a></li>
+        <li><a href="../31/">Version 3.1</a></li>
+        <li><a href="../30/">Version 3.0</a></li>
+        <li><a href="../20/">Version 2.0</a></li>
+        <li><a href="./">Version 1.1</a></li>
+        <li><a href="../10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">Version History</a> &gt;
+    Version 1.1
+</p>
+
+<h1>Version 1.1</h1>
+
+<h2>Released May 2005</h2>
+
+<h2 id="new-files">New Files</h2>
+<ul>
+<li>Added layout.dtd file for formatting. This includes elements for page layout, system layout, staff layout, measure layout, and scaling from tenths of staff space to millimeters.</li>
+<li>Added to10.xsl file for transforming a MusicXML 1.1 file to a MusicXML 1.0 file. Removed the to06c.xsl file.</li>
+</ul>
+
+<h2 id="new-elements">New Elements</h2>
+<ul>
+<li>Added &lt;defaults&gt; element, including default layout, fonts, and lyric languages.</li>
+<li>Added &lt;credit&gt; element for title, composer, and other credits that appear on the first page of a score.</li>
+<li>Added &lt;scaling&gt;, &lt;page-layout&gt;, &lt;system-layout&gt;, &lt;staff-layout&gt;, and &lt;measure-layout&gt; elements in new layout.dtd file.</li>
+<li>Added &lt;barre&gt; element.</li>
+<li>Added &lt;harp-pedals&gt; element.</li>
+<li>Added &lt;scordatura&gt; element.</li>
+<li>Added &lt;tremolo&gt; element.</li>
+<li>Added &lt;pluck&gt; element.</li>
+<li>Added &lt;staff-size&gt; element for scaling staff line spacing relative to the defaults.</li>
+</ul>
+
+<h2 id="new-attributes">New Attributes and Entities</h2>
+<ul>
+<li>Added color attribute and entity.</li>
+<li>Added justify entity for expanded use throughout the MusicXML DTDs.</li>
+<li>Added valign and halign attributes and entities for vertical and horizontal alignment.</li>
+<li>Added print-style entity, grouping together entities for position, font, and color.</li>
+<li>Added width attribute to the &lt;measure&gt; element.</li>
+<li>Added chord symbol formatting attributes to the &lt;kind&gt; element.</li>
+<li>Added height and width attributes to the &lt;frame&gt; element.</li>
+<li>Added a number attribute to the &lt;key&gt; and &lt;time&gt; elements so a single part such as piano can have independent key and time signatures on each staff.</li>
+<li>Added print-lyric attribute, used in chord sheets that include lyrics and chords but no melody.</li>
+<li>Added fan attribute to the &lt;beam&gt; element.</li>
+<li>Added line-shape entity to the &lt;tuplet&gt; element.</li>
+<li>Added version attribute to the top-level &lt;score-partwise&gt; and &lt;score-timewise&gt; elements for easier version detection than using the DTD's public ID.</li>
+<li>Added a reference attribute to the &lt;level&gt; element to indicate display-only editorial markings (such as original clefs and key signatures).</li>
+<li>Added enclosure attribute.</li>
+<li>Added level-display entity, grouping different methods of editorial markings (size, parentheses, and brackets).</li>
+</ul>
+
+<h2 id="additions-to-elements">Additions to Elements</h2>
+<ul>
+<li>Added &lt;defaults&gt; and &lt;credit&gt; elements to the score-header entity.</li>
+<li>Added more formatting attributes for positioning, font, and color to elements throughout the MusicXML DTDs. Many elements that used the position entity now use the print-style entity.</li>
+<li>Added optional &lt;page-layout&gt;, &lt;system-layout&gt;, &lt;staff-layout&gt;, and &lt;measure-layout&gt; elements to the &lt;print&gt; element.</li>
+<li>Added page-number attribute to the &lt;print&gt; element.</li>
+<li>Added optional &lt;offset&gt; and &lt;staff&gt; elements to the &lt;harmony&gt; element.</li>
+<li>Added text content to the &lt;glissando&gt; and &lt;slide&gt; elements.</li>
+<li>Added justify entity to the &lt;lyric&gt;, &lt;part-name&gt;, &lt;part-abbreviation&gt;, &lt;group-name&gt;, and &lt;group-abbreviation&gt; elements.</li>
+<li>Added the bezier attributes to the &lt;tied&gt; element.</li>
+<li>Added an end-length attribute to the &lt;ending&gt; element.</li>
+<li>Added level-display entity to the &lt;accidental&gt; element.</li>
+<li>Added substitution attribute to the &lt;heel&gt; and &lt;toe&gt; elements.</li>
+<li>Added parentheses attribute to the &lt;figured-bass&gt; element.</li>
+</ul>
+
+<h2 id="new-values">New Values and Definitions</h2>
+<ul>
+<li>Added inverted triangle, arrow down, arrow up, slashed, and back slashed values to the &lt;notehead&gt; element.</li>
+<li>Added shape-note values do, re, mi, fa, so, la, and ti to the &lt;notehead&gt; element, corresponding to Aikin's 7-shape system.</li>
+<li>Added the large value to the symbol-size entity.</li>
+<li>Added dashed value to the &lt;bar-style&gt; element.</li>
+<li>Added change value to the &lt;pedal&gt; element's type attribute.</li>
+<li>Added augmented-seventh value to the &lt;kind&gt; element.</li>
+<li>Defined values for the &lt;figured-bass&gt; elements.</li>
+<li>Elaborated and refined the definitions of the positioning attributes to make them more useful with the new 1.1 formatting features.</li>
+</ul>
+
+<h2 id="deprecated">Deprecated</h2>
+<ul>
+<li>Deprecated the &lt;print&gt; element's staff-spacing attribute. Use the &lt;staff-layout&gt; element instead.</li>
+</ul>
+
+    </main>
+</div>
+
+
+<script>
+    (function(){
+        let mq = window.matchMedia('(max-width: 800px)');
+
+        if(mq.matches) {
+            document.body.classList.remove("has-sidenav");
+        }
+
+        mq.addEventListener('change', (e) => {
+            if(mq.matches) {
+                document.body.classList.remove("has-sidenav");
+            }
+        });
+
+        let toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', (e) => {
+            document.body.classList.toggle("has-sidenav");
+        });
+    })();
+</script>
+
+</body>
+</html>
