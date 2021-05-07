@@ -191,7 +191,9 @@
       inversion/@text | metronome/@print-object | 
       measure-numbering/@system | measure-numbering/@staff |
       measure-numbering/@multiple-rest-always | 
-      measure-numbering/@multiple-rest-range"/>
+      measure-numbering/@multiple-rest-range |
+      effect/@smufl | membrane/@smufl | metal/@smufl | 
+      timpani/@smufl | wood/@smufl"/>
   
   <!-- Additions in score.mod -->
 

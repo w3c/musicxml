@@ -977,9 +977,9 @@ The none sign is deprecated as of MusicXML 4.0. Use the clef element's print-obj
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="effect">
+	<xs:simpleType name="effect-value">
 		<xs:annotation>
-			<xs:documentation>The effect type represents pictograms for sound effect percussion instruments. The cannon, lotus flute, and megaphone values are in addition to Stone's list.</xs:documentation>
+			<xs:documentation>The effect-value type represents pictograms for sound effect percussion instruments. The cannon, lotus flute, and megaphone values are in addition to Stone's list.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="anvil"/>
@@ -1144,9 +1144,9 @@ The "none" kind is used to explicitly encode absence of chords or functional har
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="membrane">
+	<xs:simpleType name="membrane-value">
 		<xs:annotation>
-			<xs:documentation>The membrane type represents pictograms for membrane percussion instruments.</xs:documentation>
+			<xs:documentation>The membrane-value type represents pictograms for membrane percussion instruments.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="bass drum"/>
@@ -1169,9 +1169,9 @@ The "none" kind is used to explicitly encode absence of chords or functional har
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="metal">
+	<xs:simpleType name="metal-value">
 		<xs:annotation>
-			<xs:documentation>The metal type represents pictograms for metal percussion instruments. The hi-hat value refers to a pictogram like Stone's high-hat cymbals but without the long vertical line at the bottom.</xs:documentation>
+			<xs:documentation>The metal-value type represents pictograms for metal percussion instruments. The hi-hat value refers to a pictogram like Stone's high-hat cymbals but without the long vertical line at the bottom.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="agogo"/>
@@ -1431,9 +1431,9 @@ The change, continue, discontinue, and resume types are used when the line attri
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="wood">
+	<xs:simpleType name="wood-value">
 		<xs:annotation>
-			<xs:documentation>The wood type represents pictograms for wood percussion instruments. The maraca and maracas values distinguish the one- and two-maraca versions of the pictogram.</xs:documentation>
+			<xs:documentation>The wood-value type represents pictograms for wood percussion instruments. The maraca and maracas values distinguish the one- and two-maraca versions of the pictogram.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="bamboo scraper"/>
@@ -3538,6 +3538,17 @@ By default, a series of direction-type elements and a series of child elements o
 		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
+	<xs:complexType name="effect">
+		<xs:annotation>
+			<xs:documentation>The effect type represents pictograms for sound effect percussion instruments. The smufl attribute is used to distinguish different SMuFL stylistic alternates.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="effect-value">
+				<xs:attribute name="smufl" type="smufl-pictogram-glyph-name"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="feature">
 		<xs:annotation>
 			<xs:documentation>The feature type is a part of the grouping element used for musical analysis. The type attribute represents the type of the feature and the element content represents its value. This type is flexible to allow for different analyses.</xs:documentation>
@@ -3759,6 +3770,28 @@ The optional multiple-rest-always and multiple-rest-range attributes describe ho
 		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:complexType name="membrane">
+		<xs:annotation>
+			<xs:documentation>The membrane type represents pictograms for membrane percussion instruments. The smufl attribute is used to distinguish different SMuFL stylistic alternates.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="membrane-value">
+				<xs:attribute name="smufl" type="smufl-pictogram-glyph-name"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="metal">
+		<xs:annotation>
+			<xs:documentation>The metal type represents pictograms for metal percussion instruments. The smufl attribute is used to distinguish different SMuFL stylistic alternates.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="metal-value">
+				<xs:attribute name="smufl" type="smufl-pictogram-glyph-name"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="metronome">
 		<xs:annotation>
 			<xs:documentation>The metronome type represents metronome marks and other metric relationships. The beat-unit group and per-minute element specify regular metronome marks. The metronome-note and metronome-relation elements allow for the specification of metric modulations and other metric relationships, such as swing tempo marks where two eighths are equated to a quarter note / eighth note triplet. Tied notes can be represented in both types of metronome marks by using the beat-unit-tied and metronome-tied elements. The parentheses attribute indicates whether or not to put the metronome mark in parentheses; its value is no if not specified. The print-object attribute is set to no in cases where the metronome element represents a relationship or range that is not displayed in the music notation.</xs:documentation>
@@ -3994,11 +4027,7 @@ The offset affects the visual appearance of the direction. If the sound attribut
 			<xs:element name="pitched" type="pitched"/>
 			<xs:element name="membrane" type="membrane"/>
 			<xs:element name="effect" type="effect"/>
-			<xs:element name="timpani" type="empty">
-				<xs:annotation>
-					<xs:documentation>The timpani element represents the timpani pictogram.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:element name="timpani" type="timpani"/>
 			<xs:element name="beater" type="beater"/>
 			<xs:element name="stick" type="stick"/>
 			<xs:element name="stick-location" type="stick-location"/>
@@ -4221,6 +4250,13 @@ The optional latency attribute specifies a time in milliseconds that the listeni
 		<xs:attribute name="time-only" type="time-only"/>
 	</xs:complexType>
 	
+	<xs:complexType name="timpani">
+		<xs:annotation>
+			<xs:documentation>The timpani type represents the timpani pictogram. The smufl attribute is used to distinguish different SMuFL stylistic alternates.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="smufl" type="smufl-pictogram-glyph-name"/>
+	</xs:complexType>
+	
 	<xs:complexType name="wedge">
 		<xs:annotation>
 			<xs:documentation>The wedge type represents crescendo and diminuendo wedge symbols. The type attribute is crescendo for the start of a wedge that is closed at the left side, and diminuendo for the start of a wedge that is closed on the right side. Spread values are measured in tenths; those at the start of a crescendo wedge or end of a diminuendo wedge are ignored. The niente attribute is yes if a circle appears at the point of the wedge, indicating a crescendo from nothing or diminuendo to nothing. It is no by default, and used only when the type is crescendo, or the type is stop for a wedge that began with a diminuendo type. The line-type is solid if not specified.</xs:documentation>
@@ -4236,6 +4272,17 @@ The optional latency attribute specifies a time in milliseconds that the listeni
 		<xs:attributeGroup ref="optional-unique-id"/>
 	</xs:complexType>
 
+	<xs:complexType name="wood">
+		<xs:annotation>
+			<xs:documentation>The wood type represents pictograms for wood percussion instruments. The smufl attribute is used to distinguish different SMuFL stylistic alternates.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="wood-value">
+				<xs:attribute name="smufl" type="smufl-pictogram-glyph-name"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<!-- Complex types derived from identity.mod elements -->
 
 	<xs:complexType name="encoding">
