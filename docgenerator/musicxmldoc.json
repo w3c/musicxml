@@ -30881,7 +30881,7 @@
         "attribute_group": null,
         "name": "smufl",
         "is_required": false,
-        "description": "The smufl attribute is used to distinguish different SMuFL stylistic alternates.",
+        "description": "Distinguishes different SMuFL stylistic alternates.",
         "data_type": 108
     }
 },
@@ -30893,7 +30893,7 @@
         "attribute_group": null,
         "name": "smufl",
         "is_required": false,
-        "description": "The smufl attribute is used to distinguish different SMuFL stylistic alternates.",
+        "description": "Distinguishes different SMuFL stylistic alternates.",
         "data_type": 108
     }
 },
@@ -30905,7 +30905,7 @@
         "attribute_group": null,
         "name": "smufl",
         "is_required": false,
-        "description": "The smufl attribute is used to distinguish different SMuFL stylistic alternates.",
+        "description": "Distinguishes different SMuFL stylistic alternates.",
         "data_type": 108
     }
 },
@@ -30917,7 +30917,7 @@
         "attribute_group": null,
         "name": "smufl",
         "is_required": false,
-        "description": "The smufl attribute is used to distinguish different SMuFL stylistic alternates.",
+        "description": "Distinguishes different SMuFL stylistic alternates.",
         "data_type": 108
     }
 },
@@ -30929,7 +30929,7 @@
         "attribute_group": null,
         "name": "smufl",
         "is_required": false,
-        "description": "The smufl attribute is used to distinguish different SMuFL stylistic alternates.",
+        "description": "Distinguishes different SMuFL stylistic alternates.",
         "data_type": 108
     }
 },
