@@ -534,9 +534,13 @@
 	suspended cymbal, tam tam, tam tam with beater, triangle, and
 	Vietnamese hat. The hi-hat value refers to a pictogram like
 	Stone's high-hat cymbals, but without the long vertical line
-	at the bottom.
+	at the bottom. The smufl attribute is used to distinguish
+	different SMuFL stylistic alternates.
 -->
 <!ELEMENT metal (#PCDATA)>
+<!ATTLIST metal
+    %smufl;
+>
 
 <!--
 	The wood element represents pictograms for wood percussion
@@ -546,9 +550,13 @@
 	rainstick, ratchet, reco-reco, sandpaper blocks, slit drum,
 	temple block, vibraslap, whip, and wood block. The maraca and
 	maracas values distinguish the one- and two-maraca versions
-	of the pictogram.
+	of the pictogram.  The smufl attribute is used to
+	distinguish different SMuFL stylistic alternates.
 -->
 <!ELEMENT wood (#PCDATA)>
+<!ATTLIST wood
+    %smufl;
+>
 
 <!--
 	The pitched element represents pictograms for pitched
@@ -572,9 +580,14 @@
 	bass drum on side, bongos, Chinese tomtom, conga drum,
 	cuica, goblet drum, Indo-American tomtom, Japanese tomtom,
 	military drum, snare drum, snare drum snares off, tabla,
-	tambourine, tenor drum, timbales, and tomtom.
+	tambourine, tenor drum, timbales, and tomtom. The smufl
+	attribute is used to distinguish different SMuFL stylistic
+	alternates.
 -->
 <!ELEMENT membrane (#PCDATA)>
+<!ATTLIST membrane
+    %smufl;
+>
 
 <!--
 	The effect element represents pictograms for sound effect
@@ -583,14 +596,23 @@
 	lions roar, lotus flute, megaphone, police whistle, siren,
 	slide whistle, thunder sheet, wind machine, and wind whistle.
 	The cannon, lotus flute, and megaphone values are in addition
-	to Stone's list.
+	to Stone's list. The smufl attribute is used to distinguish
+	different SMuFL stylistic alternates.
 -->
 <!ELEMENT effect (#PCDATA)>
+<!ATTLIST effect
+    %smufl;
+>
 
 <!--
-	The timpani element represents the timpani pictogram.
+	The timpani element represents the timpani pictogram. The
+	smufl attribute is used to distinguish different SMuFL
+	stylistic alternates.
 -->
 <!ELEMENT timpani EMPTY>
+<!ATTLIST timpani
+    %smufl;
+>
 
 <!--
 	The beater element represents pictograms for beaters,

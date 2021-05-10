@@ -159,9 +159,9 @@
 	the duration of a chord note cannot be longer than the
 	preceding note.
 
-    In most cases the duration will be the same as the
-    preceding note. However it can be shorter in situations
-    such as multiple stops for string instruments.
+	In most cases the duration will be the same as the
+	preceding note. However it can be shorter in situations
+	such as multiple stops for string instruments.
 -->
 <!ELEMENT chord EMPTY>
 
