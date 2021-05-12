@@ -121,22 +121,22 @@
 
 <tr>
     <th class="nobr">Hauptstimme</th>
-    <td><img src="/static/datatypes/principal-voice-Hauptstimme.png"/></td>
+    <td><span class="smufl">&#xE860;</span></td>
 </tr>
 
 <tr>
     <th class="nobr">Nebenstimme</th>
-    <td><img src="/static/datatypes/principal-voice-Nebenstimme.png"/></td>
+    <td><span class="smufl">&#xE861;</span></td>
+</tr>
+
+<tr>
+    <th class="nobr">plain</th>
+    <td><span class="smufl">&#xE862;</span></td>
 </tr>
 
 <tr>
     <th class="nobr">none</th>
     <td>Used for analysis markup when the &lt;principal-voice&gt; element does not have a corresponding appearance in the score.</td>
-</tr>
-
-<tr>
-    <th class="nobr">plain</th>
-    <td><img src="/static/datatypes/principal-voice-plain.png"/></td>
 </tr>
 
 </table>
@@ -157,26 +157,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

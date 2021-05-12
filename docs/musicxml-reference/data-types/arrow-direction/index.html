@@ -121,37 +121,37 @@
 
 <tr>
     <th class="nobr">down</th>
-    <td><img src="/static/datatypes/arrow-direction-down.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-down.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">left</th>
-    <td><img src="/static/datatypes/arrow-direction-left.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-left.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">left right</th>
-    <td><img src="/static/datatypes/arrow-direction-left-right.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-left-right.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">northeast</th>
-    <td><img src="/static/datatypes/arrow-direction-northeast.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-northeast.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">northeast southwest</th>
-    <td><img src="/static/datatypes/arrow-direction-northeast-southwest.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-northeast-southwest.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">northwest</th>
-    <td><img src="/static/datatypes/arrow-direction-northwest.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-northwest.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">northwest southeast</th>
-    <td><img src="/static/datatypes/arrow-direction-northwest-southeast.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-northwest-southeast.png"/></td>
 </tr>
 
 <tr>
@@ -161,27 +161,27 @@
 
 <tr>
     <th class="nobr">right</th>
-    <td><img src="/static/datatypes/arrow-direction-right.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-right.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">southeast</th>
-    <td><img src="/static/datatypes/arrow-direction-southeast.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-southeast.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">southwest</th>
-    <td><img src="/static/datatypes/arrow-direction-southwest.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-southwest.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">up</th>
-    <td><img src="/static/datatypes/arrow-direction-up.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-up.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">up down</th>
-    <td><img src="/static/datatypes/arrow-direction-up-down.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-direction-up-down.png"/></td>
 </tr>
 
 </table>
@@ -202,26 +202,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

@@ -99,7 +99,7 @@
 <h1>valign data type</h1>
 
 
-<p>The valign type is used to indicate vertical alignment to the top, middle, bottom, or baseline of the text. If the text is on multiple lines, baseline alignment refers to the baseline of the lowest line of text. Defaults are implementation-dependent.</p>
+<p>The valign type is used to indicate vertical alignment to the top, middle, bottom, or baseline of the text. Defaults are implementation-dependent.</p>
 
 
 
@@ -121,22 +121,22 @@
 
 <tr>
     <th class="nobr">top</th>
-    <td></td>
+    <td>Aligned to the top of the text.</td>
 </tr>
 
 <tr>
     <th class="nobr">middle</th>
-    <td></td>
+    <td>Aligned to the middle of the text.</td>
 </tr>
 
 <tr>
     <th class="nobr">bottom</th>
-    <td></td>
+    <td>Aligned to the bottom of the text.</td>
 </tr>
 
 <tr>
     <th class="nobr">baseline</th>
-    <td></td>
+    <td>Aligned to the baseline of the text. If the text is on multiple lines, algned to the baseline of the lowest line of text.</td>
 </tr>
 
 </table>
@@ -157,26 +157,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

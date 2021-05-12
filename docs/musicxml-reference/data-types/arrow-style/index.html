@@ -121,22 +121,22 @@
 
 <tr>
     <th class="nobr">combined</th>
-    <td><img src="/static/datatypes/arrow-style-combined.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-style-combined.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">double</th>
-    <td><img src="/static/datatypes/arrow-style-double.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-style-double.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">filled</th>
-    <td><img src="/static/datatypes/arrow-style-filled.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-style-filled.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">hollow</th>
-    <td><img src="/static/datatypes/arrow-style-hollow.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-style-hollow.png"/></td>
 </tr>
 
 <tr>
@@ -146,12 +146,12 @@
 
 <tr>
     <th class="nobr">paired</th>
-    <td><img src="/static/datatypes/arrow-style-paired.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-style-paired.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">single</th>
-    <td><img src="/static/datatypes/arrow-style-single.png"/></td>
+    <td><img src="../../../static/datatypes/arrow-style-single.png"/></td>
 </tr>
 
 </table>
@@ -172,26 +172,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

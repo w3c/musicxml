@@ -120,78 +120,78 @@
 <table>
 
 <tr>
-    <th class="nobr">bracket</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">circle</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">decagon</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">diamond</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">heptagon</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">hexagon</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">inverted-bracket</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">nonagon</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">none</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">octagon</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">oval</th>
-    <td></td>
-</tr>
-
-<tr>
-    <th class="nobr">pentagon</th>
-    <td></td>
-</tr>
-
-<tr>
     <th class="nobr">rectangle</th>
-    <td></td>
+    <td><img src="../../../static/datatypes/enclosure-shape-rectangle.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">square</th>
-    <td></td>
+    <td><img src="../../../static/datatypes/enclosure-shape-square.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">oval</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-oval.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">circle</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-circle.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">bracket</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-bracket.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">inverted-bracket</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-inverted-bracket.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">triangle</th>
-    <td></td>
+    <td><img src="../../../static/datatypes/enclosure-shape-triangle.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">diamond</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-diamond.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">pentagon</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-pentagon.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">hexagon</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-hexagon.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">heptagon</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-heptagon.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">octagon</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-octagon.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">nonagon</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-nonagon.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">decagon</th>
+    <td><img src="../../../static/datatypes/enclosure-shape-decagon.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">none</th>
+    <td>No enclosure is displayed.</td>
 </tr>
 
 </table>
@@ -214,26 +214,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

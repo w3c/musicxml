@@ -121,12 +121,12 @@
 
 <tr>
     <th class="nobr">backward</th>
-    <td><img src="/static/datatypes/backward-forward-backward.png"/></td>
+    <td><img src="../../../static/datatypes/backward-forward-backward.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">forward</th>
-    <td><img src="/static/datatypes/backward-forward-forward.png"/></td>
+    <td><img src="../../../static/datatypes/backward-forward-forward.png"/></td>
 </tr>
 
 </table>
@@ -147,26 +147,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

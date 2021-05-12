@@ -121,22 +121,22 @@
 
 <tr>
     <th class="nobr">begin</th>
-    <td><img src="/static/datatypes/syllabic-begin.png"/></td>
+    <td><img src="../../../static/datatypes/syllabic-begin.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">end</th>
-    <td><img src="/static/datatypes/syllabic-end.png"/></td>
+    <td><img src="../../../static/datatypes/syllabic-end.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">middle</th>
-    <td><img src="/static/datatypes/syllabic-middle.png"/></td>
+    <td><img src="../../../static/datatypes/syllabic-middle.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">single</th>
-    <td><img src="/static/datatypes/syllabic-single.png"/></td>
+    <td><img src="../../../static/datatypes/syllabic-single.png"/></td>
 </tr>
 
 </table>
@@ -157,26 +157,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

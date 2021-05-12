@@ -121,32 +121,32 @@
 
 <tr>
     <th class="nobr">bracket</th>
-    <td><img src="/static/datatypes/time-relation-bracket.png"/></td>
+    <td><img src="../../../static/datatypes/time-relation-bracket.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">equals</th>
-    <td><img src="/static/datatypes/time-relation-equals.png"/></td>
+    <td><img src="../../../static/datatypes/time-relation-equals.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">hyphen</th>
-    <td><img src="/static/datatypes/time-relation-hyphen.png"/></td>
+    <td><img src="../../../static/datatypes/time-relation-hyphen.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">parentheses</th>
-    <td><img src="/static/datatypes/time-relation-parentheses.png"/></td>
+    <td><img src="../../../static/datatypes/time-relation-parentheses.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">slash</th>
-    <td><img src="/static/datatypes/time-relation-slash.png"/></td>
+    <td><img src="../../../static/datatypes/time-relation-slash.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">space</th>
-    <td><img src="/static/datatypes/time-relation-space.png"/></td>
+    <td><img src="../../../static/datatypes/time-relation-space.png"/></td>
 </tr>
 
 </table>
@@ -167,26 +167,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

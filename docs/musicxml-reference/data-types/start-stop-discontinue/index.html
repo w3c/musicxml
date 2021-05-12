@@ -99,7 +99,7 @@
 <h1>start-stop-discontinue data type</h1>
 
 
-<p>The start-stop-discontinue type is used to specify ending types. Typically, the start type is associated with the left barline of the first measure in an ending. The stop and discontinue types are associated with the right barline of the last measure in an ending. Stop is used when the ending mark concludes with a downward jog, as is typical for first endings. Discontinue is used when there is no downward jog, as is typical for second endings that do not conclude a piece.</p>
+<p>The start-stop-discontinue type is used to specify &lt;ending&gt; types.</p>
 
 
 
@@ -120,18 +120,18 @@
 <table>
 
 <tr>
-    <th class="nobr">discontinue</th>
-    <td></td>
-</tr>
-
-<tr>
     <th class="nobr">start</th>
-    <td></td>
+    <td>Used with the left barline of the first measure in an ending.</td>
 </tr>
 
 <tr>
     <th class="nobr">stop</th>
-    <td></td>
+    <td>Used with the right barline of the last measure in an ending. Indicates the ending mark concludes with a downward jog, as is typical for first endings</td>
+</tr>
+
+<tr>
+    <th class="nobr">discontinue</th>
+    <td>Used with the right barline of the last measure in an ending. Indicates there is no downward jog, as is typical for second endings that do not conclude a piece.</td>
 </tr>
 
 </table>
@@ -152,26 +152,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

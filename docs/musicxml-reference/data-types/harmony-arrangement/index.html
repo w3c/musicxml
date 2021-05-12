@@ -99,7 +99,7 @@
 <h1>harmony-arrangement data type</h1>
 
 
-<p>The harmony-arrangement type indicates how stacked chords and bass notes are displayed within a harmony element. The vertical value specifies that the second element appears below the first. The horizontal value specifies that the second element appears to the right of the first. The diagonal value specifies that the second element appears both below and to the right of the first.</p>
+<p>The harmony-arrangement type indicates how stacked chords and bass notes are displayed within a harmony element. The horizontal value specifies that the second element appears to the right of the first. The vertical value specifies that the second element appears below the first. The diagonal value specifies that the second element appears both below and to the right of the first.</p>
 
 
 
@@ -120,18 +120,18 @@
 <table>
 
 <tr>
-    <th class="nobr">diagonal</th>
-    <td></td>
-</tr>
-
-<tr>
     <th class="nobr">horizontal</th>
-    <td></td>
+    <td><img src="../../../static/datatypes/harmony-arrangement-horizontal.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">vertical</th>
-    <td></td>
+    <td><img src="../../../static/datatypes/harmony-arrangement-vertical.png"/></td>
+</tr>
+
+<tr>
+    <th class="nobr">diagonal</th>
+    <td><img src="../../../static/datatypes/harmony-arrangement-diagonal.png"/></td>
 </tr>
 
 </table>
@@ -154,26 +154,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

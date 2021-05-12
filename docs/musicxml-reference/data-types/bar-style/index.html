@@ -121,37 +121,37 @@
 
 <tr>
     <th class="nobr">dashed</th>
-    <td><img src="/static/datatypes/bar-style-dashed.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-dashed.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">dotted</th>
-    <td><img src="/static/datatypes/bar-style-dotted.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-dotted.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">heavy</th>
-    <td><img src="/static/datatypes/bar-style-heavy.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-heavy.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">heavy-heavy</th>
-    <td><img src="/static/datatypes/bar-style-heavy-heavy.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-heavy-heavy.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">heavy-light</th>
-    <td><img src="/static/datatypes/bar-style-heavy-light.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-heavy-light.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">light-heavy</th>
-    <td><img src="/static/datatypes/bar-style-light-heavy.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-light-heavy.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">light-light</th>
-    <td><img src="/static/datatypes/bar-style-light-light.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-light-light.png"/></td>
 </tr>
 
 <tr>
@@ -161,17 +161,17 @@
 
 <tr>
     <th class="nobr">regular</th>
-    <td><img src="/static/datatypes/bar-style-regular.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-regular.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">short</th>
-    <td><img src="/static/datatypes/bar-style-short.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-short.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">tick</th>
-    <td><img src="/static/datatypes/bar-style-tick.png"/></td>
+    <td><img src="../../../static/datatypes/bar-style-tick.png"/></td>
 </tr>
 
 </table>
@@ -184,26 +184,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

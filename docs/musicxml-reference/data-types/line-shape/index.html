@@ -120,13 +120,13 @@
 <table>
 
 <tr>
-    <th class="nobr">curved</th>
-    <td></td>
+    <th class="nobr">straight</th>
+    <td><span class="smufl">&#xE5DA;</span></td>
 </tr>
 
 <tr>
-    <th class="nobr">straight</th>
-    <td></td>
+    <th class="nobr">curved</th>
+    <td><span class="smufl">&#xE5D8;</span></td>
 </tr>
 
 </table>
@@ -155,26 +155,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

@@ -121,27 +121,27 @@
 
 <tr>
     <th class="nobr">adjacent</th>
-    <td><img src="/static/datatypes/time-separator-adjacent.png"></td>
+    <td><img src="../../../static/datatypes/time-separator-adjacent.png"></td>
 </tr>
 
 <tr>
     <th class="nobr">diagonal</th>
-    <td><img src="/static/datatypes/time-separator-diagonal.png"></td>
+    <td><img src="../../../static/datatypes/time-separator-diagonal.png"></td>
 </tr>
 
 <tr>
     <th class="nobr">horizontal</th>
-    <td><img src="/static/datatypes/time-separator-horizontal.png"></td>
+    <td><img src="../../../static/datatypes/time-separator-horizontal.png"></td>
 </tr>
 
 <tr>
     <th class="nobr">none</th>
-    <td><img src="/static/datatypes/time-separator-none.png"></td>
+    <td><img src="../../../static/datatypes/time-separator-none.png"></td>
 </tr>
 
 <tr>
     <th class="nobr">vertical</th>
-    <td><img src="/static/datatypes/time-separator-vertical.png"></td>
+    <td><img src="../../../static/datatypes/time-separator-vertical.png"></td>
 </tr>
 
 </table>
@@ -164,26 +164,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

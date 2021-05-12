@@ -99,7 +99,7 @@
 <h1>distance-type data type</h1>
 
 
-<p>The distance-type defines what type of distance is being defined in a &lt;distance&gt; element. Values include:<ul><li>beam</li><li>hyphen</li></ul>This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly. The hyphen type is used for hyphens in lyrics.</p>
+<p>The distance-type defines what type of distance is being defined in a &lt;distance&gt; element. Values include:<ul><li>beam</li><li>hyphen</li></ul>This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly. <br><br>The beam type represents the distance between beam. The hyphen type represents the distance between hyphens in lyrics.</p>
 
 
 
@@ -131,26 +131,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>

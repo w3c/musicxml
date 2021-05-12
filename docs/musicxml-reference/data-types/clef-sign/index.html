@@ -121,27 +121,27 @@
 
 <tr>
     <th class="nobr">G</th>
-    <td><img src="/static/datatypes/clef-G.png"/></td>
+    <td><img src="../../../static/datatypes/clef-G.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">F</th>
-    <td><img src="/static/datatypes/clef-F.png"/></td>
+    <td><img src="../../../static/datatypes/clef-F.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">C</th>
-    <td><img src="/static/datatypes/clef-C.png"/></td>
+    <td><img src="../../../static/datatypes/clef-C.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">percussion</th>
-    <td><img src="/static/datatypes/clef-percussion.png"/></td>
+    <td><img src="../../../static/datatypes/clef-percussion.png"/></td>
 </tr>
 
 <tr>
     <th class="nobr">TAB</th>
-    <td><img src="/static/datatypes/clef-TAB.png"/><br>The TAB sign indicates that the music that follows should be in tablature notation.</td>
+    <td><img src="../../../static/datatypes/clef-TAB.png"/><br>The TAB sign indicates that the music that follows should be in tablature notation.</td>
 </tr>
 
 <tr>
@@ -172,26 +172,7 @@
 </div>
 
 
-<script>
-    (function(){
-        let mq = window.matchMedia('(max-width: 800px)');
-
-        if(mq.matches) {
-            document.body.classList.remove("has-sidenav");
-        }
-
-        mq.addEventListener('change', (e) => {
-            if(mq.matches) {
-                document.body.classList.remove("has-sidenav");
-            }
-        });
-
-        let toggle = document.getElementById('toggle');
-        toggle.addEventListener('click', (e) => {
-            document.body.classList.toggle("has-sidenav");
-        });
-    })();
-</script>
+<script type="text/javascript" src="../../../static/global.js"></script>
 
 </body>
 </html>
