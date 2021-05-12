@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Code Generation | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../hello-world/">"Hello World"</a></li>
+        <li><a href="../structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../notation-basics/">Notation Basics</a></li>
+        <li><a href="../chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../tablature/">Tablature</a></li>
+        <li><a href="../percussion/">Percussion</a></li>
+        <li><a href="../compressed-mxl-files/">Compressed .MXL Files</a></li>
+        <li><a href="./">Code Generation</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+    </ul>
+    <li><b><a href="../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../../version-history/">Version History</a></b></li>
+    <ul>
+        <li><a href="../../version-history/40/">Version 4.0</a></li>
+        <li><a href="../../version-history/31/">Version 3.1</a></li>
+        <li><a href="../../version-history/30/">Version 3.0</a></li>
+        <li><a href="../../version-history/20/">Version 2.0</a></li>
+        <li><a href="../../version-history/11/">Version 1.1</a></li>
+        <li><a href="../../version-history/10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">Tutorial</a> &gt;
+    Code Generation
+</p>
+
+<h1>Code Generation</h1>
+
+<p>Many MusicXML developers now use code generation or data binding tools to automatically generate code from the musicxml.xsd schema file. These tools typically generate classes based on the schema data structures in a particular programming language, and automate reading and writing to MusicXML files. A few examples available as of May 2021 are:
+<ul>
+<li>xjc, included in the <a href="https://github.com/eclipse-ee4j/jaxb-ri">Java Architecture for XML Binding (JAXB)</a></li>
+<li>CodeSynthesis <a href="https://www.codesynthesis.com/products/xsd/">XSD</a> and <a href="https://www.codesynthesis.com/products/xsde/">XSD/e</a> tools for generating C++ data bindings</li>
+<li><a href="https://pypi.org/project/xsdata/">xsData</a>, a data binding library for Python</li>
+</ul>
+</p>
+
+<p>There are some issues in MusicXML's design that often cause some difficulties for data binding tools. This is because MusicXML's design pre-dates not only these tools, but the W3C XML Schema recommendation itself. Later versions of MusicXML maintain full compatibility with MusicXML 1.0, so we cannot change these parts of the schema to make things work more easily with these tools.</p>
+
+<p>These problems are common among code generation and data binding tools:</p>
+
+<ul>
+<li>Incomplete support for XML catalogs that keep the xlink and xml schemas from being imported correctly.</li>
+<li>Confusion between the coda attribute and the <a href="../../musicxml-reference/elements/coda/">&lt;coda&gt;</a> child element in the <a href="../../musicxml-reference/elements/barline/">&lt;barline&gt;</a> element.</li>
+<li>Confusion between the segno attribute and the <a href="../../musicxml-reference/elements/segno/">&lt;segno&gt;</a> child element in the &lt;barline&gt; element.</li>
+<li>Confusion between the two different placements of the <a href="../../musicxml-reference/elements/link/">&lt;link&gt;</a> and <a href="../../musicxml-reference/elements/bookmark/">&lt;bookmark&gt;</a> child elements within the <a href="../../musicxml-reference/elements/credit/">&lt;credit&gt;</a> element.</li>
+</ul>
+
+<p>Fortunately there are straightforward workarounds for these issues. Let's take the example of the xjc tool included with Java SE versions up through Java 8. We try to compile the code from the terminal using</p>
+
+<p><pre>xjc -catalog catalog.xml musicxml.xsd</pre></p>
+
+<p>Our first problem is that even though xjc has a catalog parameter, the Java 8 implementation of this feature is incomplete and does not work with MusicXML. We will get warning messages and errors about the xlink.xsd and xml.xsd files that will keep it from parsing.</p>
+
+<p>This can be worked around by editing the version of the musicxml.xsd file you use to generate the bindings to reference local copies directly, rather than via the XML catalog.</p>
+
+<p><pre>	&lt;xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/&gt;
+	&lt;xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/&gt;
+</pre></p>
+
+<p>This will let xjc parse the schema. Now it will encounter the other problems listed above. We will get error messages like these:
+<ul>
+<li>[ERROR] Element "link" shows up in more than one properties.</li>
+<li>[ERROR] Property "Segno" is already defined. Use &lt;jaxb:property&gt; to resolve this conflict.</li>
+<li>[ERROR] Property "Segno" is already defined. Use &lt;jaxb:property&gt; to resolve this conflict.</li>
+</ul></p>
+
+<p>JAXB and xjc allow you to specify an external bindings file to guide the choice of data bindings. These files typically have an .xjb file extension. You can then specify the external bindings file in the -b parameter when running xjc from the command line.</p>
+
+<p>Let's create a musicxml.xjb external bindings file with the following content:</p>
+
+<p><pre>&lt;bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+          xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          version="2.1"&gt;
+    &lt;bindings schemaLocation="musicxml.xsd" version="1.0"&gt;
+        &lt;!-- Customize the package name --&gt;
+        &lt;schemaBindings&gt;
+            &lt;package name="org.musicxml"/&gt;
+        &lt;/schemaBindings&gt;
+
+        &lt;bindings node="//xs:complexType[@name='barline']"&gt;
+            &lt;bindings node=".//xs:attribute[@name='segno']"&gt;
+                &lt;property name="segnoAttribute"/&gt;
+            &lt;/bindings&gt;
+        &lt;/bindings&gt;
+
+        &lt;bindings node="//xs:complexType[@name='barline']"&gt;
+            &lt;bindings node=".//xs:attribute[@name='coda']"&gt;
+                &lt;property name="codaAttribute"/&gt;
+            &lt;/bindings&gt;
+        &lt;/bindings&gt;
+
+        &lt;bindings node="//xs:complexType[@name='credit']"&gt;
+            &lt;bindings node="./xs:sequence/xs:element[@name='link']"&gt;
+                &lt;property name="firstLink"/&gt;
+            &lt;/bindings&gt;
+            &lt;bindings node="./xs:sequence/xs:element[@name='bookmark']"&gt;
+                &lt;property name="firstBookmark"/&gt;
+            &lt;/bindings&gt;
+        &lt;/bindings&gt;
+    &lt;/bindings&gt;
+&lt;/bindings&gt;</pre></p>
+
+<p>Now we can run xjc using this external bindings file:</p>
+
+<p><pre>xjc -catalog catalog.xml -b musicxml.xjb musicxml.xsd</pre></p>
+
+<p>When we do this, xjc runs without any error messages, and the .java files are placed in the org/musicxml folder.</p>
+
+<p>Other code generation and binding tools may encounter related problems, and the solutions are often similar. Usually you can provide some type of external information to resolve conflicts that can come up in automatic code generation.</p>
+
+    </main>
+</div>
+
+
+<script type="text/javascript" src="../../static/global.js"></script>
+
+</body>
+</html>
