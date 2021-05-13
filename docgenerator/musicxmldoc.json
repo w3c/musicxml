@@ -11396,8 +11396,8 @@
     "model": "spec.xmlelement",
     "pk": 121,
     "fields": {
-        "name": "anonymous-24",
-        "slug": "anonymous-24",
+        "name": "sequence-part-list",
+        "slug": "sequence-part-list",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -11432,8 +11432,8 @@
     "model": "spec.xmlelement",
     "pk": 123,
     "fields": {
-        "name": "anonymous-25",
-        "slug": "anonymous-25",
+        "name": "sequence-part-group",
+        "slug": "sequence-part-group",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -11823,8 +11823,8 @@
     "model": "spec.xmlelement",
     "pk": 144,
     "fields": {
-        "name": "anonymous-29",
-        "slug": "anonymous-29",
+        "name": "sequence-editorial",
+        "slug": "sequence-editorial",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -11859,8 +11859,8 @@
     "model": "spec.xmlelement",
     "pk": 146,
     "fields": {
-        "name": "footnote-group-sequence",
-        "slug": "footnote-group-sequence",
+        "name": "group-sequence-footnote",
+        "slug": "group-sequence-footnote",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -11913,8 +11913,8 @@
     "model": "spec.xmlelement",
     "pk": 149,
     "fields": {
-        "name": "anonymous-31",
-        "slug": "anonymous-31",
+        "name": "group-sequence-level",
+        "slug": "group-sequence-level",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -12005,8 +12005,8 @@
     "model": "spec.xmlelement",
     "pk": 154,
     "fields": {
-        "name": "anonymous-32",
-        "slug": "anonymous-32",
+        "name": "sequence-score-part",
+        "slug": "sequence-score-part",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -12909,8 +12909,8 @@
     "model": "spec.xmlelement",
     "pk": 204,
     "fields": {
-        "name": "anonymous-42",
-        "slug": "anonymous-42",
+        "name": "choice-part-list",
+        "slug": "choice-part-list",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13081,8 +13081,8 @@
     "model": "spec.xmlelement",
     "pk": 213,
     "fields": {
-        "name": "anonymous-46",
-        "slug": "anonymous-46",
+        "name": "sequence-note-top",
+        "slug": "sequence-note-top",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13099,8 +13099,8 @@
     "model": "spec.xmlelement",
     "pk": 214,
     "fields": {
-        "name": "anonymous-47",
-        "slug": "anonymous-47",
+        "name": "choice-note-top",
+        "slug": "choice-note-top",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13117,8 +13117,8 @@
     "model": "spec.xmlelement",
     "pk": 215,
     "fields": {
-        "name": "anonymous-48",
-        "slug": "anonymous-48",
+        "name": "sequence-note-grace",
+        "slug": "sequence-note-grace",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13639,8 +13639,8 @@
     "model": "spec.xmlelement",
     "pk": 244,
     "fields": {
-        "name": "anonymous-58",
-        "slug": "anonymous-58",
+        "name": "sequence-note-cue",
+        "slug": "sequence-note-cue",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13675,8 +13675,8 @@
     "model": "spec.xmlelement",
     "pk": 246,
     "fields": {
-        "name": "anonymous-59",
-        "slug": "anonymous-59",
+        "name": "sequence-duration",
+        "slug": "sequence-duration",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13711,8 +13711,8 @@
     "model": "spec.xmlelement",
     "pk": 248,
     "fields": {
-        "name": "anonymous-60",
-        "slug": "anonymous-60",
+        "name": "sequence-note-regular",
+        "slug": "sequence-note-regular",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13783,8 +13783,8 @@
     "model": "spec.xmlelement",
     "pk": 252,
     "fields": {
-        "name": "anonymous-61",
-        "slug": "anonymous-61",
+        "name": "sequence-editorial-voice",
+        "slug": "sequence-editorial-voice",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13819,8 +13819,8 @@
     "model": "spec.xmlelement",
     "pk": 254,
     "fields": {
-        "name": "anonymous-62",
-        "slug": "anonymous-62",
+        "name": "sequence-voice",
+        "slug": "sequence-voice",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -14282,8 +14282,8 @@
     "model": "spec.xmlelement",
     "pk": 279,
     "fields": {
-        "name": "anonymous-67",
-        "slug": "anonymous-67",
+        "name": "sequence-staff",
+        "slug": "sequence-staff",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -17997,8 +17997,8 @@
     "model": "spec.xmlelement",
     "pk": 476,
     "fields": {
-        "name": "anonymous-86",
-        "slug": "anonymous-86",
+        "name": "sequence-lyric-top",
+        "slug": "sequence-lyric-top",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -18015,8 +18015,8 @@
     "model": "spec.xmlelement",
     "pk": 477,
     "fields": {
-        "name": "anonymous-87",
-        "slug": "anonymous-87",
+        "name": "choice-lyric",
+        "slug": "choice-lyric",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -18033,8 +18033,8 @@
     "model": "spec.xmlelement",
     "pk": 478,
     "fields": {
-        "name": "anonymous-88",
-        "slug": "anonymous-88",
+        "name": "sequence-lyric-text",
+        "slug": "sequence-lyric-text",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -18112,8 +18112,8 @@
     "model": "spec.xmlelement",
     "pk": 482,
     "fields": {
-        "name": "anonymous-89",
-        "slug": "anonymous-89",
+        "name": "sequence-lyric-added-text",
+        "slug": "sequence-lyric-added-text",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -18130,8 +18130,8 @@
     "model": "spec.xmlelement",
     "pk": 483,
     "fields": {
-        "name": "anonymous-90",
-        "slug": "anonymous-90",
+        "name": "sequence-lyric-elision",
+        "slug": "sequence-lyric-elision",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -18676,8 +18676,8 @@
     "model": "spec.xmlelement",
     "pk": 513,
     "fields": {
-        "name": "anonymous-94",
-        "slug": "anonymous-94",
+        "name": "sequence-backup",
+        "slug": "sequence-backup",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -18730,8 +18730,8 @@
     "model": "spec.xmlelement",
     "pk": 516,
     "fields": {
-        "name": "anonymous-95",
-        "slug": "anonymous-95",
+        "name": "sequence-forward",
+        "slug": "sequence-forward",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -18789,8 +18789,8 @@
     "model": "spec.xmlelement",
     "pk": 519,
     "fields": {
-        "name": "anonymous-96",
-        "slug": "anonymous-96",
+        "name": "sequence-direction-top",
+        "slug": "sequence-direction-top",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -20873,8 +20873,8 @@
     "model": "spec.xmlelement",
     "pk": 631,
     "fields": {
-        "name": "anonymous-114",
-        "slug": "anonymous-114",
+        "name": "sequence-editorial-voice-direction",
+        "slug": "sequence-editorial-voice-direction",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -23073,8 +23073,8 @@
     "model": "spec.xmlelement",
     "pk": 751,
     "fields": {
-        "name": "anonymous-140",
-        "slug": "anonymous-140",
+        "name": "sequence-harmony",
+        "slug": "sequence-harmony",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -24157,8 +24157,8 @@
     "model": "spec.xmlelement",
     "pk": 809,
     "fields": {
-        "name": "anonymous-150",
-        "slug": "anonymous-150",
+        "name": "sequence-figured-bass",
+        "slug": "sequence-figured-bass",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -32038,7 +32038,7 @@
     "pk": 101,
     "fields": {
         "parent": 144,
-        "child": 145,
+        "child": 147,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 0
@@ -32071,7 +32071,7 @@
     "pk": 104,
     "fields": {
         "parent": 144,
-        "child": 148,
+        "child": 151,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 1
@@ -32137,7 +32137,7 @@
     "pk": 110,
     "fields": {
         "parent": 121,
-        "child": 122,
+        "child": 152,
         "min_amount": 0,
         "max_amount": null,
         "child_order": 0
@@ -32610,7 +32610,7 @@
     "pk": 153,
     "fields": {
         "parent": 121,
-        "child": 153,
+        "child": 203,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 1
@@ -32621,7 +32621,7 @@
     "pk": 154,
     "fields": {
         "parent": 204,
-        "child": 122,
+        "child": 152,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -32632,7 +32632,7 @@
     "pk": 155,
     "fields": {
         "parent": 204,
-        "child": 153,
+        "child": 203,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 1
@@ -33028,7 +33028,7 @@
     "pk": 191,
     "fields": {
         "parent": 244,
-        "child": 245,
+        "child": 247,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 2
@@ -33061,7 +33061,7 @@
     "pk": 194,
     "fields": {
         "parent": 248,
-        "child": 245,
+        "child": 247,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 1
@@ -33116,7 +33116,7 @@
     "pk": 199,
     "fields": {
         "parent": 252,
-        "child": 145,
+        "child": 147,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 0
@@ -33127,7 +33127,7 @@
     "pk": 200,
     "fields": {
         "parent": 252,
-        "child": 148,
+        "child": 151,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 1
@@ -33160,7 +33160,7 @@
     "pk": 203,
     "fields": {
         "parent": 252,
-        "child": 253,
+        "child": 255,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 2
@@ -33402,7 +33402,7 @@
     "pk": 225,
     "fields": {
         "parent": 213,
-        "child": 278,
+        "child": 280,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 10
@@ -35393,7 +35393,7 @@
     "pk": 406,
     "fields": {
         "parent": 513,
-        "child": 245,
+        "child": 247,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -35437,7 +35437,7 @@
     "pk": 410,
     "fields": {
         "parent": 516,
-        "child": 245,
+        "child": 247,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -35459,7 +35459,7 @@
     "pk": 412,
     "fields": {
         "parent": 516,
-        "child": 278,
+        "child": 280,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 2
@@ -36416,7 +36416,7 @@
     "pk": 499,
     "fields": {
         "parent": 631,
-        "child": 145,
+        "child": 147,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 0
@@ -36427,7 +36427,7 @@
     "pk": 500,
     "fields": {
         "parent": 631,
-        "child": 148,
+        "child": 151,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 1
@@ -36438,7 +36438,7 @@
     "pk": 501,
     "fields": {
         "parent": 631,
-        "child": 253,
+        "child": 255,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 2
@@ -36471,7 +36471,7 @@
     "pk": 504,
     "fields": {
         "parent": 519,
-        "child": 278,
+        "child": 280,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 3
@@ -38066,7 +38066,7 @@
     "pk": 649,
     "fields": {
         "parent": 751,
-        "child": 278,
+        "child": 280,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 4
@@ -38176,7 +38176,7 @@
     "pk": 659,
     "fields": {
         "parent": 809,
-        "child": 245,
+        "child": 247,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 1

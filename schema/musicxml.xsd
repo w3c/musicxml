@@ -6540,8 +6540,7 @@ In most cases the duration will be the same as the preceding note. However it ca
 			<xs:documentation>The part-group element is defined within a group due to its multiple uses within the part-list element.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="part-group" type="part-group">
-			</xs:element>
+			<xs:element name="part-group" type="part-group"/>			
 		</xs:sequence>
 	</xs:group>
 
