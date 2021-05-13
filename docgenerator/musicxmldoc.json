@@ -11412,24 +11412,6 @@
 },
 {
     "model": "spec.xmlelement",
-    "pk": 122,
-    "fields": {
-        "name": "part-group",
-        "slug": "group-part-group",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "The part-group element is defined within a group due to its multiple uses within the part-list element.",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
     "pk": 123,
     "fields": {
         "name": "sequence-part-group",
@@ -11839,24 +11821,6 @@
 },
 {
     "model": "spec.xmlelement",
-    "pk": 145,
-    "fields": {
-        "name": "footnote",
-        "slug": "group-footnote",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
     "pk": 146,
     "fields": {
         "name": "group-sequence-footnote",
@@ -11885,24 +11849,6 @@
         "is_abstract_element": false,
         "is_root": false,
         "description": "",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
-    "pk": 148,
-    "fields": {
-        "name": "level",
-        "slug": "group-level",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "The level element specifies editorial information for different MusicXML elements. It is defined within a group due to its multiple uses within the MusicXML schema.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -11977,24 +11923,6 @@
         "is_abstract_element": false,
         "is_root": false,
         "description": "",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
-    "pk": 153,
-    "fields": {
-        "name": "score-part",
-        "slug": "group-score-part",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "The score-part element is defined within a group due to its multiple uses within the part-list element.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -13655,24 +13583,6 @@
 },
 {
     "model": "spec.xmlelement",
-    "pk": 245,
-    "fields": {
-        "name": "duration",
-        "slug": "group-duration",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "The duration element is defined within a group due to its uses within the note, figure-bass, backup, and forward elements.",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
     "pk": 246,
     "fields": {
         "name": "sequence-duration",
@@ -13794,24 +13704,6 @@
         "content_data_type": null,
         "is_featured": false,
         "children_type": 2,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
-    "pk": 253,
-    "fields": {
-        "name": "voice",
-        "slug": "group-voice",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "The voice is used to distinguish between multiple voices (what MuseData calls tracks) in individual parts. It is defined within a group due to its multiple uses within the MusicXML schema.",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
         "attribute_groups": []
     }
 },
@@ -14254,24 +14146,6 @@
         "is_abstract_element": false,
         "is_root": false,
         "description": "",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
-    "pk": 278,
-    "fields": {
-        "name": "staff",
-        "slug": "group-staff",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "The staff element is defined within a group due to its use by both notes and direction elements.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -21855,8 +21729,8 @@
     "model": "spec.xmlelement",
     "pk": 685,
     "fields": {
-        "name": "anonymous-130",
-        "slug": "anonymous-130",
+        "name": "sequence-interchangeable",
+        "slug": "sequence-interchangeable",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -32024,17 +31898,6 @@
 },
 {
     "model": "spec.xmlrelationship",
-    "pk": 100,
-    "fields": {
-        "parent": 145,
-        "child": 146,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
     "pk": 101,
     "fields": {
         "parent": 144,
@@ -32050,17 +31913,6 @@
     "fields": {
         "parent": 149,
         "child": 151,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
-    "pk": 103,
-    "fields": {
-        "parent": 148,
-        "child": 149,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -32116,17 +31968,6 @@
     "fields": {
         "parent": 123,
         "child": 152,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
-    "pk": 109,
-    "fields": {
-        "parent": 122,
-        "child": 123,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -32596,17 +32437,6 @@
 },
 {
     "model": "spec.xmlrelationship",
-    "pk": 152,
-    "fields": {
-        "parent": 153,
-        "child": 154,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
     "pk": 153,
     "fields": {
         "parent": 121,
@@ -33014,17 +32844,6 @@
 },
 {
     "model": "spec.xmlrelationship",
-    "pk": 190,
-    "fields": {
-        "parent": 245,
-        "child": 246,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
     "pk": 191,
     "fields": {
         "parent": 244,
@@ -33139,17 +32958,6 @@
     "fields": {
         "parent": 254,
         "child": 255,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
-    "pk": 202,
-    "fields": {
-        "parent": 253,
-        "child": 254,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -33381,17 +33189,6 @@
     "fields": {
         "parent": 279,
         "child": 280,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
-    "pk": 224,
-    "fields": {
-        "parent": 278,
-        "child": 279,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -36999,7 +36796,7 @@
     "pk": 552,
     "fields": {
         "parent": 685,
-        "child": 680,
+        "child": 681,
         "min_amount": 1,
         "max_amount": null,
         "child_order": 1
