@@ -13405,8 +13405,8 @@
     "model": "spec.xmlelement",
     "pk": 231,
     "fields": {
-        "name": "anonymous-54",
-        "slug": "anonymous-54",
+        "name": "sequence-unpitched",
+        "slug": "sequence-unpitched",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13423,8 +13423,8 @@
     "model": "spec.xmlelement",
     "pk": 232,
     "fields": {
-        "name": "display-step-octave",
-        "slug": "group-display-step-octave",
+        "name": "display-step-octave-old",
+        "slug": "group-display-step-octave-old",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13441,8 +13441,8 @@
     "model": "spec.xmlelement",
     "pk": 233,
     "fields": {
-        "name": "anonymous-55",
-        "slug": "anonymous-55",
+        "name": "display-step-octave",
+        "slug": "group-display-step-octave",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -13531,8 +13531,8 @@
     "model": "spec.xmlelement",
     "pk": 238,
     "fields": {
-        "name": "anonymous-56",
-        "slug": "anonymous-56",
+        "name": "sequence-rest",
+        "slug": "sequence-rest",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -21401,8 +21401,8 @@
     "model": "spec.xmlelement",
     "pk": 660,
     "fields": {
-        "name": "anonymous-123",
-        "slug": "anonymous-123",
+        "name": "sequence-key",
+        "slug": "sequence-key",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -21419,8 +21419,8 @@
     "model": "spec.xmlelement",
     "pk": 661,
     "fields": {
-        "name": "anonymous-124",
-        "slug": "anonymous-124",
+        "name": "choice-key",
+        "slug": "choice-key",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -21545,8 +21545,8 @@
     "model": "spec.xmlelement",
     "pk": 668,
     "fields": {
-        "name": "non-traditional-key",
-        "slug": "group-non-traditional-key",
+        "name": "non-traditional-key-old",
+        "slug": "group-non-traditional-key-old",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -21563,8 +21563,8 @@
     "model": "spec.xmlelement",
     "pk": 669,
     "fields": {
-        "name": "anonymous-126",
-        "slug": "anonymous-126",
+        "name": "non-traditional-key",
+        "slug": "group-non-traditional-key",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -21729,8 +21729,8 @@
     "model": "spec.xmlelement",
     "pk": 678,
     "fields": {
-        "name": "anonymous-127",
-        "slug": "anonymous-127",
+        "name": "choice-time",
+        "slug": "choice-time",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -21747,8 +21747,8 @@
     "model": "spec.xmlelement",
     "pk": 679,
     "fields": {
-        "name": "anonymous-128",
-        "slug": "anonymous-128",
+        "name": "sequence-time",
+        "slug": "sequence-time",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -21765,8 +21765,8 @@
     "model": "spec.xmlelement",
     "pk": 680,
     "fields": {
-        "name": "time-signature",
-        "slug": "group-time-signature",
+        "name": "time-signature-old",
+        "slug": "group-time-signature-old",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -21783,8 +21783,8 @@
     "model": "spec.xmlelement",
     "pk": 681,
     "fields": {
-        "name": "anonymous-129",
-        "slug": "anonymous-129",
+        "name": "time-signature",
+        "slug": "group-time-signature",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -22851,8 +22851,8 @@
     "model": "spec.xmlelement",
     "pk": 739,
     "fields": {
-        "name": "slash",
-        "slug": "group-slash",
+        "name": "slash-old",
+        "slug": "group-slash-old",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -22869,8 +22869,8 @@
     "model": "spec.xmlelement",
     "pk": 740,
     "fields": {
-        "name": "anonymous-138",
-        "slug": "anonymous-138",
+        "name": "slash",
+        "slug": "group-slash",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -22887,8 +22887,8 @@
     "model": "spec.xmlelement",
     "pk": 741,
     "fields": {
-        "name": "anonymous-139",
-        "slug": "anonymous-139",
+        "name": "sequence-slash-type-dot",
+        "slug": "sequence-slash-type-dot",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -23091,14 +23091,14 @@
     "model": "spec.xmlelement",
     "pk": 752,
     "fields": {
-        "name": "harmony-chord",
-        "slug": "group-harmony-chord",
+        "name": "harmony-chord-old",
+        "slug": "group-harmony-chord-old",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
         "is_abstract_element": true,
         "is_root": false,
-        "description": "A harmony element can contain many stacked chords (e.g. V of II). A sequence of harmony-chord groups is used for this type of secondary function, where V of II would be represented by a harmony-chord with a V function followed by a harmony-chord with a II function.\n\nA root is a pitch name like C, D, E, while a numeral is a scale degree like 1, 2, 3. The root element is generally used with pop chord symbols, while the numeral element is generally used with classical functional harmony and Nashville numbers. It is an either/or choice to avoid data inconsistency. The function element, which represents Roman numerals with roman numeral text, has been deprecated as of MusicXML 4.0.",
+        "description": "A harmony element can contain many stacked chords (e.g. V of II). A sequence of harmony-chord groups is used for this type of secondary function, where V of II would be represented by a harmony-chord with a V function followed by a harmony-chord with a II function.\r\n\r\nA root is a pitch name like C, D, E, while a numeral is a scale degree like 1, 2, 3. The root element is generally used with pop chord symbols, while the numeral element is generally used with classical functional harmony and Nashville numbers. It is an either/or choice to avoid data inconsistency. The function element, which represents Roman numerals with roman numeral text, has been deprecated as of MusicXML 4.0.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -23109,8 +23109,8 @@
     "model": "spec.xmlelement",
     "pk": 753,
     "fields": {
-        "name": "anonymous-141",
-        "slug": "anonymous-141",
+        "name": "harmony-chord",
+        "slug": "group-harmony-chord",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -23127,8 +23127,8 @@
     "model": "spec.xmlelement",
     "pk": 754,
     "fields": {
-        "name": "anonymous-142",
-        "slug": "anonymous-142",
+        "name": "choice-harmony-chord",
+        "slug": "choice-harmony-chord",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -32808,7 +32808,7 @@
     "pk": 171,
     "fields": {
         "parent": 231,
-        "child": 232,
+        "child": 233,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 0
@@ -32841,7 +32841,7 @@
     "pk": 174,
     "fields": {
         "parent": 238,
-        "child": 232,
+        "child": 233,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 0
@@ -36889,7 +36889,7 @@
     "pk": 542,
     "fields": {
         "parent": 661,
-        "child": 668,
+        "child": 669,
         "min_amount": 0,
         "max_amount": null,
         "child_order": 1
@@ -36977,7 +36977,7 @@
     "pk": 550,
     "fields": {
         "parent": 679,
-        "child": 680,
+        "child": 681,
         "min_amount": 1,
         "max_amount": null,
         "child_order": 0
@@ -37527,7 +37527,7 @@
     "pk": 600,
     "fields": {
         "parent": 738,
-        "child": 739,
+        "child": 740,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 0
@@ -37549,7 +37549,7 @@
     "pk": 602,
     "fields": {
         "parent": 746,
-        "child": 739,
+        "child": 740,
         "min_amount": 0,
         "max_amount": 1,
         "child_order": 0
@@ -37912,7 +37912,7 @@
     "pk": 635,
     "fields": {
         "parent": 751,
-        "child": 752,
+        "child": 753,
         "min_amount": 1,
         "max_amount": null,
         "child_order": 0
