@@ -25071,7 +25071,7 @@
         "base_element": null,
         "is_abstract_element": false,
         "is_root": true,
-        "description": "The opus element is the root element of a MusicXML opus. Each opus is made up of a series of score, opus-link, and/or nested opus elements. Future versions may include more metadata elements. In this version, we just include the title of the opus.",
+        "description": "The &lt;opus&gt; element is the root element of a MusicXML opus. Each opus is made up of a series of &lt;score&gt;, &lt;opus-link&gt;, and/or nested &lt;opus&gt; elements. Future versions may include more metadata elements. In this version, we just include the title of the opus.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 2,
@@ -41449,7 +41449,7 @@
         "slug": "assess-and-player-elements",
         "schema": 1,
         "blurb": "A women's choral part is set up so that on three-way splits, first sopranos should sing the top note, second sopranos should sing the middle note, and all altos should sing the bottom note. A listening application can then see if the pitch is correct based on which player is selected.",
-        "document": "<score-partwise version=\"4.0\">\r\n  <defaults>\r\n    <scaling>\r\n      <millimeters>7.2319</millimeters>\r\n      <tenths>40</tenths>\r\n    </scaling>\r\n  </defaults>\r\n  <part-list>\r\n    <score-part id=\"P1\">\r\n      <part-name>Soprano Alto</part-name>\r\n      <score-instrument id=\"P1-I1\">\r\n        <instrument-name>ARIA Player</instrument-name>\r\n        <instrument-sound>voice.soprano</instrument-sound>\r\n      </score-instrument>\r\n      <score-instrument id=\"P1-I2\">\r\n        <instrument-name>ARIA Player</instrument-name>\r\n        <instrument-sound>voice.alto</instrument-sound>\r\n      </score-instrument>\r\n      <metadiff><player id=\"P1-M1\">\r\n        <player-name>Soprano 1</player-name>\r\n      </player>\r\n      <player id=\"P1-M2\">\r\n        <player-name>Soprano 2</player-name>\r\n      </player>\r\n      <player id=\"P1-M3\">\r\n        <player-name>Alto 1</player-name>\r\n      </player>\r\n      <player id=\"P1-M4\">\r\n        <player-name>Alto 2</player-name>\r\n      </player></metadiff>\r\n    </score-part>\r\n  </part-list>\r\n  <!--=========================================================-->\r\n  <part id=\"P1\">\r\n    <measure number=\"1\" width=\"191\">\r\n      <attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>0</fifths>\r\n          <mode>minor</mode>\r\n        </key>\r\n        <time>\r\n          <beats>4</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <clef>\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n      </attributes>\r\n      <note default-x=\"83\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I2\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <lyric default-y=\"-62\" justify=\"left\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>Ah</text>\r\n          <extend type=\"start\"/>\r\n        </lyric>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M1\"/>\r\n          <assess type=\"no\" player=\"P1-M2\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n      <note default-x=\"83\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I1\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M3\"/>\r\n          <assess type=\"no\" player=\"P1-M4\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"2\" width=\"120\">\r\n      <note default-x=\"13\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I2\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <lyric number=\"1\">\r\n          <extend type=\"stop\"/>\r\n        </lyric>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M1\"/>\r\n          <assess type=\"no\" player=\"P1-M2\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n      <note default-x=\"13\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I1\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M1\"/>\r\n          <assess type=\"no\" player=\"P1-M3\"/>\r\n          <assess type=\"no\" player=\"P1-M4\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n      <note default-x=\"13\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I1\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M2\"/>\r\n          <assess type=\"no\" player=\"P1-M3\"/>\r\n          <assess type=\"no\" player=\"P1-M4\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n</score-partwise>",
+        "document": "<score-partwise version=\"4.0\">\r\n  <part-list>\r\n    <score-part id=\"P1\">\r\n      <part-name>Soprano Alto</part-name>\r\n      <score-instrument id=\"P1-I1\">\r\n        <instrument-name>ARIA Player</instrument-name>\r\n        <instrument-sound>voice.soprano</instrument-sound>\r\n      </score-instrument>\r\n      <score-instrument id=\"P1-I2\">\r\n        <instrument-name>ARIA Player</instrument-name>\r\n        <instrument-sound>voice.alto</instrument-sound>\r\n      </score-instrument>\r\n      <metadiff><player id=\"P1-M1\">\r\n        <player-name>Soprano 1</player-name>\r\n      </player>\r\n      <player id=\"P1-M2\">\r\n        <player-name>Soprano 2</player-name>\r\n      </player>\r\n      <player id=\"P1-M3\">\r\n        <player-name>Alto 1</player-name>\r\n      </player>\r\n      <player id=\"P1-M4\">\r\n        <player-name>Alto 2</player-name>\r\n      </player></metadiff>\r\n    </score-part>\r\n  </part-list>\r\n  <!--=========================================================-->\r\n  <part id=\"P1\">\r\n    <measure number=\"1\" width=\"191\">\r\n      <attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>0</fifths>\r\n          <mode>minor</mode>\r\n        </key>\r\n        <time>\r\n          <beats>4</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <clef>\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n      </attributes>\r\n      <note default-x=\"83\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I2\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <lyric default-y=\"-62\" justify=\"left\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>Ah</text>\r\n          <extend type=\"start\"/>\r\n        </lyric>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M1\"/>\r\n          <assess type=\"no\" player=\"P1-M2\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n      <note default-x=\"83\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I1\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M3\"/>\r\n          <assess type=\"no\" player=\"P1-M4\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"2\" width=\"120\">\r\n      <note default-x=\"13\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I2\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <lyric number=\"1\">\r\n          <extend type=\"stop\"/>\r\n        </lyric>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M1\"/>\r\n          <assess type=\"no\" player=\"P1-M2\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n      <note default-x=\"13\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I1\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M1\"/>\r\n          <assess type=\"no\" player=\"P1-M3\"/>\r\n          <assess type=\"no\" player=\"P1-M4\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n      <note default-x=\"13\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I1\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M2\"/>\r\n          <assess type=\"no\" player=\"P1-M3\"/>\r\n          <assess type=\"no\" player=\"P1-M4\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n</score-partwise>",
         "image_url": "/static/examples/assess-player-elements.png",
         "is_featured": false
     }
@@ -56472,14 +56472,6 @@
 },
 {
     "model": "spec.exampledocumentelement",
-    "pk": 2013,
-    "fields": {
-        "example": 211,
-        "element_name": "defaults"
-    }
-},
-{
-    "model": "spec.exampledocumentelement",
     "pk": 2014,
     "fields": {
         "example": 211,
@@ -56500,14 +56492,6 @@
     "fields": {
         "example": 211,
         "element_name": "duration"
-    }
-},
-{
-    "model": "spec.exampledocumentelement",
-    "pk": 2017,
-    "fields": {
-        "example": 211,
-        "element_name": "scaling"
     }
 },
 {
@@ -56648,14 +56632,6 @@
 },
 {
     "model": "spec.exampledocumentelement",
-    "pk": 2037,
-    "fields": {
-        "example": 211,
-        "element_name": "tenths"
-    }
-},
-{
-    "model": "spec.exampledocumentelement",
     "pk": 2038,
     "fields": {
         "example": 211,
@@ -56700,14 +56676,6 @@
     "fields": {
         "example": 211,
         "element_name": "line"
-    }
-},
-{
-    "model": "spec.exampledocumentelement",
-    "pk": 2045,
-    "fields": {
-        "example": 211,
-        "element_name": "millimeters"
     }
 },
 {
