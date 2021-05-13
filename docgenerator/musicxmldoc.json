@@ -41416,6 +41416,45 @@
     }
 },
 {
+    "model": "spec.exampledocument",
+    "pk": 209,
+    "fields": {
+        "name": "<concert-score> and <for-part>",
+        "slug": "concert-score-and-for-part-elements",
+        "schema": 1,
+        "blurb": "",
+        "document": "<score-partwise version=\"4.0\">\r\n  <movement-title>C Sounds</movement-title>\r\n  <defaults>\r\n    <scaling>\r\n      <millimeters>7.2319</millimeters>\r\n      <tenths>40</tenths>\r\n    </scaling>\r\n    <metadiff><concert-score/></metadiff>\r\n    <page-layout>\r\n      <page-height>1545</page-height>\r\n      <page-width>1194</page-width>\r\n    </page-layout>\r\n  </defaults>\r\n  <credit page=\"1\">\r\n    <credit-type>part name</credit-type>\r\n    <credit-words default-x=\"105\" default-y=\"1353\" font-size=\"12\" valign=\"top\">Score in C</credit-words>\r\n  </credit>\r\n  <part-list>\r\n    <part-group number=\"1\" type=\"start\">\r\n      <group-symbol default-x=\"-5\">bracket</group-symbol>\r\n      <group-barline>yes</group-barline>\r\n    </part-group>\r\n    <score-part id=\"P1\">\r\n      <part-name>Piccolo</part-name>\r\n      <group>score</group>\r\n    </score-part>\r\n    <score-part id=\"P2\">\r\n      <part-name>Oboe</part-name>\r\n      <group>score</group>\r\n    </score-part>\r\n    <score-part id=\"P3\">\r\n      <part-name>Bass Clarinet</part-name>\r\n      <group>score</group>\r\n    </score-part>\r\n    <part-group number=\"1\" type=\"stop\"/>\r\n  </part-list>\r\n  <!--=========================================================-->\r\n  <part id=\"P1\">\r\n    <measure number=\"1\" width=\"142\">\r\n      <attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>0</fifths>\r\n          <mode>major</mode>\r\n        </key>\r\n        <time>\r\n          <beats>4</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <clef>\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n        <metadiff><transpose>\r\n          <diatonic>0</diatonic>\r\n          <chromatic>0</chromatic>\r\n          <octave-change>1</octave-change>\r\n        </transpose></metadiff>\r\n      </attributes>\r\n      <note default-x=\"84\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n  <!--=========================================================-->\r\n  <part id=\"P2\">\r\n    <measure number=\"1\" width=\"142\">\r\n      <attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>0</fifths>\r\n          <mode>major</mode>\r\n        </key>\r\n        <time>\r\n          <beats>4</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <clef>\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n      </attributes>\r\n      <note default-x=\"84\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n  <!--=========================================================-->\r\n  <part id=\"P3\">\r\n    <measure number=\"1\" width=\"142\">\r\n      <attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>0</fifths>\r\n          <mode>major</mode>\r\n        </key>\r\n        <time>\r\n          <beats>4</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <clef>\r\n          <sign>F</sign>\r\n          <line>4</line>\r\n        </clef>\r\n        <metadiff><for-part>\r\n          <part-clef>\r\n            <sign>G</sign>\r\n            <line>2</line>\r\n          </part-clef>\r\n          <part-transpose>\r\n            <diatonic>-1</diatonic>\r\n            <chromatic>-2</chromatic>\r\n            <octave-change>-1</octave-change>\r\n          </part-transpose>\r\n        </for-part></metadiff>\r\n      </attributes>\r\n      <note default-x=\"84\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n  <!--=========================================================-->\r\n</score-partwise>",
+        "image_url": "/static/examples/concert-score-for-part-elements.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 210,
+    "fields": {
+        "name": "<sync>",
+        "slug": "sync-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<part id=\"P1\">\r\n    <measure number=\"2\" width=\"183\">\r\n      <direction directive=\"yes\" placement=\"above\">\r\n        <direction-type>\r\n          <words default-y=\"21\" font-size=\"12\" font-weight=\"bold\">Free</words>\r\n        </direction-type>\r\n        <listening>\r\n          <metadiff><sync type=\"none\"/></metadiff>\r\n        </listening>\r\n      </direction>\r\n      <note default-x=\"13\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n      </note>\r\n      <note default-x=\"55\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-40\">down</stem>\r\n      </note>\r\n      <note default-x=\"97\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n      </note>\r\n      <note default-x=\"140\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-40\">down</stem>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"3\" width=\"183\">\r\n      <note default-x=\"13\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n      </note>\r\n      <note default-x=\"55\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-40\">down</stem>\r\n      </note>\r\n      <note default-x=\"97\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n      </note>\r\n      <note default-x=\"140\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-40\">down</stem>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"4\" width=\"183\">\r\n      <direction directive=\"yes\" placement=\"above\">\r\n        <direction-type>\r\n          <words default-y=\"21\" font-size=\"12\" font-weight=\"bold\">Lock to Beat</words>\r\n        </direction-type>\r\n        <listening>\r\n          <metadiff><sync type=\"event\"/></metadiff>\r\n        </listening>\r\n      </direction>\r\n      <note default-x=\"13\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"10\">up</stem>\r\n      </note>\r\n      <note default-x=\"55\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n      </note>\r\n      <note default-x=\"98\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"10\">up</stem>\r\n      </note>\r\n      <note default-x=\"140\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n      </note>\r\n    </measure>\r\n  </part>",
+        "image_url": "/static/examples/sync-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 211,
+    "fields": {
+        "name": "<assess> and <player>",
+        "slug": "assess-and-player-elements",
+        "schema": 1,
+        "blurb": "A women's choral part is set up so that on three-way splits, first sopranos should sing the top note, second sopranos should sing the middle note, and all altos should sing the bottom note. A listening application can then see if the pitch is correct based on which player is selected.",
+        "document": "<score-partwise version=\"4.0\">\r\n  <defaults>\r\n    <scaling>\r\n      <millimeters>7.2319</millimeters>\r\n      <tenths>40</tenths>\r\n    </scaling>\r\n  </defaults>\r\n  <part-list>\r\n    <score-part id=\"P1\">\r\n      <part-name>Soprano Alto</part-name>\r\n      <score-instrument id=\"P1-I1\">\r\n        <instrument-name>ARIA Player</instrument-name>\r\n        <instrument-sound>voice.soprano</instrument-sound>\r\n      </score-instrument>\r\n      <score-instrument id=\"P1-I2\">\r\n        <instrument-name>ARIA Player</instrument-name>\r\n        <instrument-sound>voice.alto</instrument-sound>\r\n      </score-instrument>\r\n      <metadiff><player id=\"P1-M1\">\r\n        <player-name>Soprano 1</player-name>\r\n      </player>\r\n      <player id=\"P1-M2\">\r\n        <player-name>Soprano 2</player-name>\r\n      </player>\r\n      <player id=\"P1-M3\">\r\n        <player-name>Alto 1</player-name>\r\n      </player>\r\n      <player id=\"P1-M4\">\r\n        <player-name>Alto 2</player-name>\r\n      </player></metadiff>\r\n    </score-part>\r\n  </part-list>\r\n  <!--=========================================================-->\r\n  <part id=\"P1\">\r\n    <measure number=\"1\" width=\"191\">\r\n      <attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>0</fifths>\r\n          <mode>minor</mode>\r\n        </key>\r\n        <time>\r\n          <beats>4</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <clef>\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n      </attributes>\r\n      <note default-x=\"83\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I2\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <lyric default-y=\"-62\" justify=\"left\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>Ah</text>\r\n          <extend type=\"start\"/>\r\n        </lyric>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M1\"/>\r\n          <assess type=\"no\" player=\"P1-M2\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n      <note default-x=\"83\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I1\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M3\"/>\r\n          <assess type=\"no\" player=\"P1-M4\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"2\" width=\"120\">\r\n      <note default-x=\"13\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I2\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <lyric number=\"1\">\r\n          <extend type=\"stop\"/>\r\n        </lyric>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M1\"/>\r\n          <assess type=\"no\" player=\"P1-M2\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n      <note default-x=\"13\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I1\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M1\"/>\r\n          <assess type=\"no\" player=\"P1-M3\"/>\r\n          <assess type=\"no\" player=\"P1-M4\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n      <note default-x=\"13\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <instrument id=\"P1-I1\"/>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n        <metadiff><listen>\r\n          <assess type=\"no\" player=\"P1-M2\"/>\r\n          <assess type=\"no\" player=\"P1-M3\"/>\r\n          <assess type=\"no\" player=\"P1-M4\"/>\r\n        </listen></metadiff>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n</score-partwise>",
+        "image_url": "/static/examples/assess-player-elements.png",
+        "is_featured": false
+    }
+},
+{
     "model": "spec.exampledocumentelement",
     "pk": 1,
     "fields": {
@@ -55877,6 +55916,830 @@
     "fields": {
         "example": 208,
         "element_name": "beam"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1943,
+    "fields": {
+        "example": 209,
+        "element_name": "score-part"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1944,
+    "fields": {
+        "example": 209,
+        "element_name": "group-symbol"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1945,
+    "fields": {
+        "example": 209,
+        "element_name": "divisions"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1946,
+    "fields": {
+        "example": 209,
+        "element_name": "part-list"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1947,
+    "fields": {
+        "example": 209,
+        "element_name": "credit-words"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1948,
+    "fields": {
+        "example": 209,
+        "element_name": "defaults"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1949,
+    "fields": {
+        "example": 209,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1950,
+    "fields": {
+        "example": 209,
+        "element_name": "part-group"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1951,
+    "fields": {
+        "example": 209,
+        "element_name": "transpose"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1952,
+    "fields": {
+        "example": 209,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1953,
+    "fields": {
+        "example": 209,
+        "element_name": "group"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1954,
+    "fields": {
+        "example": 209,
+        "element_name": "scaling"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1955,
+    "fields": {
+        "example": 209,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1956,
+    "fields": {
+        "example": 209,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1957,
+    "fields": {
+        "example": 209,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1958,
+    "fields": {
+        "example": 209,
+        "element_name": "time"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1959,
+    "fields": {
+        "example": 209,
+        "element_name": "mode"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1960,
+    "fields": {
+        "example": 209,
+        "element_name": "concert-score"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1961,
+    "fields": {
+        "example": 209,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1962,
+    "fields": {
+        "example": 209,
+        "element_name": "part"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1963,
+    "fields": {
+        "example": 209,
+        "element_name": "beat-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1964,
+    "fields": {
+        "example": 209,
+        "element_name": "part-clef"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1965,
+    "fields": {
+        "example": 209,
+        "element_name": "fifths"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1966,
+    "fields": {
+        "example": 209,
+        "element_name": "page-layout"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1967,
+    "fields": {
+        "example": 209,
+        "element_name": "for-part"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1968,
+    "fields": {
+        "example": 209,
+        "element_name": "score-partwise"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1969,
+    "fields": {
+        "example": 209,
+        "element_name": "tenths"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1970,
+    "fields": {
+        "example": 209,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1971,
+    "fields": {
+        "example": 209,
+        "element_name": "part-name"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1972,
+    "fields": {
+        "example": 209,
+        "element_name": "movement-title"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1973,
+    "fields": {
+        "example": 209,
+        "element_name": "attributes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1974,
+    "fields": {
+        "example": 209,
+        "element_name": "credit-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1975,
+    "fields": {
+        "example": 209,
+        "element_name": "key"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1976,
+    "fields": {
+        "example": 209,
+        "element_name": "credit"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1977,
+    "fields": {
+        "example": 209,
+        "element_name": "chromatic"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1978,
+    "fields": {
+        "example": 209,
+        "element_name": "line"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1979,
+    "fields": {
+        "example": 209,
+        "element_name": "millimeters"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1980,
+    "fields": {
+        "example": 209,
+        "element_name": "group-barline"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1981,
+    "fields": {
+        "example": 209,
+        "element_name": "part-transpose"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1982,
+    "fields": {
+        "example": 209,
+        "element_name": "page-width"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1983,
+    "fields": {
+        "example": 209,
+        "element_name": "clef"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1984,
+    "fields": {
+        "example": 209,
+        "element_name": "beats"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1985,
+    "fields": {
+        "example": 209,
+        "element_name": "page-height"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1986,
+    "fields": {
+        "example": 209,
+        "element_name": "sign"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1987,
+    "fields": {
+        "example": 209,
+        "element_name": "octave-change"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1988,
+    "fields": {
+        "example": 209,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1989,
+    "fields": {
+        "example": 209,
+        "element_name": "diatonic"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1990,
+    "fields": {
+        "example": 210,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1991,
+    "fields": {
+        "example": 210,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1992,
+    "fields": {
+        "example": 210,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1993,
+    "fields": {
+        "example": 210,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1994,
+    "fields": {
+        "example": 210,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1995,
+    "fields": {
+        "example": 210,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1996,
+    "fields": {
+        "example": 210,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1997,
+    "fields": {
+        "example": 210,
+        "element_name": "words"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1998,
+    "fields": {
+        "example": 210,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 1999,
+    "fields": {
+        "example": 210,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2000,
+    "fields": {
+        "example": 210,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2001,
+    "fields": {
+        "example": 210,
+        "element_name": "part"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2002,
+    "fields": {
+        "example": 210,
+        "element_name": "sync"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2003,
+    "fields": {
+        "example": 210,
+        "element_name": "listening"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2004,
+    "fields": {
+        "example": 210,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2006,
+    "fields": {
+        "example": 211,
+        "element_name": "chord"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2007,
+    "fields": {
+        "example": 211,
+        "element_name": "player-name"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2008,
+    "fields": {
+        "example": 211,
+        "element_name": "player"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2009,
+    "fields": {
+        "example": 211,
+        "element_name": "instrument"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2010,
+    "fields": {
+        "example": 211,
+        "element_name": "score-part"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2011,
+    "fields": {
+        "example": 211,
+        "element_name": "divisions"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2012,
+    "fields": {
+        "example": 211,
+        "element_name": "part-list"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2013,
+    "fields": {
+        "example": 211,
+        "element_name": "defaults"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2014,
+    "fields": {
+        "example": 211,
+        "element_name": "assess"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2015,
+    "fields": {
+        "example": 211,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2016,
+    "fields": {
+        "example": 211,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2017,
+    "fields": {
+        "example": 211,
+        "element_name": "scaling"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2018,
+    "fields": {
+        "example": 211,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2019,
+    "fields": {
+        "example": 211,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2020,
+    "fields": {
+        "example": 211,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2021,
+    "fields": {
+        "example": 211,
+        "element_name": "lyric"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2022,
+    "fields": {
+        "example": 211,
+        "element_name": "syllabic"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2023,
+    "fields": {
+        "example": 211,
+        "element_name": "listen"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2025,
+    "fields": {
+        "example": 211,
+        "element_name": "mode"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2026,
+    "fields": {
+        "example": 211,
+        "element_name": "time"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2027,
+    "fields": {
+        "example": 211,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2028,
+    "fields": {
+        "example": 211,
+        "element_name": "part"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2029,
+    "fields": {
+        "example": 211,
+        "element_name": "beat-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2030,
+    "fields": {
+        "example": 211,
+        "element_name": "fifths"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2031,
+    "fields": {
+        "example": 211,
+        "element_name": "instrument-sound"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2032,
+    "fields": {
+        "example": 211,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2034,
+    "fields": {
+        "example": 211,
+        "element_name": "extend"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2035,
+    "fields": {
+        "example": 211,
+        "element_name": "score-partwise"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2036,
+    "fields": {
+        "example": 211,
+        "element_name": "text"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2037,
+    "fields": {
+        "example": 211,
+        "element_name": "tenths"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2038,
+    "fields": {
+        "example": 211,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2039,
+    "fields": {
+        "example": 211,
+        "element_name": "part-name"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2040,
+    "fields": {
+        "example": 211,
+        "element_name": "attributes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2041,
+    "fields": {
+        "example": 211,
+        "element_name": "key"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2042,
+    "fields": {
+        "example": 211,
+        "element_name": "score-instrument"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2043,
+    "fields": {
+        "example": 211,
+        "element_name": "line"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2045,
+    "fields": {
+        "example": 211,
+        "element_name": "millimeters"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2046,
+    "fields": {
+        "example": 211,
+        "element_name": "clef"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2047,
+    "fields": {
+        "example": 211,
+        "element_name": "beats"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2048,
+    "fields": {
+        "example": 211,
+        "element_name": "sign"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2049,
+    "fields": {
+        "example": 211,
+        "element_name": "instrument-name"
     }
 },
 {
