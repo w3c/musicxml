@@ -148,15 +148,17 @@
 
 <p><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</pre></p>
 
-<p>This is the XML declaration required of all XML documents. We have specified that the characters are written in the Unicode encoding "UTF-8". This is the version of Unicode that has ASCII as a subset. Setting the value of standalone to "no" means that we are defining the document with an external definition in another file.</p>
+<p>This is the XML declaration required of all XML documents. We have specified that the characters are written in the Unicode encoding "UTF-8". This is the version of Unicode that has ASCII as a subset.</p>
 
 <p><pre>&lt;!DOCTYPE score-partwise PUBLIC
     "-//Recordare//DTD MusicXML 4.0 Partwise//EN"
     "http://www.musicxml.org/dtds/partwise.dtd"&gt;</pre></p>
 
-<p>This is where we say that we are using MusicXML, specifically a partwise score where measures are contained within parts. We use a PUBLIC declaration including an Internet location for the DTD. The URL in this declaration is just for reference. Most applications that read MusicXML files will want to install a local copy of the MusicXML DTDs on the user’s machine. Use the entity resolver in your XML parser to validate against the local copy, rather than reading the DTDs slowly over the network.</p>
+<p>This is the document type declaration for applications that use XML Document Type Definitions (DTDs). It lets those applications know this is a MusicXML file. When using a document type declaration, we also set the value of standalone to "no" in the XML declaration since we are defining the document with an external definition in another file.</p>
 
-<p>If your application wants to validate against the MusicXML XSD rather than a DTD, you can use an entity resolver in your XML parser to do this. When writing MusicXML files, writing the DOCTYPE makes it easier for all applications - DTD or XSD based - to validate MusicXML files.</p>
+<p>The MusicXML DTDs are deprecated as of Version 4.0 in favor of the W3C XML Schema Definition (XSD). However there are still applications using DTDs. When writing MusicXML files, writing the document type declaration makes it easier for all applications - XSD or DTD based - to validate MusicXML files.</p>
+
+<p>This public document type declaration includes an Internet location for the DTD. The URL in this declaration is just for reference. Most applications will know that they are expecting a MusicXML file and will want to validate against their own local copy of the MusicXML schemas. Use MusicXML's <a href="../../listings/catalog.xml/">XML catalog</a> to validate against the local copy, rather than reading the XSD or DTD definitions slowly over the network.</p>
 
 <p><pre>&lt;score-partwise version="4.0"&gt;</pre></p>
 
@@ -172,7 +174,7 @@
 
 <p><pre>  &lt;part id="P1"&gt;</pre></p>
 
-<p>We are now beginning the first (and only, in this case) part within the document. The id attribute here must refer to an id attribute for a score-part in the header.</p>
+<p>We are now beginning the first (and only, in this case) part within the document. The id attribute here must refer to an id attribute for a score-part in the header. Every part must have a unique id attribute. Because ids cannot start with a number, they are often created by starting with the letter P and adding the part number, starting with 1: P1, P2, P3, etc.</p>
 
 <p><pre>    &lt;measure number="1"&gt;</pre></p>
 
@@ -228,8 +230,6 @@
 
 <p>The <a href="../../musicxml-reference/elements/type/">&lt;type&gt;</a> element tells us that this is notated as a whole note. You could probably derive this from the duration in this case, but it is much easier to work with both notation and performance applications if the notation and performance data is represented separately.</p>
 
-<p>In any event, the performance and notation data do not always match in practice. For example, Bach's music contains examples of shorthand notation where the actual note durations do not match the standard interpretation of the notes on the page, due to his use of a notational shorthand for certain rhythms.</p>
-
 <p>The &lt;duration&gt; element should reflect the intended duration, not a longer or shorter duration specific to a certain performance. The &lt;note&gt; element has attack and release attributes that suggest ways to alter a note's start and stop times from the nominal duration indicated directly or indirectly by the score.</p>
 
 <p><pre>      &lt;/note&gt;</pre></p>
@@ -250,7 +250,7 @@
 
 <p>One limitation of XML's document type definitions is that if you want to limit the number of elements within another element, you generally must also restrict how they are ordered as well. In the attributes, for instance, we want no more than one divisions element; for the note's pitch, we want one and only one &lt;step&gt; element and &lt;octave&gt; element. In order to do this, the order in which these elements appear must be constrained as well.</p>
 
-<p>Thus the order in which elements appear in these examples does matter. The documentation should make clear what ordering is required; we will not spell that out in detail during the tutorial.</p>
+<p>The order in which elements appear in these examples does matter. The correct order is specified throughout the documentation.</p>
 
     </main>
 </div>

@@ -13,6 +13,10 @@
 	A human-readable summary is available:
 	
 	   https://www.w3.org/community/about/agreements/cla-deed/
+
+	The DTD version of the MusicXML format is deprecated
+	as of Version 4.0. Use the opus.xsd W3C XML Schema
+	definition instead.
 -->
 
 <!--

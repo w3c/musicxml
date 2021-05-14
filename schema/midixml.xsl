@@ -16,6 +16,8 @@
 	A human-readable summary is available:
 	
 	   https://www.w3.org/community/about/agreements/cla-deed/
+
+	The MIDI XML file format is deprecated as of Version 4.0.
 -->
 
 <!--

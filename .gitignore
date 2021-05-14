@@ -5,3 +5,4 @@ docgenerator/db.sqlite3
 docgenerator/manage.py
 docgenerator/requirements.txt
 docgenerator/.idea/
+docgenerator/venv/

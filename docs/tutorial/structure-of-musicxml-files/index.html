@@ -104,45 +104,52 @@
 
 <p>The answer is different for every music application. David Huron, a music cognition specialist and the inventor of Humdrum, advised us to make sure we could represent music both ways, and be able to switch between them easily.</p>
 
-<p>This is why MusicXML has two different top-level DTDs, each with its own root element. If you use the partwise DTD, the root element is <a href="../../musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a>. The musical part is primary, and measures are contained within each part. If you use the timewise DTD, the root element is <a href="../../musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a>. The measure is primary, and musical parts are contained within each measure. The MusicXML XSD includes both of the top-level document elements in a single XSD file.</p>
+<p>This is why MusicXML has two different score formats, each with its own root element. For a partwise document, the root element is <a href="../../musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a>. The musical part is primary, and measures are contained within each part. For a timewise document, the root element is <a href="../../musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a>. The measure is primary, and musical parts are contained within each measure.</p>
 
 <p>Having two different structures does not work well if there is no automatic way to switch between them. MusicXML provides two XSLT stylesheets to convert back and forth between the two document types. The parttime.xsl stylesheet converts from &lt;score-partwise&gt; to &lt;score-timewise&gt;, while the timepart.xsl stylesheet converts from &lt;score-timewise&gt; to &lt;score-partwise&gt;.</p>
 
 <p>An application reading MusicXML can choose which format is primary, and check for that document type. If it is your root element, just proceed. If not, check to see if it is the other MusicXML root element. If so, apply the appropriate XSLT stylesheet to create a new MusicXML document in your preferred format, and then proceed. If it is neither of the two top-level document types, you do not have a MusicXML score, and can return an appropriate error message.</p>
 
-<p>When your application writes to MusicXML, simply write to whichever format best meets your needs. Let the program reading the MusicXML convert it if necessary. If you have a two-dimensional organization in your program so that either format is truly equally easy to write, consider using the &lt;score-partwise&gt; format. Most of today's MusicXML software uses this format, so if all else is equal, conversion times should be lower overall.</p>
+<p>When your application writes to MusicXML, simply write to whichever format best meets your needs. Let the program reading the MusicXML convert it if necessary.</p> 
+
+<p>In practice, most of today's MusicXML applications use the &lt;score-partwise&gt; format. If all else is equal, that would be the format of choice for your application.</p>
 
 <h2 id="top-level-elements">Top-Level Elements</h2>
 
-<p>The score.mod file defines the basic structure of a MusicXML file. The primary definition of the file is contained in these lines:</p>
+<p>Each of the top-level formats contains a group of elements called the score header, followed by the musical data. The only difference between the two formats is the way that the &lt;part&gt; and &lt;measure&gt; elements are arranged. A &lt;score-partwise&gt; document contains one or more <a href="../../musicxml-reference/elements/part/">&lt;part&gt;</a> elements, and each &lt;part&gt; element contains one or more <a href="../../musicxml-reference/elements/measure/">&lt;measure&gt;</a> elements. The &lt;score-timewise&gt; document reverses the ordering of <a href="../../musicxml-reference/elements/measure-timewise/">&lt;measure&gt;</a> and <a href="../../musicxml-reference/elements/part-timewise/">&lt;part&gt;</a> elements.</p>
 
-<p><pre>&lt;![ %partwise; [
-&lt;!ELEMENT score-partwise (%score-header;, part+)&gt;
-&lt;!ELEMENT part (measure+)&gt;
-&lt;!ELEMENT measure (%music-data;)&gt;
-]]&gt;
-&lt;![ %timewise; [
-&lt;!ELEMENT score-timewise (%score-header;, measure+)&gt;
-&lt;!ELEMENT measure (part+)&gt;
-&lt;!ELEMENT part (%music-data;)&gt;
-]]&gt;</pre></p>
+<p>In either case, the lower-level elements are filled with a group of elements referred to as music data. This contains the actual music in the score, including zero or more of the following elements:
+<ul>
+<li><a href="../../musicxml-reference/elements/note/">&lt;note&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/backup/">&lt;backup&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/forward/">&lt;forward&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/direction/">&lt;direction&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/attributes/">&lt;attributes&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/harmony/">&lt;harmony&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/figured-bass/">&lt;figured-bass&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/print/">&lt;print&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/sound/">&lt;sound&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/listening/">&lt;listening&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/barline/">&lt;barline&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/grouping/">&lt;grouping&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/link/">&lt;link&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/bookmark/">&lt;bookmark&gt;</a></li>
+</ul></p>
 
-<p>The %partwise; and %timewise; entities are set in the top-level DTDs partwise.dtd and timewise.dtd. The &lt;![ lines indicate a conditional clause like the #ifdef statement in C. So if partwise.dtd is used, the &lt;score-partwise&gt; element is defined, while if timewise.dtd is used, the &lt;score-timewise&gt; element is defined. You can see that the only difference between the two formats is the way that the &lt;part&gt; and &lt;measure&gt; elements are arranged. A &lt;score-partwise&gt; document contains one or more <a href="../../musicxml-reference/elements/part/">&lt;part&gt;</a> elements, and each &lt;part&gt; element contains one or more <a href="../../musicxml-reference/elements/measure/">&lt;measure&gt;</a> elements. The &lt;score-timewise&gt; document reverses this ordering. In either case, the lower-level elements are filled with a music-data entity. This contains the actual music in the score, and is defined as:</p>
+<p>The score header may contain the following elements:
+<ul>
+<li><a href="../../musicxml-reference/elements/work/">&lt;work&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/movement-number/">&lt;movement-number&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/movement-title/">&lt;movement-title&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/identification/">&lt;identification&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/defaults/">&lt;defaults&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/credit/">&lt;credit&gt;</a></li>
+<li><a href="../../musicxml-reference/elements/part-list/">&lt;part-list&gt;</a> (Required)</li>
+</ul></p>
 
-<p><pre>&lt;!ENTITY % music-data
-    "(note | backup | forward | direction | attributes |
-      harmony | figured-bass | print | sound | barline | 
-      grouping | link | bookmark)*"&gt;</pre></p>
+<p>We will now look at the score header in more detail. If the example in the preceding &#8220;Hello World&#8221; section gave you enough information, you may want to skip ahead to the next section that starts describing music data.</p>
 
-<p>In addition, each MusicXML file contains a %score-header; entity, defined as:</p>
-
-<p><pre>&lt;!ENTITY % score-header
-    "(work?, movement-number?, movement-title?,
-      identification?, defaults?, credit*, part-list)"&gt;</pre></p>
-
-<p>We will now look at the score-header entity in more detail. If the example in the preceding &#8220;Hello World&#8221; section gave you enough information, you may want to skip ahead to the next section that starts describing music-data.</p>
-
-<h2 id="score-header-entity">Score Header Entity</h2>
+<h2 id="score-header">Score Header</h2>
 
 <p>The score header contains some basic metadata about a musical score, such as the title and composer. It also contains the &lt;part-list&gt;, which lists all the parts or instruments in a musical score.</p>
 <p>As an example, take our MusicXML encoding of &#8220;Mut,&#8221; the 22nd song from Franz Schubert&#8217;s song cycle <em>Winterreise</em>. Here is a sample score header for that work:</p>
@@ -174,7 +181,7 @@
     &lt;/score-part&gt;
   &lt;/part-list&gt;</pre></p>
 
-<p>You see that this score-header has all five of the possible top-level elements in the score-header entity: the &lt;work&gt;, &lt;movement-number,&gt; &lt;movement-title&gt;, &lt;identification&gt;, and &lt;part-list&gt;. Only the part-list is required, all other elements are optional. Let&#8217;s look at each part in turn:</p>
+<p>You see that this score header has all five of the possible top-level elements in the score header: the &lt;work&gt;, &lt;movement-number,&gt; &lt;movement-title&gt;, &lt;identification&gt;, and &lt;part-list&gt;. Only the part-list is required, all other elements are optional. Let&#8217;s look at each part in turn:</p>
 
 <p><pre>  &lt;work&gt;
     &lt;work-number&gt;D. 911&lt;/work-number&gt;
