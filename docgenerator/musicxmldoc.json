@@ -3,7 +3,7 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$216000$ivYnRtYwJx5F$iBLeyT08sWD51w7i+b0ZY/hZhO8BH0VTxQMX/rAPsl4=",
+        "password": "pbkdf2_sha256$260000$v0lMXyyyu74JBBwZuPiWP3$lBL1BtpyycW4DRqUdTQErBQGbZ+78ZTZqFJuAvav9vE=",
         "last_login": "2021-01-19T00:00:00Z",
         "is_superuser": true,
         "username": "admin",
@@ -11412,6 +11412,24 @@
 },
 {
     "model": "spec.xmlelement",
+    "pk": 122,
+    "fields": {
+        "name": "part-group",
+        "slug": "group-part-group",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "The part-group element is defined within a group due to its multiple uses within the part-list element.",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
     "pk": 123,
     "fields": {
         "name": "sequence-part-group",
@@ -11821,6 +11839,24 @@
 },
 {
     "model": "spec.xmlelement",
+    "pk": 145,
+    "fields": {
+        "name": "footnote",
+        "slug": "group-footnote",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
     "pk": 146,
     "fields": {
         "name": "group-sequence-footnote",
@@ -11849,6 +11885,24 @@
         "is_abstract_element": false,
         "is_root": false,
         "description": "",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
+    "pk": 148,
+    "fields": {
+        "name": "level",
+        "slug": "group-level",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "The level element specifies editorial information for different MusicXML elements. It is defined within a group due to its multiple uses within the MusicXML schema.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -11923,6 +11977,24 @@
         "is_abstract_element": false,
         "is_root": false,
         "description": "",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
+    "pk": 153,
+    "fields": {
+        "name": "score-part",
+        "slug": "group-score-part",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "The score-part element is defined within a group due to its multiple uses within the part-list element.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -13349,6 +13421,24 @@
 },
 {
     "model": "spec.xmlelement",
+    "pk": 232,
+    "fields": {
+        "name": "display-step-octave-old",
+        "slug": "group-display-step-octave-old",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "The display-step-octave group contains the sequence of elements used by both the rest and unpitched elements. This group is used to place rests and unpitched elements on the staff without implying that these elements have pitch. Positioning follows the current clef. If percussion clef is used, the display-step and display-octave elements are interpreted as if in treble clef, with a G in octave 4 on line 2.",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
     "pk": 233,
     "fields": {
         "name": "display-step-octave",
@@ -13565,6 +13655,24 @@
 },
 {
     "model": "spec.xmlelement",
+    "pk": 245,
+    "fields": {
+        "name": "duration",
+        "slug": "group-duration",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "The duration element is defined within a group due to its uses within the note, figure-bass, backup, and forward elements.",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
     "pk": 246,
     "fields": {
         "name": "sequence-duration",
@@ -13686,6 +13794,24 @@
         "content_data_type": null,
         "is_featured": false,
         "children_type": 2,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
+    "pk": 253,
+    "fields": {
+        "name": "voice",
+        "slug": "group-voice",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "The voice is used to distinguish between multiple voices (what MuseData calls tracks) in individual parts. It is defined within a group due to its multiple uses within the MusicXML schema.",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
         "attribute_groups": []
     }
 },
@@ -14128,6 +14254,24 @@
         "is_abstract_element": false,
         "is_root": false,
         "description": "",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
+    "pk": 278,
+    "fields": {
+        "name": "staff",
+        "slug": "group-staff",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "The staff element is defined within a group due to its use by both notes and direction elements.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -21399,6 +21543,24 @@
 },
 {
     "model": "spec.xmlelement",
+    "pk": 668,
+    "fields": {
+        "name": "non-traditional-key-old",
+        "slug": "group-non-traditional-key-old",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "The non-traditional-key group represents a single alteration within a non-traditional key signature. A sequence of these groups makes up a non-traditional key signature",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
     "pk": 669,
     "fields": {
         "name": "non-traditional-key",
@@ -21601,6 +21763,24 @@
 },
 {
     "model": "spec.xmlelement",
+    "pk": 680,
+    "fields": {
+        "name": "time-signature-old",
+        "slug": "group-time-signature-old",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "Time signatures are represented by the beats element for the numerator and the beat-type element for the denominator.",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
     "pk": 681,
     "fields": {
         "name": "time-signature",
@@ -21675,8 +21855,8 @@
     "model": "spec.xmlelement",
     "pk": 685,
     "fields": {
-        "name": "sequence-interchangeable",
-        "slug": "sequence-interchangeable",
+        "name": "anonymous-130",
+        "slug": "anonymous-130",
         "disambiguation": "",
         "schema": 1,
         "base_element": null,
@@ -22669,6 +22849,24 @@
 },
 {
     "model": "spec.xmlelement",
+    "pk": 739,
+    "fields": {
+        "name": "slash-old",
+        "slug": "group-slash-old",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "The slash group combines elements used for more complete specification of the slash and beat-repeat measure-style elements. They have the same values as the type and dot elements, and define what the beat is for the display of repetition marks. If not present, the beat is based on the current time signature.",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
     "pk": 740,
     "fields": {
         "name": "slash",
@@ -22886,6 +23084,24 @@
         "content_data_type": null,
         "is_featured": false,
         "children_type": 2,
+        "attribute_groups": []
+    }
+},
+{
+    "model": "spec.xmlelement",
+    "pk": 752,
+    "fields": {
+        "name": "harmony-chord-old",
+        "slug": "group-harmony-chord-old",
+        "disambiguation": "",
+        "schema": 1,
+        "base_element": null,
+        "is_abstract_element": true,
+        "is_root": false,
+        "description": "A harmony element can contain many stacked chords (e.g. V of II). A sequence of harmony-chord groups is used for this type of secondary function, where V of II would be represented by a harmony-chord with a V function followed by a harmony-chord with a II function.\r\n\r\nA root is a pitch name like C, D, E, while a numeral is a scale degree like 1, 2, 3. The root element is generally used with pop chord symbols, while the numeral element is generally used with classical functional harmony and Nashville numbers. It is an either/or choice to avoid data inconsistency. The function element, which represents Roman numerals with roman numeral text, has been deprecated as of MusicXML 4.0.",
+        "content_data_type": null,
+        "is_featured": false,
+        "children_type": 1,
         "attribute_groups": []
     }
 },
@@ -31808,6 +32024,17 @@
 },
 {
     "model": "spec.xmlrelationship",
+    "pk": 100,
+    "fields": {
+        "parent": 145,
+        "child": 146,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
     "pk": 101,
     "fields": {
         "parent": 144,
@@ -31823,6 +32050,17 @@
     "fields": {
         "parent": 149,
         "child": 151,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
+    "pk": 103,
+    "fields": {
+        "parent": 148,
+        "child": 149,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -31878,6 +32116,17 @@
     "fields": {
         "parent": 123,
         "child": 152,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
+    "pk": 109,
+    "fields": {
+        "parent": 122,
+        "child": 123,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -32347,6 +32596,17 @@
 },
 {
     "model": "spec.xmlrelationship",
+    "pk": 152,
+    "fields": {
+        "parent": 153,
+        "child": 154,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
     "pk": 153,
     "fields": {
         "parent": 121,
@@ -32530,6 +32790,17 @@
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 1
+    }
+},
+{
+    "model": "spec.xmlrelationship",
+    "pk": 170,
+    "fields": {
+        "parent": 232,
+        "child": 233,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
     }
 },
 {
@@ -32743,6 +33014,17 @@
 },
 {
     "model": "spec.xmlrelationship",
+    "pk": 190,
+    "fields": {
+        "parent": 245,
+        "child": 246,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
     "pk": 191,
     "fields": {
         "parent": 244,
@@ -32857,6 +33139,17 @@
     "fields": {
         "parent": 254,
         "child": 255,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
+    "pk": 202,
+    "fields": {
+        "parent": 253,
+        "child": 254,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -33088,6 +33381,17 @@
     "fields": {
         "parent": 279,
         "child": 280,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
+    "pk": 224,
+    "fields": {
+        "parent": 278,
+        "child": 279,
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 0
@@ -36571,6 +36875,17 @@
 },
 {
     "model": "spec.xmlrelationship",
+    "pk": 541,
+    "fields": {
+        "parent": 668,
+        "child": 669,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
     "pk": 542,
     "fields": {
         "parent": 661,
@@ -36648,6 +36963,17 @@
 },
 {
     "model": "spec.xmlrelationship",
+    "pk": 549,
+    "fields": {
+        "parent": 680,
+        "child": 681,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
     "pk": 550,
     "fields": {
         "parent": 679,
@@ -36673,7 +36999,7 @@
     "pk": 552,
     "fields": {
         "parent": 685,
-        "child": 681,
+        "child": 680,
         "min_amount": 1,
         "max_amount": null,
         "child_order": 1
@@ -37187,6 +37513,17 @@
 },
 {
     "model": "spec.xmlrelationship",
+    "pk": 599,
+    "fields": {
+        "parent": 739,
+        "child": 740,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
+    }
+},
+{
+    "model": "spec.xmlrelationship",
     "pk": 600,
     "fields": {
         "parent": 738,
@@ -37557,6 +37894,17 @@
         "min_amount": 0,
         "max_amount": null,
         "child_order": 4
+    }
+},
+{
+    "model": "spec.xmlrelationship",
+    "pk": 634,
+    "fields": {
+        "parent": 752,
+        "child": 753,
+        "min_amount": 1,
+        "max_amount": 1,
+        "child_order": 0
     }
 },
 {
@@ -56411,7 +56759,7 @@
         "url": "/tutorial/hello-world/",
         "collection": 2,
         "order": 2,
-        "content": "<p>Brian Kernighan and Dennis Ritchie popularized the practice of writing a program that prints the words \"hello, world\" as the first program to write when learning a new programming language. It is the minimal program that tests how to build a program and display its results.</p>\r\n\r\n<p>In MusicXML, a song with the lyrics \"hello, world\" is actually more complicated than we need for a simple MusicXML file. Let us keep things even simpler: a one-measure piece of music that contains a whole note on middle C, based in 4/4 time:</p>\r\n\r\n<p><img src=\"../../static/tutorial/hello-world.png\" /></p>\r\n\r\n<p>Here it is in MusicXML:</p>\r\n\r\n<p><pre>&lt;?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?&gt;\r\n&lt;!DOCTYPE score-partwise PUBLIC\r\n    \"-//Recordare//DTD MusicXML 4.0 Partwise//EN\"\r\n    \"http://www.musicxml.org/dtds/partwise.dtd\"&gt;\r\n&lt;score-partwise version=\"4.0\"&gt;\r\n  &lt;part-list&gt;\r\n    &lt;score-part id=\"P1\"&gt;\r\n      &lt;part-name&gt;Music&lt;/part-name&gt;\r\n    &lt;/score-part&gt;\r\n  &lt;/part-list&gt;\r\n  &lt;part id=\"P1\"&gt;\r\n    &lt;measure number=\"1\"&gt;\r\n      &lt;attributes&gt;\r\n        &lt;divisions&gt;1&lt;/divisions&gt;\r\n        &lt;key&gt;\r\n          &lt;fifths>0&lt;/fifths&gt;\r\n        &lt;/key&gt;\r\n        &lt;time&gt;\r\n          &lt;beats&gt;4&lt;/beats&gt;\r\n          &lt;beat-type&gt;4&lt;/beat-type&gt;\r\n        &lt;/time&gt;\r\n        &lt;clef&gt;\r\n          &lt;sign&gt;G&lt;/sign&gt;\r\n          &lt;line&gt;2&lt;/line&gt;\r\n        &lt;/clef&gt;\r\n      &lt;/attributes&gt;\r\n      &lt;note&gt;\r\n        &lt;pitch&gt;\r\n          &lt;step&gt;C&lt;/step&gt;\r\n          &lt;octave&gt;4&lt;/octave&gt;\r\n        &lt;/pitch&gt;\r\n        &lt;duration&gt;4&lt;/duration&gt;\r\n        &lt;type&gt;whole&lt;/type&gt;\r\n      &lt;/note&gt;\r\n    &lt;/measure&gt;\r\n  &lt;/part&gt;\r\n&lt;/score-partwise&gt;</pre></p>\r\n\r\n<p>Let's look at each part in turn:</p>\r\n\r\n<p><pre>&lt;?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?&gt;</pre></p>\r\n\r\n<p>This is the XML declaration required of all XML documents. We have specified that the characters are written in the Unicode encoding \"UTF-8\". This is the version of Unicode that has ASCII as a subset. Setting the value of standalone to \"no\" means that we are defining the document with an external definition in another file.</p>\r\n\r\n<p><pre>&lt;!DOCTYPE score-partwise PUBLIC\r\n    \"-//Recordare//DTD MusicXML 4.0 Partwise//EN\"\r\n    \"http://www.musicxml.org/dtds/partwise.dtd\"&gt;</pre></p>\r\n\r\n<p>This is where we say that we are using MusicXML, specifically a partwise score where measures are contained within parts. We use a PUBLIC declaration including an Internet location for the DTD. The URL in this declaration is just for reference. Most applications that read MusicXML files will want to install a local copy of the MusicXML DTDs on the user’s machine. Use the entity resolver in your XML parser to validate against the local copy, rather than reading the DTDs slowly over the network.</p>\r\n\r\n<p>If your application wants to validate against the MusicXML XSD rather than a DTD, you can use an entity resolver in your XML parser to do this. When writing MusicXML files, writing the DOCTYPE makes it easier for all applications - DTD or XSD based - to validate MusicXML files.</p>\r\n\r\n<p><pre>&lt;score-partwise version=\"4.0\"&gt;</pre></p>\r\n\r\n<p>This is the root document type. The <a href=\"../../musicxml-reference/elements/score-partwise/\">&lt;score-partwise&gt;</a> element is made up of parts, where each part is made up of measures. There is also a <a href=\"../../musicxml-reference/elements/score-timewise/\">&lt;score-timewise&gt;</a> option which is made up of measures, where each measure is made up of parts. The version attribute lets programs distinguish what version of MusicXML is being used more easily. Leave it out if you are writing MusicXML 1.0 files.</p>\r\n\r\n<p><pre>  &lt;part-list&gt;\r\n    &lt;score-part id=\"P1\"&gt;\r\n      &lt;part-name&gt;Part 1&lt;/part-name&gt;\r\n    &lt;/score-part&gt;\r\n  &lt;/part-list&gt;</pre></p>\r\n\r\n<p>Whether you have a partwise or timewise score, a MusicXML file starts off with a header that lists the different musical parts in the score. The above example is the minimal part-list possible: it contains one <a href=\"../../musicxml-reference/elements/score-part/\">&lt;score-part&gt;</a> element, the required id attribute for the score-part, and the required <a href=\"../../musicxml-reference/elements/part-name/\">&lt;part-name&gt;</a> element.</p>\r\n\r\n<p><pre>  &lt;part id=\"P1\"&gt;</pre></p>\r\n\r\n<p>We are now beginning the first (and only, in this case) part within the document. The id attribute here must refer to an id attribute for a score-part in the header.</p>\r\n\r\n<p><pre>    &lt;measure number=\"1\"&gt;</pre></p>\r\n\r\n<p>We are starting the first measure in the first part.</p>\r\n\r\n<p><pre>      &lt;attributes&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/attributes/\">&lt;attributes&gt;</a> element contains key information needed to interpret the notes and musical data that follow in this part.</p>\r\n\r\n<p><pre>        &lt;divisions&gt;1&lt;/divisions&gt;</pre></p>\r\n\r\n<p>Each note in MusicXML has a <a href=\"../../musicxml-reference/elements/duration/\">&lt;duration&gt;</a> element. The <a href=\"../../musicxml-reference/elements/divisions/\">&lt;divisions&gt;</a> element provides the unit of measure for the duration element in terms of divisions per quarter note. Since all we have in this file is one whole note, we never have to divide a quarter note, so we set the divisions value to 1.</p>\r\n\r\n<p>Musical durations are typically expressed as fractions, such as \"quarter\" and \"eighth\" notes. MusicXML durations are fractions, too. Since the denominator rarely needs to change, it is represented separately in the divisions element, so that only the numerator needs to be associated with each individual note. This is similar to the scheme used in MIDI to represent note durations.</p>\r\n\r\n<p><pre>        &lt;key&gt;\r\n          &lt;fifths&gt;0&lt;/fifths&gt;\r\n        &lt;/key&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/key/\">&lt;key&gt;</a> element is used to represent a key signature. Here we are in the key of C major, with no flats or sharps, so the <a href=\"../../musicxml-reference/elements/fifths/\">&lt;fifths&gt;</a> element is 0. If we were in the key of D major with 2 sharps, fifths would be set to 2. If we were in the key of F major with 1 flat, fifths would be set to -1. The name \"fifths\" comes from the representation of a key signature along the circle of fifths. It lets us represent standard key signatures with one element, instead of separate elements for sharps and flats.</p>\r\n\r\n<p><pre>        &lt;time&gt;\r\n          &lt;beats&gt;4&lt;/beats&gt;\r\n          &lt;beat-type&gt;4&lt;/beat-type&gt;\r\n        &lt;/time&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/time/\">&lt;time&gt;</a> element represents a time signature. Its two component elements, <a href=\"../../musicxml-reference/elements/beats/\">&lt;beats&gt;</a> and <a href=\"../../musicxml-reference/elements/beat-type/\">&lt;beat-type&gt;</a>, are the numerator and denominator of the time signature, respectively.</p>\r\n\r\n<p><pre>        &lt;clef&gt;\r\n          &lt;sign&gt;G&lt;/sign&gt;\r\n          &lt;line&gt;2&lt;/line&gt;\r\n        &lt;/clef&gt;</pre></p>\r\n\r\n<p>MusicXML allows for many different clefs, including many no longer used today. Here, the standard treble clef is represented by a G clef on the second line of the staff (e.g., the second line from the bottom of the staff is a G).</p>\r\n\r\n<p><pre>      &lt;/attributes&gt;\r\n      &lt;note&gt;</pre></p>\r\n\r\n<p>We are done with the attributes, and are ready to begin the first note.</p>\r\n\r\n<p><pre>        &lt;pitch&gt;\r\n          &lt;step&gt;C&lt;/step&gt;\r\n          &lt;octave>4&lt;/octave&gt;\r\n        &lt;/pitch&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/pitch/\">&lt;pitch&gt;</a> element must have a <a href=\"../../musicxml-reference/elements/step/\">&lt;step&gt;</a> and an <a href=\"../../musicxml-reference/elements/octave/\">&lt;octave&gt;</a> element. Optionally it can have an <a href=\"../../musicxml-reference/elements/alter/\">&lt;alter&gt;</a> element, if there is a flat or sharp involved. These elements represent the pitch that is played, so the &lt;alter&gt; element must always be included if used, even if the alteration is in the key signature. In this case, we have no alteration. The pitch step is C. The octave of 4 indicates the octave that starts with middle C. Thus this note is a middle C.</p>\r\n\r\n<p><pre>        &lt;duration&gt;4&lt;/duration&gt;</pre></p>\r\n\r\n<p>Our divisions value is 1 division per quarter note, so the duration of 4 is the length of 4 quarter notes.</p>\r\n\r\n<p><pre>        &lt;type&gt;whole&lt;/type&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/type/\">&lt;type&gt;</a> element tells us that this is notated as a whole note. You could probably derive this from the duration in this case, but it is much easier to work with both notation and performance applications if the notation and performance data is represented separately.</p>\r\n\r\n<p>In any event, the performance and notation data do not always match in practice. For example, Bach's music contains examples of shorthand notation where the actual note durations do not match the standard interpretation of the notes on the page, due to his use of a notational shorthand for certain rhythms.</p>\r\n\r\n<p>The &lt;duration&gt; element should reflect the intended duration, not a longer or shorter duration specific to a certain performance. The &lt;note&gt; element has attack and release attributes that suggest ways to alter a note's start and stop times from the nominal duration indicated directly or indirectly by the score.</p>\r\n\r\n<p><pre>      &lt;/note&gt;</pre></p>\r\n\r\n<p>We are done with the note.</p>\r\n\r\n<p><pre>    &lt;/measure&gt;</pre></p>\r\n\r\n<p>We are done with the measure.</p>\r\n\r\n<p><pre>  &lt;/part&gt;</pre></p>\r\n\r\n<p>We are done with the part.</p>\r\n\r\n<p><pre>&lt;/score-partwise&gt;</pre></p>\r\n\r\n<p>And we are done with the score.</p>\r\n\r\n<p>One limitation of XML's document type definitions is that if you want to limit the number of elements within another element, you generally must also restrict how they are ordered as well. In the attributes, for instance, we want no more than one divisions element; for the note's pitch, we want one and only one &lt;step&gt; element and &lt;octave&gt; element. In order to do this, the order in which these elements appear must be constrained as well.</p>\r\n\r\n<p>Thus the order in which elements appear in these examples does matter. The documentation should make clear what ordering is required; we will not spell that out in detail during the tutorial.</p>"
+        "content": "<p>Brian Kernighan and Dennis Ritchie popularized the practice of writing a program that prints the words \"hello, world\" as the first program to write when learning a new programming language. It is the minimal program that tests how to build a program and display its results.</p>\r\n\r\n<p>In MusicXML, a song with the lyrics \"hello, world\" is actually more complicated than we need for a simple MusicXML file. Let us keep things even simpler: a one-measure piece of music that contains a whole note on middle C, based in 4/4 time:</p>\r\n\r\n<p><img src=\"../../static/tutorial/hello-world.png\" /></p>\r\n\r\n<p>Here it is in MusicXML:</p>\r\n\r\n<p><pre>&lt;?xml version=\"1.0\" encoding=\"UTF-8\" ?&gt;\r\n&lt;score-partwise version=\"4.0\"&gt;\r\n  &lt;part-list&gt;\r\n    &lt;score-part id=\"P1\"&gt;\r\n      &lt;part-name&gt;Music&lt;/part-name&gt;\r\n    &lt;/score-part&gt;\r\n  &lt;/part-list&gt;\r\n  &lt;part id=\"P1\"&gt;\r\n    &lt;measure number=\"1\"&gt;\r\n      &lt;attributes&gt;\r\n        &lt;divisions&gt;1&lt;/divisions&gt;\r\n        &lt;key&gt;\r\n          &lt;fifths>0&lt;/fifths&gt;\r\n        &lt;/key&gt;\r\n        &lt;time&gt;\r\n          &lt;beats&gt;4&lt;/beats&gt;\r\n          &lt;beat-type&gt;4&lt;/beat-type&gt;\r\n        &lt;/time&gt;\r\n        &lt;clef&gt;\r\n          &lt;sign&gt;G&lt;/sign&gt;\r\n          &lt;line&gt;2&lt;/line&gt;\r\n        &lt;/clef&gt;\r\n      &lt;/attributes&gt;\r\n      &lt;note&gt;\r\n        &lt;pitch&gt;\r\n          &lt;step&gt;C&lt;/step&gt;\r\n          &lt;octave&gt;4&lt;/octave&gt;\r\n        &lt;/pitch&gt;\r\n        &lt;duration&gt;4&lt;/duration&gt;\r\n        &lt;type&gt;whole&lt;/type&gt;\r\n      &lt;/note&gt;\r\n    &lt;/measure&gt;\r\n  &lt;/part&gt;\r\n&lt;/score-partwise&gt;</pre></p>\r\n\r\n<p>Let's look at each part in turn:</p>\r\n\r\n<p><pre>&lt;?xml version=\"1.0\" encoding=\"UTF-8\" ?&gt;</pre></p>\r\n\r\n<p>This is the XML declaration required of all XML documents. We have specified that the characters are written in the Unicode encoding UTF-8. This encoding provides backwards compatibility with ASCII.</p>\r\n\r\n<p><pre>&lt;score-partwise version=\"4.0\"&gt;</pre></p>\r\n\r\n<p>This is the root document type. The <a href=\"../../musicxml-reference/elements/score-partwise/\">&lt;score-partwise&gt;</a> element is made up of parts, where each part is made up of measures. There is also a <a href=\"../../musicxml-reference/elements/score-timewise/\">&lt;score-timewise&gt;</a> option which is made up of measures, where each measure is made up of parts. The version attribute lets programs distinguish what version of MusicXML is being used more easily. Leave it out if you are writing MusicXML 1.0 files.</p>\r\n\r\n<p><pre>  &lt;part-list&gt;\r\n    &lt;score-part id=\"P1\"&gt;\r\n      &lt;part-name&gt;Part 1&lt;/part-name&gt;\r\n    &lt;/score-part&gt;\r\n  &lt;/part-list&gt;</pre></p>\r\n\r\n<p>Whether you have a partwise or timewise score, a MusicXML file starts off with a header that lists the different musical parts in the score. The above example is the minimal part-list possible: it contains one <a href=\"../../musicxml-reference/elements/score-part/\">&lt;score-part&gt;</a> element, the required id attribute for the score-part, and the required <a href=\"../../musicxml-reference/elements/part-name/\">&lt;part-name&gt;</a> element.</p>\r\n\r\n<p><pre>  &lt;part id=\"P1\"&gt;</pre></p>\r\n\r\n<p>We are now beginning the first (and only, in this case) part within the document. The id attribute here must refer to an id attribute for a score-part in the header. Every part must have a unique id attribute. Because ids cannot start with a number, they are often created by starting with the letter P and adding the part number, starting with 1: P1, P2, P3, etc.</p>\r\n\r\n<p><pre>    &lt;measure number=\"1\"&gt;</pre></p>\r\n\r\n<p>We are starting the first measure in the first part.</p>\r\n\r\n<p><pre>      &lt;attributes&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/attributes/\">&lt;attributes&gt;</a> element contains key information needed to interpret the notes and musical data that follow in this part.</p>\r\n\r\n<p><pre>        &lt;divisions&gt;1&lt;/divisions&gt;</pre></p>\r\n\r\n<p>Each note in MusicXML has a <a href=\"../../musicxml-reference/elements/duration/\">&lt;duration&gt;</a> element. The <a href=\"../../musicxml-reference/elements/divisions/\">&lt;divisions&gt;</a> element provides the unit of measure for the duration element in terms of divisions per quarter note. Since all we have in this file is one whole note, we never have to divide a quarter note, so we set the divisions value to 1.</p>\r\n\r\n<p>Musical durations are typically expressed as fractions, such as \"quarter\" and \"eighth\" notes. MusicXML durations are fractions, too. Since the denominator rarely needs to change, it is represented separately in the divisions element, so that only the numerator needs to be associated with each individual note. This is similar to the scheme used in MIDI to represent note durations.</p>\r\n\r\n<p><pre>        &lt;key&gt;\r\n          &lt;fifths&gt;0&lt;/fifths&gt;\r\n        &lt;/key&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/key/\">&lt;key&gt;</a> element is used to represent a key signature. Here we are in the key of C major, with no flats or sharps, so the <a href=\"../../musicxml-reference/elements/fifths/\">&lt;fifths&gt;</a> element is 0. If we were in the key of D major with 2 sharps, fifths would be set to 2. If we were in the key of F major with 1 flat, fifths would be set to -1. The name \"fifths\" comes from the representation of a key signature along the circle of fifths. It lets us represent standard key signatures with one element, instead of separate elements for sharps and flats.</p>\r\n\r\n<p><pre>        &lt;time&gt;\r\n          &lt;beats&gt;4&lt;/beats&gt;\r\n          &lt;beat-type&gt;4&lt;/beat-type&gt;\r\n        &lt;/time&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/time/\">&lt;time&gt;</a> element represents a time signature. Its two component elements, <a href=\"../../musicxml-reference/elements/beats/\">&lt;beats&gt;</a> and <a href=\"../../musicxml-reference/elements/beat-type/\">&lt;beat-type&gt;</a>, are the numerator and denominator of the time signature, respectively.</p>\r\n\r\n<p><pre>        &lt;clef&gt;\r\n          &lt;sign&gt;G&lt;/sign&gt;\r\n          &lt;line&gt;2&lt;/line&gt;\r\n        &lt;/clef&gt;</pre></p>\r\n\r\n<p>MusicXML allows for many different clefs, including many no longer used today. Here, the standard treble clef is represented by a G clef on the second line of the staff (e.g., the second line from the bottom of the staff is a G).</p>\r\n\r\n<p><pre>      &lt;/attributes&gt;\r\n      &lt;note&gt;</pre></p>\r\n\r\n<p>We are done with the attributes, and are ready to begin the first note.</p>\r\n\r\n<p><pre>        &lt;pitch&gt;\r\n          &lt;step&gt;C&lt;/step&gt;\r\n          &lt;octave>4&lt;/octave&gt;\r\n        &lt;/pitch&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/pitch/\">&lt;pitch&gt;</a> element must have a <a href=\"../../musicxml-reference/elements/step/\">&lt;step&gt;</a> and an <a href=\"../../musicxml-reference/elements/octave/\">&lt;octave&gt;</a> element. Optionally it can have an <a href=\"../../musicxml-reference/elements/alter/\">&lt;alter&gt;</a> element, if there is a flat or sharp involved. These elements represent the pitch that is played, so the &lt;alter&gt; element must always be included if used, even if the alteration is in the key signature. In this case, we have no alteration. The pitch step is C. The octave of 4 indicates the octave that starts with middle C. Thus this note is a middle C.</p>\r\n\r\n<p><pre>        &lt;duration&gt;4&lt;/duration&gt;</pre></p>\r\n\r\n<p>Our divisions value is 1 division per quarter note, so the duration of 4 is the length of 4 quarter notes.</p>\r\n\r\n<p><pre>        &lt;type&gt;whole&lt;/type&gt;</pre></p>\r\n\r\n<p>The <a href=\"../../musicxml-reference/elements/type/\">&lt;type&gt;</a> element tells us that this is notated as a whole note. You could probably derive this from the duration in this case, but it is much easier to work with both notation and performance applications if the notation and performance data is represented separately.</p>\r\n\r\n<p>The &lt;duration&gt; element should reflect the intended duration, not a longer or shorter duration specific to a certain performance. The &lt;note&gt; element has attack and release attributes that suggest ways to alter a note's start and stop times from the nominal duration indicated directly or indirectly by the score.</p>\r\n\r\n<p><pre>      &lt;/note&gt;</pre></p>\r\n\r\n<p>We are done with the note.</p>\r\n\r\n<p><pre>    &lt;/measure&gt;</pre></p>\r\n\r\n<p>We are done with the measure.</p>\r\n\r\n<p><pre>  &lt;/part&gt;</pre></p>\r\n\r\n<p>We are done with the part.</p>\r\n\r\n<p><pre>&lt;/score-partwise&gt;</pre></p>\r\n\r\n<p>And we are done with the score.</p>\r\n\r\n<p>One limitation of XML's document type definitions is that if you want to limit the number of elements within another element, you generally must also restrict how they are ordered as well. In the attributes, for instance, we want no more than one divisions element; for the note's pitch, we want one and only one &lt;step&gt; element and &lt;octave&gt; element. In order to do this, the order in which these elements appear must be constrained as well.</p>\r\n\r\n<p>The order in which elements appear in these examples does matter. The correct order is specified throughout the documentation.</p>"
     }
 },
 {
