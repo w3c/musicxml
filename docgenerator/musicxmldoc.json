@@ -13349,24 +13349,6 @@
 },
 {
     "model": "spec.xmlelement",
-    "pk": 232,
-    "fields": {
-        "name": "display-step-octave-old",
-        "slug": "group-display-step-octave-old",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "The display-step-octave group contains the sequence of elements used by both the rest and unpitched elements. This group is used to place rests and unpitched elements on the staff without implying that these elements have pitch. Positioning follows the current clef. If percussion clef is used, the display-step and display-octave elements are interpreted as if in treble clef, with a G in octave 4 on line 2.",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
     "pk": 233,
     "fields": {
         "name": "display-step-octave",
@@ -21417,24 +21399,6 @@
 },
 {
     "model": "spec.xmlelement",
-    "pk": 668,
-    "fields": {
-        "name": "non-traditional-key-old",
-        "slug": "group-non-traditional-key-old",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "The non-traditional-key group represents a single alteration within a non-traditional key signature. A sequence of these groups makes up a non-traditional key signature",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
     "pk": 669,
     "fields": {
         "name": "non-traditional-key",
@@ -21632,24 +21596,6 @@
         "content_data_type": null,
         "is_featured": false,
         "children_type": 2,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
-    "pk": 680,
-    "fields": {
-        "name": "time-signature-old",
-        "slug": "group-time-signature-old",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "Time signatures are represented by the beats element for the numerator and the beat-type element for the denominator.",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
         "attribute_groups": []
     }
 },
@@ -22723,24 +22669,6 @@
 },
 {
     "model": "spec.xmlelement",
-    "pk": 739,
-    "fields": {
-        "name": "slash-old",
-        "slug": "group-slash-old",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "The slash group combines elements used for more complete specification of the slash and beat-repeat measure-style elements. They have the same values as the type and dot elements, and define what the beat is for the display of repetition marks. If not present, the beat is based on the current time signature.",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
     "pk": 740,
     "fields": {
         "name": "slash",
@@ -22958,24 +22886,6 @@
         "content_data_type": null,
         "is_featured": false,
         "children_type": 2,
-        "attribute_groups": []
-    }
-},
-{
-    "model": "spec.xmlelement",
-    "pk": 752,
-    "fields": {
-        "name": "harmony-chord-old",
-        "slug": "group-harmony-chord-old",
-        "disambiguation": "",
-        "schema": 1,
-        "base_element": null,
-        "is_abstract_element": true,
-        "is_root": false,
-        "description": "A harmony element can contain many stacked chords (e.g. V of II). A sequence of harmony-chord groups is used for this type of secondary function, where V of II would be represented by a harmony-chord with a V function followed by a harmony-chord with a II function.\r\n\r\nA root is a pitch name like C, D, E, while a numeral is a scale degree like 1, 2, 3. The root element is generally used with pop chord symbols, while the numeral element is generally used with classical functional harmony and Nashville numbers. It is an either/or choice to avoid data inconsistency. The function element, which represents Roman numerals with roman numeral text, has been deprecated as of MusicXML 4.0.",
-        "content_data_type": null,
-        "is_featured": false,
-        "children_type": 1,
         "attribute_groups": []
     }
 },
@@ -32624,17 +32534,6 @@
 },
 {
     "model": "spec.xmlrelationship",
-    "pk": 170,
-    "fields": {
-        "parent": 232,
-        "child": 233,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
     "pk": 171,
     "fields": {
         "parent": 231,
@@ -36672,17 +36571,6 @@
 },
 {
     "model": "spec.xmlrelationship",
-    "pk": 541,
-    "fields": {
-        "parent": 668,
-        "child": 669,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
     "pk": 542,
     "fields": {
         "parent": 661,
@@ -36756,17 +36644,6 @@
         "min_amount": 1,
         "max_amount": 1,
         "child_order": 1
-    }
-},
-{
-    "model": "spec.xmlrelationship",
-    "pk": 549,
-    "fields": {
-        "parent": 680,
-        "child": 681,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
     }
 },
 {
@@ -37310,17 +37187,6 @@
 },
 {
     "model": "spec.xmlrelationship",
-    "pk": 599,
-    "fields": {
-        "parent": 739,
-        "child": 740,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
-    }
-},
-{
-    "model": "spec.xmlrelationship",
     "pk": 600,
     "fields": {
         "parent": 738,
@@ -37691,17 +37557,6 @@
         "min_amount": 0,
         "max_amount": null,
         "child_order": 4
-    }
-},
-{
-    "model": "spec.xmlrelationship",
-    "pk": 634,
-    "fields": {
-        "parent": 752,
-        "child": 753,
-        "min_amount": 1,
-        "max_amount": 1,
-        "child_order": 0
     }
 },
 {
