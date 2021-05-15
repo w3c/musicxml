@@ -109,6 +109,8 @@
 
 <li>MusicXML 4.0 now contains a standard <a href="../../listings/catalog.xml/">XML catalog</a> to make local validation easier. (<a href="https://github.com/w3c/musicxml/issues/259">Issue 259</a>)</li>
 
+<li>MusicXML 4.0 now contains W3C XML Schema versions of the <a href="../../listings/container.xsd/">container</a> and <a href="../../listings/sounds.xsd/">sounds</a> document definitions, replacing the deprecated DTD versions. (<a href="https://github.com/w3c/musicxml/issues/401">Issue 401</a>)</li>
+
 </ul>
 
 <h2 id="schema">Schema Additions</h2>
@@ -242,6 +244,8 @@
 <h2 id="deprecated">Removed and Deprecated Features</h2>
 
 <ul>
+
+<li>The DTD versions of the MusicXML definitions have been deprecated in favor of the XSD versions. This includes the midixml DTD and XSL files, which will not be replaced with XSD versions. (<a href="https://github.com/w3c/musicxml/issues/401">Issue 401</a>)</li>
 
 <li>Empty <a href="../../musicxml-reference/elements/multiple-rest/">&lt;multiple-rest&gt;</a> elements are no longer allowed. This was a mistake in the original definition of the element. (<a href="https://github.com/w3c/musicxml/issues/249">Issue 249</a>)</li>
 
