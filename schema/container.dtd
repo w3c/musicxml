@@ -15,8 +15,8 @@
 	   https://www.w3.org/community/about/agreements/cla-deed/
 
 	The DTD version of the MusicXML format is deprecated as of
-	Version 4.0. A W3C XML Schema version of this DTD will be
-	provided by the time that DTD support is discontinued.
+	Version 4.0. Use the container.xsd W3C XML Schema definition
+	instead.
 -->
 
 <!--
