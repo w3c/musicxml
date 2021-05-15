@@ -13,6 +13,10 @@
 	A human-readable summary is available:
 	
 	   https://www.w3.org/community/about/agreements/cla-deed/
+
+	The DTD version of the MusicXML format is deprecated as
+	of Version 4.0. Developers should user the W3C XML Schema
+	definition defined in musicxml.xsd instead.
 -->
 
 <!--

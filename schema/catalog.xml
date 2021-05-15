@@ -42,6 +42,8 @@
         <uri name="http://www.musicxml.org/xsd/opus.xsd" uri="opus.xsd"/>
         <uri name="http://www.musicxml.org/xsd/xlink.xsd" uri="xlink.xsd"/>
         <uri name="http://www.musicxml.org/xsd/xml.xsd" uri="xml.xsd"/>        
+        <uri name="http://www.musicxml.org/xsd/container.xsd" uri="container.xsd"/>
+        <uri name="http://www.musicxml.org/xsd/sounds.xsd" uri="sounds.xsd"/>        
     </group>
     
     <!-- DTD -->
