@@ -64,9 +64,9 @@
         <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
         <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
         <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
-        <li><a href="../../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../../listings/container.xsd/">container.xsd</a></li>
         <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
-        <li><a href="../../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
@@ -108,7 +108,7 @@
 </p>
 
 
-    <p>The rootfile element describes each top-level file in the MusicXML container. A MusicXML file used as a rootfile may have score-partwise, score-timewise, or opus as its document element.</p>
+    <p>The &lt;rootfile&gt; element describes each top-level file in the MusicXML container. A MusicXML file used as a &lt;rootfile&gt; may have &lt;score-partwise&gt;, &lt;score-timewise&gt;, or &lt;opus&gt; as its document element.</p>
 
 
 <h2>Content</h2>
@@ -141,7 +141,7 @@
     <th class="nobr">media-type</th>
     <td><a href="../../../musicxml-reference/data-types/xsd-token/">token</a></td>
     <td>No</td>
-    <td>Identifies the media type of different top-level root files. It is an error to have a non-MusicXML media-type value in the first rootfile in a rootfiles element. If no media-type value is present, a MusicXML file is assumed.</td>
+    <td>Identifies the media type of different top-level root files. It is an error to have a non-MusicXML media-type value in the first &lt;rootfile&gt; in a &lt;rootfiles&gt; element. If no media-type value is present, a MusicXML file is assumed.</td>
 </tr>
 
 </table>

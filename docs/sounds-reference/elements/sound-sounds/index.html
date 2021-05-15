@@ -64,9 +64,9 @@
         <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
         <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
         <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
-        <li><a href="../../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../../listings/container.xsd/">container.xsd</a></li>
         <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
-        <li><a href="../../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
@@ -108,9 +108,7 @@
 </p>
 
 
-    <p>The sound element lists one of the standard sounds available in MusicXML 4.0. The required id attribute lists the MusicXML sound identifier string used by the instrument-sound element.</p>
-
-<p>The optional any, solo, and ensemble elements can be used for mapping MusicXML sound IDs to an application's or virtual instrument library's method of identifying sounds. These methods could include Sibelius SoundWorld IDs, capella genericsound IDs, and General MIDI patch numbers.</p>
+    <p>The &lt;sound&gt; element lists one of the standard sounds available in MusicXML 4.0. The optional &lt;any&gt;, &lt;solo&gt;, and &lt;ensemble&gt; elements can be used for mapping MusicXML sound IDs to an application's or virtual instrument library's method of identifying sounds. These methods could include Sibelius SoundWorld IDs, capella genericsound IDs, and General MIDI patch numbers.</p>
 
 
 <h2>Content</h2>
@@ -126,7 +124,7 @@
         
         <li>
             
-                <a href="../any-sounds/">&lt;any&gt;</a> 
+                <a href="../any-sounds/">&lt;any&gt;</a> (Zero or more times)
             
         </li>
         
@@ -184,14 +182,14 @@
     <th class="nobr">id</th>
     <td><a href="../../../musicxml-reference/data-types/xsd-ID/">ID</a></td>
     <td>Yes</td>
-    <td>The MusicXML sound identifier string used by the instrument-sound element in a score file.</td>
+    <td>The MusicXML sound identifier string used by the &lt;instrument-sound&gt; element in a score file.</td>
 </tr>
 
 <tr>
     <th class="nobr">primary</th>
     <td><a href="../../../musicxml-reference/data-types/yes-no/">yes-no</a></td>
     <td>No</td>
-    <td>The primary attribute for the sound element is used when multiple sound elements map to the same application or library ID. In this case, the primary attribute indicates which of the MusicXML IDs is primary when mapping to a MusicXML sound id.</td>
+    <td>Used when multiple &lt;sound&gt; elements map to the same application or library ID. In this case, it indicates which of the MusicXML IDs is primary when mapping to a MusicXML sound id.</td>
 </tr>
 
 </table>
@@ -199,13 +197,6 @@
 
 
 
-
-<h2>Examples</h2>
-
-<p>This element is used in the following examples:</p>
-<p>
-    <nobr><a href="../../../musicxml-reference/examples/attributes-element/">&lt;attributes&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/coda-element/">&lt;coda&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/f-element/">&lt;f&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/ff-element/">&lt;ff&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/fff-element/">&lt;fff&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/ffff-element/">&lt;ffff&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/fffff-element/">&lt;fffff&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/ffffff-element/">&lt;ffffff&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/metronome-note-element/">&lt;metronome-note&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/metronome-element/">&lt;metronome&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/mf-element/">&lt;mf&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/mp-element/">&lt;mp&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/p-element/">&lt;p&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/per-minute-element/">&lt;per-minute&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/pp-element/">&lt;pp&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/ppp-element/">&lt;ppp&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/pppp-element/">&lt;pppp&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/ppppp-element/">&lt;ppppp&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/pppppp-element/">&lt;pppppp&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/wedge-element/">&lt;wedge&gt;</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/tutorial-apres-un-reve/">Tutorial: Après un rêve</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/tutorial-chopin-prelude/">Tutorial: Chopin Prelude</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/tutorial-chord-symbols/">Tutorial: Chord Symbols</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/tutorial-percussion/">Tutorial: Percussion</a></nobr>, <nobr><a href="../../../musicxml-reference/examples/tutorial-tablature/">Tutorial: Tablature</a></nobr>
-</p>
 
 
 

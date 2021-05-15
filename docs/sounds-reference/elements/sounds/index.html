@@ -64,9 +64,9 @@
         <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
         <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
         <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
-        <li><a href="../../../listings/container.dtd/">container.dtd</a></li>
+        <li><a href="../../../listings/container.xsd/">container.xsd</a></li>
         <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
-        <li><a href="../../../listings/sounds.dtd/">sounds.dtd</a></li>
+        <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
@@ -106,13 +106,11 @@
 </p>
 
 
-    <p>Starting with Version 3.0, the MusicXML format includes a standard set of instrument sounds to identify musical timbres. These values are used in the instrument-sound element.</p>
+    <p>Starting with Version 3.0, the MusicXML format includes a standard set of instrument sounds to identify musical timbres. These values are used in the &lt;instrument-sound&gt; element.</p>
 
-<p>The standard sounds are listed in the sounds.xml file included with MusicXML 4.0. The sounds element is the document element for this file.</p>
+<p>The standard sounds are listed in the sounds.xml file included with MusicXML 4.0. The &lt;sounds&gt; element is the document element for this file.</p>
 
 <p>Applications may wish to provide a modified version of the sounds.xml file, where the element content includes an application's method for identifying sounds.</p>
-
-<p>Suggested use of the DTD:<br><pre>&lt;!DOCTYPE sounds PUBLIC<br>    "-//Recordare//DTD MusicXML 4.0 Sounds//EN"<br>    "http://www.musicxml.org/dtds/sounds.dtd"&gt;</pre><br>The XML catalog at catalog.xml supports validating against a local copy of the sounds.dtd file rather than the networked version in the system ID. Software often has trouble using system IDs due to factors such as restrictions on network access, or resources having moved from the original specified location.</p>
 
 
 <h2>Content</h2>
