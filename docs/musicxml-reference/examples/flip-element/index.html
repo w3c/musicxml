@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>The &lt;brass-bend&gt; element | MusicXML 4.0</title>
+<title>MusicXML example: &lt;flip&gt; | MusicXML 4.0</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
+
+<style>
+.diff * { font-weight: bold; color: blue !important; }
+</style>
 
 </head>
 
@@ -43,9 +47,9 @@
     </ul>
     <li><b><a href="../../">MusicXML Reference</a></b></li>
     <ul>
-        <li><a href="../">Elements</a></li>
+        <li><a href="../../elements/">Elements</a></li>
         <li><a href="../../data-types/">Data Types</a></li>
-        <li><a href="../../examples/">Examples</a></li>
+        <li><a href="../">Examples</a></li>
     </ul>
     <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
     <ul>
@@ -93,129 +97,27 @@
 <p class="breadcrumb">
     <a href="../../../">MusicXML 4.0</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
-    <a href="../">Elements</a> &gt;
-    brass-bend
+    <a href="../">Examples</a> &gt;
+    &lt;flip&gt;
 </p>
 
-<h1>The &lt;brass-bend&gt; element</h1>
-
-<p>Parent element:
-    
-        
-        <a href="../technical/">&lt;technical&gt;</a>
-        
-    
-</p>
+<h1>&lt;flip&gt;</h1>
 
 
-    <p><img src="../../../static/elements/brass-bend.png"/></p>
-
-<p>The &lt;brass-bend&gt; element represents the u-shaped bend symbol used in brass notation, distinct from the &lt;bend&gt; element used in guitar music.</p>
-
-
-<h2 id="content">Content</h2>
-
-
-    <p>Always empty.</p>
-
-
-<h2 id="attributes">Attributes</h2>
-
-
-<table>
-<thead>
-<tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Required?</th>
-    <th>Description</th>
-</tr>
-</thead>
-
-<tr>
-    <th class="nobr">color</th>
-    <td><a href="../../data-types/color/">color</a></td>
-    <td>No</td>
-    <td>Indicates the color of an element.</td>
-</tr>
-
-<tr>
-    <th class="nobr">default-x</th>
-    <td><a href="../../data-types/tenths/">tenths</a></td>
-    <td>No</td>
-    <td>Changes the computation of the default horizontal position. The origin is changed relative to the left-hand side of the note or the musical position within the bar. Positive x is right and negative x is left.<br><br>This attribute provides higher-resolution positioning data than the &lt;offset&gt; element. Applications reading a MusicXML file that can understand both features should generally rely on this attribute for its greater accuracy.</td>
-</tr>
-
-<tr>
-    <th class="nobr">default-y</th>
-    <td><a href="../../data-types/tenths/">tenths</a></td>
-    <td>No</td>
-    <td>Changes the computation of the default vertical position. The origin is changed relative to the top line of the staff. Positive y is up and negative y is down.<br><br>This attribute provides higher-resolution positioning data than the placement attribute. Applications reading a MusicXML file that can understand both attributes should generally rely on this attribute for its greater accuracy.</td>
-</tr>
-
-<tr>
-    <th class="nobr">font-family</th>
-    <td><a href="../../data-types/font-family/">font-family</a></td>
-    <td>No</td>
-    <td>A comma-separated list of font names.</td>
-</tr>
-
-<tr>
-    <th class="nobr">font-size</th>
-    <td><a href="../../data-types/font-size/">font-size</a></td>
-    <td>No</td>
-    <td>One of the CSS sizes or a numeric point size.</td>
-</tr>
-
-<tr>
-    <th class="nobr">font-style</th>
-    <td><a href="../../data-types/font-style/">font-style</a></td>
-    <td>No</td>
-    <td>Normal or italic style.</td>
-</tr>
-
-<tr>
-    <th class="nobr">font-weight</th>
-    <td><a href="../../data-types/font-weight/">font-weight</a></td>
-    <td>No</td>
-    <td>Normal or bold weight.</td>
-</tr>
-
-<tr>
-    <th class="nobr">placement</th>
-    <td><a href="../../data-types/above-below/">above-below</a></td>
-    <td>No</td>
-    <td>Indicates whether something is above or below another element, such as a note or a notation.</td>
-</tr>
-
-<tr>
-    <th class="nobr">relative-x</th>
-    <td><a href="../../data-types/tenths/">tenths</a></td>
-    <td>No</td>
-    <td>Changes the horizontal position relative to the default position, either as computed by the individual program, or as overridden by the default-x attribute.  Positive x is right and negative x is left. It should be interpreted in the context of the &lt;offset&gt; element or directive attribute if those are present.</td>
-</tr>
-
-<tr>
-    <th class="nobr">relative-y</th>
-    <td><a href="../../data-types/tenths/">tenths</a></td>
-    <td>No</td>
-    <td>Changes the vertical position relative to the default position, either as computed by the individual program, or as overridden by the default-y attribute. Positive y is up and negative y is down. It should be interpreted in the context of the placement attribute if that is present.</td>
-</tr>
-
-</table>
+<p><img src="../../../static/examples/flip-element.png"></p>
 
 
 
 
 
-<h2 id="examples">Examples</h2>
-
-<p>This element is used in the following examples:</p>
-<p>
-    <nobr><a href="../../examples/brass-bend-element/">&lt;brass-bend&gt;</a></nobr>
-</p>
 
 
+
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
+   &lt;<a class="tag" href="../../elements/technical/">technical</a>&gt;
+</span><span class="diff">      &lt;<a class="tag" href="../../elements/flip/">flip</a> <span class="attr">placement="<a href="../../data-types/above-below/">above</a>"</span>/&gt;
+</span><span class="nodiff">   &lt;/<a class="tag" href="../../elements/technical/">technical</a>&gt;
+&lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;</span></div>
 
     </main>
 </div>

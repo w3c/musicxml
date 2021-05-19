@@ -16587,7 +16587,7 @@
         "base_element": 258,
         "is_abstract_element": false,
         "is_root": false,
-        "description": "The &lt;golpe&gt; element represents the golpe symbol that is used for tapping the pick guard in guitar music.",
+        "description": "<img src=\"../../../static/elements/golpe.png\"/>\r\n\r\nThe &lt;golpe&gt; element represents the golpe symbol that is used for tapping the pick guard in guitar music.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -41263,6 +41263,58 @@
     }
 },
 {
+    "model": "spec.exampledocument",
+    "pk": 224,
+    "fields": {
+        "name": "<arrowhead>",
+        "slug": "arrowhead-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<notations>\r\n          <technical>\r\n            <arrow placement=\"above\">\r\n              <arrow-direction>down</arrow-direction>\r\n              <arrow-style>filled</arrow-style>\r\n              <metadiff><arrowhead/></metadiff>\r\n            </arrow>\r\n          </technical>\r\n        </notations>",
+        "image_url": "/static/examples/arrowhead-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 225,
+    "fields": {
+        "name": "<brass-bend>",
+        "slug": "brass-bend-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<notations>\r\n          <technical>\r\n            <metadiff><brass-bend placement=\"above\"/></metadiff>\r\n          </technical>\r\n        </notations>",
+        "image_url": "/static/examples/brass-bend-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 226,
+    "fields": {
+        "name": "<flip>",
+        "slug": "flip-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<notations>\r\n          <technical>\r\n            <metadiff><flip placement=\"above\"/></metadiff>\r\n          </technical>\r\n        </notations>",
+        "image_url": "/static/examples/flip-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 227,
+    "fields": {
+        "name": "<golpe>",
+        "slug": "golpe-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<notations>\r\n          <technical>\r\n            <metadiff><golpe placement=\"above\"/></metadiff>\r\n          </technical>\r\n        </notations>",
+        "image_url": "/static/examples/golpe-element.png",
+        "is_featured": false
+    }
+},
+{
     "model": "spec.exampledocumentelement",
     "pk": 1,
     "fields": {
@@ -57756,6 +57808,126 @@
     "fields": {
         "example": 223,
         "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2209,
+    "fields": {
+        "example": 224,
+        "element_name": "arrow-direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2210,
+    "fields": {
+        "example": 224,
+        "element_name": "technical"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2211,
+    "fields": {
+        "example": 224,
+        "element_name": "arrow-style"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2212,
+    "fields": {
+        "example": 224,
+        "element_name": "arrowhead"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2213,
+    "fields": {
+        "example": 224,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2214,
+    "fields": {
+        "example": 224,
+        "element_name": "arrow"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2215,
+    "fields": {
+        "example": 225,
+        "element_name": "technical"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2216,
+    "fields": {
+        "example": 225,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2217,
+    "fields": {
+        "example": 225,
+        "element_name": "brass-bend"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2218,
+    "fields": {
+        "example": 226,
+        "element_name": "flip"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2219,
+    "fields": {
+        "example": 226,
+        "element_name": "technical"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2220,
+    "fields": {
+        "example": 226,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2221,
+    "fields": {
+        "example": 227,
+        "element_name": "technical"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2222,
+    "fields": {
+        "example": 227,
+        "element_name": "golpe"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2223,
+    "fields": {
+        "example": 227,
+        "element_name": "notations"
     }
 },
 {
