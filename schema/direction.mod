@@ -319,6 +319,7 @@
 	 metronome-tuplet?)>
 <!ELEMENT metronome-relation (#PCDATA)>
 <!ELEMENT metronome-type (#PCDATA)>
+<!ELEMENT metronome-arrows EMPTY>
 <!ELEMENT metronome-dot EMPTY>
 <!ELEMENT metronome-beam (#PCDATA)>
 <!ATTLIST metronome-beam
