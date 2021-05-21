@@ -28157,7 +28157,7 @@
         "attribute_group": null,
         "name": "type",
         "is_required": true,
-        "description": "",
+        "description": "Indicates if this is the start or stop of the tie.",
         "data_type": 42
     }
 },
@@ -38904,7 +38904,7 @@
         "slug": "barline-element",
         "schema": 1,
         "blurb": "",
-        "document": "<barline location=\"right\">\r\n        <metadiff><bar-style>light-light</bar-style></metadiff>\r\n      </barline>",
+        "document": "<measure number=\"10\" width=\"367\">\r\n      <attributes>\r\n        <time>\r\n          <beats>3 + 2 + 4</beats>\r\n          <beat-type>8</beat-type>\r\n        </time>\r\n      </attributes>\r\n      <note default-x=\"103\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"0\">up</stem>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"130\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"0\">up</stem>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"158\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"0\">up</stem>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <metadiff><barline location=\"middle\">\r\n        <bar-style>dashed</bar-style>\r\n      </barline></metadiff>\r\n      <note default-x=\"184\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"0\">up</stem>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"211\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"0\">up</stem>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <metadiff><barline location=\"middle\">\r\n        <bar-style>dashed</bar-style>\r\n      </barline></metadiff>\r\n      <note default-x=\"238\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"0\">up</stem>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"265\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"0\">up</stem>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"292\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"0\">up</stem>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"319\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"0\">up</stem>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <metadiff><barline location=\"right\">\r\n        <bar-style>light-light</bar-style>\r\n      </barline></metadiff>\r\n    </measure>",
         "image_url": "/static/examples/barline-element.png",
         "is_featured": false
     }
@@ -41714,6 +41714,136 @@
         "blurb": "",
         "document": "<credit page=\"1\">\r\n    <credit-words default-x=\"37\" default-y=\"1495\" font-size=\"12\" valign=\"top\">Practice with </credit-words>\r\n    <metadiff><credit-symbol>fClef</credit-symbol></metadiff>\r\n    <credit-words font-size=\"12\"> and </credit-words>\r\n    <metadiff><credit-symbol>cClef</credit-symbol></metadiff>\r\n    <credit-words font-size=\"12\"> clefs as well.</credit-words>\r\n  </credit>",
         "image_url": "/static/examples/credit-symbol-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 259,
+    "fields": {
+        "name": "<accordion-registration>",
+        "slug": "accordion-registration-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<direction>\r\n        <direction-type>\r\n          <metadiff><accordion-registration>\r\n            <accordion-high/>\r\n            <accordion-middle>3</accordion-middle>\r\n          </accordion-registration></metadiff>\r\n        </direction-type>\r\n      </direction>",
+        "image_url": "/static/examples/accordion-registration-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 260,
+    "fields": {
+        "name": "<bookmark>",
+        "slug": "bookmark-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<measure number=\"73\">\r\n      <metadiff><bookmark id=\"Variation-VI-P1\"/></metadiff>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <rehearsal default-y=\"40\" font-weight=\"bold\">Variation VI</rehearsal>\r\n        </direction-type>\r\n      </direction>\r\n      <note>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>whole</type>\r\n      </note>\r\n    </measure>",
+        "image_url": "/static/examples/bookmark-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 261,
+    "fields": {
+        "name": "<beat-unit-tied>",
+        "slug": "beat-unit-tied-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<metronome>\r\n            <beat-unit>eighth</beat-unit>\r\n            <metadiff><beat-unit-tied>\r\n              <beat-unit>eighth</beat-unit>\r\n              <beat-unit-dot/>\r\n            </beat-unit-tied></metadiff>\r\n            <per-minute>120</per-minute>\r\n          </metronome>",
+        "image_url": "/static/examples/beat-unit-tied-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 262,
+    "fields": {
+        "name": "<metronome-arrows>",
+        "slug": "metronome-arrows-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<metronome>\r\n            <metadiff><metronome-arrows/></metadiff>\r\n            <metronome-note>\r\n              <metronome-type>eighth</metronome-type>\r\n              <metronome-tied type=\"start\"/>\r\n            </metronome-note>\r\n            <metronome-note>\r\n              <metronome-type>eighth</metronome-type>\r\n              <metronome-dot/>\r\n              <metronome-tied type=\"stop\"/>\r\n            </metronome-note>\r\n            <metronome-relation>equals</metronome-relation>\r\n            <metronome-note>\r\n              <metronome-type>quarter</metronome-type>\r\n            </metronome-note>\r\n          </metronome>",
+        "image_url": "/static/examples/metronome-arrows-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 263,
+    "fields": {
+        "name": "<metronome-tied>",
+        "slug": "metronome-tied-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<metronome>\r\n            <metronome-arrows/>\r\n            <metronome-note>\r\n              <metronome-type>eighth</metronome-type>\r\n              <metadiff><metronome-tied type=\"start\"/></metadiff>\r\n            </metronome-note>\r\n            <metronome-note>\r\n              <metronome-type>eighth</metronome-type>\r\n              <metronome-dot/>\r\n              <metadiff><metronome-tied type=\"stop\"/></metadiff>\r\n            </metronome-note>\r\n            <metronome-relation>equals</metronome-relation>\r\n            <metronome-note>\r\n              <metronome-type>quarter</metronome-type>\r\n            </metronome-note>\r\n          </metronome>",
+        "image_url": "/static/examples/metronome-tied-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 264,
+    "fields": {
+        "name": "<double>",
+        "slug": "double-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<measure number=\"1\" width=\"251\">\r\n      <attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>-2</fifths>\r\n          <mode>minor</mode>\r\n        </key>\r\n        <time symbol=\"cut\">\r\n          <beats>2</beats>\r\n          <beat-type>2</beat-type>\r\n        </time>\r\n        <clef>\r\n          <sign>F</sign>\r\n          <line>4</line>\r\n        </clef>\r\n        <transpose>\r\n          <chromatic>0</chromatic>\r\n          <metadiff><double/></metadiff>\r\n        </transpose>\r\n      </attributes>\r\n      <direction placement=\"below\">\r\n        <direction-type>\r\n          <dynamics default-x=\"117\" default-y=\"-66\" halign=\"center\">\r\n            <p/>\r\n          </dynamics>\r\n        </direction-type>\r\n        <sound dynamics=\"54\"/>\r\n      </direction>\r\n      <note default-x=\"118\">\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>2</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-5\">up</stem>\r\n      </note>\r\n      <note default-x=\"154\">\r\n        <rest/>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n      </note>\r\n      <note default-x=\"190\">\r\n        <rest/>\r\n        <duration>4</duration>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n      </note>\r\n    </measure>",
+        "image_url": "/static/examples/double-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 265,
+    "fields": {
+        "name": "<pan> and <elevation>",
+        "slug": "pan-and-elevation-elements",
+        "schema": 1,
+        "blurb": "",
+        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <words default-y=\"33\">From Stage Right Balcony</words>\r\n        </direction-type>\r\n        <sound>\r\n          <midi-instrument id=\"P1-I1\">\r\n            <metadiff><pan>-80</pan>\r\n            <elevation>45</elevation></metadiff>\r\n          </midi-instrument>\r\n        </sound>\r\n      </direction>",
+        "image_url": "/static/examples/pan-elevation-elements.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 266,
+    "fields": {
+        "name": "<end-line>",
+        "slug": "end-line-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<note default-x=\"26\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>4</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-55\">down</stem>\r\n        <lyric number=\"1\" default-y=\"-73\">\r\n          <syllabic>single</syllabic>\r\n          <text>Nacht,</text>\r\n          <metadiff><end-line/></metadiff>\r\n        </lyric>\r\n        <lyric number=\"2\" default-y=\"-97\">\r\n          <syllabic>single</syllabic>\r\n          <text>Nacht,</text>\r\n          <metadiff><end-line/></metadiff>\r\n        </lyric>\r\n      </note>",
+        "image_url": "/static/examples/end-line-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 267,
+    "fields": {
+        "name": "<end-paragraph>",
+        "slug": "end-paragraph-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<note default-x=\"35\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem default-y=\"-5\">up</stem>\r\n        <lyric number=\"1\" default-y=\"-73\">\r\n          <syllabic>end</syllabic>\r\n          <text>weckt.</text>\r\n          <end-line/>\r\n          <metadiff><end-paragraph/></metadiff>\r\n        </lyric>\r\n        <lyric number=\"2\" default-y=\"-97\">\r\n          <syllabic>end</syllabic>\r\n          <text>dies.</text>\r\n          <end-line/>\r\n          <metadiff><end-paragraph/></metadiff>\r\n        </lyric>\r\n      </note>",
+        "image_url": "/static/examples/end-paragraph-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 268,
+    "fields": {
+        "name": "<ensemble>",
+        "slug": "ensemble-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<score-part id=\"P1\">\r\n      <part-name>Viola.</part-name>\r\n      <group>score</group>\r\n      <score-instrument id=\"P1-I1\">\r\n        <instrument-name>ARIA Player</instrument-name>\r\n        <instrument-sound>strings.viola</instrument-sound>\r\n        <metadiff><ensemble/></metadiff>\r\n        <virtual-instrument>\r\n          <virtual-library>Garritan Instruments for Finale</virtual-library>\r\n          <virtual-name>008. Section Strings/2. Violas/Violas KS</virtual-name>\r\n        </virtual-instrument>\r\n      </score-instrument>\r\n    </score-part>",
+        "image_url": "/static/examples/ensemble-element.png",
         "is_featured": false
     }
 },
@@ -59779,6 +59909,998 @@
     "fields": {
         "example": 258,
         "element_name": "credit"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2425,
+    "fields": {
+        "example": 259,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2426,
+    "fields": {
+        "example": 259,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2427,
+    "fields": {
+        "example": 259,
+        "element_name": "accordion-registration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2428,
+    "fields": {
+        "example": 259,
+        "element_name": "accordion-middle"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2429,
+    "fields": {
+        "example": 259,
+        "element_name": "accordion-high"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2430,
+    "fields": {
+        "example": 38,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2431,
+    "fields": {
+        "example": 38,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2432,
+    "fields": {
+        "example": 38,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2433,
+    "fields": {
+        "example": 38,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2434,
+    "fields": {
+        "example": 38,
+        "element_name": "time"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2435,
+    "fields": {
+        "example": 38,
+        "element_name": "alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2436,
+    "fields": {
+        "example": 38,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2437,
+    "fields": {
+        "example": 38,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2438,
+    "fields": {
+        "example": 38,
+        "element_name": "beats"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2439,
+    "fields": {
+        "example": 38,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2440,
+    "fields": {
+        "example": 38,
+        "element_name": "beat-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2441,
+    "fields": {
+        "example": 38,
+        "element_name": "beam"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2442,
+    "fields": {
+        "example": 38,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2443,
+    "fields": {
+        "example": 38,
+        "element_name": "attributes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2444,
+    "fields": {
+        "example": 38,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2445,
+    "fields": {
+        "example": 260,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2446,
+    "fields": {
+        "example": 260,
+        "element_name": "bookmark"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2447,
+    "fields": {
+        "example": 260,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2448,
+    "fields": {
+        "example": 260,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2449,
+    "fields": {
+        "example": 260,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2450,
+    "fields": {
+        "example": 260,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2451,
+    "fields": {
+        "example": 260,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2452,
+    "fields": {
+        "example": 260,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2453,
+    "fields": {
+        "example": 260,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2454,
+    "fields": {
+        "example": 260,
+        "element_name": "rehearsal"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2455,
+    "fields": {
+        "example": 260,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2456,
+    "fields": {
+        "example": 260,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2457,
+    "fields": {
+        "example": 261,
+        "element_name": "beat-unit"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2458,
+    "fields": {
+        "example": 261,
+        "element_name": "per-minute"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2459,
+    "fields": {
+        "example": 261,
+        "element_name": "beat-unit-tied"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2460,
+    "fields": {
+        "example": 261,
+        "element_name": "beat-unit-dot"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2461,
+    "fields": {
+        "example": 261,
+        "element_name": "metronome"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2462,
+    "fields": {
+        "example": 262,
+        "element_name": "metronome-tied"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2463,
+    "fields": {
+        "example": 262,
+        "element_name": "metronome-arrows"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2464,
+    "fields": {
+        "example": 262,
+        "element_name": "metronome-dot"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2465,
+    "fields": {
+        "example": 262,
+        "element_name": "metronome-note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2466,
+    "fields": {
+        "example": 262,
+        "element_name": "metronome-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2467,
+    "fields": {
+        "example": 262,
+        "element_name": "metronome-relation"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2468,
+    "fields": {
+        "example": 262,
+        "element_name": "metronome"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2469,
+    "fields": {
+        "example": 263,
+        "element_name": "metronome-tied"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2470,
+    "fields": {
+        "example": 263,
+        "element_name": "metronome-arrows"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2471,
+    "fields": {
+        "example": 263,
+        "element_name": "metronome-dot"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2472,
+    "fields": {
+        "example": 263,
+        "element_name": "metronome-note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2473,
+    "fields": {
+        "example": 263,
+        "element_name": "metronome-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2474,
+    "fields": {
+        "example": 263,
+        "element_name": "metronome-relation"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2475,
+    "fields": {
+        "example": 263,
+        "element_name": "metronome"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2476,
+    "fields": {
+        "example": 264,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2477,
+    "fields": {
+        "example": 264,
+        "element_name": "sound"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2478,
+    "fields": {
+        "example": 264,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2479,
+    "fields": {
+        "example": 264,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2480,
+    "fields": {
+        "example": 264,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2481,
+    "fields": {
+        "example": 264,
+        "element_name": "rest"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2482,
+    "fields": {
+        "example": 264,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2483,
+    "fields": {
+        "example": 264,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2484,
+    "fields": {
+        "example": 264,
+        "element_name": "line"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2485,
+    "fields": {
+        "example": 264,
+        "element_name": "fifths"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2486,
+    "fields": {
+        "example": 264,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2487,
+    "fields": {
+        "example": 264,
+        "element_name": "clef"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2488,
+    "fields": {
+        "example": 264,
+        "element_name": "beats"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2489,
+    "fields": {
+        "example": 264,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2490,
+    "fields": {
+        "example": 264,
+        "element_name": "mode"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2491,
+    "fields": {
+        "example": 264,
+        "element_name": "time"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2492,
+    "fields": {
+        "example": 264,
+        "element_name": "attributes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2493,
+    "fields": {
+        "example": 264,
+        "element_name": "sign"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2494,
+    "fields": {
+        "example": 264,
+        "element_name": "transpose"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2495,
+    "fields": {
+        "example": 264,
+        "element_name": "p"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2496,
+    "fields": {
+        "example": 264,
+        "element_name": "divisions"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2497,
+    "fields": {
+        "example": 264,
+        "element_name": "chromatic"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2498,
+    "fields": {
+        "example": 264,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2499,
+    "fields": {
+        "example": 264,
+        "element_name": "key"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2500,
+    "fields": {
+        "example": 264,
+        "element_name": "beat-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2501,
+    "fields": {
+        "example": 264,
+        "element_name": "double"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2502,
+    "fields": {
+        "example": 264,
+        "element_name": "dynamics"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2503,
+    "fields": {
+        "example": 264,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2504,
+    "fields": {
+        "example": 264,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2505,
+    "fields": {
+        "example": 265,
+        "element_name": "sound"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2506,
+    "fields": {
+        "example": 265,
+        "element_name": "elevation"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2507,
+    "fields": {
+        "example": 265,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2508,
+    "fields": {
+        "example": 265,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2509,
+    "fields": {
+        "example": 265,
+        "element_name": "midi-instrument"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2510,
+    "fields": {
+        "example": 265,
+        "element_name": "words"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2511,
+    "fields": {
+        "example": 265,
+        "element_name": "pan"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2512,
+    "fields": {
+        "example": 266,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2513,
+    "fields": {
+        "example": 266,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2514,
+    "fields": {
+        "example": 266,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2515,
+    "fields": {
+        "example": 266,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2516,
+    "fields": {
+        "example": 266,
+        "element_name": "alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2517,
+    "fields": {
+        "example": 266,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2518,
+    "fields": {
+        "example": 266,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2519,
+    "fields": {
+        "example": 266,
+        "element_name": "syllabic"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2520,
+    "fields": {
+        "example": 266,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2521,
+    "fields": {
+        "example": 266,
+        "element_name": "lyric"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2522,
+    "fields": {
+        "example": 266,
+        "element_name": "end-line"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2523,
+    "fields": {
+        "example": 266,
+        "element_name": "text"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2524,
+    "fields": {
+        "example": 266,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2525,
+    "fields": {
+        "example": 267,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2526,
+    "fields": {
+        "example": 267,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2527,
+    "fields": {
+        "example": 267,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2528,
+    "fields": {
+        "example": 267,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2529,
+    "fields": {
+        "example": 267,
+        "element_name": "alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2530,
+    "fields": {
+        "example": 267,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2531,
+    "fields": {
+        "example": 267,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2532,
+    "fields": {
+        "example": 267,
+        "element_name": "syllabic"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2533,
+    "fields": {
+        "example": 267,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2534,
+    "fields": {
+        "example": 267,
+        "element_name": "lyric"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2535,
+    "fields": {
+        "example": 267,
+        "element_name": "end-line"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2536,
+    "fields": {
+        "example": 267,
+        "element_name": "text"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2537,
+    "fields": {
+        "example": 267,
+        "element_name": "end-paragraph"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2538,
+    "fields": {
+        "example": 267,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2539,
+    "fields": {
+        "example": 268,
+        "element_name": "score-instrument"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2540,
+    "fields": {
+        "example": 268,
+        "element_name": "score-part"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2541,
+    "fields": {
+        "example": 268,
+        "element_name": "ensemble"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2542,
+    "fields": {
+        "example": 268,
+        "element_name": "part-name"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2543,
+    "fields": {
+        "example": 268,
+        "element_name": "instrument-sound"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2544,
+    "fields": {
+        "example": 268,
+        "element_name": "virtual-instrument"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2545,
+    "fields": {
+        "example": 268,
+        "element_name": "virtual-name"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2546,
+    "fields": {
+        "example": 268,
+        "element_name": "group"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2547,
+    "fields": {
+        "example": 268,
+        "element_name": "instrument-name"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2548,
+    "fields": {
+        "example": 268,
+        "element_name": "virtual-library"
     }
 },
 {
