@@ -1974,7 +1974,7 @@
         "name": "principal-voice-symbol",
         "slug": "principal-voice-symbol",
         "schema": 1,
-        "description": "The principal-voice-symbol type represents the type of symbol used to indicate the start of a principal or secondary voice.",
+        "description": "The principal-voice-symbol type represents the type of symbol used to indicate a principal or secondary voice.",
         "is_featured": false,
         "xsd_name": "",
         "base_type": 1,
@@ -6260,7 +6260,7 @@
     "fields": {
         "data_type": 106,
         "value": "plain",
-        "description": "<span class=\"smufl\">&#xE862;</span>",
+        "description": "<span class=\"smufl\">&#xE862;</span> if the type is start, <span class=\"smufl\">&#xE863;</span> if the type is stop.",
         "order": 3
     }
 },
@@ -18726,7 +18726,7 @@
         "base_element": null,
         "is_abstract_element": true,
         "is_root": false,
-        "description": "The segno type is the visual indicator of a segno sign. The exact glyph can be specified with the smufl attribute. A sound element is also needed to guide playback applications reliably.",
+        "description": "<img src=\"../../../static/elements/segno.png\"/>\r\n\r\nThe &lt;segno&gt; element is the visual indicator of a segno sign. A &lt;sound&gt; element is also needed to guide playback applications reliably.",
         "content_data_type": null,
         "is_featured": false,
         "children_type": 1,
@@ -27941,7 +27941,7 @@
         "attribute_group": null,
         "name": "smufl",
         "is_required": false,
-        "description": "",
+        "description": "Specifies the exact glyph to be used for the segno sign.",
         "data_type": 99
     }
 },
@@ -28289,7 +28289,7 @@
         "attribute_group": null,
         "name": "symbol",
         "is_required": true,
-        "description": "Indicates the type of symbol used at the start of the principal voice. When used for analysis separate from any printed score markings, this attribute should be set to none.",
+        "description": "Indicates the type of symbol used. When used for analysis separate from any printed score markings, it should be set to none. Otherwise if the type is stop it should be set to plain.",
         "data_type": 106
     }
 },
@@ -38514,7 +38514,7 @@
         "slug": "tutorial-apres-un-reve",
         "schema": 1,
         "blurb": "",
-        "document": "<score-partwise version=\"4.0\">\r\n  <movement-title>Après un rêve</movement-title>\r\n  <identification>\r\n    <creator type=\"composer\">Gabriel Fauré</creator>\r\n    <rights>Copyright © 2002 MakeMusic, Inc.</rights>\r\n    <encoding>\r\n      <software>Finale v27.0 for Mac</software>\r\n      <encoding-date>2021-04-16</encoding-date>\r\n      <supports element=\"print\" attribute=\"new-system\" type=\"yes\" value=\"yes\"/>\r\n      <supports element=\"print\" attribute=\"new-page\" type=\"yes\" value=\"yes\"/>\r\n      <supports element=\"accidental\" type=\"yes\"/>\r\n      <supports element=\"beam\" type=\"yes\"/>\r\n      <supports element=\"stem\" type=\"yes\"/>\r\n    </encoding>\r\n  </identification>\r\n  <defaults>\r\n    <scaling>\r\n      <millimeters>6.35</millimeters>\r\n      <tenths>40</tenths>\r\n    </scaling>\r\n    <page-layout>\r\n      <page-height>1760</page-height>\r\n      <page-width>1360</page-width>\r\n      <page-margins type=\"both\">\r\n        <left-margin>80</left-margin>\r\n        <right-margin>80</right-margin>\r\n        <top-margin>80</top-margin>\r\n        <bottom-margin>80</bottom-margin>\r\n      </page-margins>\r\n    </page-layout>\r\n    <system-layout>\r\n      <system-margins>\r\n        <left-margin>0</left-margin>\r\n        <right-margin>0</right-margin>\r\n      </system-margins>\r\n      <system-distance>127</system-distance>\r\n      <top-system-distance>127</top-system-distance>\r\n    </system-layout>\r\n    <staff-layout>\r\n      <staff-distance>80</staff-distance>\r\n    </staff-layout>\r\n    <appearance>\r\n      <line-width type=\"stem\">1.25</line-width>\r\n      <line-width type=\"beam\">5</line-width>\r\n      <line-width type=\"staff\">0.8333</line-width>\r\n      <line-width type=\"light barline\">2.0833</line-width>\r\n      <line-width type=\"heavy barline\">6.6667</line-width>\r\n      <line-width type=\"leger\">1.25</line-width>\r\n      <line-width type=\"ending\">0.7682</line-width>\r\n      <line-width type=\"wedge\">0.957</line-width>\r\n      <line-width type=\"enclosure\">1.6667</line-width>\r\n      <line-width type=\"tuplet bracket\">1.3542</line-width>\r\n      <note-size type=\"grace\">66</note-size>\r\n      <note-size type=\"cue\">66</note-size>\r\n      <distance type=\"hyphen\">60</distance>\r\n      <distance type=\"beam\">7.5</distance>\r\n    </appearance>\r\n    <music-font font-family=\"Maestro,engraved\" font-size=\"18\"/>\r\n    <word-font font-family=\"Times New Roman\" font-size=\"8.25\"/>\r\n    <lyric-font font-family=\"Times New Roman\" font-size=\"10\"/>\r\n  </defaults>\r\n  <part-list>\r\n    <score-part id=\"P1\">\r\n      <part-name print-object=\"no\">Voice</part-name>\r\n      <group>score</group>\r\n      <score-instrument id=\"P1-I14\">\r\n        <instrument-name>Choir Aahs</instrument-name>\r\n        <instrument-sound>voice.vocals</instrument-sound>\r\n        <solo/>\r\n      </score-instrument>\r\n      <midi-instrument id=\"P1-I14\">\r\n        <midi-channel>1</midi-channel>\r\n        <midi-program>53</midi-program>\r\n        <volume>80</volume>\r\n        <pan>0</pan>\r\n      </midi-instrument>\r\n    </score-part>\r\n    <score-part id=\"P2\">\r\n      <part-name print-object=\"no\">Piano</part-name>\r\n      <group>score</group>\r\n      <score-instrument id=\"P2-I1\">\r\n        <instrument-name>Grand Piano</instrument-name>\r\n        <instrument-sound>keyboard.piano</instrument-sound>\r\n      </score-instrument>\r\n      <midi-instrument id=\"P2-I1\">\r\n        <midi-channel>2</midi-channel>\r\n        <midi-program>1</midi-program>\r\n        <volume>80</volume>\r\n        <pan>0</pan>\r\n      </midi-instrument>\r\n    </score-part>\r\n  </part-list>\r\n  <!--=========================================================-->\r\n  <part id=\"P1\">\r\n    <measure number=\"1\" width=\"366\">\r\n      <print>\r\n        <system-layout>\r\n          <system-margins>\r\n            <left-margin>3</left-margin>\r\n            <right-margin>0</right-margin>\r\n          </system-margins>\r\n          <top-system-distance>280</top-system-distance>\r\n        </system-layout>\r\n        <measure-numbering>system</measure-numbering>\r\n      </print>\r\n      <attributes>\r\n        <divisions>24</divisions>\r\n        <key>\r\n          <fifths>-3</fifths>\r\n          <mode>minor</mode>\r\n        </key>\r\n        <time>\r\n          <beats>3</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <clef>\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n      </attributes>\r\n      <direction directive=\"yes\" placement=\"above\">\r\n        <direction-type>\r\n          <words default-y=\"15\" font-size=\"10.5\" font-weight=\"bold\">Andantino</words>\r\n        </direction-type>\r\n        <sound tempo=\"60\"/>\r\n      </direction>\r\n      <note>\r\n        <rest measure=\"yes\"/>\r\n        <duration>72</duration>\r\n        <voice>1</voice>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"2\" width=\"245\">\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <words default-x=\"15\" default-y=\"15\" font-size=\"9\" font-style=\"italic\">dolce</words>\r\n        </direction-type>\r\n      </direction>\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"5\">up</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>Dans</text>\r\n        </lyric>\r\n      </note>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <wedge default-y=\"20\" type=\"crescendo\"/>\r\n        </direction-type>\r\n        <offset>-8</offset>\r\n      </direction>\r\n      <note default-x=\"99\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>un</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"171\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-45\">down</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>begin</syllabic>\r\n          <text>som</text>\r\n        </lyric>\r\n      </note>\r\n      <direction>\r\n        <direction-type>\r\n          <wedge spread=\"11\" type=\"stop\"/>\r\n        </direction-type>\r\n        <offset>-11</offset>\r\n      </direction>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"3\" width=\"303\">\r\n      <note default-x=\"26\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <tie type=\"start\"/>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <notations>\r\n          <tied type=\"start\"/>\r\n        </notations>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>end</syllabic>\r\n          <text>meil</text>\r\n          <extend/>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <tie type=\"stop\"/>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <beam number=\"1\">begin</beam>\r\n        <notations>\r\n          <tied type=\"stop\"/>\r\n          <tuplet bracket=\"no\" number=\"1\" placement=\"above\" type=\"start\"/>\r\n        </notations>\r\n      </note>\r\n      <note default-x=\"123\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-42\">down</stem>\r\n        <beam number=\"1\">continue</beam>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>que</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"163\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-45\">down</stem>\r\n        <beam number=\"1\">end</beam>\r\n        <notations>\r\n          <tuplet number=\"1\" type=\"stop\"/>\r\n        </notations>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>begin</syllabic>\r\n          <text>char</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"205\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <beam number=\"1\">begin</beam>\r\n        <notations>\r\n          <tuplet bracket=\"no\" number=\"1\" placement=\"above\" type=\"start\"/>\r\n        </notations>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>end</syllabic>\r\n          <text>mait</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"244\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-43\">down</stem>\r\n        <beam number=\"1\">continue</beam>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>ton</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"276\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-45\">down</stem>\r\n        <beam number=\"1\">end</beam>\r\n        <notations>\r\n          <tuplet number=\"1\" type=\"stop\"/>\r\n        </notations>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>begin</syllabic>\r\n          <text>i</text>\r\n        </lyric>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"4\" width=\"283\">\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <wedge default-y=\"20\" spread=\"11\" type=\"diminuendo\"/>\r\n        </direction-type>\r\n        <offset>3</offset>\r\n      </direction>\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>48</duration>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>middle</syllabic>\r\n          <text>ma</text>\r\n        </lyric>\r\n      </note>\r\n      <direction>\r\n        <direction-type>\r\n          <wedge type=\"stop\"/>\r\n        </direction-type>\r\n        <offset>2</offset>\r\n      </direction>\r\n      <note default-x=\"196\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-55\">down</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>end</syllabic>\r\n          <text>ge</text>\r\n        </lyric>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n  <!--=========================================================-->\r\n  <part id=\"P2\">\r\n    <measure number=\"1\" width=\"366\">\r\n      <print>\r\n        <staff-layout number=\"1\">\r\n          <staff-distance>65</staff-distance>\r\n        </staff-layout>\r\n        <staff-layout number=\"2\">\r\n          <staff-distance>48</staff-distance>\r\n        </staff-layout>\r\n        <measure-numbering>none</measure-numbering>\r\n      </print>\r\n      <attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>-3</fifths>\r\n          <mode>minor</mode>\r\n        </key>\r\n        <time>\r\n          <beats>3</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <staves>2</staves>\r\n        <clef number=\"1\">\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n        <clef number=\"2\">\r\n          <sign>F</sign>\r\n          <line>4</line>\r\n        </clef>\r\n      </attributes>\r\n      <direction placement=\"below\">\r\n        <direction-type>\r\n          <dynamics default-x=\"129\" default-y=\"-75\" halign=\"left\">\r\n            <pp/>\r\n          </dynamics>\r\n        </direction-type>\r\n        <staff>1</staff>\r\n        <sound dynamics=\"40\"/>\r\n      </direction>\r\n      <note default-x=\"140\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"140\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"140\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"178\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"178\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"178\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"214\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"214\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"214\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"252\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"252\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"252\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"289\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"289\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"289\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"327\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"327\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"327\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <backup>\r\n        <duration>6</duration>\r\n      </backup>\r\n      <note>\r\n        <rest measure=\"yes\"/>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <staff>2</staff>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"2\" width=\"245\">\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"63\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"63\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"63\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"99\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"99\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"99\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"135\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"135\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"135\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"171\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"171\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"183\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"171\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"207\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"207\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"219\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"207\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <backup>\r\n        <duration>6</duration>\r\n      </backup>\r\n      <note>\r\n        <rest measure=\"yes\"/>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <staff>2</staff>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"3\" width=\"303\">\r\n      <note default-x=\"26\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <accidental>natural</accidental>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"26\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"26\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"26\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"59\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"59\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"59\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"59\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"143\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"143\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"143\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"143\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"205\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"205\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"205\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"217\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"260\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"260\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"260\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"272\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <backup>\r\n        <duration>6</duration>\r\n      </backup>\r\n      <note default-x=\"26\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>1</octave>\r\n        </pitch>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <type>half</type>\r\n        <dot/>\r\n        <stem default-y=\"-105\">down</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"26\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>2</octave>\r\n        </pitch>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <type>half</type>\r\n        <dot/>\r\n        <stem>down</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"4\" width=\"283\">\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <accidental>flat</accidental>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"39\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"69\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"69\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"80\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"69\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"111\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"111\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"123\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"111\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"154\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"154\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"165\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"154\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"196\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"196\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"208\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"196\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"238\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"238\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"250\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"238\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <backup>\r\n        <duration>6</duration>\r\n      </backup>\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>1</octave>\r\n        </pitch>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <type>half</type>\r\n        <dot/>\r\n        <stem default-y=\"-90\">down</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>2</octave>\r\n        </pitch>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <type>half</type>\r\n        <dot/>\r\n        <stem>down</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n  <!--=========================================================-->\r\n</score-partwise>",
+        "document": "<score-partwise version=\"4.0\">\r\n  <movement-title>Après un rêve</movement-title>\r\n  <identification>\r\n    <creator type=\"composer\">Gabriel Fauré</creator>\r\n    <rights>Copyright © 2002 MakeMusic, Inc.</rights>\r\n    <encoding>\r\n      <software>Finale v27.0 for Mac</software>\r\n      <encoding-date>2021-04-16</encoding-date>\r\n      <supports element=\"print\" attribute=\"new-system\" type=\"yes\" value=\"yes\"/>\r\n      <supports element=\"print\" attribute=\"new-page\" type=\"yes\" value=\"yes\"/>\r\n      <supports element=\"accidental\" type=\"yes\"/>\r\n      <supports element=\"beam\" type=\"yes\"/>\r\n      <supports element=\"stem\" type=\"yes\"/>\r\n    </encoding>\r\n  </identification>\r\n  <defaults>\r\n    <scaling>\r\n      <millimeters>6.35</millimeters>\r\n      <tenths>40</tenths>\r\n    </scaling>\r\n    <page-layout>\r\n      <page-height>1760</page-height>\r\n      <page-width>1360</page-width>\r\n      <page-margins type=\"both\">\r\n        <left-margin>80</left-margin>\r\n        <right-margin>80</right-margin>\r\n        <top-margin>80</top-margin>\r\n        <bottom-margin>80</bottom-margin>\r\n      </page-margins>\r\n    </page-layout>\r\n    <system-layout>\r\n      <system-margins>\r\n        <left-margin>0</left-margin>\r\n        <right-margin>0</right-margin>\r\n      </system-margins>\r\n      <system-distance>127</system-distance>\r\n      <top-system-distance>127</top-system-distance>\r\n    </system-layout>\r\n    <staff-layout>\r\n      <staff-distance>80</staff-distance>\r\n    </staff-layout>\r\n    <appearance>\r\n      <line-width type=\"stem\">1.25</line-width>\r\n      <line-width type=\"beam\">5</line-width>\r\n      <line-width type=\"staff\">0.8333</line-width>\r\n      <line-width type=\"light barline\">2.0833</line-width>\r\n      <line-width type=\"heavy barline\">6.6667</line-width>\r\n      <line-width type=\"leger\">1.25</line-width>\r\n      <line-width type=\"ending\">0.7682</line-width>\r\n      <line-width type=\"wedge\">0.957</line-width>\r\n      <line-width type=\"enclosure\">1.6667</line-width>\r\n      <line-width type=\"tuplet bracket\">1.3542</line-width>\r\n      <note-size type=\"grace\">66</note-size>\r\n      <note-size type=\"cue\">66</note-size>\r\n      <distance type=\"hyphen\">60</distance>\r\n      <distance type=\"beam\">7.5</distance>\r\n    </appearance>\r\n    <music-font font-family=\"Maestro,engraved\" font-size=\"18\"/>\r\n    <word-font font-family=\"Times New Roman\" font-size=\"8.25\"/>\r\n    <lyric-font font-family=\"Times New Roman\" font-size=\"10\"/>\r\n    <lyric-language xml:lang=\"fr\"/>\r\n  </defaults>\r\n  <part-list>\r\n    <score-part id=\"P1\">\r\n      <part-name print-object=\"no\">Voice</part-name>\r\n      <group>score</group>\r\n      <score-instrument id=\"P1-I14\">\r\n        <instrument-name>Choir Aahs</instrument-name>\r\n        <instrument-sound>voice.vocals</instrument-sound>\r\n        <solo/>\r\n      </score-instrument>\r\n      <midi-instrument id=\"P1-I14\">\r\n        <midi-channel>1</midi-channel>\r\n        <midi-program>53</midi-program>\r\n        <volume>80</volume>\r\n        <pan>0</pan>\r\n      </midi-instrument>\r\n    </score-part>\r\n    <score-part id=\"P2\">\r\n      <part-name print-object=\"no\">Piano</part-name>\r\n      <group>score</group>\r\n      <score-instrument id=\"P2-I1\">\r\n        <instrument-name>Grand Piano</instrument-name>\r\n        <instrument-sound>keyboard.piano</instrument-sound>\r\n      </score-instrument>\r\n      <midi-instrument id=\"P2-I1\">\r\n        <midi-channel>2</midi-channel>\r\n        <midi-program>1</midi-program>\r\n        <volume>80</volume>\r\n        <pan>0</pan>\r\n      </midi-instrument>\r\n    </score-part>\r\n  </part-list>\r\n  <!--=========================================================-->\r\n  <part id=\"P1\">\r\n    <measure number=\"1\" width=\"366\">\r\n      <print>\r\n        <system-layout>\r\n          <system-margins>\r\n            <left-margin>3</left-margin>\r\n            <right-margin>0</right-margin>\r\n          </system-margins>\r\n          <top-system-distance>280</top-system-distance>\r\n        </system-layout>\r\n        <measure-numbering>system</measure-numbering>\r\n      </print>\r\n      <attributes>\r\n        <divisions>24</divisions>\r\n        <key>\r\n          <fifths>-3</fifths>\r\n          <mode>minor</mode>\r\n        </key>\r\n        <time>\r\n          <beats>3</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <clef>\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n      </attributes>\r\n      <direction directive=\"yes\" placement=\"above\">\r\n        <direction-type>\r\n          <words default-y=\"15\" font-size=\"10.5\" font-weight=\"bold\">Andantino</words>\r\n        </direction-type>\r\n        <sound tempo=\"60\"/>\r\n      </direction>\r\n      <note>\r\n        <rest measure=\"yes\"/>\r\n        <duration>72</duration>\r\n        <voice>1</voice>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"2\" width=\"245\">\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <words default-x=\"15\" default-y=\"15\" font-size=\"9\" font-style=\"italic\">dolce</words>\r\n        </direction-type>\r\n      </direction>\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"5\">up</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>Dans</text>\r\n        </lyric>\r\n      </note>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <wedge default-y=\"20\" type=\"crescendo\"/>\r\n        </direction-type>\r\n        <offset>-8</offset>\r\n      </direction>\r\n      <note default-x=\"99\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>un</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"171\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-45\">down</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>begin</syllabic>\r\n          <text>som</text>\r\n        </lyric>\r\n      </note>\r\n      <direction>\r\n        <direction-type>\r\n          <wedge spread=\"11\" type=\"stop\"/>\r\n        </direction-type>\r\n        <offset>-11</offset>\r\n      </direction>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"3\" width=\"303\">\r\n      <note default-x=\"26\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <tie type=\"start\"/>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <notations>\r\n          <tied type=\"start\"/>\r\n        </notations>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>end</syllabic>\r\n          <text>meil</text>\r\n          <extend/>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <tie type=\"stop\"/>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <beam number=\"1\">begin</beam>\r\n        <notations>\r\n          <tied type=\"stop\"/>\r\n          <tuplet bracket=\"no\" number=\"1\" placement=\"above\" type=\"start\"/>\r\n        </notations>\r\n      </note>\r\n      <note default-x=\"123\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-42\">down</stem>\r\n        <beam number=\"1\">continue</beam>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>que</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"163\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-45\">down</stem>\r\n        <beam number=\"1\">end</beam>\r\n        <notations>\r\n          <tuplet number=\"1\" type=\"stop\"/>\r\n        </notations>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>begin</syllabic>\r\n          <text>char</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"205\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <beam number=\"1\">begin</beam>\r\n        <notations>\r\n          <tuplet bracket=\"no\" number=\"1\" placement=\"above\" type=\"start\"/>\r\n        </notations>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>end</syllabic>\r\n          <text>mait</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"244\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-43\">down</stem>\r\n        <beam number=\"1\">continue</beam>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>single</syllabic>\r\n          <text>ton</text>\r\n        </lyric>\r\n      </note>\r\n      <note default-x=\"276\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n        </time-modification>\r\n        <stem default-y=\"-45\">down</stem>\r\n        <beam number=\"1\">end</beam>\r\n        <notations>\r\n          <tuplet number=\"1\" type=\"stop\"/>\r\n        </notations>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>begin</syllabic>\r\n          <text>i</text>\r\n        </lyric>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"4\" width=\"283\">\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <wedge default-y=\"20\" spread=\"11\" type=\"diminuendo\"/>\r\n        </direction-type>\r\n        <offset>3</offset>\r\n      </direction>\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>48</duration>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>middle</syllabic>\r\n          <text>ma</text>\r\n        </lyric>\r\n      </note>\r\n      <direction>\r\n        <direction-type>\r\n          <wedge type=\"stop\"/>\r\n        </direction-type>\r\n        <offset>2</offset>\r\n      </direction>\r\n      <note default-x=\"196\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>24</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-55\">down</stem>\r\n        <lyric default-y=\"-80\" number=\"1\">\r\n          <syllabic>end</syllabic>\r\n          <text>ge</text>\r\n        </lyric>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n  <!--=========================================================-->\r\n  <part id=\"P2\">\r\n    <measure number=\"1\" width=\"366\">\r\n      <print>\r\n        <staff-layout number=\"1\">\r\n          <staff-distance>65</staff-distance>\r\n        </staff-layout>\r\n        <staff-layout number=\"2\">\r\n          <staff-distance>48</staff-distance>\r\n        </staff-layout>\r\n        <measure-numbering>none</measure-numbering>\r\n      </print>\r\n      <attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>-3</fifths>\r\n          <mode>minor</mode>\r\n        </key>\r\n        <time>\r\n          <beats>3</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <staves>2</staves>\r\n        <clef number=\"1\">\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n        <clef number=\"2\">\r\n          <sign>F</sign>\r\n          <line>4</line>\r\n        </clef>\r\n      </attributes>\r\n      <direction placement=\"below\">\r\n        <direction-type>\r\n          <dynamics default-x=\"129\" default-y=\"-75\" halign=\"left\">\r\n            <pp/>\r\n          </dynamics>\r\n        </direction-type>\r\n        <staff>1</staff>\r\n        <sound dynamics=\"40\"/>\r\n      </direction>\r\n      <note default-x=\"140\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"140\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"140\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"178\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"178\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"178\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"214\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"214\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"214\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"252\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"252\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"252\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"289\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"289\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"289\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"327\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"327\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"327\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <backup>\r\n        <duration>6</duration>\r\n      </backup>\r\n      <note>\r\n        <rest measure=\"yes\"/>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <staff>2</staff>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"2\" width=\"245\">\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"63\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"63\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"63\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"99\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"99\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"99\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"135\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"135\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"135\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"171\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"171\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"183\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"171\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"207\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"3\">up</stem>\r\n        <staff>1</staff>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"207\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"219\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"207\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <backup>\r\n        <duration>6</duration>\r\n      </backup>\r\n      <note>\r\n        <rest measure=\"yes\"/>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <staff>2</staff>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"3\" width=\"303\">\r\n      <note default-x=\"26\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <accidental>natural</accidental>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"26\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"26\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"26\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"59\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"59\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"59\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"59\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"93\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"143\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"143\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"143\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"143\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"205\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"205\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"205\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"217\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"260\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"91\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"260\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"260\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>E</step>\r\n          <alter>-1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"272\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <backup>\r\n        <duration>6</duration>\r\n      </backup>\r\n      <note default-x=\"26\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>1</octave>\r\n        </pitch>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <type>half</type>\r\n        <dot/>\r\n        <stem default-y=\"-105\">down</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"26\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>2</octave>\r\n        </pitch>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <type>half</type>\r\n        <dot/>\r\n        <stem>down</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n    </measure>\r\n    <!--=======================================================-->\r\n    <measure number=\"4\" width=\"283\">\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <accidental>flat</accidental>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"39\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"69\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"69\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"80\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"69\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"111\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"111\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"123\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"111\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"154\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"154\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"165\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"154\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"196\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"196\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"208\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"196\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <note default-x=\"238\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"88.5\">up</stem>\r\n        <staff>2</staff>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"238\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"250\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"238\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>F</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>up</stem>\r\n        <staff>1</staff>\r\n      </note>\r\n      <backup>\r\n        <duration>6</duration>\r\n      </backup>\r\n      <note default-x=\"27\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>1</octave>\r\n        </pitch>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <type>half</type>\r\n        <dot/>\r\n        <stem default-y=\"-90\">down</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n      <note default-x=\"27\">\r\n        <chord/>\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>2</octave>\r\n        </pitch>\r\n        <duration>6</duration>\r\n        <voice>2</voice>\r\n        <type>half</type>\r\n        <dot/>\r\n        <stem>down</stem>\r\n        <staff>2</staff>\r\n      </note>\r\n    </measure>\r\n  </part>\r\n  <!--=========================================================-->\r\n</score-partwise>",
         "image_url": "/static/tutorial/reve.png",
         "is_featured": false
     }
@@ -39021,7 +39021,7 @@
         "slug": "effect-element",
         "schema": 1,
         "blurb": "",
-        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <percussion default-y=\"30\" halign=\"center\" relative-x=\"11\">\r\n            <metadiff><effect>cannon</effect></metadiff>\r\n          </percussion>\r\n        </direction-type>\r\n      </direction>",
+        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <percussion default-y=\"36\" halign=\"center\" relative-x=\"4\">\r\n            <metadiff><effect>cannon</effect></metadiff>\r\n          </percussion>\r\n        </direction-type>\r\n      </direction>",
         "image_url": "/static/examples/effect-element.png",
         "is_featured": false
     }
@@ -39424,7 +39424,7 @@
         "slug": "midi-device-element",
         "schema": 1,
         "blurb": "",
-        "document": "<score-part id=\"P2\">\r\n      <part-name>Horn in F</part-name>\r\n      <part-abbreviation>Hn.</part-abbreviation>\r\n      <score-instrument id=\"P2-I2\">\r\n        <instrument-name>Horn</instrument-name>\r\n        <instrument-sound>brass.french-horn</instrument-sound>\r\n        <virtual-instrument>\r\n          <virtual-library>Garritan Instruments for Finale</virtual-library>\r\n          <virtual-name>002. Brass/1. French horns/French horn Plr1</virtual-name>\r\n        </virtual-instrument>\r\n      </score-instrument>\r\n      <metadiff><midi-device>ARIA Player</midi-device></metadiff>\r\n      <midi-instrument id=\"P2-I2\">\r\n        <midi-channel>2</midi-channel>\r\n        <midi-program>1</midi-program>\r\n        <volume>80</volume>\r\n        <pan>4</pan>\r\n      </midi-instrument>\r\n    </score-part>",
+        "document": "<score-part id=\"P2\">\r\n      <part-name>Horn in F</part-name>\r\n      <part-abbreviation>Hn.</part-abbreviation>\r\n      <score-instrument id=\"P2-I2\">\r\n        <instrument-name>Horn</instrument-name>\r\n        <instrument-abbreviation>Hn</instrument-abbreviation>\r\n        <instrument-sound>brass.french-horn</instrument-sound>\r\n        <virtual-instrument>\r\n          <virtual-library>Garritan Instruments for Finale</virtual-library>\r\n          <virtual-name>002. Brass/1. French horns/French horn Plr1</virtual-name>\r\n        </virtual-instrument>\r\n      </score-instrument>\r\n      <metadiff><midi-device>ARIA Player</midi-device></metadiff>\r\n      <midi-instrument id=\"P2-I2\">\r\n        <midi-channel>2</midi-channel>\r\n        <midi-program>1</midi-program>\r\n        <volume>80</volume>\r\n        <pan>4</pan>\r\n      </midi-instrument>\r\n    </score-part>",
         "image_url": "",
         "is_featured": false
     }
@@ -39433,11 +39433,11 @@
     "model": "spec.exampledocument",
     "pk": 81,
     "fields": {
-        "name": "<midi-bank>",
-        "slug": "midi-bank-element",
+        "name": "<midi-name> and <midi-bank>",
+        "slug": "midi-name-and-midi-bank-elements",
         "schema": 1,
         "blurb": "",
-        "document": "<midi-instrument id=\"P3-I4\">\r\n        <midi-channel>1</midi-channel>\r\n        <metadiff><midi-bank>15489</midi-bank></metadiff>\r\n        <midi-program>58</midi-program>\r\n        <volume>80</volume>\r\n        <pan>0</pan>\r\n      </midi-instrument>",
+        "document": "<midi-instrument id=\"P1-I1\">\r\n        <midi-channel>1</midi-channel>\r\n        <metadiff><midi-name>Tremolo Strings</midi-name>\r\n        <midi-bank>15489</midi-bank></metadiff>\r\n        <midi-program>45</midi-program>\r\n        <volume>80</volume>\r\n        <pan>0</pan>\r\n      </midi-instrument>",
         "image_url": "",
         "is_featured": false
     }
@@ -39944,7 +39944,7 @@
         "slug": "string-mute-element-on",
         "schema": 1,
         "blurb": "",
-        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <metadiff><string-mute type=\"on\" default-y=\"15\"/></metadiff>\r\n        </direction-type>\r\n      </direction>",
+        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <metadiff><string-mute type=\"on\" default-y=\"15\"/></metadiff>\r\n        </direction-type>\r\n        <sound>\r\n          <play>\r\n            <mute>on</mute>\r\n          </play>\r\n        </sound>\r\n      </direction>",
         "image_url": "/static/examples/string-mute-element-on.png",
         "is_featured": false
     }
@@ -39957,7 +39957,7 @@
         "slug": "string-mute-element-off",
         "schema": 1,
         "blurb": "",
-        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <metadiff><string-mute type=\"off\" default-y=\"15\"/></metadiff>\r\n        </direction-type>\r\n      </direction>",
+        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <metadiff><string-mute type=\"off\" default-y=\"15\"/></metadiff>\r\n        </direction-type>\r\n        <sound>\r\n          <play>\r\n            <mute>off</mute>\r\n          </play>\r\n        </sound>\r\n      </direction>",
         "image_url": "/static/examples/string-mute-element-off.png",
         "is_featured": false
     }
@@ -39996,7 +39996,7 @@
         "slug": "identification-element",
         "schema": 1,
         "blurb": "Here is some sample metadata from a digital edition of Debussy's song \"Beau soir.\"",
-        "document": "<metadiff><identification>\r\n    <creator type=\"composer\">Claude Debussy</creator>\r\n    <creator type=\"lyricist\">Paul Bourget</creator>\r\n    <rights>Copyright © 2010 Recordare LLC</rights>\r\n    <encoding>\r\n      <encoder>Mark D. Lew</encoder>\r\n      <encoding-date>2010-12-17</encoding-date>\r\n      <software>Finale for Windows</software>\r\n      <encoding-description>MusicXML example</encoding-description>\r\n      <supports element=\"accidental\" type=\"yes\"/>\r\n      <supports element=\"beam\" type=\"yes\"/>\r\n      <supports element=\"stem\" type=\"yes\"/>\r\n    </encoding>\r\n    <source>Based on E. Girod edition of 1891, republished by Dover in 1981.</source>\r\n  </identification></metadiff>",
+        "document": "<metadiff><identification>\r\n    <creator type=\"composer\">Claude Debussy</creator>\r\n    <creator type=\"lyricist\">Paul Bourget</creator>\r\n    <rights>Copyright © 2010 Recordare LLC</rights>\r\n    <encoding>\r\n      <encoder>Mark D. Lew</encoder>\r\n      <encoding-date>2010-12-17</encoding-date>\r\n      <software>Finale for Windows</software>\r\n      <encoding-description>MusicXML example</encoding-description>\r\n      <supports element=\"accidental\" type=\"yes\"/>\r\n      <supports element=\"beam\" type=\"yes\"/>\r\n      <supports element=\"stem\" type=\"yes\"/>\r\n    </encoding>\r\n    <source>Based on E. Girod edition of 1891, republished by Dover in 1981.</source>\r\n    <relation>urn:ISBN:0-486-24131-9</relation>\r\n    <miscellaneous>\r\n      <miscellaneous-field name=\"difficulty-level\">3</miscellaneous-field>\r\n    </miscellaneous>\r\n  </identification></metadiff>",
         "image_url": "",
         "is_featured": false
     }
@@ -40759,12 +40759,12 @@
     "model": "spec.exampledocument",
     "pk": 183,
     "fields": {
-        "name": "<percussion>",
-        "slug": "percussion-element",
+        "name": "<metal>",
+        "slug": "metal-element",
         "schema": 1,
         "blurb": "",
-        "document": "<direction directive=\"yes\" placement=\"above\">\r\n        <direction-type>\r\n          <metadiff><percussion default-y=\"32\" font-size=\"24\" halign=\"left\">\r\n            <metal>tam tam</metal>\r\n          </percussion></metadiff>\r\n        </direction-type>\r\n      </direction>",
-        "image_url": "/static/examples/percussion-element.png",
+        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <percussion default-y=\"46\" halign=\"center\">\r\n            <metadiff><metal>crash cymbals</metal></metadiff>\r\n          </percussion>\r\n        </direction-type>\r\n      </direction>",
+        "image_url": "/static/examples/metal-element.png",
         "is_featured": false
     }
 },
@@ -41844,6 +41844,201 @@
         "blurb": "",
         "document": "<score-part id=\"P1\">\r\n      <part-name>Viola.</part-name>\r\n      <group>score</group>\r\n      <score-instrument id=\"P1-I1\">\r\n        <instrument-name>ARIA Player</instrument-name>\r\n        <instrument-sound>strings.viola</instrument-sound>\r\n        <metadiff><ensemble/></metadiff>\r\n        <virtual-instrument>\r\n          <virtual-library>Garritan Instruments for Finale</virtual-library>\r\n          <virtual-name>008. Section Strings/2. Violas/Violas KS</virtual-name>\r\n        </virtual-instrument>\r\n      </score-instrument>\r\n    </score-part>",
         "image_url": "/static/examples/ensemble-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 269,
+    "fields": {
+        "name": "<segno>",
+        "slug": "segno-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <metadiff><segno default-x=\"0\" default-y=\"19\"/></metadiff>\r\n        </direction-type>\r\n        <sound segno=\"3\" divisions=\"2\"/>\r\n      </direction>",
+        "image_url": "/static/examples/segno-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 270,
+    "fields": {
+        "name": "<measure-layout>",
+        "slug": "measure-layout-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<measure number=\"9\" width=\"219\">\r\n      <print>\r\n        <metadiff><measure-layout>\r\n          <measure-distance>118</measure-distance>\r\n        </measure-layout></metadiff>\r\n      </print>\r\n      <attributes>\r\n        <key print-object=\"yes\">\r\n          <fifths>1</fifths>\r\n          <mode>major</mode>\r\n        </key>\r\n        <clef print-object=\"yes\">\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n      </attributes>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <coda default-x=\"-44\" default-y=\"28\"/>\r\n        </direction-type>\r\n        <sound coda=\"11\" divisions=\"2\"/>\r\n      </direction>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <words default-y=\"34\" font-size=\"12\" font-style=\"italic\" relative-x=\"-48\">Coda</words>\r\n        </direction-type>\r\n      </direction>\r\n      <note default-x=\"36\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"63\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"88\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"115\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"141\">\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>4</duration>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem default-y=\"5\">up</stem>\r\n      </note>\r\n      <barline location=\"right\">\r\n        <bar-style>light-heavy</bar-style>\r\n      </barline>\r\n    </measure>",
+        "image_url": "/static/examples/measure-layout-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 271,
+    "fields": {
+        "name": "<principal-voice>",
+        "slug": "principal-voice-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<measure number=\"97\" width=\"167\">\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <metadiff><principal-voice symbol=\"Hauptstimme\" type=\"start\" default-y=\"11\" halign=\"center\"/></metadiff>\r\n        </direction-type>\r\n      </direction>\r\n      <note default-x=\"13\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>4</duration>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n      </note>\r\n      <note default-x=\"82\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <accidental>sharp</accidental>\r\n        <stem default-y=\"-35\">down</stem>\r\n      </note>\r\n      <note default-x=\"124\">\r\n        <rest/>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n      </note>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <metadiff><principal-voice symbol=\"plain\" type=\"stop\" default-y=\"11\" halign=\"center\" relative-x=\"-10\"/></metadiff>\r\n        </direction-type>\r\n      </direction>\r\n    </measure>",
+        "image_url": "/static/examples/principal-voice-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 272,
+    "fields": {
+        "name": "<slash-type> and <slash-dot>",
+        "slug": "slash-type-and-slash-dot-elements",
+        "schema": 1,
+        "blurb": "",
+        "document": "<measure-style>\r\n          <slash type=\"start\" use-stems=\"no\">\r\n            <metadiff><slash-type>quarter</slash-type>\r\n            <slash-dot/></metadiff>\r\n          </slash>\r\n        </measure-style>",
+        "image_url": "/static/examples/slash-type-slash-dot-elements.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 273,
+    "fields": {
+        "name": "<normal-dot>",
+        "slug": "normal-dot-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<note default-x=\"82\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>3</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <dot/>\r\n        <time-modification>\r\n          <actual-notes>3</actual-notes>\r\n          <normal-notes>2</normal-notes>\r\n          <normal-type>quarter</normal-type>\r\n          <metadiff><normal-dot/></metadiff>\r\n        </time-modification>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <beam number=\"1\">begin</beam>\r\n        <notations>\r\n          <tuplet number=\"1\" placement=\"below\" type=\"start\"/>\r\n        </notations>\r\n      </note>",
+        "image_url": "/static/examples/normal-dot-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 274,
+    "fields": {
+        "name": "<tuplet-dot>",
+        "slug": "tuplet-dot-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<note default-x=\"82\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>27</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <dot/>\r\n        <time-modification>\r\n          <actual-notes>10</actual-notes>\r\n          <normal-notes>6</normal-notes>\r\n          <normal-type>eighth</normal-type>\r\n        </time-modification>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <beam number=\"1\">begin</beam>\r\n        <notations>\r\n          <tuplet number=\"1\" type=\"start\" show-number=\"both\" show-type=\"both\" placement=\"below\" >\r\n            <tuplet-actual>\r\n              <tuplet-number>10</tuplet-number>\r\n              <tuplet-type>eighth</tuplet-type>\r\n            </tuplet-actual>\r\n            <tuplet-normal>\r\n              <tuplet-number>2</tuplet-number>\r\n              <tuplet-type>quarter</tuplet-type>\r\n              <metadiff><tuplet-dot/></metadiff>\r\n            </tuplet-normal>\r\n          </tuplet>\r\n        </notations>\r\n      </note>",
+        "image_url": "/static/examples/tuplet-dot-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 275,
+    "fields": {
+        "name": "<part-symbol>",
+        "slug": "part-symbol-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>0</fifths>\r\n          <mode>major</mode>\r\n        </key>\r\n        <time>\r\n          <beats>4</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <staves>3</staves>\r\n        <metadiff><part-symbol top-staff=\"1\" bottom-staff=\"2\">brace</part-symbol></metadiff>\r\n        <clef number=\"1\">\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n        <clef number=\"2\">\r\n          <sign>F</sign>\r\n          <line>4</line>\r\n        </clef>\r\n        <clef number=\"3\">\r\n          <sign>F</sign>\r\n          <line>4</line>\r\n        </clef>\r\n      </attributes>",
+        "image_url": "/static/examples/part-symbol-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 276,
+    "fields": {
+        "name": "<release>",
+        "slug": "release-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<note>\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>none</stem>\r\n        <notations>\r\n          <technical>\r\n            <fret>5</fret>\r\n            <string>2</string>\r\n            <bend shape=\"curved\">\r\n              <bend-alter>2</bend-alter>\r\n            </bend>\r\n            <bend shape=\"curved\">\r\n              <bend-alter>-2</bend-alter>\r\n              <metadiff><release offset=\"1\"/></metadiff>\r\n            </bend>\r\n          </technical>\r\n        </notations>\r\n      </note>",
+        "image_url": "/static/examples/release-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 277,
+    "fields": {
+        "name": "<staff-type>",
+        "slug": "staff-type-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<attributes>\r\n        <divisions>2</divisions>\r\n        <key>\r\n          <fifths>0</fifths>\r\n          <mode>major</mode>\r\n        </key>\r\n        <time>\r\n          <beats>4</beats>\r\n          <beat-type>4</beat-type>\r\n        </time>\r\n        <staves>2</staves>\r\n        <part-symbol>none</part-symbol>\r\n        <clef number=\"1\">\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n        <clef number=\"2\">\r\n          <sign>TAB</sign>\r\n          <line>5</line>\r\n        </clef>\r\n        <staff-details number=\"2\">\r\n          <metadiff><staff-type>alternate</staff-type></metadiff>\r\n          <staff-lines>6</staff-lines>\r\n          <staff-tuning line=\"1\">\r\n            <tuning-step>E</tuning-step>\r\n            <tuning-octave>2</tuning-octave>\r\n          </staff-tuning>\r\n          <staff-tuning line=\"2\">\r\n            <tuning-step>A</tuning-step>\r\n            <tuning-octave>2</tuning-octave>\r\n          </staff-tuning>\r\n          <staff-tuning line=\"3\">\r\n            <tuning-step>D</tuning-step>\r\n            <tuning-octave>3</tuning-octave>\r\n          </staff-tuning>\r\n          <staff-tuning line=\"4\">\r\n            <tuning-step>G</tuning-step>\r\n            <tuning-octave>3</tuning-octave>\r\n          </staff-tuning>\r\n          <staff-tuning line=\"5\">\r\n            <tuning-step>B</tuning-step>\r\n            <tuning-octave>3</tuning-octave>\r\n          </staff-tuning>\r\n          <staff-tuning line=\"6\">\r\n            <tuning-step>E</tuning-step>\r\n            <tuning-octave>4</tuning-octave>\r\n          </staff-tuning>\r\n          <staff-size scaling=\"100\">150</staff-size>\r\n        </staff-details>\r\n        <transpose number=\"1\">\r\n          <diatonic>0</diatonic>\r\n          <chromatic>0</chromatic>\r\n          <octave-change>-1</octave-change>\r\n        </transpose>\r\n      </attributes>",
+        "image_url": "/static/examples/staff-type-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 278,
+    "fields": {
+        "name": "<tied>",
+        "slug": "tied-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<measure number=\"85\" width=\"216\">\r\n      <print new-system=\"yes\"/>\r\n      <note default-x=\"51\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>4</duration>\r\n        <tie type=\"start\"/>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n        <notations>\r\n          <metadiff><tied type=\"start\"/></metadiff>\r\n        </notations>\r\n      </note>\r\n      <note default-x=\"117\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <tie type=\"stop\"/>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"-50\">down</stem>\r\n        <notations>\r\n          <metadiff><tied type=\"stop\"/>\r\n          <tied type=\"let-ring\"/></metadiff>\r\n        </notations>\r\n      </note>\r\n      <note default-x=\"149\">\r\n        <rest/>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n      </note>\r\n      <note default-x=\"175\">\r\n        <rest/>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n      </note>\r\n    </measure>",
+        "image_url": "/static/examples/tied-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 279,
+    "fields": {
+        "name": "<pre-bend>",
+        "slug": "pre-bend-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<note>\r\n        <pitch>\r\n          <step>B</step>\r\n          <alter>-1</alter>\r\n          <octave>3</octave>\r\n        </pitch>\r\n        <duration>8</duration>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem>none</stem>\r\n        <notations>\r\n          <technical>\r\n            <string>3</string>\r\n            <fret>3</fret>\r\n            <bend>\r\n              <bend-alter>-2</bend-alter>\r\n              <metadiff><pre-bend/></metadiff>\r\n            </bend>\r\n          </technical>\r\n        </notations>\r\n      </note>",
+        "image_url": "/static/examples/pre-bend-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 280,
+    "fields": {
+        "name": "<tap>",
+        "slug": "tap-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<measure number=\"10\" width=\"162\">\r\n      <note default-x=\"13\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>none</stem>\r\n        <notations>\r\n          <slur number=\"1\" type=\"start\" placement=\"above\" bezier-x=\"13\" bezier-y=\"12\" default-x=\"10\" default-y=\"10\"/>\r\n          <technical>\r\n            <metadiff><tap hand=\"right\" placement=\"above\" default-x=\"7\" default-y=\"22\"/></metadiff>\r\n            <string>1</string>\r\n            <fret>14</fret>\r\n          </technical>\r\n        </notations>\r\n      </note>\r\n      <note default-x=\"43\">\r\n        <pitch>\r\n          <step>B</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>none</stem>\r\n        <notations>\r\n          <technical>\r\n            <string>1</string>\r\n            <fret>7</fret>\r\n          </technical>\r\n        </notations>\r\n      </note>\r\n      <note default-x=\"60\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem>none</stem>\r\n        <notations>\r\n          <slur number=\"1\" type=\"stop\" bezier-x=\"-13\" bezier-y=\"12\" default-x=\"10\" default-y=\"10\"/>\r\n          <technical>\r\n            <metadiff><tap hand=\"left\" placement=\"above\" default-x=\"3\" default-y=\"21\"/></metadiff>\r\n            <string>1</string>\r\n            <fret>10</fret>\r\n          </technical>\r\n        </notations>\r\n      </note>\r\n      <note print-object=\"no\">\r\n        <rest/>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n      </note>\r\n      <note print-object=\"no\">\r\n        <rest/>\r\n        <duration>2</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n      </note>\r\n      <note print-object=\"no\">\r\n        <rest/>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n      </note>\r\n      <note print-object=\"no\">\r\n        <rest/>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n      </note>\r\n    </measure>",
+        "image_url": "/static/examples/tap-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 281,
+    "fields": {
+        "name": "<with-bar>",
+        "slug": "with-bar-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<measure number=\"9\" width=\"120\">\r\n      <direction placement=\"below\">\r\n        <direction-type>\r\n          <words default-y=\"-61\" font-family=\"Helvetica\" font-size=\"8.5\" relative-x=\"-9\">w/bar</words>\r\n        </direction-type>\r\n        <direction-type>\r\n          <bracket dash-length=\"5.4\" default-y=\"-60\" line-end=\"none\" line-type=\"dashed\" number=\"1\" space-length=\"5.4\" type=\"start\"/>\r\n        </direction-type>\r\n      </direction>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <words default-x=\"20\" default-y=\"33\" halign=\"center\">-½</words>\r\n        </direction-type>\r\n      </direction>\r\n      <note default-x=\"13\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>4</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <notations>\r\n          <technical>\r\n            <bend>\r\n              <bend-alter>-1</bend-alter>\r\n              <metadiff><with-bar default-x=\"0\" default-y=\"8\" placement=\"above\">dip</with-bar></metadiff>\r\n            </bend>\r\n          </technical>\r\n        </notations>\r\n      </note>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <words default-x=\"78\" default-y=\"33\" halign=\"center\">-½</words>\r\n        </direction-type>\r\n      </direction>\r\n      <note default-x=\"66\">\r\n        <pitch>\r\n          <step>E</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>4</duration>\r\n        <voice>1</voice>\r\n        <type>quarter</type>\r\n        <stem default-y=\"-40\">down</stem>\r\n        <notehead filled=\"yes\" parentheses=\"yes\">normal</notehead>\r\n        <notations>\r\n          <technical>\r\n            <bend>\r\n              <bend-alter>-1</bend-alter>\r\n              <metadiff><with-bar default-x=\"0\" default-y=\"8\" placement=\"above\">dip</with-bar></metadiff>\r\n            </bend>\r\n          </technical>\r\n        </notations>\r\n      </note>\r\n      <direction>\r\n        <direction-type>\r\n          <bracket line-end=\"both\" number=\"1\" type=\"stop\"/>\r\n        </direction-type>\r\n      </direction>\r\n    </measure>",
+        "image_url": "/static/examples/with-bar-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 282,
+    "fields": {
+        "name": "<membrane>",
+        "slug": "membrane-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <percussion default-y=\"47\" halign=\"center\">\r\n            <metadiff><membrane>bass drum</membrane></metadiff>\r\n          </percussion>\r\n        </direction-type>\r\n      </direction>",
+        "image_url": "/static/examples/membrane-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 283,
+    "fields": {
+        "name": "<glass>",
+        "slug": "glass-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<direction placement=\"above\">\r\n        <direction-type>\r\n          <percussion default-y=\"28\" halign=\"center\">\r\n            <metadiff><glass>wind chimes</glass></metadiff>\r\n          </percussion>\r\n        </direction-type>\r\n      </direction>",
+        "image_url": "/static/examples/glass-element.png",
         "is_featured": false
     }
 },
@@ -60901,6 +61096,1822 @@
     "fields": {
         "example": 268,
         "element_name": "virtual-library"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2549,
+    "fields": {
+        "example": 8,
+        "element_name": "lyric-language"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2550,
+    "fields": {
+        "example": 124,
+        "element_name": "miscellaneous"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2551,
+    "fields": {
+        "example": 124,
+        "element_name": "miscellaneous-field"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2552,
+    "fields": {
+        "example": 124,
+        "element_name": "relation"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2553,
+    "fields": {
+        "example": 269,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2554,
+    "fields": {
+        "example": 269,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2555,
+    "fields": {
+        "example": 269,
+        "element_name": "segno"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2556,
+    "fields": {
+        "example": 269,
+        "element_name": "sound"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2557,
+    "fields": {
+        "example": 270,
+        "element_name": "print"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2558,
+    "fields": {
+        "example": 270,
+        "element_name": "sound"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2559,
+    "fields": {
+        "example": 270,
+        "element_name": "clef"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2560,
+    "fields": {
+        "example": 270,
+        "element_name": "mode"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2561,
+    "fields": {
+        "example": 270,
+        "element_name": "bar-style"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2562,
+    "fields": {
+        "example": 270,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2563,
+    "fields": {
+        "example": 270,
+        "element_name": "sign"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2564,
+    "fields": {
+        "example": 270,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2565,
+    "fields": {
+        "example": 270,
+        "element_name": "measure-layout"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2566,
+    "fields": {
+        "example": 270,
+        "element_name": "beam"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2567,
+    "fields": {
+        "example": 270,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2568,
+    "fields": {
+        "example": 270,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2569,
+    "fields": {
+        "example": 270,
+        "element_name": "line"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2570,
+    "fields": {
+        "example": 270,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2571,
+    "fields": {
+        "example": 270,
+        "element_name": "alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2572,
+    "fields": {
+        "example": 270,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2573,
+    "fields": {
+        "example": 270,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2574,
+    "fields": {
+        "example": 270,
+        "element_name": "key"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2575,
+    "fields": {
+        "example": 270,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2576,
+    "fields": {
+        "example": 270,
+        "element_name": "measure-distance"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2577,
+    "fields": {
+        "example": 270,
+        "element_name": "coda"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2578,
+    "fields": {
+        "example": 270,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2579,
+    "fields": {
+        "example": 270,
+        "element_name": "barline"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2580,
+    "fields": {
+        "example": 270,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2581,
+    "fields": {
+        "example": 270,
+        "element_name": "attributes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2582,
+    "fields": {
+        "example": 270,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2583,
+    "fields": {
+        "example": 270,
+        "element_name": "fifths"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2584,
+    "fields": {
+        "example": 270,
+        "element_name": "words"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2585,
+    "fields": {
+        "example": 271,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2586,
+    "fields": {
+        "example": 271,
+        "element_name": "principal-voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2587,
+    "fields": {
+        "example": 271,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2588,
+    "fields": {
+        "example": 271,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2589,
+    "fields": {
+        "example": 271,
+        "element_name": "accidental"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2590,
+    "fields": {
+        "example": 271,
+        "element_name": "alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2591,
+    "fields": {
+        "example": 271,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2592,
+    "fields": {
+        "example": 271,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2593,
+    "fields": {
+        "example": 271,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2594,
+    "fields": {
+        "example": 271,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2595,
+    "fields": {
+        "example": 271,
+        "element_name": "rest"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2596,
+    "fields": {
+        "example": 271,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2597,
+    "fields": {
+        "example": 271,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2598,
+    "fields": {
+        "example": 271,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2599,
+    "fields": {
+        "example": 271,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2600,
+    "fields": {
+        "example": 272,
+        "element_name": "slash-dot"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2601,
+    "fields": {
+        "example": 272,
+        "element_name": "slash"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2602,
+    "fields": {
+        "example": 272,
+        "element_name": "slash-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2603,
+    "fields": {
+        "example": 272,
+        "element_name": "measure-style"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2604,
+    "fields": {
+        "example": 273,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2605,
+    "fields": {
+        "example": 273,
+        "element_name": "normal-dot"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2606,
+    "fields": {
+        "example": 273,
+        "element_name": "beam"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2607,
+    "fields": {
+        "example": 273,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2608,
+    "fields": {
+        "example": 273,
+        "element_name": "normal-notes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2609,
+    "fields": {
+        "example": 273,
+        "element_name": "normal-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2610,
+    "fields": {
+        "example": 273,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2611,
+    "fields": {
+        "example": 273,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2612,
+    "fields": {
+        "example": 273,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2613,
+    "fields": {
+        "example": 273,
+        "element_name": "dot"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2614,
+    "fields": {
+        "example": 273,
+        "element_name": "time-modification"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2615,
+    "fields": {
+        "example": 273,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2616,
+    "fields": {
+        "example": 273,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2617,
+    "fields": {
+        "example": 273,
+        "element_name": "tuplet"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2618,
+    "fields": {
+        "example": 273,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2619,
+    "fields": {
+        "example": 273,
+        "element_name": "actual-notes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2620,
+    "fields": {
+        "example": 273,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2621,
+    "fields": {
+        "example": 274,
+        "element_name": "tuplet-number"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2622,
+    "fields": {
+        "example": 274,
+        "element_name": "tuplet-dot"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2623,
+    "fields": {
+        "example": 274,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2624,
+    "fields": {
+        "example": 274,
+        "element_name": "beam"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2625,
+    "fields": {
+        "example": 274,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2626,
+    "fields": {
+        "example": 274,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2627,
+    "fields": {
+        "example": 274,
+        "element_name": "tuplet-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2628,
+    "fields": {
+        "example": 274,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2629,
+    "fields": {
+        "example": 274,
+        "element_name": "normal-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2630,
+    "fields": {
+        "example": 274,
+        "element_name": "dot"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2631,
+    "fields": {
+        "example": 274,
+        "element_name": "time-modification"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2632,
+    "fields": {
+        "example": 274,
+        "element_name": "tuplet"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2633,
+    "fields": {
+        "example": 274,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2634,
+    "fields": {
+        "example": 274,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2635,
+    "fields": {
+        "example": 274,
+        "element_name": "tuplet-actual"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2636,
+    "fields": {
+        "example": 274,
+        "element_name": "normal-notes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2637,
+    "fields": {
+        "example": 274,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2638,
+    "fields": {
+        "example": 274,
+        "element_name": "tuplet-normal"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2639,
+    "fields": {
+        "example": 274,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2640,
+    "fields": {
+        "example": 274,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2641,
+    "fields": {
+        "example": 274,
+        "element_name": "actual-notes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2642,
+    "fields": {
+        "example": 120,
+        "element_name": "sound"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2643,
+    "fields": {
+        "example": 120,
+        "element_name": "play"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2644,
+    "fields": {
+        "example": 120,
+        "element_name": "mute"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2645,
+    "fields": {
+        "example": 121,
+        "element_name": "sound"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2646,
+    "fields": {
+        "example": 121,
+        "element_name": "play"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2647,
+    "fields": {
+        "example": 121,
+        "element_name": "mute"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2648,
+    "fields": {
+        "example": 275,
+        "element_name": "divisions"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2649,
+    "fields": {
+        "example": 275,
+        "element_name": "mode"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2650,
+    "fields": {
+        "example": 275,
+        "element_name": "time"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2651,
+    "fields": {
+        "example": 275,
+        "element_name": "part-symbol"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2652,
+    "fields": {
+        "example": 275,
+        "element_name": "beats"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2653,
+    "fields": {
+        "example": 275,
+        "element_name": "staves"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2654,
+    "fields": {
+        "example": 275,
+        "element_name": "beat-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2655,
+    "fields": {
+        "example": 275,
+        "element_name": "attributes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2656,
+    "fields": {
+        "example": 275,
+        "element_name": "sign"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2657,
+    "fields": {
+        "example": 275,
+        "element_name": "line"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2658,
+    "fields": {
+        "example": 275,
+        "element_name": "key"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2659,
+    "fields": {
+        "example": 275,
+        "element_name": "fifths"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2660,
+    "fields": {
+        "example": 275,
+        "element_name": "clef"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2661,
+    "fields": {
+        "example": 276,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2662,
+    "fields": {
+        "example": 276,
+        "element_name": "bend-alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2663,
+    "fields": {
+        "example": 276,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2664,
+    "fields": {
+        "example": 276,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2665,
+    "fields": {
+        "example": 276,
+        "element_name": "release"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2666,
+    "fields": {
+        "example": 276,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2667,
+    "fields": {
+        "example": 276,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2668,
+    "fields": {
+        "example": 276,
+        "element_name": "technical"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2669,
+    "fields": {
+        "example": 276,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2670,
+    "fields": {
+        "example": 276,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2671,
+    "fields": {
+        "example": 276,
+        "element_name": "fret"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2672,
+    "fields": {
+        "example": 276,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2673,
+    "fields": {
+        "example": 276,
+        "element_name": "string"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2674,
+    "fields": {
+        "example": 276,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2675,
+    "fields": {
+        "example": 276,
+        "element_name": "bend"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2676,
+    "fields": {
+        "example": 277,
+        "element_name": "staff-lines"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2677,
+    "fields": {
+        "example": 277,
+        "element_name": "divisions"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2678,
+    "fields": {
+        "example": 277,
+        "element_name": "mode"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2679,
+    "fields": {
+        "example": 277,
+        "element_name": "part-symbol"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2680,
+    "fields": {
+        "example": 277,
+        "element_name": "sign"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2681,
+    "fields": {
+        "example": 277,
+        "element_name": "staff-details"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2682,
+    "fields": {
+        "example": 277,
+        "element_name": "staff-tuning"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2683,
+    "fields": {
+        "example": 277,
+        "element_name": "octave-change"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2684,
+    "fields": {
+        "example": 277,
+        "element_name": "staves"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2685,
+    "fields": {
+        "example": 277,
+        "element_name": "beat-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2686,
+    "fields": {
+        "example": 277,
+        "element_name": "line"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2687,
+    "fields": {
+        "example": 277,
+        "element_name": "transpose"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2688,
+    "fields": {
+        "example": 277,
+        "element_name": "tuning-octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2689,
+    "fields": {
+        "example": 277,
+        "element_name": "diatonic"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2690,
+    "fields": {
+        "example": 277,
+        "element_name": "staff-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2691,
+    "fields": {
+        "example": 277,
+        "element_name": "key"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2692,
+    "fields": {
+        "example": 277,
+        "element_name": "chromatic"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2693,
+    "fields": {
+        "example": 277,
+        "element_name": "staff-size"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2694,
+    "fields": {
+        "example": 277,
+        "element_name": "time"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2695,
+    "fields": {
+        "example": 277,
+        "element_name": "beats"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2696,
+    "fields": {
+        "example": 277,
+        "element_name": "fifths"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2697,
+    "fields": {
+        "example": 277,
+        "element_name": "tuning-step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2698,
+    "fields": {
+        "example": 277,
+        "element_name": "attributes"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2699,
+    "fields": {
+        "example": 277,
+        "element_name": "clef"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2700,
+    "fields": {
+        "example": 278,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2701,
+    "fields": {
+        "example": 278,
+        "element_name": "print"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2702,
+    "fields": {
+        "example": 278,
+        "element_name": "tied"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2703,
+    "fields": {
+        "example": 278,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2704,
+    "fields": {
+        "example": 278,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2705,
+    "fields": {
+        "example": 278,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2706,
+    "fields": {
+        "example": 278,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2707,
+    "fields": {
+        "example": 278,
+        "element_name": "tie"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2708,
+    "fields": {
+        "example": 278,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2709,
+    "fields": {
+        "example": 278,
+        "element_name": "rest"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2710,
+    "fields": {
+        "example": 278,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2711,
+    "fields": {
+        "example": 278,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2712,
+    "fields": {
+        "example": 278,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2713,
+    "fields": {
+        "example": 278,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2714,
+    "fields": {
+        "example": 279,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2715,
+    "fields": {
+        "example": 279,
+        "element_name": "bend-alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2716,
+    "fields": {
+        "example": 279,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2717,
+    "fields": {
+        "example": 279,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2718,
+    "fields": {
+        "example": 279,
+        "element_name": "alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2719,
+    "fields": {
+        "example": 279,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2720,
+    "fields": {
+        "example": 279,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2721,
+    "fields": {
+        "example": 279,
+        "element_name": "technical"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2722,
+    "fields": {
+        "example": 279,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2723,
+    "fields": {
+        "example": 279,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2724,
+    "fields": {
+        "example": 279,
+        "element_name": "fret"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2725,
+    "fields": {
+        "example": 279,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2726,
+    "fields": {
+        "example": 279,
+        "element_name": "string"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2727,
+    "fields": {
+        "example": 279,
+        "element_name": "pre-bend"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2728,
+    "fields": {
+        "example": 279,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2729,
+    "fields": {
+        "example": 279,
+        "element_name": "bend"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2730,
+    "fields": {
+        "example": 280,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2731,
+    "fields": {
+        "example": 280,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2732,
+    "fields": {
+        "example": 280,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2733,
+    "fields": {
+        "example": 280,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2734,
+    "fields": {
+        "example": 280,
+        "element_name": "alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2735,
+    "fields": {
+        "example": 280,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2736,
+    "fields": {
+        "example": 280,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2737,
+    "fields": {
+        "example": 280,
+        "element_name": "tap"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2738,
+    "fields": {
+        "example": 280,
+        "element_name": "rest"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2739,
+    "fields": {
+        "example": 280,
+        "element_name": "slur"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2740,
+    "fields": {
+        "example": 280,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2741,
+    "fields": {
+        "example": 280,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2742,
+    "fields": {
+        "example": 280,
+        "element_name": "technical"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2743,
+    "fields": {
+        "example": 280,
+        "element_name": "fret"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2744,
+    "fields": {
+        "example": 280,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2745,
+    "fields": {
+        "example": 280,
+        "element_name": "string"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2746,
+    "fields": {
+        "example": 280,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2747,
+    "fields": {
+        "example": 80,
+        "element_name": "instrument-abbreviation"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2748,
+    "fields": {
+        "example": 81,
+        "element_name": "midi-name"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2749,
+    "fields": {
+        "example": 281,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2750,
+    "fields": {
+        "example": 281,
+        "element_name": "technical"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2751,
+    "fields": {
+        "example": 281,
+        "element_name": "voice"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2752,
+    "fields": {
+        "example": 281,
+        "element_name": "duration"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2753,
+    "fields": {
+        "example": 281,
+        "element_name": "with-bar"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2754,
+    "fields": {
+        "example": 281,
+        "element_name": "stem"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2755,
+    "fields": {
+        "example": 281,
+        "element_name": "notehead"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2756,
+    "fields": {
+        "example": 281,
+        "element_name": "note"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2757,
+    "fields": {
+        "example": 281,
+        "element_name": "bend-alter"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2758,
+    "fields": {
+        "example": 281,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2759,
+    "fields": {
+        "example": 281,
+        "element_name": "step"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2760,
+    "fields": {
+        "example": 281,
+        "element_name": "pitch"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2761,
+    "fields": {
+        "example": 281,
+        "element_name": "measure"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2762,
+    "fields": {
+        "example": 281,
+        "element_name": "notations"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2763,
+    "fields": {
+        "example": 281,
+        "element_name": "octave"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2764,
+    "fields": {
+        "example": 281,
+        "element_name": "type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2765,
+    "fields": {
+        "example": 281,
+        "element_name": "bracket"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2766,
+    "fields": {
+        "example": 281,
+        "element_name": "words"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2767,
+    "fields": {
+        "example": 281,
+        "element_name": "bend"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2768,
+    "fields": {
+        "example": 282,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2769,
+    "fields": {
+        "example": 282,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2770,
+    "fields": {
+        "example": 282,
+        "element_name": "percussion"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2771,
+    "fields": {
+        "example": 282,
+        "element_name": "membrane"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2772,
+    "fields": {
+        "example": 283,
+        "element_name": "direction"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2773,
+    "fields": {
+        "example": 283,
+        "element_name": "direction-type"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2774,
+    "fields": {
+        "example": 283,
+        "element_name": "glass"
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 2775,
+    "fields": {
+        "example": 283,
+        "element_name": "percussion"
     }
 },
 {

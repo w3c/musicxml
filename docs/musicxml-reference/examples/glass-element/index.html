@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MusicXML example: &lt;midi-bank&gt; | MusicXML 4.0</title>
+<title>MusicXML example: &lt;glass&gt; | MusicXML 4.0</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -98,10 +98,13 @@
     <a href="../../../">MusicXML 4.0</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
     <a href="../">Examples</a> &gt;
-    &lt;midi-bank&gt;
+    &lt;glass&gt;
 </p>
 
-<h1>&lt;midi-bank&gt;</h1>
+<h1>&lt;glass&gt;</h1>
+
+
+<p><img src="../../../static/examples/glass-element.png"></p>
 
 
 
@@ -110,14 +113,13 @@
 
 
 
-
-<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/midi-instrument/">midi-instrument</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P3-I4</a>"</span>&gt;
-   &lt;<a class="tag" href="../../elements/midi-channel/">midi-channel</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/midi-channel/">midi-channel</a>&gt;
-</span><span class="diff">   &lt;<a class="tag" href="../../elements/midi-bank/">midi-bank</a>&gt;<span class="xmltxt">15489</span>&lt;/<a class="tag" href="../../elements/midi-bank/">midi-bank</a>&gt;
-</span><span class="nodiff">   &lt;<a class="tag" href="../../elements/midi-program/">midi-program</a>&gt;<span class="xmltxt">58</span>&lt;/<a class="tag" href="../../elements/midi-program/">midi-program</a>&gt;
-   &lt;<a class="tag" href="../../elements/volume/">volume</a>&gt;<span class="xmltxt">80</span>&lt;/<a class="tag" href="../../elements/volume/">volume</a>&gt;
-   &lt;<a class="tag" href="../../elements/pan/">pan</a>&gt;<span class="xmltxt">0</span>&lt;/<a class="tag" href="../../elements/pan/">pan</a>&gt;
-&lt;/<a class="tag" href="../../elements/midi-instrument/">midi-instrument</a>&gt;</span></div>
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/direction/">direction</a> <span class="attr">placement="<a href="../../data-types/above-below/">above</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/direction-type/">direction-type</a>&gt;
+      &lt;<a class="tag" href="../../elements/percussion/">percussion</a> <span class="attr">default-y="<a href="../../data-types/tenths/">28</a>"</span> <span class="attr">halign="<a href="../../data-types/left-center-right/">center</a>"</span>&gt;
+</span><span class="diff">         &lt;<a class="tag" href="../../elements/glass/">glass</a>&gt;<span class="xmltxt">wind chimes</span>&lt;/<a class="tag" href="../../elements/glass/">glass</a>&gt;
+</span><span class="nodiff">      &lt;/<a class="tag" href="../../elements/percussion/">percussion</a>&gt;
+   &lt;/<a class="tag" href="../../elements/direction-type/">direction-type</a>&gt;
+&lt;/<a class="tag" href="../../elements/direction/">direction</a>&gt;</span></div>
 
     </main>
 </div>

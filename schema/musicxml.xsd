@@ -1277,7 +1277,7 @@ The change, continue, discontinue, and resume types are used when the line attri
 
 	<xs:simpleType name="principal-voice-symbol">
 		<xs:annotation>
-			<xs:documentation>The principal-voice-symbol type represents the type of symbol used to indicate the start of a principal or secondary voice. The "plain" value represents a plain square bracket. The value of "none" is used for analysis markup when the principal-voice element does not have a corresponding appearance in the score.</xs:documentation>
+			<xs:documentation>The principal-voice-symbol type represents the type of symbol used to indicate a principal or secondary voice. The "plain" value represents a plain square bracket. The value of "none" is used for analysis markup when the principal-voice element does not have a corresponding appearance in the score.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Hauptstimme"/>
@@ -4055,7 +4055,7 @@ The offset affects the visual appearance of the direction. If the sound attribut
 
 	<xs:complexType name="principal-voice">
 		<xs:annotation>
-			<xs:documentation>The principal-voice element represents principal and secondary voices in a score, either for analysis or for square bracket symbols that appear in a score. The symbol attribute indicates the type of symbol used at the start of the principal-voice. The content of the principal-voice element is used for analysis and may be any text value. When used for analysis separate from any printed score markings, the symbol attribute should be set to "none".</xs:documentation>
+			<xs:documentation>The principal-voice type represents principal and secondary voices in a score, either for analysis or for square bracket symbols that appear in a score. The element content is used for analysis and may be any text value. The symbol attribute indicates the type of symbol used. When used for analysis separate from any printed score markings, it should be set to none. Otherwise if the type is stop it should be set to plain.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:string">

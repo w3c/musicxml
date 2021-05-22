@@ -444,15 +444,15 @@
 
 <!-- 
 	The principal-voice element represents principal and
-	secondary voices in a score, either for analysis or
-	for square bracket symbols that appear in a score.
-	The symbol attribute indicates the type of symbol used at
-	the start of the principal-voice. Valid values are 
-	Hauptstimme, Nebenstimme, plain (for a plain square
-	bracket), and none. The content of the principal-voice
-	element is used for analysis and may be any text value.
-	When used for analysis separate from any printed score
-	markings, the symbol attribute should be set to "none".
+	secondary voices in a score, either for analysis or for
+	square bracket symbols that appear in a score. The element
+	content is used for analysis and may be any text value.
+	The symbol attribute indicates the type of symbol used.
+	Valid values are Hauptstimme, Nebenstimme, plain (for a
+	plain square bracket), and none. When used for analysis
+	separate from any printed score markings, it should be set
+	to none. Otherwise if the type is stop it should be set to
+	plain.
 -->
 <!ELEMENT principal-voice (#PCDATA)>
 <!ATTLIST principal-voice
