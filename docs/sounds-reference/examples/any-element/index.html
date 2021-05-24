@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>The &lt;ensemble&gt; element | MusicXML 4.0</title>
+<title>Sounds example: &lt;any&gt; | MusicXML 4.0</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
+
+<style>
+.diff * { font-weight: bold; color: blue !important; }
+</style>
 
 </head>
 
@@ -57,7 +61,7 @@
     </ul>
     <li><b><a href="../../">Sounds Reference</a></b></li>
     <ul>
-        <li><a href="../">Elements</a></li>
+        <li><a href="../../elements/">Elements</a></li>
     </ul>
     <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
     <ul>
@@ -93,71 +97,25 @@
 <p class="breadcrumb">
     <a href="../../../">MusicXML 4.0</a> &gt;
     <a href="../../">Sounds reference</a> &gt;
-    <a href="../">Elements</a> &gt;
-    ensemble
+    <a href="../">Examples</a> &gt;
+    &lt;any&gt;
 </p>
 
-<h1>The &lt;ensemble&gt; element</h1>
-
-<p>Parent element:
-    
-        
-        <a href="../sound-sounds/">&lt;sound&gt;</a>
-        
-    
-</p>
-
-
-    <p>The &lt;solo&gt; and &lt;ensemble&gt; elements are used when an application has different IDs for solo and ensemble sounds, as represented by the &lt;solo&gt; and &lt;ensemble&gt; elements in a MusicXML score file. The &lt;ensemble&gt; element corresponds to the &lt;ensemble&gt; element in the MusicXML score file. The element content is the application or library sound ID.</p>
-
-
-<h2 id="content">Content</h2>
-
-
-    <p><a href="../../../musicxml-reference/data-types/xsd-string/">string</a></p>
-
-
-<h2 id="attributes">Attributes</h2>
-
-
-<table>
-<thead>
-<tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Required?</th>
-    <th>Description</th>
-</tr>
-</thead>
-
-<tr>
-    <th class="nobr">number</th>
-    <td><a href="../../../musicxml-reference/data-types/xsd-NMTOKEN/">NMTOKEN</a></td>
-    <td>No</td>
-    <td>Represents the size of the ensemble, corresponding to the content of the &lt;ensemble&gt; element in a MusicXML score file.</td>
-</tr>
-
-<tr>
-    <th class="nobr">primary</th>
-    <td><a href="../../../musicxml-reference/data-types/yes-no/">yes-no</a></td>
-    <td>No</td>
-    <td>Multiple &lt;solo&gt; and &lt;ensemble&gt; elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which &lt;ensemble&gt; element is primary when mapping from a MusicXML sound id.</td>
-</tr>
-
-</table>
+<h1>&lt;any&gt;</h1>
 
 
 
 
 
-<h2 id="examples">Examples</h2>
-
-<p>This element is used in the following examples:</p>
-<p>
-    <nobr><a href="../../examples/ensemble-element/">&lt;ensemble&gt;</a></nobr>
-</p>
 
 
+
+
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/sounds/">sounds</a>&gt;
+   &lt;<a class="tag" href="../../elements/sound-sounds/">sound</a> <span class="attr">primary="<a href="../../../musicxml-reference/data-types/yes-no/">yes</a>"</span> <span class="attr">id="<a href="../../../musicxml-reference/data-types/xsd-ID/">drum.bass-drum</a>"</span>&gt;
+</span><span class="diff">      &lt;<a class="tag" href="../../elements/any-sounds/">any</a>&gt;<span class="xmltxt">68909857-9b9d-4a26-85c0-8f561162b99a</span>&lt;/<a class="tag" href="../../elements/any-sounds/">any</a>&gt;
+</span><span class="nodiff">   &lt;/<a class="tag" href="../../elements/sound-sounds/">sound</a>&gt;
+&lt;/<a class="tag" href="../../elements/sounds/">sounds</a>&gt;</span></div>
 
     </main>
 </div>

@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>The &lt;ensemble&gt; element | MusicXML 4.0</title>
+<title>Sounds example: &lt;sound&gt; | MusicXML 4.0</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
+
+<style>
+.diff * { font-weight: bold; color: blue !important; }
+</style>
 
 </head>
 
@@ -57,7 +61,7 @@
     </ul>
     <li><b><a href="../../">Sounds Reference</a></b></li>
     <ul>
-        <li><a href="../">Elements</a></li>
+        <li><a href="../../elements/">Elements</a></li>
     </ul>
     <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
     <ul>
@@ -93,71 +97,30 @@
 <p class="breadcrumb">
     <a href="../../../">MusicXML 4.0</a> &gt;
     <a href="../../">Sounds reference</a> &gt;
-    <a href="../">Elements</a> &gt;
-    ensemble
+    <a href="../">Examples</a> &gt;
+    &lt;sound&gt;
 </p>
 
-<h1>The &lt;ensemble&gt; element</h1>
-
-<p>Parent element:
-    
-        
-        <a href="../sound-sounds/">&lt;sound&gt;</a>
-        
-    
-</p>
+<h1>&lt;sound&gt;</h1>
 
 
-    <p>The &lt;solo&gt; and &lt;ensemble&gt; elements are used when an application has different IDs for solo and ensemble sounds, as represented by the &lt;solo&gt; and &lt;ensemble&gt; elements in a MusicXML score file. The &lt;ensemble&gt; element corresponds to the &lt;ensemble&gt; element in the MusicXML score file. The element content is the application or library sound ID.</p>
 
 
-<h2 id="content">Content</h2>
-
-
-    <p><a href="../../../musicxml-reference/data-types/xsd-string/">string</a></p>
-
-
-<h2 id="attributes">Attributes</h2>
-
-
-<table>
-<thead>
-<tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Required?</th>
-    <th>Description</th>
-</tr>
-</thead>
-
-<tr>
-    <th class="nobr">number</th>
-    <td><a href="../../../musicxml-reference/data-types/xsd-NMTOKEN/">NMTOKEN</a></td>
-    <td>No</td>
-    <td>Represents the size of the ensemble, corresponding to the content of the &lt;ensemble&gt; element in a MusicXML score file.</td>
-</tr>
-
-<tr>
-    <th class="nobr">primary</th>
-    <td><a href="../../../musicxml-reference/data-types/yes-no/">yes-no</a></td>
-    <td>No</td>
-    <td>Multiple &lt;solo&gt; and &lt;ensemble&gt; elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which &lt;ensemble&gt; element is primary when mapping from a MusicXML sound id.</td>
-</tr>
-
-</table>
+<p>In this example, MusicXML has two sound IDs for a single application sound. The primary attribute for the &lt;sound&gt; element specifies which MusicXML sound ID to use when exporting a MusicXML file.</p>
 
 
 
 
 
-<h2 id="examples">Examples</h2>
 
-<p>This element is used in the following examples:</p>
-<p>
-    <nobr><a href="../../examples/ensemble-element/">&lt;ensemble&gt;</a></nobr>
-</p>
-
-
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/sounds/">sounds</a>&gt;
+</span><span class="diff">   &lt;<a class="tag" href="../../elements/sound-sounds/">sound</a> <span class="attr">primary="<a href="../../../musicxml-reference/data-types/yes-no/">yes</a>"</span> <span class="attr">id="<a href="../../../musicxml-reference/data-types/xsd-ID/">wind.reed.clarinet.a</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/solo-sounds/">solo</a>&gt;<span class="xmltxt">9d3e28eb-0640-41f7-9144-0fdef3046d7c</span>&lt;/<a class="tag" href="../../elements/solo-sounds/">solo</a>&gt;
+   &lt;/<a class="tag" href="../../elements/sound-sounds/">sound</a>&gt;
+   &lt;<a class="tag" href="../../elements/sound-sounds/">sound</a> <span class="attr">primary="<a href="../../../musicxml-reference/data-types/yes-no/">yes</a>"</span> <span class="attr">id="<a href="../../../musicxml-reference/data-types/xsd-ID/">wind.reed.clarinet.bflat</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/solo-sounds/">solo</a>&gt;<span class="xmltxt">a16af0c1-8df8-476d-8d74-0d6e1972846b</span>&lt;/<a class="tag" href="../../elements/solo-sounds/">solo</a>&gt;
+   &lt;/<a class="tag" href="../../elements/sound-sounds/">sound</a>&gt;
+</span><span class="nodiff">&lt;/<a class="tag" href="../../elements/sounds/">sounds</a>&gt;</span></div>
 
     </main>
 </div>
