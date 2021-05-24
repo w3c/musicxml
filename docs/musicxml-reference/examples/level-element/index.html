@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MusicXML example: &lt;other-play&gt; | MusicXML 4.0</title>
+<title>MusicXML example: &lt;level&gt; | MusicXML 4.0</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -98,10 +98,13 @@
     <a href="../../../">MusicXML 4.0</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
     <a href="../">Examples</a> &gt;
-    &lt;other-play&gt;
+    &lt;level&gt;
 </p>
 
-<h1>&lt;other-play&gt;</h1>
+<h1>&lt;level&gt;</h1>
+
+
+<p><img src="../../../static/examples/level-element.png"></p>
 
 
 
@@ -110,10 +113,25 @@
 
 
 
-
-<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/play/">play</a>&gt;
-</span><span class="diff">   &lt;<a class="tag" href="../../elements/other-play/">other-play</a> <span class="attr">type="<a href="../../data-types/xsd-token/">mute</a>"</span>&gt;<span class="xmltxt">Muffled</span>&lt;/<a class="tag" href="../../elements/other-play/">other-play</a>&gt;
-</span><span class="nodiff">&lt;/<a class="tag" href="../../elements/play/">play</a>&gt;</span></div>
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">27</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+      &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">E</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
+      &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
+   &lt;/<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
+   &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
+   &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
+   &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
+   &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-40</a>"</span>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+   &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
+      &lt;<a class="tag" href="../../elements/ornaments/">ornaments</a>&gt;
+         &lt;<a class="tag" href="../../elements/trill-mark/">trill-mark</a> <span class="attr">default-x="<a href="../../data-types/tenths/">-2</a>"</span> <span class="attr">default-y="<a href="../../data-types/tenths/">6</a>"</span> <span class="attr">placement="<a href="../../data-types/above-below/">above</a>"</span>/&gt;
+      &lt;/<a class="tag" href="../../elements/ornaments/">ornaments</a>&gt;
+   &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
+   &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
+</span><span class="diff">      &lt;<a class="tag" href="../../elements/level/">level</a> <span class="attr">bracket="<a href="../../data-types/yes-no/">yes</a>"</span>&gt;<span class="xmltxt">Performing edition</span>&lt;/<a class="tag" href="../../elements/level/">level</a>&gt;
+</span><span class="nodiff">      &lt;<a class="tag" href="../../elements/accidental-mark/">accidental-mark</a> <span class="attr">placement="<a href="../../data-types/above-below/">above</a>"</span>&gt;<span class="xmltxt">natural</span>&lt;/<a class="tag" href="../../elements/accidental-mark/">accidental-mark</a>&gt;
+   &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
+&lt;/<a class="tag" href="../../elements/note/">note</a>&gt;</span></div>
 
     </main>
 </div>
