@@ -98,7 +98,7 @@
 
 <h1>Compressed .MXL Files</h1>
 
-<p>Regular, plain text MusicXML files can be very large - much larger than the original Finale and Sibelius files, or corresponding MIDI files. This was not a big problem for using MusicXML as an interchange format, but it inhibited MusicXML’s use as a sheet music distribution format.</p>
+<p>Regular, plain text MusicXML files can be very large - much larger than the original music notation application files, or corresponding MIDI files. This was not a big problem for using MusicXML as an interchange format, but it inhibited MusicXML’s use as a sheet music distribution format.</p>
         <p>MusicXML 2.0 introduced a new compressed format which reduces MusicXML file sizes to roughly the same size as the corresponding MIDI files. The format uses zip compression and a special .mxl file suffix and Internet media type to identify files as MusicXML files vs. generic XML files. This section describes how the compressed format works.</p>
         <h2 id="compressed-file-format">Compressed File Format</h2>
         <p>MusicXML uses a zip-based XML format similar to that used by Open Office and many other XML formats. The MusicXML 4.0 zip file format is compatible with the zip format used by the java.util.zip package and Java JAR files. It is based on the Info-ZIP format described at:</p>
@@ -122,11 +122,12 @@
         <h2 id="zip-archive-structure">Zip Archive Structure</h2>
         <p>Following the example of many zip-based XML formats, MusicXML has a strictly defined way to determine where the root MusicXML file is within an archive. Each MusicXML zip archive has a file located at META-INF/container.xml. This container describes the starting point for the MusicXML version of the file, as well as alternate renditions such as PDF and audio versions of the musical score.</p>
         <p>The container.xml file is defined by the container.dtd file. Given the simplicity of the format, there is no corresponding .xsd file at this time.</p>
-        <p>As an example, let us look at the Dichterliebe01.mxl file available on the MakeMusic web site.Here is its META-INF/container.xml file:</p>
+        <p>As an example, let us look at the Dichterliebe01.mxl file available on the MakeMusic web site. Here is its META-INF/container.xml file:</p>
         <p><pre xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8"&gt;
 &lt;container&gt;
   &lt;rootfiles&gt;
-    &lt;rootfile full-path="Dichterliebe01.musicxml"/&gt;
+    &lt;rootfile full-path="Dichterliebe01.musicxml"
+              media-type="application/vnd.recordare.musicxml+xml"/&gt;
   &lt;/rootfiles&gt;
 &lt;/container&gt;</pre></p>
         <p>The <a href="/container-reference/elements/container/">&lt;container&gt;</a> element is the document element for this file. It contains a single <a href="/container-reference/elements/rootfiles/">&lt;rootfiles&gt;</a> element. The &lt;rootfiles&gt; element in turn contains one or more <a href="/container-reference/elements/rootfile/">&lt;rootfile&gt;</a> elements. The MusicXML root must be described in the first &lt;rootfile&gt; element. The full-path attribute provides the path relative to the root folder of the zip file. A MusicXML file used as a &lt;rootfile&gt; may have <a href="../../musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a>, <a href="../../musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a>, or <a href="../../musicxml-reference/elements/opus-reference/">&lt;opus&gt;</a> as its document element.</p>
