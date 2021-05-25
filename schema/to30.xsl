@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-	MusicXML to30.xsl stylesheet
+  MusicXML to30.xsl stylesheet
 
-	Version 4.0 Draft
-	
-	Copyright © 2004-2021 the Contributors to the MusicXML 
-	Specification, published by the W3C Music Notation Community
-	Group under the W3C Community Contributor License Agreement 
-	(CLA): 
-	
-	   https://www.w3.org/community/about/agreements/cla/
-	
-	A human-readable summary is available:
-	
-	   https://www.w3.org/community/about/agreements/cla-deed/
+  Version 4.0 Draft
+
+  Copyright © 2004-2021 the Contributors to the MusicXML 
+  Specification, published by the W3C Music Notation Community
+  Group under the W3C Community Contributor License Agreement 
+  (CLA): 
+
+     https://www.w3.org/community/about/agreements/cla/
+
+  A human-readable summary is available:
+
+     https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
 <!--
-	To30.xsl converts from MusicXML 3.1 to 3.0 for
-	compatibility with older products.
+  To30.xsl converts from MusicXML 3.1 to 3.0 for
+  compatibility with older products.
 -->
 
 <xsl:stylesheet
-	version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <!--
-    XML output, with a DOCTYPE refering the partwise DTD.
+    XML output, with a DOCTYPE referring the partwise DTD.
     Here we use the full Internet URL.
   -->
 
   <xsl:output method="xml" indent="yes" encoding="UTF-8"
-	omit-xml-declaration="no" standalone="no"
-	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
-	doctype-public="-//Recordare//DTD MusicXML 3.0 Partwise//EN" />
+    omit-xml-declaration="no" standalone="no"
+    doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
+    doctype-public="-//Recordare//DTD MusicXML 3.0 Partwise//EN"/>
 
   <!--
     For the root, only look for score-partwise. Anything else
@@ -185,9 +185,9 @@
   -->
   <xsl:template
     match="key-accidental[. = 'double-sharp-down' or
-			. = 'double-sharp-up' or . = 'flat-flat-down' or
-			. = 'flat-flat-up' or . = 'arrow-down' or
-			. = 'arrow-up' or . = 'other']"/>
+      . = 'double-sharp-up' or . = 'flat-flat-down' or
+      . = 'flat-flat-up' or . = 'arrow-down' or
+      . = 'arrow-up' or . = 'other']"/>
 
   <xsl:template
     match="key-accidental/@smufl"/>
@@ -226,7 +226,7 @@
   <!-- Remove new id attributes. -->
   <xsl:template 
     match="fermata/@id | segno/@id | 
-		  coda/@id | dynamics/@id"/>
+      coda/@id | dynamics/@id"/>
 
   <!--
     Remove accidental-text elements with new accidental values.
@@ -240,7 +240,7 @@
   <!-- Remove smufl attributes. -->
   <xsl:template
     match="accidental-text/@smufl | other-dynamics/@smufl |
-		  coda/@smufl | segno/@smufl"/>
+      coda/@smufl | segno/@smufl"/>
 
   <!-- 
     Remove enclosure attributes that have values of pentagon,
@@ -325,7 +325,7 @@
   <!-- Remove new optional elements. -->
   <xsl:template
     match="beat-unit-tied | metronome-arrows | 
-			metronome-tied"/>
+      metronome-tied"/>
 
   <!-- 
     For safety, remove entire direction that has a new 
@@ -333,48 +333,48 @@
   -->
   <xsl:template 
     match="direction[direction-type[percussion[beater[
-        . = 'drum stick' or . = 'slide brush on gong' or
-        . = 'superball']]]]"/>
+      . = 'drum stick' or . = 'slide brush on gong' or
+      . = 'superball']]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[effect[
-        . = 'lotus flute' or . = 'megaphone']]]]"/>
+      . = 'lotus flute' or . = 'megaphone']]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[glass[
-        . = 'glass harmonica' or . = 'glass harp']]]]"/>
+      . = 'glass harmonica' or . = 'glass harp']]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[membrane[
-        . = 'Chinese tomtom' or . = 'cuica' or
-        . = 'Indo-American tomtom' or . = 'Japanese tomtom' or
-        . = 'tabla']]]]"/>
+      . = 'Chinese tomtom' or . = 'cuica' or
+      . = 'Indo-American tomtom' or . = 'Japanese tomtom' or
+      . = 'tabla']]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[metal[
-        . = 'agogo' or . = 'bell tree' or
-        . = 'cencerro' or . = 'chain rattle' or
-        . = 'jaw harp' or . = 'jingle bells' or
-        . = 'musical saw' or . = 'shell bells' or
-        . = 'tam tam with beater']]]]"/>
+      . = 'agogo' or . = 'bell tree' or
+      . = 'cencerro' or . = 'chain rattle' or
+      . = 'jaw harp' or . = 'jingle bells' or
+      . = 'musical saw' or . = 'shell bells' or
+      . = 'tam tam with beater']]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[pitched[
-        . = 'celesta' or . = 'lithophone' or
-        . = 'steel drums' or . = 'tubaphone']]]]"/>
+      . = 'celesta' or . = 'lithophone' or
+      . = 'steel drums' or . = 'tubaphone']]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[stick[stick-type[
-        . = 'glockenspiel' or . = 'gum' or
-        . = 'hammer' or . = 'superball' or
-        . = 'wound']]]]]"/>
+      . = 'glockenspiel' or . = 'gum' or
+      . = 'hammer' or . = 'superball' or
+      . = 'wound']]]]]"/>
 
   <xsl:template 
     match="direction[direction-type[percussion[wood[
-        . = 'bamboo scraper' or . = 'castanets with handle' or
-        . = 'football rattle' or . = 'quijada' or
-        . = 'rainstick' or . = 'reco-reco' or
-        . = 'whip']]]]"/>
+      . = 'bamboo scraper' or . = 'castanets with handle' or
+      . = 'football rattle' or . = 'quijada' or
+      . = 'rainstick' or . = 'reco-reco' or
+      . = 'whip']]]]"/>
 
   <!-- Remove stick attributes. -->
   <xsl:template
@@ -405,7 +405,7 @@
   <!-- Remove new id attributes. -->
   <xsl:template 
     match="credit/@id | credit-image/@id | 
-			credit-words/@id | measure/@id"/>
+      credit-words/@id | measure/@id"/>
 
   <!-- Remove new image attributes. -->
   <xsl:template
