@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>opus.xsd | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+        <li><a href="../../tutorial/code-generation/">Code Generation</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+        <li><a href="../../container-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+        <li><a href="../../opus-reference/data-types/">Data Types</a></li>
+        <li><a href="../../opus-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+        <li><a href="../../sounds-reference/data-types/">Data Types</a></li>
+        <li><a href="../../sounds-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../xml.xsd/">xml.xsd</a></li>
+        <li><a href="../container.xsd/">container.xsd</a></li>
+        <li><a href="./">opus.xsd</a></li>
+        <li><a href="../sounds.xsd/">sounds.xsd</a></li>
+        <li><a href="../sounds.xml/">sounds.xml</a></li>
+        <li><a href="../catalog.xml/">catalog.xml</a></li>
+        <li><a href="../to31.xsl/">to31.xsl</a></li>
+        <li><a href="../to30.xsl/">to30.xsl</a></li>
+        <li><a href="../to20.xsl/">to20.xsl</a></li>
+        <li><a href="../to11.xsl/">to11.xsl</a></li>
+        <li><a href="../to10.xsl/">to10.xsl</a></li>
+        <li><a href="../parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../../version-history/">Version History</a></b></li>
+    <ul>
+        <li><a href="../../version-history/40/">Version 4.0</a></li>
+        <li><a href="../../version-history/31/">Version 3.1</a></li>
+        <li><a href="../../version-history/30/">Version 3.0</a></li>
+        <li><a href="../../version-history/20/">Version 2.0</a></li>
+        <li><a href="../../version-history/11/">Version 1.1</a></li>
+        <li><a href="../../version-history/10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">File Listings</a> &gt;
+    opus.xsd
+</p>
+
+<h1>opus.xsd</h1>
+
+<p><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified"&gt;
+	&lt;xs:annotation&gt;
+		&lt;xs:documentation&gt;MusicXML Opus W3C XML schema (XSD)
+
+Version 4.0 Draft
+
+Copyright © 2004-2021 the Contributors to the MusicXML Specification, published by the W3C Music Notation Community Group under the W3C Community Contributor License Agreement (CLA):
+
+https://www.w3.org/community/about/agreements/cla/
+
+A human-readable summary is available:
+
+https://www.w3.org/community/about/agreements/cla-deed/
+
+This is the W3C XML Schema (XSD) version of the MusicXML 4.0 format. Validation is tightened by moving MusicXML definitions from comments into schema data types and definitions. Character entities and other entity usages that are not supported in W3C XML Schema have also been removed. However, the features of W3C XML Schema make it easier to define variations of the MusicXML format, either via extension or restriction.
+
+An opus collects MusicXML scores together into a larger entity. The individual scores could be movements in a symphony, scenes or acts in an opera, or songs in an album. The opus definition allows arbitrary nesting either via an opus (included in the document) or an opus-link (linked like scores). Future versions of the MusicXML format may expand this schema to include reference data and other metadata related to musical scores.
+		
+The XML catalog at catalog.xml supports validating against a local copy of this XSD rather than the networked version. Software often has trouble using system IDs due to factors such as restrictions on network access, or resources having moved from the original specified location. To validate with the MusicXML XSD, use a schema URI of "http://www.musicxml.org/xsd/opus.xsd".&lt;/xs:documentation&gt;
+	&lt;/xs:annotation&gt;
+
+	&lt;xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.musicxml.org/xsd/xml.xsd"/&gt;
+	&lt;xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.musicxml.org/xsd/xlink.xsd"/&gt;
+
+	&lt;!-- Simple types --&gt;
+
+	&lt;xs:simpleType name="yes-no"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:token"&gt;
+			&lt;xs:enumeration value="yes"/&gt;
+			&lt;xs:enumeration value="no"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+
+	&lt;!-- Attribute groups --&gt;
+
+	&lt;xs:attributeGroup name="document-attributes"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The document-attributes attribute group is used to specify the attributes for an entire MusicXML document. Currently this is used for the version attribute.
+
+The version attribute was added in Version 2.0 for opus documents. It provides an easier way to get version information than through the MusicXML public ID. The default value is 1.0 to make it possible for programs that handle later versions to distinguish earlier version files reliably. Programs that write MusicXML 2.0 or later opus files should set this attribute.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:attribute name="version" type="xs:token" default="1.0"/&gt;
+	&lt;/xs:attributeGroup&gt;
+	
+	&lt;xs:attributeGroup name="link-attributes"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The link-attributes group includes all the simple XLink attributes supported in the MusicXML format.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;!--&lt;xs:attribute ref="xmnls:xlink" fixed="http://www.w3.org/1999/xlink"/&gt;--&gt;
+		&lt;xs:attribute ref="xlink:href" use="required"/&gt;
+		&lt;xs:attribute ref="xlink:type" fixed="simple"/&gt;
+		&lt;xs:attribute ref="xlink:role"/&gt;
+		&lt;xs:attribute ref="xlink:title"/&gt;
+		&lt;xs:attribute ref="xlink:show" default="replace"/&gt;
+		&lt;xs:attribute ref="xlink:actuate" default="onRequest"/&gt;
+	&lt;/xs:attributeGroup&gt;
+	
+	&lt;!-- Complex types --&gt;
+
+	&lt;xs:complexType name="opus"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The opus type is used for the root element of a MusicXML opus. Each opus is made up of a series of score, opus-link, and/or nested opus elements. The document-attributes attribute group includes the version attribute. Future versions may include more metadata elements. In this version, we just include the title of the opus.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="title" type="xs:string" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;The title element specifies the title of an opus document.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:element name="opus" type="opus"/&gt;
+				&lt;xs:element name="opus-link" type="opus-link"/&gt;
+				&lt;xs:element name="score" type="score"/&gt;
+			&lt;/xs:choice&gt;
+		&lt;/xs:sequence&gt;
+		&lt;xs:attributeGroup ref="document-attributes"/&gt;
+	&lt;/xs:complexType&gt;
+
+	&lt;xs:complexType name="opus-link"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;An opus-link provides a link to another opus document, allowing for multiple levels of opus collections via linking as well as nesting.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:attributeGroup ref="link-attributes"/&gt;
+	&lt;/xs:complexType&gt;
+
+	&lt;xs:complexType name="score"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The score elements provide the links to the individual scores within an opus. The new-page attribute, added in Version 2.0, is used to indicate if the first page of the score is different than the last page of the previous score. If new-page is "yes", then a different page is used; if "no", then the same page is used. The default value is implementation-dependent.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:attributeGroup ref="link-attributes"/&gt;
+		&lt;xs:attribute name="new-page" type="yes-no"/&gt;
+	&lt;/xs:complexType&gt;
+
+	&lt;!-- Global element that is the root for MusicXML opus files --&gt;
+
+	&lt;xs:element name="opus" type="opus" block="extension substitution" final="#all"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The opus element with an opus type is the root element for a MusicXML opus.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+	&lt;/xs:element&gt;
+&lt;/xs:schema&gt;</pre></p>
+
+    </main>
+</div>
+
+
+<script type="text/javascript" src="../../static/global.js"></script>
+
+</body>
+</html>

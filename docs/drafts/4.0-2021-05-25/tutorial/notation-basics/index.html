@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Notation Basics in MusicXML | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../hello-world/">"Hello World"</a></li>
+        <li><a href="../structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="./">Notation Basics</a></li>
+        <li><a href="../chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../tablature/">Tablature</a></li>
+        <li><a href="../percussion/">Percussion</a></li>
+        <li><a href="../compressed-mxl-files/">Compressed .MXL Files</a></li>
+        <li><a href="../code-generation/">Code Generation</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+        <li><a href="../../container-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+        <li><a href="../../opus-reference/data-types/">Data Types</a></li>
+        <li><a href="../../opus-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+        <li><a href="../../sounds-reference/data-types/">Data Types</a></li>
+        <li><a href="../../sounds-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../listings/container.xsd/">container.xsd</a></li>
+        <li><a href="../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../listings/sounds.xsd/">sounds.xsd</a></li>
+        <li><a href="../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../../version-history/">Version History</a></b></li>
+    <ul>
+        <li><a href="../../version-history/40/">Version 4.0</a></li>
+        <li><a href="../../version-history/31/">Version 3.1</a></li>
+        <li><a href="../../version-history/30/">Version 3.0</a></li>
+        <li><a href="../../version-history/20/">Version 2.0</a></li>
+        <li><a href="../../version-history/11/">Version 1.1</a></li>
+        <li><a href="../../version-history/10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">Tutorial</a> &gt;
+    Notation Basics in MusicXML
+</p>
+
+<h1>Notation Basics in MusicXML</h1>
+
+<p>MIDI represents musical performance information, but leaves out a great deal of information about music notation. MusicXML represents this information, making it much more useful than MIDI for interchange between notation programs. In this section we describe the main elements used to represent music notation that go far beyond what is represented in MIDI files.</p>
+        <h2 id="how"/>
+      How Music Looks vs. How Music Sounds</h2>
+        <p>Let us look again at the <a href="../../musicxml-reference/examples/tutorial-apres-un-reve/">example</a> we used in the previous section - the first four bars of "Après un rêve" by Gabriel Fauré:</p>
+        <p id="reve"><img src="../../static/tutorial/reve.png"/></p>
+        <p>Clearly our discussion of the MIDI-compatible portion of MusicXML left out many things represented in this music. Where are the tempo and dynamic markings: the Andantino, pp, dolce, crescendo and diminuendo wedges? Where are stem directions stored? The downstem on the initial G in the voice part is not what many programs would default to. How is the beaming represented, so that all the eighth notes are beamed together in the piano part, but separated into triplets in the voice part? How are the piano chords split between staves? How are accidentals indicated, including courtesy accidentals like the A-flat in the fourth bar?</p>
+        <p>A fundamental part of MusicXML is the distinction between elements that primarily represent the sound of the music versus those that represent its appearance. We discussed the sound elements in the previous section, and they are of great use to applications dealing with MIDI or other sound files. Now we discuss the elements for musical appearance, which are of great use to music notation applications.</p>
+        <p>Here is what the beginning of the voice part looks like for "Après un rêve," up to the end of the first measure:</p>
+        <p><pre xml:space="preserve">  &lt;part id="P1"&gt;
+    &lt;measure number="1"&gt;
+      &lt;attributes&gt;
+        &lt;divisions&gt;24&lt;/divisions&gt;
+        &lt;key&gt;
+          &lt;fifths&gt;-3&lt;/fifths&gt;
+          &lt;mode&gt;minor&lt;/mode&gt;
+        &lt;/key&gt;
+        &lt;time&gt;
+          &lt;beats&gt;3&lt;/beats&gt;
+          &lt;beat-type&gt;4&lt;/beat-type&gt;
+        &lt;/time&gt;
+        &lt;clef&gt;
+          &lt;sign&gt;G&lt;/sign&gt;
+          &lt;line&gt;2&lt;/line&gt;
+        &lt;/clef&gt;
+      &lt;/attributes&gt;
+      &lt;direction directive="yes" placement="above"&gt;
+        &lt;direction-type&gt;
+          &lt;words default-y="15" font-weight="bold"&gt;Andantino&lt;/words&gt;
+        &lt;/direction-type&gt;
+        &lt;sound tempo="60"/&gt;
+      &lt;/direction&gt;
+      &lt;note&gt;
+        &lt;rest/&gt;
+        &lt;duration&gt;72&lt;/duration&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+      &lt;/note&gt;
+    &lt;/measure&gt;</pre></p>
+        <p>And here is what the beginning of the piano part looks like for "Après un rêve," up to the first chord in the piano part. We will discuss the appearance elements used in these two examples in the rest of this section.</p>
+        <p><pre xml:space="preserve">  &lt;part id="P2"&gt;
+    &lt;measure number="1"&gt;
+      &lt;attributes&gt;
+        &lt;divisions&gt;2&lt;/divisions&gt;
+        &lt;key&gt;
+          &lt;fifths&gt;-3&lt;/fifths&gt;
+          &lt;mode&gt;minor&lt;/mode&gt;
+        &lt;/key&gt;
+        &lt;time&gt;
+          &lt;beats&gt;3&lt;/beats&gt;
+          &lt;beat-type&gt;4&lt;/beat-type&gt;
+        &lt;/time&gt;
+        &lt;staves&gt;2&lt;/staves&gt;
+        &lt;clef number="1"&gt;
+          &lt;sign&gt;G&lt;/sign&gt;
+          &lt;line&gt;2&lt;/line&gt;
+        &lt;/clef&gt;
+        &lt;clef number="2"&gt;
+          &lt;sign&gt;F&lt;/sign&gt;
+          &lt;line&gt;4&lt;/line&gt;
+        &lt;/clef&gt;
+      &lt;/attributes&gt;
+      &lt;direction placement="below"&gt;
+        &lt;direction-type&gt;
+          &lt;dynamics default-x="129" default-y="-75"&gt;
+            &lt;pp/&gt;
+          &lt;/dynamics&gt;
+        &lt;/direction-type&gt;
+        &lt;staff&gt;1&lt;/staff&gt;
+        &lt;sound dynamics="40"/&gt;
+      &lt;/direction&gt;
+      &lt;note&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;C&lt;/step&gt;
+          &lt;octave&gt;4&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;1&lt;/duration&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+        &lt;type&gt;eighth&lt;/type&gt;
+        &lt;stem default-y="3"&gt;up&lt;/stem&gt;
+        &lt;staff&gt;1&lt;/staff&gt;
+        &lt;beam number="1"&gt;begin&lt;/beam&gt;
+      &lt;/note&gt;
+      &lt;note&gt;
+        &lt;chord/&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;E&lt;/step&gt;
+          &lt;alter&gt;-1&lt;/alter&gt;
+          &lt;octave&gt;4&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;1&lt;/duration&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+        &lt;type&gt;eighth&lt;/type&gt;
+        &lt;stem&gt;up&lt;/stem&gt;
+        &lt;staff&gt;1&lt;/staff&gt;
+      &lt;/note&gt;
+      &lt;note&gt;
+        &lt;chord/&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;G&lt;/step&gt;
+          &lt;octave&gt;4&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;1&lt;/duration&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+        &lt;type&gt;eighth&lt;/type&gt;
+        &lt;stem&gt;up&lt;/stem&gt;
+        &lt;staff&gt;1&lt;/staff&gt;
+      &lt;/note&gt;</pre></p>
+        <h2 id="attributes">Attributes</h2>
+        <h3 id="staves">Staves</h3>
+        <p>The <a href="../../musicxml-reference/elements/staves/">&lt;staves&gt;</a> element indicates the number of staves in a musical part, which in this case is 2 staves for the piano part. The &lt;staves&gt; element is optional. If it is not present, as is the case in the voice part, there is 1 staff for the part.</p>
+        <h3 id="clef">Clef</h3>
+        <p>The clef element is used to indicate the clef for the staff. By specifying the clef's <a href="../../musicxml-reference/elements/sign/">&lt;sign&gt;</a> and its <a href="../../musicxml-reference/elements/line/">&lt;line&gt;</a>, MusicXML handles both the common treble and bass clefs along with tenor, alto, percussion, tab, and older clefs. The treble clef definition indicates that the second line from the bottom of the staff is a G; the bass clef definition indicates that the fourth line from the bottom of the staff is an F. The number attribute indicates the staff number if the part has more than one staff.</p>
+        <p>The <a href="../../musicxml-reference/elements/clef/">&lt;clef&gt;</a> element may also contain a <a href="../../musicxml-reference/elements/clef-octave-change/">&lt;clef-octave-change&gt;</a> element after the &lt;line&gt; element. This is used for clefs that are written either an octave higher or lower than sounding pitch. For example, the tenor line in choral music is usually written in treble clef, an octave higher than the notes actually sound. The clef for this part would be represented as:</p>
+        <p><pre xml:space="preserve">        &lt;clef&gt;
+          &lt;sign&gt;G&lt;/sign&gt;
+          &lt;line&gt;2&lt;/line&gt;
+          &lt;clef-octave-change&gt;-1&lt;/clef-octave-change&gt;
+        &lt;/clef&gt;</pre></p>
+        <p>While attributes usually appear at the start of a measure, they can appear anywhere within the measure. Mid-measure clef changes are the main use for this feature.</p>
+        <h3 id="time">Time</h3>
+        <p>To represent common and cut time signatures, use the symbol attribute of the <a href="../../musicxml-reference/elements/time/">&lt;time&gt;</a> element. For common time, use:</p>
+        <p><pre xml:space="preserve">    &lt;time symbol="common"&gt;
+      &lt;beats&gt;4&lt;/beats&gt;
+      &lt;beat-type&gt;4&lt;/beat-type&gt;
+    &lt;/time&gt;</pre></p>
+        <p>For cut time, use:</p>
+<p><pre xml:space="preserve">    &lt;time symbol="cut"&gt;
+      &lt;beats&gt;2&lt;/beats&gt;
+      &lt;beat-type&gt;2&lt;/beat-type&gt;
+    &lt;/time&gt;</pre></p>
+        <p>Without the symbol attribute, these time signatures would appear as 4/4 and 2/2, respectively.</p>
+        <h2 id="musical-directions">Musical Directions</h2>
+        <p>Musical directions are used for the expression marks in a musical score that are not clearly tied to a particular note. The beginning of the voice part in measure 2, for instance, looks like this:</p>
+        <p><pre xml:space="preserve">      &lt;direction placement="above"&gt;
+        &lt;direction-type&gt;
+          &lt;words default-x="15" default-y="15"
+                 font-size="9" font-style="italic"&gt;dolce&lt;/words&gt;
+        &lt;/direction-type&gt;
+      &lt;/direction&gt;
+      &lt;note default-x="27"&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;G&lt;/step&gt;
+          &lt;octave&gt;4&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;24&lt;/duration&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+        &lt;type&gt;quarter&lt;/type&gt;
+        &lt;stem default-y="6"&gt;down&lt;/stem&gt;
+        &lt;lyric default-y="-80" number="1"&gt;
+          &lt;syllabic&gt;single&lt;/syllabic&gt;
+          &lt;text&gt;Dans&lt;/text&gt;
+        &lt;/lyric&gt;
+      &lt;/note&gt;
+      &lt;direction placement="above"&gt;
+        &lt;direction-type&gt;
+<a name="kanchor9"></a>          &lt;wedge default-y="20" spread="0" type="crescendo"/&gt;
+        &lt;/direction-type&gt;
+        &lt;offset&gt;-8&lt;/offset&gt;
+      &lt;/direction&gt;</pre></p>
+        <p>This indicates that the "dolce" mark starts a little more than one space before the first note in a 9 point italic font, while the crescendo wedge starts two-thirds of the way between the first and second notes in the measure. The placement attribute is used to indicate whether the directions go above or below the staff. The default-x and default-y attributes provide more precise positioning, and use units of tenths of interline space. For these elements, the default-x attribute is measured from the start of the current measure (for other elements, it is measured from the left-hand side of the note or the musical position within the bar). The default-y element is measured from the top barline of the staff. The <a href="../../musicxml-reference/elements/offset/">&lt;offset&gt;</a> element measures horizontal distance in terms of divisions, just like the &lt;duration&gt; element.</p>
+        <p>If two directions go together, they can be linked by having multiple <a href="../../musicxml-reference/elements/direction-type/">&lt;direction-type&gt;</a> elements within a single <a href="../../musicxml-reference/elements/direction/">&lt;direction&gt;</a> element. A MusicXML direction-type can contain many different elements, including <a href="../../musicxml-reference/elements/words/">&lt;words&gt;</a>, <a href="../../musicxml-reference/elements/dynamics/">&lt;dynamics&gt;</a>, <a href="../../musicxml-reference/elements/wedge/">&lt;wedge&gt;</a>, <a href="../../musicxml-reference/elements/segno/">&lt;segno&gt;</a>, <a href="../../musicxml-reference/elements/coda/">&lt;coda&gt;</a>, <a href="../../musicxml-reference/elements/rehearsal/">&lt;rehearsal&gt;</a>, <a href="../../musicxml-reference/elements/dashes/">&lt;dashes&gt;</a>, <a href="../../musicxml-reference/elements/pedal/">&lt;pedal&gt;</a>, <a href="../../musicxml-reference/elements/metronome/">&lt;metronome&gt;</a>, and <a href="../../musicxml-reference/elements/octave-shift/">&lt;octave-shift&gt;</a> (for 8va and related marks). Elements that continue over time have a type attribute to indicate the start and end points. For a &lt;wedge&gt;, the type may be crescendo, diminuendo, or stop. For &lt;octave-shift&gt;, the choice is up, down, or stop. The shift indicates whether the note appears up or down from the sounding pitch, so the start of an 8va has a type of down. For dashes, the choice is start or stop. For &lt;pedal&gt;, the choice is start, stop, or change. The change value is used with pedal lines.</p>
+        <h2 id="note-appearance">Note Appearance</h2>
+        <h3 id="symbolic-note-types">Symbolic Note Types</h3>
+        <p>Given the duration of a note and the divisions attribute, a program can usually infer the symbolic note type (e.g. quarter note, dotted-eighth note). However, it is much easier for notation programs if this is represented explicitly, rather than making the program infer the correct symbolic value. In some cases, the intended note duration does not match what is written, such as some of Bach's dotted notations.</p>
+        <p>The <a href="../../musicxml-reference/elements/type/">&lt;type&gt;</a> element is used to indicate the symbolic note type, such as quarter, eighth, or 16th. MusicXML symbolic note types range from 256th notes to long notes: 256th, 128th, 64th, 32nd, 16th, eighth, quarter, half, whole, breve, and long. The type element may be followed by one or more empty <a href="../../musicxml-reference/elements/dot/">&lt;dot&gt;</a> elements to indicate dotted notes.</p>
+        <h3 id="tuplets">Tuplets</h3>
+        <p>The <a href="../../musicxml-reference/elements/time-modification/">&lt;time-modification&gt;</a> element is used to make it easier for applications to handle tuplets properly. For a normal triplet, this would look like:</p>
+        <p><pre xml:space="preserve">  &lt;time-modification&gt;
+    &lt;actual-notes&gt;3&lt;/actual-notes&gt;
+    &lt;normal-notes&gt;2&lt;/normal-notes&gt;
+  &lt;/time-modification&gt;</pre></p>
+        <p>This indicates that three notes are placed in the time usually allotted for two notes.</p>
+        <p>There is an optional <a href="../../musicxml-reference/elements/normal-type/">&lt;normal-type&gt;</a> element that is used when the type of the note does not match the type of the <a href="../../musicxml-reference/elements/normal-notes/">&lt;normal-notes&gt;</a> in the triplet. Say you have an eighth note triplet, but instead of three eighth notes, you have a quarter note and eighth note instead. Without a normal-type element, software that reads the quarter note in the tuplet will likely assume that this is starting a quarter-note triplet, not an eighth note triplet. In this case, the symbolic type and tuplet would be encoded as:</p>
+        <p><pre xml:space="preserve">  &lt;type&gt;quarter&lt;/type&gt;
+  &lt;time-modification&gt;
+    &lt;actual-notes&gt;3&lt;/actual-notes&gt;
+    &lt;normal-notes&gt;2&lt;/normal-notes&gt;
+    &lt;normal-type&gt;eighth&lt;/normal-type&gt;
+  &lt;/time-modification&gt;</pre></p>
+        <p>The time-modification element cannot represent all aspects of tuplets, such as detailed formatting and where nested tuplets begin and end. It is recommended that the <a href="../../musicxml-reference/elements/tuplet/">&lt;tuplet&gt;</a> element also be used to notate where tuplets begin and end, along with any additional formatting details that may be needed. The &lt;tuplet&gt; element is a child of the &lt;notations&gt; element described below.</p>
+        <h3 id="stems">Stems</h3>
+        <p>Stem direction is represented with the <a href="../../musicxml-reference/elements/stem/">&lt;stem&gt;</a> element, whose value can be up, down, none, or double. For up and down stems, the default-y attribute represents where the stem ends, measured in tenths of interline space from the top line of the staff.</p>
+        <h3 id="beams">Beams</h3>
+        <p>Beams are represented by <a href="../../musicxml-reference/elements/beam/">&lt;beam&gt;</a> elements. Their value can be begin, continue, end, forward hook, and backward hook. Each element has a beam-level attribute which ranges from 1 to 8 for eighth-note to 1024th-note beams.</p>
+        <h3 id="accidentals">Accidentals</h3>
+        <p>The <a href="../../musicxml-reference/elements/accidental/">&lt;accidental&gt;</a> element represents actual notated accidentals. Values can be sharp, flat, natural, double-sharp, sharp-sharp, flat-flat, natural-sharp, natural-flat, quarter-flat, quarter-sharp, three-quarters-flat, and three-quarters-sharp. An accidental element has optional courtesy and editorial attributes to indicate courtesy and editorial accidentals. The bracket, parentheses, and size attributes offer more precise visual representations for these types of accidentals.</p>
+        <h3 id="notations">Notations</h3>
+        <p>Many additional elements can be associated with a note. In MusicXML, these are collected under the <a href="../../musicxml-reference/elements/notations/">&lt;notations&gt;</a> element. Tied notes, slurs, tuplets, fermatas, and arpeggios are represented by top-level children of the notations element. Dynamics, ornaments, articulations, and technical indications specific to particular instruments are also top-level children of the notations element. A staccato mark would then be placed within the <a href="../../musicxml-reference/elements/articulations/">&lt;articulations&gt;</a> element.</p>
+        <p>The <a href="../../musicxml-reference/elements/tied/">&lt;tied&gt;</a> element represents the visual part of a tie, and the tuplet element represents the visual part of a tuplet. The &lt;tie&gt; element affects the sound, and the &lt;time-modification&gt; affects placement, but the &lt;tied&gt; and &lt;tuplet&gt; elements indicate that there is something to see on the score indicating the tie or tuplet. (With ties, the two nearly always go together, but with tuplets this is not the case.) The second E-flat in measure 3 of the voice part, which is the end of a tie and start of a tuplet, is represented as:</p>
+        <p><pre xml:space="preserve">      &lt;note default-x="92"&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;E&lt;/step&gt;
+          &lt;alter&gt;-1&lt;/alter&gt;
+          &lt;octave&gt;5&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;8&lt;/duration&gt;
+        &lt;tie type="stop"/&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+        &lt;type&gt;eighth&lt;/type&gt;
+        &lt;time-modification&gt;
+          &lt;actual-notes&gt;3&lt;/actual-notes&gt;
+          &lt;normal-notes&gt;2&lt;/normal-notes&gt;
+        &lt;/time-modification&gt;
+        &lt;stem default-y="-40"&gt;down&lt;/stem&gt;
+        &lt;beam number="1"&gt;begin&lt;/beam&gt;
+        &lt;notations&gt;
+          &lt;tied type="stop"/&gt;
+          &lt;tuplet bracket="no" number="1" placement="above"
+                  type="start"/&gt;
+        &lt;/notations&gt;
+      &lt;/note&gt;</pre></p>
+        <p>The <a href="../../musicxml-reference/elements/slur/">&lt;slur&gt;</a>, &lt;tied&gt;, and &lt;tuplet&gt; elements all have a number attribute to distinguish overlapping graphical elements.</p>
+        <p>Full details for all the different notations can be found in their element documentation.</p>
+        <h2 id="multipart">Multi-Part Music</h2>
+        <p>MusicXML contains two elements to help distinguish what is happening in multi-part music: the <a href="../../musicxml-reference/elements/voice/">&lt;voice&gt;</a> and <a href="../../musicxml-reference/elements/staff/">&lt;staff&gt;</a> elements.</p>
+        <p>A &lt;staff&gt; element should be used wherever possible in multi-staff music like piano parts. The &lt;note&gt;, &lt;forward&gt;, and &lt;direction&gt; elements can all include a staff element. The first cross-staff chord in measure 3 of the piano part is represented as:</p>
+        <p><pre xml:space="preserve">      &lt;note default-x="26"&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;A&lt;/step&gt;
+          &lt;octave&gt;3&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;1&lt;/duration&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+        &lt;type&gt;eighth&lt;/type&gt;
+<a name="kanchor11"></a>        &lt;accidental&gt;natural&lt;/accidental&gt;
+        &lt;stem default-y="91"&gt;up&lt;/stem&gt;
+        &lt;staff&gt;2&lt;/staff&gt;
+        &lt;beam number="1"&gt;begin&lt;/beam&gt;
+      &lt;/note&gt;
+      &lt;note default-x="26"&gt;
+        &lt;chord/&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;C&lt;/step&gt;
+          &lt;octave&gt;4&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;1&lt;/duration&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+        &lt;type&gt;eighth&lt;/type&gt;
+        &lt;stem&gt;up&lt;/stem&gt;
+        &lt;staff&gt;2&lt;/staff&gt;
+      &lt;/note&gt;
+      &lt;note default-x="26"&gt;
+        &lt;chord/&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;E&lt;/step&gt;
+          &lt;alter&gt;-1&lt;/alter&gt;
+          &lt;octave&gt;4&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;1&lt;/duration&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+        &lt;type&gt;eighth&lt;/type&gt;
+        &lt;stem&gt;up&lt;/stem&gt;
+        &lt;staff&gt;1&lt;/staff&gt;
+      &lt;/note&gt;
+      &lt;note default-x="26"&gt;
+        &lt;chord/&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;G&lt;/step&gt;
+          &lt;octave&gt;4&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;1&lt;/duration&gt;
+        &lt;voice&gt;1&lt;/voice&gt;
+        &lt;type&gt;eighth&lt;/type&gt;
+        &lt;stem&gt;up&lt;/stem&gt;
+        &lt;staff&gt;1&lt;/staff&gt;
+      &lt;/note&gt;</pre></p>
+        <p>The &lt;voice&gt; element helps keep track of multiple independent voice parts. Specifying the voice makes it much easier to import MusicXML files into other programs that handle multiple voices, such as Finale with its layer feature. In the piano chord above, having all the notes be part of a chord in voice 1 but with different staff elements ensures that this will be represented as a cross-staff chord. After completing the six chords in the right-hand part, the left-hand chord is represented as a chord in voice 2, using:</p>
+        <p><pre xml:space="preserve">      &lt;backup&gt;
+        &lt;duration&gt;6&lt;/duration&gt;
+      &lt;/backup&gt;
+      &lt;note default-x="26"&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;F&lt;/step&gt;
+          &lt;octave&gt;1&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;6&lt;/duration&gt;
+        &lt;voice&gt;2&lt;/voice&gt;
+        &lt;type&gt;half&lt;/type&gt;
+        &lt;dot/&gt;
+        &lt;stem default-y="-105.5"&gt;down&lt;/stem&gt;
+        &lt;staff&gt;2&lt;/staff&gt;
+      &lt;/note&gt;
+      &lt;note default-x="26"&gt;
+        &lt;chord/&gt;
+        &lt;pitch&gt;
+          &lt;step&gt;F&lt;/step&gt;
+          &lt;octave&gt;2&lt;/octave&gt;
+        &lt;/pitch&gt;
+        &lt;duration&gt;6&lt;/duration&gt;
+        &lt;voice&gt;2&lt;/voice&gt;
+        &lt;type&gt;half&lt;/type&gt;
+        &lt;dot/&gt;
+        &lt;stem&gt;down&lt;/stem&gt;
+        &lt;staff&gt;2&lt;/staff&gt;
+      &lt;/note&gt;</pre></p>
+
+    </main>
+</div>
+
+
+<script type="text/javascript" src="../../static/global.js"></script>
+
+</body>
+</html>

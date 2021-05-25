@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>numeral-mode data type | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../../"/>Introduction</a></b></li>
+    <li><b><a href="../../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+        <li><a href="../../../tutorial/code-generation/">Code Generation</a></li>
+    </ul>
+    <li><b><a href="../../">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../elements/">Elements</a></li>
+        <li><a href="../">Data Types</a></li>
+        <li><a href="../../examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../../container-reference/elements/">Elements</a></li>
+        <li><a href="../../../container-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../../opus-reference/elements/">Elements</a></li>
+        <li><a href="../../../opus-reference/data-types/">Data Types</a></li>
+        <li><a href="../../../opus-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../../sounds-reference/elements/">Elements</a></li>
+        <li><a href="../../../sounds-reference/data-types/">Data Types</a></li>
+        <li><a href="../../../sounds-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../../listings/container.xsd/">container.xsd</a></li>
+        <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
+        <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../../../version-history/">Version History</a></b></li>
+    <ul>
+        <li><a href="../../../version-history/40/">Version 4.0</a></li>
+        <li><a href="../../../version-history/31/">Version 3.1</a></li>
+        <li><a href="../../../version-history/30/">Version 3.0</a></li>
+        <li><a href="../../../version-history/20/">Version 2.0</a></li>
+        <li><a href="../../../version-history/11/">Version 1.1</a></li>
+        <li><a href="../../../version-history/10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../">MusicXML reference</a> &gt;
+    <a href="../">Data types</a> &gt;
+    numeral-mode
+</p>
+
+<h1>numeral-mode data type</h1>
+
+
+<p>The numeral-mode type specifies the mode similar to the mode type, but with a restricted set of values. The different minor values are used to interpret &lt;numeral-root&gt; values of 6 and 7 when present in a minor key. The harmonic minor value sharpens the 7 and the melodic minor value sharpens both 6 and 7. If a minor mode is used without qualification, either in the &lt;mode&gt; or &lt;numeral-mode&gt; elements, natural minor is used.</p>
+
+
+
+<p>Base type: <a href="../xsd-string/">string</a></p>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="allowed">Allowed values</h2>
+
+<table>
+
+<tr>
+    <th class="nobr">harmonic minor</th>
+    <td>Numerals are interpreted relative to a harmonic minor scale with a raised 7th degree.</td>
+</tr>
+
+<tr>
+    <th class="nobr">major</th>
+    <td>Numerals are interpreted relative to a major scale.</td>
+</tr>
+
+<tr>
+    <th class="nobr">melodic minor</th>
+    <td>Numerals are interpreted relative to an ascending melodic minor scale with raised 6th and 7th degrees.</td>
+</tr>
+
+<tr>
+    <th class="nobr">minor</th>
+    <td>Numerals are interpreted relative to a natural minor scale.</td>
+</tr>
+
+<tr>
+    <th class="nobr">natural minor</th>
+    <td>Numerals are interpreted relative to a natural minor scale.</td>
+</tr>
+
+</table>
+
+
+
+<h2 id="where">Where is this type used?</h2>
+
+
+<p><a href="../../elements/numeral-mode/">&lt;numeral-mode&gt;</a></p>
+
+
+
+
+
+
+    </main>
+</div>
+
+
+<script type="text/javascript" src="../../../static/global.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>font-size data type | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../../"/>Introduction</a></b></li>
+    <li><b><a href="../../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+        <li><a href="../../../tutorial/code-generation/">Code Generation</a></li>
+    </ul>
+    <li><b><a href="../../">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../elements/">Elements</a></li>
+        <li><a href="../">Data Types</a></li>
+        <li><a href="../../examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../../container-reference/elements/">Elements</a></li>
+        <li><a href="../../../container-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../../opus-reference/elements/">Elements</a></li>
+        <li><a href="../../../opus-reference/data-types/">Data Types</a></li>
+        <li><a href="../../../opus-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../../sounds-reference/elements/">Elements</a></li>
+        <li><a href="../../../sounds-reference/data-types/">Data Types</a></li>
+        <li><a href="../../../sounds-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../../listings/container.xsd/">container.xsd</a></li>
+        <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
+        <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../../../version-history/">Version History</a></b></li>
+    <ul>
+        <li><a href="../../../version-history/40/">Version 4.0</a></li>
+        <li><a href="../../../version-history/31/">Version 3.1</a></li>
+        <li><a href="../../../version-history/30/">Version 3.0</a></li>
+        <li><a href="../../../version-history/20/">Version 2.0</a></li>
+        <li><a href="../../../version-history/11/">Version 1.1</a></li>
+        <li><a href="../../../version-history/10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../">MusicXML reference</a> &gt;
+    <a href="../">Data types</a> &gt;
+    font-size
+</p>
+
+<h1>font-size data type</h1>
+
+
+<p>The font-size can be one of the <a href="../css-font-size/">CSS font sizes</a> or a <a href="../xsd-decimal/">decimal</a> point size.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="where">Where is this type used?</h2>
+
+
+
+
+<p><a href="../../elements/accent/">&lt;accent&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/accidental/">&lt;accidental&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/accidental-mark/">&lt;accidental-mark&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/accidental-text/">&lt;accidental-text&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/accordion-registration/">&lt;accordion-registration&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/arrow/">&lt;arrow&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/bass-alter/">&lt;bass-alter&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/bass-separator/">&lt;bass-separator&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/bass-step/">&lt;bass-step&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/bend/">&lt;bend&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/brass-bend/">&lt;brass-bend&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/breath-mark/">&lt;breath-mark&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/caesura/">&lt;caesura&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/clef/">&lt;clef&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/coda/">&lt;coda&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/credit-symbol/">&lt;credit-symbol&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/credit-words/">&lt;credit-words&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/damp/">&lt;damp&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/damp-all/">&lt;damp-all&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/degree-alter/">&lt;degree-alter&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/degree-type/">&lt;degree-type&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/degree-value/">&lt;degree-value&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/delayed-inverted-turn/">&lt;delayed-inverted-turn&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/delayed-turn/">&lt;delayed-turn&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/detached-legato/">&lt;detached-legato&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/directive/">&lt;directive&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/display-text/">&lt;display-text&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/doit/">&lt;doit&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/dot/">&lt;dot&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/double-tongue/">&lt;double-tongue&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/down-bow/">&lt;down-bow&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/dynamics/">&lt;dynamics&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/elision/">&lt;elision&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/ending/">&lt;ending&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/eyeglasses/">&lt;eyeglasses&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/falloff/">&lt;falloff&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/fermata/">&lt;fermata&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/figure-number/">&lt;figure-number&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/figured-bass/">&lt;figured-bass&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/fingering/">&lt;fingering&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/fingernails/">&lt;fingernails&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/flip/">&lt;flip&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/footnote/">&lt;footnote&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/fret/">&lt;fret&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/function/">&lt;function&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/glissando/">&lt;glissando&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/golpe/">&lt;golpe&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/group-abbreviation/">&lt;group-abbreviation&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/group-name/">&lt;group-name&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/half-muted/">&lt;half-muted&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/hammer-on/">&lt;hammer-on&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/handbell/">&lt;handbell&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/harmon-mute/">&lt;harmon-mute&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/harmonic/">&lt;harmonic&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/harmony/">&lt;harmony&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/harp-pedals/">&lt;harp-pedals&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/haydn/">&lt;haydn&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/heel/">&lt;heel&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/hole/">&lt;hole&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/inversion/">&lt;inversion&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/inverted-mordent/">&lt;inverted-mordent&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/inverted-turn/">&lt;inverted-turn&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/inverted-vertical-turn/">&lt;inverted-vertical-turn&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/key/">&lt;key&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/kind/">&lt;kind&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/left-divider/">&lt;left-divider&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/lyric-font/">&lt;lyric-font&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/measure-numbering/">&lt;measure-numbering&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/measure-style/">&lt;measure-style&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/metronome/">&lt;metronome&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/mordent/">&lt;mordent&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/music-font/">&lt;music-font&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/note/">&lt;note&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/notehead/">&lt;notehead&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/numeral-alter/">&lt;numeral-alter&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/numeral-root/">&lt;numeral-root&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/octave-shift/">&lt;octave-shift&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/open/">&lt;open&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/open-string/">&lt;open-string&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/other-articulation/">&lt;other-articulation&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/other-direction/">&lt;other-direction&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/other-notation/">&lt;other-notation&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/other-ornament/">&lt;other-ornament&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/other-technical/">&lt;other-technical&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/part-abbreviation/">&lt;part-abbreviation&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/part-name/">&lt;part-name&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/pedal/">&lt;pedal&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/per-minute/">&lt;per-minute&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/percussion/">&lt;percussion&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/plop/">&lt;plop&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/pluck/">&lt;pluck&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/prefix/">&lt;prefix&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/principal-voice/">&lt;principal-voice&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/pull-off/">&lt;pull-off&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/rehearsal/">&lt;rehearsal&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/right-divider/">&lt;right-divider&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/root-alter/">&lt;root-alter&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/root-step/">&lt;root-step&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/schleifer/">&lt;schleifer&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/scoop/">&lt;scoop&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/segno/">&lt;segno&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/shake/">&lt;shake&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/slide/">&lt;slide&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/smear/">&lt;smear&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/snap-pizzicato/">&lt;snap-pizzicato&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/soft-accent/">&lt;soft-accent&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/spiccato/">&lt;spiccato&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/staccatissimo/">&lt;staccatissimo&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/staccato/">&lt;staccato&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/staff-divide/">&lt;staff-divide&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/stopped/">&lt;stopped&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/stress/">&lt;stress&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/string/">&lt;string&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/string-mute/">&lt;string-mute&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/strong-accent/">&lt;strong-accent&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/suffix/">&lt;suffix&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/symbol/">&lt;symbol&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/tap/">&lt;tap&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/tenuto/">&lt;tenuto&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/text/">&lt;text&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/thumb-position/">&lt;thumb-position&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/time/">&lt;time&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/toe/">&lt;toe&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/tremolo/">&lt;tremolo&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/trill-mark/">&lt;trill-mark&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/triple-tongue/">&lt;triple-tongue&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/tuplet-dot/">&lt;tuplet-dot&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/tuplet-number/">&lt;tuplet-number&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/tuplet-type/">&lt;tuplet-type&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/turn/">&lt;turn&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/unstress/">&lt;unstress&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/up-bow/">&lt;up-bow&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/vertical-turn/">&lt;vertical-turn&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/with-bar/">&lt;with-bar&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/word-font/">&lt;word-font&gt;</a> — "font-size" attribute</p>
+
+<p><a href="../../elements/words/">&lt;words&gt;</a> — "font-size" attribute</p>
+
+
+
+
+    </main>
+</div>
+
+
+<script type="text/javascript" src="../../../static/global.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Version 2.0 | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../"/>Introduction</a></b></li>
+    <li><b><a href="../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+        <li><a href="../../tutorial/code-generation/">Code Generation</a></li>
+    </ul>
+    <li><b><a href="../../musicxml-reference/">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../musicxml-reference/elements/">Elements</a></li>
+        <li><a href="../../musicxml-reference/data-types/">Data Types</a></li>
+        <li><a href="../../musicxml-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../container-reference/elements/">Elements</a></li>
+        <li><a href="../../container-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../opus-reference/elements/">Elements</a></li>
+        <li><a href="../../opus-reference/data-types/">Data Types</a></li>
+        <li><a href="../../opus-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../sounds-reference/elements/">Elements</a></li>
+        <li><a href="../../sounds-reference/data-types/">Data Types</a></li>
+        <li><a href="../../sounds-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../listings/container.xsd/">container.xsd</a></li>
+        <li><a href="../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../listings/sounds.xsd/">sounds.xsd</a></li>
+        <li><a href="../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../">Version History</a></b></li>
+    <ul>
+        <li><a href="../40/">Version 4.0</a></li>
+        <li><a href="../31/">Version 3.1</a></li>
+        <li><a href="../30/">Version 3.0</a></li>
+        <li><a href="./">Version 2.0</a></li>
+        <li><a href="../11/">Version 1.1</a></li>
+        <li><a href="../10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../">MusicXML 4.0</a> &gt;
+    <a href="../">Version History</a> &gt;
+    Version 2.0
+</p>
+
+<h1>Version 2.0</h1>
+
+<h2>Released June 2007</h2>
+
+<h2 id="new-files">New Files</h2>
+<ul>
+<li>Added container.dtd file for compressed MusicXML 2.0 files. Compressed MusicXML files are around 20 times smaller than uncompressed files, and can contain images, audio files, and other multimedia content.</li>
+<li>Added to11.xsl file for transforming a MusicXML 2.0 file to a MusicXML 1.1 file.</li>
+</ul>
+
+<h2 id="new-elements">New Elements</h2>
+<ul>
+<li>Added &lt;image&gt; and &lt;credit-image&gt; elements for including graphics in scores.</li>
+<li>Added &lt;appearance&gt; element for general score graphical settings, including &lt;line-width&gt;, &lt;note-size&gt;, and &lt;other-appearance&gt; child elements.</li>
+<li>Added &lt;container&gt;, &lt;rootfiles&gt;, and &lt;rootfile&gt; elements in new container.dtd file.</li>
+<li>Added &lt;volume&gt;, &lt;pan&gt;, and &lt;elevation&gt; elements for better mixer support.</li>
+<li>Added &lt;solo&gt; and &lt;ensemble&gt; elements for better specification of playback sounds.</li>
+<li>Added &lt;metronome-note&gt; and &lt;metronome-relation&gt; elements for swing and other metrical markings, including &lt;metronome-type&gt;, &lt;metronome-dot&gt;, &lt;metronome-beam&gt;, and &lt;metronome-tuplet&gt; child elements.</li>
+<li>Added &lt;measure-numbering&gt; element for better specification of how measure numbers are displayed in each part.</li>
+<li>Added &lt;inverted-turn&gt; ornament element.</li>
+<li>Added &lt;stress&gt; and &lt;unstress&gt; articulation elements.</li>
+<li>Added &lt;part-name-display&gt;, &lt;part-abbreviation-display&gt;, &lt;group-name-display&gt;, &lt;group-abbreviation-display&gt;, &lt;display-text&gt;, and &lt;accidental-text&gt; elements to allow full formatting of part and group names and abbreviations.</li>
+<li>Added &lt;key-octave&gt; element for more accurate display of unusual key signatures.</li>
+<li>Added &lt;part-symbol&gt; element for formatting control of the symbol that groups multi-staff parts.</li>
+<li>Added &lt;slash-type&gt; and &lt;slash-dot&gt; elements for more complete specification of &lt;beat-repeat&gt; and &lt;slash&gt; notation.</li>
+<li>Added &lt;accordion-registration&gt; elements for accordion registration symbols, including &lt;accordion-high&gt;, &lt;accordion-middle&gt;, and &lt;accordion-low&gt; elements.</li>
+<li>Added &lt;group-time&gt; element for time signatures that stretch vertically across multiple staves or parts.</li>
+<li>Added &lt;relation&gt; element for metadata, similar to the same element in Dublin Core.</li>
+</ul>
+
+<h2 id="new-attributes">New Attributes and Entities</h2>
+<ul>
+<li>Added page attribute to the &lt;credit&gt; element.</li>
+<li>Added source and type attributes to the &lt;image&gt; and &lt;credit-image&gt; elements.</li>
+<li>Added blank-page attribute to the &lt;print&gt; element.</li>
+<li>Added text-x and text-y attributes to the &lt;ending&gt; element for positioning ending text.</li>
+<li>Added line-height and letter-spacing attributes and entities for text leading and spacing.</li>
+<li>Added line-through, underline, and overline attributes and text-decoration and number-of-lines entities for text decoration.</li>
+<li>Added rotation attribute and text-rotation entity for text rotation.</li>
+<li>Added dir attribute and text-direction entity for text direction.</li>
+<li>Added directive attribute and entity for horizontal alignment with start of time signature.</li>
+<li>Added plus-minus attribute to &lt;degree-alter&gt; element.</li>
+<li>Added attribute and value attributes to the &lt;supports&gt; element.</li>
+<li>Added sound attribute to &lt;offset&gt; element.</li>
+<li>Added new-page attribute to the &lt;score&gt; element in opus documents.</li>
+<li>Added element and position attributes to the &lt;bookmark&gt; and &lt;link&gt; elements for finer resolution.</li>
+<li>Added additional attribute to the &lt;clef&gt; element for cue and simultaneous clefs.</li>
+<li>Added text attribute to &lt;root-step&gt;, &lt;bass-step&gt;, &lt;degree-value&gt;, &lt;degree-type&gt;, and &lt;first-fret&gt; elements.</li>
+<li>Added location attribute to the &lt;cancel&gt; and &lt;first-fret&gt; elements.</li>
+<li>Added left-right entity for location attributes.</li>
+<li>Added yes-no-number, start-stop-single, and valign-image data type entities.</li>
+<li>Added text-formatting entity to bring various text formatting attributes and entities together.</li>
+<li>Added coda, divisions, and segno attributes to &lt;barline&gt; element for playback.</li>
+<li>Added document-attributes entity for use with top-level document elements.</li>
+</ul>
+
+<h2 id="additions-to-elements">Additions to Elements</h2>
+<ul>
+<li>Added formatting elements to many descendant elements of the &lt;harmony&gt; element.</li>
+<li>Added text content to the &lt;pluck&gt;, &lt;elision&gt;, and &lt;fermata&gt; elements.</li>
+<li>Added placement attribute to the &lt;dot&gt; element.</li>
+<li>Added type attribute to the &lt;tremolo&gt; element.</li>
+<li>Added print-object attribute to the &lt;other-notation&gt;, &lt;other-direction&gt;, &lt;harmonic&gt;, &lt;key&gt;, and &lt;clef&gt; elements.</li>
+<li>Added font and position attributes to the &lt;time&gt;, &lt;key&gt;, and &lt;clef&gt; elements.</li>
+<li>Allow multiple &lt;key&gt; and &lt;time&gt; elements in the &lt;attributes&gt; element.</li>
+<li>Added &lt;offset&gt; element to the &lt;sound&gt; element.</li>
+<li>Added &lt;part-name&gt; and &lt;part-abbreviation&gt; elements to the &lt;print&gt; element.</li>
+<li>Added enclosure and xml:lang attributes to the &lt;footnote&gt; element.</li>
+<li>Made &lt;page-height&gt; and &lt;page-width&gt; optional in the&lt;page-layout&gt; element.</li>
+<li>Added version attribute to the &lt;opus&gt; element.</li>
+<li>Made &lt;elision&gt; element optional in &lt;lyric&gt; elements with more than one &lt;text&gt; element to allow more formatting control.</li>
+</ul>
+
+<h2 id="new-values">New Values and Definitions</h2>
+<ul>
+<li>Added numeric percentage values to the &lt;sound&gt; element's damper-pedal, soft-pedal, and sostenuto-pedal attributes.</li>
+<li>Added single value to the type attribute of the &lt;other-notation&gt; and &lt;grouping&gt; elements.</li>
+<li>Added tick and short values to the &lt;bar-style&gt; element.</li>
+<li>Added normal, angled, and square text values to the &lt;fermata&gt; element.</li>
+<li>Added standard composer, lyricist, and arranger values to the type attribute for the &lt;creator&gt; element.</li>
+<li>Added standard music, words, and arrangement values to the type attribute for the &lt;rights&gt; element.</li>
+</ul>
+
+<h2 id="deprecated">Deprecated</h2>
+<ul>
+<li>Deprecated the &lt;directive&gt; element. Use the &lt;direction&gt; element with the directive attribute instead.</li>
+<li>Deprecated the pan and elevation attributes of the &lt;sound&gt; element. Use the &lt;pan&gt; and &lt;elevation&gt; elements instead.</li>
+<li>Deprecated the formatting attributes for the &lt;part-name&gt;, &lt;part-abbreviation&gt;, &lt;group-name&gt;, and &lt;group-abbreviation&gt; elements. Use the &lt;part-name-display&gt;, &lt;part-abbreviation-display&gt;, &lt;group-name-display&gt;, and &lt;group-abbreviation-display&gt; elements instead.</li>
+</ul>
+
+<h2 id="july-2007-update">Updated July 2007</h2>
+<ul>
+<li>Corrected the definition of the &lt;credit&gt; element in the score.mod file so it has the same meaning but is no longer non-deterministic.</li>
+</ul>
+
+<h2 id="september-2008-update">Updated September 2008</h2>
+<ul>
+<li>A W3C XML Schema definition (XSD) is now available for the MusicXML 2.0 partwise, timewise, and opus documents.</li>
+</ul>
+
+    </main>
+</div>
+
+
+<script type="text/javascript" src="../../static/global.js"></script>
+
+</body>
+</html>

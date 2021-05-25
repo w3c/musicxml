@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>kind-value data type | MusicXML 4.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="../../../static/styles.css">
+
+</head>
+
+<body class="has-sidenav">
+<div class="topnav">
+    <button id="toggle" class="toggle">
+        <svg viewBox="0 0 100 80" width="16" height="16" fill="currentColor">
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+    </button>
+    <a class="logo" href="../../../">
+        <span class="logo-text">MusicXML 4.0</span>
+    </a>
+</div>
+
+
+<div class="content">
+    <nav class="sidenav">
+        <img src="/musicxml/static/images/back-cg-draft.png"/>
+<ul>
+    <li><b><a href="../../../"/>Introduction</a></b></li>
+    <li><b><a href="../../../tutorial/introduction/">Tutorial</a></b></li>
+    <ul>
+        <li><a href="../../../tutorial/hello-world/">"Hello World"</a></li>
+        <li><a href="../../../tutorial/structure-of-musicxml-files/">File Structure</a></li>
+        <li><a href="../../../tutorial/midi-compatible-part/">MIDI-Compatible Part</a></li>
+        <li><a href="../../../tutorial/notation-basics/">Notation Basics</a></li>
+        <li><a href="../../../tutorial/chord-symbols-and-diagrams/">Chord Symbols</a></li>
+        <li><a href="../../../tutorial/tablature/">Tablature</a></li>
+        <li><a href="../../../tutorial/percussion/">Percussion</a></li>
+        <li><a href="../../../tutorial/compressed-mxl-files/">Compressed .MXL Files</a></li>
+        <li><a href="../../../tutorial/code-generation/">Code Generation</a></li>
+    </ul>
+    <li><b><a href="../../">MusicXML Reference</a></b></li>
+    <ul>
+        <li><a href="../../elements/">Elements</a></li>
+        <li><a href="../">Data Types</a></li>
+        <li><a href="../../examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
+    <ul>
+        <li><a href="../../../container-reference/elements/">Elements</a></li>
+        <li><a href="../../../container-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../opus-reference/">Opus Reference</a></b></li>
+    <ul>
+        <li><a href="../../../opus-reference/elements/">Elements</a></li>
+        <li><a href="../../../opus-reference/data-types/">Data Types</a></li>
+        <li><a href="../../../opus-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../sounds-reference/">Sounds Reference</a></b></li>
+    <ul>
+        <li><a href="../../../sounds-reference/elements/">Elements</a></li>
+        <li><a href="../../../sounds-reference/data-types/">Data Types</a></li>
+        <li><a href="../../../sounds-reference/examples/">Examples</a></li>
+    </ul>
+    <li><b><a href="../../../listings/overview/">File Listings</a></b></li>
+    <ul>
+        <li><a href="../../../listings/musicxml.xsd/">musicxml.xsd</a></li>
+        <li><a href="../../../listings/xlink.xsd/">xlink.xsd</a></li>
+        <li><a href="../../../listings/xml.xsd/">xml.xsd</a></li>
+        <li><a href="../../../listings/container.xsd/">container.xsd</a></li>
+        <li><a href="../../../listings/opus.xsd/">opus.xsd</a></li>
+        <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
+        <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
+        <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
+        <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
+        <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
+        <li><a href="../../../listings/to11.xsl/">to11.xsl</a></li>
+        <li><a href="../../../listings/to10.xsl/">to10.xsl</a></li>
+        <li><a href="../../../listings/parttime.xsl/">parttime.xsl</a></li>
+        <li><a href="../../../listings/timepart.xsl/">timepart.xsl</a></li>
+    </ul>
+    <li><b><a href="../../../version-history/">Version History</a></b></li>
+    <ul>
+        <li><a href="../../../version-history/40/">Version 4.0</a></li>
+        <li><a href="../../../version-history/31/">Version 3.1</a></li>
+        <li><a href="../../../version-history/30/">Version 3.0</a></li>
+        <li><a href="../../../version-history/20/">Version 2.0</a></li>
+        <li><a href="../../../version-history/11/">Version 1.1</a></li>
+        <li><a href="../../../version-history/10/">Version 1.0</a></li>
+    </ul>
+</ul>
+    </nav>
+    <main>
+    
+<p class="breadcrumb">
+    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../">MusicXML reference</a> &gt;
+    <a href="../">Data types</a> &gt;
+    kind-value
+</p>
+
+<h1>kind-value data type</h1>
+
+
+<p>A kind-value indicates the type of chord. Degree elements can then add, subtract, or alter from these starting points. The 11th and 13th values are usually used as a basis for alteration.</p>
+
+
+
+<p>Base type: <a href="../xsd-string/">string</a></p>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="allowed">Allowed values</h2>
+
+<table>
+
+<tr>
+    <th class="nobr">augmented</th>
+    <td>Triad: major third, augmented fifth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">augmented-seventh</th>
+    <td>Seventh: augmented triad, minor seventh.</td>
+</tr>
+
+<tr>
+    <th class="nobr">diminished</th>
+    <td>Triad: minor third, diminished fifth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">diminished-seventh</th>
+    <td>Seventh: diminished triad, diminished seventh.</td>
+</tr>
+
+<tr>
+    <th class="nobr">dominant</th>
+    <td>Seventh: major triad, minor seventh.</td>
+</tr>
+
+<tr>
+    <th class="nobr">dominant-11th</th>
+    <td>11th: dominant-ninth, perfect 11th.</td>
+</tr>
+
+<tr>
+    <th class="nobr">dominant-13th</th>
+    <td>13th: dominant-11th, major 13th.</td>
+</tr>
+
+<tr>
+    <th class="nobr">dominant-ninth</th>
+    <td>Ninth: dominant, major ninth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">French</th>
+    <td>Functional French sixth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">German</th>
+    <td>Functional German sixth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">half-diminished</th>
+    <td>Seventh: diminished triad, minor seventh.</td>
+</tr>
+
+<tr>
+    <th class="nobr">Italian</th>
+    <td>Functional Italian sixth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">major</th>
+    <td>Triad: major third, perfect fifth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">major-11th</th>
+    <td>11th: major-ninth, perfect 11th.</td>
+</tr>
+
+<tr>
+    <th class="nobr">major-13th</th>
+    <td>13th: major-11th, major 13th.</td>
+</tr>
+
+<tr>
+    <th class="nobr">major-minor</th>
+    <td>Seventh: minor triad, major seventh.</td>
+</tr>
+
+<tr>
+    <th class="nobr">major-ninth</th>
+    <td>Ninth: major-seventh, major ninth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">major-seventh</th>
+    <td>Seventh: major triad, major seventh.</td>
+</tr>
+
+<tr>
+    <th class="nobr">major-sixth</th>
+    <td>Sixth: major triad, added sixth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">minor</th>
+    <td>Triad: minor third, perfect fifth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">minor-11th</th>
+    <td>11th: minor-ninth, perfect 11th.</td>
+</tr>
+
+<tr>
+    <th class="nobr">minor-13th</th>
+    <td>13th: minor-11th, major 13th.</td>
+</tr>
+
+<tr>
+    <th class="nobr">minor-ninth</th>
+    <td>Ninth: minor-seventh, major ninth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">minor-seventh</th>
+    <td>Seventh: minor triad, minor seventh.</td>
+</tr>
+
+<tr>
+    <th class="nobr">minor-sixth</th>
+    <td>Sixth: minor triad, added sixth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">Neapolitan</th>
+    <td>Functional Neapolitan sixth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">none</th>
+    <td>Used to explicitly encode the absence of chords or functional harmony. In this case, the &lt;root&gt; &lt;numeral&gt;, or &lt;function&gt; element has no meaning. When using the &lt;root&gt; or &lt;numeral&gt; element, the &lt;root-step&gt; or &lt;numeral-step&gt; text attribute should be set to the empty string to keep the root or numeral from being displayed.</td>
+</tr>
+
+<tr>
+    <th class="nobr">other</th>
+    <td>Used when the harmony is entirely composed of add elements.</td>
+</tr>
+
+<tr>
+    <th class="nobr">pedal</th>
+    <td>Pedal-point bass</td>
+</tr>
+
+<tr>
+    <th class="nobr">power</th>
+    <td>Perfect fifth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">suspended-fourth</th>
+    <td>Suspended: perfect fourth, perfect fifth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">suspended-second</th>
+    <td>Suspended: major second, perfect fifth.</td>
+</tr>
+
+<tr>
+    <th class="nobr">Tristan</th>
+    <td>Augmented fourth, augmented sixth, augmented ninth.</td>
+</tr>
+
+</table>
+
+
+
+<h2 id="where">Where is this type used?</h2>
+
+
+<p><a href="../../elements/kind/">&lt;kind&gt;</a></p>
+
+
+
+
+
+
+    </main>
+</div>
+
+
+<script type="text/javascript" src="../../../static/global.js"></script>
+
+</body>
+</html>
