@@ -41851,12 +41851,12 @@
     "model": "spec.exampledocument",
     "pk": 270,
     "fields": {
-        "name": "<measure-layout>",
-        "slug": "measure-layout-element",
+        "name": "<measure-distance>",
+        "slug": "measure-distance-element",
         "schema": 1,
         "blurb": "",
-        "document": "<measure number=\"9\" width=\"219\">\r\n      <print>\r\n        <metadiff><measure-layout>\r\n          <measure-distance>118</measure-distance>\r\n        </measure-layout></metadiff>\r\n      </print>\r\n      <attributes>\r\n        <key print-object=\"yes\">\r\n          <fifths>1</fifths>\r\n          <mode>major</mode>\r\n        </key>\r\n        <clef print-object=\"yes\">\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n      </attributes>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <coda default-x=\"-44\" default-y=\"28\"/>\r\n        </direction-type>\r\n        <sound coda=\"11\" divisions=\"2\"/>\r\n      </direction>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <words default-y=\"34\" font-size=\"12\" font-style=\"italic\" relative-x=\"-48\">Coda</words>\r\n        </direction-type>\r\n      </direction>\r\n      <note default-x=\"36\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"63\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"88\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"115\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"141\">\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>4</duration>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem default-y=\"5\">up</stem>\r\n      </note>\r\n      <barline location=\"right\">\r\n        <bar-style>light-heavy</bar-style>\r\n      </barline>\r\n    </measure>",
-        "image_url": "/static/examples/measure-layout-element.png",
+        "document": "<measure number=\"9\" width=\"219\">\r\n      <print>\r\n       <measure-layout>\r\n           <metadiff><measure-distance>118</measure-distance></metadiff>\r\n        </measure-layout>\r\n      </print>\r\n      <attributes>\r\n        <key print-object=\"yes\">\r\n          <fifths>1</fifths>\r\n          <mode>major</mode>\r\n        </key>\r\n        <clef print-object=\"yes\">\r\n          <sign>G</sign>\r\n          <line>2</line>\r\n        </clef>\r\n      </attributes>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <coda default-x=\"-44\" default-y=\"28\"/>\r\n        </direction-type>\r\n        <sound coda=\"11\" divisions=\"2\"/>\r\n      </direction>\r\n      <direction placement=\"above\">\r\n        <direction-type>\r\n          <words default-y=\"34\" font-size=\"12\" font-style=\"italic\" relative-x=\"-48\">Coda</words>\r\n        </direction-type>\r\n      </direction>\r\n      <note default-x=\"36\">\r\n        <pitch>\r\n          <step>D</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">begin</beam>\r\n      </note>\r\n      <note default-x=\"63\">\r\n        <pitch>\r\n          <step>C</step>\r\n          <octave>5</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"88\">\r\n        <pitch>\r\n          <step>A</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">continue</beam>\r\n      </note>\r\n      <note default-x=\"115\">\r\n        <pitch>\r\n          <step>F</step>\r\n          <alter>1</alter>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>1</duration>\r\n        <voice>1</voice>\r\n        <type>eighth</type>\r\n        <stem default-y=\"20\">up</stem>\r\n        <beam number=\"1\">end</beam>\r\n      </note>\r\n      <note default-x=\"141\">\r\n        <pitch>\r\n          <step>G</step>\r\n          <octave>4</octave>\r\n        </pitch>\r\n        <duration>4</duration>\r\n        <voice>1</voice>\r\n        <type>half</type>\r\n        <stem default-y=\"5\">up</stem>\r\n      </note>\r\n      <barline location=\"right\">\r\n        <bar-style>light-heavy</bar-style>\r\n      </barline>\r\n    </measure>",
+        "image_url": "/static/examples/measure-distance-element.png",
         "is_featured": false
     }
 },
@@ -42260,6 +42260,32 @@
         "blurb": "In this example, MusicXML has two sound IDs for a single application sound. The primary attribute for the <sound> element specifies which MusicXML sound ID to use when exporting a MusicXML file.",
         "document": "<sounds>\r\n   <metadiff><sound primary=\"yes\" id=\"wind.reed.clarinet.a\">\r\n       <solo>9d3e28eb-0640-41f7-9144-0fdef3046d7c</solo>\r\n   </sound>\r\n   <sound primary=\"yes\" id=\"wind.reed.clarinet.bflat\">\r\n       <solo>a16af0c1-8df8-476d-8d74-0d6e1972846b</solo>\r\n   </sound></metadiff>\r\n</sounds>",
         "image_url": "",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 311,
+    "fields": {
+        "name": "<staff-distance>",
+        "slug": "staff-distance-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<staff-layout>\r\n      <metadiff><staff-distance>80</staff-distance></metadiff>\r\n    </staff-layout>",
+        "image_url": "/static/examples/staff-distance-element.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 312,
+    "fields": {
+        "name": "<system-distance>",
+        "slug": "system-distance-element",
+        "schema": 1,
+        "blurb": "",
+        "document": "<system-layout>\r\n      <system-margins>\r\n        <left-margin>0</left-margin>\r\n        <right-margin>0</right-margin>\r\n      </system-margins>\r\n      <metadiff><system-distance>121</system-distance></metadiff>\r\n    </system-layout>",
+        "image_url": "/static/examples/system-distance-element.png",
         "is_featured": false
     }
 },
@@ -67091,6 +67117,69 @@
     "fields": {
         "example": 305,
         "element": 846,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5555,
+    "fields": {
+        "example": 311,
+        "element": 78,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5556,
+    "fields": {
+        "example": 311,
+        "element": 79,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5557,
+    "fields": {
+        "example": 312,
+        "element": 66,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5558,
+    "fields": {
+        "example": 312,
+        "element": 67,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5559,
+    "fields": {
+        "example": 312,
+        "element": 75,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5560,
+    "fields": {
+        "example": 312,
+        "element": 57,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5561,
+    "fields": {
+        "example": 312,
+        "element": 58,
         "element_name": ""
     }
 },

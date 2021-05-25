@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>The &lt;measure-distance&gt; element | MusicXML 4.0</title>
+<title>MusicXML example: &lt;system-distance&gt; | MusicXML 4.0</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
+
+<style>
+.diff * { font-weight: bold; color: blue !important; }
+</style>
 
 </head>
 
@@ -43,9 +47,9 @@
     </ul>
     <li><b><a href="../../">MusicXML Reference</a></b></li>
     <ul>
-        <li><a href="../">Elements</a></li>
+        <li><a href="../../elements/">Elements</a></li>
         <li><a href="../../data-types/">Data Types</a></li>
-        <li><a href="../../examples/">Examples</a></li>
+        <li><a href="../">Examples</a></li>
     </ul>
     <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
     <ul>
@@ -93,47 +97,29 @@
 <p class="breadcrumb">
     <a href="../../../">MusicXML 4.0</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
-    <a href="../">Elements</a> &gt;
-    measure-distance
+    <a href="../">Examples</a> &gt;
+    &lt;system-distance&gt;
 </p>
 
-<h1>The &lt;measure-distance&gt; element</h1>
-
-<p>Parent element:
-    
-        
-        <a href="../measure-layout/">&lt;measure-layout&gt;</a>
-        
-    
-</p>
+<h1>&lt;system-distance&gt;</h1>
 
 
-    <p>The &lt;measure-distance&gt; element specifies the horizontal distance from the previous measure. This value is only used for systems where there is horizontal whitespace in the middle of a system, as in systems with codas. To specify the measure width, use the width attribute of the &lt;measure&gt; element.</p>
-
-
-<h2 id="content">Content</h2>
-
-
-    <p><a href="../../data-types/tenths/">tenths</a></p>
-
-
-<h2 id="attributes">Attributes</h2>
-
-
-<p>None.</p>
+<p><img src="../../../static/examples/system-distance-element.png"></p>
 
 
 
 
 
-<h2 id="examples">Examples</h2>
-
-<p>This element is used in the following examples:</p>
-<p>
-    <nobr><a href="../../examples/measure-distance-element/">&lt;measure-distance&gt;</a></nobr>
-</p>
 
 
+
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/system-layout/">system-layout</a>&gt;
+   &lt;<a class="tag" href="../../elements/system-margins/">system-margins</a>&gt;
+      &lt;<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;<span class="xmltxt">0</span>&lt;/<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;
+      &lt;<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;<span class="xmltxt">0</span>&lt;/<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;
+   &lt;/<a class="tag" href="../../elements/system-margins/">system-margins</a>&gt;
+</span><span class="diff">   &lt;<a class="tag" href="../../elements/system-distance/">system-distance</a>&gt;<span class="xmltxt">121</span>&lt;/<a class="tag" href="../../elements/system-distance/">system-distance</a>&gt;
+</span><span class="nodiff">&lt;/<a class="tag" href="../../elements/system-layout/">system-layout</a>&gt;</span></div>
 
     </main>
 </div>
