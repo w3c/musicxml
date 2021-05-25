@@ -106,7 +106,7 @@
 
 <p>This is why MusicXML has two different score formats, each with its own root element. For a partwise document, the root element is <a href="../../musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a>. The musical part is primary, and measures are contained within each part. For a timewise document, the root element is <a href="../../musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a>. The measure is primary, and musical parts are contained within each measure.</p>
 
-<p>Having two different structures does not work well if there is no automatic way to switch between them. MusicXML provides two XSLT stylesheets to convert back and forth between the two document types. The parttime.xsl stylesheet converts from &lt;score-partwise&gt; to &lt;score-timewise&gt;, while the timepart.xsl stylesheet converts from &lt;score-timewise&gt; to &lt;score-partwise&gt;.</p>
+<p>Having two different structures does not work well if there is no automatic way to switch between them. MusicXML provides two XSLT stylesheets to convert back and forth between the two document types. The <a href="../../listings/parttime.xsl/">parttime.xsl</a> stylesheet converts from &lt;score-partwise&gt; to &lt;score-timewise&gt;, while the <a href="../../listings/timepart.xsl/">timepart.xsl</a> stylesheet converts from &lt;score-timewise&gt; to &lt;score-partwise&gt;.</p>
 
 <p>An application reading MusicXML can choose which format is primary, and check for that document type. If it is your root element, just proceed. If not, check to see if it is the other MusicXML root element. If so, apply the appropriate XSLT stylesheet to create a new MusicXML document in your preferred format, and then proceed. If it is neither of the two top-level document types, you do not have a MusicXML score, and can return an appropriate error message.</p>
 
@@ -181,14 +181,14 @@
     &lt;/score-part&gt;
   &lt;/part-list&gt;</pre></p>
 
-<p>You see that this score header has all five of the possible top-level elements in the score header: the &lt;work&gt;, &lt;movement-number,&gt; &lt;movement-title&gt;, &lt;identification&gt;, and &lt;part-list&gt;. Only the part-list is required, all other elements are optional. Let&#8217;s look at each part in turn:</p>
+<p>You see that this score header has all five of the possible top-level elements in the score header: the &lt;work&gt;, &lt;movement-number,&gt; &lt;movement-title&gt;, &lt;identification&gt;, and &lt;part-list&gt;. Only the part-list is required, all other elements are optional. Let&#8217;s look at each element in turn:</p>
 
 <p><pre>  &lt;work&gt;
     &lt;work-number&gt;D. 911&lt;/work-number&gt;
     &lt;work-title&gt;Winterreise&lt;/work-title&gt;
   &lt;/work&gt;</pre></p>
 
-<p>In MusicXML, individual movements are usually represented as separate files. The <a href="../../musicxml-reference/elements/work/">&lt;work&gt;</a> element is used to identify the larger work of which this movement is a part. Schubert&#8217;s works are more commonly referred to via D. numbers than opus numbers, so that is what we use in the <a href="../../musicxml-reference/elements/work-number/">&lt;work-number&gt;</a> element; the <a href="../../musicxml-reference/elements/work-title/">&lt;work-title&gt;</a> contains the name of the larger work. If you have all the movements in a work represented, you can use the <a href="../../musicxml-reference/elements/opus-reference/">&lt;opus&gt;</a> element to link to the MusicXML opus file that in turn contains links to all the movements in the work.</p>
+<p>In MusicXML, individual movements are usually represented as separate files. The <a href="../../musicxml-reference/elements/work/">&lt;work&gt;</a> element is used to identify the larger work of which this movement is a part. Schubert&#8217;s works are more commonly referred to via D. numbers than opus numbers, so that is what we use in the <a href="../../musicxml-reference/elements/work-number/">&lt;work-number&gt;</a> element; the <a href="../../musicxml-reference/elements/work-title/">&lt;work-title&gt;</a> contains the name of the larger work. If you have all the movements in a work represented, you can use the <a href="../../musicxml-reference/elements/opus-reference/">&lt;opus&gt;</a> element to link to the MusicXML <a href="../../opus-reference/elements/opus/">opus file</a> that in turn contains links to all the movements in the work.</p>
 
 <p><pre>  &lt;movement-number&gt;22&lt;/movement-number&gt;</pre></p>
 
@@ -202,11 +202,11 @@
     &lt;creator type="composer"&gt;Franz Schubert&lt;/creator&gt;
     &lt;creator type="poet"&gt;Wilhelm Müller&lt;/creator&gt;</pre></p>
 
-<p>The <a href="../../musicxml-reference/elements/identification/">&lt;identification&gt;</a> element contains basic metadata elements based on the <a href="https://dublincore.org/specifications/dublin-core/">Dublin Core</a>. In this song, as many others, there are two creators: in this case, the composer and the poet. Therefore, we use two <a href="../../musicxml-reference/elements/creator/">&lt;creator&gt;</a> elements, and distinguish their roles with the type attribute. For an instrumental work with just one composer, there is no need to use the type attribute.</p>
+<p>The <a href="../../musicxml-reference/elements/identification/">&lt;identification&gt;</a> element contains basic metadata elements based on the <a href="https://dublincore.org/specifications/dublin-core/">Dublin Core</a>. In this song, as many others, there are two creators: in this case, the composer and the poet. Therefore, we use two <a href="../../musicxml-reference/elements/creator/">&lt;creator&gt;</a> elements, and distinguish their roles with the type attribute. The type attribute should still be used even for an instrumental work with just one composer.</p>
 
 <p><pre>    &lt;rights&gt;Copyright © 2001 Recordare LLC&lt;/rights&gt;</pre></p>
 
-<p>The <a href="../../musicxml-reference/elements/rights/">&lt;rights&gt;</a> element contains the copyright notice. You may have multiple &lt;rights&gt; elements if multiple copyrights are involved, say for the words and the music. As with the &lt;creator&gt; element, these can have type attributes to indicate what type of copyright is involved. In this example, both the words and music to Mut are in the public domain, but we are copyrighting our electronic edition of the work.</p>
+<p>The <a href="../../musicxml-reference/elements/rights/">&lt;rights&gt;</a> element contains the copyright notice. You may have multiple &lt;rights&gt; elements if multiple copyrights are involved, say for the words and the music. As with the &lt;creator&gt; element, these can have type attributes to indicate what type of copyright is involved. In this example, both the words and music to Mut are in the public domain, but this element specifies a copyright to the electronic edition of the work.</p>
 
 <p><pre>    &lt;encoding&gt;
       &lt;encoding-date&gt;2002-02-16&lt;/encoding-date&gt;
@@ -233,17 +233,17 @@
     &lt;/score-part&gt;
   &lt;/part-list&gt;</pre></p>
 
-<p>The <a href="../../musicxml-reference/elements/part-list/">&lt;part-list&gt;</a> is the one element in the score header that is required in all MusicXML scores. It is made up of a series of <a href="../../musicxml-reference/elements/score-part/">&lt;score-part&gt;</a> elements, each with a required id attribute and <a href="../../musicxml-reference/elements/part-name/">&lt;part-name&gt;</a> element. By convention, our software simply numbers the parts as &#8220;P1&#8221;, &#8220;P2&#8221;, etc. to create the id attributes. You may use whatever technique you like as long as it produces unique names for each &lt;score-part&gt;.</p>
+<p>The <a href="../../musicxml-reference/elements/part-list/">&lt;part-list&gt;</a> is the one element in the score header that is required in all MusicXML scores. It is made up of a series of <a href="../../musicxml-reference/elements/score-part/">&lt;score-part&gt;</a> elements, each with a required id attribute and <a href="../../musicxml-reference/elements/part-name/">&lt;part-name&gt;</a> element. By convention, apps often number the parts as &#8220;P1&#8221;, &#8220;P2&#8221;, etc. to create the id attributes. You may use whatever technique you like as long as it produces unique names for each &lt;score-part&gt;.</p>
 
 <p>In addition to the &lt;part-name&gt;, there are many optional elements that can be included in a &lt;score-part&gt;:</p>
 
 <p><ul>
 <li>An &lt;identification&gt; element, helpful if individual parts come from different sources.</li>
 <li>A <a href="../../musicxml-reference/elements/part-abbreviation/">&lt;part-abbreviation&gt;</a> element. Often, you will use the &lt;part-name&gt; for the name used at the start of the score, and the &lt;part-abbreviation&gt; for the abbreviated name used in succeeding systems.</li>
-<li>A <a href="../../musicxml-reference/elements/group/">&lt;group&gt;</a> element, used when different parts can be used for different purposes. In MuseData, for instance, there will often be different parts used for a printed score, a printed part, a MIDI sound file, or for data analysis.</li>
+<li>A <a href="../../musicxml-reference/elements/group/">&lt;group&gt;</a> element, used when different parts can be used for different purposes. Different parts may be used for a printed score, a printed part, a MIDI sound file, or for data analysis.</li>
 <li>One or more <a href="../../musicxml-reference/elements/score-instrument/">&lt;score-instrument&gt;</a> elements, used to describe instrument sounds and virtual instrument settings, as well as to define multiple instruments within a &lt;score-part&gt;. This element serves as a reference point for MIDI instrument changes.</li>
 <li>One or more <a href="../../musicxml-reference/elements/midi-device/">&lt;midi-device&gt;</a> elements for identifying the MIDI devices or ports that are being used in a multi-port configuration. Multiple devices let you get beyond MIDI 1.0&#8217;s 16-channel barrier.</li>
-<li>One or more <a href="../../musicxml-reference/elements/midi-instrument/">&lt;midi-instrument&gt;</a> elements, specifying the initial MIDI setup for each score-instrument within a part.</li>
+<li>One or more <a href="../../musicxml-reference/elements/midi-instrument/">&lt;midi-instrument&gt;</a> elements, specifying the initial MIDI setup for each &lt;score-instrument&gt; within a part.</li>
 </ul></p>
 
     </main>

@@ -144,7 +144,7 @@
   &lt;/part&gt;
 &lt;/score-partwise&gt;</pre></p>
 
-<p>Let's look at each part in turn:</p>
+<p>Let's look at each element in turn:</p>
 
 <p><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</pre></p>
 
@@ -226,11 +226,15 @@
 
 <p>Our divisions value is 1 division per quarter note, so the duration of 4 is the length of 4 quarter notes.</p>
 
+<p>The &lt;duration&gt; element should reflect the intended duration, not a longer or shorter duration specific to a certain performance. The <a href="../../musicxml-reference/elements/note/">&lt;note&gt;</a> element has attack and release attributes specify how to change a note's start and stop times from the times represented through a sequence of durations.</p>
+
 <p><pre>        &lt;type&gt;whole&lt;/type&gt;</pre></p>
 
-<p>The <a href="../../musicxml-reference/elements/type/">&lt;type&gt;</a> element tells us that this is notated as a whole note. You could probably derive this from the duration in this case, but it is much easier to work with both notation and performance applications if the notation and performance data is represented separately.</p>
+<p>The <a href="../../musicxml-reference/elements/type/">&lt;type&gt;</a> element tells us that this is notated as a whole note. You could probably derive this from the duration in this case, but it is easier to work with both notation and performance applications if the notation and performance data is represented separately.</p>
 
-<p>The &lt;duration&gt; element should reflect the intended duration, not a longer or shorter duration specific to a certain performance. The &lt;note&gt; element has attack and release attributes that suggest ways to alter a note's start and stop times from the nominal duration indicated directly or indirectly by the score.</p>
+<p>The order in which these elements appear does matter. In the &lt;note&gt; element, the &lt;pitch&gt; element must precede the &lt;duration&gt; element, and the &lt;type&gt; element must come afterwards. The correct order is specified throughout the documentation.</p>
+
+<p>One limitation of XML's document type definitions is that if you want to limit the number of elements within another element, you generally must also restrict how they are ordered. In the attributes, for instance, we want no more than one &lt;divisions&gt; element. For the note's pitch, we want one and only one &lt;step&gt; element and &lt;octave&gt; element. In order to do this, the order in which these elements appear must be constrained as well.</p>
 
 <p><pre>      &lt;/note&gt;</pre></p>
 
@@ -247,10 +251,6 @@
 <p><pre>&lt;/score-partwise&gt;</pre></p>
 
 <p>And we are done with the score.</p>
-
-<p>One limitation of XML's document type definitions is that if you want to limit the number of elements within another element, you generally must also restrict how they are ordered as well. In the attributes, for instance, we want no more than one divisions element; for the note's pitch, we want one and only one &lt;step&gt; element and &lt;octave&gt; element. In order to do this, the order in which these elements appear must be constrained as well.</p>
-
-<p>The order in which elements appear in these examples does matter. The correct order is specified throughout the documentation.</p>
 
     </main>
 </div>

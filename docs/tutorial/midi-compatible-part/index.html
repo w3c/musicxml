@@ -98,19 +98,19 @@
 
 <h1>The MIDI-Compatible Part of MusicXML</h1>
 
-<p>MusicXML music data contains two main types of elements. One set of elements is used primarily to represent how a piece of music should sound. These are the elements that are used when creating a MIDI file from MusicXML. The other set is used primarily to represent how a piece of music should look. These elements are used when creating a Finale file from MusicXML.</p>
-        <p>We encourage programs writing MusicXML to write as much accurate data as they can. The only elements that are required, though, are the sounding elements that relate directly to writing a MIDI file from MusicXML. This is where we will start in introducing the musical elements of a MusicXML file.</p>
+<p>MusicXML consists of two main types of elements. One set of elements is used to represent how a piece of music is notated. These elements are used for displaying sheet music on screen or in print. The other set of elements are used to represent a sonic realization of the score, and are commonly used for MIDI playback.</p>
+        <p>We encourage programs writing MusicXML to write as much accurate data as they can. The only elements that are required, though, are the sounding elements that relate directly to creating a MIDI file from MusicXML. This is where we will start in introducing the musical elements of a MusicXML file.</p>
         <p>As an <a href="../../musicxml-reference/examples/tutorial-apres-un-reve/">example</a>, we will use the first four bars of "Après un rêve" by Gabriel Fauré:</p>
         <p id="reve"><img src="../../static/tutorial/reve.png"/></p>
         <h2 id="attributes">Attributes</h2>
-        <p>The <a href="../../musicxml-reference/elements/attributes/">&lt;attributes&gt;</a> element contains information about time signatures, key signatures, transpositions, clefs, and other musical data that is usually specified at the beginning of a piece or at the start of a measure. We discuss the MIDI-compatible elements here; the rest are discussed in the following sections.</p>
-        <p>In this example, our Finale translator produces the following MIDI-compatible attributes:</p>
+        <p>The <a href="../../musicxml-reference/elements/attributes/">&lt;attributes&gt;</a> element contains information about time signatures, key signatures, transpositions, clefs, and other musical data that is usually specified at the beginning of a piece or at the start of a measure. We discuss the MIDI-compatible elements here. Other elements like &lt;clef&gt; and &lt;staves&gt; are discussed later in this tutorial.</p>
+        <p>In this example, we have the following MIDI-compatible attributes:</p>
 <p><pre xml:space="preserve">  &lt;attributes&gt;
     &lt;divisions&gt;24&lt;/divisions&gt;
-      &lt;key&gt;
-        &lt;fifths&gt;-3&lt;/fifths&gt;
-        &lt;mode&gt;minor&lt;/mode&gt;
-      &lt;/key&gt;
+    &lt;key&gt;
+      &lt;fifths&gt;-3&lt;/fifths&gt;
+      &lt;mode&gt;minor&lt;/mode&gt;
+    &lt;/key&gt;
     &lt;time&gt;
       &lt;beats&gt;3&lt;/beats&gt;
       &lt;beat-type&gt;4&lt;/beat-type&gt;
@@ -118,11 +118,11 @@
   &lt;/attributes&gt;</pre></p>
         <h3 id="divisions">Divisions</h3>
         <p>Musical durations are commonly referred to as fractions: whole notes, half notes, quarter notes, and the like. While each musical note could have a fraction associated with it, MusicXML instead follows MIDI by specifying the number of divisions per quarter note at the start of a musical part, and then specifying note durations in terms of these divisions.</p>
-        <p>MusicXML allows the <a href="../../musicxml-reference/elements/trill-mark/">&lt;divisions&gt;</a> element value to change in the middle of a part. But most software will probably find it easiest to compute one divisions value per part and put that at the beginning of the first measure. The divisions value of 24 in this example allows for both triplet eighth notes (duration of 8) and regular sixteenth notes (duration of 6).</p>
+        <p>MusicXML allows the <a href="../../musicxml-reference/elements/trill-mark/">&lt;divisions&gt;</a> element value to change in the middle of a part. However for the broadest app compatibility, it is best to compute just one &lt;divisions&gt; value per part, placed at the beginning of the first measure. The divisions value of 24 in this example allows for both triplet eighth notes (being divisible by 3) and regular sixteenth notes (being divisible by 4).</p>
         <h3 id="key">Key</h3>
-        <p>Standard key signatures are represented very much like MIDI key signatures. The <a href="../../musicxml-reference/elements/fifths/">&lt;fifths&gt;</a> element specifies the number of flats or sharps in the key signature - negative for flats, positive for sharps. The fifths name indicates that this value represents the key signature's position on the circle of fifths. MusicXML uses the <a href="../../musicxml-reference/elements/mode/">&lt;mode&gt;</a> element to indicate major or minor key signatures.</p>
+        <p>Standard key signatures are represented like MIDI key signatures. The <a href="../../musicxml-reference/elements/fifths/">&lt;fifths&gt;</a> element specifies the number of flats or sharps in the key signature - negative for flats, positive for sharps. The fifths name indicates that this value represents the key signature's position on the circle of fifths. MusicXML uses the <a href="../../musicxml-reference/elements/mode/">&lt;mode&gt;</a> element to indicate major or minor key signatures.</p>
         <h3 id="time">Time</h3>
-        <p>Standard time signatures are represented more simply in MusicXML than in MIDI. The <a href="../../musicxml-reference/elements/beats/">&lt;beats&gt;</a> element represents the time signature numerator, and the <a href="../../musicxml-reference/elements/beat-type/">&lt;beat-type&gt;</a> element represents the time signature denominator (vs. a log denominator in MIDI).</p>
+        <p>Standard time signatures are represented more directly in MusicXML than in MIDI 1.0. The <a href="../../musicxml-reference/elements/beats/">&lt;beats&gt;</a> element represents the time signature numerator, and the <a href="../../musicxml-reference/elements/beat-type/">&lt;beat-type&gt;</a> element represents the time signature denominator. Many variations are possible, including composite and interchangeable time signatures.</p>
         <h3 id="transpose">Transpose</h3>
         <p>If you are writing a part for a transposing instrument, the transposition must be specified in MusicXML in order for the sound output to be correct. The <a href="../../musicxml-reference/elements/transpose/">&lt;transpose&gt;</a> element represents what must be added to the written pitch to get the correct sounding pitch.</p>
         <p>The <a href="../../musicxml-reference/elements/chromatic/">&lt;chromatic&gt;</a> element, representing the number of chromatic steps to add to the written pitch, is the one required element. The <a href="../../musicxml-reference/elements/diatonic/">&lt;diatonic&gt;</a>, <a href="../../musicxml-reference/elements/octave-change/">&lt;octave-change&gt;</a>, and <a href="../../musicxml-reference/elements/double/">&lt;double&gt;</a> elements are optional elements.</p>
@@ -150,7 +150,7 @@
     &lt;/lyric&gt;
   &lt;/note&gt;</pre></p>
         <p>In MIDI, a pitch is represented by a single number. MusicXML divides pitch into three parts: the <a href="../../musicxml-reference/elements/step/">&lt;step&gt;</a> element (A, B, C, D, E, F, or G), an optional <a href="../../musicxml-reference/elements/alter/">&lt;alter&gt;</a> element (-1 for flat, 1 for sharp), and an <a href="../../musicxml-reference/elements/octave/">&lt;octave&gt;</a> element (4 for the octave starting with middle C).</p>
-        <p>The <a href="../../musicxml-reference/elements/pitch/">&lt;pitch&gt;</a> element represents the pitch that is played, not what is notated, so an &lt;alter&gt; element must be included even if it represents a flat or sharp that is part of the key signature. This is why the E-flat contains an &lt;alter&gt; element, though there is no accidental on the note.</p>
+<p>The <a href="../../musicxml-reference/elements/pitch/">&lt;pitch&gt;</a> element requires an &lt;alter&gt; element, even if the accidental is already in the key signature. Although the &lt;alter&gt; element does not change how the pitch is notated, it ensures proper playback and transposition. This is why the E-flat contains an &lt;alter&gt; element, though there is no accidental on the note.</p>
         <p>Alter values of -2 and 2 can be used for double-flat and double-sharp. Decimal values can be used for microtones (e.g., 0.5 for a quarter-tone sharp), but not all programs may convert this into MIDI pitch-bend data.</p>
         <p>For rests, a <a href="../../musicxml-reference/elements/rest/">&lt;rest&gt;</a> element is used instead of the pitch element. The whole rest in 3/4 that begins the voice part is represented as:</p>
         <p><pre xml:space="preserve">  &lt;note&gt;
