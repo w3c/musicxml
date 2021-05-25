@@ -38745,11 +38745,11 @@
     "pk": 26,
     "fields": {
         "name": "<key> (Traditional)",
-        "slug": "traditional-key",
+        "slug": "key-element-traditional",
         "schema": 1,
         "blurb": "",
         "document": "<metadiff><key>\r\n          <fifths>-3</fifths>\r\n          <mode>major</mode>\r\n        </key></metadiff>",
-        "image_url": "/static/examples/traditional-key.png",
+        "image_url": "/static/examples/key-element-traditional.png",
         "is_featured": false
     }
 },
@@ -38771,11 +38771,11 @@
     "pk": 28,
     "fields": {
         "name": "<key> (Non-Traditional)",
-        "slug": "non-traditional-key",
+        "slug": "key-element-non-traditional",
         "schema": 1,
         "blurb": "",
         "document": "<metadiff><key>\r\n          <key-step>B</key-step>\r\n          <key-alter>-1</key-alter>\r\n          <key-accidental>quarter-flat</key-accidental>\r\n          <key-step>E</key-step>\r\n          <key-alter>-2</key-alter>\r\n          <key-accidental>slash-flat</key-accidental>\r\n          <key-step>A</key-step>\r\n          <key-alter>-2</key-alter>\r\n          <key-accidental>slash-flat</key-accidental>\r\n          <key-step>F</key-step>\r\n          <key-alter>2</key-alter>\r\n          <key-accidental>sharp</key-accidental>\r\n        </key></metadiff>",
-        "image_url": "/static/examples/non-traditional-key.png",
+        "image_url": "/static/examples/key-element-non-traditional.png",
         "is_featured": false
     }
 },
@@ -39581,7 +39581,7 @@
         "schema": 1,
         "blurb": "",
         "document": "<harmony>\r\n        <root>\r\n          <root-step>C</root-step>\r\n        </root>\r\n        <kind halign=\"center\" text=\"\">major</kind>\r\n        <bass arrangement=\"horizontal\">\r\n          <metadiff><bass-step>G</bass-step></metadiff>\r\n        </bass>\r\n      </harmony>",
-        "image_url": "/static/examples/bass-element.png",
+        "image_url": "/static/examples/bass-step-element.png",
         "is_featured": false
     }
 },
