@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-	MusicXML timepart.xsl stylesheet
+  MusicXML timepart.xsl stylesheet
 
-	Version 4.0 Draft
-	
-	Copyright © 2004-2021 the Contributors to the MusicXML 
-	Specification, published by the W3C Music Notation Community
-	Group under the W3C Community Contributor License Agreement 
-	(CLA): 
-	
-	   https://www.w3.org/community/about/agreements/cla/
-	
-	A human-readable summary is available:
-	
-	   https://www.w3.org/community/about/agreements/cla-deed/
+  Version 4.0 Draft
+
+  Copyright © 2004-2021 the Contributors to the MusicXML 
+  Specification, published by the W3C Music Notation Community
+  Group under the W3C Community Contributor License Agreement 
+  (CLA): 
+
+     https://www.w3.org/community/about/agreements/cla/
+
+  A human-readable summary is available:
+
+     https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
 <!-- 
-	Timepart.xsl is an XSLT stylesheet for transforming
-	timewise MusicXML scores into partwise scores. Thus
-	instead of having parts included within each measure,
-	the transformed score includes measures within each part.
-	This type of transformation allows the 2-dimensional
-	nature of a musical score to be adequately represented
-	within a hierarchical format like XML.
+  Timepart.xsl is an XSLT stylesheet for transforming
+  timewise MusicXML scores into partwise scores. Thus
+  instead of having parts included within each measure,
+  the transformed score includes measures within each part.
+  This type of transformation allows the 2-dimensional
+  nature of a musical score to be adequately represented
+  within a hierarchical format like XML.
 -->
 
 <xsl:stylesheet
-	version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <!--
-    XML output, with a DOCTYPE refering the partwise DTD.
+    XML output, with a DOCTYPE referring the partwise DTD.
     Here we use the full Internet URL.
   -->
   <xsl:output method="xml" indent="yes" encoding="UTF-8"
-	omit-xml-declaration="no" standalone="no"
-	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
-	doctype-public="-//Recordare//DTD MusicXML 4.0 Partwise//EN" />
+    omit-xml-declaration="no" standalone="no"
+    doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
+    doctype-public="-//Recordare//DTD MusicXML 4.0 Partwise//EN"/>
 
   <!--
     For the root, only look for score-partwise and
@@ -70,8 +70,8 @@
   -->
   <xsl:template match="*|@*|comment()|processing-instruction()">
     <xsl:copy><xsl:apply-templates
-		select="*|@*|comment()|processing-instruction()|text()"
-	/></xsl:copy>
+      select="*|@*|comment()|processing-instruction()|text()"
+    /></xsl:copy>
   </xsl:template>
 
   <!--

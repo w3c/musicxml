@@ -106,40 +106,40 @@
 <p><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;!--
-	MusicXML to31.xsl stylesheet
+  MusicXML to31.xsl stylesheet
 
-	Version 4.0 Draft
-	
-	Copyright © 2004-2021 the Contributors to the MusicXML 
-	Specification, published by the W3C Music Notation Community
-	Group under the W3C Community Contributor License Agreement 
-	(CLA): 
-	
-	   https://www.w3.org/community/about/agreements/cla/
-	
-	A human-readable summary is available:
-	
-	   https://www.w3.org/community/about/agreements/cla-deed/
+  Version 4.0 Draft
+
+  Copyright © 2004-2021 the Contributors to the MusicXML 
+  Specification, published by the W3C Music Notation Community
+  Group under the W3C Community Contributor License Agreement 
+  (CLA): 
+
+     https://www.w3.org/community/about/agreements/cla/
+
+  A human-readable summary is available:
+
+     https://www.w3.org/community/about/agreements/cla-deed/
 --&gt;
 
 &lt;!--
-	To31.xsl converts from MusicXML 4.0 to 3.1 for
-	compatibility with older products.
+  To31.xsl converts from MusicXML 4.0 to 3.1 for
+  compatibility with older products.
 --&gt;
 
 &lt;xsl:stylesheet
-	version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
 
   &lt;!--
-    XML output, with a DOCTYPE refering the partwise DTD.
+    XML output, with a DOCTYPE referring the partwise DTD.
     Here we use the full Internet URL.
   --&gt;
 
   &lt;xsl:output method="xml" indent="yes" encoding="UTF-8"
-	omit-xml-declaration="no" standalone="no"
-	doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
-	doctype-public="-//Recordare//DTD MusicXML 3.1 Partwise//EN" /&gt;
+    omit-xml-declaration="no" standalone="no"
+    doctype-system="http://www.musicxml.org/dtds/partwise.dtd"
+    doctype-public="-//Recordare//DTD MusicXML 3.1 Partwise//EN"/&gt;
 
   &lt;!--
     For the root, only look for score-partwise. Anything else
