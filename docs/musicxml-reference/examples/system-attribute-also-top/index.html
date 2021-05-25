@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>The &lt;staff&gt; element | MusicXML 4.0</title>
+<title>MusicXML example: system attribute (also-top) | MusicXML 4.0</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
+
+<style>
+.diff * { font-weight: bold; color: blue !important; }
+</style>
 
 </head>
 
@@ -43,9 +47,9 @@
     </ul>
     <li><b><a href="../../">MusicXML Reference</a></b></li>
     <ul>
-        <li><a href="../">Elements</a></li>
+        <li><a href="../../elements/">Elements</a></li>
         <li><a href="../../data-types/">Data Types</a></li>
-        <li><a href="../../examples/">Examples</a></li>
+        <li><a href="../">Examples</a></li>
     </ul>
     <li><b><a href="../../../container-reference/">Container Reference</a></b></li>
     <ul>
@@ -98,55 +102,30 @@
 <p class="breadcrumb">
     <a href="../../../">MusicXML 4.0</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
-    <a href="../">Elements</a> &gt;
-    staff
+    <a href="../">Examples</a> &gt;
+    system attribute (also-top)
 </p>
 
-<h1>The &lt;staff&gt; element</h1>
-
-<p>Parent elements:
-    
-        
-        <a href="../direction/">&lt;direction&gt;</a>, 
-        
-        <a href="../forward/">&lt;forward&gt;</a>, 
-        
-        <a href="../harmony/">&lt;harmony&gt;</a>, 
-        
-        <a href="../note/">&lt;note&gt;</a>
-        
-    
-</p>
+<h1>system attribute (also-top)</h1>
 
 
-    <p><img src="../../../static/elements/staff.png"/></p>
-
-<p>Staff assignment is only needed for music notated on multiple staves. Staff values are numbers, with 1 referring to the top-most staff in a part.</p>
+<p><img src="../../../static/examples/system-attribute-also-top.png"></p>
 
 
-<h2 id="content">Content</h2>
 
-
-    <p><a href="../../data-types/xsd-positiveInteger/">positiveInteger</a></p>
-
-
-<h2 id="attributes">Attributes</h2>
-
-
-<p>None.</p>
+<p>The also-top value of the system attribute indicates that the &lt;direction&gt; element should appear on this staff in addition to the top staff of the system.</p>
 
 
 
 
 
-<h2 id="examples">Examples</h2>
 
-<p>This element is used in the following examples:</p>
-<p>
-    <nobr><a href="../../examples/arpeggiate-element/">&lt;arpeggiate&gt;</a></nobr>, <nobr><a href="../../examples/backup-element/">&lt;backup&gt;</a></nobr>, <nobr><a href="../../examples/forward-element/">&lt;forward&gt;</a></nobr>, <nobr><a href="../../examples/glissando-element-multiple/">&lt;glissando&gt; (Multiple)</a></nobr>, <nobr><a href="../../examples/glissando-element-single/">&lt;glissando&gt; (Single)</a></nobr>, <nobr><a href="../../examples/non-arpeggiate-element/">&lt;non-arpeggiate&gt;</a></nobr>, <nobr><a href="../../examples/pedal-element-lines/">&lt;pedal&gt; (Lines)</a></nobr>, <nobr><a href="../../examples/pedal-element-symbols/">&lt;pedal&gt; (Symbols)</a></nobr>, <nobr><a href="../../examples/pitched-element/">&lt;pitched&gt;</a></nobr>, <nobr><a href="../../examples/staff-element/">&lt;staff&gt;</a></nobr>, <nobr><a href="../../examples/tremolo-element-double/">&lt;tremolo&gt; (Double)</a></nobr>, <nobr><a href="../../examples/system-attribute-also-top/">system attribute (also-top)</a></nobr>, <nobr><a href="../../examples/tutorial-apres-un-reve/">Tutorial: Après un rêve</a></nobr>, <nobr><a href="../../examples/tutorial-chopin-prelude/">Tutorial: Chopin Prelude</a></nobr>
-</p>
-
-
+<div class="xmlmarkup"><span class=" nodiff"></span><span class="diff">&lt;<a class="tag" href="../../elements/direction/">direction</a> <span class="attr">directive="<a href="../../data-types/yes-no/">yes</a>"</span> <span class="attr">placement="<a href="../../data-types/above-below/">above</a>"</span> <span class="attr">system="<a href="../../data-types/system-relation/">also-top</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/direction-type/">direction-type</a>&gt;
+      &lt;<a class="tag" href="../../elements/words/">words</a> <span class="attr">default-y="<a href="../../data-types/tenths/">40</a>"</span> <span class="attr">font-size="<a href="../../data-types/font-size/">10</a>"</span> <span class="attr">font-weight="<a href="../../data-types/font-weight/">bold</a>"</span>&gt;<span class="xmltxt">Andantino</span>&lt;/<a class="tag" href="../../elements/words/">words</a>&gt;
+   &lt;/<a class="tag" href="../../elements/direction-type/">direction-type</a>&gt;
+   &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
+&lt;/<a class="tag" href="../../elements/direction/">direction</a>&gt;</span></div>
 
     </main>
 </div>

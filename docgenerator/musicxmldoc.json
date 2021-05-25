@@ -42409,6 +42409,32 @@
     }
 },
 {
+    "model": "spec.exampledocument",
+    "pk": 316,
+    "fields": {
+        "name": "system attribute (only-top)",
+        "slug": "system-attribute-only-top",
+        "schema": 1,
+        "blurb": "The only-top value of the system attribute indicates that the <direction> element should only appear of the top staff of the system.",
+        "document": "<metadiff><direction directive=\"yes\" placement=\"above\" system=\"only-top\">\r\n        <direction-type>\r\n          <words default-y=\"40\" font-size=\"10\" font-weight=\"bold\">Andantino</words>\r\n        </direction-type>\r\n      </direction></metadiff>",
+        "image_url": "/static/examples/system-attribute-only-top.png",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 317,
+    "fields": {
+        "name": "system attribute (also-top)",
+        "slug": "system-attribute-also-top",
+        "schema": 1,
+        "blurb": "The also-top value of the system attribute indicates that the <direction> element should appear on this staff in addition to the top staff of the system.",
+        "document": "<metadiff><direction directive=\"yes\" placement=\"above\" system=\"also-top\">\r\n        <direction-type>\r\n          <words default-y=\"40\" font-size=\"10\" font-weight=\"bold\">Andantino</words>\r\n        </direction-type>\r\n        <staff>1</staff>\r\n      </direction></metadiff>",
+        "image_url": "/static/examples/system-attribute-also-top.png",
+        "is_featured": false
+    }
+},
+{
     "model": "spec.exampledocumentelement",
     "pk": 2776,
     "fields": {
@@ -67380,6 +67406,69 @@
     "fields": {
         "example": 315,
         "element": 853,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5571,
+    "fields": {
+        "example": 316,
+        "element": 528,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5572,
+    "fields": {
+        "example": 316,
+        "element": 627,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5573,
+    "fields": {
+        "example": 316,
+        "element": 655,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5574,
+    "fields": {
+        "example": 317,
+        "element": 528,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5575,
+    "fields": {
+        "example": 317,
+        "element": 280,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5576,
+    "fields": {
+        "example": 317,
+        "element": 627,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5577,
+    "fields": {
+        "example": 317,
+        "element": 655,
         "element_name": ""
     }
 },
