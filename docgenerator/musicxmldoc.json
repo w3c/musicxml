@@ -55,7 +55,7 @@
     "fields": {
         "site_name": "MusicXML 4.0",
         "xml_format_name": "MusicXML",
-        "sidebar_html": "<img src=\"/musicxml/static/images/back-cg-draft.png\"/>\r\n<ul>\r\n    <li><b><a href=\"/\"/>Introduction</a></b></li>\r\n    <li><b><a href=\"/tutorial/introduction/\">Tutorial</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/tutorial/hello-world/\">\"Hello World\"</a></li>\r\n        <li><a href=\"/tutorial/structure-of-musicxml-files/\">File Structure</a></li>\r\n        <li><a href=\"/tutorial/midi-compatible-part/\">MIDI-Compatible Part</a></li>\r\n        <li><a href=\"/tutorial/notation-basics/\">Notation Basics</a></li>\r\n        <li><a href=\"/tutorial/chord-symbols-and-diagrams/\">Chord Symbols</a></li>\r\n        <li><a href=\"/tutorial/tablature/\">Tablature</a></li>\r\n        <li><a href=\"/tutorial/percussion/\">Percussion</a></li>\r\n        <li><a href=\"/tutorial/compressed-mxl-files/\">Compressed .MXL Files</a></li>\r\n        <li><a href=\"/tutorial/code-generation/\">Code Generation</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/musicxml-reference/\">MusicXML Reference</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/musicxml-reference/elements/\">Elements</a></li>\r\n        <li><a href=\"/musicxml-reference/data-types/\">Data Types</a></li>\r\n        <li><a href=\"/musicxml-reference/examples/\">Examples</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/container-reference/\">Container Reference</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/container-reference/elements/\">Elements</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/opus-reference/\">Opus Reference</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/opus-reference/elements/\">Elements</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/sounds-reference/\">Sounds Reference</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/sounds-reference/elements/\">Elements</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/listings/overview/\">File Listings</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/listings/musicxml.xsd/\">musicxml.xsd</a></li>\r\n        <li><a href=\"/listings/xlink.xsd/\">xlink.xsd</a></li>\r\n        <li><a href=\"/listings/xml.xsd/\">xml.xsd</a></li>\r\n        <li><a href=\"/listings/container.xsd/\">container.xsd</a></li>\r\n        <li><a href=\"/listings/opus.xsd/\">opus.xsd</a></li>\r\n        <li><a href=\"/listings/sounds.xsd/\">sounds.xsd</a></li>\r\n        <li><a href=\"/listings/sounds.xml/\">sounds.xml</a></li>\r\n        <li><a href=\"/listings/catalog.xml/\">catalog.xml</a></li>\r\n        <li><a href=\"/listings/to31.xsl/\">to31.xsl</a></li>\r\n        <li><a href=\"/listings/to30.xsl/\">to30.xsl</a></li>\r\n        <li><a href=\"/listings/to20.xsl/\">to20.xsl</a></li>\r\n        <li><a href=\"/listings/to11.xsl/\">to11.xsl</a></li>\r\n        <li><a href=\"/listings/to10.xsl/\">to10.xsl</a></li>\r\n        <li><a href=\"/listings/parttime.xsl/\">parttime.xsl</a></li>\r\n        <li><a href=\"/listings/timepart.xsl/\">timepart.xsl</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/version-history/\">Version History</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/version-history/40/\">Version 4.0</a></li>\r\n        <li><a href=\"/version-history/31/\">Version 3.1</a></li>\r\n        <li><a href=\"/version-history/30/\">Version 3.0</a></li>\r\n        <li><a href=\"/version-history/20/\">Version 2.0</a></li>\r\n        <li><a href=\"/version-history/11/\">Version 1.1</a></li>\r\n        <li><a href=\"/version-history/10/\">Version 1.0</a></li>\r\n    </ul>\r\n</ul>"
+        "sidebar_html": "<img src=\"/musicxml/static/images/back-cg-draft.png\"/>\r\n<ul>\r\n    <li><b><a href=\"/\"/>Introduction</a></b></li>\r\n    <li><b><a href=\"/tutorial/introduction/\">Tutorial</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/tutorial/hello-world/\">\"Hello World\"</a></li>\r\n        <li><a href=\"/tutorial/structure-of-musicxml-files/\">File Structure</a></li>\r\n        <li><a href=\"/tutorial/midi-compatible-part/\">MIDI-Compatible Part</a></li>\r\n        <li><a href=\"/tutorial/notation-basics/\">Notation Basics</a></li>\r\n        <li><a href=\"/tutorial/chord-symbols-and-diagrams/\">Chord Symbols</a></li>\r\n        <li><a href=\"/tutorial/tablature/\">Tablature</a></li>\r\n        <li><a href=\"/tutorial/percussion/\">Percussion</a></li>\r\n        <li><a href=\"/tutorial/compressed-mxl-files/\">Compressed .MXL Files</a></li>\r\n        <li><a href=\"/tutorial/code-generation/\">Code Generation</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/musicxml-reference/\">MusicXML Reference</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/musicxml-reference/elements/\">Elements</a></li>\r\n        <li><a href=\"/musicxml-reference/data-types/\">Data Types</a></li>\r\n        <li><a href=\"/musicxml-reference/examples/\">Examples</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/container-reference/\">Container Reference</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/container-reference/elements/\">Elements</a></li>\r\n        <li><a href=\"/container-reference/examples/\">Examples</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/opus-reference/\">Opus Reference</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/opus-reference/elements/\">Elements</a></li>\r\n        <li><a href=\"/opus-reference/data-types/\">Data Types</a></li>\r\n        <li><a href=\"/opus-reference/examples/\">Examples</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/sounds-reference/\">Sounds Reference</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/sounds-reference/elements/\">Elements</a></li>\r\n        <li><a href=\"/sounds-reference/data-types/\">Data Types</a></li>\r\n        <li><a href=\"/sounds-reference/examples/\">Examples</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/listings/overview/\">File Listings</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/listings/musicxml.xsd/\">musicxml.xsd</a></li>\r\n        <li><a href=\"/listings/xlink.xsd/\">xlink.xsd</a></li>\r\n        <li><a href=\"/listings/xml.xsd/\">xml.xsd</a></li>\r\n        <li><a href=\"/listings/container.xsd/\">container.xsd</a></li>\r\n        <li><a href=\"/listings/opus.xsd/\">opus.xsd</a></li>\r\n        <li><a href=\"/listings/sounds.xsd/\">sounds.xsd</a></li>\r\n        <li><a href=\"/listings/sounds.xml/\">sounds.xml</a></li>\r\n        <li><a href=\"/listings/catalog.xml/\">catalog.xml</a></li>\r\n        <li><a href=\"/listings/to31.xsl/\">to31.xsl</a></li>\r\n        <li><a href=\"/listings/to30.xsl/\">to30.xsl</a></li>\r\n        <li><a href=\"/listings/to20.xsl/\">to20.xsl</a></li>\r\n        <li><a href=\"/listings/to11.xsl/\">to11.xsl</a></li>\r\n        <li><a href=\"/listings/to10.xsl/\">to10.xsl</a></li>\r\n        <li><a href=\"/listings/parttime.xsl/\">parttime.xsl</a></li>\r\n        <li><a href=\"/listings/timepart.xsl/\">timepart.xsl</a></li>\r\n    </ul>\r\n    <li><b><a href=\"/version-history/\">Version History</a></b></li>\r\n    <ul>\r\n        <li><a href=\"/version-history/40/\">Version 4.0</a></li>\r\n        <li><a href=\"/version-history/31/\">Version 3.1</a></li>\r\n        <li><a href=\"/version-history/30/\">Version 3.0</a></li>\r\n        <li><a href=\"/version-history/20/\">Version 2.0</a></li>\r\n        <li><a href=\"/version-history/11/\">Version 1.1</a></li>\r\n        <li><a href=\"/version-history/10/\">Version 1.0</a></li>\r\n    </ul>\r\n</ul>"
     }
 },
 {
@@ -91,7 +91,9 @@
         "max_value": "",
         "regex": "",
         "min_length": null,
-        "union_types": []
+        "union_types": [
+            161
+        ]
     }
 },
 {
@@ -2937,6 +2939,44 @@
         "is_featured": false,
         "xsd_name": "",
         "base_type": 11,
+        "min_value": "",
+        "max_value": "",
+        "regex": "",
+        "min_length": null,
+        "union_types": []
+    }
+},
+{
+    "model": "spec.datatype",
+    "pk": 161,
+    "fields": {
+        "name": "yes-no",
+        "slug": "yes-no-opus",
+        "schema": 2,
+        "description": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
+        "is_featured": false,
+        "xsd_name": "",
+        "base_type": 2,
+        "min_value": "",
+        "max_value": "",
+        "regex": "",
+        "min_length": null,
+        "union_types": [
+            2
+        ]
+    }
+},
+{
+    "model": "spec.datatype",
+    "pk": 162,
+    "fields": {
+        "name": "yes-no",
+        "slug": "yes-no-sounds",
+        "schema": 4,
+        "description": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
+        "is_featured": false,
+        "xsd_name": "",
+        "base_type": 2,
         "min_value": "",
         "max_value": "",
         "regex": "",
@@ -9202,6 +9242,46 @@
         "value": "none",
         "description": "The behavior of an application traversing to the ending resource is unconstrained by this specification. No other markup is present to help the application determine the appropriate behavior.",
         "order": 4
+    }
+},
+{
+    "model": "spec.datatypeoption",
+    "pk": 629,
+    "fields": {
+        "data_type": 161,
+        "value": "yes",
+        "description": "True.",
+        "order": 1
+    }
+},
+{
+    "model": "spec.datatypeoption",
+    "pk": 630,
+    "fields": {
+        "data_type": 161,
+        "value": "no",
+        "description": "False.",
+        "order": 2
+    }
+},
+{
+    "model": "spec.datatypeoption",
+    "pk": 631,
+    "fields": {
+        "data_type": 162,
+        "value": "yes",
+        "description": "True.",
+        "order": 1
+    }
+},
+{
+    "model": "spec.datatypeoption",
+    "pk": 632,
+    "fields": {
+        "data_type": 162,
+        "value": "no",
+        "description": "False.",
+        "order": 2
     }
 },
 {
@@ -29790,7 +29870,7 @@
         "name": "primary",
         "is_required": false,
         "description": "Multiple &lt;any&gt; elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which of the &lt;any&gt; elements is primary when mapping from a MusicXML sound id.",
-        "data_type": 5
+        "data_type": 162
     }
 },
 {
@@ -29802,7 +29882,7 @@
         "name": "primary",
         "is_required": false,
         "description": "Multiple &lt;solo&gt; and &lt;ensemble&gt; elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which &lt;solo&gt; element is primary when mapping from a MusicXML sound id.",
-        "data_type": 5
+        "data_type": 162
     }
 },
 {
@@ -29826,7 +29906,7 @@
         "name": "primary",
         "is_required": false,
         "description": "Multiple &lt;solo&gt; and &lt;ensemble&gt; elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which &lt;ensemble&gt; element is primary when mapping from a MusicXML sound id.",
-        "data_type": 5
+        "data_type": 162
     }
 },
 {
@@ -29850,7 +29930,7 @@
         "name": "primary",
         "is_required": false,
         "description": "Used when multiple &lt;sound&gt; elements map to the same application or library ID. In this case, it indicates which of the MusicXML IDs is primary when mapping to a MusicXML sound id.",
-        "data_type": 5
+        "data_type": 162
     }
 },
 {
@@ -30018,7 +30098,7 @@
         "name": "new-page",
         "is_required": false,
         "description": "The new-page attribute is used to indicate if the first page of the score is different than the last page of the previous score. If new-page is \"yes\", then a different page is used; if \"no\", then the same page is used. The default value is implementation-dependent.",
-        "data_type": 5
+        "data_type": 161
     }
 },
 {
