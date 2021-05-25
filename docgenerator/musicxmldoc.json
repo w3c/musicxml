@@ -42290,6 +42290,32 @@
     }
 },
 {
+    "model": "spec.exampledocument",
+    "pk": 313,
+    "fields": {
+        "name": "<opus-link>",
+        "slug": "opus-link-element",
+        "schema": 2,
+        "blurb": "",
+        "document": "<opus version=\"4.0\">\r\n    <title>Fidelio</title>\r\n    <metadiff><opus-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"aufzug1.musicxml\"/>\r\n    <opus-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"aufzug2.musicxml\"/></metadiff>\r\n</opus>",
+        "image_url": "",
+        "is_featured": false
+    }
+},
+{
+    "model": "spec.exampledocument",
+    "pk": 314,
+    "fields": {
+        "name": "<score>",
+        "slug": "score-element",
+        "schema": 2,
+        "blurb": "",
+        "document": "<opus version=\"4.0\">\r\n    <title>Fidelio</title>\r\n    <metadiff><score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr01.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr02.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr03.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr04.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr05.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr06.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr07.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr08.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr09.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr10.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr11.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr12.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr13.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr14.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr15.musicxml\"/>\r\n    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"nr16.musicxml\"/></metadiff>\r\n</opus>",
+        "image_url": "",
+        "is_featured": false
+    }
+},
+{
     "model": "spec.exampledocumentelement",
     "pk": 2776,
     "fields": {
@@ -67180,6 +67206,60 @@
     "fields": {
         "example": 312,
         "element": 58,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5562,
+    "fields": {
+        "example": 313,
+        "element": 857,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5563,
+    "fields": {
+        "example": 313,
+        "element": 858,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5564,
+    "fields": {
+        "example": 313,
+        "element": 855,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5565,
+    "fields": {
+        "example": 314,
+        "element": 857,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5566,
+    "fields": {
+        "example": 314,
+        "element": 858,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5567,
+    "fields": {
+        "example": 314,
+        "element": 854,
         "element_name": ""
     }
 },
