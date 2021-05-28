@@ -244,9 +244,13 @@
 
 <p><ul>
 <li>An &lt;identification&gt; element, helpful if individual parts come from different sources.</li>
+<li>One or more <a href="../../musicxml-reference/elements/part-link/">&lt;part-link&gt;</a> elements, used to link a part document from a score document.</li>
+<li>A <a href="../../musicxml-reference/elements/part-name-display/">&lt;part-name-display&gt;</a> element for exact formatting of a part name.</li>
 <li>A <a href="../../musicxml-reference/elements/part-abbreviation/">&lt;part-abbreviation&gt;</a> element. Often, you will use the &lt;part-name&gt; for the name used at the start of the score, and the &lt;part-abbreviation&gt; for the abbreviated name used in succeeding systems.</li>
+<li>A <a href="../../musicxml-reference/elements/part-abbreviation-display/">&lt;part-abbreviation-display&gt;</a> element for exact formatting of a part abbreviation.</li>
 <li>A <a href="../../musicxml-reference/elements/group/">&lt;group&gt;</a> element, used when different parts can be used for different purposes. Different parts may be used for a printed score, a printed part, a MIDI sound file, or for data analysis.</li>
 <li>One or more <a href="../../musicxml-reference/elements/score-instrument/">&lt;score-instrument&gt;</a> elements, used to describe instrument sounds and virtual instrument settings, as well as to define multiple instruments within a &lt;score-part&gt;. This element serves as a reference point for MIDI instrument changes.</li>
+<li>One or more <a href="../../musicxml-reference/elements/player/">&lt;player&gt;</a> elements for use in listening applications.</li>
 <li>One or more <a href="../../musicxml-reference/elements/midi-device/">&lt;midi-device&gt;</a> elements for identifying the MIDI devices or ports that are being used in a multi-port configuration. Multiple devices let you get beyond MIDI 1.0&#8217;s 16-channel barrier.</li>
 <li>One or more <a href="../../musicxml-reference/elements/midi-instrument/">&lt;midi-instrument&gt;</a> elements, specifying the initial MIDI setup for each &lt;score-instrument&gt; within a part.</li>
 </ul></p>
