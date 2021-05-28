@@ -134,7 +134,7 @@
         &lt;/degree&gt;
       &lt;/harmony&gt;</pre></p>
         <p>The <a href="../../musicxml-reference/elements/degree/">&lt;degree&gt;</a> element shows that we are adding an unaltered 9th degree to the chord, notating it with just the degree value (not as “add 9”) and with the added degrees in parentheses. The value of the <a href="../../musicxml-reference/elements/degree-type/">&lt;degree-type&gt;</a> element can be add, alter, or subtract. If the &lt;degree-type&gt; value is alter or subtract, the <a href="../../musicxml-reference/elements/degree-alter/">&lt;degree-alter&gt;</a> value is relative to the degree already in the chord based on its kind element. If the &lt;degree-type&gt; value is add, the &lt;degree-alter&gt; value is relative to a dominant chord.</p>
-        <p>MusicXML’s harmony element contains additional features to support formatting and harmonic analysis. Full details are available in the reference documentation.</p>
+        <p>MusicXML’s &lt;harmony&gt; element contains additional features to support formatting and harmonic analysis. Full details are available in the reference documentation.</p>
         <h2 id="diagrams">Chord Diagrams</h2>
         <p>Chord diagrams, also known as chord frames, are used to indicate how a chord is played on a fretted instrument such as the guitar. The vertical lines in the chord diagrams represent strings, while the horizontal spaces represent frets. An x above a string indicates that the string is muted, while an o above a string represents an open string.</p>
         <p>MusicXML uses the <a href="../../musicxml-reference/elements/frame/">&lt;frame&gt;</a> element to represent chord diagrams. Let us look at the &lt;harmony&gt; element for the first G6 chord again, this time including the &lt;frame&gt; element for the chord diagram:</p>
@@ -238,7 +238,7 @@
           &lt;/frame-note&gt;
         &lt;/frame&gt;
       &lt;/harmony&gt;</pre></p>
-        <p>The <a href="../../musicxml-reference/elements/fingering/">&lt;fingering&gt;</a> element is used to indicate the fingering for each string in the diagram that is neither muted nor open. The <a href="../../musicxml-reference/elements/barre/">&lt;barre&gt;</a> element is used to indicate where a barre symbol starts and stops within the frame. The type is “start” for the lowest-pitched string and “stop” for the highest-pitched string. This corresponds to the left-to-right order from low to high strings that is used in chord diagrams.</p>
+        <p>The <a href="../../musicxml-reference/elements/fingering/">&lt;fingering&gt;</a> element is used to indicate the fingering for each string in the diagram that is neither muted nor open. The <a href="../../musicxml-reference/elements/barre/">&lt;barre&gt;</a> element is used to indicate where a barre symbol starts and stops within the frame. The type is start for the lowest-pitched string and stop for the highest-pitched string. This corresponds to the left-to-right order from low to high strings that is used in chord diagrams.</p>
 
 <p>Next: <a href="../tablature/">Tablature</a>
 
