@@ -3,18 +3,18 @@
 <!--
   MusicXML timepart.xsl stylesheet
 
-  Version 4.0 Draft
-
+  Version 4.0
+  
   Copyright © 2004-2021 the Contributors to the MusicXML 
   Specification, published by the W3C Music Notation Community
-  Group under the W3C Community Contributor License Agreement 
-  (CLA): 
+  Group under the W3C Community Final Specification Agreement 
+  (FSA): 
 
-     https://www.w3.org/community/about/agreements/cla/
+     https://www.w3.org/community/about/agreements/final/
 
   A human-readable summary is available:
 
-     https://www.w3.org/community/about/agreements/cla-deed/
+     https://www.w3.org/community/about/agreements/fsa-deed/
 -->
 
 <!-- 
