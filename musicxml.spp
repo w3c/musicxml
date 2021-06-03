@@ -15,10 +15,7 @@
 		<File FilePath="schema\to31.xsl" HomeFolder="Yes"/>
 	</Folder>
 	<Folder FolderName="XQuery Files" ExtStr="xq;xql;xquery"/>
-	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp">
-		<File FilePath="index.html" HomeFolder="Yes"/>
-		<File FilePath="respec.html" HomeFolder="Yes"/>
-	</Folder>
+	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
 	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd">
 		<File FilePath="schema\attributes.mod" HomeFolder="Yes"/>
 		<File FilePath="schema\barline.mod" HomeFolder="Yes"/>
