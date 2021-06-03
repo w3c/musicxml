@@ -24,6 +24,7 @@
 		<File FilePath="schema\barline.mod" HomeFolder="Yes"/>
 		<File FilePath="schema\common.mod" HomeFolder="Yes"/>
 		<File FilePath="schema\container.dtd" HomeFolder="Yes"/>
+		<File FilePath="schema\container.xsd" HomeFolder="Yes"/>
 		<File FilePath="schema\direction.mod" HomeFolder="Yes"/>
 		<File FilePath="schema\identity.mod" HomeFolder="Yes"/>
 		<File FilePath="schema\layout.mod" HomeFolder="Yes"/>
@@ -36,6 +37,7 @@
 		<File FilePath="schema\partwise.dtd" HomeFolder="Yes"/>
 		<File FilePath="schema\score.mod" HomeFolder="Yes"/>
 		<File FilePath="schema\sounds.dtd" HomeFolder="Yes"/>
+		<File FilePath="schema\sounds.xsd" HomeFolder="Yes"/>
 		<File FilePath="schema\timewise.dtd" HomeFolder="Yes"/>
 		<File FilePath="schema\xlink.xsd" HomeFolder="Yes"/>
 		<File FilePath="schema\xml.xsd" HomeFolder="Yes"/>
