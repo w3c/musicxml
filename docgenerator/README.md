@@ -27,7 +27,7 @@ docgenerator directory of the mnx repository into the
 docgenerator directory of the musicxml repository (the
 directory containing this README file):
 
-- The docgenerator folder
+- The docgenerator folder (another one inside the docgenerator folder)
 - The manage.py file
 - The requirements.txt file
 - The spec folder
@@ -74,7 +74,7 @@ directory.
 6. Import the MusicXML spec data into your local database:
 
 ```
-python manage.py loaddb musicmldata.json
+python manage.py loaddb musicxmldoc.json
 ```
 
 ## Running the site locally
@@ -190,7 +190,7 @@ If you'd like to make an addition or correction to the docs,
 here's our suggested workflow:
 
 1. Make sure your Git checkout is using the latest commit
-from the `master` branch.
+from the `gh-pages` branch.
 
 2. Update your local database with the latest `musicxmldoc.json`
 (see above).

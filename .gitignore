@@ -6,3 +6,5 @@ docgenerator/manage.py
 docgenerator/requirements.txt
 docgenerator/.idea/
 docgenerator/venv/
+venv/
+.idea/
