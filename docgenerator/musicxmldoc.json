@@ -57,7 +57,7 @@
     "model": "spec.siteoptions",
     "pk": 1,
     "fields": {
-        "site_name": "MusicXML 4.0",
+        "site_name": "MusicXML 4.1 Draft",
         "xml_format_name": "MusicXML",
         "sidebar_html": [
             "<img src=\"/static/images/back-cg-final.png\"/>",
@@ -108,6 +108,7 @@
             "        <li><a href=\"/listings/sounds.xsd/\">sounds.xsd</a></li>",
             "        <li><a href=\"/listings/sounds.xml/\">sounds.xml</a></li>",
             "        <li><a href=\"/listings/catalog.xml/\">catalog.xml</a></li>",
+            "        <li><a href=\"/listings/to40.xsl/\">to40.xsl</a></li>",
             "        <li><a href=\"/listings/to31.xsl/\">to31.xsl</a></li>",
             "        <li><a href=\"/listings/to30.xsl/\">to30.xsl</a></li>",
             "        <li><a href=\"/listings/to20.xsl/\">to20.xsl</a></li>",
@@ -118,6 +119,7 @@
             "    </ul>",
             "    <li><b><a href=\"/version-history/\">Version History</a></b></li>",
             "    <ul>",
+            "        <li><a href=\"/version-history/41/\">Version 4.1</a></li>",
             "        <li><a href=\"/version-history/40/\">Version 4.0</a></li>",
             "        <li><a href=\"/version-history/31/\">Version 3.1</a></li>",
             "        <li><a href=\"/version-history/30/\">Version 3.0</a></li>",
@@ -39940,11 +39942,11 @@
         "schema": 1,
         "blurb": "",
         "document": [
-            "<score-partwise version=\"4.0\">",
+            "<score-partwise version=\"4.1\">",
             "  <identification>",
             "    <encoding>",
-            "      <software>Finale v27.0 for Mac</software>",
-            "      <encoding-date>2021-04-16</encoding-date>",
+            "      <software>Finale v28.0 for Mac</software>",
+            "      <encoding-date>2024-04-16</encoding-date>",
             "      <supports element=\"print\" attribute=\"new-system\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"print\" attribute=\"new-page\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"accidental\" type=\"yes\"/>",
@@ -40432,12 +40434,12 @@
         "schema": 1,
         "blurb": "",
         "document": [
-            "<score-partwise version=\"4.0\">",
+            "<score-partwise version=\"4.1\">",
             "  <movement-title>Chord Symbol Example</movement-title>",
             "  <identification>",
             "    <encoding>",
-            "      <software>Finale v27.0 for Mac</software>",
-            "      <encoding-date>2021-04-16</encoding-date>",
+            "      <software>Finale v28.0 for Mac</software>",
+            "      <encoding-date>2024-04-16</encoding-date>",
             "      <supports element=\"print\" attribute=\"new-system\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"print\" attribute=\"new-page\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"accidental\" type=\"yes\"/>",
@@ -40749,11 +40751,11 @@
         "schema": 1,
         "blurb": "",
         "document": [
-            "<score-partwise version=\"4.0\">",
+            "<score-partwise version=\"4.1\">",
             "  <identification>",
             "    <encoding>",
-            "      <software>Finale v27.0 for Mac</software>",
-            "      <encoding-date>2021-04-16</encoding-date>",
+            "      <software>Finale v28.0 for Mac</software>",
+            "      <encoding-date>2024-04-16</encoding-date>",
             "      <supports element=\"print\" attribute=\"new-system\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"print\" attribute=\"new-page\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"accidental\" type=\"yes\"/>",
@@ -41115,11 +41117,11 @@
         "schema": 1,
         "blurb": "",
         "document": [
-            "<score-partwise version=\"4.0\">",
+            "<score-partwise version=\"4.1\">",
             "  <identification>",
             "    <encoding>",
-            "      <software>Finale v27.0 for Mac</software>",
-            "      <encoding-date>2021-04-16</encoding-date>",
+            "      <software>Finale v28.0 for Mac</software>",
+            "      <encoding-date>2024-04-16</encoding-date>",
             "      <supports element=\"print\" attribute=\"new-system\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"print\" attribute=\"new-page\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"accidental\" type=\"yes\"/>",
@@ -41815,14 +41817,14 @@
         "schema": 1,
         "blurb": "",
         "document": [
-            "<score-partwise version=\"4.0\">",
+            "<score-partwise version=\"4.1\">",
             "  <movement-title>Après un rêve</movement-title>",
             "  <identification>",
             "    <creator type=\"composer\">Gabriel Fauré</creator>",
             "    <rights>Copyright © 2002 MakeMusic, Inc.</rights>",
             "    <encoding>",
-            "      <software>Finale v27.0 for Mac</software>",
-            "      <encoding-date>2021-04-16</encoding-date>",
+            "      <software>Finale v28.0 for Mac</software>",
+            "      <encoding-date>2024-04-16</encoding-date>",
             "      <supports element=\"print\" attribute=\"new-system\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"print\" attribute=\"new-page\" type=\"yes\" value=\"yes\"/>",
             "      <supports element=\"accidental\" type=\"yes\"/>",
@@ -49966,7 +49968,7 @@
         "schema": 1,
         "blurb": "",
         "document": [
-            "<score-partwise version=\"4.0\">",
+            "<score-partwise version=\"4.1\">",
             "  <movement-title>C Sounds</movement-title>",
             "  <defaults>",
             "    <scaling>",
@@ -50281,7 +50283,7 @@
         "schema": 1,
         "blurb": "A women's choral part is set up so that on three-way splits, first sopranos should sing the top note, second sopranos should sing the middle note, and all altos should sing the bottom note. A listening application can then see if the pitch is correct based on which player is selected.",
         "document": [
-            "<score-partwise version=\"4.0\">",
+            "<score-partwise version=\"4.1\">",
             "  <part-list>",
             "    <score-part id=\"P1\">",
             "      <part-name>Soprano Alto</part-name>",
@@ -50432,7 +50434,7 @@
         "schema": 1,
         "blurb": "",
         "document": [
-            "<score-partwise version=\"4.0\">",
+            "<score-partwise version=\"4.1\">",
             "  <defaults>",
             "    <scaling>",
             "      <millimeters>7.2319</millimeters>",
@@ -90922,7 +90924,7 @@
         "title": "Version 4.0",
         "url": "/version-history/40/",
         "collection": 4,
-        "order": 1,
+        "order": 2,
         "content": [
             "<h2>Released June 2021</h2>",
             "",
@@ -91143,7 +91145,7 @@
         "title": "Version 3.1",
         "url": "/version-history/31/",
         "collection": 4,
-        "order": 2,
+        "order": 3,
         "content": [
             "<h2>Released December 2017</h2>",
             "",
@@ -91479,7 +91481,7 @@
         "title": "Version 3.0",
         "url": "/version-history/30/",
         "collection": 4,
-        "order": 3,
+        "order": 4,
         "content": [
             "<h2>Released August 2011</h2>",
             "",
@@ -91587,7 +91589,7 @@
         "title": "Version 2.0",
         "url": "/version-history/20/",
         "collection": 4,
-        "order": 4,
+        "order": 5,
         "content": [
             "<h2>Released June 2007</h2>",
             "",
@@ -91696,7 +91698,7 @@
         "title": "Version 1.1",
         "url": "/version-history/11/",
         "collection": 4,
-        "order": 5,
+        "order": 6,
         "content": [
             "<h2>Released May 2005</h2>",
             "",
@@ -91780,7 +91782,7 @@
         "title": "Version 1.0",
         "url": "/version-history/10/",
         "collection": 4,
-        "order": 6,
+        "order": 7,
         "content": "<h2>Released January 2004</h2>"
     }
 },
@@ -91875,6 +91877,20 @@
             "<p>When we do this, xjc runs without any error messages, and the .java files are placed in the org/musicxml folder.</p>",
             "",
             "<p>Other code generation and binding tools may encounter related problems, and the solutions are often similar. Usually you can provide some type of external information to resolve conflicts that can come up in automatic code generation.</p>"
+        ]
+    }
+},
+{
+    "model": "spec.staticpage",
+    "pk": 33,
+    "fields": {
+        "title": "Version 4.1 (Draft)",
+        "url": "/version-history/41/",
+        "collection": 4,
+        "order": 1,
+        "content": [
+            "<h2>Draft: 2025</h2>",
+            ""
         ]
     }
 }
