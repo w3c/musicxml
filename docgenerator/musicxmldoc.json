@@ -3,7 +3,7 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$216000$ivYnRtYwJx5F$iBLeyT08sWD51w7i+b0ZY/hZhO8BH0VTxQMX/rAPsl4=",
+        "password": "pbkdf2_sha256$720000$mJOSWumGHHtH6ClL2SspWj$AKqhY+/VNIqGkaGBnKIteSMpWFCiDv52+esQnLcegY8=",
         "last_login": "2021-01-19T00:00:00Z",
         "is_superuser": true,
         "username": "admin",
@@ -91012,7 +91012,7 @@
             "",
             "<li>The above attribute has been added to the <a href=\"../../musicxml-reference/elements/double/\">&lt;double&gt;</a> element. (<a href=\"https://github.com/w3c/musicxml/issues/368\">Issue 368</a>)</li>",
             "",
-            "<li>The arrangement attribute has been added to the <a href=\"../../musicxml-reference/elements/bass/\">&lt;bass&gt;</a> and <a href=\"../../musicxml-reference/elements/harmony/\">&lt;harmony&gt;</a> elements. (<a href=\"https://github.com/w3c/musicxml/issues/307\">Issue 307</a>)</li>",
+            "<li>The arrangement attribute has been added to the <a href=\"../../musicxml-reference/elements/bass/\">&lt;bass&gt;</a> and <a href=\"../../musicxml-reference/elements/harmony/\">&lt;harmony&gt;</a> elements. (<a href=\"https://github.com/w3c/musicxml/issues/307\">Issue 307</a>)",
             "</li>",
             "",
             "<li>The after-jump attribute has been added to the <a href=\"../../musicxml-reference/elements/repeat/\">&lt;repeat&gt;</a> element. (<a href=\"https://github.com/w3c/musicxml/issues/322\">Issue 322</a>)</li>",
@@ -91790,6 +91790,57 @@
     "model": "spec.staticpage",
     "pk": 33,
     "fields": {
+        "title": "Version 4.1 (Draft)",
+        "url": "/version-history/41/",
+        "collection": 4,
+        "order": 1,
+        "content": [
+            "<h2>Draft: 2025</h2>",
+            "",
+            "<h2 id=\"schema\">Schema Additions</h2>",
+            "",
+            "<h3 id=\"elements\">New Elements</h3>",
+            "",
+            "<ul>",
+            "<li>None so far</li>",
+            "<!-- 4.0 example...  <li>The <a href=\"../../musicxml-reference/elements/assess/\">&lt;assess&gt;</a> element specifies how default assessment should be overridden for individual notes. (<a href=\"https://github.com/w3c/musicxml/issues/294\">Issue 294</a>)</li> -->",
+            "</ul>",
+            "",
+            "<h3 id=\"attributes\">New Attributes</h3>",
+            "",
+            "<ul>",
+            "<li>None so far</li>",
+            "",
+            "<!-- <li>The above attribute has been added to the <a href=\"../../musicxml-reference/elements/double/\">&lt;double&gt;</a> element. (<a href=\"https://github.com/w3c/musicxml/issues/368\">Issue 368</a>)</li> -->",
+            "",
+            "</ul>",
+            "",
+            "<h3 id=\"values\">New Values</h3>",
+            "",
+            "<ul>",
+            "<li>None so far</li>",
+            "<!-- <li>The <a href=\"../../musicxml-reference/data-types/smufl-accidental-glyph-name/\">smufl-accidental-glyph-name</a> type used by the smufl attribute of the <a href=\"../../musicxml-reference/elements/accidental/\">&lt;accidental&gt;</a>, <a href=\"../../musicxml-reference/elements/accidental-mark/\">&lt;accidental-mark&gt;</a>, <a href=\"../../musicxml-reference/elements/accidental-text/\">&lt;accidental-text&gt;</a>, and <a href=\"../../musicxml-reference/elements/key-accidental/\">&lt;key-accidental&gt;</a> elements now allows SMuFL accidental glyphs from the <a href=\"https://www.w3.org/2021/03/smufl14/tables/medieval-and-renaissance-accidentals.html\">Medieval and Renaissance accidentals</a> and <a href=\"https://www.w3.org/2021/03/smufl14/tables/kievan-square-notation.html\">Kievan square notation</a> ranges. (<a href=\"https://github.com/w3c/musicxml/issues/330\">Issue 330</a>)</li> -->",
+            "",
+            "</ul>",
+            "",
+            "<h2 id=\"deprecated\">Removed and Deprecated Features</h2>",
+            "",
+            "<ul>",
+            "<li><i>(Deprecated in 4.0, to be removed in 5.0)</i>: <li>The DTD versions of the MusicXML definitions have been deprecated in favor of the XSD versions. This includes the midixml DTD and XSL files, which will not be replaced with XSD versions. (<a href=\"https://github.com/w3c/musicxml/issues/401\">Issue 401</a>)</li>",
+            "</ul>",
+            "",
+            "<h2 id=\"documentation\">Documentation Changes</h2>",
+            "",
+            "<ul>",
+            "<li>None so far</li>",
+            "</ul>"
+        ]
+    }
+},
+{
+    "model": "spec.staticpage",
+    "pk": 35,
+    "fields": {
         "title": "Code Generation",
         "url": "/tutorial/code-generation/",
         "collection": 2,
@@ -91877,20 +91928,6 @@
             "<p>When we do this, xjc runs without any error messages, and the .java files are placed in the org/musicxml folder.</p>",
             "",
             "<p>Other code generation and binding tools may encounter related problems, and the solutions are often similar. Usually you can provide some type of external information to resolve conflicts that can come up in automatic code generation.</p>"
-        ]
-    }
-},
-{
-    "model": "spec.staticpage",
-    "pk": 33,
-    "fields": {
-        "title": "Version 4.1 (Draft)",
-        "url": "/version-history/41/",
-        "collection": 4,
-        "order": 1,
-        "content": [
-            "<h2>Draft: 2025</h2>",
-            ""
         ]
     }
 }
