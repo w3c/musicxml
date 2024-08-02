@@ -80595,7 +80595,7 @@
         "collection": 3,
         "order": 1,
         "content": [
-            "<p>The MusicXML 4.0 schemas and stylesheets are contained in the schema folder within the release. The key files are listed here:</p>",
+            "<p>The MusicXML 4.1 schemas and stylesheets are contained in the schema folder within the release. The key files are listed here:</p>",
             "<ul>",
             "<li>musicxml.xsd, the MusicXML W3C XML Schema Definition</li>",
             "<li>xlink.xsd, the W3C XML Schema Definition for the xlink namespace subset used in MusicXML</li>",
@@ -80614,7 +80614,7 @@
             "<li>timepart.xsl, the XSLT stylesheet for converting from &lt;score-timewise&gt; to &lt;score-partwise&gt; files</li>",
             "</ul>",
             "<p>Several deprecated files are also included in the schema folder for compatibility with older software. The contents of these files are not included this report.</p>",
-            "<p>The following files make up the deprecated Document Type Definition version of MusicXML 4.0:</p>",
+            "<p>The following files make up the deprecated Document Type Definition version of MusicXML 4.1:</p>",
             "<ul>",
             "<li>partwise.dtd</li>",
             "<li>timewise.dtd</li>",
