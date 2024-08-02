@@ -43832,9 +43832,9 @@
             "          <beats>3</beats>",
             "          <beat-type>4</beat-type>",
             "          <metadiff><interchangeable>",
+            "            <time-relation>equals</time-relation>",
             "            <beats>6</beats>",
             "            <beat-type>8</beat-type>",
-            "            <time-relation>equals</time-relation>",
             "          </interchangeable></metadiff>",
             "        </time>"
         ],
@@ -45604,8 +45604,8 @@
         "blurb": "",
         "document": [
             "<accordion-registration>",
-            "        <metadiff><accordion-middle/></metadiff>",
-            "      </accordion-registration>"
+            "        <metadiff><accordion-middle>1</accordion-middle></metadiff>",
+            "</accordion-registration>"
         ],
         "image_url": "/static/examples/accordion-middle-element.png",
         "is_featured": false
@@ -46099,6 +46099,7 @@
             "        <numeral>",
             "          <numeral-root text=\"IV\">4</numeral-root>",
             "        </numeral>",
+            "        <kind>major</kind>",
             "        <metadiff><inversion>1</inversion></metadiff>",
             "      </harmony>"
         ],
@@ -47679,7 +47680,7 @@
             "<notations>",
             "          <technical>",
             "            <arrow default-x=\"0\" default-y=\"15\" placement=\"above\">",
-            "              <metadiff><circular-arrow>anti-clockwise</circular-arrow></metadiff>",
+            "              <metadiff><circular-arrow>anticlockwise</circular-arrow></metadiff>",
             "            </arrow>",
             "          </technical>",
             "        </notations>"
@@ -49665,7 +49666,7 @@
             "        <stem default-y=\"18\">up</stem>",
             "        <beam number=\"1\">begin</beam>",
             "        <notations>",
-            "          <tuplet type=\"start\" number=\"1\" bracket=\"none\" placement=\"above\"/>",
+            "          <tuplet type=\"start\" number=\"1\" bracket=\"no\" placement=\"above\"/>",
             "          <slur type=\"start\" number=\"1\" bezier-x=\"27\" bezier-y=\"22\" default-x=\"13\" default-y=\"22\" placement=\"above\" />",
             "        </notations>",
             "      </note>",
@@ -49746,7 +49747,7 @@
             "        <stem default-y=\"-65\">down</stem>",
             "        <beam number=\"1\">begin</beam>",
             "        <notations>",
-            "          <tuplet type=\"start\" number=\"1\" bracket=\"none\" placement=\"below\"/>",
+            "          <tuplet type=\"start\" number=\"1\" bracket=\"no\" placement=\"below\"/>",
             "        </notations>",
             "      </note>",
             "      <note default-x=\"122\">",
@@ -79093,6 +79094,15 @@
     "fields": {
         "example": 317,
         "element": 655,
+        "element_name": ""
+    }
+},
+{
+    "model": "spec.exampledocumentelement",
+    "pk": 5578,
+    "fields": {
+        "example": 105,
+        "element": 776,
         "element_name": ""
     }
 },
