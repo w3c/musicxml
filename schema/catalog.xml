@@ -4,18 +4,19 @@
 <!--
 	MusicXML catalog file
 
-	Version 4.0
-	
-	Copyright © 2004-2021 the Contributors to the MusicXML 
+	Version 4.1 Draft
+
+	Copyright © 2004-2021 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
-	Group under the W3C Community Final Specification Agreement 
-	(FSA): 
-	
-	   https://www.w3.org/community/about/agreements/final/
-	
+	Group under the W3C Community Contributor License Agreement
+	(CLA):
+
+	   https://www.w3.org/community/about/agreements/cla/
+
 	A human-readable summary is available:
-	
-	   https://www.w3.org/community/about/agreements/fsa-deed/
+
+	   https://www.w3.org/community/about/agreements/cla-deed/
+
 -->
 
 <!--
@@ -50,6 +51,25 @@
     <group prefer="public">
 
         <!-- PUBLIC -->
+        <public publicId="-//Recordare//DTD MusicXML 4.1 Partwise//EN" uri="partwise.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 4.1 Timewise//EN" uri="timewise.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 4.1 Opus//EN" uri="opus.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 4.1 Container//EN" uri="container.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 4.1 Sounds//EN" uri="sounds.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 4.1 MIDI//EN" uri="midixml.dtd"/>
+        <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Common//EN" uri="common.mod"/>
+        <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Layout//EN" uri="layout.mod"/>
+        <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Identity//EN" uri="identity.mod"/>
+        <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Attributes//EN" uri="attributes.mod"/>
+        <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Link//EN" uri="link.mod"/>
+        <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Note//EN" uri="note.mod"/>
+        <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Barline//EN" uri="barline.mod"/>
+        <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Direction//EN" uri="direction.mod"/>
+        <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Score//EN" uri="score.mod"/>
+        <public publicId="ISO 8879:1986//ENTITIES Added Latin 1//EN//XML" uri="isolat1.ent"/>
+        <public publicId="ISO 8879:1986//ENTITIES Added Latin 2//EN//XML" uri="isolat2.ent"/>
+        
+        <!-- Older versions -->
         <public publicId="-//Recordare//DTD MusicXML 4.0 Partwise//EN" uri="partwise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 4.0 Timewise//EN" uri="timewise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 4.0 Opus//EN" uri="opus.dtd"/>
@@ -65,10 +85,6 @@
         <public publicId="-//Recordare//ELEMENTS MusicXML 4.0 Barline//EN" uri="barline.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 4.0 Direction//EN" uri="direction.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 4.0 Score//EN" uri="score.mod"/>
-        <public publicId="ISO 8879:1986//ENTITIES Added Latin 1//EN//XML" uri="isolat1.ent"/>
-        <public publicId="ISO 8879:1986//ENTITIES Added Latin 2//EN//XML" uri="isolat2.ent"/>
-        
-        <!-- Older versions -->
         <public publicId="-//Recordare//DTD MusicXML 3.1 Partwise//EN" uri="partwise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 3.1 Timewise//EN" uri="timewise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 3.1 Opus//EN" uri="opus.dtd"/>

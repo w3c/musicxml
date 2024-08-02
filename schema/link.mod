@@ -1,18 +1,18 @@
 <!--
 	MusicXML link.mod module
 
-	Version 4.0
-	
-	Copyright © 2004-2021 the Contributors to the MusicXML 
+	Version 4.1 Draft
+
+	Copyright © 2004-2021 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
-	Group under the W3C Community Final Specification Agreement 
-	(FSA): 
-	
-	   https://www.w3.org/community/about/agreements/final/
-	
+	Group under the W3C Community Contributor License Agreement
+	(CLA):
+
+	   https://www.w3.org/community/about/agreements/cla/
+
 	A human-readable summary is available:
-	
-	   https://www.w3.org/community/about/agreements/fsa-deed/
+
+	   https://www.w3.org/community/about/agreements/cla-deed/
 
 	The DTD version of the MusicXML format is deprecated
 	as of Version 4.0. Use the musicxml.xsd W3C XML Schema

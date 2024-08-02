@@ -3,25 +3,39 @@
 	<xs:annotation>
 		<xs:documentation>MusicXML W3C XML schema (XSD)
 
-Version 4.0
+Version 4.1 Draft
 
-Copyright © 2004-2021 the Contributors to the MusicXML Specification, published by the W3C Music Notation Community Group under the W3C Community Final Specification Agreement (FSA):
+Copyright © 2004-2024 the Contributors to the MusicXML Specification,
+published by the W3C Music Notation Community Group under the
+W3C Community Contributor License Agreement (CLA):
 
-	https://www.w3.org/community/about/agreements/final/
+    https://www.w3.org/community/about/agreements/cla/
 
 A human-readable summary is available:
 
-	https://www.w3.org/community/about/agreements/fsa-deed/
+    https://www.w3.org/community/about/agreements/cla-deed/
 
-This is the W3C XML Schema (XSD) version of the MusicXML 4.0 format. Validation is tightened by moving MusicXML definitions from comments into schema data types and definitions. Character entities and other entity usages that are not supported in W3C XML Schema have been removed. The features of W3C XML Schema make it easier to define variations of the MusicXML format, either via extension or restriction.
+This is the W3C XML Schema (XSD) version of the MusicXML 4.1 format. Validation
+is tightened by moving MusicXML definitions from comments into schema data types and definitions.
+Character entities and other entity usages that are not supported in W3C XML Schema
+have been removed. The features of W3C XML Schema make it easier to define
+variations of the MusicXML format, either via extension or restriction.
 
-This file defines the MusicXML 4.0 XSD, including the score-partwise and score-timewise document elements.
+This file defines the MusicXML 4.1 XSD, including the score-partwise and
+(deprecated) score-timewise document elements.
 
-The XML catalog at catalog.xml supports validating against a local copy of this XSD rather than the networked version. Software often has trouble using system IDs due to factors such as restrictions on network access, or resources having moved from the original specified location. To validate with the MusicXML XSD, use a schema URI of "http://www.musicxml.org/xsd/musicxml.xsd".</xs:documentation>
+The XML catalog at catalog.xml supports validating against a local copy of this
+XSD rather than the networked version. Software often has trouble using system IDs
+due to factors such as restrictions on network access, or resources having moved
+from the original specified location. To validate with the MusicXML XSD, use a
+schema URI of "http://www.musicxml.org/xsd/musicxml.xsd".</xs:documentation>
 	</xs:annotation>
 
 	<xs:annotation>
-		<xs:documentation>The MusicXML 4.0 DTD has no namespace, so for compatibility the MusicXML 4.0 XSD has no namespace either. Those who need to import the MusicXML XSD into another schema are advised to create a new version that uses "http://www.musicxml.org/xsd/MusicXML" as the namespace.</xs:documentation>
+		<xs:documentation>The MusicXML 4.1 DTD has no namespace, so for compatibility
+			the MusicXML 4.1 XSD has no namespace either. Those who need to import the
+			MusicXML XSD into another schema are advised to create a new version
+			that uses "http://www.musicxml.org/xsd/MusicXML" as the namespace.</xs:documentation>
 	</xs:annotation>
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.musicxml.org/xsd/xml.xsd"/>
 	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.musicxml.org/xsd/xlink.xsd"/>

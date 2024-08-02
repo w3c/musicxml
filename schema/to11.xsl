@@ -3,18 +3,18 @@
 <!--
   MusicXML to11.xsl stylesheet
 
-  Version 4.0
+  Version 4.1 Draft
 
-  Copyright © 2004-2021 the Contributors to the MusicXML 
+  Copyright © 2004-2024 the Contributors to the MusicXML
   Specification, published by the W3C Music Notation Community
-  Group under the W3C Community Final Specification Agreement 
-  (FSA): 
+  Group under the W3C Community Contributor License Agreement
+  (CLA):
 
-     https://www.w3.org/community/about/agreements/final/
+     https://www.w3.org/community/about/agreements/cla/
 
   A human-readable summary is available:
 
-     https://www.w3.org/community/about/agreements/fsa-deed/
+     https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
 <!--
