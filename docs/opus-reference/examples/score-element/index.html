@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Opus example: &lt;score&gt; | MusicXML 4.0</title>
+<title>Opus example: &lt;score&gt; | MusicXML 4.1 Draft</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -23,7 +23,7 @@
         </svg>
     </button>
     <a class="logo" href="../../../">
-        <span class="logo-text">MusicXML 4.0</span>
+        <span class="logo-text">MusicXML 4.1 Draft</span>
     </a>
 </div>
 
@@ -78,6 +78,7 @@
         <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to40.xsl/">to40.xsl</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
         <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
         <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
@@ -88,6 +89,7 @@
     </ul>
     <li><b><a href="../../../version-history/">Version History</a></b></li>
     <ul>
+        <li><a href="../../../version-history/41/">Version 4.1</a></li>
         <li><a href="../../../version-history/40/">Version 4.0</a></li>
         <li><a href="../../../version-history/31/">Version 3.1</a></li>
         <li><a href="../../../version-history/30/">Version 3.0</a></li>
@@ -100,7 +102,7 @@
     <main>
     
 <p class="breadcrumb">
-    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../../">MusicXML 4.1 Draft</a> &gt;
     <a href="../../">Opus reference</a> &gt;
     <a href="../">Examples</a> &gt;
     &lt;score&gt;
@@ -116,24 +118,24 @@
 
 
 
-<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/opus/">opus</a> <span class="attr">version="<a href="../../../musicxml-reference/data-types/xsd-token/">4.0</a>"</span>&gt;
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/opus/">opus</a> <span class="attrname">version</span>="<a href="../../../musicxml-reference/data-types/xsd-token/" class="attrval">4.0</a>"&gt;
    &lt;<a class="tag" href="../../elements/title/">title</a>&gt;<span class="xmltxt">Fidelio</span>&lt;/<a class="tag" href="../../elements/title/">title</a>&gt;
-</span><span class="diff">   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr01.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr02.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr03.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr04.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr05.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr06.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr07.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr08.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr09.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr10.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr11.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr12.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr13.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr14.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr15.musicxml</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../../musicxml-reference/data-types/xsd-anyURI/">Nr16.musicxml</a>"</span>/&gt;
+</span><span class="diff">   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr01.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr02.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr03.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr04.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr05.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr06.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr07.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr08.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr09.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr10.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr11.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr12.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr13.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr14.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr15.musicxml</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/score/">score</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../../musicxml-reference/data-types/xsd-anyURI/" class="attrval">Nr16.musicxml</a>"/&gt;
 </span><span class="nodiff">&lt;/<a class="tag" href="../../elements/opus/">opus</a>&gt;</span></div>
 
     </main>

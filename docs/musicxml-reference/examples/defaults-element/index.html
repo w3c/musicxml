@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MusicXML example: &lt;defaults&gt; | MusicXML 4.0</title>
+<title>MusicXML example: &lt;defaults&gt; | MusicXML 4.1 Draft</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -23,7 +23,7 @@
         </svg>
     </button>
     <a class="logo" href="../../../">
-        <span class="logo-text">MusicXML 4.0</span>
+        <span class="logo-text">MusicXML 4.1 Draft</span>
     </a>
 </div>
 
@@ -78,6 +78,7 @@
         <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to40.xsl/">to40.xsl</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
         <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
         <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
@@ -88,6 +89,7 @@
     </ul>
     <li><b><a href="../../../version-history/">Version History</a></b></li>
     <ul>
+        <li><a href="../../../version-history/41/">Version 4.1</a></li>
         <li><a href="../../../version-history/40/">Version 4.0</a></li>
         <li><a href="../../../version-history/31/">Version 3.1</a></li>
         <li><a href="../../../version-history/30/">Version 3.0</a></li>
@@ -100,7 +102,7 @@
     <main>
     
 <p class="breadcrumb">
-    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../../">MusicXML 4.1 Draft</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
     <a href="../">Examples</a> &gt;
     &lt;defaults&gt;
@@ -124,7 +126,7 @@
    &lt;<a class="tag" href="../../elements/page-layout/">page-layout</a>&gt;
       &lt;<a class="tag" href="../../elements/page-height/">page-height</a>&gt;<span class="xmltxt">1553</span>&lt;/<a class="tag" href="../../elements/page-height/">page-height</a>&gt;
       &lt;<a class="tag" href="../../elements/page-width/">page-width</a>&gt;<span class="xmltxt">1200</span>&lt;/<a class="tag" href="../../elements/page-width/">page-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/page-margins/">page-margins</a> <span class="attr">type="<a href="../../data-types/margin-type/">both</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/page-margins/">page-margins</a> <span class="attrname">type</span>="<a href="../../data-types/margin-type/" class="attrval">both</a>"&gt;
          &lt;<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;<span class="xmltxt">70</span>&lt;/<a class="tag" href="../../elements/left-margin/">left-margin</a>&gt;
          &lt;<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;<span class="xmltxt">70</span>&lt;/<a class="tag" href="../../elements/right-margin/">right-margin</a>&gt;
          &lt;<a class="tag" href="../../elements/top-margin/">top-margin</a>&gt;<span class="xmltxt">88</span>&lt;/<a class="tag" href="../../elements/top-margin/">top-margin</a>&gt;
@@ -140,26 +142,26 @@
       &lt;<a class="tag" href="../../elements/top-system-distance/">top-system-distance</a>&gt;<span class="xmltxt">70</span>&lt;/<a class="tag" href="../../elements/top-system-distance/">top-system-distance</a>&gt;
    &lt;/<a class="tag" href="../../elements/system-layout/">system-layout</a>&gt;
    &lt;<a class="tag" href="../../elements/appearance/">appearance</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">stem</a>"</span>&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">beam</a>"</span>&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">staff</a>"</span>&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">light barline</a>"</span>&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">heavy barline</a>"</span>&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">leger</a>"</span>&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">ending</a>"</span>&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">wedge</a>"</span>&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">enclosure</a>"</span>&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attr">type="<a href="../../data-types/line-width-type/">tuplet bracket</a>"</span>&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
-      &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attr">type="<a href="../../data-types/note-size-type/">grace</a>"</span>&gt;<span class="xmltxt">65</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
-      &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attr">type="<a href="../../data-types/note-size-type/">cue</a>"</span>&gt;<span class="xmltxt">65</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
-      &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attr">type="<a href="../../data-types/note-size-type/">grace-cue</a>"</span>&gt;<span class="xmltxt">50</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
-      &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attr">type="<a href="../../data-types/note-size-type/">large</a>"</span>&gt;<span class="xmltxt">120</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
-      &lt;<a class="tag" href="../../elements/distance/">distance</a> <span class="attr">type="<a href="../../data-types/distance-type/">hyphen</a>"</span>&gt;<span class="xmltxt">120</span>&lt;/<a class="tag" href="../../elements/distance/">distance</a>&gt;
-      &lt;<a class="tag" href="../../elements/distance/">distance</a> <span class="attr">type="<a href="../../data-types/distance-type/">beam</a>"</span>&gt;<span class="xmltxt">7.5</span>&lt;/<a class="tag" href="../../elements/distance/">distance</a>&gt;
-      &lt;<a class="tag" href="../../elements/glyph/">glyph</a> <span class="attr">type="<a href="../../data-types/glyph-type/">percussion-clef</a>"</span>&gt;<span class="xmltxt">unpitchedPercussionClef1</span>&lt;/<a class="tag" href="../../elements/glyph/">glyph</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">stem</a>"&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">beam</a>"&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">staff</a>"&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">light barline</a>"&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">heavy barline</a>"&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">leger</a>"&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">ending</a>"&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">wedge</a>"&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">enclosure</a>"&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/line-width/">line-width</a> <span class="attrname">type</span>="<a href="../../data-types/line-width-type/" class="attrval">tuplet bracket</a>"&gt;<span class="xmltxt">0.7487</span>&lt;/<a class="tag" href="../../elements/line-width/">line-width</a>&gt;
+      &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attrname">type</span>="<a href="../../data-types/note-size-type/" class="attrval">grace</a>"&gt;<span class="xmltxt">65</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
+      &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attrname">type</span>="<a href="../../data-types/note-size-type/" class="attrval">cue</a>"&gt;<span class="xmltxt">65</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
+      &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attrname">type</span>="<a href="../../data-types/note-size-type/" class="attrval">grace-cue</a>"&gt;<span class="xmltxt">50</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
+      &lt;<a class="tag" href="../../elements/note-size/">note-size</a> <span class="attrname">type</span>="<a href="../../data-types/note-size-type/" class="attrval">large</a>"&gt;<span class="xmltxt">120</span>&lt;/<a class="tag" href="../../elements/note-size/">note-size</a>&gt;
+      &lt;<a class="tag" href="../../elements/distance/">distance</a> <span class="attrname">type</span>="<a href="../../data-types/distance-type/" class="attrval">hyphen</a>"&gt;<span class="xmltxt">120</span>&lt;/<a class="tag" href="../../elements/distance/">distance</a>&gt;
+      &lt;<a class="tag" href="../../elements/distance/">distance</a> <span class="attrname">type</span>="<a href="../../data-types/distance-type/" class="attrval">beam</a>"&gt;<span class="xmltxt">7.5</span>&lt;/<a class="tag" href="../../elements/distance/">distance</a>&gt;
+      &lt;<a class="tag" href="../../elements/glyph/">glyph</a> <span class="attrname">type</span>="<a href="../../data-types/glyph-type/" class="attrval">percussion-clef</a>"&gt;<span class="xmltxt">unpitchedPercussionClef1</span>&lt;/<a class="tag" href="../../elements/glyph/">glyph</a>&gt;
    &lt;/<a class="tag" href="../../elements/appearance/">appearance</a>&gt;
-   &lt;<a class="tag" href="../../elements/music-font/">music-font</a> <span class="attr">font-family="<a href="../../data-types/font-family/">Maestro,engraved</a>"</span> <span class="attr">font-size="<a href="../../data-types/font-size/">20.4</a>"</span>/&gt;
-   &lt;<a class="tag" href="../../elements/word-font/">word-font</a> <span class="attr">font-family="<a href="../../data-types/font-family/">Times New Roman</a>"</span> <span class="attr">font-size="<a href="../../data-types/font-size/">10.2</a>"</span>/&gt;
+   &lt;<a class="tag" href="../../elements/music-font/">music-font</a> <span class="attrname">font-family</span>="<a href="../../data-types/font-family/" class="attrval">Maestro,engraved</a>" <span class="attrname">font-size</span>="<a href="../../data-types/font-size/" class="attrval">20.4</a>"/&gt;
+   &lt;<a class="tag" href="../../elements/word-font/">word-font</a> <span class="attrname">font-family</span>="<a href="../../data-types/font-family/" class="attrval">Times New Roman</a>" <span class="attrname">font-size</span>="<a href="../../data-types/font-size/" class="attrval">10.2</a>"/&gt;
 &lt;/<a class="tag" href="../../elements/defaults/">defaults</a>&gt;</span></div>
 
     </main>

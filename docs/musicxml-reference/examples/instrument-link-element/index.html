@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MusicXML example: &lt;instrument-link&gt; | MusicXML 4.0</title>
+<title>MusicXML example: &lt;instrument-link&gt; | MusicXML 4.1 Draft</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -23,7 +23,7 @@
         </svg>
     </button>
     <a class="logo" href="../../../">
-        <span class="logo-text">MusicXML 4.0</span>
+        <span class="logo-text">MusicXML 4.1 Draft</span>
     </a>
 </div>
 
@@ -78,6 +78,7 @@
         <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to40.xsl/">to40.xsl</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
         <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
         <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
@@ -88,6 +89,7 @@
     </ul>
     <li><b><a href="../../../version-history/">Version History</a></b></li>
     <ul>
+        <li><a href="../../../version-history/41/">Version 4.1</a></li>
         <li><a href="../../../version-history/40/">Version 4.0</a></li>
         <li><a href="../../../version-history/31/">Version 3.1</a></li>
         <li><a href="../../../version-history/30/">Version 3.0</a></li>
@@ -100,7 +102,7 @@
     <main>
     
 <p class="breadcrumb">
-    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../../">MusicXML 4.1 Draft</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
     <a href="../">Examples</a> &gt;
     &lt;instrument-link&gt;
@@ -119,19 +121,19 @@
 
 
 <div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/part-list/">part-list</a>&gt;
-   &lt;<a class="tag" href="../../elements/score-part/">score-part</a> <span class="attr">id="<a href="../../data-types/xsd-ID/">P1</a>"</span>&gt;
-      &lt;<a class="tag" href="../../elements/part-link/">part-link</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../data-types/xsd-anyURI/">p1.musicxml</a>"</span> <span class="attr">xlink:title="<a href="../../data-types/xsd-token/">Clarinet 1</a>"</span> <span class="attr">xlink:show="<a href="../../data-types/xlink-show/">new</a>"</span>&gt;
-</span><span class="diff">         &lt;<a class="tag" href="../../elements/instrument-link/">instrument-link</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P1-I1</a>"</span>/&gt;
+   &lt;<a class="tag" href="../../elements/score-part/">score-part</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-ID/" class="attrval">P1</a>"&gt;
+      &lt;<a class="tag" href="../../elements/part-link/">part-link</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../data-types/xsd-anyURI/" class="attrval">p1.musicxml</a>" <span class="attrname">xlink:title</span>="<a href="../../data-types/xsd-token/" class="attrval">Clarinet 1</a>" <span class="attrname">xlink:show</span>="<a href="../../data-types/xlink-show/" class="attrval">new</a>"&gt;
+</span><span class="diff">         &lt;<a class="tag" href="../../elements/instrument-link/">instrument-link</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-IDREF/" class="attrval">P1-I1</a>"/&gt;
 </span><span class="nodiff">         &lt;<a class="tag" href="../../elements/group-link/">group-link</a>&gt;<span class="xmltxt">parts</span>&lt;/<a class="tag" href="../../elements/group-link/">group-link</a>&gt;
       &lt;/<a class="tag" href="../../elements/part-link/">part-link</a>&gt;
-      &lt;<a class="tag" href="../../elements/part-link/">part-link</a> <span class="attr">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="attr">xlink:href="<a href="../../data-types/xsd-anyURI/">p2.musicxml</a>"</span> <span class="attr">xlink:title="<a href="../../data-types/xsd-token/">Clarinet 2</a>"</span> <span class="attr">xlink:show="<a href="../../data-types/xlink-show/">new</a>"</span>&gt;
-</span><span class="diff">         &lt;<a class="tag" href="../../elements/instrument-link/">instrument-link</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P1-I2</a>"</span>/&gt;
+      &lt;<a class="tag" href="../../elements/part-link/">part-link</a> <span class="attrname">xmlns:xlink</span>="http://www.w3.org/1999/xlink" <span class="attrname">xlink:href</span>="<a href="../../data-types/xsd-anyURI/" class="attrval">p2.musicxml</a>" <span class="attrname">xlink:title</span>="<a href="../../data-types/xsd-token/" class="attrval">Clarinet 2</a>" <span class="attrname">xlink:show</span>="<a href="../../data-types/xlink-show/" class="attrval">new</a>"&gt;
+</span><span class="diff">         &lt;<a class="tag" href="../../elements/instrument-link/">instrument-link</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-IDREF/" class="attrval">P1-I2</a>"/&gt;
 </span><span class="nodiff">         &lt;<a class="tag" href="../../elements/group-link/">group-link</a>&gt;<span class="xmltxt">parts</span>&lt;/<a class="tag" href="../../elements/group-link/">group-link</a>&gt;
       &lt;/<a class="tag" href="../../elements/part-link/">part-link</a>&gt;
       &lt;<a class="tag" href="../../elements/part-name/">part-name</a>&gt;<span class="xmltxt">Clarinets 1&2</span>&lt;/<a class="tag" href="../../elements/part-name/">part-name</a>&gt;
       &lt;<a class="tag" href="../../elements/part-abbreviation/">part-abbreviation</a>&gt;<span class="xmltxt">Cl. 1&2</span>&lt;/<a class="tag" href="../../elements/part-abbreviation/">part-abbreviation</a>&gt;
       &lt;<a class="tag" href="../../elements/group/">group</a>&gt;<span class="xmltxt">score</span>&lt;/<a class="tag" href="../../elements/group/">group</a>&gt;
-      &lt;<a class="tag" href="../../elements/score-instrument/">score-instrument</a> <span class="attr">id="<a href="../../data-types/xsd-ID/">P1-I1</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/score-instrument/">score-instrument</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-ID/" class="attrval">P1-I1</a>"&gt;
          &lt;<a class="tag" href="../../elements/instrument-name/">instrument-name</a>&gt;<span class="xmltxt">ARIA Player</span>&lt;/<a class="tag" href="../../elements/instrument-name/">instrument-name</a>&gt;
          &lt;<a class="tag" href="../../elements/instrument-sound/">instrument-sound</a>&gt;<span class="xmltxt">wind.reed.clarinet.bflat</span>&lt;/<a class="tag" href="../../elements/instrument-sound/">instrument-sound</a>&gt;
          &lt;<a class="tag" href="../../elements/virtual-instrument/">virtual-instrument</a>&gt;
@@ -139,7 +141,7 @@
             &lt;<a class="tag" href="../../elements/virtual-name/">virtual-name</a>&gt;<span class="xmltxt">Notation/01 Woodwinds/03 Clarinets/n-Bb Clarinet Plr1</span>&lt;/<a class="tag" href="../../elements/virtual-name/">virtual-name</a>&gt;
          &lt;/<a class="tag" href="../../elements/virtual-instrument/">virtual-instrument</a>&gt;
       &lt;/<a class="tag" href="../../elements/score-instrument/">score-instrument</a>&gt;
-      &lt;<a class="tag" href="../../elements/score-instrument/">score-instrument</a> <span class="attr">id="<a href="../../data-types/xsd-ID/">P1-I2</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/score-instrument/">score-instrument</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-ID/" class="attrval">P1-I2</a>"&gt;
          &lt;<a class="tag" href="../../elements/instrument-name/">instrument-name</a>&gt;<span class="xmltxt">ARIA Player</span>&lt;/<a class="tag" href="../../elements/instrument-name/">instrument-name</a>&gt;
          &lt;<a class="tag" href="../../elements/instrument-sound/">instrument-sound</a>&gt;<span class="xmltxt">wind.reed.clarinet.bflat</span>&lt;/<a class="tag" href="../../elements/instrument-sound/">instrument-sound</a>&gt;
          &lt;<a class="tag" href="../../elements/virtual-instrument/">virtual-instrument</a>&gt;

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MusicXML example: &lt;glissando&gt; (Multiple) | MusicXML 4.0</title>
+<title>MusicXML example: &lt;glissando&gt; (Multiple) | MusicXML 4.1 Draft</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -23,7 +23,7 @@
         </svg>
     </button>
     <a class="logo" href="../../../">
-        <span class="logo-text">MusicXML 4.0</span>
+        <span class="logo-text">MusicXML 4.1 Draft</span>
     </a>
 </div>
 
@@ -78,6 +78,7 @@
         <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to40.xsl/">to40.xsl</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
         <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
         <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
@@ -88,6 +89,7 @@
     </ul>
     <li><b><a href="../../../version-history/">Version History</a></b></li>
     <ul>
+        <li><a href="../../../version-history/41/">Version 4.1</a></li>
         <li><a href="../../../version-history/40/">Version 4.0</a></li>
         <li><a href="../../../version-history/31/">Version 3.1</a></li>
         <li><a href="../../../version-history/30/">Version 3.0</a></li>
@@ -100,7 +102,7 @@
     <main>
     
 <p class="breadcrumb">
-    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../../">MusicXML 4.1 Draft</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
     <a href="../">Examples</a> &gt;
     &lt;glissando&gt; (Multiple)
@@ -118,9 +120,9 @@
 
 
 
-<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P1</a>"</span>&gt;
-   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">1</a>"</span>&gt;
-      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">85</a>"</span>&gt;
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-IDREF/" class="attrval">P1</a>"&gt;
+   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">1</a>"&gt;
+      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">85</a>"&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
             &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
             &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
@@ -128,13 +130,13 @@
          &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
          &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
          &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
-         &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-5</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+         &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">-5</a>"&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
          &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">1</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">start</a>"</span>/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">1</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">start</a>"/&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
-      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">85</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">85</a>"&gt;
          &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
             &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">E</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
@@ -146,10 +148,10 @@
          &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
          &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">2</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">start</a>"</span>/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">2</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">start</a>"/&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
-      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">85</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">85</a>"&gt;
          &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
             &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
@@ -161,7 +163,7 @@
          &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
          &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">3</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">start</a>"</span> <span class="attr">font-style="<a href="../../data-types/font-style/">italic</a>"</span>&gt;<span class="xmltxt">gliss.</span>&lt;/<a class="tag" href="../../elements/glissando/">glissando</a>&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">3</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">start</a>" <span class="attrname">font-style</span>="<a href="../../data-types/font-style/" class="attrval">italic</a>"&gt;<span class="xmltxt">gliss.</span>&lt;/<a class="tag" href="../../elements/glissando/">glissando</a>&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
       &lt;<a class="tag" href="../../elements/forward/">forward</a>&gt;
@@ -175,8 +177,8 @@
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
       &lt;/<a class="tag" href="../../elements/forward/">forward</a>&gt;
    &lt;/<a class="tag" href="../../elements/measure-partwise/">measure</a>&gt;
-   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">2</a>"</span> <span class="attr">width="<a href="../../data-types/tenths/">295</a>"</span>&gt;
-      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">13</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">2</a>" <span class="attrname">width</span>="<a href="../../data-types/tenths/" class="attrval">295</a>"&gt;
+      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">13</a>"&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
             &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
             &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">6</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
@@ -184,14 +186,14 @@
          &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
          &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
          &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
-         &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-20</a>"</span>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+         &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">-20</a>"&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
          &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">1</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">stop</a>"</span>/&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">1</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">start</a>"</span>/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">1</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">stop</a>"/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">1</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">start</a>"/&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
-      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">13</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">13</a>"&gt;
          &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
             &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">E</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
@@ -203,11 +205,11 @@
          &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
          &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">2</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">stop</a>"</span>/&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">2</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">start</a>"</span>/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">2</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">stop</a>"/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">2</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">start</a>"/&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
-      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">13</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">13</a>"&gt;
          &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
             &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
@@ -219,8 +221,8 @@
          &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
          &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">3</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">stop</a>"</span>/&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">3</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">start</a>"</span> <span class="attr">font-style="<a href="../../data-types/font-style/">italic</a>"</span>&gt;<span class="xmltxt">gliss.</span>&lt;/<a class="tag" href="../../elements/glissando/">glissando</a>&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">3</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">stop</a>"/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">3</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">start</a>" <span class="attrname">font-style</span>="<a href="../../data-types/font-style/" class="attrval">italic</a>"&gt;<span class="xmltxt">gliss.</span>&lt;/<a class="tag" href="../../elements/glissando/">glissando</a>&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
       &lt;<a class="tag" href="../../elements/forward/">forward</a>&gt;
@@ -237,15 +239,15 @@
          &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">8</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
       &lt;/<a class="tag" href="../../elements/backup/">backup</a>&gt;
       &lt;<a class="tag" href="../../elements/note/">note</a>&gt;
-         &lt;<a class="tag" href="../../elements/rest/">rest</a> <span class="attr">measure="<a href="../../data-types/yes-no/">yes</a>"</span>/&gt;
+         &lt;<a class="tag" href="../../elements/rest/">rest</a> <span class="attrname">measure</span>="<a href="../../data-types/yes-no/" class="attrval">yes</a>"/&gt;
          &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">8</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
          &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
    &lt;/<a class="tag" href="../../elements/measure-partwise/">measure</a>&gt;
-   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">3</a>"</span> <span class="attr">width="<a href="../../data-types/tenths/">297</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">3</a>" <span class="attrname">width</span>="<a href="../../data-types/tenths/" class="attrval">297</a>"&gt;
       &lt;<a class="tag" href="../../elements/note/">note</a>&gt;
-         &lt;<a class="tag" href="../../elements/rest/">rest</a> <span class="attr">measure="<a href="../../data-types/yes-no/">yes</a>"</span>/&gt;
+         &lt;<a class="tag" href="../../elements/rest/">rest</a> <span class="attrname">measure</span>="<a href="../../data-types/yes-no/" class="attrval">yes</a>"/&gt;
          &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">8</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
          &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
@@ -253,7 +255,7 @@
       &lt;<a class="tag" href="../../elements/backup/">backup</a>&gt;
          &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">8</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
       &lt;/<a class="tag" href="../../elements/backup/">backup</a>&gt;
-      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">14</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">14</a>"&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
             &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
             &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
@@ -261,13 +263,13 @@
          &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
          &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
          &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
-         &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-5</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+         &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">-5</a>"&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
          &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">1</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">stop</a>"</span>/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">1</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">stop</a>"/&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
-      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">14</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">14</a>"&gt;
          &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
             &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">E</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
@@ -279,10 +281,10 @@
          &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
          &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">2</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">stop</a>"</span>/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">2</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">stop</a>"/&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
-      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">14</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">14</a>"&gt;
          &lt;<a class="tag" href="../../elements/chord/">chord</a>/&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
             &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">G</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
@@ -294,7 +296,7 @@
          &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
          &lt;<a class="tag" href="../../elements/staff/">staff</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/staff/">staff</a>&gt;
          &lt;<a class="tag" href="../../elements/notations/">notations</a>&gt;
-</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attr">line-type="<a href="../../data-types/line-type/">wavy</a>"</span> <span class="attr">number="<a href="../../data-types/number-level/">3</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">stop</a>"</span>/&gt;
+</span><span class="diff">            &lt;<a class="tag" href="../../elements/glissando/">glissando</a> <span class="attrname">line-type</span>="<a href="../../data-types/line-type/" class="attrval">wavy</a>" <span class="attrname">number</span>="<a href="../../data-types/number-level/" class="attrval">3</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">stop</a>"/&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/notations/">notations</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
    &lt;/<a class="tag" href="../../elements/measure-partwise/">measure</a>&gt;

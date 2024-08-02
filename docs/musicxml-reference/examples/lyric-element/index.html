@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MusicXML example: &lt;lyric&gt; | MusicXML 4.0</title>
+<title>MusicXML example: &lt;lyric&gt; | MusicXML 4.1 Draft</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -23,7 +23,7 @@
         </svg>
     </button>
     <a class="logo" href="../../../">
-        <span class="logo-text">MusicXML 4.0</span>
+        <span class="logo-text">MusicXML 4.1 Draft</span>
     </a>
 </div>
 
@@ -78,6 +78,7 @@
         <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to40.xsl/">to40.xsl</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
         <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
         <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
@@ -88,6 +89,7 @@
     </ul>
     <li><b><a href="../../../version-history/">Version History</a></b></li>
     <ul>
+        <li><a href="../../../version-history/41/">Version 4.1</a></li>
         <li><a href="../../../version-history/40/">Version 4.0</a></li>
         <li><a href="../../../version-history/31/">Version 3.1</a></li>
         <li><a href="../../../version-history/30/">Version 3.0</a></li>
@@ -100,7 +102,7 @@
     <main>
     
 <p class="breadcrumb">
-    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../../">MusicXML 4.1 Draft</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
     <a href="../">Examples</a> &gt;
     &lt;lyric&gt;
@@ -118,7 +120,7 @@
 
 
 
-<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">9</a>"</span>&gt;
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">9</a>"&gt;
    &lt;<a class="tag" href="../../elements/note/">note</a>&gt;
       &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
          &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">F</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
@@ -127,9 +129,9 @@
       &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
       &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
       &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">eighth</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
-      &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">15</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
-      &lt;<a class="tag" href="../../elements/beam/">beam</a> <span class="attr">number="<a href="../../data-types/beam-level/">1</a>"</span>&gt;<span class="xmltxt">begin</span>&lt;/<a class="tag" href="../../elements/beam/">beam</a>&gt;
-</span><span class="diff">      &lt;<a class="tag" href="../../elements/lyric/">lyric</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-73</a>"</span> <span class="attr">name="<a href="../../data-types/xsd-token/">verse</a>"</span> <span class="attr">number="<a href="../../data-types/xsd-NMTOKEN/">1</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">15</a>"&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+      &lt;<a class="tag" href="../../elements/beam/">beam</a> <span class="attrname">number</span>="<a href="../../data-types/beam-level/" class="attrval">1</a>"&gt;<span class="xmltxt">begin</span>&lt;/<a class="tag" href="../../elements/beam/">beam</a>&gt;
+</span><span class="diff">      &lt;<a class="tag" href="../../elements/lyric/">lyric</a> <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">-73</a>" <span class="attrname">name</span>="<a href="../../data-types/xsd-token/" class="attrval">verse</a>" <span class="attrname">number</span>="<a href="../../data-types/xsd-NMTOKEN/" class="attrval">1</a>"&gt;
          &lt;<a class="tag" href="../../elements/syllabic/">syllabic</a>&gt;<span class="xmltxt">single</span>&lt;/<a class="tag" href="../../elements/syllabic/">syllabic</a>&gt;
          &lt;<a class="tag" href="../../elements/text/">text</a>&gt;<span class="xmltxt">I</span>&lt;/<a class="tag" href="../../elements/text/">text</a>&gt;
       &lt;/<a class="tag" href="../../elements/lyric/">lyric</a>&gt;
@@ -142,9 +144,9 @@
       &lt;<a class="tag" href="../../elements/duration/">duration</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/duration/">duration</a>&gt;
       &lt;<a class="tag" href="../../elements/voice/">voice</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/voice/">voice</a>&gt;
       &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">eighth</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
-      &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attr">default-y="<a href="../../data-types/tenths/">15</a>"</span>&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
-      &lt;<a class="tag" href="../../elements/beam/">beam</a> <span class="attr">number="<a href="../../data-types/beam-level/">1</a>"</span>&gt;<span class="xmltxt">continue</span>&lt;/<a class="tag" href="../../elements/beam/">beam</a>&gt;
-</span><span class="diff">      &lt;<a class="tag" href="../../elements/lyric/">lyric</a> <span class="attr">default-y="<a href="../../data-types/tenths/">-73</a>"</span> <span class="attr">name="<a href="../../data-types/xsd-token/">verse</a>"</span> <span class="attr">number="<a href="../../data-types/xsd-NMTOKEN/">1</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/stem/">stem</a> <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">15</a>"&gt;<span class="xmltxt">up</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
+      &lt;<a class="tag" href="../../elements/beam/">beam</a> <span class="attrname">number</span>="<a href="../../data-types/beam-level/" class="attrval">1</a>"&gt;<span class="xmltxt">continue</span>&lt;/<a class="tag" href="../../elements/beam/">beam</a>&gt;
+</span><span class="diff">      &lt;<a class="tag" href="../../elements/lyric/">lyric</a> <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">-73</a>" <span class="attrname">name</span>="<a href="../../data-types/xsd-token/" class="attrval">verse</a>" <span class="attrname">number</span>="<a href="../../data-types/xsd-NMTOKEN/" class="attrval">1</a>"&gt;
          &lt;<a class="tag" href="../../elements/syllabic/">syllabic</a>&gt;<span class="xmltxt">single</span>&lt;/<a class="tag" href="../../elements/syllabic/">syllabic</a>&gt;
          &lt;<a class="tag" href="../../elements/text/">text</a>&gt;<span class="xmltxt">will</span>&lt;/<a class="tag" href="../../elements/text/">text</a>&gt;
       &lt;/<a class="tag" href="../../elements/lyric/">lyric</a>&gt;

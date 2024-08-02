@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MusicXML example: &lt;concert-score&gt; and &lt;for-part&gt; | MusicXML 4.0</title>
+<title>MusicXML example: &lt;concert-score&gt; and &lt;for-part&gt; | MusicXML 4.1 Draft</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -23,7 +23,7 @@
         </svg>
     </button>
     <a class="logo" href="../../../">
-        <span class="logo-text">MusicXML 4.0</span>
+        <span class="logo-text">MusicXML 4.1 Draft</span>
     </a>
 </div>
 
@@ -78,6 +78,7 @@
         <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to40.xsl/">to40.xsl</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
         <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
         <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
@@ -88,6 +89,7 @@
     </ul>
     <li><b><a href="../../../version-history/">Version History</a></b></li>
     <ul>
+        <li><a href="../../../version-history/41/">Version 4.1</a></li>
         <li><a href="../../../version-history/40/">Version 4.0</a></li>
         <li><a href="../../../version-history/31/">Version 3.1</a></li>
         <li><a href="../../../version-history/30/">Version 3.0</a></li>
@@ -100,7 +102,7 @@
     <main>
     
 <p class="breadcrumb">
-    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../../">MusicXML 4.1 Draft</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
     <a href="../">Examples</a> &gt;
     &lt;concert-score&gt; and &lt;for-part&gt;
@@ -118,7 +120,7 @@
 
 
 
-<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/score-partwise/">score-partwise</a> <span class="attr">version="<a href="../../data-types/xsd-token/">4.0</a>"</span>&gt;
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/score-partwise/">score-partwise</a> <span class="attrname">version</span>="<a href="../../data-types/xsd-token/" class="attrval">4.1</a>"&gt;
    &lt;<a class="tag" href="../../elements/movement-title/">movement-title</a>&gt;<span class="xmltxt">C Sounds</span>&lt;/<a class="tag" href="../../elements/movement-title/">movement-title</a>&gt;
    &lt;<a class="tag" href="../../elements/defaults/">defaults</a>&gt;
       &lt;<a class="tag" href="../../elements/scaling/">scaling</a>&gt;
@@ -131,31 +133,31 @@
          &lt;<a class="tag" href="../../elements/page-width/">page-width</a>&gt;<span class="xmltxt">1194</span>&lt;/<a class="tag" href="../../elements/page-width/">page-width</a>&gt;
       &lt;/<a class="tag" href="../../elements/page-layout/">page-layout</a>&gt;
    &lt;/<a class="tag" href="../../elements/defaults/">defaults</a>&gt;
-   &lt;<a class="tag" href="../../elements/credit/">credit</a> <span class="attr">page="<a href="../../data-types/xsd-positiveInteger/">1</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/credit/">credit</a> <span class="attrname">page</span>="<a href="../../data-types/xsd-positiveInteger/" class="attrval">1</a>"&gt;
       &lt;<a class="tag" href="../../elements/credit-type/">credit-type</a>&gt;<span class="xmltxt">part name</span>&lt;/<a class="tag" href="../../elements/credit-type/">credit-type</a>&gt;
-      &lt;<a class="tag" href="../../elements/credit-words/">credit-words</a> <span class="attr">default-x="<a href="../../data-types/tenths/">105</a>"</span> <span class="attr">default-y="<a href="../../data-types/tenths/">1353</a>"</span> <span class="attr">font-size="<a href="../../data-types/font-size/">12</a>"</span> <span class="attr">valign="<a href="../../data-types/valign/">top</a>"</span>&gt;<span class="xmltxt">Score in C</span>&lt;/<a class="tag" href="../../elements/credit-words/">credit-words</a>&gt;
+      &lt;<a class="tag" href="../../elements/credit-words/">credit-words</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">105</a>" <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">1353</a>" <span class="attrname">font-size</span>="<a href="../../data-types/font-size/" class="attrval">12</a>" <span class="attrname">valign</span>="<a href="../../data-types/valign/" class="attrval">top</a>"&gt;<span class="xmltxt">Score in C</span>&lt;/<a class="tag" href="../../elements/credit-words/">credit-words</a>&gt;
    &lt;/<a class="tag" href="../../elements/credit/">credit</a>&gt;
    &lt;<a class="tag" href="../../elements/part-list/">part-list</a>&gt;
-      &lt;<a class="tag" href="../../elements/part-group/">part-group</a> <span class="attr">number="<a href="../../data-types/xsd-token/">1</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">start</a>"</span>&gt;
-         &lt;<a class="tag" href="../../elements/group-symbol/">group-symbol</a> <span class="attr">default-x="<a href="../../data-types/tenths/">-5</a>"</span>&gt;<span class="xmltxt">bracket</span>&lt;/<a class="tag" href="../../elements/group-symbol/">group-symbol</a>&gt;
+      &lt;<a class="tag" href="../../elements/part-group/">part-group</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">1</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">start</a>"&gt;
+         &lt;<a class="tag" href="../../elements/group-symbol/">group-symbol</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">-5</a>"&gt;<span class="xmltxt">bracket</span>&lt;/<a class="tag" href="../../elements/group-symbol/">group-symbol</a>&gt;
          &lt;<a class="tag" href="../../elements/group-barline/">group-barline</a>&gt;<span class="xmltxt">yes</span>&lt;/<a class="tag" href="../../elements/group-barline/">group-barline</a>&gt;
       &lt;/<a class="tag" href="../../elements/part-group/">part-group</a>&gt;
-      &lt;<a class="tag" href="../../elements/score-part/">score-part</a> <span class="attr">id="<a href="../../data-types/xsd-ID/">P1</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/score-part/">score-part</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-ID/" class="attrval">P1</a>"&gt;
          &lt;<a class="tag" href="../../elements/part-name/">part-name</a>&gt;<span class="xmltxt">Piccolo</span>&lt;/<a class="tag" href="../../elements/part-name/">part-name</a>&gt;
          &lt;<a class="tag" href="../../elements/group/">group</a>&gt;<span class="xmltxt">score</span>&lt;/<a class="tag" href="../../elements/group/">group</a>&gt;
       &lt;/<a class="tag" href="../../elements/score-part/">score-part</a>&gt;
-      &lt;<a class="tag" href="../../elements/score-part/">score-part</a> <span class="attr">id="<a href="../../data-types/xsd-ID/">P2</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/score-part/">score-part</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-ID/" class="attrval">P2</a>"&gt;
          &lt;<a class="tag" href="../../elements/part-name/">part-name</a>&gt;<span class="xmltxt">Oboe</span>&lt;/<a class="tag" href="../../elements/part-name/">part-name</a>&gt;
          &lt;<a class="tag" href="../../elements/group/">group</a>&gt;<span class="xmltxt">score</span>&lt;/<a class="tag" href="../../elements/group/">group</a>&gt;
       &lt;/<a class="tag" href="../../elements/score-part/">score-part</a>&gt;
-      &lt;<a class="tag" href="../../elements/score-part/">score-part</a> <span class="attr">id="<a href="../../data-types/xsd-ID/">P3</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/score-part/">score-part</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-ID/" class="attrval">P3</a>"&gt;
          &lt;<a class="tag" href="../../elements/part-name/">part-name</a>&gt;<span class="xmltxt">Bass Clarinet</span>&lt;/<a class="tag" href="../../elements/part-name/">part-name</a>&gt;
          &lt;<a class="tag" href="../../elements/group/">group</a>&gt;<span class="xmltxt">score</span>&lt;/<a class="tag" href="../../elements/group/">group</a>&gt;
       &lt;/<a class="tag" href="../../elements/score-part/">score-part</a>&gt;
-      &lt;<a class="tag" href="../../elements/part-group/">part-group</a> <span class="attr">number="<a href="../../data-types/xsd-token/">1</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop/">stop</a>"</span>/&gt;
+      &lt;<a class="tag" href="../../elements/part-group/">part-group</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">1</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop/" class="attrval">stop</a>"/&gt;
    &lt;/<a class="tag" href="../../elements/part-list/">part-list</a>&gt;
-   &lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P1</a>"</span>&gt;
-      &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">1</a>"</span> <span class="attr">width="<a href="../../data-types/tenths/">142</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-IDREF/" class="attrval">P1</a>"&gt;
+      &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">1</a>" <span class="attrname">width</span>="<a href="../../data-types/tenths/" class="attrval">142</a>"&gt;
          &lt;<a class="tag" href="../../elements/attributes/">attributes</a>&gt;
             &lt;<a class="tag" href="../../elements/divisions/">divisions</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/divisions/">divisions</a>&gt;
             &lt;<a class="tag" href="../../elements/key/">key</a>&gt;
@@ -176,7 +178,7 @@
                &lt;<a class="tag" href="../../elements/octave-change/">octave-change</a>&gt;<span class="xmltxt">1</span>&lt;/<a class="tag" href="../../elements/octave-change/">octave-change</a>&gt;
             &lt;/<a class="tag" href="../../elements/transpose/">transpose</a>&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/attributes/">attributes</a>&gt;
-         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">84</a>"</span>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">84</a>"&gt;
             &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
                &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
                &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
@@ -187,8 +189,8 @@
          &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
       &lt;/<a class="tag" href="../../elements/measure-partwise/">measure</a>&gt;
    &lt;/<a class="tag" href="../../elements/part-partwise/">part</a>&gt;
-   &lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P2</a>"</span>&gt;
-      &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">1</a>"</span> <span class="attr">width="<a href="../../data-types/tenths/">142</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-IDREF/" class="attrval">P2</a>"&gt;
+      &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">1</a>" <span class="attrname">width</span>="<a href="../../data-types/tenths/" class="attrval">142</a>"&gt;
          &lt;<a class="tag" href="../../elements/attributes/">attributes</a>&gt;
             &lt;<a class="tag" href="../../elements/divisions/">divisions</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/divisions/">divisions</a>&gt;
             &lt;<a class="tag" href="../../elements/key/">key</a>&gt;
@@ -204,7 +206,7 @@
                &lt;<a class="tag" href="../../elements/line/">line</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/line/">line</a>&gt;
             &lt;/<a class="tag" href="../../elements/clef/">clef</a>&gt;
          &lt;/<a class="tag" href="../../elements/attributes/">attributes</a>&gt;
-         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">84</a>"</span>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">84</a>"&gt;
             &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
                &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
                &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;
@@ -215,8 +217,8 @@
          &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
       &lt;/<a class="tag" href="../../elements/measure-partwise/">measure</a>&gt;
    &lt;/<a class="tag" href="../../elements/part-partwise/">part</a>&gt;
-   &lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P3</a>"</span>&gt;
-      &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">1</a>"</span> <span class="attr">width="<a href="../../data-types/tenths/">142</a>"</span>&gt;
+   &lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-IDREF/" class="attrval">P3</a>"&gt;
+      &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">1</a>" <span class="attrname">width</span>="<a href="../../data-types/tenths/" class="attrval">142</a>"&gt;
          &lt;<a class="tag" href="../../elements/attributes/">attributes</a>&gt;
             &lt;<a class="tag" href="../../elements/divisions/">divisions</a>&gt;<span class="xmltxt">2</span>&lt;/<a class="tag" href="../../elements/divisions/">divisions</a>&gt;
             &lt;<a class="tag" href="../../elements/key/">key</a>&gt;
@@ -243,7 +245,7 @@
                &lt;/<a class="tag" href="../../elements/part-transpose/">part-transpose</a>&gt;
             &lt;/<a class="tag" href="../../elements/for-part/">for-part</a>&gt;
 </span><span class="nodiff">         &lt;/<a class="tag" href="../../elements/attributes/">attributes</a>&gt;
-         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attr">default-x="<a href="../../data-types/tenths/">84</a>"</span>&gt;
+         &lt;<a class="tag" href="../../elements/note/">note</a> <span class="attrname">default-x</span>="<a href="../../data-types/tenths/" class="attrval">84</a>"&gt;
             &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
                &lt;<a class="tag" href="../../elements/step/">step</a>&gt;<span class="xmltxt">C</span>&lt;/<a class="tag" href="../../elements/step/">step</a>&gt;
                &lt;<a class="tag" href="../../elements/octave/">octave</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/octave/">octave</a>&gt;

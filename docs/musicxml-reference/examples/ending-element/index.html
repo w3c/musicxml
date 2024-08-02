@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MusicXML example: &lt;ending&gt; | MusicXML 4.0</title>
+<title>MusicXML example: &lt;ending&gt; | MusicXML 4.1 Draft</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -23,7 +23,7 @@
         </svg>
     </button>
     <a class="logo" href="../../../">
-        <span class="logo-text">MusicXML 4.0</span>
+        <span class="logo-text">MusicXML 4.1 Draft</span>
     </a>
 </div>
 
@@ -78,6 +78,7 @@
         <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to40.xsl/">to40.xsl</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
         <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
         <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
@@ -88,6 +89,7 @@
     </ul>
     <li><b><a href="../../../version-history/">Version History</a></b></li>
     <ul>
+        <li><a href="../../../version-history/41/">Version 4.1</a></li>
         <li><a href="../../../version-history/40/">Version 4.0</a></li>
         <li><a href="../../../version-history/31/">Version 3.1</a></li>
         <li><a href="../../../version-history/30/">Version 3.0</a></li>
@@ -100,7 +102,7 @@
     <main>
     
 <p class="breadcrumb">
-    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../../">MusicXML 4.1 Draft</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
     <a href="../">Examples</a> &gt;
     &lt;ending&gt;
@@ -118,10 +120,10 @@
 
 
 
-<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attr">id="<a href="../../data-types/xsd-IDREF/">P1</a>"</span>&gt;
-   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">28</a>"</span> <span class="attr">width="<a href="../../data-types/tenths/">169</a>"</span>&gt;
-      &lt;<a class="tag" href="../../elements/barline/">barline</a> <span class="attr">location="<a href="../../data-types/right-left-middle/">left</a>"</span>&gt;
-</span><span class="diff">         &lt;<a class="tag" href="../../elements/ending/">ending</a> <span class="attr">number="<a href="../../data-types/ending-number/">1,2</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop-discontinue/">start</a>"</span> <span class="attr">default-y="<a href="../../data-types/tenths/">30</a>"</span> <span class="attr">end-length="<a href="../../data-types/tenths/">15</a>"</span>&gt;<span class="xmltxt">1., 2.</span>&lt;/<a class="tag" href="../../elements/ending/">ending</a>&gt;
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/part-partwise/">part</a> <span class="attrname">id</span>="<a href="../../data-types/xsd-IDREF/" class="attrval">P1</a>"&gt;
+   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">28</a>" <span class="attrname">width</span>="<a href="../../data-types/tenths/" class="attrval">169</a>"&gt;
+      &lt;<a class="tag" href="../../elements/barline/">barline</a> <span class="attrname">location</span>="<a href="../../data-types/right-left-middle/" class="attrval">left</a>"&gt;
+</span><span class="diff">         &lt;<a class="tag" href="../../elements/ending/">ending</a> <span class="attrname">number</span>="<a href="../../data-types/ending-number/" class="attrval">1,2</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop-discontinue/" class="attrval">start</a>" <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">30</a>" <span class="attrname">end-length</span>="<a href="../../data-types/tenths/" class="attrval">15</a>"&gt;<span class="xmltxt">1., 2.</span>&lt;/<a class="tag" href="../../elements/ending/">ending</a>&gt;
 </span><span class="nodiff">      &lt;/<a class="tag" href="../../elements/barline/">barline</a>&gt;
       &lt;<a class="tag" href="../../elements/note/">note</a>&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;
@@ -143,15 +145,15 @@
          &lt;<a class="tag" href="../../elements/type/">type</a>&gt;<span class="xmltxt">quarter</span>&lt;/<a class="tag" href="../../elements/type/">type</a>&gt;
          &lt;<a class="tag" href="../../elements/stem/">stem</a>&gt;<span class="xmltxt">down</span>&lt;/<a class="tag" href="../../elements/stem/">stem</a>&gt;
       &lt;/<a class="tag" href="../../elements/note/">note</a>&gt;
-      &lt;<a class="tag" href="../../elements/barline/">barline</a> <span class="attr">location="<a href="../../data-types/right-left-middle/">right</a>"</span>&gt;
+      &lt;<a class="tag" href="../../elements/barline/">barline</a> <span class="attrname">location</span>="<a href="../../data-types/right-left-middle/" class="attrval">right</a>"&gt;
          &lt;<a class="tag" href="../../elements/bar-style/">bar-style</a>&gt;<span class="xmltxt">light-heavy</span>&lt;/<a class="tag" href="../../elements/bar-style/">bar-style</a>&gt;
-</span><span class="diff">         &lt;<a class="tag" href="../../elements/ending/">ending</a> <span class="attr">number="<a href="../../data-types/ending-number/">1,2</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop-discontinue/">stop</a>"</span>/&gt;
-</span><span class="nodiff">         &lt;<a class="tag" href="../../elements/repeat/">repeat</a> <span class="attr">direction="<a href="../../data-types/backward-forward/">backward</a>"</span> <span class="attr">winged="<a href="../../data-types/winged/">none</a>"</span>/&gt;
+</span><span class="diff">         &lt;<a class="tag" href="../../elements/ending/">ending</a> <span class="attrname">number</span>="<a href="../../data-types/ending-number/" class="attrval">1,2</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop-discontinue/" class="attrval">stop</a>"/&gt;
+</span><span class="nodiff">         &lt;<a class="tag" href="../../elements/repeat/">repeat</a> <span class="attrname">direction</span>="<a href="../../data-types/backward-forward/" class="attrval">backward</a>" <span class="attrname">winged</span>="<a href="../../data-types/winged/" class="attrval">none</a>"/&gt;
       &lt;/<a class="tag" href="../../elements/barline/">barline</a>&gt;
    &lt;/<a class="tag" href="../../elements/measure-partwise/">measure</a>&gt;
-   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attr">number="<a href="../../data-types/xsd-token/">29</a>"</span> <span class="attr">width="<a href="../../data-types/tenths/">151</a>"</span>&gt;
-      &lt;<a class="tag" href="../../elements/barline/">barline</a> <span class="attr">location="<a href="../../data-types/right-left-middle/">left</a>"</span>&gt;
-</span><span class="diff">         &lt;<a class="tag" href="../../elements/ending/">ending</a> <span class="attr">number="<a href="../../data-types/ending-number/">3</a>"</span> <span class="attr">type="<a href="../../data-types/start-stop-discontinue/">start</a>"</span> <span class="attr">default-y="<a href="../../data-types/tenths/">30</a>"</span> <span class="attr">end-length="<a href="../../data-types/tenths/">15</a>"</span>&gt;<span class="xmltxt">3.</span>&lt;/<a class="tag" href="../../elements/ending/">ending</a>&gt;
+   &lt;<a class="tag" href="../../elements/measure-partwise/">measure</a> <span class="attrname">number</span>="<a href="../../data-types/xsd-token/" class="attrval">29</a>" <span class="attrname">width</span>="<a href="../../data-types/tenths/" class="attrval">151</a>"&gt;
+      &lt;<a class="tag" href="../../elements/barline/">barline</a> <span class="attrname">location</span>="<a href="../../data-types/right-left-middle/" class="attrval">left</a>"&gt;
+</span><span class="diff">         &lt;<a class="tag" href="../../elements/ending/">ending</a> <span class="attrname">number</span>="<a href="../../data-types/ending-number/" class="attrval">3</a>" <span class="attrname">type</span>="<a href="../../data-types/start-stop-discontinue/" class="attrval">start</a>" <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">30</a>" <span class="attrname">end-length</span>="<a href="../../data-types/tenths/" class="attrval">15</a>"&gt;<span class="xmltxt">3.</span>&lt;/<a class="tag" href="../../elements/ending/">ending</a>&gt;
 </span><span class="nodiff">      &lt;/<a class="tag" href="../../elements/barline/">barline</a>&gt;
       &lt;<a class="tag" href="../../elements/note/">note</a>&gt;
          &lt;<a class="tag" href="../../elements/pitch/">pitch</a>&gt;

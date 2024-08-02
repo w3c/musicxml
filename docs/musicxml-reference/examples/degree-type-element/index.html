@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MusicXML example: &lt;degree-type&gt; | MusicXML 4.0</title>
+<title>MusicXML example: &lt;degree-type&gt; | MusicXML 4.1 Draft</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../../static/styles.css">
@@ -23,7 +23,7 @@
         </svg>
     </button>
     <a class="logo" href="../../../">
-        <span class="logo-text">MusicXML 4.0</span>
+        <span class="logo-text">MusicXML 4.1 Draft</span>
     </a>
 </div>
 
@@ -78,6 +78,7 @@
         <li><a href="../../../listings/sounds.xsd/">sounds.xsd</a></li>
         <li><a href="../../../listings/sounds.xml/">sounds.xml</a></li>
         <li><a href="../../../listings/catalog.xml/">catalog.xml</a></li>
+        <li><a href="../../../listings/to40.xsl/">to40.xsl</a></li>
         <li><a href="../../../listings/to31.xsl/">to31.xsl</a></li>
         <li><a href="../../../listings/to30.xsl/">to30.xsl</a></li>
         <li><a href="../../../listings/to20.xsl/">to20.xsl</a></li>
@@ -88,6 +89,7 @@
     </ul>
     <li><b><a href="../../../version-history/">Version History</a></b></li>
     <ul>
+        <li><a href="../../../version-history/41/">Version 4.1</a></li>
         <li><a href="../../../version-history/40/">Version 4.0</a></li>
         <li><a href="../../../version-history/31/">Version 3.1</a></li>
         <li><a href="../../../version-history/30/">Version 3.0</a></li>
@@ -100,7 +102,7 @@
     <main>
     
 <p class="breadcrumb">
-    <a href="../../../">MusicXML 4.0</a> &gt;
+    <a href="../../../">MusicXML 4.1 Draft</a> &gt;
     <a href="../../">MusicXML reference</a> &gt;
     <a href="../">Examples</a> &gt;
     &lt;degree-type&gt;
@@ -118,20 +120,20 @@
 
 
 
-<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/harmony/">harmony</a> <span class="attr">default-y="<a href="../../data-types/tenths/">40</a>"</span>&gt;
+<div class="xmlmarkup"><span class=" nodiff">&lt;<a class="tag" href="../../elements/harmony/">harmony</a> <span class="attrname">default-y</span>="<a href="../../data-types/tenths/" class="attrval">40</a>"&gt;
    &lt;<a class="tag" href="../../elements/root/">root</a>&gt;
       &lt;<a class="tag" href="../../elements/root-step/">root-step</a>&gt;<span class="xmltxt">A</span>&lt;/<a class="tag" href="../../elements/root-step/">root-step</a>&gt;
    &lt;/<a class="tag" href="../../elements/root/">root</a>&gt;
-   &lt;<a class="tag" href="../../elements/kind/">kind</a> <span class="attr">parentheses-degrees="<a href="../../data-types/yes-no/">yes</a>"</span> <span class="attr">text="<a href="../../data-types/xsd-token/">7</a>"</span>&gt;<span class="xmltxt">dominant</span>&lt;/<a class="tag" href="../../elements/kind/">kind</a>&gt;
+   &lt;<a class="tag" href="../../elements/kind/">kind</a> <span class="attrname">parentheses-degrees</span>="<a href="../../data-types/yes-no/" class="attrval">yes</a>" <span class="attrname">text</span>="<a href="../../data-types/xsd-token/" class="attrval">7</a>"&gt;<span class="xmltxt">dominant</span>&lt;/<a class="tag" href="../../elements/kind/">kind</a>&gt;
    &lt;<a class="tag" href="../../elements/degree/">degree</a>&gt;
       &lt;<a class="tag" href="../../elements/degree-value/">degree-value</a>&gt;<span class="xmltxt">5</span>&lt;/<a class="tag" href="../../elements/degree-value/">degree-value</a>&gt;
       &lt;<a class="tag" href="../../elements/degree-alter/">degree-alter</a>&gt;<span class="xmltxt">-1</span>&lt;/<a class="tag" href="../../elements/degree-alter/">degree-alter</a>&gt;
-</span><span class="diff">      &lt;<a class="tag" href="../../elements/degree-type/">degree-type</a> <span class="attr">text="<a href="../../data-types/xsd-token/"></a>"</span>&gt;<span class="xmltxt">alter</span>&lt;/<a class="tag" href="../../elements/degree-type/">degree-type</a>&gt;
+</span><span class="diff">      &lt;<a class="tag" href="../../elements/degree-type/">degree-type</a> <span class="attrname">text</span>="<a href="../../data-types/xsd-token/" class="attrval"></a>"&gt;<span class="xmltxt">alter</span>&lt;/<a class="tag" href="../../elements/degree-type/">degree-type</a>&gt;
 </span><span class="nodiff">   &lt;/<a class="tag" href="../../elements/degree/">degree</a>&gt;
    &lt;<a class="tag" href="../../elements/degree/">degree</a>&gt;
       &lt;<a class="tag" href="../../elements/degree-value/">degree-value</a>&gt;<span class="xmltxt">3</span>&lt;/<a class="tag" href="../../elements/degree-value/">degree-value</a>&gt;
       &lt;<a class="tag" href="../../elements/degree-alter/">degree-alter</a>&gt;<span class="xmltxt">0</span>&lt;/<a class="tag" href="../../elements/degree-alter/">degree-alter</a>&gt;
-</span><span class="diff">      &lt;<a class="tag" href="../../elements/degree-type/">degree-type</a> <span class="attr">text="<a href="../../data-types/xsd-token/">omit </a>"</span>&gt;<span class="xmltxt">subtract</span>&lt;/<a class="tag" href="../../elements/degree-type/">degree-type</a>&gt;
+</span><span class="diff">      &lt;<a class="tag" href="../../elements/degree-type/">degree-type</a> <span class="attrname">text</span>="<a href="../../data-types/xsd-token/" class="attrval">omit </a>"&gt;<span class="xmltxt">subtract</span>&lt;/<a class="tag" href="../../elements/degree-type/">degree-type</a>&gt;
 </span><span class="nodiff">   &lt;/<a class="tag" href="../../elements/degree/">degree</a>&gt;
 &lt;/<a class="tag" href="../../elements/harmony/">harmony</a>&gt;</span></div>
 
