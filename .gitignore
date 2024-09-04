@@ -1,6 +1,6 @@
 .DS_Store
 docgenerator/docgenerator/
-docgenerator/spec/
+docgenerator/spectools/
 docgenerator/db.sqlite3
 docgenerator/manage.py
 docgenerator/requirements.txt

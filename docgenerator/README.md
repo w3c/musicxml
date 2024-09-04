@@ -4,7 +4,7 @@ The MusicXML specification is created with the same documentation
 generator used for MNX. To avoid duplication of code, all that
 is contained in this directory is the MusicXML specific data.
 
-As with MNX, it's a database-driven web app, using Django. We 
+As with MNX, it's a database-driven web app, using Django. We
 manage the MusicXML docs within that app, using the Django admin
 to make things easily editable and previewable via a local web
 server. Then, when things look good, we "freeze" the current
@@ -16,23 +16,23 @@ working:
 
 ## Assembling the files
 
-To avoid code duplication between repositories, there are 
+To avoid code duplication between repositories, there are
 currently some extra steps to put all the files in the right
 places.
 
 1. Fetch the current version of the W3C mnx repository.
 
-2. Copy *ONLY* the following files and directories from the 
-docgenerator directory of the mnx repository into the
-docgenerator directory of the musicxml repository (the
+2. Copy *ONLY* the following files and directories from the
+doctools directory of the mnx repository into the
+doctools directory of the musicxml repository (the
 directory containing this README file):
 
-- The docgenerator folder (another one inside the docgenerator folder)
+- The docgenerator folder
 - The manage.py file
 - The requirements.txt file
-- The spec folder
+- The spectools folder
 
-3. Copy the homepage.html file from this folder into the 
+3. Copy the homepage.html file from this folder into the
 spec/templates folder, overwriting the homepage.html file from
 the mnx repository.
 
@@ -130,7 +130,7 @@ To serialize the database, hence creating an updated
 python manage.py freezedb musicxmldoc.json
 ```
 
-(The `musicxmldoc.json` in this command lets you 
+(The `musicxmldoc.json` in this command lets you
 specify the filename.)
 
 ### Generating a static HTML version of the docs
