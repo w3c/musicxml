@@ -43952,7 +43952,7 @@
             "    <measure number=\"13\">",
             "      <attributes>",
             "        <measure-style>",
-            "          <multiple-rest>4</multiple-rest>",
+            "          <metadiff><multiple-rest>4</multiple-rest></metadiff>",
             "        </measure-style>",
             "      </attributes>",
             "      <note>",
