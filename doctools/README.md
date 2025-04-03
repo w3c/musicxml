@@ -1,5 +1,7 @@
 # MusicXML documentation generator
 
+This code generates the MusicXML documentation (but not the specs)
+
 The MusicXML specification is created with the same documentation
 generator used for MNX. To avoid duplication of code, all that
 is contained in this directory is the MusicXML specific data.
@@ -14,13 +16,69 @@ generate a static HTML site via a script.
 If you're interested in contributing, here's how to get it
 working:
 
+## Initial setup
+
+Note: All these commands should be run from within the same directory
+that contains this README file.
+
+1. Install a recent version of Python 3.
+2. (Option but recommended) Create a Python virtual environment. 
+Here's how to create one called `musicxmldocs` in your home directory:
+
+```
+python3 -m venv ~/musicxmldocs
+```
+
+3. Activate the virtual environment:
+
+```
+source ~/musicxmldocs/bin/activate
+```
+
+4. Install the required Python modules (including Django):
+
+```
+pip install -r requirements.txt
+```
+
+5. Get a git checkout of the mxdocgenerator tool somewhere on your system
+   (probably in a directory adjacent to the directory above this one, but not 
+    in the musicxml directory)
+
+```
+git clone https://github.com/w3c-cg/mnxdocgenerator.git /path/to/local/mnxdocgenerator
+```
+
+6. Install that local version of mnxdocgenerator:
+
+```
+pip install -e /path/to/local/mnxdocgenerator
+```
+
+7. Initialize a local database:
+
+```
+python manage.py migrate
+```
+
+This creates a SQLite file called `db.sqlite3` in the current
+directory.
+
+8. Import the MNX spec data into your local database:
+
+```
+python manage.py loaddb musicxmldoc.json
+```
+
+9.  Copy the 
+
 ## Assembling the files
 
 To avoid code duplication between repositories, there are
 currently some extra steps to put all the files in the right
 places.
 
-1. Fetch the current version of the W3C mnx repository.
+1. Fetch the current version of the W3C-CG mnxdocgenerator repository.
 
 2. Copy *ONLY* the following files and directories from the
 doctools directory of the mnx repository into the
