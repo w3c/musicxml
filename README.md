@@ -5,3 +5,16 @@ Adrian Holovaty, and Daniel Spreadbury.
 
 To view HTML files properly rendered in the browser, 
 please use the [separate GitHub view](http://w3c.github.io/musicxml/).
+
+
+## Developing
+
+To propose pull requests you must be a member of the W3C Music Notation Community Group
+and have signed the appropriate license aggreements.
+
+## Acknowledgments 
+
+MusicXML was originally created by Michael Good, formerly of Recordare and then
+at MakeMusic (formerly Coda Music, makers of Finale) and generously released to
+the W3C Music Notation Community Group
+
