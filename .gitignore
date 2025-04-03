@@ -1,9 +1,6 @@
 .DS_Store
-doctools/docgenerator/
 doctools/spectools/
 doctools/db.sqlite3
-doctools/manage.py
-doctools/requirements.txt
 doctools/.idea/
 doctools/venv/
 venv/
