@@ -62,78 +62,17 @@ python manage.py migrate
 ```
 
 This creates a SQLite file called `db.sqlite3` in the current
-directory.
+directory.  That file will not be committed to the repository.
 
-8. Import the MNX spec data into your local database:
-
-```
-python manage.py loaddb musicxmldoc.json
-```
-
-9.  Copy the 
-
-## Assembling the files
-
-To avoid code duplication between repositories, there are
-currently some extra steps to put all the files in the right
-places.
-
-1. Fetch the current version of the W3C-CG mnxdocgenerator repository.
-
-2. Copy *ONLY* the following files and directories from the
-doctools directory of the mnx repository into the
-doctools directory of the musicxml repository (the
-directory containing this README file):
-
-- The docgenerator folder
-- The manage.py file
-- The requirements.txt file
-- The spectools folder
-
-3. Copy the homepage.html file from this folder into the
-spec/templates folder, overwriting the homepage.html file from
-the mnx repository.
-
-## Setup your environment
-
-Note: All of these commands should be run from within the
-same directory that contains this README file.
-
-1. Install Python 3.7 or higher.
-
-2. (Optional but recommended) Create a Python virtual environment.
-Here's how to create one called `musicxmldocs` in your home directory:
-
-```
-python3 -m venv ~/musicxmldocs
-```
-
-3. Activate the virtual environment:
-
-```
-source ~/musicxmldocs/bin/activate
-```
-
-4. Install the required Python modules:
-
-```
-pip install -r requirements.txt
-```
-
-5. Initialize a local database:
-
-```
-python manage.py migrate
-```
-
-This creates a SQLite file called `db.sqlite3` in the current
-directory.
-
-6. Import the MusicXML spec data into your local database:
+8. Import the musicxml spec data into your local database:
 
 ```
 python manage.py loaddb musicxmldoc.json
 ```
+
+9. (Note: as of 3-April-2025 there is no need to copy homepage.html to mnxdocgenerator.
+the former homepage.html is now in mnxdocgenerator/spectools/templates/musicxml_homepage.html.
+Changes should be made to the mnxdocgenerator project's version).
 
 ## Running the site locally
 
