@@ -885,10 +885,11 @@ The none sign is deprecated as of MusicXML 4.0. Use the clef element's print-obj
 
 	<xs:simpleType name="ending-number">
 		<xs:annotation>
-			<xs:documentation>The ending-number type is used to specify either a comma-separated list of positive integers without leading zeros, or a string of zero or more spaces. It is used for the number attribute of the ending element. The zero or more spaces version is used when software knows that an ending is present, but cannot determine the type of the ending.</xs:documentation>
+			<xs:documentation>The ending-number type is used to specify either a comma-separated list of positive integers without leading zeros, or the empty string. It is used for the number attribute of the ending element.
+				The empty-string version is used when software knows that an ending is present, but cannot determine the type of the ending.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:pattern value="([ ]*)|([1-9][0-9]*(,[ ]*[1-9][0-9]*)*)"/>
+			<xs:pattern value="()|([1-9][0-9]*(, ?[1-9][0-9]*)*)"/>
 		</xs:restriction>
 	</xs:simpleType>
 
