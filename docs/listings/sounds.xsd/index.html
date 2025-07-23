@@ -26,7 +26,8 @@
 
 <div class="content">
     <nav class="sidenav">
-        <img src="../../static/images/back-cg-final.png"/>
+        <!-- Change this to back-cg-final.png when publishing a Final -->
+<img src="../../static/images/back-cg-draft.png"/>
 <ul>
     <li><b><a href="../../"/>Introduction</a></b></li>
     <li><b><a href="../../tutorial/introduction/">Tutorial</a></b></li>
@@ -110,21 +111,23 @@
     &lt;xs:annotation&gt;
         &lt;xs:documentation&gt;MusicXML Sounds W3C XML schema (XSD)
 
-Version 4.0
+Version 4.1 Draft
 
-Copyright © 2004-2021 the Contributors to the MusicXML Specification, published by the W3C Music Notation Community Group under the W3C Community Final Specification Agreement (FSA):
+Copyright © 2004-2024 the Contributors to the MusicXML Specification, 
+published by the W3C Music Notation Community Group under the 
+W3C Community Contributor License Agreement (CLA):
 
-    https://www.w3.org/community/about/agreements/final/
+    https://www.w3.org/community/about/agreements/cla/
 
 A human-readable summary is available:
 
-    https://www.w3.org/community/about/agreements/fsa-deed/
+    https://www.w3.org/community/about/agreements/cla-deed/
 
-This is the W3C XML Schema (XSD) version of the MusicXML 4.0 format. Validation is tightened by moving MusicXML definitions from comments into schema data types and definitions. Character entities and other entity usages that are not supported in W3C XML Schema have also been removed. However, the features of W3C XML Schema make it easier to define variations of the MusicXML format, either via extension or restriction.
+This is the W3C XML Schema (XSD) version of the MusicXML 4.1 format. Validation is tightened by moving MusicXML definitions from comments into schema data types and definitions. Character entities and other entity usages that are not supported in W3C XML Schema have also been removed. However, the features of W3C XML Schema make it easier to define variations of the MusicXML format, either via extension or restriction.
 
 Starting with Version 3.0, the MusicXML format includes a standard set of instrument sounds to identify musical timbres. These values are used in the instrument-sound element.
 
-The standard sounds are listed in the sounds.xml file included with MusicXML 4.0. This is the W3C XML Schema for that file.
+The standard sounds are listed in the sounds.xml file included with MusicXML 4.1. This is the W3C XML Schema for that file.
 
 The XML catalog at catalog.xml supports validating against a local copy of this XSD rather than the networked version. Software often has trouble using system IDs due to factors such as restrictions on network access, or resources having moved from the original specified location. To validate with the MusicXML XSD, use a schema URI of "http://www.musicxml.org/xsd/sounds.xsd".&lt;/xs:documentation&gt;
     &lt;/xs:annotation&gt;
@@ -154,7 +157,7 @@ The XML catalog at catalog.xml supports validating against a local copy of this 
     
     &lt;xs:complexType name="sound"&gt;
         &lt;xs:annotation&gt;
-            &lt;xs:documentation&gt;The sound type lists one of the standard sounds available in MusicXML 4.0. The required id attribute lists the MusicXML sound identifier string used by the instrument-sound element.
+            &lt;xs:documentation&gt;The sound type lists one of the standard sounds available in MusicXML 4.1. The required id attribute lists the MusicXML sound identifier string used by the instrument-sound element.
 
 The optional any, solo, and ensemble elements can be used for mapping MusicXML sound IDs to an application's or virtual instrument library's method of identifying sounds. These methods could include Sibelius SoundWorld IDs, capella genericsound IDs, and General MIDI patch numbers.
 

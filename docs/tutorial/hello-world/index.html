@@ -26,7 +26,8 @@
 
 <div class="content">
     <nav class="sidenav">
-        <img src="../../static/images/back-cg-final.png"/>
+        <!-- Change this to back-cg-final.png when publishing a Final -->
+<img src="../../static/images/back-cg-draft.png"/>
 <ul>
     <li><b><a href="../../"/>Introduction</a></b></li>
     <li><b><a href="../introduction/">Tutorial</a></b></li>
@@ -115,9 +116,9 @@
 
 <p><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
 &lt;!DOCTYPE score-partwise PUBLIC
-    "-//Recordare//DTD MusicXML 4.0 Partwise//EN"
+    "-//Recordare//DTD MusicXML 4.1 Partwise//EN"
     "http://www.musicxml.org/dtds/partwise.dtd"&gt;
-&lt;score-partwise version="4.0"&gt;
+&lt;score-partwise version="4.1"&gt;
   &lt;part-list&gt;
     &lt;score-part id="P1"&gt;
       &lt;part-name&gt;Music&lt;/part-name&gt;
@@ -158,7 +159,7 @@
 <p>This is the XML declaration required of all XML documents. We have specified that the characters are written in the Unicode encoding UTF-8. This encoding provides backwards compatibility with ASCII.</p>
 
 <p><pre>&lt;!DOCTYPE score-partwise PUBLIC
-    "-//Recordare//DTD MusicXML 4.0 Partwise//EN"
+    "-//Recordare//DTD MusicXML 4.1 Partwise//EN"
     "http://www.musicxml.org/dtds/partwise.dtd"&gt;</pre></p>
 
 <p>This is the document type declaration for applications that use XML Document Type Definitions (DTDs). It lets those applications know this is a MusicXML file. When using a document type declaration, we also set the value of standalone to "no" in the XML declaration since we are defining the document with an external definition in another file.</p>
@@ -167,7 +168,7 @@
 
 <p>This public document type declaration includes an Internet location for the DTD. The URL in this declaration is just for reference. Most applications will know that they are expecting a MusicXML file and will want to validate against their own local copy of the MusicXML schemas. Use MusicXML's <a href="../../listings/catalog.xml/">XML catalog</a> to validate against the local copy, rather than reading the XSD or DTD definitions slowly over the network.</p>
 
-<p><pre>&lt;score-partwise version="4.0"&gt;</pre></p>
+<p><pre>&lt;score-partwise version="4.1"&gt;</pre></p>
 
 <p>This is the root document type. The <a href="../../musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a> element is made up of parts, where each part is made up of measures. There is also a <a href="../../musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a> option which is made up of measures, where each measure is made up of parts. The version attribute lets programs distinguish what version of MusicXML is being used more easily. Leave it out if you are writing MusicXML 1.0 files.</p>
 

@@ -3,7 +3,7 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$720000$mJOSWumGHHtH6ClL2SspWj$AKqhY+/VNIqGkaGBnKIteSMpWFCiDv52+esQnLcegY8=",
+        "password": "pbkdf2_sha256$600000$lm041lmezYj2f5IUZz9rsM$CdSqvgv26igmxYC3ugh3k6CDc0jAMMpPwAz1vmezUNw=",
         "last_login": "2021-01-19T00:00:00Z",
         "is_superuser": true,
         "username": "admin",
@@ -60,7 +60,8 @@
         "site_name": "MusicXML 4.1 Draft",
         "xml_format_name": "MusicXML",
         "sidebar_html": [
-            "<img src=\"/static/images/back-cg-final.png\"/>",
+            "<!-- Change this to back-cg-final.png when publishing a Final -->",
+            "<img src=\"/static/images/back-cg-draft.png\"/>",
             "<ul>",
             "    <li><b><a href=\"/\"/>Introduction</a></b></li>",
             "    <li><b><a href=\"/tutorial/introduction/\">Tutorial</a></b></li>",
@@ -39882,6 +39883,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/attributes-element.png",
         "is_featured": false
     }
@@ -39929,6 +39931,7 @@
             "    </part>",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "/static/tutorial/hello-world.png",
         "is_featured": false
     }
@@ -40421,6 +40424,7 @@
             "  <!--=========================================================-->",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "/static/tutorial/chopin.png",
         "is_featured": false
     }
@@ -40738,6 +40742,7 @@
             "  <!--=========================================================-->",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "/static/tutorial/chord.png",
         "is_featured": false
     }
@@ -41104,6 +41109,7 @@
             "  <!--=========================================================-->",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "/static/tutorial/tab.png",
         "is_featured": false
     }
@@ -41804,6 +41810,7 @@
             "  <!--=========================================================-->",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "/static/tutorial/percussion.png",
         "is_featured": false
     }
@@ -43399,6 +43406,7 @@
             "  <!--=========================================================-->",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "/static/tutorial/reve.png",
         "is_featured": false
     }
@@ -43492,6 +43500,7 @@
             "      </barline>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/beat-repeat-element.png",
         "is_featured": false
     }
@@ -43510,6 +43519,7 @@
             "          <metadiff><beat-type>4</beat-type></metadiff>",
             "        </time>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/beat-type-element.png",
         "is_featured": false
     }
@@ -43534,6 +43544,7 @@
             "        </transpose></metadiff>",
             "      </attributes>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/transpose-element.png",
         "is_featured": false
     }
@@ -43552,6 +43563,7 @@
             "          <line>4</line>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/bass-clef.png",
         "is_featured": false
     }
@@ -43570,6 +43582,7 @@
             "          <line>2</line>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/treble-clef.png",
         "is_featured": false
     }
@@ -43589,6 +43602,7 @@
             "          <clef-octave-change>-1</clef-octave-change>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/vocal-tenor-clef.png",
         "is_featured": false
     }
@@ -43607,6 +43621,7 @@
             "          <line>3</line>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/alto-clef.png",
         "is_featured": false
     }
@@ -43625,6 +43640,7 @@
             "          <line>4</line>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tenor-clef.png",
         "is_featured": false
     }
@@ -43643,6 +43659,7 @@
             "          <line>1</line>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/soprano-clef.png",
         "is_featured": false
     }
@@ -43661,6 +43678,7 @@
             "          <line>2</line>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/mezzo-soprano-clef.png",
         "is_featured": false
     }
@@ -43679,6 +43697,7 @@
             "          <line>5</line>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/baritone-c-clef.png",
         "is_featured": false
     }
@@ -43697,6 +43716,7 @@
             "          <line>3</line>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/baritone-f-clef.png",
         "is_featured": false
     }
@@ -43716,6 +43736,7 @@
             "          <clef-octave-change>-1</clef-octave-change>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/bass-clef-down-octave.png",
         "is_featured": false
     }
@@ -43733,6 +43754,7 @@
             "          <sign>percussion</sign>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/percussion-clef.png",
         "is_featured": false
     }
@@ -43751,6 +43773,7 @@
             "          <line>5</line>",
             "        </clef></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tab-clef.png",
         "is_featured": false
     }
@@ -43769,6 +43792,7 @@
             "          <metadiff><line>4</line></metadiff>",
             "        </clef>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/line-element.png",
         "is_featured": false
     }
@@ -43797,6 +43821,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/divisions-duration-elements.png",
         "is_featured": false
     }
@@ -43815,6 +43840,7 @@
             "          <mode>major</mode>",
             "        </key></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/key-element-traditional.png",
         "is_featured": false
     }
@@ -43838,6 +43864,7 @@
             "          </interchangeable></metadiff>",
             "        </time>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/interchangeable-element.png",
         "is_featured": false
     }
@@ -43866,6 +43893,7 @@
             "          <key-accidental>sharp</key-accidental>",
             "        </key></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/key-element-non-traditional.png",
         "is_featured": false
     }
@@ -43935,6 +43963,7 @@
             "    </measure>",
             "  </part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/measure-repeat-element.png",
         "is_featured": false
     }
@@ -43980,6 +44009,7 @@
             "    </measure>",
             "  </part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/multiple-rest-element.png",
         "is_featured": false
     }
@@ -43999,6 +44029,7 @@
             "          <metadiff><octave-change>-1</octave-change></metadiff>",
             "        </transpose>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -44016,6 +44047,7 @@
             "          <metadiff><senza-misura/></metadiff>",
             "        </time>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/senza-misura-element.png",
         "is_featured": false
     }
@@ -44061,6 +44093,7 @@
             "    </measure>",
             "  </part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/slash-element.png",
         "is_featured": false
     }
@@ -44078,6 +44111,7 @@
             "          <metadiff><staff-lines>1</staff-lines></metadiff>",
             "        </staff-details>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staff-lines-element.png",
         "is_featured": false
     }
@@ -44095,6 +44129,7 @@
             "          <metadiff><staff-size scaling=\"75\">75</staff-size></metadiff>",
             "        </staff-details>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staff-size-element.png",
         "is_featured": false
     }
@@ -44137,6 +44172,7 @@
             "          <staff-size scaling=\"100\">150</staff-size>",
             "        </staff-details>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staff-tuning-element.png",
         "is_featured": false
     }
@@ -44171,6 +44207,7 @@
             "        </clef>",
             "      </attributes>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staves-element.png",
         "is_featured": false
     }
@@ -44310,6 +44347,7 @@
             "      </barline></metadiff>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/barline-element.png",
         "is_featured": false
     }
@@ -44382,6 +44420,7 @@
             "    </measure>",
             "  </part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/ending-element.png",
         "is_featured": false
     }
@@ -44400,6 +44439,7 @@
             "        <metadiff><repeat direction=\"forward\" winged=\"none\"/></metadiff>",
             "      </barline>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/repeat-element.png",
         "is_featured": false
     }
@@ -44420,6 +44460,7 @@
             "        <sound coda=\"10\" divisions=\"2\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/coda-element.png",
         "is_featured": false
     }
@@ -44438,6 +44479,7 @@
             "        <accidental-text>flat</accidental-text>",
             "      </part-name-display></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/part-name-display-element.png",
         "is_featured": false
     }
@@ -44457,6 +44499,7 @@
             "          <display-text> Tpt. 1</display-text>",
             "        </part-abbreviation-display></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/part-abbreviation-display-element.png",
         "is_featured": false
     }
@@ -44485,6 +44528,7 @@
             "      <group-barline>yes</group-barline>",
             "    </part-group>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/group-name-display-element.png",
         "is_featured": false
     }
@@ -44505,6 +44549,7 @@
             "      <group-barline>yes</group-barline>",
             "    </part-group>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/group-abbreviation-element.png",
         "is_featured": false
     }
@@ -44533,6 +44578,7 @@
             "      <group-barline>yes</group-barline>",
             "    </part-group>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/group-abbreviation-display-element.png",
         "is_featured": false
     }
@@ -44554,6 +44600,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/effect-element.png",
         "is_featured": false
     }
@@ -44576,6 +44623,7 @@
             "        <sound dynamics=\"100\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/f-element.png",
         "is_featured": false
     }
@@ -44598,6 +44646,7 @@
             "        <sound dynamics=\"111\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/ff-element.png",
         "is_featured": false
     }
@@ -44620,6 +44669,7 @@
             "        <sound dynamics=\"122\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/fff-element.png",
         "is_featured": false
     }
@@ -44642,6 +44692,7 @@
             "        <sound dynamics=\"133\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/ffff-element.png",
         "is_featured": false
     }
@@ -44664,6 +44715,7 @@
             "        <sound dynamics=\"138\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/fffff-element.png",
         "is_featured": false
     }
@@ -44686,6 +44738,7 @@
             "        <sound dynamics=\"141\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/ffffff-element.png",
         "is_featured": false
     }
@@ -44708,6 +44761,7 @@
             "        <sound dynamics=\"55\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/p-element.png",
         "is_featured": false
     }
@@ -44730,6 +44784,7 @@
             "        <sound dynamics=\"41\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pp-element.png",
         "is_featured": false
     }
@@ -44752,6 +44807,7 @@
             "        <sound dynamics=\"27\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/ppp-element.png",
         "is_featured": false
     }
@@ -44774,6 +44830,7 @@
             "        <sound dynamics=\"11\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pppp-element.png",
         "is_featured": false
     }
@@ -44796,6 +44853,7 @@
             "        <sound dynamics=\"6\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/ppppp-element.png",
         "is_featured": false
     }
@@ -44818,6 +44876,7 @@
             "        <sound dynamics=\"1\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pppppp-element.png",
         "is_featured": false
     }
@@ -44840,6 +44899,7 @@
             "        <sound dynamics=\"70\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/mp-element.png",
         "is_featured": false
     }
@@ -44862,6 +44922,7 @@
             "        <sound dynamics=\"84\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/mf-element.png",
         "is_featured": false
     }
@@ -44879,6 +44940,7 @@
             "            <metadiff><fz/></metadiff>",
             "          </dynamics>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/fz-element.png",
         "is_featured": false
     }
@@ -44896,6 +44958,7 @@
             "            <metadiff><fp/></metadiff>",
             "          </dynamics>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/fp-element.png",
         "is_featured": false
     }
@@ -44913,6 +44976,7 @@
             "            <metadiff><rf/></metadiff>",
             "          </dynamics>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/rf-element.png",
         "is_featured": false
     }
@@ -44930,6 +44994,7 @@
             "            <metadiff><rfz/></metadiff>",
             "          </dynamics>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/rfz-element.png",
         "is_featured": false
     }
@@ -44947,6 +45012,7 @@
             "            <metadiff><sf/></metadiff>",
             "          </dynamics>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/sf-element.png",
         "is_featured": false
     }
@@ -44964,6 +45030,7 @@
             "            <metadiff><sfz/></metadiff>",
             "          </dynamics>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/sfz-element.png",
         "is_featured": false
     }
@@ -44981,6 +45048,7 @@
             "            <metadiff><sffz/></metadiff>",
             "          </dynamics>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/sffz-element.png",
         "is_featured": false
     }
@@ -44998,6 +45066,7 @@
             "            <metadiff><sfp/></metadiff>",
             "          </dynamics>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/sfp-element.png",
         "is_featured": false
     }
@@ -45015,6 +45084,7 @@
             "            <metadiff><sfpp/></metadiff>",
             "          </dynamics>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/sfpp-element.png",
         "is_featured": false
     }
@@ -45032,6 +45102,7 @@
             "        <metadiff><fermata default-y=\"16\" relative-x=\"0\"/></metadiff>",
             "      </barline>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/fermata-element.png",
         "is_featured": false
     }
@@ -45079,6 +45150,7 @@
             "        </frame>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/fingering-element-frame.png",
         "is_featured": false
     }
@@ -45098,6 +45170,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/fingering-element-notation.png",
         "is_featured": false
     }
@@ -45147,6 +45220,7 @@
             "        </frame>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/fret-element-frame.png",
         "is_featured": false
     }
@@ -45178,6 +45252,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/technical-element-tab.png",
         "is_featured": false
     }
@@ -45214,6 +45289,7 @@
             "        </play>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/ipa-element.png",
         "is_featured": false
     }
@@ -45235,6 +45311,7 @@
             "        <pan>0</pan>",
             "      </midi-instrument>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -45269,6 +45346,7 @@
             "      </midi-instrument>",
             "    </score-part>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -45291,6 +45369,7 @@
             "        <pan>0</pan>",
             "      </midi-instrument>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -45318,6 +45397,7 @@
             "      </midi-instrument></metadiff>",
             "    </score-part>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -45335,6 +45415,7 @@
             "          <metadiff><semi-pitched>very-low</semi-pitched></metadiff>",
             "        </play>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -45399,6 +45480,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/time-modification-element.png",
         "is_featured": false
     }
@@ -45503,6 +45585,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staff-element.png",
         "is_featured": false
     }
@@ -45549,6 +45632,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/wavy-line-element.png",
         "is_featured": false
     }
@@ -45582,6 +45666,7 @@
             "            </accord>",
             "          </scordatura></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/scordatura-element.png",
         "is_featured": false
     }
@@ -45599,6 +45684,7 @@
             "        <metadiff><accordion-high/></metadiff>",
             "      </accordion-registration>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/accordion-high-element.png",
         "is_featured": false
     }
@@ -45616,6 +45702,7 @@
             "        <metadiff><accordion-low/></metadiff>",
             "      </accordion-registration>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/accordion-low-element.png",
         "is_featured": false
     }
@@ -45633,6 +45720,7 @@
             "        <metadiff><accordion-middle>1</accordion-middle></metadiff>",
             "</accordion-registration>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/accordion-middle-element.png",
         "is_featured": false
     }
@@ -45676,6 +45764,7 @@
             "          </frame-note>",
             "        </frame>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/barre-element.png",
         "is_featured": false
     }
@@ -45699,6 +45788,7 @@
             "        </bass>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/bass-step-element.png",
         "is_featured": false
     }
@@ -45718,6 +45808,7 @@
             "          </percussion>",
             "        </direction-type>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/beater-element.png",
         "is_featured": false
     }
@@ -45738,6 +45829,7 @@
             "          </metronome>",
             "        </direction-type>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/beat-unit-element.png",
         "is_featured": false
     }
@@ -45759,6 +45851,7 @@
             "          </metronome>",
             "        </direction-type>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/beat-unit-dot-element.png",
         "is_featured": false
     }
@@ -45864,6 +45957,7 @@
             "      </direction>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/bracket-element.png",
         "is_featured": false
     }
@@ -45886,6 +45980,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/dashes-element.png",
         "is_featured": false
     }
@@ -45905,6 +46000,7 @@
             "          <degree-type text=\"\">add</degree-type>",
             "        </degree>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/degree-alter-element.png",
         "is_featured": false
     }
@@ -45935,6 +46031,7 @@
             "        </degree>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/degree-type-element.png",
         "is_featured": false
     }
@@ -45960,6 +46057,7 @@
             "        </degree>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/degree-value-element.png",
         "is_featured": false
     }
@@ -45977,6 +46075,7 @@
             "          <metadiff><eyeglasses default-y=\"23\"/></metadiff>",
             "        </direction-type>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/eyeglasses-element.png",
         "is_featured": false
     }
@@ -46062,6 +46161,7 @@
             "    </measure>",
             "  </part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/grouping-element.png",
         "is_featured": false
     }
@@ -46108,6 +46208,7 @@
             "          </harp-pedals></metadiff>",
             "        </direction-type>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/harp-pedals-element.png",
         "is_featured": false
     }
@@ -46129,6 +46230,7 @@
             "        <metadiff><inversion>1</inversion></metadiff>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/inversion-element.png",
         "is_featured": false
     }
@@ -46149,6 +46251,7 @@
             "        <metadiff><kind use-symbols=\"yes\">major-seventh</kind></metadiff>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/kind-element.png",
         "is_featured": false
     }
@@ -46166,6 +46269,7 @@
             "        <metadiff><measure-numbering>system</measure-numbering></metadiff>",
             "      </print>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/measure-numbering-element.png",
         "is_featured": false
     }
@@ -46189,6 +46293,7 @@
             "        <sound tempo=\"69\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/metronome-element.png",
         "is_featured": false
     }
@@ -46240,6 +46345,7 @@
             "        </sound>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/metronome-note-element.png",
         "is_featured": false
     }
@@ -46266,6 +46372,7 @@
             "        <sound tempo=\"108\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/per-minute-element.png",
         "is_featured": false
     }
@@ -46286,6 +46393,7 @@
             "        <offset>-4</offset>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/octave-shift-element.png",
         "is_featured": false
     }
@@ -46307,6 +46415,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/wood-element.png",
         "is_featured": false
     }
@@ -46329,6 +46438,7 @@
             "        <staff>1</staff>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pitched-element.png",
         "is_featured": false
     }
@@ -46350,6 +46460,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/timpani-element.png",
         "is_featured": false
     }
@@ -46372,6 +46483,7 @@
             "          </percussion>",
             "        </direction-type>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/stick-element.png",
         "is_featured": false
     }
@@ -46393,6 +46505,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/stick-location-element.png",
         "is_featured": false
     }
@@ -46412,6 +46525,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/rehearsal-element.png",
         "is_featured": false
     }
@@ -46436,6 +46550,7 @@
             "        </bass>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/root-alter-element.png",
         "is_featured": false
     }
@@ -46459,6 +46574,7 @@
             "        </bass>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/root-step-element.png",
         "is_featured": false
     }
@@ -46483,6 +46599,7 @@
             "        </sound>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/string-mute-element-on.png",
         "is_featured": false
     }
@@ -46507,6 +46624,7 @@
             "        </sound>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/string-mute-element-off.png",
         "is_featured": false
     }
@@ -46595,6 +46713,7 @@
             "      </direction>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/wedge-element.png",
         "is_featured": false
     }
@@ -46617,6 +46736,7 @@
             "    </encoding>",
             "  </identification>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -46650,6 +46770,7 @@
             "    </miscellaneous>",
             "  </identification></metadiff>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -46676,6 +46797,7 @@
             "      </system-dividers></metadiff>",
             "    </system-layout>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/system-dividers-element.png",
         "is_featured": false
     }
@@ -46693,6 +46815,7 @@
             "    <metadiff><credit-image source=\"images/mmlogo.png\" type=\"image.png\" default-x=\"572\" default-y=\"96\"/></metadiff>",
             "  </credit>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/credit-image-element.png",
         "is_featured": false
     }
@@ -46711,6 +46834,7 @@
             "    <credit-words default-x=\"683\" default-y=\"1725\" font-size=\"24\" font-weight=\"bold\" halign=\"center\" valign=\"top\">Sonata, Op. 27, No. 2</credit-words>",
             "  </credit></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/credit-element.png",
         "is_featured": false
     }
@@ -46770,6 +46894,7 @@
             "    <word-font font-family=\"Times New Roman\" font-size=\"10.2\"/>",
             "  </defaults></metadiff>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -46802,6 +46927,7 @@
             "      </midi-instrument>",
             "    </score-part>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -46820,6 +46946,7 @@
             "      <metadiff><group-barline>yes</group-barline></metadiff>",
             "    </part-group>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/group-barline-element.png",
         "is_featured": false
     }
@@ -46839,6 +46966,7 @@
             "      <metadiff><group-time/></metadiff>",
             "    </part-group>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/group-time-element.png",
         "is_featured": false
     }
@@ -46858,6 +46986,7 @@
             "    <opus xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"opus/winterreise.musicxml\" xlink:show=\"new\"/>",
             "  </work></metadiff>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -46885,6 +47014,7 @@
             "  <!-- Other elements omitted -->",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -46914,6 +47044,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/accent-element.png",
         "is_featured": false
     }
@@ -46940,6 +47071,7 @@
             "        <stem default-y=\"10\">up</stem>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/accidental-element.png",
         "is_featured": false
     }
@@ -46967,6 +47099,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/accidental-mark-element-notation.png",
         "is_featured": false
     }
@@ -46997,6 +47130,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/accidental-mark-element-ornament.png",
         "is_featured": false
     }
@@ -47076,6 +47210,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/alter-element-semitones.png",
         "is_featured": false
     }
@@ -47095,6 +47230,7 @@
             "          <octave>4</octave>",
             "        </pitch>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/alter-element-microtones.png",
         "is_featured": false
     }
@@ -47166,6 +47302,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/arpeggiate-element.png",
         "is_featured": false
     }
@@ -47188,6 +47325,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/arrow-element.png",
         "is_featured": false
     }
@@ -47207,6 +47345,7 @@
             "          </articulations></metadiff>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/articulations-element.png",
         "is_featured": false
     }
@@ -47279,6 +47418,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/artificial-element.png",
         "is_featured": false
     }
@@ -47356,6 +47496,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/backup-element.png",
         "is_featured": false
     }
@@ -47380,6 +47521,7 @@
             "        </bass>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/bass-alter-element.png",
         "is_featured": false
     }
@@ -47504,6 +47646,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/beam-element.png",
         "is_featured": false
     }
@@ -47522,6 +47665,7 @@
             "          <beat-type>4</beat-type>",
             "        </time>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/beats-element.png",
         "is_featured": false
     }
@@ -47543,6 +47687,7 @@
             "            </bend></metadiff>",
             "          </technical>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/bend-element.png",
         "is_featured": false
     }
@@ -47562,6 +47707,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/breath-mark-element.png",
         "is_featured": false
     }
@@ -47581,6 +47727,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/caesura-element.png",
         "is_featured": false
     }
@@ -47602,6 +47749,7 @@
             "        </key>",
             "      </attributes>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/cancel-element.png",
         "is_featured": false
     }
@@ -47645,6 +47793,7 @@
             "          <staff-size scaling=\"100\">150</staff-size>",
             "        </staff-details>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/capo-element.png",
         "is_featured": false
     }
@@ -47690,6 +47839,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/chord-element.png",
         "is_featured": false
     }
@@ -47711,6 +47861,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/circular-arrow-element.png",
         "is_featured": false
     }
@@ -47773,6 +47924,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/cue-element.png",
         "is_featured": false
     }
@@ -47792,6 +47944,7 @@
             "          </ornaments>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/delayed-turn-element.png",
         "is_featured": false
     }
@@ -47811,6 +47964,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/detached-legato-element.png",
         "is_featured": false
     }
@@ -47830,6 +47984,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/doit-element.png",
         "is_featured": false
     }
@@ -47855,6 +48010,7 @@
             "        <stem default-y=\"10\">up</stem>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/dot-element.png",
         "is_featured": false
     }
@@ -47874,6 +48030,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/down-bow-element.png",
         "is_featured": false
     }
@@ -47895,6 +48052,7 @@
             "          <text>a</text>",
             "        </lyric>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/elision-element.png",
         "is_featured": false
     }
@@ -47943,6 +48101,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/extend-element-figure.png",
         "is_featured": false
     }
@@ -47996,6 +48155,7 @@
             "      <!-- Additional notes omitted -->",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/extend-element-lyric.png",
         "is_featured": false
     }
@@ -48015,6 +48175,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/falloff-element.png",
         "is_featured": false
     }
@@ -48034,6 +48195,7 @@
             "        </figure>",
             "      </figured-bass>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/figure-number-element.png",
         "is_featured": false
     }
@@ -48054,6 +48216,7 @@
             "        </figure>",
             "      </figured-bass>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/prefix-element.png",
         "is_featured": false
     }
@@ -48074,6 +48237,7 @@
             "        </figure>",
             "      </figured-bass>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/suffix-element-accidental.png",
         "is_featured": false
     }
@@ -48301,6 +48465,7 @@
             "      </forward></metadiff>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/forward-element.png",
         "is_featured": false
     }
@@ -48345,6 +48510,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/glissando-element-single.png",
         "is_featured": false
     }
@@ -48542,6 +48708,7 @@
             "    </measure>",
             "  </part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/glissando-element-multiple.png",
         "is_featured": false
     }
@@ -48584,6 +48751,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/slide-element.png",
         "is_featured": false
     }
@@ -48626,6 +48794,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/grace-element.png",
         "is_featured": false
     }
@@ -48645,6 +48814,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/handbell-element.png",
         "is_featured": false
     }
@@ -48664,6 +48834,7 @@
             "            </hole></metadiff>",
             "          </technical>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/hole-element.png",
         "is_featured": false
     }
@@ -48683,6 +48854,7 @@
             "          </ornaments>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/inverted-mordent-element.png",
         "is_featured": false
     }
@@ -48702,6 +48874,7 @@
             "          </ornaments>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/mordent-element.png",
         "is_featured": false
     }
@@ -48723,6 +48896,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/natural-element.png",
         "is_featured": false
     }
@@ -48769,6 +48943,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/lyric-element.png",
         "is_featured": false
     }
@@ -48815,6 +48990,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/syllabic-element.png",
         "is_featured": false
     }
@@ -48880,6 +49056,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/non-arpeggiate-element.png",
         "is_featured": false
     }
@@ -48898,6 +49075,7 @@
             "          <accidental-text>sharp</accidental-text>",
             "        </notehead-text></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/notehead-text-element.png",
         "is_featured": false
     }
@@ -48922,6 +49100,7 @@
             "        <stem default-y=\"-55\">down</stem>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/octave-element.png",
         "is_featured": false
     }
@@ -48943,6 +49122,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/metal-element.png",
         "is_featured": false
     }
@@ -48967,6 +49147,7 @@
             "        <stem>up</stem>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pitch-element.png",
         "is_featured": false
     }
@@ -48991,6 +49172,7 @@
             "        <stem default-y=\"-40\">down</stem>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/step-element.png",
         "is_featured": false
     }
@@ -49020,6 +49202,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/plop-element.png",
         "is_featured": false
     }
@@ -49039,6 +49222,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/scoop-element.png",
         "is_featured": false
     }
@@ -49090,6 +49274,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pluck-element.png",
         "is_featured": false
     }
@@ -49110,6 +49295,7 @@
             "        <type>quarter</type>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/rest-element.png",
         "is_featured": false
     }
@@ -49129,6 +49315,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/snap-pizzicato-element.png",
         "is_featured": false
     }
@@ -49195,6 +49382,7 @@
             "      </note>",
             "  </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/slur-element.png",
         "is_featured": false
     }
@@ -49214,6 +49402,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/spiccato-element.png",
         "is_featured": false
     }
@@ -49233,6 +49422,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staccatissimo-element.png",
         "is_featured": false
     }
@@ -49252,6 +49442,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staccato-element.png",
         "is_featured": false
     }
@@ -49281,6 +49472,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/stopped-element.png",
         "is_featured": false
     }
@@ -49300,6 +49492,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tenuto-element.png",
         "is_featured": false
     }
@@ -49319,6 +49512,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/thumb-position-element.png",
         "is_featured": false
     }
@@ -49348,6 +49542,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tremolo-element-single.png",
         "is_featured": false
     }
@@ -49459,6 +49654,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tuplet-element-nested.png",
         "is_featured": false
     }
@@ -49526,6 +49722,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tuplet-element-regular.png",
         "is_featured": false
     }
@@ -49555,6 +49752,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/turn-element.png",
         "is_featured": false
     }
@@ -49625,6 +49823,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/unpitched-element.png",
         "is_featured": false
     }
@@ -49644,6 +49843,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/up-bow-element.png",
         "is_featured": false
     }
@@ -49663,6 +49863,7 @@
             "          </ornaments>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/vertical-turn-element.png",
         "is_featured": false
     }
@@ -49812,6 +50013,7 @@
             "      </note>",
             "  </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/voice-element.png",
         "is_featured": false
     }
@@ -49984,6 +50186,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/chord-element-multiple-stop.png",
         "is_featured": false
     }
@@ -50139,6 +50342,7 @@
             "  <!--=========================================================-->",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/concert-score-for-part-elements.png",
         "is_featured": false
     }
@@ -50299,6 +50503,7 @@
             "    </measure>",
             "  </part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/sync-element.png",
         "is_featured": false
     }
@@ -50450,6 +50655,7 @@
             "  </part>",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/assess-player-elements.png",
         "is_featured": false
     }
@@ -50634,6 +50840,7 @@
             "  <!--=========================================================-->",
             "</score-partwise>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/instrument-change-element.png",
         "is_featured": false
     }
@@ -50658,6 +50865,7 @@
             "        </bass>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/bass-separator-element.png",
         "is_featured": false
     }
@@ -50682,6 +50890,7 @@
             "        </sound>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/straight-element.png",
         "is_featured": false
     }
@@ -50709,6 +50918,7 @@
             "        </sound>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/swing-element.png",
         "is_featured": false
     }
@@ -50747,6 +50957,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/line-detail-element.png",
         "is_featured": false
     }
@@ -50780,6 +50991,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/wait-element.png",
         "is_featured": false
     }
@@ -50801,6 +51013,7 @@
             "        <kind halign=\"center\" text=\"\">major</kind>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/numeral-root-element.png",
         "is_featured": false
     }
@@ -50822,6 +51035,7 @@
             "        <kind halign=\"center\" text=\"\">major</kind>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/numeral-alter-element.png",
         "is_featured": false
     }
@@ -50847,6 +51061,7 @@
             "        <inversion text=\"6\">1</inversion>",
             "      </harmony>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/numeral-key-element.png",
         "is_featured": false
     }
@@ -50874,6 +51089,7 @@
             "      </score-instrument>",
             "    </score-part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/part-link-element.png",
         "is_featured": false
     }
@@ -50919,6 +51135,7 @@
             "    </score-part>",
             "  </part-list>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/instrument-link-element.png",
         "is_featured": false
     }
@@ -50938,6 +51155,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staff-divide-element.png",
         "is_featured": false
     }
@@ -50961,6 +51179,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/arrowhead-element.png",
         "is_featured": false
     }
@@ -50980,6 +51199,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/brass-bend-element.png",
         "is_featured": false
     }
@@ -50999,6 +51219,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/flip-element.png",
         "is_featured": false
     }
@@ -51018,6 +51239,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/golpe-element.png",
         "is_featured": false
     }
@@ -51037,6 +51259,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/half-muted-element.png",
         "is_featured": false
     }
@@ -51058,6 +51281,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/harmon-mute-element.png",
         "is_featured": false
     }
@@ -51077,6 +51301,7 @@
             "          </ornaments>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/haydn-element.png",
         "is_featured": false
     }
@@ -51096,6 +51321,7 @@
             "          </ornaments>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/inverted-turn-element.png",
         "is_featured": false
     }
@@ -51115,6 +51341,7 @@
             "          </ornaments>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/delayed-inverted-turn-element.png",
         "is_featured": false
     }
@@ -51134,6 +51361,7 @@
             "          </ornaments>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/inverted-vertical-turn-element.png",
         "is_featured": false
     }
@@ -51153,6 +51381,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/smear-element.png",
         "is_featured": false
     }
@@ -51172,6 +51401,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/soft-accent-element.png",
         "is_featured": false
     }
@@ -51191,6 +51421,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/open-element.png",
         "is_featured": false
     }
@@ -51210,6 +51441,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/heel-element.png",
         "is_featured": false
     }
@@ -51229,6 +51461,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/toe-element.png",
         "is_featured": false
     }
@@ -51249,6 +51482,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/heel-toe-substitution.png",
         "is_featured": false
     }
@@ -51268,6 +51502,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/double-tongue-element.png",
         "is_featured": false
     }
@@ -51287,6 +51522,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/triple-tongue-element.png",
         "is_featured": false
     }
@@ -51319,6 +51555,7 @@
             "      </direction>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/damp-element.png",
         "is_featured": false
     }
@@ -51373,6 +51610,7 @@
             "      </direction>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/damp-all-element.png",
         "is_featured": false
     }
@@ -51392,6 +51630,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/fingernails-element.png",
         "is_featured": false
     }
@@ -51411,6 +51650,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/stress-element.png",
         "is_featured": false
     }
@@ -51430,6 +51670,7 @@
             "          </articulations>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/unstress-element.png",
         "is_featured": false
     }
@@ -51449,6 +51690,7 @@
             "          </technical>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/open-string-element.png",
         "is_featured": false
     }
@@ -51495,6 +51737,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/strong-accent-element.png",
         "is_featured": false
     }
@@ -51516,6 +51759,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pf-element.png",
         "is_featured": false
     }
@@ -51537,6 +51781,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/sfzp-element.png",
         "is_featured": false
     }
@@ -51579,6 +51824,7 @@
             "      </direction>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/n-element.png",
         "is_featured": false
     }
@@ -51598,6 +51844,7 @@
             "          </ornaments>",
             "        </notations>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/shake-element.png",
         "is_featured": false
     }
@@ -51685,6 +51932,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/except-voice-element.png",
         "is_featured": false
     }
@@ -52070,6 +52318,7 @@
             "    </measure>",
             "  </part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pedal-element-lines.png",
         "is_featured": false
     }
@@ -52264,6 +52513,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pedal-element-symbols.png",
         "is_featured": false
     }
@@ -52286,6 +52536,7 @@
             "      <glyph type=\"quarter-rest\">restQuarterOld</glyph></metadiff>",
             "    </appearance>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/glyph-element.png",
         "is_featured": false
     }
@@ -52305,6 +52556,7 @@
             "          <words font-family=\"Times New Roman\">)</words>",
             "        </direction-type>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/symbol-element.png",
         "is_featured": false
     }
@@ -52326,6 +52578,7 @@
             "    <credit-words font-size=\"12\"> clefs as well.</credit-words>",
             "  </credit>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/credit-symbol-element.png",
         "is_featured": false
     }
@@ -52348,6 +52601,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/accordion-registration-element.png",
         "is_featured": false
     }
@@ -52379,6 +52633,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/bookmark-element.png",
         "is_featured": false
     }
@@ -52401,6 +52656,7 @@
             "            <per-minute>120</per-minute>",
             "          </metronome>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/beat-unit-tied-element.png",
         "is_featured": false
     }
@@ -52431,6 +52687,7 @@
             "            </metronome-note>",
             "          </metronome>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/metronome-arrows-element.png",
         "is_featured": false
     }
@@ -52461,6 +52718,7 @@
             "            </metronome-note>",
             "          </metronome>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/metronome-tied-element.png",
         "is_featured": false
     }
@@ -52526,6 +52784,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/double-element.png",
         "is_featured": false
     }
@@ -52551,6 +52810,7 @@
             "        </sound>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pan-elevation-elements.png",
         "is_featured": false
     }
@@ -52586,6 +52846,7 @@
             "        </lyric>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/end-line-element.png",
         "is_featured": false
     }
@@ -52623,6 +52884,7 @@
             "        </lyric>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/end-paragraph-element.png",
         "is_featured": false
     }
@@ -52650,6 +52912,7 @@
             "      </score-instrument>",
             "    </score-part>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/ensemble-element.png",
         "is_featured": false
     }
@@ -52670,6 +52933,7 @@
             "        <sound segno=\"3\" divisions=\"2\"/>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/segno-element.png",
         "is_featured": false
     }
@@ -52770,6 +53034,7 @@
             "      </barline>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/measure-distance-element.png",
         "is_featured": false
     }
@@ -52824,6 +53089,7 @@
             "      </direction>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/principal-voice-element.png",
         "is_featured": false
     }
@@ -52844,6 +53110,7 @@
             "          </slash>",
             "        </measure-style>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/slash-type-slash-dot-elements.png",
         "is_featured": false
     }
@@ -52879,6 +53146,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/normal-dot-element.png",
         "is_featured": false
     }
@@ -52923,6 +53191,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tuplet-dot-element.png",
         "is_featured": false
     }
@@ -52962,6 +53231,7 @@
             "        </clef>",
             "      </attributes>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/part-symbol-element.png",
         "is_featured": false
     }
@@ -52999,6 +53269,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/release-element.png",
         "is_featured": false
     }
@@ -53068,6 +53339,7 @@
             "        </transpose>",
             "      </attributes>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staff-type-element.png",
         "is_featured": false
     }
@@ -53126,6 +53398,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tied-element.png",
         "is_featured": false
     }
@@ -53161,6 +53434,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/pre-bend-element.png",
         "is_featured": false
     }
@@ -53254,6 +53528,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tap-element.png",
         "is_featured": false
     }
@@ -53330,6 +53605,7 @@
             "      </direction>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/with-bar-element.png",
         "is_featured": false
     }
@@ -53351,6 +53627,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/membrane-element.png",
         "is_featured": false
     }
@@ -53372,6 +53649,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/glass-element.png",
         "is_featured": false
     }
@@ -53419,6 +53697,7 @@
             "    </measure>",
             "</score-timewise>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/score-timewise-element.png",
         "is_featured": false
     }
@@ -53442,6 +53721,7 @@
             "        </lyric>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/laughing-element.png",
         "is_featured": false
     }
@@ -53488,6 +53768,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/humming-element.png",
         "is_featured": false
     }
@@ -53529,6 +53810,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/schleifer-element.png",
         "is_featured": false
     }
@@ -53556,6 +53838,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/grace-element-appoggiatura.png",
         "is_featured": false
     }
@@ -53586,6 +53869,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/trill-mark-element.png",
         "is_featured": false
     }
@@ -53688,6 +53972,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/tremolo-element-double.png",
         "is_featured": false
     }
@@ -53710,6 +53995,7 @@
             "          <key-octave number=\"2\">4</key-octave></metadiff>",
             "        </key>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/key-octave-element.png",
         "is_featured": false
     }
@@ -53731,6 +54017,7 @@
             "            </hole>",
             "          </technical>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/hole-type-element.png",
         "is_featured": false
     }
@@ -53750,6 +54037,7 @@
             "        </direction-type>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/image-element.png",
         "is_featured": false
     }
@@ -53777,6 +54065,7 @@
             "      </note>",
             "    </measure>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/link-element.png",
         "is_featured": false
     }
@@ -53797,6 +54086,7 @@
             "        <metadiff><footnote xml:lang=\"de\">*) Urspr: = Nicht zu geschwind.</footnote></metadiff>",
             "      </direction>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -53830,6 +54120,7 @@
             "        </notations>",
             "      </note>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/level-element.png",
         "is_featured": false
     }
@@ -53849,6 +54140,7 @@
             "  </rootfiles>",
             "</container></metadiff>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -53869,6 +54161,7 @@
             "   </sound>",
             "</sounds>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -53888,6 +54181,7 @@
             "   </sound>",
             "</sounds>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -53908,6 +54202,7 @@
             "   </sound>",
             "</sounds>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -53930,6 +54225,7 @@
             "   </sound></metadiff>",
             "</sounds>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -53947,6 +54243,7 @@
             "      <metadiff><staff-distance>80</staff-distance></metadiff>",
             "    </staff-layout>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/staff-distance-element.png",
         "is_featured": false
     }
@@ -53968,6 +54265,7 @@
             "      <metadiff><system-distance>121</system-distance></metadiff>",
             "    </system-layout>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/system-distance-element.png",
         "is_featured": false
     }
@@ -53987,6 +54285,7 @@
             "    <opus-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"Aufzug2.musicxml\"/></metadiff>",
             "</opus>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -54020,6 +54319,7 @@
             "    <score xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"Nr16.musicxml\"/></metadiff>",
             "</opus>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -54042,6 +54342,7 @@
             "  </rootfiles>",
             "</container>"
         ],
+        "document_path": "",
         "image_url": "",
         "is_featured": false
     }
@@ -54061,6 +54362,7 @@
             "        </direction-type>",
             "      </direction></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/system-attribute-only-top.png",
         "is_featured": false
     }
@@ -54081,6 +54383,7 @@
             "        <staff>1</staff>",
             "      </direction></metadiff>"
         ],
+        "document_path": "",
         "image_url": "/static/examples/system-attribute-also-top.png",
         "is_featured": false
     }

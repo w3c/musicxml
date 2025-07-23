@@ -26,7 +26,8 @@
 
 <div class="content">
     <nav class="sidenav">
-        <img src="../../static/images/back-cg-final.png"/>
+        <!-- Change this to back-cg-final.png when publishing a Final -->
+<img src="../../static/images/back-cg-draft.png"/>
 <ul>
     <li><b><a href="../../"/>Introduction</a></b></li>
     <li><b><a href="../introduction/">Tutorial</a></b></li>
@@ -108,7 +109,7 @@
 <p>Regular, plain text MusicXML files can be very large - much larger than the original music notation application files, or corresponding MIDI files. This was not a big problem for using MusicXML as an interchange format, but it inhibited MusicXML’s use as a sheet music distribution format.</p>
         <p>MusicXML 2.0 introduced a new compressed format which reduces MusicXML file sizes to roughly the same size as the corresponding MIDI files. The format uses zip compression and a special .mxl file suffix and Internet media type to identify files as MusicXML files vs. generic XML files. This section describes how the compressed format works.</p>
         <h2 id="compressed-file-format">Compressed File Format</h2>
-        <p>MusicXML uses a zip-based XML format similar to that used by Open Office and many other XML formats. The MusicXML 4.0 zip file format is compatible with the zip format used by the java.util.zip package and Java JAR files. It is based on the Info-ZIP format described at:</p>
+        <p>MusicXML uses a zip-based XML format similar to that used by Open Office and many other XML formats. The MusicXML 4.0 and later zip file format is compatible with the zip format used by the java.util.zip package and Java JAR files. It is based on the Info-ZIP format described at:</p>
         <p><a href="http://www.info-zip.org/doc/appnote-19970311-iz.zip" target="_blank">http://www.info-zip.org/doc/appnote-19970311-iz.zip</a>
         </p>
         <p>The JAR file format is specified at:</p>
@@ -149,7 +150,7 @@
   &lt;/rootfiles&gt;
 &lt;/container&gt;</pre></p>
         <p>If no media-type value is present, a MusicXML file is assumed. However, if multiple rootfiles are present, it will probably make things more clear to include the media-type attribute for all &lt;rootfile&gt; elements.</p>
-        <p>The zip archive can also include images that are referenced with the MusicXML <a href="../../musicxml-reference/elements/image/">&lt;image&gt;</a> and <a href="../../musicxml-reference/elements/credit-image/">&lt;credit-image&gt;</a> elements, parts that are referenced with the MusicXML <a href="../../musicxml-reference/elements/part-link/">&lt;part-link&gt;</a> element, or other media that are referenced using the MusicXML link element. MusicXML 4.0 does not specify where these files need to be located in the zip file, but it is probably least confusing if images or other files of a similar type are grouped together in a subfolder within the zip archive.</p>
+        <p>The zip archive can also include images that are referenced with the MusicXML <a href="../../musicxml-reference/elements/image/">&lt;image&gt;</a> and <a href="../../musicxml-reference/elements/credit-image/">&lt;credit-image&gt;</a> elements, parts that are referenced with the MusicXML <a href="../../musicxml-reference/elements/part-link/">&lt;part-link&gt;</a> element, or other media that are referenced using the MusicXML link element. MusicXML 4.0 and later does not specify where these files need to be located in the zip file, but it is probably least confusing if images or other files of a similar type are grouped together in a subfolder within the zip archive.</p>
 <p>The first file in the zip container should be a file named mimetype. The contents of this file should be the MIME media type string</p>
 <p><pre>application/vnd.recordare.musicxml</pre></p>
 <p>The mimetype file should be encoded in US-ASCII and must not be compressed or encrypted, and there must not be an extra field in its zip header. The contents of the mimetype file must not contain any leading padding or white space, and must not begin with a byte order mark.</p>
