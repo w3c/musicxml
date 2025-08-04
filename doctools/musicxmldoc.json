@@ -3509,7 +3509,7 @@
     "fields": {
         "data_type": 18,
         "value": "baseline",
-        "description": "Aligned to the baseline of the text. If the text is on multiple lines, algned to the baseline of the lowest line of text.",
+        "description": "Aligned to the baseline of the text. If the text is on multiple lines, aligned to the baseline of the lowest line of text.",
         "order": 4
     }
 },
