@@ -2963,7 +2963,7 @@
         "name": "harmony-type",
         "slug": "harmony-type",
         "schema": 1,
-        "description": "The harmony-type type differentiates different types of harmonies when alternate harmonies are possible.  Explicit harmonies have all notes present in the music; implied have some notes missing but implied; alternate represents alternate analyses.",
+        "description": "The harmony-type type differentiates different types of harmonies when alternate harmonies are possible. Explicit harmonies have all notes present in the music; implied have some notes missing but implied; alternate represents alternate analyses.",
         "description_format": 1,
         "is_featured": false,
         "xsd_name": "",
