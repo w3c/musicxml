@@ -1039,7 +1039,7 @@ The none sign is deprecated as of MusicXML 4.0. Use the clef element's print-obj
 	
 	<xs:simpleType name="harmony-type">
 		<xs:annotation>
-			<xs:documentation>The harmony-type type differentiates different types of harmonies when alternate harmonies are possible. Explicit harmonies have all note present in the music; implied have some notes missing but implied; alternate represents alternate analyses.</xs:documentation>
+			<xs:documentation>The harmony-type type differentiates different types of harmonies when alternate harmonies are possible. Explicit harmonies have all notes present in the music; implied have some notes missing but implied; alternate represents alternate analyses.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="explicit"/>
