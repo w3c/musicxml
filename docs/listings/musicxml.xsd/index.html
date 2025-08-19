@@ -1139,7 +1139,7 @@ The none sign is deprecated as of MusicXML 4.0. Use the clef element's print-obj
     
     &lt;xs:simpleType name="harmony-type"&gt;
         &lt;xs:annotation&gt;
-            &lt;xs:documentation&gt;The harmony-type type differentiates different types of harmonies when alternate harmonies are possible. Explicit harmonies have all note present in the music; implied have some notes missing but implied; alternate represents alternate analyses.&lt;/xs:documentation&gt;
+            &lt;xs:documentation&gt;The harmony-type type differentiates different types of harmonies when alternate harmonies are possible. Explicit harmonies have all notes present in the music; implied have some notes missing but implied; alternate represents alternate analyses.&lt;/xs:documentation&gt;
         &lt;/xs:annotation&gt;
         &lt;xs:restriction base="xs:token"&gt;
             &lt;xs:enumeration value="explicit"/&gt;
@@ -3756,7 +3756,7 @@ This element is flexible to allow for different types of analyses. Future versio
         &lt;xs:annotation&gt;
             &lt;xs:documentation&gt;The harmony type represents harmony analysis, including chord symbols in popular music as well as functional harmony analysis in classical music.
 
-If there are alternate harmonies possible, this can be specified using multiple harmony elements differentiated by type. Explicit harmonies have all note present in the music; implied have some notes missing but implied; alternate represents alternate analyses.
+If there are alternate harmonies possible, this can be specified using multiple harmony elements differentiated by type. Explicit harmonies have all notes present in the music; implied have some notes missing but implied; alternate represents alternate analyses.
 
 The print-object attribute controls whether or not anything is printed due to the harmony element. The print-frame attribute controls printing of a frame or fretboard diagram. The print-style attribute group sets the default for the harmony, but individual elements can override this with their own print-style values. The arrangement attribute specifies how multiple harmony-chord groups are arranged relative to each other. Harmony-chords with vertical arrangement are separated by horizontal lines. Harmony-chords with diagonal or horizontal arrangement are separated by diagonal lines or slashes.&lt;/xs:documentation&gt;
         &lt;/xs:annotation&gt;

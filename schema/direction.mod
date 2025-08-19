@@ -729,7 +729,7 @@
 	
 	If there are alternate harmonies possible, this can be
 	specified using multiple harmony elements differentiated
-	by type. Explicit harmonies have all note present in the
+	by type. Explicit harmonies have all notes present in the
 	music; implied have some notes missing but implied;
 	alternate represents alternate analyses. 
 	
