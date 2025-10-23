@@ -5755,12 +5755,12 @@ The show-number attribute is used to display either the number of actual notes, 
 		<xs:sequence>
 			<xs:element name="tuplet-actual" type="tuplet-portion" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The tuplet-actual element provide optional full control over how the actual part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
+					<xs:documentation>The tuplet-actual element provides optional full control over how the actual part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="tuplet-normal" type="tuplet-portion" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The tuplet-normal element provide optional full control over how the normal part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
+					<xs:documentation>The tuplet-normal element provides optional full control over how the normal part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the time-modification element.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
