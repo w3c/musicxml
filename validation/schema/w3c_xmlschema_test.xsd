@@ -1,0 +1,22 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>MusicXML W3C XML schema (XSD)</xs:documentation>
+	</xs:annotation>
+
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.musicxml.org/xsd/xml.xsd"/>
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.musicxml.org/xsd/xlink.xsd"/>
+
+	<xs:complexType name="score-partwise">
+		<xs:sequence>
+			<!-- your elements here -->
+		</xs:sequence>
+		<xs:assert test="1 = 0"/>
+		<!--xs:assert test="count(descendant::coda) = count(descendant::tocoda)"/-->
+	</xs:complexType>
+
+	<xs:element name="score-partwise">
+		<xs:annotation>
+			<xs:documentation>The score-partwise element is the root element for a partwise MusicXML score. It includes a score-header group followed by a series of parts with measures inside. The document-attributes attribute group includes the version attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

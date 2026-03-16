@@ -1,0 +1,5 @@
+ipykernel
+xmlschema
+pandas
+pyschematron
+lxml
