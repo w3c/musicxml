@@ -1,6 +1,7 @@
-This repository is maintained by the [W3C Music Notation Community Group](https://www.w3.org/community/music-notation/) and holds validation tests (currently in development) for the MusicXML specification. Please consult that
-page for further details. The group is chaired by Karim Ratib (MusicXML Spec Editor),
+This repository is maintained by the [W3C Music Notation Community Group](https://www.w3.org/community/music-notation/). Please consult that page for further details. The group is chaired by Karim Ratib (MusicXML Spec Editor),
 Adrian Holovaty, and Daniel Spreadbury.
+
+This validation section is being used to test and develop semantic tests for musicxml validation.
 
 Tools being used/evaluated:
 Apache Xerces2 2.12.2 (Java) supports XSD 1.1.
