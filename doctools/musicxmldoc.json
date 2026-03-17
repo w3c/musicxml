@@ -44496,7 +44496,7 @@
             "<metadiff><part-abbreviation-display>",
             "          <display-text>B</display-text>",
             "          <accidental-text>flat</accidental-text>",
-            "          <display-text> Tpt. 1</display-text>",
+            "          <display-text preserve-space=\"true\"> Tpt. 1</display-text>",
             "        </part-abbreviation-display></metadiff>"
         ],
         "document_path": "",
@@ -50687,7 +50687,7 @@
             "      <part-abbreviation-display>",
             "        <display-text>B</display-text>",
             "        <accidental-text>flat</accidental-text>",
-            "        <display-text> Cl.</display-text>",
+            "        <display-text preserve-space=\"true\"> Cl.</display-text>",
             "      </part-abbreviation-display>",
             "      <group>score</group>",
             "      <score-instrument id=\"P1-I1\">",
