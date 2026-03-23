@@ -1,0 +1,28 @@
+---
+import { Font } from 'astro:assets';
+import '../css/index.css';
+import Header from '../components/Header.astro';
+import SiteNav from '../components/SiteNav.astro';
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={ Astro.generator } />
+		<Font cssVariable="--font-noto-sans" preload={ true } />
+		<Font cssVariable="--font-noto-serif" preload={ true } />
+		<title>{ frontmatter.title }</title>
+	</head>
+	<body class="flex flex-col min-h-screen bg-olive-200 text-zinc-700">
+		<Header />
+		<SiteNav />
+		<main class="mx-auto px-4 py-16 lg:py-20 max-w-4xl">
+			<h1>{ frontmatter.title }</h1>
+			<slot />
+		</main>
+	</body>
+</html>
