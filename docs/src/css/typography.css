@@ -15,14 +15,14 @@ h1 {
   line-height: 1.1;
 }
 
-h1:after {
+/* h1:after {
   display: block;
   margin-top: --spacing(1.5);
   height: 0.4rem;
   width: 2rem;
   background-color: var(--color-olive-500);
   content: '';
-}
+} */
 
 h2 {
   font-size: var(--text-3xl);
@@ -178,25 +178,16 @@ ul ul, ol ul {
   list-style-type: square;
 }
 
-code, kbd, samp {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  margin-left: --spacing(0.5);
-  margin-right: --spacing(0.5);
+pre {
+  border-radius: var(--radius-md);
 }
 
 code {
-  margin-left: --spacing(0.5);
-  margin-right: --spacing(0.5);
-  padding: --spacing(0.5) --spacing(2);
-  border-radius: --spacing(1);
-  font-size: var(--text-sm);
   font-weight: 700;
-  background-color: var(--color-zinc-100);
 }
 
-.dark code {
-  background-color: var(--color-zinc-900);
+pre code {
+  font-weight: 400;
 }
 
 kbd {
@@ -208,27 +199,6 @@ var {
   font-family: var(--font-serif);
   font-style: normal;
   font-weight: 600;
-}
-
-pre {
-  background-color: var(--color-zinc-800);
-  overflow: scroll;
-  border-radius: var(--radius-md);
-  margin-top: --spacing(8);
-  margin-bottom: --spacing(8);
-  padding: --spacing(7);
-}
-
-.dark pre {
-  background-color: var(--color-zinc-900);
-}
-
-pre code {
-  margin: 0;
-  padding: 0;
-  font-weight: 400;
-  border-radius: initial;
-  background-color: initial;
 }
 
 h1 + *, h2 + *, h3 + *, h4 + * {
@@ -277,9 +247,6 @@ h1 + *, h2 + *, h3 + *, h4 + * {
 }
 
 @media (width >= 80rem) {
-  h1 {
-    font-size: var(--text-9xl);
-  }
   pre {
     padding: --spacing(10);
   }

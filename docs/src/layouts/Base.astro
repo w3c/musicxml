@@ -1,8 +1,10 @@
 ---
 import { Font } from 'astro:assets';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import Header from '@components/Header.astro';
+import SiteNav from '@components/SiteNav.astro';
 import '../css/index.css';
-import Header from '../components/Header.astro';
-import SiteNav from '../components/SiteNav.astro';
+const currentPath = Astro.url.pathname;
 const { frontmatter } = Astro.props;
 ---
 
@@ -17,10 +19,11 @@ const { frontmatter } = Astro.props;
 		<Font cssVariable="--font-noto-serif" preload={ true } />
 		<title>{ frontmatter.title }</title>
 	</head>
-	<body class="flex flex-col min-h-screen bg-olive-200 text-zinc-700">
+	<body class="flex flex-col min-h-screen bg-olive-100 text-zinc-700">
 		<Header />
 		<SiteNav />
 		<main class="mx-auto px-4 py-16 lg:py-20 max-w-4xl">
+		  { currentPath !== '/' && <Breadcrumbs currentPath={ currentPath } /> }
 			<h1>{ frontmatter.title }</h1>
 			<slot />
 		</main>

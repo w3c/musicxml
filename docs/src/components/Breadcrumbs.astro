@@ -1,0 +1,58 @@
+---
+const { currentPath } = Astro.props;
+
+const createTrail = (path) => {
+
+	// Split the path, removing any empty entries.
+  const segments = path.split('/').filter(segment => segment !== '');
+
+	// Initialise the breadcrumbs array.
+	const crumbs : object[] = [];
+
+	// Populate the breadcrumbs.
+	segments.forEach((segment, i) => {
+	  const crumb = {};
+		crumb.text = segment;
+		crumb.link = `/${segment}`;
+		crumbs.push(crumb);
+		
+		// Build up the links based on previous entries.
+		if (i >= 1) {
+			crumb.link = crumbs[i - 1].link + crumbs[i].link;
+		}
+		
+	});
+
+	// Prepend a home link.
+	crumbs.unshift({
+		text: 'Home',
+		link: '/'
+	});
+
+	return crumbs;
+}
+
+const breadcrumbs = createTrail(currentPath);
+---
+
+<div class="mb-8 text-sm">
+	{ 
+	  breadcrumbs.map((breadcrumb, index) => {
+			if (index !== breadcrumbs.length - 1) {
+				return (
+					<a href={ breadcrumb.link }>
+						{ breadcrumb.text }
+					</a>
+					<span class="mx-1">&gt;</span>
+				);
+			} else {
+				return (
+					<span>
+						{ breadcrumb.text }
+					</span>
+				)
+			}
+		}) 
+	}
+</div>
+

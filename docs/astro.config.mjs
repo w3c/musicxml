@@ -2,6 +2,12 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
+const setLayout = () => {
+  return function (_, file) {
+    file.data.astro.frontmatter.layout = file.data.astro.frontmatter.layout || "@layouts/Base.astro";
+  };
+};
+
 export default defineConfig({
   fonts: [
     {
@@ -19,6 +25,9 @@ export default defineConfig({
       styles: ["normal"]
     }
   ],
+  markdown: {
+    remarkPlugins: [setLayout],
+  },
   vite: {
     plugins: [tailwindcss()]
   }
