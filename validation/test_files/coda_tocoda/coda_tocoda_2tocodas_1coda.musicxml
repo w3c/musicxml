@@ -77,13 +77,7 @@
         </direction-type>
       </direction>
       <barline location="right">
-        <bar-style>light-heavy</bar-style>
-        <!--=========================================================-->        
-        <tocoda>
-          <print-style-align>right</print-style-align>
-          <optional-unique-id>1</optional-unique-id>
-          <smufl-coda-glyph-name>tocoda</smufl-coda-glyph-name>
-        </tocoda>        
+        <bar-style>light-heavy</bar-style>       
       </barline>
     </measure>
     <measure number="2">
@@ -219,11 +213,7 @@
       <barline location="right">
         <bar-style>light-heavy</bar-style>
         <!--=========================================================-->
-        <coda>
-          <print-style-align>left</print-style-align>
-		      <optional-unique-id>1</optional-unique-id>
-          <smufl-coda-glyph-name>coda</smufl-coda-glyph-name>
-        </coda>
+		<coda halign="right" id="coda2" smufl="coda"/>
       </barline>
     </measure>
     <measure number="4">
@@ -290,13 +280,7 @@
         </direction-type>
       </direction>
       <barline location="right">
-        <bar-style>light-heavy</bar-style>
-          <!--=========================================================-->        
-          <tocoda>
-            <print-style-align>right</print-style-align>
-            <optional-unique-id>2</optional-unique-id>
-            <smufl-coda-glyph-name>tocoda</smufl-coda-glyph-name>
-        </tocoda>          
+        <bar-style>light-heavy</bar-style>         
       </barline>
     </measure>   
     <measure number="5">
