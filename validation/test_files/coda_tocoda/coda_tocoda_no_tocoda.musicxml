@@ -147,11 +147,7 @@
       <barline location="right">
         <bar-style>light-heavy</bar-style>
         <!--=========================================================-->
-        <coda>
-          <print-style-align>left</print-style-align>
-		      <optional-unique-id>1</optional-unique-id>
-          <smufl-coda-glyph-name>coda</smufl-coda-glyph-name>
-        </coda>
+		<coda halign="right" id="coda1" smufl="coda"/>
       </barline>
     </measure>
   </part>
