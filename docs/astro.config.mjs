@@ -30,5 +30,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  site: 'https://davidmatthew-ie.github.io',
+  base: '/musicxml'
 });

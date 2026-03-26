@@ -22,7 +22,7 @@ const { frontmatter } = Astro.props;
 	<body class="flex flex-col min-h-screen bg-olive-100 text-zinc-700">
 		<Header />
 		<SiteNav />
-		<main class="mx-auto px-4 py-16 lg:py-20 max-w-4xl">
+		<main class="mx-auto px-4 py-16 lg:py-20 w-4xl max-w-full">
 		  { currentPath !== '/' && <Breadcrumbs currentPath={ currentPath } /> }
 			<h1>{ frontmatter.title }</h1>
 			<slot />
