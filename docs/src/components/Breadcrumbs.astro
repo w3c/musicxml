@@ -12,7 +12,7 @@ const createTrail = (path) => {
 	// Populate the breadcrumbs.
 	segments.forEach((segment, i) => {
 	  const crumb = {};
-		crumb.text = segment;
+		crumb.text = i === 0 ? 'Home' : segment;
 		crumb.link = `/${segment}`;
 		crumbs.push(crumb);
 		
@@ -24,10 +24,10 @@ const createTrail = (path) => {
 	});
 
 	// Prepend a home link.
-	crumbs.unshift({
-		text: 'Home',
-		link: '/'
-	});
+	// crumbs.unshift({
+	// 	text: 'Home',
+	// 	link: '/'
+	// });
 
 	return crumbs;
 }

@@ -23,7 +23,7 @@ const { frontmatter } = Astro.props;
 		<Header />
 		<SiteNav />
 		<main class="mx-auto px-4 py-16 lg:py-20 w-4xl max-w-full">
-		  { currentPath !== '/' && <Breadcrumbs currentPath={ currentPath } /> }
+		  { currentPath !== '/musicxml/' && <Breadcrumbs currentPath={ currentPath } /> }
 			<h1>{ frontmatter.title }</h1>
 			<slot />
 		</main>

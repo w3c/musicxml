@@ -196,4 +196,4 @@ We are done with the part.
 
 And we are done with the score.
 
-Next: [The Structure of MusicXML Files](/tutorial/structure-of-musicxml-files/)
+Next: [The Structure of MusicXML Files](/musicxml/tutorial/structure-of-musicxml-files/)
