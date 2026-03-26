@@ -78,12 +78,7 @@
       </direction>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
-          <!--=========================================================-->        
-          <tocoda>
-            <print-style-align>right</print-style-align>
-            <optional-unique-id>1</optional-unique-id>
-            <smufl-coda-glyph-name>tocoda</smufl-coda-glyph-name>
-        </tocoda>        
+          <!--=========================================================-->                
       </barline>
     </measure>
     <measure number="2">
