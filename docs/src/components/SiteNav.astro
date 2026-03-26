@@ -1,6 +1,14 @@
-<div id="site-nav" class="fixed top-0 h-full px-10 border-r border-neutral-300 flex flex-col bg-olive-100 -translate-x-full lg:translate-x-0">
-	<nav class="overflow-y-auto scrollbar-hidden pt-34 pb-24">
-		<ul class="list-none m-0 p-0 text-base [&_a]:no-underline [&_a]:hover:underline">
+---
+import W3CLogo from '@assets/img/logos/w3c-full.svg';
+---
+
+<div id="site-nav" class="fixed top-0 h-full px-10 border-r border-neutral-300 flex flex-col bg-olive-100 -translate-x-full lg:translate-x-0 transition-transform duration-400">
+	<nav class="overflow-y-auto scrollbar-hidden pt-28 pb-24">
+		<a href="/musicxml/" class="flex items-center mb-12 no-underline">
+			<W3CLogo class="w-28 h-28 mr-4" />
+			<p class="font-bold text-base w-24 leading-6">Draft Report</p>
+		</a>
+		<ul class="list-none m-0 p-0 text-base [&_a]:text-zinc-700 [&_a]:no-underline [&_a]:hover:underline">
 			<li class="font-bold"><a href="/musicxml/">Introduction</a></li>
 			<li class="font-bold"><a href="/musicxml/tutorial/introduction/">Tutorial</a></li>
 			<ul class="list-none text-base">
@@ -69,3 +77,29 @@
 		</ul>
   </nav>
 </div>
+
+<script>
+	// Initial opened state is true for desktop, false for mobile.
+	let navIsOpen = window.matchMedia('(width >= 64rem)').matches;
+	let ariaExpanded = navIsOpen ? 'true' : 'false';
+  
+	const menuBtn = document.getElementById('menu-btn');
+	const siteNav = document.getElementById('site-nav');
+
+	menuBtn.setAttribute('aria-expanded', ariaExpanded);
+	
+	function handleMenu() {
+		if (navIsOpen) {
+			siteNav.style.transform = 'translateX(-100%)';
+			menuBtn.setAttribute('aria-expanded', 'false');
+		} else {
+			siteNav.style.transform = 'translateX(0)';
+			menuBtn.setAttribute('aria-expanded', 'true');
+		}
+
+		navIsOpen = !navIsOpen;
+	}
+
+	menuBtn.addEventListener('click', handleMenu);
+	menuBtn.addEventListener('keydown', (event) => { if (event.key === 'Enter') handleMenu() });
+</script>

@@ -23,19 +23,13 @@ const createTrail = (path) => {
 		
 	});
 
-	// Prepend a home link.
-	// crumbs.unshift({
-	// 	text: 'Home',
-	// 	link: '/'
-	// });
-
 	return crumbs;
 }
 
 const breadcrumbs = createTrail(currentPath);
 ---
 
-<div class="mb-12 text-base text-zinc-500">
+<div class="mb-8 lg:mb-12 text-base text-zinc-500">
 	{ 
 	  breadcrumbs.map((breadcrumb, index) => {
 			if (index !== breadcrumbs.length - 1) {

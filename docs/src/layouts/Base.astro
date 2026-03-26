@@ -19,10 +19,10 @@ const { frontmatter } = Astro.props;
 		<Font cssVariable="--font-noto-serif" preload={ true } />
 		<title>{ frontmatter.title }</title>
 	</head>
-	<body class="flex flex-col min-h-screen bg-olive-100 text-zinc-700">
+	<body class="flex flex-col min-h-screen bg-olive-50 text-zinc-700">
 		<Header />
 		<SiteNav />
-		<main class="mx-auto px-4 py-16 lg:py-20 w-4xl max-w-full">
+		<main class="mx-auto px-4 py-12 lg:py-20 w-3xl max-w-full">
 		  { currentPath !== '/musicxml/' && <Breadcrumbs currentPath={ currentPath } /> }
 			<h1>{ frontmatter.title }</h1>
 			<slot />
