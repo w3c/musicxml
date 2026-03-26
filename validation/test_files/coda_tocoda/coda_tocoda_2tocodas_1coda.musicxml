@@ -213,7 +213,7 @@
       <barline location="right">
         <bar-style>light-heavy</bar-style>
         <!--=========================================================-->
-		<coda halign="right" id="coda2" smufl="coda"/>
+		<coda halign="right" id="coda1" smufl="coda"/>
       </barline>
     </measure>
     <measure number="4">
@@ -349,11 +349,7 @@
       <barline location="right">
         <bar-style>light-heavy</bar-style>
         <!--=========================================================-->
-        <coda>
-          <print-style-align>left</print-style-align>
-		      <optional-unique-id>2</optional-unique-id>
-          <smufl-coda-glyph-name>coda</smufl-coda-glyph-name>
-        </coda>
+		<coda halign="right" id="coda2" smufl="coda"/>
       </barline>
     </measure>            
   </part>
