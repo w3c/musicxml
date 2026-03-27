@@ -89,7 +89,8 @@ import W3CLogo from '@assets/img/logos/w3c-full.svg';
 	// Initialise the aria-expanded state.
 	menuBtn.setAttribute('aria-expanded', ariaExpanded);
 	
-	function handleMenu() {
+	function handleMenu(event) {
+		
 		// Remove these Tailwind classes if they exist.
 		if (siteNav?.classList.contains('-translate-x-full')) {
 			siteNav.classList.remove('-translate-x-full',  'lg:translate-x-0');
@@ -111,6 +112,9 @@ import W3CLogo from '@assets/img/logos/w3c-full.svg';
 	// Ensure event is also keyboard accessible.
 	menuBtn.addEventListener('click', handleMenu);
 	menuBtn.addEventListener('keydown', (event) => {
-		if (event.key === 'Enter') handleMenu()
+		if (event.key === 'Enter') {
+			event.preventDefault();
+			handleMenu();
+		}
 	});
 </script>
