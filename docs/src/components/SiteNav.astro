@@ -79,16 +79,23 @@ import W3CLogo from '@assets/img/logos/w3c-full.svg';
 </div>
 
 <script>
+	const menuBtn = document.getElementById('menu-btn');
+	const siteNav = document.getElementById('site-nav');
+
 	// Initial opened state is true for desktop, false for mobile.
 	let navIsOpen = window.matchMedia('(width >= 64rem)').matches;
 	let ariaExpanded = navIsOpen ? 'true' : 'false';
   
-	const menuBtn = document.getElementById('menu-btn');
-	const siteNav = document.getElementById('site-nav');
-
+	// Initialise the aria-expanded state.
 	menuBtn.setAttribute('aria-expanded', ariaExpanded);
 	
 	function handleMenu() {
+		// Remove these Tailwind classes if they exist.
+		if (siteNav?.classList.contains('-translate-x-full')) {
+			siteNav.classList.remove('-translate-x-full',  'lg:translate-x-0');
+		}
+
+		// Toggle visibility and aria-expanded state.
 		if (navIsOpen) {
 			siteNav.style.transform = 'translateX(-100%)';
 			menuBtn.setAttribute('aria-expanded', 'false');
@@ -97,9 +104,13 @@ import W3CLogo from '@assets/img/logos/w3c-full.svg';
 			menuBtn.setAttribute('aria-expanded', 'true');
 		}
 
+		// Update state.
 		navIsOpen = !navIsOpen;
 	}
 
+	// Ensure event is also keyboard accessible.
 	menuBtn.addEventListener('click', handleMenu);
-	menuBtn.addEventListener('keydown', (event) => { if (event.key === 'Enter') handleMenu() });
+	menuBtn.addEventListener('keydown', (event) => {
+		if (event.key === 'Enter') handleMenu()
+	});
 </script>
