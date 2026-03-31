@@ -4,7 +4,7 @@ page for further details. The group is chaired by Karim Ratib (MusicXML Spec Edi
 Adrian Holovaty, and Daniel Spreadbury.
 
 To view HTML files properly rendered in the browser,
-please use the [separate GitHub view](http://w3c.github.io/musicxml/).
+please use the [separate GitHub view](http://w3c-cg.github.io/musicxml/).
 
 
 ## Developing
