@@ -4,7 +4,7 @@ title: Tablature
 
 Tablature notation provides a direct guideline to the strings and frets used to play music on a guitar or other fretted instrument, often at the expense of precise rhythmic information. In MusicXML, this rhythmic information needs to be specified, although the display is likely to be hidden on a tab part. The main things that need to be added are the fret and string information, the details of the how the strings are tuned, and techniques specific to guitars and other related instruments.
 
-### Fret and String
+## Fret and String
 
 Here is a simple [one-measure guitar part example](../../musicxml-reference/examples/tutorial-tablature/) that we will use to illustrate the basic MusicXML tablature features, using the standard 6-string guitar tuning:
 
@@ -21,7 +21,7 @@ The fret and string for first note in this example are represented using:
 </technical>
 ```
 
-### String Tuning
+## String Tuning
 
 An [`<attributes>`](../../musicxml-reference/elements/attributes/) element may include a [`<staff-details>`](../../musicxml-reference/elements/staff-details/) element to specify the details of a tab staff. The [`<staff-lines>`](../../musicxml-reference/elements/staff-lines/) element specifies the number of lines on a tablature staff, usually one for each string. Staff tunings are described with the [`<staff-tuning>`](../../musicxml-reference/elements/staff-tuning/) and [`<capo>`](../../musicxml-reference/elements/capo/) elements. TAB is one of the values available for [`<clef>`](../../musicxml-reference/elements/clef/) elements. The print-object attribute of the [`<key>`](../../musicxml-reference/elements/key/) and [`<time>`](../../musicxml-reference/elements/time/) elements is used to indicate that the key and time signatures should not be displayed on this staff.
 
@@ -71,7 +71,7 @@ The tab part in our example begins with the following attributes:
 </attributes>
 ```
 
-### Hammer-ons and Pull-offs
+## Hammer-ons and Pull-offs
 
 Contemporary guitar notation contains many elements idiomatic to the guitar (and specifically the electric guitar). While elements like [`<harmonic>`](../../musicxml-reference/elements/harmonic/) and [`<bend>`](../../musicxml-reference/elements/bend/) have sporadic support in current MusicXML software, the [`<hammer-on>`](../../musicxml-reference/elements/hammer-on/) and [`<pull-off>`](../../musicxml-reference/elements/pull-off/) elements are supported in many applications.
 
