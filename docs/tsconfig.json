@@ -5,7 +5,9 @@
       "@components/*": ["./src/components/*"],
       "@icons/*": ["./src/assets/icons/*"],
       "@layouts/*": ["./src/layouts/*"]
-    }
+    },
+    "strictNullChecks": true,
+    "allowJs": true
   },
   "extends": "astro/tsconfigs/strict",
   "include": [
