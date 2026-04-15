@@ -4,6 +4,8 @@ title: Chord Symbols and Diagrams
 
 Much contemporary sheet music makes use of chord symbols and chord diagrams. These notations of musical harmony are found in such different types of sheet music as lead sheets, piano / vocal / guitar arrangements, worship music, and jazz big-band charts.
 
+## Harmony Element
+
 MusicXML’s [`<harmony>`](../../musicxml-reference/elements/harmony/) element provides a rich description of both harmonic content and the appearance of chord symbols and diagrams. It can be used both for functional harmony analysis as well as chord symbols. Chord symbols and diagrams are the most common use, and that is what we focus on here.
 
 ## Chord Symbols
@@ -13,6 +15,8 @@ Here is a [three-bar example](../../musicxml-reference/examples/tutorial-chord-s
 ![Lead Sheet](../../assets/img/notation/chord.png)
 
 The first chord is a G major sixth chord with the fifth (D) in the bass. The second chord is notated as an A major chord with an added ninth degree. Another analysis might be to call it a dominant ninth chord with a missing seventh degree. MusicXML supports both types of analysis. For this example, we follow the written chord diagram notation. The third chord, an A11, will be discussed in the chord diagram section, as it includes both fingerings and a barre symbol.
+
+### Root, Kind and Bass
 
 Here is how the first G6 chord symbol is represented in the MusicXML file, omitting the chord diagram for the time being:
 
@@ -31,6 +35,8 @@ Here is how the first G6 chord symbol is represented in the MusicXML file, omitt
 Each chord symbol has at least two elements: a [`<root>`](../../musicxml-reference/elements/root/) element to indicate the root of the chord, and a [`<kind>`](../../musicxml-reference/elements/kind/) element to indicate the type of the chord. Here, we have a root of G and a kind of major-sixth. MusicXML 4.0 supports [33 different `<kind>` element values](../../musicxml-reference/data-types/kind-value/). The kind element has a text attribute that indicates that the chord is displayed as G6, not as Gmaj6, GM6, or other spelling that could represent the same chord. This symbol also indicates the bass of the chord, represented using the [`<bass>`](../../musicxml-reference/elements/bass/) element.
 
 Both the `<root>` and the `<bass>` elements divide the pitch into step and alter elements, similar to how the `<pitch>` element works. The `<root>` element uses the [<root-step>](../../musicxml-reference/elements/root-step/) and [<root-alter>](../../musicxml-reference/elements/root-alter/) elements, while the bass element uses the [`<bass-step>`](../../musicxml-reference/elements/bass-step/) and [`<bass-alter>`](../../musicxml-reference/elements/bass-alter/) elements. There is no element that corresponds to the octave element for pitch, since this information is not considered part of the harmonic analysis or the chord symbol.
+
+### Degrees
 
 MusicXML can represent all sorts of alterations to the built-in 33 kinds of chords. Degrees in the chord can be added, subtracted (e.g. “no 3”), or altered (e.g. “#5”). Here is how the second A(9) chord symbol is presented in MusicXML, using an added degree:
 
@@ -93,6 +99,8 @@ MusicXML uses the [`<frame>`](../../musicxml-reference/elements/frame/) element 
 	</frame>
 </harmony>
 ```
+
+### Strings and Frets
 
 The `<frame>` element starts with [`<frame-strings>`](../../musicxml-reference/elements/frame-strings/) and [`<frame-frets>`](../../musicxml-reference/elements/frame-frets/) elements to indicate the size of the frame. Each string that is played is then represented with a [<frame-note>](../../musicxml-reference/elements/frame-note/) element. The lowest string, string 6, is muted in this diagram, so it has no corresponding `<frame-note>` element. The highest string, string 1, is open, so its fret value is set to 0.
 

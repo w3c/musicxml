@@ -8,6 +8,8 @@ Many MusicXML developers now use code generation or data binding tools to automa
 - CodeSynthesis XSD and XSD/e tools for generating C++ data bindings
 - xsData data binding library for Python
 
+## Challenges
+
 There are some issues in MusicXML's design that often cause some difficulties for data binding tools. This is because MusicXML's design pre-dates not only these tools, but the W3C XML Schema recommendation itself. Later versions of MusicXML maintain full compatibility with MusicXML 1.0, so we cannot change these parts of the schema to make things work more easily with these tools.
 
 These problems are common among code generation and data binding tools:
@@ -16,6 +18,8 @@ These problems are common among code generation and data binding tools:
 - Confusion between the coda attribute and the [`<coda>`](../../musicxml-reference/elements/coda/) child element in the [`<barline>`](../../musicxml-reference/elements/barline/) element.
 - Confusion between the segno attribute and the [`<segno>`](../../musicxml-reference/elements/segno/) child element in the `<barline>` element.
 - Confusion between the two different placements of the [`<link>`](../../musicxml-reference/elements/link/) and [`<bookmark>`](../../musicxml-reference/elements/bookmark/) child elements within the [`<credit>`](../../musicxml-reference/elements/credit/) element.
+
+## Tools
 
 Fortunately there are straightforward workarounds for these issues. Let's take the example of the xjc tool included with Java SE versions up through Java 8. We try to compile the code from the terminal using
 

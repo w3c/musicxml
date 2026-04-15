@@ -1,0 +1,36 @@
+---
+const { headings } = Astro.props;
+---
+
+{ headings &&
+
+  <div id="page-nav" class="hidden xl:block fixed top-32 left-5/6 2xl:left-3/4 w-60">
+
+		<h2 class="text-w3c-blue text-lg font-bold mt-3">On this page</h2>
+
+		<ul class="ml-1 my-0 px-0 list-none leading-none">
+
+			{ 
+				headings.map((heading) => {
+
+					if (heading.depth < 4) {
+
+						const headingLevelClasses = heading.depth === 2 ? 'pl-3' : 'pl-5 text-sm text-zinc-500 dark:text-granite-l1';
+						const listClasses = `my-0 pb-1 text-base border-l border-neutral-300 ${ headingLevelClasses }`;
+						const linkClasses = 'no-underline font-normal text-inherit visited:text-inherit';
+						
+						return (
+							<li class={ listClasses }>
+								<a href={`#${heading.slug}`} class={ linkClasses }>
+									{ heading.text }
+								</a>
+							</li>
+						)
+					}
+				})
+			}
+
+		</ul>
+
+	</div>
+}

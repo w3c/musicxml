@@ -68,7 +68,7 @@ hr {
 }
 
 :target {
-  scroll-margin-top: --spacing(32);
+  scroll-margin-top: --spacing(24);
 }
 
 @media (width >= 48rem) {
