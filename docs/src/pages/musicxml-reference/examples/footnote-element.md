@@ -1,0 +1,4 @@
+---
+title: '<footnote>'
+element: footnote
+---

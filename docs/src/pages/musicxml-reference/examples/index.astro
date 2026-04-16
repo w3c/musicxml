@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../../layouts/Base.astro';
+
+const examples = Object.values(import.meta.glob('./*.md', { eager: true }));
+
+const frontmatter = {
+  title: 'MusicXML example documents',
+}
+---
+<BaseLayout frontmatter={frontmatter}>
+  {examples.map((example) => (
+    <a href={example.url}>{example.frontmatter.title}</a>
+    <p/>
+  ))}
+</BaseLayout>
