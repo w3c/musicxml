@@ -1,4 +1,0 @@
----
-title: '<defaults>'
-element: defaults
----

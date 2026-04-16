@@ -1,0 +1,24 @@
+---
+import ExampleCode from '@components/ExampleCode.astro';
+
+import Path from 'node:path';
+
+import BaseLayout from '../../../layouts/Base.astro';
+
+export function getStaticPaths() {
+  const examples = import.meta.glob('../../../examples/opus-reference/*.md', { eager: true });
+  return Object.values(examples).map((example) => ({
+    params: { id: Path.parse(example.file).name },
+    props: { example }
+  }));
+}
+
+const { example } = Astro.props;
+
+const frontmatter = {
+  title: example.frontmatter.title
+};
+---
+<BaseLayout frontmatter={frontmatter}>
+  <ExampleCode example={example} reference="opus-reference"/>
+</BaseLayout>

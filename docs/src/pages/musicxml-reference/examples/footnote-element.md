@@ -1,4 +1,0 @@
----
-title: '<footnote>'
-element: footnote
----

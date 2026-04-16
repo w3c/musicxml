@@ -1,4 +1,0 @@
----
-title: '<work>'
-element: work
----

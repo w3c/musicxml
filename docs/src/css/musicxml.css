@@ -1,0 +1,6 @@
+span.line:has(.highlighted-word) {
+  font-weight: bolder;
+}
+span.line a {
+  text-decoration: none;
+}

@@ -1,0 +1,52 @@
+---
+import { Code } from 'astro:components';
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import MarkdownIt from 'markdown-it';
+import Path from 'node:path';
+
+const { example, reference } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
+
+const snippet = example.rawContent().replace(/```xml|```/g, '').trim();
+const name = Path.parse(example.file).name;
+const image = example.frontmatter.image ? `/src/assets/img/${example.frontmatter.tutorial ? 'notation' : 'examples'}/${example.frontmatter.image}` : null;
+
+const md = new MarkdownIt();
+---
+{image && (
+  <Image src={images[image]()} alt={name} />
+)}
+{example.frontmatter.description && (
+  <p set:html={md.renderInline(example.frontmatter.description)} />
+)}
+<p/>
+<Code lang="xml" code={snippet}
+transformers={[
+  {
+    line(node) {
+      const opening = node.children.findIndex((child) => {
+        return child.type === 'element' &&
+                child.children.length === 1 &&
+                child.children[0].type === 'text' &&
+                (child.children[0].value.endsWith('<') || child.children[0].value.endsWith('</'))
+      });
+      if (opening > -1 && node.children.length > opening) {
+        const child = node.children[opening + 1];
+        if (
+          child.type === 'element' &&
+          child.children.length === 1 &&
+          child.children[0].type === 'text'
+        ) {
+          const tag = child.children[0].value;
+          child.tagName = 'a';
+          child.properties.href = `/musicxml/${reference}/elements/${tag}/`;
+          if (Array.isArray(example.frontmatter.elements) ? example.frontmatter.elements.indexOf(tag) > -1 : example.frontmatter.elements === tag) {
+            this.addClassToHast(child, 'highlighted-word');
+          }
+        }
+      }
+    }
+  }
+]}
+/>

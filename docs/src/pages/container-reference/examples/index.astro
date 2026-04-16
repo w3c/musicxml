@@ -1,15 +1,17 @@
 ---
+import Path from 'node:path';
+
 import BaseLayout from '../../../layouts/Base.astro';
 
-const examples = Object.values(import.meta.glob('./*.md', { eager: true }));
+const examples = import.meta.glob('../../../examples/container-reference/*.md', { eager: true });
 
 const frontmatter = {
   title: 'Container example documents',
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  {examples.map((example) => (
-    <a href={example.url}>{example.frontmatter.title}</a>
+  {Object.values(examples).map((example) => (
+    <a href={"/musicxml/container-reference/examples/" + Path.parse(example.file).name + "/"}>{example.frontmatter.title}</a>
     <p/>
   ))}
 </BaseLayout>

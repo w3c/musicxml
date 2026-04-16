@@ -1,0 +1,23 @@
+---
+import { Code } from 'astro:components';
+
+import BaseLayout from '../../layouts/Base.astro';
+
+import { getIds, getXML } from './listings.ts';
+
+export function getStaticPaths() {
+  return getIds().map((id) => ({
+    params: { id },
+  }));
+}
+
+const { id } = Astro.params;
+const xml = getXML(id!);
+
+const frontmatter = {
+  title: id,
+}
+---
+<BaseLayout frontmatter={frontmatter}>
+  <Code lang="xml" code={xml} />
+</BaseLayout>
