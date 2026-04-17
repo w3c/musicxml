@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import BaseLayout from '../../../layouts/Base.astro';
+import ElementLink from '@components/ElementLink.astro';
 
 const elements = await getCollection('soundsElements');
 const frontmatter = {
@@ -11,7 +12,7 @@ const frontmatter = {
 <BaseLayout frontmatter={frontmatter}>
   <ul>
     {elements.map(element => (
-      <li><a href={`/musicxml/sounds-reference/elements/${element.id}/`}>{element.data.name}</a></li>
+      <li><ElementLink tag={element.id} schema="sounds"/></li>
     ))}
   </ul>
 </BaseLayout>

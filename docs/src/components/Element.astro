@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+import MarkdownIt from 'markdown-it';
+
+import ElementLink from '@components/ElementLink.astro';
+import ExampleLink from '@components/ExampleLink.astro';
+
+const md = new MarkdownIt();
+const { element, schema } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/elements/*.png');
+const examples = import.meta.glob('../data/examples/**/*.md', { eager: true });
+const image = `/src/assets/img/elements/${element.id}.png`;
+const regex = new RegExp(`<${element.id}[\\s>\/]`, 'mi');
+const examplesf = Object.values(examples).filter((example) => regex.test(example.rawContent()));
+---
+<p class="parents">
+  Parent element{element.data.parents.length > 1 ? 's' : ''}: {element.data.parents.length > 0 ? element.data.parents.map((parent) => <ElementLink tag={parent} schema={schema}/>) : 'None'}
+</p>
+
+{image in images && <Image src={images[image]()} alt={element.id} />}
+
+{element.data.documentation && <p class="description" set:html={md.render(element.data.documentation)} />}
+
+<section>
+  <h2>Content</h2>
+  <p>Always empty.</p>
+</section>
+
+<section>
+  <h2>Attributes</h2>
+  {element.data.attributes && element.data.attributes.length > 0 ? (
+    <table class="attributes">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Required?</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {element.data.attributes.map((attribute) => (
+          <tr>
+            <td>{attribute.name}</td>
+            <td>{attribute.type}</td>
+            <td>{attribute.required ? 'Yes' : 'No'}</td>
+            <td>{attribute.documentation}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  ): <p>None.</p>}
+</section>
+
+<section>
+  <h2>Examples</h2>
+  {examples && (
+    <p>This element is used in the following example{examplesf.length > 1 ? 's' : ''}:</p>
+    <p class="examples">{examplesf.map((example) => {
+      return <ExampleLink example={example} schema={schema}/>;
+    })}</p>)
+  }
+</section>

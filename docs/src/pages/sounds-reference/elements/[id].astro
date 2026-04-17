@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import BaseLayout from '../../../layouts/Base.astro';
+import Element from '@components/Element.astro';
 
 export async function getStaticPaths() {
   const elements = await getCollection('soundsElements');
@@ -12,11 +13,10 @@ export async function getStaticPaths() {
 }
 
 const { element } = Astro.props;
-
 const frontmatter = {
-  title: `<${element.data.name}>`,
+  title: `The <${element.data.name}> element`,
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  hello!
+  <Element element={element} schema="sounds"/>
 </BaseLayout>

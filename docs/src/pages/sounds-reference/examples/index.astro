@@ -3,7 +3,7 @@ import Path from 'node:path';
 
 import BaseLayout from '../../../layouts/Base.astro';
 
-const examples = import.meta.glob('../../../examples/sounds-reference/*.md', { eager: true });
+const examples = import.meta.glob('../../../data/examples/sounds-reference/*.md', { eager: true });
 
 const frontmatter = {
   title: 'Sounds example documents',

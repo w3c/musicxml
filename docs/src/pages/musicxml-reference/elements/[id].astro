@@ -1,13 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 
 import BaseLayout from '../../../layouts/Base.astro';
-import ElementLink from '@components/ElementLink.astro';
-import ExampleLink from '@components/ExampleLink.astro';
-
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/elements/*.png');
-const musicxml = import.meta.glob('../../../examples/musicxml-reference/*.md', { eager: true });
+import Element from '@components/Element.astro';
 
 export async function getStaticPaths() {
   const elements = await getCollection('musicxmlElements');
@@ -17,57 +12,11 @@ export async function getStaticPaths() {
   }));
 }
 
-const { id: tag } = Astro.params;
 const { element } = Astro.props;
-
-const image = `/src/assets/img/elements/${tag}.png`;
-const examples = Object.values(musicxml).filter(example => example.rawContent().includes(`<${tag}`));
 const frontmatter = {
   title: `The <${element.data.name}> element`,
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  {element.data.parents && <p class="parent-element">
-    Parent element{element.data.parents.length > 1 ? 's' : ''}: <span class="parent-element">{element.data.parents.map((parent) => <ElementLink tag={parent} schema="musicxml"/>)}</span>
-  </p>}
-  {image in images && <Image src={images[image]()} alt={tag} />}
-  {element.data.documentation && <p class="description" set:html={element.data.documentation} />}
-  <section>
-    <h2>Content</h2>
-    <p>Always empty.</p>
-  </section>
-  <section>
-    <h2>Attributes</h2>
-    {element.data.attributes ? (
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Required?</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {element.data.attributes.map((attribute) => (
-            <tr>
-              <td>{attribute.name}</td>
-              <td>{attribute.type}</td>
-              <td>{attribute.required ? 'Yes' : 'No'}</td>
-              <td>{attribute.documentation}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    ): <p>None.</p>}
-  </section>
-  <section>
-    <h2>Examples</h2>
-    {examples && (
-      <p>This element is used in the following example{examples.length > 1 ? 's' : ''}:</p>
-      <p>{examples.map((example) => {
-        return <ExampleLink example={example} schema="musicxml"/>;
-      })}</p>)
-    }
-  </section>
+  <Element element={element} schema="musicxml"/>
 </BaseLayout>

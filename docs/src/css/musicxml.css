@@ -1,6 +1,16 @@
 span.line:has(.highlighted-word) {
   font-weight: bolder;
 }
-span.line a {
+span.line a,
+.parents a,
+.examples a {
   text-decoration: none;
+}
+.parents a:not(:last-child)::after,
+.examples a:not(:last-child)::after {
+  content: ", ";
+  text-decoration: none;
+}
+table.attributes td:first-child {
+  font-weight: bold;
 }

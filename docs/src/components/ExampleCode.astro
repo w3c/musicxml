@@ -9,7 +9,7 @@ const md = new MarkdownIt();
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 
-const { example, reference } = Astro.props;
+const { example, schema } = Astro.props;
 const snippet = example.rawContent().replace(/```xml|```/g, '').trim();
 const name = Path.parse(example.file).name;
 const image = example.frontmatter.image ? `/src/assets/img/${example.frontmatter.tutorial ? 'notation' : 'examples'}/${example.frontmatter.image}` : null;
@@ -18,7 +18,7 @@ const image = example.frontmatter.image ? `/src/assets/img/${example.frontmatter
   <Image src={images[image]()} alt={name} />
 )}
 {example.frontmatter.description && (
-  <p set:html={md.renderInline(example.frontmatter.description)} />
+  <p set:html={md.render(example.frontmatter.description)} />
 )}
 <p/>
 <Code lang="xml" code={snippet}
@@ -40,7 +40,7 @@ transformers={[
         ) {
           const tag = child.children[0].value;
           child.tagName = 'a';
-          child.properties.href = `/musicxml/${reference}/elements/${tag}/`;
+          child.properties.href = `/musicxml/${schema}-reference/elements/${tag}/`;
           if (Array.isArray(example.frontmatter.elements) ? example.frontmatter.elements.indexOf(tag) > -1 : example.frontmatter.elements === tag) {
             this.addClassToHast(child, 'highlighted-word');
           }
