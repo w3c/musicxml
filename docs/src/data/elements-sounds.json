@@ -1,0 +1,79 @@
+{
+   "ensemble": {
+      "parents": [
+         "sound"
+      ],
+      "attributes": [
+         {
+            "required": false,
+            "name": "number",
+            "documentation": "",
+            "type": "xs:NMTOKEN"
+         },
+         {
+            "required": false,
+            "name": "primary",
+            "documentation": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
+            "type": "yes-no"
+         }
+      ],
+      "name": "ensemble",
+      "documentation": "The solo and ensemble elements are used when an application has different IDs for solo and ensemble sounds, as represented by the solo and ensemble elements in a MusicXML score file. The ensemble type corresponds to the ensemble element in the MusicXML score file. The element content is the application or library sound ID.\n\nThe number attribute for the ensemble element represents the size of the ensemble, corresponding to the content of the ensemble element in a MusicXML score file.\n\nMultiple solo and ensemble elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which ensemble element is primary when mapping from a MusicXML sound id."
+   },
+   "sound": {
+      "parents": [
+         "sounds"
+      ],
+      "attributes": [
+         {
+            "required": true,
+            "name": "id",
+            "documentation": "",
+            "type": "xs:ID"
+         },
+         {
+            "required": false,
+            "name": "primary",
+            "documentation": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
+            "type": "yes-no"
+         }
+      ],
+      "name": "sound",
+      "documentation": "The sound type lists one of the standard sounds available in MusicXML 4.0. The required id attribute lists the MusicXML sound identifier string used by the instrument-sound element.\n\nThe optional any, solo, and ensemble elements can be used for mapping MusicXML sound IDs to an application's or virtual instrument library's method of identifying sounds. These methods could include Sibelius SoundWorld IDs, capella genericsound IDs, and General MIDI patch numbers.\n\nThe primary attribute is used when multiple sound elements map to the same application or library ID. In this case, the primary attribute indicates which of the MusicXML IDs is primary when mapping to a MusicXML sound id."
+   },
+   "sounds": {
+      "parents": [],
+      "name": "sounds",
+      "documentation": "The sounds element with a sounds type is the root element for a MusicXML sounds document."
+   },
+   "solo": {
+      "parents": [
+         "sound"
+      ],
+      "attributes": [
+         {
+            "required": false,
+            "name": "primary",
+            "documentation": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
+            "type": "yes-no"
+         }
+      ],
+      "name": "solo",
+      "documentation": "The solo and ensemble elements are used when an application has different IDs for solo and ensemble sounds, as represented by the solo and ensemble elements in a MusicXML score file. The solo type corresponds to the solo element in the MusicXML score file. The element content is the application or library sound ID.\n\nMultiple solo and ensemble elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which solo element is primary when mapping from a MusicXML sound id."
+   },
+   "any": {
+      "parents": [
+         "sound"
+      ],
+      "attributes": [
+         {
+            "required": false,
+            "name": "primary",
+            "documentation": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
+            "type": "yes-no"
+         }
+      ],
+      "name": "any",
+      "documentation": "The any type is used when a MusicXML ID refers to a single application or library sound ID, regardless of whether a solo or ensemble sound is used. The element content is the application or library sound ID.\n\nMultiple any elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which of the any elements is primary when mapping from a MusicXML sound id."
+   }
+}

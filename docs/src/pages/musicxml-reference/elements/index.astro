@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../../layouts/Base.astro';
+
+const elements = await getCollection('musicxmlElements');
+const frontmatter = {
+  title: 'Elements used in MusicXML'
+}
+---
+<BaseLayout frontmatter={frontmatter}>
+  <ul>
+    {elements.map(element => (
+      <li><a href={`/musicxml/musicxml-reference/elements/${element.id}/`}>{element.data.name}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

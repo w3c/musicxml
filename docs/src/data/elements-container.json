@@ -1,0 +1,35 @@
+{
+   "rootfile": {
+      "parents": [
+         "rootfiles"
+      ],
+      "attributes": [
+         {
+            "required": true,
+            "name": "full-path",
+            "documentation": "",
+            "type": "xs:token"
+         },
+         {
+            "required": false,
+            "name": "media-type",
+            "documentation": "",
+            "type": "xs:token"
+         }
+      ],
+      "name": "rootfile",
+      "documentation": "The rootfile element describes each top-level file in the MusicXML container. A MusicXML file used as a rootfile may have score-partwise, score-timewise, or opus as its document element.\n\nThe required full-path attribute provides the path relative to the root folder of the zip file. The optional media-type attribute identifies the media type of different top-level root files. It is an error to have a non-MusicXML media-type value in the first rootfile in a rootfiles element. If no media-type value is present, a MusicXML file is assumed."
+   },
+   "rootfiles": {
+      "parents": [
+         "container"
+      ],
+      "name": "rootfiles",
+      "documentation": "The rootfiles element includes the starting points for the different representations of a MusicXML score. The MusicXML root must be described in the first rootfile element. Additional rootfile elements can describe alternate versions such as PDF and audio files.\n\nWhen a MusicXML file contains both a score file and separate files for individual parts, the score file is the one that is referenced in the first rootfile element. The part files can be linked from within the score file and need not be listed here."
+   },
+   "container": {
+      "parents": [],
+      "name": "container",
+      "documentation": "The container element with a container type is the root element of the META-INF\/container.xml file."
+   }
+}

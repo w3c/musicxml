@@ -1,0 +1,25 @@
+---
+export const prerender = false; // Not needed in 'server' mode
+
+import BaseLayout from '../../../layouts/Base.astro';
+
+import { getEntry } from "astro:content";
+
+const { id } = Astro.params;
+if (id === undefined) {
+  return Astro.redirect("/404");
+}
+
+const element = await getEntry("containerElements", id);
+
+if (element === undefined) {
+  return Astro.redirect("/404");
+}
+
+const frontmatter = {
+  title: `<${element.data.name}>`,
+}
+---
+<BaseLayout frontmatter={frontmatter}>
+  hello!
+</BaseLayout>

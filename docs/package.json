@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "astro dev",
+    "build:json": "for xsd in container musicxml sounds; do xslt3 -xsl:src/data/elements.xsl -s:../schema/$xsd.xsd > src/data/elements-$xsd.json; done",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -16,8 +17,8 @@
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.3",
     "markdown-it": "^14.1.1",
-    "saxon-js": "^2.7.0",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.2.2",
+    "xslt3": "^2.7.0"
   },
   "devDependencies": {
     "@types/node": "^25.6.0"
