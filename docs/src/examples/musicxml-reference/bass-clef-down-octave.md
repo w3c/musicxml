@@ -1,5 +1,16 @@
 ---
-title: '<bass-clef-down-octave>'
-elements: bass-clef-down-octave
+title: 'Bass Clef (Down Octave)'
+elements:
+- clef
+- sign
+- line
+- clef-octave-change
 image: bass-clef-down-octave.png
 ---
+```xml
+<clef>
+   <sign>F</sign>
+   <line>4</line>
+   <clef-octave-change>-1</clef-octave-change>
+</clef>
+```

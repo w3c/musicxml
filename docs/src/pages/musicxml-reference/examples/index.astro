@@ -1,17 +1,25 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 import Path from 'node:path';
 
 import BaseLayout from '../../../layouts/Base.astro';
 
 const examples = import.meta.glob('../../../examples/musicxml-reference/*.md', { eager: true });
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 
 const frontmatter = {
   title: 'MusicXML example documents',
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  {Object.values(examples).map((example) => (
-    <a href={"/musicxml/musicxml-reference/examples/" + Path.parse(example.file).name + "/"}>{example.frontmatter.title}</a>
-    <p/>
-  ))}
+  {Object.values(examples).sort((e1, e2) => e1.frontmatter.title.localeCompare(e2.frontmatter.title)).map((example) => {
+    const image = example.frontmatter.image ? `/src/assets/img/${example.frontmatter.tutorial ? 'notation' : 'examples'}/${example.frontmatter.image}` : null;
+    const name = Path.parse(example.file).name;
+    return (
+      image && <Image src={images[image]()} alt={name} />
+      <a href={"/musicxml/musicxml-reference/examples/" + name + "/"}>{example.frontmatter.title}</a>
+      <p/>
+    );
+  })}
 </BaseLayout>
