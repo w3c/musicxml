@@ -1,20 +1,17 @@
 ---
-export const prerender = false; // Not needed in 'server' mode
+import { getCollection } from 'astro:content';
 
 import BaseLayout from '../../../layouts/Base.astro';
 
-import { getEntry } from "astro:content";
-
-const { id } = Astro.params;
-if (id === undefined) {
-  return Astro.redirect("/404");
+export async function getStaticPaths() {
+  const elements = await getCollection('soundsElements');
+  return Object.values(elements).map((element) => ({
+    params: { id: element.id },
+    props: { element }
+  }));
 }
 
-const element = await getEntry("soundsElements", id);
-
-if (element === undefined) {
-  return Astro.redirect("/404");
-}
+const { element } = Astro.props;
 
 const frontmatter = {
   title: `<${element.data.name}>`,
