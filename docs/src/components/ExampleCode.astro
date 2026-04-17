@@ -5,14 +5,14 @@ import { Image } from 'astro:assets';
 import MarkdownIt from 'markdown-it';
 import Path from 'node:path';
 
-const { example, reference } = Astro.props;
+const md = new MarkdownIt();
+
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 
+const { example, reference } = Astro.props;
 const snippet = example.rawContent().replace(/```xml|```/g, '').trim();
 const name = Path.parse(example.file).name;
 const image = example.frontmatter.image ? `/src/assets/img/${example.frontmatter.tutorial ? 'notation' : 'examples'}/${example.frontmatter.image}` : null;
-
-const md = new MarkdownIt();
 ---
 {image && (
   <Image src={images[image]()} alt={name} />
