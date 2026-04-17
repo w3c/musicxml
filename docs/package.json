@@ -1,5 +1,6 @@
 {
-  "name": "docs",
+  "name": "musicxml-docs",
+  "description": "MusicXML documentation site.",
   "type": "module",
   "version": "0.0.1",
   "engines": {

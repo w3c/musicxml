@@ -32,5 +32,11 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: 'https://davidmatthew-ie.github.io',
-  base: '/musicxml'
+  base: '/musicxml',
+  redirects: {
+    '/sounds-reference/elements/any-sounds/': '/musicxml/sounds-reference/elements/any/',
+    '/sounds-reference/elements/ensemble-sounds/': '/musicxml/sounds-reference/elements/ensemble/',
+    '/sounds-reference/elements/solo-sounds/': '/musicxml/sounds-reference/elements/solo/',
+    '/sounds-reference/elements/sound-sounds/': '/musicxml/sounds-reference/elements/sound/',
+  }
 });
