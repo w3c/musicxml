@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../../layouts/Base.astro';
+import Element from '@components/Element.astro';
+
+export async function getStaticPaths() {
+  const elements = await getCollection('opusElements');
+  return Object.values(elements).map((element) => ({
+    params: { id: element.id },
+    props: { element }
+  }));
+}
+
+const { element } = Astro.props;
+const frontmatter = {
+  title: `The <${element.data.name}> element`,
+}
+---
+<BaseLayout frontmatter={frontmatter}>
+  <Element element={element} schema="opus"/>
+</BaseLayout>

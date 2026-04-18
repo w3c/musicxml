@@ -26,7 +26,9 @@
 
   <xsl:template match="/">
     <xsl:variable name="hierarchy" as="element()*">
-      <xsl:apply-templates select="xs:schema/xs:element" mode="hierarchy"/>
+      <xsl:apply-templates select="xs:schema/xs:element" mode="hierarchy">
+        <xsl:with-param name="parents" select="()"/>
+      </xsl:apply-templates>
     </xsl:variable>
     <xsl:call-template name="output">
       <xsl:with-param name="hierarchy" select="$hierarchy"/>
@@ -34,11 +36,10 @@
   </xsl:template>
 
   <xsl:template match="xs:element" mode="hierarchy">
+    <xsl:param name="parents" as="xs:string*"/>
     <xsl:element name="{@name}">
       <xsl:attribute name="attribute" select="false()"/>
-      <xsl:attribute name="url">
-        <xsl:value-of select="'https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/' || (if (@name = 'opus') then 'opus-reference' else @name) || '/'"/>
-      </xsl:attribute>
+      <xsl:attribute name="parents" select="$parents"/>
       <xsl:attribute name="documentation">
         <xsl:value-of select="(
           xs:annotation/xs:documentation/text(),
@@ -56,23 +57,34 @@
         xs:choice |
         /xs:schema/xs:complexType[@name=current()/@type]
       " mode="attributes"/>
-      <xsl:apply-templates select="
-        xs:element |
-        xs:complexType |
-        xs:sequence |
-        xs:group[@ref] |
-        xs:choice |
-        /xs:schema/xs:complexType[@name=current()/@type]
-      " mode="#current"/>
+      <xsl:if test="not($parents = @name)">
+        <xsl:apply-templates select="
+          xs:element |
+          xs:complexType |
+          xs:sequence |
+          xs:group[@ref] |
+          xs:choice |
+          /xs:schema/xs:complexType[@name=current()/@type]
+        " mode="#current"
+        >
+          <xsl:with-param name="parents" select="($parents, @name)"/>
+        </xsl:apply-templates>
+      </xsl:if>
     </xsl:element>
   </xsl:template>
 
   <xsl:template match="xs:complexType | xs:sequence | xs:choice | xs:group[@name]" mode="hierarchy">
-    <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current"/>
+    <xsl:param name="parents"/>
+    <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current">
+      <xsl:with-param name="parents" select="$parents"/>
+    </xsl:apply-templates>
   </xsl:template>
 
   <xsl:template match="xs:group[@ref]" mode="hierarchy">
-    <xsl:apply-templates select="/xs:schema/xs:group[@name=current()/@ref]" mode="#current"/>
+    <xsl:param name="parents"/>
+    <xsl:apply-templates select="/xs:schema/xs:group[@name=current()/@ref]" mode="#current">
+      <xsl:with-param name="parents" select="$parents"/>
+    </xsl:apply-templates>
   </xsl:template>
 
   <xsl:template match="xs:complexType | xs:sequence | xs:choice | xs:simpleContent | xs:complexContent | xs:extension" mode="attributes">

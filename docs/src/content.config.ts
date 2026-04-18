@@ -7,8 +7,11 @@ const containerElements = defineCollection({
 const musicxmlElements = defineCollection({
   loader: file("src/data/elements-musicxml.json"),
 });
+const opusElements = defineCollection({
+  loader: file("src/data/elements-opus.json"),
+});
 const soundsElements = defineCollection({
   loader: file("src/data/elements-sounds.json"),
 });
 
-export const collections = { containerElements, musicxmlElements, soundsElements };
+export const collections = { containerElements, musicxmlElements, opusElements, soundsElements };

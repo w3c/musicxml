@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 
 import BaseLayout from '../../../layouts/Base.astro';
 import ElementLink from '@components/ElementLink.astro';
+import SchemaView from '@components/SchemaView.astro';
 
 const elements = await getCollection('containerElements');
 const frontmatter = {
@@ -10,6 +11,7 @@ const frontmatter = {
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
+  <SchemaView schema="container" current="list"/>
   <ul>
     {elements.map(element => (
       <li><ElementLink tag={element.id} schema="container"/></li>
