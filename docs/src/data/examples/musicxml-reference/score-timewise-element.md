@@ -1,6 +1,9 @@
 ---
 title: '<score-timewise>'
 image: score-timewise-element.png
+elements_map:
+   measure: measure-timewise
+   part: part-timewise
 ---
 ```xml
 <score-timewise version="4.0">

@@ -36,7 +36,20 @@
 
   <xsl:template match="xs:element" mode="hierarchy">
     <xsl:param name="parents" as="xs:string*"/>
-    <xsl:element name="{@name}">
+    <!--
+      SPECIAL CASE!! We need to differentiate between <measure> and <part>
+      in their <score-partwise> and <score-timewise> version, so we "invent"
+      new tag names for each. We will need to do the opposite work on the frontend,
+      i.e. bring those invented tag names back to the real ones.
+    -->
+    <xsl:variable name="element-name" select="
+      if (@name = 'part') then (
+        if ($parents = 'score-partwise') then 'part-partwise' else 'part-timewise'
+      ) else if (@name = 'measure') then (
+        if ($parents = 'score-timewise') then 'measure-timewise' else 'measure-partwise'
+      ) else @name
+    "/>
+    <xsl:element name="{$element-name}">
       <xsl:attribute name="attribute" select="false()"/>
       <xsl:attribute name="parents" select="$parents"/>
       <xsl:attribute name="documentation">
@@ -63,7 +76,9 @@
               xs:group[@ref] |
               xs:choice |
               /xs:schema/xs:complexType[@name=current()/@type]
-            " mode="children"/>
+            " mode="children">
+              <xsl:with-param name="parents" select="($parents, $element-name)"/>
+            </xsl:apply-templates>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
@@ -78,7 +93,7 @@
         xs:choice |
         /xs:schema/xs:complexType[@name=current()/@type]
       " mode="attributes"/>
-      <xsl:if test="not($parents = @name)">
+      <xsl:if test="not($parents = $element-name)">
         <xsl:apply-templates select="
           xs:element |
           xs:complexType |
@@ -88,35 +103,58 @@
           /xs:schema/xs:complexType[@name=current()/@type]
         " mode="#current"
         >
-          <xsl:with-param name="parents" select="($parents, @name)"/>
+          <xsl:with-param name="parents" select="($parents, $element-name)"/>
         </xsl:apply-templates>
       </xsl:if>
     </xsl:element>
   </xsl:template>
 
   <xsl:template match="xs:element" mode="children" as="map(*)">
+    <xsl:param name="parents"/>
+    <!--
+      SPECIAL CASE!! We need to differentiate between <measure> and <part>
+      in their <score-partwise> and <score-timewise> version, so we "invent"
+      new tag names for each. We will need to do the opposite work on the frontend,
+      i.e. bring those invented tag names back to the real ones.
+    -->
+    <xsl:variable name="element-name" select="
+      if (@name = 'part') then (
+        if ($parents = 'score-partwise') then 'part-partwise' else 'part-timewise'
+      ) else if (@name = 'measure') then (
+        if ($parents = 'score-timewise') then 'measure-timewise' else 'measure-partwise'
+      ) else @name
+    "/>
     <xsl:sequence select="map {
       'type': 'element',
       'min': xs:string((@minOccurs, '1')[1]),
       'max': xs:string((@maxOccurs, '1')[1]),
-      'value': xs:string(@name)
+      'value': xs:string($element-name)
     }"/>
   </xsl:template>
 
   <xsl:template match="xs:complexType | xs:group[@name]" mode="children" as="map(*)*">
-    <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current"/>
+    <xsl:param name="parents"/>
+    <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current">
+      <xsl:with-param name="parents" select="$parents"/>
+    </xsl:apply-templates>
   </xsl:template>
 
   <xsl:template match="xs:sequence" mode="children" as="map(*)*">
+    <xsl:param name="parents"/>
     <xsl:variable name="sequence" as="map(*)*">
-      <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current"/>
+      <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current">
+        <xsl:with-param name="parents" select="$parents"/>
+      </xsl:apply-templates>
     </xsl:variable>
     <xsl:sequence select="map { 'type': 'sequence', 'value': array{$sequence}}"/>
   </xsl:template>
 
   <xsl:template match="xs:choice" mode="children" as="map(*)*">
+    <xsl:param name="parents"/>
     <xsl:variable name="choice" as="map(*)*">
-      <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current"/>
+      <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current">
+        <xsl:with-param name="parents" select="$parents"/>
+      </xsl:apply-templates>
     </xsl:variable>
     <xsl:sequence select="map {
       'type': 'choice',
@@ -127,7 +165,10 @@
   </xsl:template>
 
   <xsl:template match="xs:group[@ref]" mode="children">
-    <xsl:apply-templates select="/xs:schema/xs:group[@name=current()/@ref]" mode="#current"/>
+    <xsl:param name="parents"/>
+    <xsl:apply-templates select="/xs:schema/xs:group[@name=current()/@ref]" mode="#current">
+      <xsl:with-param name="parents" select="$parents"/>
+    </xsl:apply-templates>
   </xsl:template>
 
   <xsl:template match="xs:complexType | xs:sequence | xs:choice | xs:group[@name]" mode="hierarchy">

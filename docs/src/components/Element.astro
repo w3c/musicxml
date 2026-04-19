@@ -1,20 +1,28 @@
 ---
 import { Image } from 'astro:assets';
 import MarkdownIt from 'markdown-it';
-
 import ElementLink from '@components/ElementLink.astro';
 import ExampleLink from '@components/ExampleLink.astro';
 import ElementContent from '@components/ElementContent.astro';
 import DataTypeLink from './DataTypeLink.astro';
+import { defaultElementsMap } from '../utils/Config';
 
 const md = new MarkdownIt();
 const { element, schema } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/elements/*.png');
 const examples = import.meta.glob('../data/examples/**/*.md', { eager: true });
 const image = `/src/assets/img/elements/${element.id}.png`;
+// Check the default elements map and construct a regex if it's found.
+// Only test this regex if the example's elements map is absent.
+const tag_ = Object.keys(defaultElementsMap).find(tag => defaultElementsMap[tag] === element.id);
+const regex_ = tag_ ? new RegExp(`<${tag_}[\\s>\/]`, 'mi') : null;
+// Filter examples containing this element.
 const regex = new RegExp(`<${element.id}[\\s>\/]`, 'mi');
-const examples_ = Object.values(examples).filter((example) => regex.test(example.rawContent()));
-
+const examples_ = Object.values(examples).filter((example) =>
+  regex.test(example.rawContent()) ||
+  (example.frontmatter.elements_map && Object.values(example.frontmatter.elements_map).includes(element.id)) ||
+  (!example.frontmatter.elements_map && regex_?.test(example.rawContent()))
+);
 ---
 <p class="parents">
   Parent element{element.data.parents.length > 1 ? 's' : ''}: {element.data.parents.length > 0 ? element.data.parents.map((parent) => <ElementLink tag={parent} schema={schema}/>) : 'None'}

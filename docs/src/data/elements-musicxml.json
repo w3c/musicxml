@@ -1158,9 +1158,9 @@
          ]
       },
       "parents": [
-         "part",
+         "part-timewise",
          "direction",
-         "measure"
+         "measure-partwise"
       ],
       "name": "listening",
       "documentation": "The listen and listening types, new in Version 4.0, specify different ways that a score following or machine listening application can interact with a performer. The listening type handles interactions that change the state of the listening application from the specified point in the performance onward. If multiple child elements of the same type are present, they should have distinct player and\/or time-only attributes.\n\nThe offset element is used to indicate that the listening change takes place offset from the current score position. If the listening element is a child of a direction element, the listening offset element overrides the direction offset element if both elements are present. Note that the offset reflects the intended musical position for the change in state. It should not be used to compensate for latency issues in particular hardware configurations."
@@ -1290,9 +1290,9 @@
    "bookmark": {
       "children": null,
       "parents": [
-         "part",
+         "part-timewise",
          "credit",
-         "measure"
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -1584,8 +1584,8 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -2269,8 +2269,8 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "name": "forward",
       "documentation": "The backup and forward elements are required to coordinate multiple voices in one part, including music on multiple staves. The forward element is generally used within voices and staves. Duration values should always be positive, and should not cross measure boundaries or mid-measure changes in the divisions value."
@@ -2313,111 +2313,6 @@
       "name": "for-part",
       "documentation": "The for-part element is used in a concert score to indicate the transposition for a transposed part created from that score. It is only used in score files that contain a concert-score element in the defaults. This allows concert scores with transposed parts to be represented in a single uncompressed MusicXML file."
    },
-   "measure": {
-      "children": {
-         "type": "sequence",
-         "value": [
-            {
-               "type": "element",
-               "min": "1",
-               "max": "unbounded",
-               "value": "part"
-            }
-         ]
-      },
-      "parents": [
-         "score-timewise",
-         "part"
-      ],
-      "attributes": [
-         {
-            "required": true,
-            "name": "number",
-            "documentation": "",
-            "type": "xs:token"
-         },
-         {
-            "required": false,
-            "name": "text",
-            "documentation": "",
-            "type": "measure-text"
-         },
-         {
-            "required": false,
-            "name": "implicit",
-            "documentation": "",
-            "type": "yes-no"
-         },
-         {
-            "required": false,
-            "name": "non-controlling",
-            "documentation": "",
-            "type": "yes-no"
-         },
-         {
-            "required": false,
-            "name": "width",
-            "documentation": "",
-            "type": "tenths"
-         },
-         {
-            "required": false,
-            "name": "id",
-            "documentation": "",
-            "type": "xs:ID"
-         }
-      ],
-      "name": "measure",
-      "documentation": ""
-   },
-   "laughing": {
-      "children": null,
-      "parents": [
-         "lyric"
-      ],
-      "name": "laughing",
-      "documentation": "The laughing element represents a laughing voice."
-   },
-   "tuning-step": {
-      "children": {
-         "type": "type",
-         "value": "step"
-      },
-      "parents": [
-         "staff-tuning",
-         "accord"
-      ],
-      "name": "tuning-step",
-      "documentation": "The tuning-step element is represented like the step element, with a different name to reflect its different function in string tuning."
-   },
-   "tuning-alter": {
-      "children": {
-         "type": "type",
-         "value": "semitones"
-      },
-      "parents": [
-         "staff-tuning",
-         "accord"
-      ],
-      "name": "tuning-alter",
-      "documentation": "The tuning-alter element is represented like the alter element, with a different name to reflect its different function in string tuning."
-   },
-   "membrane": {
-      "children": null,
-      "parents": [
-         "percussion"
-      ],
-      "attributes": [
-         {
-            "required": false,
-            "name": "smufl",
-            "documentation": "",
-            "type": "smufl-pictogram-glyph-name"
-         }
-      ],
-      "name": "membrane",
-      "documentation": "The membrane type represents pictograms for membrane percussion instruments. The smufl attribute is used to distinguish different SMuFL stylistic alternates."
-   },
    "normal-notes": {
       "children": {
          "type": "type",
@@ -2453,8 +2348,8 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -2720,8 +2615,8 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -2901,6 +2796,54 @@
       ],
       "name": "handbell",
       "documentation": "The handbell element represents notation for various techniques used in handbell and handchime music."
+   },
+   "laughing": {
+      "children": null,
+      "parents": [
+         "lyric"
+      ],
+      "name": "laughing",
+      "documentation": "The laughing element represents a laughing voice."
+   },
+   "tuning-step": {
+      "children": {
+         "type": "type",
+         "value": "step"
+      },
+      "parents": [
+         "staff-tuning",
+         "accord"
+      ],
+      "name": "tuning-step",
+      "documentation": "The tuning-step element is represented like the step element, with a different name to reflect its different function in string tuning."
+   },
+   "tuning-alter": {
+      "children": {
+         "type": "type",
+         "value": "semitones"
+      },
+      "parents": [
+         "staff-tuning",
+         "accord"
+      ],
+      "name": "tuning-alter",
+      "documentation": "The tuning-alter element is represented like the alter element, with a different name to reflect its different function in string tuning."
+   },
+   "membrane": {
+      "children": null,
+      "parents": [
+         "percussion"
+      ],
+      "attributes": [
+         {
+            "required": false,
+            "name": "smufl",
+            "documentation": "",
+            "type": "smufl-pictogram-glyph-name"
+         }
+      ],
+      "name": "membrane",
+      "documentation": "The membrane type represents pictograms for membrane percussion instruments. The smufl attribute is used to distinguish different SMuFL stylistic alternates."
    },
    "key-step": {
       "children": {
@@ -8319,6 +8262,217 @@
       "name": "scordatura",
       "documentation": "Scordatura string tunings are represented by a series of accord elements, similar to the staff-tuning elements. Strings are numbered from high to low."
    },
+   "measure-partwise": {
+      "children": {
+         "type": "sequence",
+         "value": [
+            {
+               "type": "choice",
+               "min": "0",
+               "max": "unbounded",
+               "value": [
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "note"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "backup"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "forward"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "direction"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "attributes"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "harmony"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "figured-bass"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "print"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "sound"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "listening"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "barline"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "grouping"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "link"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "bookmark"
+                  }
+               ]
+            }
+         ]
+      },
+      "parents": [
+         "part-partwise"
+      ],
+      "attributes": [
+         {
+            "required": true,
+            "name": "number",
+            "documentation": "",
+            "type": "xs:token"
+         },
+         {
+            "required": false,
+            "name": "text",
+            "documentation": "",
+            "type": "measure-text"
+         },
+         {
+            "required": false,
+            "name": "implicit",
+            "documentation": "",
+            "type": "yes-no"
+         },
+         {
+            "required": false,
+            "name": "non-controlling",
+            "documentation": "",
+            "type": "yes-no"
+         },
+         {
+            "required": false,
+            "name": "width",
+            "documentation": "",
+            "type": "tenths"
+         },
+         {
+            "required": false,
+            "name": "id",
+            "documentation": "",
+            "type": "xs:ID"
+         }
+      ],
+      "name": "measure-partwise",
+      "documentation": ""
+   },
+   "triple-tongue": {
+      "children": null,
+      "parents": [
+         "technical"
+      ],
+      "attributes": [
+         {
+            "required": false,
+            "name": "default-x",
+            "documentation": "",
+            "type": "tenths"
+         },
+         {
+            "required": false,
+            "name": "default-y",
+            "documentation": "",
+            "type": "tenths"
+         },
+         {
+            "required": false,
+            "name": "relative-x",
+            "documentation": "",
+            "type": "tenths"
+         },
+         {
+            "required": false,
+            "name": "relative-y",
+            "documentation": "",
+            "type": "tenths"
+         },
+         {
+            "required": false,
+            "name": "font-family",
+            "documentation": "",
+            "type": "font-family"
+         },
+         {
+            "required": false,
+            "name": "font-style",
+            "documentation": "",
+            "type": "font-style"
+         },
+         {
+            "required": false,
+            "name": "font-size",
+            "documentation": "",
+            "type": "font-size"
+         },
+         {
+            "required": false,
+            "name": "font-weight",
+            "documentation": "",
+            "type": "font-weight"
+         },
+         {
+            "required": false,
+            "name": "color",
+            "documentation": "",
+            "type": "color"
+         },
+         {
+            "required": false,
+            "name": "placement",
+            "documentation": "",
+            "type": "above-below"
+         }
+      ],
+      "name": "triple-tongue",
+      "documentation": "The triple-tongue element represents the triple tongue symbol (three dots arranged horizontally)."
+   },
    "thumb-position": {
       "children": null,
       "parents": [
@@ -8854,81 +9008,11 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "name": "attributes",
       "documentation": "The attributes element contains musical information that typically changes on measure boundaries. This includes key and time signatures, clefs, transpositions, and staving. When attributes are changed mid-measure, it affects the music in score order, not in MusicXML document order."
-   },
-   "triple-tongue": {
-      "children": null,
-      "parents": [
-         "technical"
-      ],
-      "attributes": [
-         {
-            "required": false,
-            "name": "default-x",
-            "documentation": "",
-            "type": "tenths"
-         },
-         {
-            "required": false,
-            "name": "default-y",
-            "documentation": "",
-            "type": "tenths"
-         },
-         {
-            "required": false,
-            "name": "relative-x",
-            "documentation": "",
-            "type": "tenths"
-         },
-         {
-            "required": false,
-            "name": "relative-y",
-            "documentation": "",
-            "type": "tenths"
-         },
-         {
-            "required": false,
-            "name": "font-family",
-            "documentation": "",
-            "type": "font-family"
-         },
-         {
-            "required": false,
-            "name": "font-style",
-            "documentation": "",
-            "type": "font-style"
-         },
-         {
-            "required": false,
-            "name": "font-size",
-            "documentation": "",
-            "type": "font-size"
-         },
-         {
-            "required": false,
-            "name": "font-weight",
-            "documentation": "",
-            "type": "font-weight"
-         },
-         {
-            "required": false,
-            "name": "color",
-            "documentation": "",
-            "type": "color"
-         },
-         {
-            "required": false,
-            "name": "placement",
-            "documentation": "",
-            "type": "above-below"
-         }
-      ],
-      "name": "triple-tongue",
-      "documentation": "The triple-tongue element represents the triple tongue symbol (three dots arranged horizontally)."
    },
    "bend-alter": {
       "children": {
@@ -9080,6 +9164,62 @@
       "name": "frame-frets",
       "documentation": "The frame-frets element gives the overall size of the frame in horizontal spaces (frets)."
    },
+   "measure-timewise": {
+      "children": {
+         "type": "sequence",
+         "value": [
+            {
+               "type": "element",
+               "min": "1",
+               "max": "unbounded",
+               "value": "part-timewise"
+            }
+         ]
+      },
+      "parents": [
+         "score-timewise"
+      ],
+      "attributes": [
+         {
+            "required": true,
+            "name": "number",
+            "documentation": "",
+            "type": "xs:token"
+         },
+         {
+            "required": false,
+            "name": "text",
+            "documentation": "",
+            "type": "measure-text"
+         },
+         {
+            "required": false,
+            "name": "implicit",
+            "documentation": "",
+            "type": "yes-no"
+         },
+         {
+            "required": false,
+            "name": "non-controlling",
+            "documentation": "",
+            "type": "yes-no"
+         },
+         {
+            "required": false,
+            "name": "width",
+            "documentation": "",
+            "type": "tenths"
+         },
+         {
+            "required": false,
+            "name": "id",
+            "documentation": "",
+            "type": "xs:ID"
+         }
+      ],
+      "name": "measure-timewise",
+      "documentation": ""
+   },
    "score-partwise": {
       "children": {
          "type": "sequence",
@@ -9135,7 +9275,7 @@
                "type": "element",
                "min": "1",
                "max": "unbounded",
-               "value": "part"
+               "value": "part-partwise"
             }
          ]
       },
@@ -9558,7 +9698,7 @@
                "type": "element",
                "min": "1",
                "max": "unbounded",
-               "value": "measure"
+               "value": "measure-timewise"
             }
          ]
       },
@@ -10405,8 +10545,8 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -12849,6 +12989,32 @@
       "name": "except-voice",
       "documentation": "The except-voice element is used to specify a combination of slash notation and regular notation. Any note elements that are in voices specified by the except-voice elements are displayed in normal notation, in addition to the slash notation that is always displayed."
    },
+   "part-partwise": {
+      "children": {
+         "type": "sequence",
+         "value": [
+            {
+               "type": "element",
+               "min": "1",
+               "max": "unbounded",
+               "value": "measure-partwise"
+            }
+         ]
+      },
+      "parents": [
+         "score-partwise"
+      ],
+      "attributes": [
+         {
+            "required": true,
+            "name": "id",
+            "documentation": "",
+            "type": "xs:IDREF"
+         }
+      ],
+      "name": "part-partwise",
+      "documentation": ""
+   },
    "numeral-root": {
       "children": null,
       "parents": [
@@ -13779,8 +13945,8 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -13894,6 +14060,117 @@
       ],
       "name": "figured-bass",
       "documentation": "The figured-bass element represents figured bass notation. Figured bass elements take their position from the first regular note (not a grace note or chord note) that follows in score order. The optional duration element is used to indicate changes of figures under a note.\n\nFigures are ordered from top to bottom. The value of parentheses is \"no\" if not present."
+   },
+   "part-timewise": {
+      "children": {
+         "type": "sequence",
+         "value": [
+            {
+               "type": "choice",
+               "min": "0",
+               "max": "unbounded",
+               "value": [
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "note"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "backup"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "forward"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "direction"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "attributes"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "harmony"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "figured-bass"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "print"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "sound"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "listening"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "barline"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "grouping"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "link"
+                  },
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "bookmark"
+                  }
+               ]
+            }
+         ]
+      },
+      "parents": [
+         "measure-timewise"
+      ],
+      "attributes": [
+         {
+            "required": true,
+            "name": "id",
+            "documentation": "",
+            "type": "xs:IDREF"
+         }
+      ],
+      "name": "part-timewise",
+      "documentation": ""
    },
    "tuplet-actual": {
       "children": {
@@ -14679,9 +14956,9 @@
          ]
       },
       "parents": [
-         "part",
+         "part-timewise",
          "direction",
-         "measure"
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -17460,9 +17737,9 @@
    "link": {
       "children": null,
       "parents": [
-         "part",
+         "part-timewise",
          "credit",
-         "measure"
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -18180,118 +18457,6 @@
       "name": "pan",
       "documentation": "The pan and elevation elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For pan, 0 is straight ahead, -90 is hard left, 90 is hard right, and -180 and 180 are directly behind the listener."
    },
-   "part": {
-      "children": {
-         "type": "sequence",
-         "value": [
-            {
-               "type": "choice",
-               "min": "0",
-               "max": "unbounded",
-               "value": [
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "note"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "backup"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "forward"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "direction"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "attributes"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "harmony"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "figured-bass"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "print"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "sound"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "listening"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "barline"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "grouping"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "link"
-                  },
-                  {
-                     "type": "element",
-                     "min": "1",
-                     "max": "1",
-                     "value": "bookmark"
-                  }
-               ]
-            }
-         ]
-      },
-      "parents": [
-         "measure",
-         "score-partwise"
-      ],
-      "attributes": [
-         {
-            "required": true,
-            "name": "id",
-            "documentation": "",
-            "type": "xs:IDREF"
-         }
-      ],
-      "name": "part",
-      "documentation": ""
-   },
    "pitch": {
       "children": {
          "type": "sequence",
@@ -18600,8 +18765,8 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -19045,8 +19210,8 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "attributes": [
          {
@@ -20201,8 +20366,8 @@
          ]
       },
       "parents": [
-         "part",
-         "measure"
+         "part-timewise",
+         "measure-partwise"
       ],
       "name": "backup",
       "documentation": "The backup and forward elements are required to coordinate multiple voices in one part, including music on multiple staves. The backup type is generally used to move between voices and staves. Thus the backup element does not include voice or staff elements. Duration values should always be positive, and should not cross measure boundaries or mid-measure changes in the divisions value."

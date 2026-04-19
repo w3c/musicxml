@@ -4,11 +4,10 @@ import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import MarkdownIt from 'markdown-it';
 import Path from 'node:path';
+import { defaultElementsMap } from '../utils/Config';
 
 const md = new MarkdownIt();
-
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
-
 const { example, schema } = Astro.props;
 const snippet = example.rawContent().replace(/```xml|```/g, '').trim();
 const name = Path.parse(example.file).name;
@@ -38,7 +37,13 @@ transformers={[
           child.children.length === 1 &&
           child.children[0].type === 'text'
         ) {
-          const tag = child.children[0].value;
+          let tag = child.children[0].value;
+          if (example.frontmatter.elements_map && tag in example.frontmatter.elements_map) {
+            tag = example.frontmatter.elements_map[tag];
+          }
+          else if (tag in defaultElementsMap) {
+            tag = defaultElementsMap[tag];
+          }
           child.tagName = 'a';
           child.properties.href = `/musicxml/${schema}-reference/elements/${tag}/`;
           if (Array.isArray(example.frontmatter.elements) ? example.frontmatter.elements.indexOf(tag) > -1 : example.frontmatter.elements === tag) {

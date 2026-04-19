@@ -1,5 +1,7 @@
 ---
+import elementName from '../utils/ElementName';
+
 const { tag, schema } = Astro.props;
 const href = `/musicxml/${schema}-reference/elements/${tag}/`;
 ---
-<a href={href}>&lt;{tag}&gt;</a>
+<a href={href}>{elementName(tag)}</a>
