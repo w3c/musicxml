@@ -1,9 +1,5 @@
 ---
 title: 'Bass Clef'
-elements:
-- clef
-- sign
-- line
 image: bass-clef.png
 ---
 ```xml

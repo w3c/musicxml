@@ -1,6 +1,5 @@
 ---
 title: '<score>'
-elements: score
 ---
 ```xml
 <opus version="4.1">

@@ -1,5 +1,20 @@
 ---
-title: '<key-non-traditional>'
-elements: key-non-traditional
+title: '<key> (Non-Traditional)'
 image: key-element-non-traditional.png
 ---
+```xml
+<key>
+   <key-step>B</key-step>
+   <key-alter>-1</key-alter>
+   <key-accidental>quarter-flat</key-accidental>
+   <key-step>E</key-step>
+   <key-alter>-2</key-alter>
+   <key-accidental>slash-flat</key-accidental>
+   <key-step>A</key-step>
+   <key-alter>-2</key-alter>
+   <key-accidental>slash-flat</key-accidental>
+   <key-step>F</key-step>
+   <key-alter>2</key-alter>
+   <key-accidental>sharp</key-accidental>
+</key>
+```

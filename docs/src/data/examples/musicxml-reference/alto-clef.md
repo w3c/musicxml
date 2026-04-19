@@ -1,9 +1,5 @@
 ---
 title: 'Alto Clef'
-elements:
-- clef
-- sign
-- line
 image: alto-clef.png
 ---
 ```xml

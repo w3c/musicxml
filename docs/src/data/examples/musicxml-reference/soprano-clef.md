@@ -1,9 +1,5 @@
 ---
 title: 'Soprano Clef'
-elements:
-- clef
-- sign
-- line
 image: soprano-clef.png
 ---
 ```xml

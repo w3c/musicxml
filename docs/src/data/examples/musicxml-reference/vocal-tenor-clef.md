@@ -1,10 +1,5 @@
 ---
 title: 'Vocal Tenor Clef'
-elements:
-- clef
-- sign
-- line
-- clef-octave-change
 image: vocal-tenor-clef.png
 ---
 ```xml

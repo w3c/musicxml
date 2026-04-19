@@ -1,6 +1,5 @@
 ---
 title: '<sound>'
-elements: sound
 description: In this example, MusicXML has two sound IDs for a single application sound. The primary attribute for the `<sound>` element specifies which MusicXML sound ID to use when exporting a MusicXML file.
 ---
 ```xml

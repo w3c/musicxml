@@ -1,5 +1,108 @@
 ---
-title: '<tuplet-nested>'
-elements: tuplet-nested
+title: '<tuplet> (Nested)'
+elements:
+- tuplet
+- tuplet-actual
+- tuplet-number
+- tuplet-type
 image: tuplet-element-nested.png
 ---
+```xml
+<measure number="23">
+   <note>
+      <pitch>
+         <step>C</step>
+         <octave>5</octave>
+      </pitch>
+      <duration>24</duration>
+      <voice>1</voice>
+      <type>quarter</type>
+      <time-modification>
+         <actual-notes>3</actual-notes>
+         <normal-notes>2</normal-notes>
+      </time-modification>
+      <stem default-y="-50">down</stem>
+      <notations>
+         <tuplet bracket="yes" number="1" placement="above" type="start"/>
+      </notations>
+   </note>
+   <note>
+      <pitch>
+         <step>B</step>
+         <octave>4</octave>
+      </pitch>
+      <duration>24</duration>
+      <voice>1</voice>
+      <type>quarter</type>
+      <time-modification>
+         <actual-notes>3</actual-notes>
+         <normal-notes>2</normal-notes>
+      </time-modification>
+      <stem default-y="-55">down</stem>
+   </note>
+   <note>
+      <pitch>
+         <step>A</step>
+         <octave>4</octave>
+      </pitch>
+      <duration>8</duration>
+      <voice>1</voice>
+      <type>eighth</type>
+      <time-modification>
+         <actual-notes>9</actual-notes>
+         <normal-notes>4</normal-notes>
+         <normal-type>quarter</normal-type>
+      </time-modification>
+      <stem default-y="10">up</stem>
+      <beam number="1">begin</beam>
+      <notations>
+         <tuplet number="2" bracket="no" placement="above" type="start">
+            <tuplet-actual>
+               <tuplet-number>3</tuplet-number>
+               <tuplet-type>eighth</tuplet-type>
+            </tuplet-actual>
+            <tuplet-normal>
+               <tuplet-number>1</tuplet-number>
+               <tuplet-type>quarter</tuplet-type>
+            </tuplet-normal>
+         </tuplet>
+      </notations>
+   </note>
+   <note>
+      <pitch>
+         <step>G</step>
+         <octave>4</octave>
+      </pitch>
+      <duration>8</duration>
+      <voice>1</voice>
+      <type>eighth</type>
+      <time-modification>
+         <actual-notes>9</actual-notes>
+         <normal-notes>4</normal-notes>
+         <normal-type>quarter</normal-type>
+      </time-modification>
+      <stem default-y="8">up</stem>
+      <beam number="1">continue</beam>
+   </note>
+   <note>
+      <pitch>
+         <step>F</step>
+         <octave>4</octave>
+      </pitch>
+      <duration>8</duration>
+      <voice>1</voice>
+      <type>eighth</type>
+      <time-modification>
+         <actual-notes>9</actual-notes>
+         <normal-notes>4</normal-notes>
+         <normal-type>quarter</normal-type>
+      </time-modification>
+      <stem default-y="5">up</stem>
+      <beam number="1">end</beam>
+      <notations>
+         <tuplet number="1" type="stop"/>
+         <tuplet number="2" type="stop"/>
+      </notations>
+   </note>
+</measure>
+```

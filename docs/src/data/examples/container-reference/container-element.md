@@ -1,9 +1,5 @@
 ---
 title: '<container>'
-elements:
-- container
-- rootfiles
-- rootfile
 ---
 ```xml
 <container>

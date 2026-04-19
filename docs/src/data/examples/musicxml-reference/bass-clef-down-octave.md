@@ -1,10 +1,5 @@
 ---
 title: 'Bass Clef (Down Octave)'
-elements:
-- clef
-- sign
-- line
-- clef-octave-change
 image: bass-clef-down-octave.png
 ---
 ```xml

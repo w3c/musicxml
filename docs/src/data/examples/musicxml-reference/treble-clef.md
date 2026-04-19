@@ -1,9 +1,5 @@
 ---
 title: 'Treble Clef'
-elements:
-- clef
-- sign
-- line
 image: treble-clef.png
 ---
 ```xml

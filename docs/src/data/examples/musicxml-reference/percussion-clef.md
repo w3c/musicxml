@@ -1,8 +1,5 @@
 ---
 title: 'Percussion Clef'
-elements:
-- clef
-- sign
 image: percussion-clef.png
 ---
 ```xml

@@ -3,3 +3,37 @@ title: '<harp-pedals>'
 elements: harp-pedals
 image: harp-pedals-element.png
 ---
+```xml
+<direction-type>
+   <harp-pedals>
+      <pedal-tuning>
+         <pedal-step>D</pedal-step>
+         <pedal-alter>-1</pedal-alter>
+      </pedal-tuning>
+      <pedal-tuning>
+         <pedal-step>C</pedal-step>
+         <pedal-alter>1</pedal-alter>
+      </pedal-tuning>
+      <pedal-tuning>
+         <pedal-step>B</pedal-step>
+         <pedal-alter>-1</pedal-alter>
+      </pedal-tuning>
+      <pedal-tuning>
+         <pedal-step>E</pedal-step>
+         <pedal-alter>0</pedal-alter>
+      </pedal-tuning>
+      <pedal-tuning>
+         <pedal-step>F</pedal-step>
+         <pedal-alter>-1</pedal-alter>
+      </pedal-tuning>
+      <pedal-tuning>
+         <pedal-step>G</pedal-step>
+         <pedal-alter>0</pedal-alter>
+      </pedal-tuning>
+      <pedal-tuning>
+         <pedal-step>A</pedal-step>
+         <pedal-alter>1</pedal-alter>
+      </pedal-tuning>
+   </harp-pedals>
+</direction-type>
+```
