@@ -4,6 +4,8 @@ import MarkdownIt from 'markdown-it';
 
 import ElementLink from '@components/ElementLink.astro';
 import ExampleLink from '@components/ExampleLink.astro';
+import ElementContent from '@components/ElementContent.astro';
+import DataTypeLink from './DataTypeLink.astro';
 
 const md = new MarkdownIt();
 const { element, schema } = Astro.props;
@@ -11,7 +13,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/ele
 const examples = import.meta.glob('../data/examples/**/*.md', { eager: true });
 const image = `/src/assets/img/elements/${element.id}.png`;
 const regex = new RegExp(`<${element.id}[\\s>\/]`, 'mi');
-const examplesf = Object.values(examples).filter((example) => regex.test(example.rawContent()));
+const examples_ = Object.values(examples).filter((example) => regex.test(example.rawContent()));
+
 ---
 <p class="parents">
   Parent element{element.data.parents.length > 1 ? 's' : ''}: {element.data.parents.length > 0 ? element.data.parents.map((parent) => <ElementLink tag={parent} schema={schema}/>) : 'None'}
@@ -21,12 +24,12 @@ const examplesf = Object.values(examples).filter((example) => regex.test(example
 
 {element.data.documentation && <p class="description" set:html={md.render(element.data.documentation)} />}
 
-<section>
+<section class="content">
   <h2>Content</h2>
-  <p>Always empty.</p>
+  <ElementContent schema={schema} content={element.data.children} parent={null} />
 </section>
 
-<section>
+<section class="attributes">
   <h2>Attributes</h2>
   {element.data.attributes && element.data.attributes.length > 0 ? (
     <table class="attributes">
@@ -42,7 +45,7 @@ const examplesf = Object.values(examples).filter((example) => regex.test(example
         {element.data.attributes.map((attribute) => (
           <tr>
             <td>{attribute.name}</td>
-            <td>{attribute.type}</td>
+            <td><DataTypeLink type={attribute.type} /></td>
             <td>{attribute.required ? 'Yes' : 'No'}</td>
             <td>{attribute.documentation}</td>
           </tr>
@@ -52,12 +55,12 @@ const examplesf = Object.values(examples).filter((example) => regex.test(example
   ): <p>None.</p>}
 </section>
 
-<section>
+<section class="examples">
   <h2>Examples</h2>
-  {examples && (
-    <p>This element is used in the following example{examplesf.length > 1 ? 's' : ''}:</p>
-    <p class="examples">{examplesf.map((example) => {
+  {examples_.length > 0 ? (
+    <p>This element is used in the following example{examples_.length > 1 ? 's' : ''}:</p>
+    <p>{examples_.map((example) => {
       return <ExampleLink example={example} schema={schema}/>;
-    })}</p>)
+    })}</p>) : <p>This element has no examples.</p>
   }
 </section>

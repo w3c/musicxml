@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "astro dev",
-    "build:json": "for xsd in container musicxml sounds; do xslt3 -xsl:src/data/elements.xsl -s:../schema/$xsd.xsd > src/data/elements-$xsd.json; done",
+    "build:schemas": "for xsd in container musicxml opus sounds; do xslt3 -xsl:src/data/elements.xsl -s:../schema/$xsd.xsd > src/data/elements-$xsd.json; done",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

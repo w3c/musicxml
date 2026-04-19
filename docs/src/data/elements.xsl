@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  Generate a JSON listing of all MusicXML elements based on its XSD schema.
-
-  https://stackoverflow.com/q/79666145/209184
+  Generate a JSON listing of all elements in an XSD schema.
 -->
 
 <xsl:stylesheet
@@ -23,6 +21,7 @@
   <xsl:mode on-no-match="deep-skip"/>
   <xsl:mode name="hierarchy" on-no-match="deep-skip"/>
   <xsl:mode name="attributes" on-no-match="deep-skip"/>
+  <xsl:mode name="children" on-no-match="deep-skip"/>
 
   <xsl:template match="/">
     <xsl:variable name="hierarchy" as="element()*">
@@ -44,10 +43,32 @@
         <xsl:value-of select="(
           xs:annotation/xs:documentation/text(),
           /xs:schema/xs:complexType[@name=current()/@type]/xs:annotation/xs:documentation/text(),
-          /xs:schema/xs:simpleType[@name=current()/@type]/xs:annotation/xs:documentation/text(),
           /xs:schema/xs:group[@name=current()/@name]/xs:annotation/xs:documentation/text(),
           ''
         )[1]"/>
+      </xsl:attribute>
+      <xsl:variable name="children" as="map(*)*">
+        <xsl:choose>
+          <xsl:when test="@type and not(/xs:schema/xs:complexType[@name=current()/@type])">
+            <xsl:sequence select="map {
+              'type': 'type',
+              'value': xs:string(@type)
+            }"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:apply-templates select="
+              xs:element |
+              xs:complexType |
+              xs:sequence |
+              xs:group[@ref] |
+              xs:choice |
+              /xs:schema/xs:complexType[@name=current()/@type]
+            " mode="children"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      <xsl:attribute name="children">
+        <xsl:value-of select="xs:string(fn:serialize($children, map { 'method': 'json' }))"/>
       </xsl:attribute>
       <xsl:apply-templates select="
         xs:attribute |
@@ -73,6 +94,42 @@
     </xsl:element>
   </xsl:template>
 
+  <xsl:template match="xs:element" mode="children" as="map(*)">
+    <xsl:sequence select="map {
+      'type': 'element',
+      'min': xs:string((@minOccurs, '1')[1]),
+      'max': xs:string((@maxOccurs, '1')[1]),
+      'value': xs:string(@name)
+    }"/>
+  </xsl:template>
+
+  <xsl:template match="xs:complexType | xs:group[@name]" mode="children" as="map(*)*">
+    <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current"/>
+  </xsl:template>
+
+  <xsl:template match="xs:sequence" mode="children" as="map(*)*">
+    <xsl:variable name="sequence" as="map(*)*">
+      <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current"/>
+    </xsl:variable>
+    <xsl:sequence select="map { 'type': 'sequence', 'value': array{$sequence}}"/>
+  </xsl:template>
+
+  <xsl:template match="xs:choice" mode="children" as="map(*)*">
+    <xsl:variable name="choice" as="map(*)*">
+      <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current"/>
+    </xsl:variable>
+    <xsl:sequence select="map {
+      'type': 'choice',
+      'min': xs:string((@minOccurs, '1')[1]),
+      'max': xs:string((@maxOccurs, '1')[1]),
+      'value': array{$choice}
+    }"/>
+  </xsl:template>
+
+  <xsl:template match="xs:group[@ref]" mode="children">
+    <xsl:apply-templates select="/xs:schema/xs:group[@name=current()/@ref]" mode="#current"/>
+  </xsl:template>
+
   <xsl:template match="xs:complexType | xs:sequence | xs:choice | xs:group[@name]" mode="hierarchy">
     <xsl:param name="parents"/>
     <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current">
@@ -87,7 +144,12 @@
     </xsl:apply-templates>
   </xsl:template>
 
-  <xsl:template match="xs:complexType | xs:sequence | xs:choice | xs:simpleContent | xs:complexContent | xs:extension" mode="attributes">
+  <xsl:template match="xs:complexType | xs:sequence | xs:choice | xs:simpleContent | xs:complexContent" mode="attributes">
+    <xsl:apply-templates select="xs:attribute | xs:attributeGroup | xs:simpleContent | xs:complexContent | xs:extension" mode="#current"/>
+  </xsl:template>
+
+  <xsl:template match="xs:extension" mode="attributes">
+    <xsl:apply-templates select="/xs:schema/xs:simpleType[@name=current()/@base] | /xs:schema/xs:complexType[@name=current()/@base]" mode="#current"/>
     <xsl:apply-templates select="xs:attribute | xs:attributeGroup | xs:simpleContent | xs:complexContent | xs:extension" mode="#current"/>
   </xsl:template>
 
@@ -101,7 +163,6 @@
         <xsl:value-of select="(
           xs:annotation/xs:documentation/text(),
           /xs:schema/xs:complexType[@name=current()/@type]/xs:annotation/xs:documentation/text(),
-          /xs:schema/xs:simpleType[@name=current()/@type]/xs:annotation/xs:documentation/text(),
           /xs:schema/xs:group[@name=current()/@name]/xs:annotation/xs:documentation/text(),
           ''
         )[1]"/>
@@ -151,6 +212,7 @@
       let $m1 := map {
         'name': node-name(),
         'documentation': xs:string(@documentation),
+        'children': fn:parse-json(@children),
         'parents': if ($parent) then array { $parent/node-name() } else array {}
       },
       $a := array{$attributes},

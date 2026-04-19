@@ -3,7 +3,8 @@ span.line:has(.highlighted-word) {
 }
 span.line a,
 .parents a,
-.examples a {
+.examples a,
+.content a {
   text-decoration: none;
 }
 .parents a:not(:last-child)::after,

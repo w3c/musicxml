@@ -1,0 +1,76 @@
+---
+import DataTypeLink from '@components/DataTypeLink.astro';
+import ElementLink from '@components/ElementLink.astro';
+
+const { content, schema, parent } = Astro.props;
+
+const cardinality = (() => {
+  if (!content) return '';
+  if (content.type === 'element') {
+    if (content.min === '0' && content.max === '0') {
+      return "Forbidden";
+    }
+    if (content.min === '0' && content.max === '1') {
+      return "Optional";
+    }
+    else if (content.min === '0' && content.max === 'unbounded') {
+      return "Zero or more times";
+    }
+    else if (content.min === '1' && content.max === '1') {
+      return "Required";
+    }
+    else if (content.min === '1' && content.max === 'unbounded') {
+      return "One or more times";
+    }
+    else {
+      return `${content.min} to ${content.max} times`;
+    }
+  }
+  else if (content.type === 'choice') {
+    if (content.min === '0' && content.max === '0') {
+      return "None of the following";
+    }
+    if (content.min === '0' && content.max === '1') {
+      return "Zero or one of the following";
+    }
+    else if (content.min === '0' && content.max === 'unbounded') {
+      return "Zero or more of the following";
+    }
+    else if (content.min === '1' && content.max === '1') {
+      return "Exactly one of the following";
+    }
+    else if (content.min === '1' && content.max === 'unbounded') {
+      return "One or more of the following";
+    }
+    else {
+      return `${content.min} to ${content.max} of the following`;
+    }
+  }
+})();
+---
+{content ? (
+  content.type === 'type' ? <DataTypeLink type={content.value} /> : (
+    content.type === 'element' ? (
+      <ElementLink tag={content.value} schema={schema} />
+      <Fragment>{parent !== 'choice' && <span>&nbsp;({cardinality})</span>}</Fragment>
+      ) : (
+      content.type === 'sequence' ? (parent !== 'sequence' ? (
+        <span>In this order</span>
+        <ul>
+          {content.value.map((child) => <li><Astro.self schema={schema} content={child} parent={content.type} /></li>)}
+        </ul>
+      ) : (
+        <Fragment>{content.value.map((child, i) =>
+          <Fragment set:html={i > 0 && "<li>"}/>
+          <Astro.self schema={schema} content={child} parent={content.type} />
+          <Fragment set:html={i < (content.value.length - 1) && "</li>"}/>
+        )}</Fragment>
+      )) : (
+        <span>{cardinality}</span>
+        <ul>
+          {content.value.map((child) => <li><Astro.self schema={schema} content={child} parent={content.type} /></li>)}
+        </ul>
+      )
+    )
+  )
+) : <p>Always empty.</p>}
