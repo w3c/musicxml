@@ -1,0 +1,22 @@
+{
+   "xs-token": {
+      "name": "xs:token",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token)."
+   },
+   "yes-no": {
+      "name": "yes-no",
+      "documentation": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
+      "base": "xs:token",
+      "type": "values",
+      "value": [
+         {
+            "value": "yes",
+            "documentation": null
+         },
+         {
+            "value": "no",
+            "documentation": null
+         }
+      ]
+   }
+}

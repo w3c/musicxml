@@ -14,7 +14,6 @@
   xmlns:fn="http://www.w3.org/2005/xpath-functions"
   exclude-result-prefixes="#all"
 >
-
   <xsl:output method="json" indent="yes" encoding="UTF-8"/>
 
   <!-- Build an XML hierarchy of elements based on the XSD schema. -->
@@ -134,7 +133,7 @@
 
   <xsl:template match="xs:complexType | xs:group[@name]" mode="children" as="map(*)*">
     <xsl:param name="parents"/>
-    <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current">
+    <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice | xs:complexContent | xs:simpleContent" mode="#current">
       <xsl:with-param name="parents" select="$parents"/>
     </xsl:apply-templates>
   </xsl:template>
@@ -146,7 +145,12 @@
         <xsl:with-param name="parents" select="$parents"/>
       </xsl:apply-templates>
     </xsl:variable>
-    <xsl:sequence select="map { 'type': 'sequence', 'value': array{$sequence}}"/>
+    <xsl:sequence select="map {
+      'type': 'sequence',
+      'min': xs:string((@minOccurs, '1')[1]),
+      'max': xs:string((@maxOccurs, '1')[1]),
+      'value': array{$sequence}
+    }"/>
   </xsl:template>
 
   <xsl:template match="xs:choice" mode="children" as="map(*)*">
@@ -167,6 +171,21 @@
   <xsl:template match="xs:group[@ref]" mode="children">
     <xsl:param name="parents"/>
     <xsl:apply-templates select="/xs:schema/xs:group[@name=current()/@ref]" mode="#current">
+      <xsl:with-param name="parents" select="$parents"/>
+    </xsl:apply-templates>
+  </xsl:template>
+
+  <xsl:template match="xs:simpleContent[xs:extension[@base]]" mode="children">
+    <xsl:param name="parents"/>
+    <xsl:sequence select="map {
+      'type': 'type',
+      'value': xs:string(xs:extension/@base)
+    }"/>
+  </xsl:template>
+
+  <xsl:template match="xs:complexContent[xs:extension[@base]]" mode="children">
+    <xsl:param name="parents"/>
+    <xsl:apply-templates select="/xs:schema/xs:complexType[@name=current()/xs:extension/@base]" mode="#current">
       <xsl:with-param name="parents" select="$parents"/>
     </xsl:apply-templates>
   </xsl:template>

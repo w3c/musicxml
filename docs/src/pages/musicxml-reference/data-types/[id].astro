@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../../layouts/Base.astro';
+import DataType from '@components/DataType.astro';
+
+export async function getStaticPaths() {
+  const datatypes = await getCollection('musicxmlDatatypes');
+  return Object.values(datatypes).map((datatype) => ({
+    params: { id: datatype.id },
+    props: { datatype }
+  }));
+}
+
+const { datatype } = Astro.props;
+const frontmatter = {
+  title: `The ${(datatype.data.name)} data type`,
+}
+---
+<BaseLayout frontmatter={frontmatter}>
+  <DataType datatype={datatype} schema="musicxml"/>
+</BaseLayout>

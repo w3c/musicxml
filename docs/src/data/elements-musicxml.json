@@ -184,7 +184,10 @@
       "documentation": "Non-traditional key signatures are represented using a list of altered tones. The key-alter element represents the alteration for a given pitch step, represented with semitones in the same manner as the alter element."
    },
    "key-octave": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "octave"
+      },
       "parents": [
          "key"
       ],
@@ -231,6 +234,8 @@
    "interchangeable": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -240,6 +245,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -278,7 +285,10 @@
       "documentation": "The interchangeable type is used to represent the second in a pair of interchangeable dual time signatures, such as the 6\/8 in 3\/4 (6\/8). A separate symbol attribute value is available compared to the time element's symbol attribute, which applies to the first of the dual time signatures."
    },
    "creator": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "identification"
       ],
@@ -294,7 +304,10 @@
       "documentation": "The creator element is borrowed from Dublin Core. It is used for the creators of the score. The type attribute is used to distinguish different creative contributions. Thus, there can be multiple creators within an identification. Standard type values are composer, lyricist, and arranger. Other type values may be used for different types of creative roles. The type attribute should usually be used even if there is just a single creator element. The MusicXML format does not use the creator \/ contributor distinction from Dublin Core."
    },
    "caesura": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "caesura-value"
+      },
       "parents": [
          "articulations"
       ],
@@ -389,6 +402,8 @@
    "defaults": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -404,6 +419,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -872,7 +889,10 @@
       "documentation": "The encoding element contains information about who did the digital encoding, when, with what software, and in what aspects. Standard type values for the encoder element are music, words, and arrangement, but other types may be used. The type attribute is only needed when there are multiple encoder elements."
    },
    "encoder": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "encoding"
       ],
@@ -902,7 +922,10 @@
       "documentation": "Duration is a positive number specified in division units. This is the intended duration vs. notated duration (for instance, differences in dotted notes in Baroque-era music). Differences in duration specific to an interpretation or performance should be represented using the note element's attack and release attributes.\n\nThe duration element moves the musical position when used in backup elements, forward elements, and note elements that do not contain a chord child element."
    },
    "distance": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "tenths"
+      },
       "parents": [
          "appearance"
       ],
@@ -1000,7 +1023,10 @@
       "documentation": "The down-bow element represents the symbol that is used both for down-bowing on bowed instruments, and down-stroke on plucked instruments."
    },
    "elision": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "lyric"
       ],
@@ -1065,7 +1091,10 @@
       "documentation": ""
    },
    "line-width": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "tenths"
+      },
       "parents": [
          "appearance"
       ],
@@ -1129,6 +1158,8 @@
    "listening": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -1168,6 +1199,8 @@
    "measure-layout": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -1184,7 +1217,10 @@
       "documentation": "The measure-layout type includes the horizontal distance from the previous measure. It applies to the current measure only."
    },
    "measure-repeat": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "positive-integer-or-empty"
+      },
       "parents": [
          "measure-style"
       ],
@@ -1511,6 +1547,8 @@
    "barline": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -1520,9 +1558,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -1534,6 +1576,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -1635,7 +1679,10 @@
       "documentation": ""
    },
    "display-text": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "part-abbreviation-display",
          "part-name-display",
@@ -1793,7 +1840,10 @@
       "documentation": "The tuning-octave element is represented like the octave element, with a different name to reflect its different function in string tuning."
    },
    "feature": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "grouping"
       ],
@@ -1809,7 +1859,10 @@
       "documentation": "The feature type is a part of the grouping element used for musical analysis. The type attribute represents the type of the feature and the element content represents its value. This type is flexible to allow for different analyses."
    },
    "function": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "harmony"
       ],
@@ -1873,7 +1926,10 @@
       "documentation": "The function element represents classical functional harmony with an indication like I, II, III rather than C, D, E. It represents the Roman numeral part of a functional harmony rather than the complete function itself. It has been deprecated as of MusicXML 4.0 in favor of the numeral element."
    },
    "footnote": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "barline",
          "figured-bass",
@@ -2126,7 +2182,10 @@
       "documentation": "The falloff element is an indeterminate slide attached to a single note. The falloff appears after the main note and goes below the main pitch."
    },
    "fermata": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "fermata-shape"
+      },
       "parents": [
          "barline",
          "notations"
@@ -2205,9 +2264,13 @@
    "forward": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -2219,9 +2282,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -2233,6 +2300,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -2244,6 +2313,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -2257,6 +2328,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -2278,6 +2351,8 @@
    "for-part": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -2338,6 +2413,8 @@
    "grouping": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -2383,6 +2460,8 @@
    "harmonic": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -2507,9 +2586,13 @@
    "harmony": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "choice",
@@ -2576,9 +2659,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -2590,6 +2677,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -2603,6 +2692,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -2728,7 +2819,10 @@
       "documentation": "The humming element represents a humming voice."
    },
    "handbell": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "handbell-value"
+      },
       "parents": [
          "technical"
       ],
@@ -2830,7 +2924,10 @@
       "documentation": "The tuning-alter element is represented like the alter element, with a different name to reflect its different function in string tuning."
    },
    "membrane": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "membrane-value"
+      },
       "parents": [
          "percussion"
       ],
@@ -2987,7 +3084,10 @@
       "documentation": "The mordent element represents the sign with the vertical line. The choice of which mordent sign is inverted differs between MusicXML and SMuFL. The long attribute is \"no\" by default."
    },
    "notehead": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "notehead-value"
+      },
       "parents": [
          "note"
       ],
@@ -3055,6 +3155,8 @@
    "numeral": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -3083,7 +3185,10 @@
       "documentation": "The numeral type represents the Roman numeral or Nashville number part of a harmony. It requires that the key be specified in the encoding, either with a key or numeral-key element."
    },
    "pull-off": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "technical"
       ],
@@ -3173,7 +3278,10 @@
       "documentation": "The pre-bend element indicates that a bend is a pre-bend rather than a normal bend or a release."
    },
    "pitched": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "pitched-value"
+      },
       "parents": [
          "percussion"
       ],
@@ -3205,7 +3313,10 @@
       "documentation": "The release type indicates that a bend is a release rather than a normal bend or pre-bend. The offset attribute specifies where the release starts in terms of divisions relative to the current note. The first-beat and last-beat attributes of the parent bend element are relative to the original note position, not this offset value."
    },
    "relation": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "identification"
       ],
@@ -3279,6 +3390,8 @@
    "scaling": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -3570,7 +3683,10 @@
       "documentation": "The empty type represents an empty element with no attributes."
    },
    "tremolo": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "tremolo-marks"
+      },
       "parents": [
          "ornaments"
       ],
@@ -3659,9 +3775,13 @@
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -3696,9 +3816,13 @@
                         },
                         {
                            "type": "sequence",
+                           "min": "1",
+                           "max": "1",
                            "value": [
                               {
                                  "type": "sequence",
+                                 "min": "1",
+                                 "max": "1",
                                  "value": [
                                     {
                                        "type": "element",
@@ -3728,6 +3852,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -3743,6 +3869,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "0",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -3947,7 +4075,10 @@
       "documentation": "The unstress element indicates an unstressed note. It is often notated using a u-shaped symbol."
    },
    "with-bar": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "bend"
       ],
@@ -4017,7 +4148,10 @@
       "documentation": "The with-bar element indicates that the bend is to be done at the bridge with a whammy or vibrato bar. The content of the element indicates how this should be notated. Content values of \"scoop\" and \"dip\" refer to the SMuFL guitarVibratoBarScoop and guitarVibratoBarDip glyphs."
    },
    "miscellaneous-field": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "miscellaneous"
       ],
@@ -4044,7 +4178,10 @@
       "documentation": ""
    },
    "note-size": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "non-negative-decimal"
+      },
       "parents": [
          "appearance"
       ],
@@ -4068,7 +4205,10 @@
       "documentation": "The normal-dot element is used to specify dotted normal tuplet types."
    },
    "other-appearance": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "appearance"
       ],
@@ -4084,7 +4224,10 @@
       "documentation": "The other-appearance type is used to define any graphical settings not yet in the current version of the MusicXML format. This allows extended representation, though without application interoperability."
    },
    "credit-symbol": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "smufl-glyph-name"
+      },
       "parents": [
          "credit"
       ],
@@ -4220,7 +4363,10 @@
       "documentation": "The formatted-symbol-id type represents a SMuFL musical symbol element with formatting and id attributes."
    },
    "accidental-mark": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "accidental-value"
+      },
       "parents": [
          "notations",
          "ornaments"
@@ -4321,7 +4467,10 @@
       "documentation": "An accidental-mark can be used as a separate notation or as part of an ornament. When used in an ornament, position and placement are relative to the ornament, not relative to the note."
    },
    "accidental-text": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "accidental-value"
+      },
       "parents": [
          "part-abbreviation-display",
          "part-name-display",
@@ -4475,6 +4624,8 @@
    "accordion-registration": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -4577,7 +4728,10 @@
       "documentation": "The accordion-registration type is used for accordion registration symbols. These are circular symbols divided horizontally into high, middle, and low sections that correspond to 4', 8', and 16' pipes. Each accordion-high, accordion-middle, and accordion-low element represents the presence of one or more dots in the registration diagram. An accordion-registration element needs to have at least one of the child elements present."
    },
    "key-accidental": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "accidental-value"
+      },
       "parents": [
          "key"
       ],
@@ -4595,6 +4749,8 @@
    "group-abbreviation-display": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -4646,12 +4802,18 @@
    "notations": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -4663,6 +4825,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -4788,7 +4952,10 @@
       "documentation": "Notations refer to musical notations, not XML notations. Multiple notations are allowed in order to represent multiple editorial levels. The print-object attribute, added in Version 3.0, allows notations to represent details of performance technique, such as fingerings, without having them appear in the score."
    },
    "tuplet-type": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "note-type-value"
+      },
       "parents": [
          "tuplet-normal",
          "tuplet-actual"
@@ -4947,7 +5114,10 @@
       "documentation": "The inverted-turn element has the shape which goes down and then up."
    },
    "principal-voice": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "direction-type"
       ],
@@ -5111,7 +5281,10 @@
       "documentation": "The fingernails element is used in notation for harp and other plucked string instruments."
    },
    "multiple-rest": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:positiveInteger"
+      },
       "parents": [
          "measure-style"
       ],
@@ -5127,7 +5300,10 @@
       "documentation": "The text of the multiple-rest type indicates the number of measures in the multiple rest. Multiple rests may use the 1-bar \/ 2-bar \/ 4-bar rest symbols, or a single shape. The use-symbols attribute indicates which to use; it is no if not specified."
    },
    "harmon-closed": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "harmon-closed-value"
+      },
       "parents": [
          "harmon-mute"
       ],
@@ -5143,7 +5319,10 @@
       "documentation": "The harmon-closed type represents whether the harmon mute is closed, open, or half-open. The optional location attribute indicates which portion of the symbol is filled in when the element value is half."
    },
    "other-technical": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "technical"
       ],
@@ -5229,6 +5408,8 @@
    "metronome-note": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -5296,7 +5477,10 @@
       "documentation": "The metronome-tied indicates the presence of a tie within a metric relationship mark. As with the tied element, both the start and stop of the tie should be specified, in this case within separate metronome-note elements."
    },
    "metronome-beam": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "beam-value"
+      },
       "parents": [
          "metronome-note"
       ],
@@ -5312,7 +5496,10 @@
       "documentation": "The metronome-beam type works like the beam type in defining metric relationships, but does not include all the attributes available in the beam type."
    },
    "measure-numbering": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "measure-numbering-value"
+      },
       "parents": [
          "print"
       ],
@@ -5412,7 +5599,10 @@
       "documentation": "The measure-numbering type describes how frequently measure numbers are displayed on this part. The text attribute from the measure element is used for display, or the number attribute if the text attribute is not present. Measures with an implicit attribute set to \"yes\" never display a measure number, regardless of the measure-numbering setting.\n\nThe optional staff attribute refers to staff numbers within the part, from top to bottom on the system. It indicates which staff is used as the reference point for vertical positioning. A value of 1 is assumed if not present.\n\nThe optional multiple-rest-always and multiple-rest-range attributes describe how measure numbers are shown on multiple rests when the measure-numbering value is not set to none. The multiple-rest-always attribute is set to yes when the measure number should always be shown, even if the multiple rest starts midway through a system when measure numbering is set to system level. The multiple-rest-range attribute is set to yes when measure numbers on multiple rests display the range of numbers for the first and last measure, rather than just the number of the first measure."
    },
    "other-play": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "play"
       ],
@@ -5430,6 +5620,8 @@
    "system-layout": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -5467,6 +5659,8 @@
    "system-margins": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -5519,6 +5713,8 @@
    "ornaments": {
       "children": {
          "type": "sequence",
+         "min": "0",
+         "max": "unbounded",
          "value": [
             {
                "type": "choice",
@@ -5642,6 +5838,8 @@
    "score-instrument": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -5657,6 +5855,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -5710,6 +5910,8 @@
    "virtual-instrument": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -5757,6 +5959,8 @@
    "identification": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -5807,9 +6011,13 @@
    "part-list": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -5821,6 +6029,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -5837,6 +6047,8 @@
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -5848,6 +6060,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -5871,6 +6085,8 @@
    "part-link": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -5933,6 +6149,8 @@
    "part-group": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -5978,9 +6196,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -5992,6 +6214,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -6026,7 +6250,10 @@
       "documentation": "The part-group element indicates groupings of parts in the score, usually indicated by braces and brackets. Braces that are used for multi-staff parts should be defined in the attributes element for that part. The part-group start element appears before the first score-part in the group. The part-group stop element appears after the last score-part in the group.\n\nThe number attribute is used to distinguish overlapping and nested part-groups, not the sequence of groups. As with parts, groups can have a name and abbreviation. Values for the child elements are ignored at the stop of a group.\n\nA part-group element is not needed for a single multi-staff part. By default, multi-staff parts include a brace symbol and (if appropriate given the bar-style) common barlines. The symbol formatting for a multi-staff part can be more fully specified using the part-symbol element."
    },
    "part-name": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "score-part"
       ],
@@ -6104,6 +6331,8 @@
    "part-clef": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -6132,7 +6361,10 @@
       "documentation": "The part-clef element is used for transpositions that also include a change of clef, as for instruments such as bass clarinet."
    },
    "group-barline": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "group-barline-value"
+      },
       "parents": [
          "part-group"
       ],
@@ -6317,7 +6549,10 @@
       "documentation": "The octave-change element indicates how many octaves to add to get from written pitch to sounding pitch. The octave-change element should be included when using transposition intervals of an octave or more, and should not be present for intervals of less than an octave."
    },
    "other-listen": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "listen"
       ],
@@ -6356,6 +6591,8 @@
    "beat-unit-tied": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -6378,7 +6615,10 @@
       "documentation": "The beat-unit-tied type indicates a beat-unit within a metronome mark that is tied to the preceding beat-unit. This allows two or more tied notes to be associated with a per-minute value in a metronome mark, whereas the metronome-tied element is restricted to metric relationship marks."
    },
    "per-minute": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "metronome"
       ],
@@ -6572,7 +6812,10 @@
       "documentation": "The percussion element is used to define percussion pictogram symbols. Definitions for these symbols can be found in Kurt Stone's \"Music Notation in the Twentieth Century\" on pages 206-212 and 223. Some values are added to these based on how usage has evolved in the 30 years since Stone's book was published."
    },
    "numeral-alter": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "semitones"
+      },
       "parents": [
          "numeral"
       ],
@@ -6659,7 +6902,10 @@
       "documentation": ""
    },
    "part-abbreviation": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "score-part"
       ],
@@ -6835,7 +7081,10 @@
       "documentation": "The octave shift type indicates where notes are shifted up or down from their true pitched values because of printing difficulty. Thus a treble clef line noted with 8va will be indicated with an octave-shift down from the pitch data indicated in the notes. A size of 8 indicates one octave; a size of 15 indicates two octaves."
    },
    "other-direction": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "direction-type"
       ],
@@ -6974,7 +7223,10 @@
       "documentation": "A senza-misura element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used, if any, such as an X. The time element's symbol attribute is not used when a senza-misura element is present."
    },
    "root-step": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "step"
+      },
       "parents": [
          "root"
       ],
@@ -7044,7 +7296,10 @@
       "documentation": "The root-step type represents the pitch step of the root of the current chord within the harmony element. The text attribute indicates how the root should appear in a score if not using the element contents."
    },
    "root-alter": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "semitones"
+      },
       "parents": [
          "root"
       ],
@@ -7120,7 +7375,10 @@
       "documentation": "The root-alter element represents the chromatic alteration of the root of the current chord within the harmony element. In some chord styles, the text for the root-step element may include root-alter information. In that case, the print-object attribute of the root-alter element can be set to no. The location attribute indicates whether the alteration should appear to the left or the right of the root-step; it is right by default."
    },
    "hole-closed": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "hole-closed-value"
+      },
       "parents": [
          "hole"
       ],
@@ -7136,7 +7394,10 @@
       "documentation": "The hole-closed type represents whether the hole is closed, open, or half-open. The optional location attribute indicates which portion of the hole is filled in when the element value is half."
    },
    "rehearsal": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "direction-type"
       ],
@@ -7284,7 +7545,10 @@
       "documentation": "The rehearsal element specifies letters, numbers, and section names that are notated in the score for reference during rehearsal. The enclosure is square if not specified. The language is Italian (\"it\") if not specified. Left justification is used if not specified."
    },
    "part-symbol": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "group-symbol-value"
+      },
       "parents": [
          "attributes"
       ],
@@ -7376,7 +7640,10 @@
       "documentation": "If the staff-lines element is present, the appearance of each line may be individually specified with a line-detail type. Staff lines are numbered from bottom to top. The print-object attribute allows lines to be hidden within a staff. This is used in special situations such as a widely-spaced percussion staff where a note placed below the higher line is distinct from a note placed above the lower line. Hidden staff lines are included when specifying clef lines and determining display-step \/ display-octave values, but are not counted as lines for the purposes of the system-layout and staff-layout elements."
    },
    "degree-value": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:positiveInteger"
+      },
       "parents": [
          "degree"
       ],
@@ -7452,7 +7719,10 @@
       "documentation": "The content of the degree-value type is a number indicating the degree of the chord (1 for the root, 3 for third, etc). The text attribute specifies how the value of the degree should be displayed. The symbol attribute indicates that a symbol should be used in specifying the degree. If the symbol attribute is present, the value of the text attribute follows the symbol."
    },
    "degree-alter": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "semitones"
+      },
       "parents": [
          "degree"
       ],
@@ -7522,7 +7792,10 @@
       "documentation": "The degree-alter type represents the chromatic alteration for the current degree. If the degree-type value is alter or subtract, the degree-alter value is relative to the degree already in the chord based on its kind element. If the degree-type value is add, the degree-alter is relative to a dominant chord (major and perfect intervals except for a minor seventh). The plus-minus attribute is used to indicate if plus and minus symbols should be used instead of sharp and flat symbols to display the degree alteration. It is no if not specified."
    },
    "degree-type": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "degree-type-value"
+      },
       "parents": [
          "degree"
       ],
@@ -7603,7 +7876,10 @@
       "documentation": ""
    },
    "staff-size": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "non-negative-decimal"
+      },
       "parents": [
          "staff-details"
       ],
@@ -7698,7 +7974,10 @@
       "documentation": "The presence of a concert-score element indicates that a score is displayed in concert pitch. It is used for scores that contain parts for transposing instruments.\n\nA document with a concert-score element may not contain any transpose elements that have non-zero values for either the diatonic or chromatic elements. Concert scores may include octave transpositions, so transpose elements with a double element or a non-zero octave-change element value are permitted."
    },
    "accidental": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "accidental-value"
+      },
       "parents": [
          "note"
       ],
@@ -7954,7 +8233,10 @@
       "documentation": ""
    },
    "midi-device": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "sound",
          "score-part"
@@ -8012,6 +8294,8 @@
    "system-dividers": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -8036,6 +8320,8 @@
    "appearance": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -8148,6 +8434,8 @@
    "score-part": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -8205,6 +8493,8 @@
             },
             {
                "type": "sequence",
+               "min": "0",
+               "max": "unbounded",
                "value": [
                   {
                      "type": "element",
@@ -8239,6 +8529,8 @@
    "scordatura": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -8265,6 +8557,8 @@
    "measure-partwise": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -8898,12 +9192,18 @@
    "attributes": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -8915,6 +9215,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -9106,6 +9408,8 @@
    "transpose": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -9167,6 +9471,8 @@
    "measure-timewise": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -9223,9 +9529,13 @@
    "score-partwise": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -9300,7 +9610,10 @@
       "documentation": "The base pitch is the pitch at which the string is played before touching to create the harmonic."
    },
    "bass-step": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "step"
+      },
       "parents": [
          "bass"
       ],
@@ -9370,7 +9683,10 @@
       "documentation": "The bass-step type represents the pitch step of the bass of the current chord within the harmony element. The text attribute indicates how the bass should appear in a score if not using the element contents."
    },
    "bass-alter": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "semitones"
+      },
       "parents": [
          "bass"
       ],
@@ -9446,7 +9762,10 @@
       "documentation": "The bass-alter element represents the chromatic alteration of the bass of the current chord within the harmony element. In some chord styles, the text for the bass-step element may include bass-alter information. In that case, the print-object attribute of the bass-alter element can be set to no. The location attribute indicates whether the alteration should appear to the left or the right of the bass-step; it is right if not specified."
    },
    "bar-style": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "bar-style"
+      },
       "parents": [
          "barline"
       ],
@@ -9646,9 +9965,13 @@
    "score-timewise": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -9953,7 +10276,10 @@
       "documentation": "The image type is used to include graphical images in a score."
    },
    "credit-words": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "credit"
       ],
@@ -10125,6 +10451,8 @@
    "group-name-display": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -10164,6 +10492,8 @@
    "part-abbreviation-display": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -10231,9 +10561,13 @@
    "unpitched": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -10413,9 +10747,13 @@
    "beat-repeat": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "0",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -10468,6 +10806,8 @@
    "direction": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -10483,9 +10823,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -10497,6 +10841,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -10508,6 +10854,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -10521,6 +10869,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -10578,7 +10928,10 @@
       "documentation": "A direction is a musical indication that is not necessarily attached to a specific note. Two or more may be combined to indicate words followed by the start of a dashed line, the end of a wedge followed by dynamics, etc. For applications where a specific direction is indeed attached to a specific note, the direction element can be associated with the first note element that follows it in score order that is not in a different voice.\n\nBy default, a series of direction-type elements and a series of child elements of a direction-type within a single direction element follow one another in sequence visually. For a series of direction-type children, non-positional formatting attributes are carried over from the previous element by default."
    },
    "directive": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "attributes"
       ],
@@ -10803,7 +11156,10 @@
       "documentation": "The empty-font type represents an empty element with font attributes."
    },
    "other-dynamics": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "dynamics"
       ],
@@ -10821,6 +11177,8 @@
    "staff-layout": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -10857,7 +11215,10 @@
       "documentation": "The staff-lines element specifies the number of lines and is usually used for a non 5-line staff. If the staff-lines element is present, the appearance of each line may be individually specified with a line-detail element. "
    },
    "other-articulation": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "articulations"
       ],
@@ -11023,6 +11384,8 @@
    "staff-tuning": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -11154,6 +11517,8 @@
    "staff-details": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -11163,6 +11528,8 @@
             },
             {
                "type": "sequence",
+               "min": "0",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -11244,6 +11611,8 @@
    "time-modification": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -11259,6 +11628,8 @@
             },
             {
                "type": "sequence",
+               "min": "0",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -11283,7 +11654,10 @@
       "documentation": "Time modification indicates tuplets, double-note tremolos, and other durational changes. A time-modification element shows how the cumulative, sounding effect of tuplets and double-note tremolos compare to the written note type represented by the type and dot elements. Nested tuplets and other notations that use more detailed information need both the time-modification and tuplet elements to be represented accurately."
    },
    "other-notation": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "notations"
       ],
@@ -11385,6 +11759,8 @@
    "notehead-text": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -11414,7 +11790,10 @@
       "documentation": "The notehead-text type represents text that is displayed inside a notehead, as is done in some educational music. It is not needed for the numbers used in tablature or jianpu notation. The presence of a TAB or jianpu clefs is sufficient to indicate that numbers are used. The display-text and accidental-text elements allow display of fully formatted text and accidentals."
    },
    "other-ornament": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "ornaments"
       ],
@@ -11607,6 +11986,8 @@
    "frame-note": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -11770,7 +12151,10 @@
       "documentation": ""
    },
    "fingering": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "frame-note",
          "technical"
@@ -11866,6 +12250,8 @@
    "pedal-tuning": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -11888,7 +12274,10 @@
       "documentation": "The pedal-tuning type specifies the tuning of a single harp pedal."
    },
    "first-fret": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:positiveInteger"
+      },
       "parents": [
          "frame"
       ],
@@ -11992,7 +12381,10 @@
       "documentation": "The empty-print-style-align-object type represents an empty element with print-object and print-style-align attribute groups."
    },
    "figure-number": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "figure"
       ],
@@ -12067,7 +12459,10 @@
       "documentation": ""
    },
    "group-name": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "part-group"
       ],
@@ -12158,9 +12553,13 @@
    "page-margins": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -12207,9 +12606,13 @@
    "page-layout": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "0",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -12343,6 +12746,8 @@
    "midi-instrument": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -12410,7 +12815,10 @@
       "documentation": "The midi-instrument type defines MIDI 1.0 instrument playback. The midi-instrument element can be a part of either the score-instrument element at the start of a part, or the sound element within a part. The id attribute refers to the score-instrument affected by the change."
    },
    "glissando": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "notations"
       ],
@@ -12773,6 +13181,8 @@
    "harp-pedals": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -12865,6 +13275,8 @@
    "instrument-change": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -12914,7 +13326,10 @@
       "documentation": "The instrument-change element type represents a change to the virtual instrument sound for a given score-instrument. The id attribute refers to the score-instrument affected by the change. All instrument-change child elements can also be initially specified within the score-instrument element."
    },
    "other-listening": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "listening"
       ],
@@ -12950,7 +13365,44 @@
       "documentation": "If the metronome-arrows element is present, it indicates that metric modulation arrows are displayed on both sides of the metronome mark."
    },
    "metronome-tuplet": {
-      "children": null,
+      "children": {
+         "type": "sequence",
+         "min": "1",
+         "max": "1",
+         "value": [
+            {
+               "type": "element",
+               "min": "1",
+               "max": "1",
+               "value": "actual-notes"
+            },
+            {
+               "type": "element",
+               "min": "1",
+               "max": "1",
+               "value": "normal-notes"
+            },
+            {
+               "type": "sequence",
+               "min": "0",
+               "max": "1",
+               "value": [
+                  {
+                     "type": "element",
+                     "min": "1",
+                     "max": "1",
+                     "value": "normal-type"
+                  },
+                  {
+                     "type": "element",
+                     "min": "0",
+                     "max": "unbounded",
+                     "value": "normal-dot"
+                  }
+               ]
+            }
+         ]
+      },
       "parents": [
          "metronome-note"
       ],
@@ -12992,6 +13444,8 @@
    "part-partwise": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -13016,7 +13470,10 @@
       "documentation": ""
    },
    "numeral-root": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "numeral-value"
+      },
       "parents": [
          "numeral"
       ],
@@ -13088,6 +13545,8 @@
    "numeral-key": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -13229,6 +13688,8 @@
    "miscellaneous": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -13245,7 +13706,10 @@
       "documentation": "If a program has other metadata not yet supported in the MusicXML format, it can go in the miscellaneous element. The miscellaneous type puts each separate part of metadata into its own miscellaneous-field type."
    },
    "hammer-on": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "technical"
       ],
@@ -13421,7 +13885,10 @@
       "documentation": "The empty-print-style-align-object type represents an empty element with print-object and print-style-align attribute groups."
    },
    "group-abbreviation": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "part-group"
       ],
@@ -13491,7 +13958,10 @@
       "documentation": "The group-name type describes the name or abbreviation of a part-group element. Formatting attributes in the group-name type are deprecated in Version 2.0 in favor of the new group-name-display and group-abbreviation-display elements."
    },
    "breath-mark": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "breath-mark-value"
+      },
       "parents": [
          "articulations"
       ],
@@ -13563,6 +14033,8 @@
    "part-name-display": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -13619,6 +14091,8 @@
    "harmon-mute": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -13699,6 +14173,8 @@
    "part-transpose": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -13814,7 +14290,10 @@
       "documentation": ""
    },
    "inversion": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:nonNegativeInteger"
+      },
       "parents": [
          "harmony"
       ],
@@ -13897,6 +14376,8 @@
    "figured-bass": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -13906,6 +14387,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -13917,9 +14400,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -13931,6 +14418,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -14064,6 +14553,8 @@
    "part-timewise": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -14175,6 +14666,8 @@
    "tuplet-actual": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -14205,6 +14698,8 @@
    "work": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -14234,7 +14729,10 @@
       "documentation": "Works are optionally identified by number and title. The work type also may indicate a link to the opus document that composes multiple scores into a collection."
    },
    "words": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "direction-type"
       ],
@@ -14382,7 +14880,10 @@
       "documentation": "The words element specifies a standard text direction. The enclosure is none if not specified. The language is Italian (\"it\") if not specified. Left justification is used if not specified."
    },
    "wood": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "wood-value"
+      },
       "parents": [
          "percussion"
       ],
@@ -14398,7 +14899,10 @@
       "documentation": "The wood type represents pictograms for wood percussion instruments. The smufl attribute is used to distinguish different SMuFL stylistic alternates."
    },
    "tuplet-number": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:nonNegativeInteger"
+      },
       "parents": [
          "tuplet-normal",
          "tuplet-actual"
@@ -14441,6 +14945,8 @@
    "tuplet-normal": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -14712,7 +15218,10 @@
       "documentation": ""
    },
    "offset": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "divisions"
+      },
       "parents": [
          "listening",
          "sound",
@@ -14731,7 +15240,10 @@
       "documentation": "An offset is represented in terms of divisions, and indicates where the direction will appear relative to the current musical location. The current musical location is always within the current measure, even at the end of a measure.\n\nThe offset affects the visual appearance of the direction. If the sound attribute is \"yes\", then the offset affects playback and listening too. If the sound attribute is \"no\", then any sound or listening associated with the direction takes effect at the current location. The sound attribute is \"no\" by default for compatibility with earlier versions of the MusicXML format. If an element within a direction includes a default-x attribute, the offset value will be ignored when determining the appearance of that element."
    },
    "rights": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "identification"
       ],
@@ -14749,9 +15261,13 @@
    "rest": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -14836,6 +15352,8 @@
    "root": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -14858,7 +15376,10 @@
       "documentation": "The root type indicates a pitch like C, D, E vs. a scale degree like 1, 2, 3. It is used with chord symbols in popular music. The root element has a root-step and optional root-alter element similar to the step and alter elements, but renamed to distinguish the different musical meanings."
    },
    "group-symbol": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "group-symbol-value"
+      },
       "parents": [
          "part-group"
       ],
@@ -14911,9 +15432,13 @@
    "sound": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "0",
+               "max": "unbounded",
                "value": [
                   {
                      "type": "element",
@@ -15094,7 +15619,10 @@
       "documentation": ""
    },
    "stem": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "stem-value"
+      },
       "parents": [
          "note"
       ],
@@ -15159,7 +15687,10 @@
       "documentation": "The staves element is used if there is more than one staff represented in the given part (e.g., 2 staves for typical piano parts). If absent, a value of 1 is assumed. Staves are ordered from top to bottom in a part in numerical order, with staff 1 above staff 2."
    },
    "string": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "string-number"
+      },
       "parents": [
          "frame-note",
          "technical"
@@ -15302,6 +15833,8 @@
    "stick": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -15468,7 +16001,10 @@
       "documentation": "Slur types are empty. Most slurs are represented with two elements: one with a start type, and one with a stop type. Slurs can add more elements using a continue type. This is typically used to specify the formatting of cross-system slurs, or to specify the shape of very complex slurs."
    },
    "slide": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "notations"
       ],
@@ -15594,9 +16130,13 @@
    "slash": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "0",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -16077,7 +16617,10 @@
       "documentation": ""
    },
    "symbol": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "smufl-glyph-name"
+      },
       "parents": [
          "direction-type"
       ],
@@ -16249,6 +16792,8 @@
    "swing": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -16263,6 +16808,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -16313,7 +16860,10 @@
       "documentation": "The sign element represents the clef symbol."
    },
    "suffix": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "figure"
       ],
@@ -16458,7 +17008,10 @@
       "documentation": "The tenuto element indicates a tenuto line symbol."
    },
    "text": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "lyric"
       ],
@@ -16693,9 +17246,13 @@
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -16832,7 +17389,10 @@
       "documentation": "Time signatures are represented by the beats element for the numerator and the beat-type element for the denominator."
    },
    "type": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "note-type-value"
+      },
       "parents": [
          "note"
       ],
@@ -16850,6 +17410,8 @@
    "tuplet": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -17064,7 +17626,10 @@
       "documentation": "The turn element is the normal turn shape which goes up then down."
    },
    "tap": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "technical"
       ],
@@ -17216,7 +17781,10 @@
       "documentation": "The heel and toe elements are used with organ pedals. The substitution value is \"no\" if the attribute is not present."
    },
    "glyph": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "smufl-glyph-name"
+      },
       "parents": [
          "appearance"
       ],
@@ -17232,7 +17800,10 @@
       "documentation": "The glyph element represents what SMuFL glyph should be used for different variations of symbols that are semantically identical. The type attribute specifies what type of glyph is being defined. The element value specifies what SMuFL glyph to use, including recommended stylistic alternates. The SMuFL glyph name should match the type. For instance, a type of quarter-rest would use values restQuarter, restQuarterOld, or restQuarterZ. A type of g-clef-ottava-bassa would use values gClef8vb, gClef8vbOld, or gClef8vbCClef. A type of octave-shift-up-8 would use values ottava, ottavaBassa, ottavaBassaBa, ottavaBassaVb, or octaveBassa."
    },
    "glass": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "glass-value"
+      },
       "parents": [
          "percussion"
       ],
@@ -17365,6 +17936,8 @@
    "credit": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -17397,6 +17970,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "choice",
@@ -17419,6 +17994,8 @@
                         },
                         {
                            "type": "sequence",
+                           "min": "0",
+                           "max": "unbounded",
                            "value": [
                               {
                                  "type": "element",
@@ -17586,7 +18163,10 @@
       "documentation": "The coda type is the visual indicator of a coda sign. The exact glyph can be specified with the smufl attribute. A sound element is also needed to guide playback applications reliably."
    },
    "cancel": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "fifths"
+      },
       "parents": [
          "key"
       ],
@@ -17615,6 +18195,8 @@
    "clef": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -17869,7 +18451,10 @@
       "documentation": "The listen and listening types, new in Version 4.0, specify different ways that a score following or machine listening application can interact with a performer. The listen type handles interactions that are specific to a note. If multiple child elements of the same type are present, they should have distinct player and\/or time-only attributes."
    },
    "level": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "barline",
          "figured-bass",
@@ -17992,6 +18577,8 @@
    "lyric": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -18000,6 +18587,8 @@
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -18015,9 +18604,13 @@
                         },
                         {
                            "type": "sequence",
+                           "min": "0",
+                           "max": "unbounded",
                            "value": [
                               {
                                  "type": "sequence",
+                                 "min": "0",
+                                 "max": "1",
                                  "value": [
                                     {
                                        "type": "element",
@@ -18083,9 +18676,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -18097,6 +18694,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -18201,6 +18800,8 @@
    "play": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -18253,6 +18854,8 @@
    "player": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -18277,7 +18880,10 @@
       "documentation": "The player type allows for multiple players per score-part for use in listening applications. One player may play multiple instruments, while a single instrument may include multiple players in divisi sections."
    },
    "pluck": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "technical"
       ],
@@ -18460,6 +19066,8 @@
    "pitch": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -18648,7 +19256,10 @@
       "documentation": "The pedal type represents piano pedal marks, including damper and sostenuto pedal marks. The line attribute is yes if pedal lines are used. The sign attribute is yes if Ped, Sost, and * signs are used. For compatibility with older versions, the sign attribute is yes by default if the line attribute is no, and is no by default if the line attribute is yes. If the sign attribute is set to yes and the type is start or sostenuto, the abbreviated attribute is yes if the short P and S signs are used, and no if the full Ped and Sost signs are used. It is no by default. Otherwise the abbreviated attribute is ignored. The alignment attributes are ignored if the sign attribute is no."
    },
    "prefix": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "figure"
       ],
@@ -18714,9 +19325,13 @@
    "print": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -18844,6 +19459,8 @@
    "note": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -18852,6 +19469,8 @@
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -18866,9 +19485,13 @@
                            "value": [
                               {
                                  "type": "sequence",
+                                 "min": "1",
+                                 "max": "1",
                                  "value": [
                                     {
                                        "type": "sequence",
+                                       "min": "1",
+                                       "max": "1",
                                        "value": [
                                           {
                                              "type": "element",
@@ -18913,6 +19536,8 @@
                               },
                               {
                                  "type": "sequence",
+                                 "min": "1",
+                                 "max": "1",
                                  "value": [
                                     {
                                        "type": "element",
@@ -18922,6 +19547,8 @@
                                     },
                                     {
                                        "type": "sequence",
+                                       "min": "1",
+                                       "max": "1",
                                        "value": [
                                           {
                                              "type": "element",
@@ -18964,6 +19591,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -18973,6 +19602,8 @@
                         },
                         {
                            "type": "sequence",
+                           "min": "1",
+                           "max": "1",
                            "value": [
                               {
                                  "type": "element",
@@ -19009,6 +19640,8 @@
                         },
                         {
                            "type": "sequence",
+                           "min": "1",
+                           "max": "1",
                            "value": [
                               {
                                  "type": "element",
@@ -19022,9 +19655,13 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "sequence",
+                           "min": "1",
+                           "max": "1",
                            "value": [
                               {
                                  "type": "element",
@@ -19061,6 +19698,8 @@
                         },
                         {
                            "type": "sequence",
+                           "min": "1",
+                           "max": "1",
                            "value": [
                               {
                                  "type": "element",
@@ -19088,9 +19727,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -19102,6 +19745,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -19113,6 +19758,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -19168,6 +19815,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -19363,6 +20012,8 @@
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -19539,6 +20190,8 @@
    "accord": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -19942,7 +20595,10 @@
       "documentation": "The damp element specifies a harp damping mark."
    },
    "bass-separator": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "bass"
       ],
@@ -20008,6 +20664,8 @@
    "degree": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -20125,7 +20783,10 @@
       "documentation": "The up-bow element represents the symbol that is used both for up-bowing on bowed instruments, and up-stroke on plucked instruments."
    },
    "beam": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "beam-value"
+      },
       "parents": [
          "note"
       ],
@@ -20165,7 +20826,10 @@
       "documentation": "Beam values include begin, continue, end, forward hook, and backward hook. Up to eight concurrent beams are available to cover up to 1024th notes. Each beam in a note is represented with a separate beam element, starting with the eighth note beam using a number attribute of 1.\n\nNote that the beam number does not distinguish sets of beams that overlap, as it does for slur and other elements. Beaming groups are distinguished by being in different voices and\/or the presence or absence of grace and cue elements.\n\nBeams that have a begin value can also have a fan attribute to indicate accelerandos and ritardandos using fanned beams. The fan attribute may also be used with a continue value if the fanning direction changes on that note. The value is \"none\" if not specified.\n\nThe repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tremolos, it needs to be specified with a \"yes\" value for each beam using it."
    },
    "beater": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "beater-value"
+      },
       "parents": [
          "percussion"
       ],
@@ -20195,6 +20859,8 @@
    "bend": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -20324,9 +20990,13 @@
    "backup": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -20338,9 +21008,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -20352,6 +21026,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -20375,6 +21051,8 @@
    "bass": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -20623,6 +21301,8 @@
    "hole": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -20721,7 +21401,10 @@
       "documentation": "The empty type represents an empty element with no attributes."
    },
    "fret": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:nonNegativeInteger"
+      },
       "parents": [
          "frame-note",
          "technical"
@@ -20764,6 +21447,8 @@
    "frame": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -21016,6 +21701,8 @@
    "figure": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -21043,9 +21730,13 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -21057,6 +21748,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -21180,7 +21873,10 @@
       "documentation": ""
    },
    "metal": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "metal-value"
+      },
       "parents": [
          "percussion"
       ],
@@ -21254,7 +21950,10 @@
       "documentation": "The extend type represents lyric word extension \/ melisma lines as well as figured bass extensions. The optional type and position attributes are added in Version 3.0 to provide better formatting control."
    },
    "effect": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "effect-value"
+      },
       "parents": [
          "percussion"
       ],
@@ -21270,7 +21969,10 @@
       "documentation": "The effect type represents pictograms for sound effect percussion instruments. The smufl attribute is used to distinguish different SMuFL stylistic alternates."
    },
    "ending": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "barline"
       ],
@@ -21463,7 +22165,10 @@
       "documentation": "The image type is used to include graphical images in a score."
    },
    "other-percussion": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "percussion"
       ],
@@ -21481,6 +22186,8 @@
    "key": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "choice",
@@ -21489,6 +22196,8 @@
                "value": [
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -21512,6 +22221,8 @@
                   },
                   {
                      "type": "sequence",
+                     "min": "1",
+                     "max": "1",
                      "value": [
                         {
                            "type": "element",
@@ -21624,7 +22335,10 @@
       "documentation": "The key element represents a key signature. Both traditional and non-traditional key signatures are supported. The optional number attribute refers to staff numbers. If absent, the key signature applies to all staves in the part."
    },
    "kind": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "kind-value"
+      },
       "parents": [
          "harmony"
       ],

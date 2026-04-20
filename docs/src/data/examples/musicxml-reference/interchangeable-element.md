@@ -1,10 +1,5 @@
 ---
 title: '<interchangeable>'
-elements:
-- interchangeable
-- time-relation
-- beats
-- beat-type
 image: interchangeable-element.png
 ---
 ```xml

@@ -14,4 +14,20 @@ const soundsElements = defineCollection({
   loader: file("src/data/elements-sounds.json"),
 });
 
-export const collections = { containerElements, musicxmlElements, opusElements, soundsElements };
+const containerDatatypes = defineCollection({
+  loader: file("src/data/datatypes-container.json"),
+});
+const musicxmlDatatypes = defineCollection({
+  loader: file("src/data/datatypes-musicxml.json"),
+});
+const opusDatatypes = defineCollection({
+  loader: file("src/data/datatypes-opus.json"),
+});
+const soundsDatatypes = defineCollection({
+  loader: file("src/data/datatypes-sounds.json"),
+});
+
+export const collections = {
+  containerElements, musicxmlElements, opusElements, soundsElements,
+  containerDatatypes, musicxmlDatatypes, opusDatatypes, soundsDatatypes,
+};

@@ -34,7 +34,7 @@ const examples_ = Object.values(examples).filter((example) =>
 
 <section class="content">
   <h2>Content</h2>
-  <ElementContent schema={schema} content={element.data.children} parent={null} />
+  <ElementContent schema={schema} content={element.data.children} />
 </section>
 
 <section class="attributes">
@@ -53,7 +53,7 @@ const examples_ = Object.values(examples).filter((example) =>
         {element.data.attributes.map((attribute) => (
           <tr>
             <td>{attribute.name}</td>
-            <td><DataTypeLink type={attribute.type} /></td>
+            <td><DataTypeLink schema={schema} type={attribute.type} /></td>
             <td>{attribute.required ? 'Yes' : 'No'}</td>
             <td>{attribute.documentation}</td>
           </tr>
