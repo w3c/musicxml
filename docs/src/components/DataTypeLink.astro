@@ -1,6 +1,6 @@
 ---
 const { type, schema } = Astro.props;
-const slug = type.replace(':', '-');
+const slug = type.replace(':', '-').replace('xs-', 'xsd-');
 const href = `/musicxml/${schema}-reference/data-types/${slug}/`;
 ---
 <a href={href}>{type}</a>

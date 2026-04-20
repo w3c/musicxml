@@ -1,8 +1,8 @@
 ---
-import siteConfig from '../../site.config';
+import { siteInfo } from '../site.config';
 import CGLogo from '@assets/img/logos/w3cg.svg';
 
-const reportStatus = `${ siteConfig.isDraft ? 'Draft' : 'Final' } Report`;
+const reportStatus = `${ siteInfo.isDraft ? 'Draft' : 'Final' } Report`;
 ---
 
 <div id="site-nav" class="fixed top-0 h-full px-10 border-r border-neutral-300 flex flex-col bg-olive-100 -translate-x-full lg:translate-x-0 transition-transform duration-400">
@@ -88,12 +88,12 @@ const reportStatus = `${ siteConfig.isDraft ? 'Draft' : 'Final' } Report`;
 	// Initial opened state is true for desktop, false for mobile.
 	let navIsOpen = window.matchMedia('(width >= 64rem)').matches;
 	let ariaExpanded = navIsOpen ? 'true' : 'false';
-  
+
 	// Initialise the aria-expanded state.
 	menuBtn.setAttribute('aria-expanded', ariaExpanded);
-	
+
 	function handleMenu() {
-		
+
 		// Remove these Tailwind classes if they exist.
 		if (siteNav?.classList.contains('-translate-x-full')) {
 			siteNav.classList.remove('-translate-x-full',  'lg:translate-x-0');

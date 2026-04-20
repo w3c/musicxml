@@ -1,6 +1,5 @@
 ---
 title: '<defaults>'
-elements: defaults
 ---
 ```xml
 <defaults>

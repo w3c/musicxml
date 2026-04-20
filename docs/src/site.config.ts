@@ -1,3 +1,13 @@
+interface SiteInfo {
+  [key: string]: string | boolean
+}
+
+export const siteInfo: SiteInfo = {
+	title: 'MusicXML',
+	specVersion: '4.1',
+	isDraft: true
+}
+
 /**
  * SPECIAL CASE!! \<measure\> and \<part\> are treated differently in partwise and timewise scores.
  * To differentiate between them, the elements-musicxml.json listing calls them
@@ -10,6 +20,7 @@
 interface DefaultElementMap {
   [key: string]: string
 }
+
 export const defaultElementsMap: DefaultElementMap = {
   measure: 'measure-partwise',
   part: 'part-partwise',

@@ -455,13 +455,9 @@
          }
       ]
    },
-   "xs-date": {
+   "xsd-date": {
       "name": "xs:date",
       "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#date)."
-   },
-   "xs-token": {
-      "name": "xs:token",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token)."
    },
    "xml-lang": {
       "name": "xml:lang",
@@ -774,6 +770,10 @@
          }
       ]
    },
+   "xsd-nonNegativeInteger": {
+      "name": "xs:nonNegativeInteger",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#nonNegativeInteger)."
+   },
    "right-left-middle": {
       "name": "right-left-middle",
       "documentation": "The right-left-middle type is used to specify barline location.",
@@ -936,12 +936,20 @@
          "maxInclusive": "7"
       }
    },
+   "xsd-NMTOKEN": {
+      "name": "xs:NMTOKEN",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NMTOKEN)."
+   },
    "smufl-lyrics-glyph-name": {
       "name": "smufl-lyrics-glyph-name",
       "documentation": "The smufl-lyrics-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) lyrics elision character. The value is a SMuFL canonical glyph name that starts with lyrics.",
       "base": "smufl-glyph-name",
       "type": "regex",
       "value": "lyrics\\c+"
+   },
+   "xsd-decimal": {
+      "name": "xs:decimal",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#decimal)."
    },
    "line-length": {
       "name": "line-length",
@@ -1091,6 +1099,10 @@
             "documentation": null
          }
       ]
+   },
+   "xsd-integer": {
+      "name": "xs:integer",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#integer)."
    },
    "membrane-value": {
       "name": "membrane-value",
@@ -1781,10 +1793,6 @@
          }
       ]
    },
-   "xs-nonNegativeInteger": {
-      "name": "xs:nonNegativeInteger",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#nonNegativeInteger)."
-   },
    "bar-style": {
       "name": "bar-style",
       "documentation": "The bar-style type represents barline style information. Choices are regular, dotted, dashed, heavy, light-light, light-heavy, heavy-light, heavy-heavy, tick (a short stroke through the top line), short (a partial barline between the 2nd and 4th lines), and none.",
@@ -1964,64 +1972,9 @@
          }
       ]
    },
-   "xs-positiveInteger": {
+   "xsd-positiveInteger": {
       "name": "xs:positiveInteger",
       "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#positiveInteger)."
-   },
-   "stick-material": {
-      "name": "stick-material",
-      "documentation": "The stick-material type represents the material being displayed in a stick pictogram.",
-      "base": "xs:string",
-      "type": "values",
-      "value": [
-         {
-            "value": "soft",
-            "documentation": null
-         },
-         {
-            "value": "medium",
-            "documentation": null
-         },
-         {
-            "value": "hard",
-            "documentation": null
-         },
-         {
-            "value": "shaded",
-            "documentation": null
-         },
-         {
-            "value": "x",
-            "documentation": null
-         }
-      ]
-   },
-   "xs-NMTOKEN": {
-      "name": "xs:NMTOKEN",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NMTOKEN)."
-   },
-   "xs-decimal": {
-      "name": "xs:decimal",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#decimal)."
-   },
-   "xs-string": {
-      "name": "xs:string",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#string)."
-   },
-   "xs-integer": {
-      "name": "xs:integer",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#integer)."
-   },
-   "distance-type": {
-      "name": "distance-type",
-      "documentation": "The distance-type defines what type of distance is being defined in a distance element. Values include beam and hyphen. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.",
-      "base": "xs:token",
-      "type": "unknown",
-      "value": null
-   },
-   "xs-anyURI": {
-      "name": "xs:anyURI",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#anyURI)."
    },
    "clef-sign": {
       "name": "clef-sign",
@@ -2127,9 +2080,40 @@
          }
       ]
    },
-   "xs-NCName": {
-      "name": "xs:NCName",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NCName)."
+   "stick-material": {
+      "name": "stick-material",
+      "documentation": "The stick-material type represents the material being displayed in a stick pictogram.",
+      "base": "xs:string",
+      "type": "values",
+      "value": [
+         {
+            "value": "soft",
+            "documentation": null
+         },
+         {
+            "value": "medium",
+            "documentation": null
+         },
+         {
+            "value": "hard",
+            "documentation": null
+         },
+         {
+            "value": "shaded",
+            "documentation": null
+         },
+         {
+            "value": "x",
+            "documentation": null
+         }
+      ]
+   },
+   "distance-type": {
+      "name": "distance-type",
+      "documentation": "The distance-type defines what type of distance is being defined in a distance element. Values include beam and hyphen. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.",
+      "base": "xs:token",
+      "type": "unknown",
+      "value": null
    },
    "breath-mark-value": {
       "name": "breath-mark-value",
@@ -2260,6 +2244,14 @@
       "base": "xs:decimal",
       "type": "unknown",
       "value": null
+   },
+   "xsd-string": {
+      "name": "xs:string",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#string)."
+   },
+   "xsd-token": {
+      "name": "xs:token",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token)."
    },
    "fermata-shape": {
       "name": "fermata-shape",
@@ -2796,6 +2788,18 @@
             "documentation": null
          }
       ]
+   },
+   "xsd-IDREF": {
+      "name": "xs:IDREF",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#IDREF)."
+   },
+   "xsd-NCName": {
+      "name": "xs:NCName",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NCName)."
+   },
+   "xsd-anyURI": {
+      "name": "xs:anyURI",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#anyURI)."
    },
    "xml-space": {
       "name": "xml:space",
@@ -3789,5 +3793,9 @@
             "documentation": null
          }
       ]
+   },
+   "xsd-ID": {
+      "name": "xs:ID",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#ID)."
    }
 }

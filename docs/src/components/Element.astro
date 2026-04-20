@@ -5,7 +5,7 @@ import ElementLink from '@components/ElementLink.astro';
 import ExampleLink from '@components/ExampleLink.astro';
 import ElementContent from '@components/ElementContent.astro';
 import DataTypeLink from './DataTypeLink.astro';
-import { defaultElementsMap } from '../utils/Config';
+import { defaultElementsMap } from '../site.config';
 
 const md = new MarkdownIt();
 const { element, schema } = Astro.props;
@@ -25,7 +25,9 @@ const examples_ = Object.values(examples).filter((example) =>
 );
 ---
 <p class="parents">
-  Parent element{element.data.parents.length > 1 ? 's' : ''}: {element.data.parents.length > 0 ? element.data.parents.map((parent) => <ElementLink tag={parent} schema={schema}/>) : 'None'}
+  Parent element{element.data.parents.length > 1 ? 's' : ''}: {element.data.parents.length > 0 ?
+    element.data.parents.sort((a, b) => a.localeCompare(b)).map((parent) => <ElementLink tag={parent} schema={schema}/>) : 'None'
+  }
 </p>
 
 {image in images && <Image src={images[image]()} alt={element.id} />}

@@ -1,5 +1,5 @@
 ---
-import siteConfig from '../../site.config';
+import { siteInfo } from '../site.config';
 import DocsIcon from '@icons/document-code-twotone-rounded.svg';
 import MenuIcon from '@icons/menu-02-stroke-standard.svg';
 ---
@@ -14,7 +14,7 @@ import MenuIcon from '@icons/menu-02-stroke-standard.svg';
 
   <a href="/musicxml/" class="absolute left-1/2 -translate-x-1/2 flex items-center font-bold text-zinc-700 no-underline">
     <DocsIcon class="w-7 mr-2" />
-    <div>{ siteConfig.title } { siteConfig.specVersion } { siteConfig.isDraft && 'Draft' }</div>
+    <div>{ siteInfo.title } { siteInfo.specVersion } { siteInfo.isDraft && 'Draft' }</div>
   </a>
 
 </header>

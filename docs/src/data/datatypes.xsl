@@ -26,8 +26,9 @@
       <xsl:apply-templates select="xs:schema/xs:simpleType | xs:schema//xs:attribute[@ref]">
         <xsl:with-param name="schema" select="''"/>
       </xsl:apply-templates>
+      <xsl:apply-templates mode="xs-type" select="xs:schema//xs:attribute[starts-with(@type, 'xs:')]"/>
     </xsl:variable>
-    <xsl:sequence select="array:fold-left(array{$datatypes}, map{}, function($m, $v) { map:put($m, fn:replace($v('name'), ':', '-'), $v) })"/>
+    <xsl:sequence select="array:fold-left(array{$datatypes}, map{}, function($m, $v) { map:put($m, fn:replace(fn:replace($v('name'), ':', '-'), 'xs-', 'xsd-'), $v) })"/>
   </xsl:template>
 
   <xsl:template match="xs:simpleType | xs:attribute[@name]" as="map(*)*">
@@ -64,5 +65,12 @@
     <xsl:apply-templates select="$schema//xs:attribute[@name=fn:tokenize(current()/@ref , ':')[2]]">
       <xsl:with-param name="schema" select="fn:tokenize(@ref , ':')[1] || ':'"/>
     </xsl:apply-templates>
+  </xsl:template>
+
+  <xsl:template mode="xs-type" match="xs:attribute">
+    <xsl:sequence select="map {
+      'name': xs:string(@type),
+      'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize(@type, ':')[2] || ').'
+    }"/>
   </xsl:template>
 </xsl:stylesheet>
