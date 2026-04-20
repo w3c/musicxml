@@ -39,7 +39,7 @@ const { frontmatter, headings } = Astro.props;
 
 		<main class="mx-auto px-4 py-12 lg:py-20 w-3xl max-w-full">
 
-		  { currentPath !== '/musicxml/' && <Breadcrumbs currentPath={ currentPath } /> }
+		  { currentPath !== '/musicxml/' && <Breadcrumbs pageTitle={ frontmatter.title } currentPath={ currentPath } /> }
 
 			<article>
 
