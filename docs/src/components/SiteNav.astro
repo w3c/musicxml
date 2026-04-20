@@ -1,12 +1,15 @@
 ---
+import siteConfig from '../../site.config';
 import CGLogo from '@assets/img/logos/w3cg.svg';
+
+const reportStatus = `${ siteConfig.isDraft ? 'Draft' : 'Final' } Report`;
 ---
 
 <div id="site-nav" class="fixed top-0 h-full px-10 border-r border-neutral-300 flex flex-col bg-olive-100 -translate-x-full lg:translate-x-0 transition-transform duration-400">
 	<nav class="overflow-y-auto scrollbar-hidden pt-32 pb-24">
 		<a href="/musicxml/" class="flex items-center mb-8 no-underline">
 			<CGLogo class="w-16 h-16" />
-			<p class="font-bold text-base w-24 leading-6">Draft Report</p>
+			<p class="font-bold text-base w-24 leading-6">{ reportStatus }</p>
 		</a>
 		<ul class="list-none m-0 p-0 text-base [&_a]:text-zinc-700 [&_a]:no-underline [&_a]:hover:underline">
 			<li class="font-bold"><a href="/musicxml/">Introduction</a></li>
