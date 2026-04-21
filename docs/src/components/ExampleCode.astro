@@ -24,33 +24,34 @@ const image = example.frontmatter.image ? `/src/assets/img/${example.frontmatter
 transformers={[
   {
     line(node) {
-      const opening = node.children.findIndex((child) => {
-        return child.type === 'element' &&
-                child.children.length === 1 &&
-                child.children[0].type === 'text' &&
-                (child.children[0].value.endsWith('<') || child.children[0].value.endsWith('</'))
-      });
-      if (opening > -1 && node.children.length > opening) {
-        const child = node.children[opening + 1];
-        if (
-          child.type === 'element' &&
-          child.children.length === 1 &&
-          child.children[0].type === 'text'
-        ) {
-          let tag = child.children[0].value;
-          if (example.frontmatter.elements_map && tag in example.frontmatter.elements_map) {
-            tag = example.frontmatter.elements_map[tag];
-          }
-          else if (tag in defaultElementsMap) {
-            tag = defaultElementsMap[tag];
-          }
-          child.tagName = 'a';
-          child.properties.href = `/musicxml/${schema}-reference/elements/${tag}/`;
-          if (Array.isArray(example.frontmatter.elements) ? example.frontmatter.elements.indexOf(tag) > -1 : example.frontmatter.elements === tag) {
-            this.addClassToHast(child, 'highlighted-word');
-          }
+      // The syntax highlighter calls back this function for each line,
+      // with its children as parsed tokens. The opening/closing tag brackets `<` or `</`
+      // is a separate token from the tag name that follows is.
+      // So we first catch the opening/closing tag brackets and match the next token
+      // to an XML element. We then change the HTML for that next token to be <a>,
+      // linking to the reference page of the XML element.
+      node.children.filter((child, i) => i > 0 &&
+        node.children[i-1].type === 'element' &&
+        node.children[i-1].children.length === 1 &&
+        node.children[i-1].children[0].type === 'text' &&
+        (node.children[i-1].children[0].value.endsWith('<') || node.children[i-1].children[0].value.endsWith('</')) &&
+        child.type === 'element' &&
+        child.children.length === 1 &&
+        child.children[0].type === 'text'
+      ).forEach(child => {
+        let tag = child.children[0].value;
+        if (example.frontmatter.elements_map && tag in example.frontmatter.elements_map) {
+          tag = example.frontmatter.elements_map[tag];
         }
-      }
+        else if (tag in defaultElementsMap) {
+          tag = defaultElementsMap[tag];
+        }
+        child.tagName = 'a';
+        child.properties.href = `/musicxml/${schema}-reference/elements/${tag}/`;
+        if (Array.isArray(example.frontmatter.elements) ? example.frontmatter.elements.indexOf(tag) > -1 : example.frontmatter.elements === tag) {
+          this.addClassToHast(child, 'highlighted-word');
+        }
+      });
     }
   }
 ]}
