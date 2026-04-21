@@ -1,0 +1,11 @@
+---
+import ElementLink from '@components/ElementLink.astro';
+
+const { tag, children, schema, level } = Astro.props;
+---
+<Fragment set:html={level < 4 && `<h${level} class="tree">`}/>
+<ElementLink tag={tag} schema={schema} />
+<Fragment set:html={level < 4 && `</h${level}>`}/>
+{Object.keys(children).length > 0 && <ul>
+  {Object.keys(children).sort((a,b) => a.localeCompare(b)).map(child => <li><Astro.self level={level+1} tag={child} children={children[child]} schema={schema}/></li>)}
+</ul>}

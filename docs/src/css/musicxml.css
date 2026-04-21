@@ -16,3 +16,10 @@ table.musicxml th,td {
 table.musicxml td:first-child {
   font-weight: bold;
 }
+h2.tree, h3.tree {
+  margin: inherit;
+  font: inherit;
+}
+.active {
+  font-weight: bold;
+}

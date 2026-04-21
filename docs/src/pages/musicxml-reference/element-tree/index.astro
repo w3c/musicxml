@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../../layouts/Base.astro';
+import SchemaView from '@components/SchemaView.astro';
+import TreeElement from '@components/TreeElement.astro';
+
+const elements = await getCollection('musicxmlElementsTree');
+const frontmatter = {
+  title: 'Elements used in MusicXML'
+}
+---
+<BaseLayout frontmatter={frontmatter}>
+  <SchemaView schema="musicxml" current="tree"/>
+  <ul>
+    {elements.sort((a,b) => a.id.localeCompare(b.id)).map(element => <li><TreeElement level={2} tag={element.id} children={element.data} schema="musicxml" /></li>)}
+  </ul>
+</BaseLayout>

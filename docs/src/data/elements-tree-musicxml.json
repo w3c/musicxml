@@ -1,0 +1,3592 @@
+{
+   "score-partwise": {
+      "movement-number": {
+         
+      },
+      "defaults": {
+         "lyric-font": {
+            
+         },
+         "scaling": {
+            "millimeters": {
+               
+            },
+            "tenths": {
+               
+            }
+         },
+         "music-font": {
+            
+         },
+         "system-layout": {
+            "system-margins": {
+               "right-margin": {
+                  
+               },
+               "left-margin": {
+                  
+               }
+            },
+            "system-distance": {
+               
+            },
+            "system-dividers": {
+               "right-divider": {
+                  
+               },
+               "left-divider": {
+                  
+               }
+            },
+            "top-system-distance": {
+               
+            }
+         },
+         "lyric-language": {
+            
+         },
+         "concert-score": {
+            
+         },
+         "appearance": {
+            "line-width": {
+               
+            },
+            "distance": {
+               
+            },
+            "note-size": {
+               
+            },
+            "other-appearance": {
+               
+            },
+            "glyph": {
+               
+            }
+         },
+         "staff-layout": {
+            "staff-distance": {
+               
+            }
+         },
+         "word-font": {
+            
+         },
+         "page-layout": {
+            "page-width": {
+               
+            },
+            "page-height": {
+               
+            },
+            "page-margins": {
+               "bottom-margin": {
+                  
+               },
+               "right-margin": {
+                  
+               },
+               "top-margin": {
+                  
+               },
+               "left-margin": {
+                  
+               }
+            }
+         }
+      },
+      "identification": {
+         "creator": {
+            
+         },
+         "encoding": {
+            "encoder": {
+               
+            },
+            "software": {
+               
+            },
+            "supports": {
+               
+            },
+            "encoding-date": {
+               
+            },
+            "encoding-description": {
+               
+            }
+         },
+         "relation": {
+            
+         },
+         "miscellaneous": {
+            "miscellaneous-field": {
+               
+            }
+         },
+         "rights": {
+            
+         },
+         "source": {
+            
+         }
+      },
+      "part-list": {
+         "part-group": {
+            "footnote": {
+               
+            },
+            "group-abbreviation-display": {
+               "display-text": {
+                  
+               },
+               "accidental-text": {
+                  
+               }
+            },
+            "group-barline": {
+               
+            },
+            "group-name-display": {
+               "display-text": {
+                  
+               },
+               "accidental-text": {
+                  
+               }
+            },
+            "group-name": {
+               
+            },
+            "group-time": {
+               
+            },
+            "group-abbreviation": {
+               
+            },
+            "group-symbol": {
+               
+            },
+            "level": {
+               
+            }
+         },
+         "score-part": {
+            "score-instrument": {
+               "ensemble": {
+                  
+               },
+               "virtual-instrument": {
+                  "virtual-library": {
+                     
+                  },
+                  "virtual-name": {
+                     
+                  }
+               },
+               "instrument-abbreviation": {
+                  
+               },
+               "instrument-name": {
+                  
+               },
+               "instrument-sound": {
+                  
+               },
+               "solo": {
+                  
+               }
+            },
+            "identification": {
+               "creator": {
+                  
+               },
+               "encoding": {
+                  "encoder": {
+                     
+                  },
+                  "software": {
+                     
+                  },
+                  "supports": {
+                     
+                  },
+                  "encoding-date": {
+                     
+                  },
+                  "encoding-description": {
+                     
+                  }
+               },
+               "relation": {
+                  
+               },
+               "miscellaneous": {
+                  "miscellaneous-field": {
+                     
+                  }
+               },
+               "rights": {
+                  
+               },
+               "source": {
+                  
+               }
+            },
+            "part-link": {
+               "instrument-link": {
+                  
+               },
+               "group-link": {
+                  
+               }
+            },
+            "part-name": {
+               
+            },
+            "part-abbreviation": {
+               
+            },
+            "midi-device": {
+               
+            },
+            "part-abbreviation-display": {
+               "display-text": {
+                  
+               },
+               "accidental-text": {
+                  
+               }
+            },
+            "midi-instrument": {
+               "midi-name": {
+                  
+               },
+               "midi-bank": {
+                  
+               },
+               "midi-unpitched": {
+                  
+               },
+               "midi-channel": {
+                  
+               },
+               "midi-program": {
+                  
+               },
+               "elevation": {
+                  
+               },
+               "volume": {
+                  
+               },
+               "pan": {
+                  
+               }
+            },
+            "part-name-display": {
+               "display-text": {
+                  
+               },
+               "accidental-text": {
+                  
+               }
+            },
+            "group": {
+               
+            },
+            "player": {
+               "player-name": {
+                  
+               }
+            }
+         }
+      },
+      "movement-title": {
+         
+      },
+      "part-partwise": {
+         "measure-partwise": {
+            "forward": {
+               "duration": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "level": {
+                  
+               },
+               "voice": {
+                  
+               },
+               "staff": {
+                  
+               }
+            },
+            "grouping": {
+               "feature": {
+                  
+               }
+            },
+            "harmony": {
+               "function": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "numeral": {
+                  "numeral-alter": {
+                     
+                  },
+                  "numeral-root": {
+                     
+                  },
+                  "numeral-key": {
+                     "numeral-fifths": {
+                        
+                     },
+                     "numeral-mode": {
+                        
+                     }
+                  }
+               },
+               "inversion": {
+                  
+               },
+               "root": {
+                  "root-step": {
+                     
+                  },
+                  "root-alter": {
+                     
+                  }
+               },
+               "kind": {
+                  
+               },
+               "bass": {
+                  "bass-step": {
+                     
+                  },
+                  "bass-alter": {
+                     
+                  },
+                  "bass-separator": {
+                     
+                  }
+               },
+               "degree": {
+                  "degree-value": {
+                     
+                  },
+                  "degree-alter": {
+                     
+                  },
+                  "degree-type": {
+                     
+                  }
+               },
+               "frame": {
+                  "frame-frets": {
+                     
+                  },
+                  "frame-note": {
+                     "fingering": {
+                        
+                     },
+                     "string": {
+                        
+                     },
+                     "fret": {
+                        
+                     },
+                     "barre": {
+                        
+                     }
+                  },
+                  "first-fret": {
+                     
+                  },
+                  "frame-strings": {
+                     
+                  }
+               },
+               "offset": {
+                  
+               },
+               "level": {
+                  
+               },
+               "staff": {
+                  
+               }
+            },
+            "listening": {
+               "other-listening": {
+                  
+               },
+               "sync": {
+                  
+               },
+               "offset": {
+                  
+               }
+            },
+            "barline": {
+               "footnote": {
+                  
+               },
+               "fermata": {
+                  
+               },
+               "bar-style": {
+                  
+               },
+               "wavy-line": {
+                  
+               },
+               "level": {
+                  
+               },
+               "segno": {
+                  
+               },
+               "coda": {
+                  
+               },
+               "ending": {
+                  
+               },
+               "repeat": {
+                  
+               }
+            },
+            "bookmark": {
+               
+            },
+            "attributes": {
+               "footnote": {
+                  
+               },
+               "for-part": {
+                  "part-clef": {
+                     "clef-octave-change": {
+                        
+                     },
+                     "sign": {
+                        
+                     },
+                     "line": {
+                        
+                     }
+                  },
+                  "part-transpose": {
+                     "diatonic": {
+                        
+                     },
+                     "octave-change": {
+                        
+                     },
+                     "chromatic": {
+                        
+                     },
+                     "double": {
+                        
+                     }
+                  }
+               },
+               "measure-style": {
+                  "measure-repeat": {
+                     
+                  },
+                  "multiple-rest": {
+                     
+                  },
+                  "beat-repeat": {
+                     "slash-dot": {
+                        
+                     },
+                     "slash-type": {
+                        
+                     },
+                     "except-voice": {
+                        
+                     }
+                  },
+                  "slash": {
+                     "slash-dot": {
+                        
+                     },
+                     "slash-type": {
+                        
+                     },
+                     "except-voice": {
+                        
+                     }
+                  }
+               },
+               "part-symbol": {
+                  
+               },
+               "transpose": {
+                  "diatonic": {
+                     
+                  },
+                  "octave-change": {
+                     
+                  },
+                  "chromatic": {
+                     
+                  },
+                  "double": {
+                     
+                  }
+               },
+               "instruments": {
+                  
+               },
+               "directive": {
+                  
+               },
+               "divisions": {
+                  
+               },
+               "staff-details": {
+                  "line-detail": {
+                     
+                  },
+                  "staff-type": {
+                     
+                  },
+                  "staff-size": {
+                     
+                  },
+                  "staff-lines": {
+                     
+                  },
+                  "staff-tuning": {
+                     "tuning-step": {
+                        
+                     },
+                     "tuning-alter": {
+                        
+                     },
+                     "tuning-octave": {
+                        
+                     }
+                  },
+                  "capo": {
+                     
+                  }
+               },
+               "level": {
+                  
+               },
+               "key": {
+                  "key-alter": {
+                     
+                  },
+                  "key-octave": {
+                     
+                  },
+                  "key-step": {
+                     
+                  },
+                  "key-accidental": {
+                     
+                  },
+                  "cancel": {
+                     
+                  },
+                  "fifths": {
+                     
+                  },
+                  "mode": {
+                     
+                  }
+               },
+               "time": {
+                  "interchangeable": {
+                     "beat-type": {
+                        
+                     },
+                     "time-relation": {
+                        
+                     },
+                     "beats": {
+                        
+                     }
+                  },
+                  "senza-misura": {
+                     
+                  },
+                  "beat-type": {
+                     
+                  },
+                  "beats": {
+                     
+                  }
+               },
+               "staves": {
+                  
+               },
+               "clef": {
+                  "clef-octave-change": {
+                     
+                  },
+                  "sign": {
+                     
+                  },
+                  "line": {
+                     
+                  }
+               }
+            },
+            "direction": {
+               "direction-type": {
+                  "damp-all": {
+                     
+                  },
+                  "dynamics": {
+                     "other-dynamics": {
+                        
+                     },
+                     "p": {
+                        
+                     },
+                     "pp": {
+                        
+                     },
+                     "ppp": {
+                        
+                     },
+                     "pppp": {
+                        
+                     },
+                     "ppppp": {
+                        
+                     },
+                     "pppppp": {
+                        
+                     },
+                     "pf": {
+                        
+                     },
+                     "f": {
+                        
+                     },
+                     "ff": {
+                        
+                     },
+                     "fff": {
+                        
+                     },
+                     "ffff": {
+                        
+                     },
+                     "fffff": {
+                        
+                     },
+                     "ffffff": {
+                        
+                     },
+                     "fp": {
+                        
+                     },
+                     "fz": {
+                        
+                     },
+                     "mp": {
+                        
+                     },
+                     "mf": {
+                        
+                     },
+                     "sf": {
+                        
+                     },
+                     "sfp": {
+                        
+                     },
+                     "sfpp": {
+                        
+                     },
+                     "sfz": {
+                        
+                     },
+                     "sfzp": {
+                        
+                     },
+                     "sffz": {
+                        
+                     },
+                     "rf": {
+                        
+                     },
+                     "rfz": {
+                        
+                     },
+                     "n": {
+                        
+                     }
+                  },
+                  "bracket": {
+                     
+                  },
+                  "metronome": {
+                     "metronome-relation": {
+                        
+                     },
+                     "metronome-note": {
+                        "metronome-dot": {
+                           
+                        },
+                        "metronome-type": {
+                           
+                        },
+                        "metronome-tied": {
+                           
+                        },
+                        "metronome-beam": {
+                           
+                        },
+                        "metronome-tuplet": {
+                           
+                        }
+                     },
+                     "beat-unit-dot": {
+                        
+                     },
+                     "beat-unit-tied": {
+                        "beat-unit-dot": {
+                           
+                        },
+                        "beat-unit": {
+                           
+                        }
+                     },
+                     "per-minute": {
+                        
+                     },
+                     "beat-unit": {
+                        
+                     },
+                     "metronome-arrows": {
+                        
+                     }
+                  },
+                  "principal-voice": {
+                     
+                  },
+                  "accordion-registration": {
+                     "accordion-high": {
+                        
+                     },
+                     "accordion-low": {
+                        
+                     },
+                     "accordion-middle": {
+                        
+                     }
+                  },
+                  "percussion": {
+                     "membrane": {
+                        
+                     },
+                     "pitched": {
+                        
+                     },
+                     "timpani": {
+                        
+                     },
+                     "stick-location": {
+                        
+                     },
+                     "glass": {
+                        
+                     },
+                     "metal": {
+                        
+                     },
+                     "wood": {
+                        
+                     },
+                     "effect": {
+                        
+                     },
+                     "beater": {
+                        
+                     },
+                     "stick": {
+                        "stick-type": {
+                           
+                        },
+                        "stick-material": {
+                           
+                        }
+                     },
+                     "other-percussion": {
+                        
+                     }
+                  },
+                  "octave-shift": {
+                     
+                  },
+                  "other-direction": {
+                     
+                  },
+                  "rehearsal": {
+                     
+                  },
+                  "scordatura": {
+                     "accord": {
+                        "tuning-step": {
+                           
+                        },
+                        "tuning-alter": {
+                           
+                        },
+                        "tuning-octave": {
+                           
+                        }
+                     }
+                  },
+                  "string-mute": {
+                     
+                  },
+                  "eyeglasses": {
+                     
+                  },
+                  "staff-divide": {
+                     
+                  },
+                  "harp-pedals": {
+                     "pedal-tuning": {
+                        "pedal-step": {
+                           
+                        },
+                        "pedal-alter": {
+                           
+                        }
+                     }
+                  },
+                  "segno": {
+                     
+                  },
+                  "symbol": {
+                     
+                  },
+                  "coda": {
+                     
+                  },
+                  "words": {
+                     
+                  },
+                  "wedge": {
+                     
+                  },
+                  "dashes": {
+                     
+                  },
+                  "damp": {
+                     
+                  },
+                  "pedal": {
+                     
+                  },
+                  "image": {
+                     
+                  }
+               },
+               "footnote": {
+                  
+               },
+               "listening": {
+                  "other-listening": {
+                     
+                  },
+                  "sync": {
+                     
+                  },
+                  "offset": {
+                     
+                  }
+               },
+               "offset": {
+                  
+               },
+               "level": {
+                  
+               },
+               "voice": {
+                  
+               },
+               "staff": {
+                  
+               },
+               "sound": {
+                  "midi-device": {
+                     
+                  },
+                  "instrument-change": {
+                     "ensemble": {
+                        
+                     },
+                     "virtual-instrument": {
+                        "virtual-library": {
+                           
+                        },
+                        "virtual-name": {
+                           
+                        }
+                     },
+                     "instrument-sound": {
+                        
+                     },
+                     "solo": {
+                        
+                     }
+                  },
+                  "midi-instrument": {
+                     "midi-name": {
+                        
+                     },
+                     "midi-bank": {
+                        
+                     },
+                     "midi-unpitched": {
+                        
+                     },
+                     "midi-channel": {
+                        
+                     },
+                     "midi-program": {
+                        
+                     },
+                     "elevation": {
+                        
+                     },
+                     "volume": {
+                        
+                     },
+                     "pan": {
+                        
+                     }
+                  },
+                  "play": {
+                     "other-play": {
+                        
+                     },
+                     "semi-pitched": {
+                        
+                     },
+                     "ipa": {
+                        
+                     },
+                     "mute": {
+                        
+                     }
+                  },
+                  "swing": {
+                     "swing-style": {
+                        
+                     },
+                     "straight": {
+                        
+                     },
+                     "swing-type": {
+                        
+                     },
+                     "first": {
+                        
+                     },
+                     "second": {
+                        
+                     }
+                  },
+                  "offset": {
+                     
+                  }
+               }
+            },
+            "figured-bass": {
+               "duration": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "figure": {
+                  "footnote": {
+                     
+                  },
+                  "figure-number": {
+                     
+                  },
+                  "prefix": {
+                     
+                  },
+                  "suffix": {
+                     
+                  },
+                  "extend": {
+                     
+                  },
+                  "level": {
+                     
+                  }
+               },
+               "level": {
+                  
+               }
+            },
+            "note": {
+               "duration": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "notehead": {
+                  
+               },
+               "notations": {
+                  "footnote": {
+                     
+                  },
+                  "fermata": {
+                     
+                  },
+                  "dynamics": {
+                     "other-dynamics": {
+                        
+                     },
+                     "p": {
+                        
+                     },
+                     "pp": {
+                        
+                     },
+                     "ppp": {
+                        
+                     },
+                     "pppp": {
+                        
+                     },
+                     "ppppp": {
+                        
+                     },
+                     "pppppp": {
+                        
+                     },
+                     "pf": {
+                        
+                     },
+                     "f": {
+                        
+                     },
+                     "ff": {
+                        
+                     },
+                     "fff": {
+                        
+                     },
+                     "ffff": {
+                        
+                     },
+                     "fffff": {
+                        
+                     },
+                     "ffffff": {
+                        
+                     },
+                     "fp": {
+                        
+                     },
+                     "fz": {
+                        
+                     },
+                     "mp": {
+                        
+                     },
+                     "mf": {
+                        
+                     },
+                     "sf": {
+                        
+                     },
+                     "sfp": {
+                        
+                     },
+                     "sfpp": {
+                        
+                     },
+                     "sfz": {
+                        
+                     },
+                     "sfzp": {
+                        
+                     },
+                     "sffz": {
+                        
+                     },
+                     "rf": {
+                        
+                     },
+                     "rfz": {
+                        
+                     },
+                     "n": {
+                        
+                     }
+                  },
+                  "non-arpeggiate": {
+                     
+                  },
+                  "accidental-mark": {
+                     
+                  },
+                  "ornaments": {
+                     "mordent": {
+                        
+                     },
+                     "tremolo": {
+                        
+                     },
+                     "inverted-turn": {
+                        
+                     },
+                     "accidental-mark": {
+                        
+                     },
+                     "inverted-vertical-turn": {
+                        
+                     },
+                     "schleifer": {
+                        
+                     },
+                     "trill-mark": {
+                        
+                     },
+                     "vertical-turn": {
+                        
+                     },
+                     "inverted-mordent": {
+                        
+                     },
+                     "wavy-line": {
+                        
+                     },
+                     "other-ornament": {
+                        
+                     },
+                     "delayed-turn": {
+                        
+                     },
+                     "delayed-inverted-turn": {
+                        
+                     },
+                     "turn": {
+                        
+                     },
+                     "shake": {
+                        
+                     },
+                     "haydn": {
+                        
+                     }
+                  },
+                  "technical": {
+                     "down-bow": {
+                        
+                     },
+                     "harmonic": {
+                        "natural": {
+                           
+                        },
+                        "artificial": {
+                           
+                        },
+                        "base-pitch": {
+                           
+                        },
+                        "sounding-pitch": {
+                           
+                        },
+                        "touching-pitch": {
+                           
+                        }
+                     },
+                     "handbell": {
+                        
+                     },
+                     "pull-off": {
+                        
+                     },
+                     "stopped": {
+                        
+                     },
+                     "fingernails": {
+                        
+                     },
+                     "other-technical": {
+                        
+                     },
+                     "thumb-position": {
+                        
+                     },
+                     "triple-tongue": {
+                        
+                     },
+                     "brass-bend": {
+                        
+                     },
+                     "double-tongue": {
+                        
+                     },
+                     "snap-pizzicato": {
+                        
+                     },
+                     "fingering": {
+                        
+                     },
+                     "half-muted": {
+                        
+                     },
+                     "hammer-on": {
+                        
+                     },
+                     "harmon-mute": {
+                        "harmon-closed": {
+                           
+                        }
+                     },
+                     "up-bow": {
+                        
+                     },
+                     "open-string": {
+                        
+                     },
+                     "pluck": {
+                        
+                     },
+                     "fret": {
+                        
+                     },
+                     "flip": {
+                        
+                     },
+                     "string": {
+                        
+                     },
+                     "smear": {
+                        
+                     },
+                     "bend": {
+                        "pre-bend": {
+                           
+                        },
+                        "release": {
+                           
+                        },
+                        "with-bar": {
+                           
+                        },
+                        "bend-alter": {
+                           
+                        }
+                     },
+                     "tap": {
+                        
+                     },
+                     "toe": {
+                        
+                     },
+                     "heel": {
+                        
+                     },
+                     "hole": {
+                        "hole-closed": {
+                           
+                        },
+                        "hole-type": {
+                           
+                        },
+                        "hole-shape": {
+                           
+                        }
+                     },
+                     "arrow": {
+                        "circular-arrow": {
+                           
+                        },
+                        "arrowhead": {
+                           
+                        },
+                        "arrow-style": {
+                           
+                        },
+                        "arrow-direction": {
+                           
+                        }
+                     },
+                     "open": {
+                        
+                     },
+                     "golpe": {
+                        
+                     }
+                  },
+                  "arpeggiate": {
+                     
+                  },
+                  "other-notation": {
+                     
+                  },
+                  "glissando": {
+                     
+                  },
+                  "articulations": {
+                     "falloff": {
+                        
+                     },
+                     "caesura": {
+                        
+                     },
+                     "staccato": {
+                        
+                     },
+                     "spiccato": {
+                        
+                     },
+                     "unstress": {
+                        
+                     },
+                     "staccatissimo": {
+                        
+                     },
+                     "other-articulation": {
+                        
+                     },
+                     "detached-legato": {
+                        
+                     },
+                     "breath-mark": {
+                        
+                     },
+                     "soft-accent": {
+                        
+                     },
+                     "accent": {
+                        
+                     },
+                     "strong-accent": {
+                        
+                     },
+                     "tenuto": {
+                        
+                     },
+                     "scoop": {
+                        
+                     },
+                     "stress": {
+                        
+                     },
+                     "plop": {
+                        
+                     },
+                     "doit": {
+                        
+                     }
+                  },
+                  "level": {
+                     
+                  },
+                  "tied": {
+                     
+                  },
+                  "tuplet": {
+                     "tuplet-actual": {
+                        "tuplet-type": {
+                           
+                        },
+                        "tuplet-dot": {
+                           
+                        },
+                        "tuplet-number": {
+                           
+                        }
+                     },
+                     "tuplet-normal": {
+                        "tuplet-type": {
+                           
+                        },
+                        "tuplet-dot": {
+                           
+                        },
+                        "tuplet-number": {
+                           
+                        }
+                     }
+                  },
+                  "slur": {
+                     
+                  },
+                  "slide": {
+                     
+                  }
+               },
+               "accidental": {
+                  
+               },
+               "unpitched": {
+                  "display-step": {
+                     
+                  },
+                  "display-octave": {
+                     
+                  }
+               },
+               "time-modification": {
+                  "normal-notes": {
+                     
+                  },
+                  "normal-type": {
+                     
+                  },
+                  "normal-dot": {
+                     
+                  },
+                  "actual-notes": {
+                     
+                  }
+               },
+               "notehead-text": {
+                  "display-text": {
+                     
+                  },
+                  "accidental-text": {
+                     
+                  }
+               },
+               "instrument": {
+                  
+               },
+               "grace": {
+                  
+               },
+               "chord": {
+                  
+               },
+               "cue": {
+                  
+               },
+               "pitch": {
+                  "step": {
+                     
+                  },
+                  "alter": {
+                     
+                  },
+                  "octave": {
+                     
+                  }
+               },
+               "play": {
+                  "other-play": {
+                     
+                  },
+                  "semi-pitched": {
+                     
+                  },
+                  "ipa": {
+                     
+                  },
+                  "mute": {
+                     
+                  }
+               },
+               "rest": {
+                  "display-step": {
+                     
+                  },
+                  "display-octave": {
+                     
+                  }
+               },
+               "tie": {
+                  
+               },
+               "type": {
+                  
+               },
+               "level": {
+                  
+               },
+               "lyric": {
+                  "elision": {
+                     
+                  },
+                  "end-line": {
+                     
+                  },
+                  "laughing": {
+                     
+                  },
+                  "humming": {
+                     
+                  },
+                  "footnote": {
+                     
+                  },
+                  "syllabic": {
+                     
+                  },
+                  "end-paragraph": {
+                     
+                  },
+                  "text": {
+                     
+                  },
+                  "extend": {
+                     
+                  },
+                  "level": {
+                     
+                  }
+               },
+               "listen": {
+                  "other-listen": {
+                     
+                  },
+                  "assess": {
+                     
+                  },
+                  "wait": {
+                     
+                  }
+               },
+               "voice": {
+                  
+               },
+               "dot": {
+                  
+               },
+               "stem": {
+                  
+               },
+               "staff": {
+                  
+               },
+               "beam": {
+                  
+               }
+            },
+            "backup": {
+               "duration": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "level": {
+                  
+               }
+            },
+            "print": {
+               "measure-layout": {
+                  "measure-distance": {
+                     
+                  }
+               },
+               "measure-numbering": {
+                  
+               },
+               "system-layout": {
+                  "system-margins": {
+                     "right-margin": {
+                        
+                     },
+                     "left-margin": {
+                        
+                     }
+                  },
+                  "system-distance": {
+                     
+                  },
+                  "system-dividers": {
+                     "right-divider": {
+                        
+                     },
+                     "left-divider": {
+                        
+                     }
+                  },
+                  "top-system-distance": {
+                     
+                  }
+               },
+               "part-abbreviation-display": {
+                  "display-text": {
+                     
+                  },
+                  "accidental-text": {
+                     
+                  }
+               },
+               "staff-layout": {
+                  "staff-distance": {
+                     
+                  }
+               },
+               "page-layout": {
+                  "page-width": {
+                     
+                  },
+                  "page-height": {
+                     
+                  },
+                  "page-margins": {
+                     "bottom-margin": {
+                        
+                     },
+                     "right-margin": {
+                        
+                     },
+                     "top-margin": {
+                        
+                     },
+                     "left-margin": {
+                        
+                     }
+                  }
+               },
+               "part-name-display": {
+                  "display-text": {
+                     
+                  },
+                  "accidental-text": {
+                     
+                  }
+               }
+            },
+            "sound": {
+               "midi-device": {
+                  
+               },
+               "instrument-change": {
+                  "ensemble": {
+                     
+                  },
+                  "virtual-instrument": {
+                     "virtual-library": {
+                        
+                     },
+                     "virtual-name": {
+                        
+                     }
+                  },
+                  "instrument-sound": {
+                     
+                  },
+                  "solo": {
+                     
+                  }
+               },
+               "midi-instrument": {
+                  "midi-name": {
+                     
+                  },
+                  "midi-bank": {
+                     
+                  },
+                  "midi-unpitched": {
+                     
+                  },
+                  "midi-channel": {
+                     
+                  },
+                  "midi-program": {
+                     
+                  },
+                  "elevation": {
+                     
+                  },
+                  "volume": {
+                     
+                  },
+                  "pan": {
+                     
+                  }
+               },
+               "play": {
+                  "other-play": {
+                     
+                  },
+                  "semi-pitched": {
+                     
+                  },
+                  "ipa": {
+                     
+                  },
+                  "mute": {
+                     
+                  }
+               },
+               "swing": {
+                  "swing-style": {
+                     
+                  },
+                  "straight": {
+                     
+                  },
+                  "swing-type": {
+                     
+                  },
+                  "first": {
+                     
+                  },
+                  "second": {
+                     
+                  }
+               },
+               "offset": {
+                  
+               }
+            },
+            "link": {
+               
+            }
+         }
+      },
+      "work": {
+         "work-number": {
+            
+         },
+         "work-title": {
+            
+         },
+         "opus": {
+            
+         }
+      },
+      "credit": {
+         "bookmark": {
+            
+         },
+         "credit-symbol": {
+            
+         },
+         "credit-image": {
+            
+         },
+         "credit-words": {
+            
+         },
+         "credit-type": {
+            
+         },
+         "link": {
+            
+         }
+      }
+   },
+   "score-timewise": {
+      "movement-number": {
+         
+      },
+      "defaults": {
+         "lyric-font": {
+            
+         },
+         "scaling": {
+            "millimeters": {
+               
+            },
+            "tenths": {
+               
+            }
+         },
+         "music-font": {
+            
+         },
+         "system-layout": {
+            "system-margins": {
+               "right-margin": {
+                  
+               },
+               "left-margin": {
+                  
+               }
+            },
+            "system-distance": {
+               
+            },
+            "system-dividers": {
+               "right-divider": {
+                  
+               },
+               "left-divider": {
+                  
+               }
+            },
+            "top-system-distance": {
+               
+            }
+         },
+         "lyric-language": {
+            
+         },
+         "concert-score": {
+            
+         },
+         "appearance": {
+            "line-width": {
+               
+            },
+            "distance": {
+               
+            },
+            "note-size": {
+               
+            },
+            "other-appearance": {
+               
+            },
+            "glyph": {
+               
+            }
+         },
+         "staff-layout": {
+            "staff-distance": {
+               
+            }
+         },
+         "word-font": {
+            
+         },
+         "page-layout": {
+            "page-width": {
+               
+            },
+            "page-height": {
+               
+            },
+            "page-margins": {
+               "bottom-margin": {
+                  
+               },
+               "right-margin": {
+                  
+               },
+               "top-margin": {
+                  
+               },
+               "left-margin": {
+                  
+               }
+            }
+         }
+      },
+      "identification": {
+         "creator": {
+            
+         },
+         "encoding": {
+            "encoder": {
+               
+            },
+            "software": {
+               
+            },
+            "supports": {
+               
+            },
+            "encoding-date": {
+               
+            },
+            "encoding-description": {
+               
+            }
+         },
+         "relation": {
+            
+         },
+         "miscellaneous": {
+            "miscellaneous-field": {
+               
+            }
+         },
+         "rights": {
+            
+         },
+         "source": {
+            
+         }
+      },
+      "part-list": {
+         "part-group": {
+            "footnote": {
+               
+            },
+            "group-abbreviation-display": {
+               "display-text": {
+                  
+               },
+               "accidental-text": {
+                  
+               }
+            },
+            "group-barline": {
+               
+            },
+            "group-name-display": {
+               "display-text": {
+                  
+               },
+               "accidental-text": {
+                  
+               }
+            },
+            "group-name": {
+               
+            },
+            "group-time": {
+               
+            },
+            "group-abbreviation": {
+               
+            },
+            "group-symbol": {
+               
+            },
+            "level": {
+               
+            }
+         },
+         "score-part": {
+            "score-instrument": {
+               "ensemble": {
+                  
+               },
+               "virtual-instrument": {
+                  "virtual-library": {
+                     
+                  },
+                  "virtual-name": {
+                     
+                  }
+               },
+               "instrument-abbreviation": {
+                  
+               },
+               "instrument-name": {
+                  
+               },
+               "instrument-sound": {
+                  
+               },
+               "solo": {
+                  
+               }
+            },
+            "identification": {
+               "creator": {
+                  
+               },
+               "encoding": {
+                  "encoder": {
+                     
+                  },
+                  "software": {
+                     
+                  },
+                  "supports": {
+                     
+                  },
+                  "encoding-date": {
+                     
+                  },
+                  "encoding-description": {
+                     
+                  }
+               },
+               "relation": {
+                  
+               },
+               "miscellaneous": {
+                  "miscellaneous-field": {
+                     
+                  }
+               },
+               "rights": {
+                  
+               },
+               "source": {
+                  
+               }
+            },
+            "part-link": {
+               "instrument-link": {
+                  
+               },
+               "group-link": {
+                  
+               }
+            },
+            "part-name": {
+               
+            },
+            "part-abbreviation": {
+               
+            },
+            "midi-device": {
+               
+            },
+            "part-abbreviation-display": {
+               "display-text": {
+                  
+               },
+               "accidental-text": {
+                  
+               }
+            },
+            "midi-instrument": {
+               "midi-name": {
+                  
+               },
+               "midi-bank": {
+                  
+               },
+               "midi-unpitched": {
+                  
+               },
+               "midi-channel": {
+                  
+               },
+               "midi-program": {
+                  
+               },
+               "elevation": {
+                  
+               },
+               "volume": {
+                  
+               },
+               "pan": {
+                  
+               }
+            },
+            "part-name-display": {
+               "display-text": {
+                  
+               },
+               "accidental-text": {
+                  
+               }
+            },
+            "group": {
+               
+            },
+            "player": {
+               "player-name": {
+                  
+               }
+            }
+         }
+      },
+      "movement-title": {
+         
+      },
+      "measure-timewise": {
+         "part-timewise": {
+            "forward": {
+               "duration": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "level": {
+                  
+               },
+               "voice": {
+                  
+               },
+               "staff": {
+                  
+               }
+            },
+            "grouping": {
+               "feature": {
+                  
+               }
+            },
+            "harmony": {
+               "function": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "numeral": {
+                  "numeral-alter": {
+                     
+                  },
+                  "numeral-root": {
+                     
+                  },
+                  "numeral-key": {
+                     "numeral-fifths": {
+                        
+                     },
+                     "numeral-mode": {
+                        
+                     }
+                  }
+               },
+               "inversion": {
+                  
+               },
+               "root": {
+                  "root-step": {
+                     
+                  },
+                  "root-alter": {
+                     
+                  }
+               },
+               "kind": {
+                  
+               },
+               "bass": {
+                  "bass-step": {
+                     
+                  },
+                  "bass-alter": {
+                     
+                  },
+                  "bass-separator": {
+                     
+                  }
+               },
+               "degree": {
+                  "degree-value": {
+                     
+                  },
+                  "degree-alter": {
+                     
+                  },
+                  "degree-type": {
+                     
+                  }
+               },
+               "frame": {
+                  "frame-frets": {
+                     
+                  },
+                  "frame-note": {
+                     "fingering": {
+                        
+                     },
+                     "string": {
+                        
+                     },
+                     "fret": {
+                        
+                     },
+                     "barre": {
+                        
+                     }
+                  },
+                  "first-fret": {
+                     
+                  },
+                  "frame-strings": {
+                     
+                  }
+               },
+               "offset": {
+                  
+               },
+               "level": {
+                  
+               },
+               "staff": {
+                  
+               }
+            },
+            "listening": {
+               "other-listening": {
+                  
+               },
+               "sync": {
+                  
+               },
+               "offset": {
+                  
+               }
+            },
+            "barline": {
+               "footnote": {
+                  
+               },
+               "fermata": {
+                  
+               },
+               "bar-style": {
+                  
+               },
+               "wavy-line": {
+                  
+               },
+               "level": {
+                  
+               },
+               "segno": {
+                  
+               },
+               "coda": {
+                  
+               },
+               "ending": {
+                  
+               },
+               "repeat": {
+                  
+               }
+            },
+            "bookmark": {
+               
+            },
+            "attributes": {
+               "footnote": {
+                  
+               },
+               "for-part": {
+                  "part-clef": {
+                     "clef-octave-change": {
+                        
+                     },
+                     "sign": {
+                        
+                     },
+                     "line": {
+                        
+                     }
+                  },
+                  "part-transpose": {
+                     "diatonic": {
+                        
+                     },
+                     "octave-change": {
+                        
+                     },
+                     "chromatic": {
+                        
+                     },
+                     "double": {
+                        
+                     }
+                  }
+               },
+               "measure-style": {
+                  "measure-repeat": {
+                     
+                  },
+                  "multiple-rest": {
+                     
+                  },
+                  "beat-repeat": {
+                     "slash-dot": {
+                        
+                     },
+                     "slash-type": {
+                        
+                     },
+                     "except-voice": {
+                        
+                     }
+                  },
+                  "slash": {
+                     "slash-dot": {
+                        
+                     },
+                     "slash-type": {
+                        
+                     },
+                     "except-voice": {
+                        
+                     }
+                  }
+               },
+               "part-symbol": {
+                  
+               },
+               "transpose": {
+                  "diatonic": {
+                     
+                  },
+                  "octave-change": {
+                     
+                  },
+                  "chromatic": {
+                     
+                  },
+                  "double": {
+                     
+                  }
+               },
+               "instruments": {
+                  
+               },
+               "directive": {
+                  
+               },
+               "divisions": {
+                  
+               },
+               "staff-details": {
+                  "line-detail": {
+                     
+                  },
+                  "staff-type": {
+                     
+                  },
+                  "staff-size": {
+                     
+                  },
+                  "staff-lines": {
+                     
+                  },
+                  "staff-tuning": {
+                     "tuning-step": {
+                        
+                     },
+                     "tuning-alter": {
+                        
+                     },
+                     "tuning-octave": {
+                        
+                     }
+                  },
+                  "capo": {
+                     
+                  }
+               },
+               "level": {
+                  
+               },
+               "key": {
+                  "key-alter": {
+                     
+                  },
+                  "key-octave": {
+                     
+                  },
+                  "key-step": {
+                     
+                  },
+                  "key-accidental": {
+                     
+                  },
+                  "cancel": {
+                     
+                  },
+                  "fifths": {
+                     
+                  },
+                  "mode": {
+                     
+                  }
+               },
+               "time": {
+                  "interchangeable": {
+                     "beat-type": {
+                        
+                     },
+                     "time-relation": {
+                        
+                     },
+                     "beats": {
+                        
+                     }
+                  },
+                  "senza-misura": {
+                     
+                  },
+                  "beat-type": {
+                     
+                  },
+                  "beats": {
+                     
+                  }
+               },
+               "staves": {
+                  
+               },
+               "clef": {
+                  "clef-octave-change": {
+                     
+                  },
+                  "sign": {
+                     
+                  },
+                  "line": {
+                     
+                  }
+               }
+            },
+            "direction": {
+               "direction-type": {
+                  "damp-all": {
+                     
+                  },
+                  "dynamics": {
+                     "other-dynamics": {
+                        
+                     },
+                     "p": {
+                        
+                     },
+                     "pp": {
+                        
+                     },
+                     "ppp": {
+                        
+                     },
+                     "pppp": {
+                        
+                     },
+                     "ppppp": {
+                        
+                     },
+                     "pppppp": {
+                        
+                     },
+                     "pf": {
+                        
+                     },
+                     "f": {
+                        
+                     },
+                     "ff": {
+                        
+                     },
+                     "fff": {
+                        
+                     },
+                     "ffff": {
+                        
+                     },
+                     "fffff": {
+                        
+                     },
+                     "ffffff": {
+                        
+                     },
+                     "fp": {
+                        
+                     },
+                     "fz": {
+                        
+                     },
+                     "mp": {
+                        
+                     },
+                     "mf": {
+                        
+                     },
+                     "sf": {
+                        
+                     },
+                     "sfp": {
+                        
+                     },
+                     "sfpp": {
+                        
+                     },
+                     "sfz": {
+                        
+                     },
+                     "sfzp": {
+                        
+                     },
+                     "sffz": {
+                        
+                     },
+                     "rf": {
+                        
+                     },
+                     "rfz": {
+                        
+                     },
+                     "n": {
+                        
+                     }
+                  },
+                  "bracket": {
+                     
+                  },
+                  "metronome": {
+                     "metronome-relation": {
+                        
+                     },
+                     "metronome-note": {
+                        "metronome-dot": {
+                           
+                        },
+                        "metronome-type": {
+                           
+                        },
+                        "metronome-tied": {
+                           
+                        },
+                        "metronome-beam": {
+                           
+                        },
+                        "metronome-tuplet": {
+                           
+                        }
+                     },
+                     "beat-unit-dot": {
+                        
+                     },
+                     "beat-unit-tied": {
+                        "beat-unit-dot": {
+                           
+                        },
+                        "beat-unit": {
+                           
+                        }
+                     },
+                     "per-minute": {
+                        
+                     },
+                     "beat-unit": {
+                        
+                     },
+                     "metronome-arrows": {
+                        
+                     }
+                  },
+                  "principal-voice": {
+                     
+                  },
+                  "accordion-registration": {
+                     "accordion-high": {
+                        
+                     },
+                     "accordion-low": {
+                        
+                     },
+                     "accordion-middle": {
+                        
+                     }
+                  },
+                  "percussion": {
+                     "membrane": {
+                        
+                     },
+                     "pitched": {
+                        
+                     },
+                     "timpani": {
+                        
+                     },
+                     "stick-location": {
+                        
+                     },
+                     "glass": {
+                        
+                     },
+                     "metal": {
+                        
+                     },
+                     "wood": {
+                        
+                     },
+                     "effect": {
+                        
+                     },
+                     "beater": {
+                        
+                     },
+                     "stick": {
+                        "stick-type": {
+                           
+                        },
+                        "stick-material": {
+                           
+                        }
+                     },
+                     "other-percussion": {
+                        
+                     }
+                  },
+                  "octave-shift": {
+                     
+                  },
+                  "other-direction": {
+                     
+                  },
+                  "rehearsal": {
+                     
+                  },
+                  "scordatura": {
+                     "accord": {
+                        "tuning-step": {
+                           
+                        },
+                        "tuning-alter": {
+                           
+                        },
+                        "tuning-octave": {
+                           
+                        }
+                     }
+                  },
+                  "string-mute": {
+                     
+                  },
+                  "eyeglasses": {
+                     
+                  },
+                  "staff-divide": {
+                     
+                  },
+                  "harp-pedals": {
+                     "pedal-tuning": {
+                        "pedal-step": {
+                           
+                        },
+                        "pedal-alter": {
+                           
+                        }
+                     }
+                  },
+                  "segno": {
+                     
+                  },
+                  "symbol": {
+                     
+                  },
+                  "coda": {
+                     
+                  },
+                  "words": {
+                     
+                  },
+                  "wedge": {
+                     
+                  },
+                  "dashes": {
+                     
+                  },
+                  "damp": {
+                     
+                  },
+                  "pedal": {
+                     
+                  },
+                  "image": {
+                     
+                  }
+               },
+               "footnote": {
+                  
+               },
+               "listening": {
+                  "other-listening": {
+                     
+                  },
+                  "sync": {
+                     
+                  },
+                  "offset": {
+                     
+                  }
+               },
+               "offset": {
+                  
+               },
+               "level": {
+                  
+               },
+               "voice": {
+                  
+               },
+               "staff": {
+                  
+               },
+               "sound": {
+                  "midi-device": {
+                     
+                  },
+                  "instrument-change": {
+                     "ensemble": {
+                        
+                     },
+                     "virtual-instrument": {
+                        "virtual-library": {
+                           
+                        },
+                        "virtual-name": {
+                           
+                        }
+                     },
+                     "instrument-sound": {
+                        
+                     },
+                     "solo": {
+                        
+                     }
+                  },
+                  "midi-instrument": {
+                     "midi-name": {
+                        
+                     },
+                     "midi-bank": {
+                        
+                     },
+                     "midi-unpitched": {
+                        
+                     },
+                     "midi-channel": {
+                        
+                     },
+                     "midi-program": {
+                        
+                     },
+                     "elevation": {
+                        
+                     },
+                     "volume": {
+                        
+                     },
+                     "pan": {
+                        
+                     }
+                  },
+                  "play": {
+                     "other-play": {
+                        
+                     },
+                     "semi-pitched": {
+                        
+                     },
+                     "ipa": {
+                        
+                     },
+                     "mute": {
+                        
+                     }
+                  },
+                  "swing": {
+                     "swing-style": {
+                        
+                     },
+                     "straight": {
+                        
+                     },
+                     "swing-type": {
+                        
+                     },
+                     "first": {
+                        
+                     },
+                     "second": {
+                        
+                     }
+                  },
+                  "offset": {
+                     
+                  }
+               }
+            },
+            "figured-bass": {
+               "duration": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "figure": {
+                  "footnote": {
+                     
+                  },
+                  "figure-number": {
+                     
+                  },
+                  "prefix": {
+                     
+                  },
+                  "suffix": {
+                     
+                  },
+                  "extend": {
+                     
+                  },
+                  "level": {
+                     
+                  }
+               },
+               "level": {
+                  
+               }
+            },
+            "note": {
+               "duration": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "notehead": {
+                  
+               },
+               "notations": {
+                  "footnote": {
+                     
+                  },
+                  "fermata": {
+                     
+                  },
+                  "dynamics": {
+                     "other-dynamics": {
+                        
+                     },
+                     "p": {
+                        
+                     },
+                     "pp": {
+                        
+                     },
+                     "ppp": {
+                        
+                     },
+                     "pppp": {
+                        
+                     },
+                     "ppppp": {
+                        
+                     },
+                     "pppppp": {
+                        
+                     },
+                     "pf": {
+                        
+                     },
+                     "f": {
+                        
+                     },
+                     "ff": {
+                        
+                     },
+                     "fff": {
+                        
+                     },
+                     "ffff": {
+                        
+                     },
+                     "fffff": {
+                        
+                     },
+                     "ffffff": {
+                        
+                     },
+                     "fp": {
+                        
+                     },
+                     "fz": {
+                        
+                     },
+                     "mp": {
+                        
+                     },
+                     "mf": {
+                        
+                     },
+                     "sf": {
+                        
+                     },
+                     "sfp": {
+                        
+                     },
+                     "sfpp": {
+                        
+                     },
+                     "sfz": {
+                        
+                     },
+                     "sfzp": {
+                        
+                     },
+                     "sffz": {
+                        
+                     },
+                     "rf": {
+                        
+                     },
+                     "rfz": {
+                        
+                     },
+                     "n": {
+                        
+                     }
+                  },
+                  "non-arpeggiate": {
+                     
+                  },
+                  "accidental-mark": {
+                     
+                  },
+                  "ornaments": {
+                     "mordent": {
+                        
+                     },
+                     "tremolo": {
+                        
+                     },
+                     "inverted-turn": {
+                        
+                     },
+                     "accidental-mark": {
+                        
+                     },
+                     "inverted-vertical-turn": {
+                        
+                     },
+                     "schleifer": {
+                        
+                     },
+                     "trill-mark": {
+                        
+                     },
+                     "vertical-turn": {
+                        
+                     },
+                     "inverted-mordent": {
+                        
+                     },
+                     "wavy-line": {
+                        
+                     },
+                     "other-ornament": {
+                        
+                     },
+                     "delayed-turn": {
+                        
+                     },
+                     "delayed-inverted-turn": {
+                        
+                     },
+                     "turn": {
+                        
+                     },
+                     "shake": {
+                        
+                     },
+                     "haydn": {
+                        
+                     }
+                  },
+                  "technical": {
+                     "down-bow": {
+                        
+                     },
+                     "harmonic": {
+                        "natural": {
+                           
+                        },
+                        "artificial": {
+                           
+                        },
+                        "base-pitch": {
+                           
+                        },
+                        "sounding-pitch": {
+                           
+                        },
+                        "touching-pitch": {
+                           
+                        }
+                     },
+                     "handbell": {
+                        
+                     },
+                     "pull-off": {
+                        
+                     },
+                     "stopped": {
+                        
+                     },
+                     "fingernails": {
+                        
+                     },
+                     "other-technical": {
+                        
+                     },
+                     "thumb-position": {
+                        
+                     },
+                     "triple-tongue": {
+                        
+                     },
+                     "brass-bend": {
+                        
+                     },
+                     "double-tongue": {
+                        
+                     },
+                     "snap-pizzicato": {
+                        
+                     },
+                     "fingering": {
+                        
+                     },
+                     "half-muted": {
+                        
+                     },
+                     "hammer-on": {
+                        
+                     },
+                     "harmon-mute": {
+                        "harmon-closed": {
+                           
+                        }
+                     },
+                     "up-bow": {
+                        
+                     },
+                     "open-string": {
+                        
+                     },
+                     "pluck": {
+                        
+                     },
+                     "fret": {
+                        
+                     },
+                     "flip": {
+                        
+                     },
+                     "string": {
+                        
+                     },
+                     "smear": {
+                        
+                     },
+                     "bend": {
+                        "pre-bend": {
+                           
+                        },
+                        "release": {
+                           
+                        },
+                        "with-bar": {
+                           
+                        },
+                        "bend-alter": {
+                           
+                        }
+                     },
+                     "tap": {
+                        
+                     },
+                     "toe": {
+                        
+                     },
+                     "heel": {
+                        
+                     },
+                     "hole": {
+                        "hole-closed": {
+                           
+                        },
+                        "hole-type": {
+                           
+                        },
+                        "hole-shape": {
+                           
+                        }
+                     },
+                     "arrow": {
+                        "circular-arrow": {
+                           
+                        },
+                        "arrowhead": {
+                           
+                        },
+                        "arrow-style": {
+                           
+                        },
+                        "arrow-direction": {
+                           
+                        }
+                     },
+                     "open": {
+                        
+                     },
+                     "golpe": {
+                        
+                     }
+                  },
+                  "arpeggiate": {
+                     
+                  },
+                  "other-notation": {
+                     
+                  },
+                  "glissando": {
+                     
+                  },
+                  "articulations": {
+                     "falloff": {
+                        
+                     },
+                     "caesura": {
+                        
+                     },
+                     "staccato": {
+                        
+                     },
+                     "spiccato": {
+                        
+                     },
+                     "unstress": {
+                        
+                     },
+                     "staccatissimo": {
+                        
+                     },
+                     "other-articulation": {
+                        
+                     },
+                     "detached-legato": {
+                        
+                     },
+                     "breath-mark": {
+                        
+                     },
+                     "soft-accent": {
+                        
+                     },
+                     "accent": {
+                        
+                     },
+                     "strong-accent": {
+                        
+                     },
+                     "tenuto": {
+                        
+                     },
+                     "scoop": {
+                        
+                     },
+                     "stress": {
+                        
+                     },
+                     "plop": {
+                        
+                     },
+                     "doit": {
+                        
+                     }
+                  },
+                  "level": {
+                     
+                  },
+                  "tied": {
+                     
+                  },
+                  "tuplet": {
+                     "tuplet-actual": {
+                        "tuplet-type": {
+                           
+                        },
+                        "tuplet-dot": {
+                           
+                        },
+                        "tuplet-number": {
+                           
+                        }
+                     },
+                     "tuplet-normal": {
+                        "tuplet-type": {
+                           
+                        },
+                        "tuplet-dot": {
+                           
+                        },
+                        "tuplet-number": {
+                           
+                        }
+                     }
+                  },
+                  "slur": {
+                     
+                  },
+                  "slide": {
+                     
+                  }
+               },
+               "accidental": {
+                  
+               },
+               "unpitched": {
+                  "display-step": {
+                     
+                  },
+                  "display-octave": {
+                     
+                  }
+               },
+               "time-modification": {
+                  "normal-notes": {
+                     
+                  },
+                  "normal-type": {
+                     
+                  },
+                  "normal-dot": {
+                     
+                  },
+                  "actual-notes": {
+                     
+                  }
+               },
+               "notehead-text": {
+                  "display-text": {
+                     
+                  },
+                  "accidental-text": {
+                     
+                  }
+               },
+               "instrument": {
+                  
+               },
+               "grace": {
+                  
+               },
+               "chord": {
+                  
+               },
+               "cue": {
+                  
+               },
+               "pitch": {
+                  "step": {
+                     
+                  },
+                  "alter": {
+                     
+                  },
+                  "octave": {
+                     
+                  }
+               },
+               "play": {
+                  "other-play": {
+                     
+                  },
+                  "semi-pitched": {
+                     
+                  },
+                  "ipa": {
+                     
+                  },
+                  "mute": {
+                     
+                  }
+               },
+               "rest": {
+                  "display-step": {
+                     
+                  },
+                  "display-octave": {
+                     
+                  }
+               },
+               "tie": {
+                  
+               },
+               "type": {
+                  
+               },
+               "level": {
+                  
+               },
+               "lyric": {
+                  "elision": {
+                     
+                  },
+                  "end-line": {
+                     
+                  },
+                  "laughing": {
+                     
+                  },
+                  "humming": {
+                     
+                  },
+                  "footnote": {
+                     
+                  },
+                  "syllabic": {
+                     
+                  },
+                  "end-paragraph": {
+                     
+                  },
+                  "text": {
+                     
+                  },
+                  "extend": {
+                     
+                  },
+                  "level": {
+                     
+                  }
+               },
+               "listen": {
+                  "other-listen": {
+                     
+                  },
+                  "assess": {
+                     
+                  },
+                  "wait": {
+                     
+                  }
+               },
+               "voice": {
+                  
+               },
+               "dot": {
+                  
+               },
+               "stem": {
+                  
+               },
+               "staff": {
+                  
+               },
+               "beam": {
+                  
+               }
+            },
+            "backup": {
+               "duration": {
+                  
+               },
+               "footnote": {
+                  
+               },
+               "level": {
+                  
+               }
+            },
+            "print": {
+               "measure-layout": {
+                  "measure-distance": {
+                     
+                  }
+               },
+               "measure-numbering": {
+                  
+               },
+               "system-layout": {
+                  "system-margins": {
+                     "right-margin": {
+                        
+                     },
+                     "left-margin": {
+                        
+                     }
+                  },
+                  "system-distance": {
+                     
+                  },
+                  "system-dividers": {
+                     "right-divider": {
+                        
+                     },
+                     "left-divider": {
+                        
+                     }
+                  },
+                  "top-system-distance": {
+                     
+                  }
+               },
+               "part-abbreviation-display": {
+                  "display-text": {
+                     
+                  },
+                  "accidental-text": {
+                     
+                  }
+               },
+               "staff-layout": {
+                  "staff-distance": {
+                     
+                  }
+               },
+               "page-layout": {
+                  "page-width": {
+                     
+                  },
+                  "page-height": {
+                     
+                  },
+                  "page-margins": {
+                     "bottom-margin": {
+                        
+                     },
+                     "right-margin": {
+                        
+                     },
+                     "top-margin": {
+                        
+                     },
+                     "left-margin": {
+                        
+                     }
+                  }
+               },
+               "part-name-display": {
+                  "display-text": {
+                     
+                  },
+                  "accidental-text": {
+                     
+                  }
+               }
+            },
+            "sound": {
+               "midi-device": {
+                  
+               },
+               "instrument-change": {
+                  "ensemble": {
+                     
+                  },
+                  "virtual-instrument": {
+                     "virtual-library": {
+                        
+                     },
+                     "virtual-name": {
+                        
+                     }
+                  },
+                  "instrument-sound": {
+                     
+                  },
+                  "solo": {
+                     
+                  }
+               },
+               "midi-instrument": {
+                  "midi-name": {
+                     
+                  },
+                  "midi-bank": {
+                     
+                  },
+                  "midi-unpitched": {
+                     
+                  },
+                  "midi-channel": {
+                     
+                  },
+                  "midi-program": {
+                     
+                  },
+                  "elevation": {
+                     
+                  },
+                  "volume": {
+                     
+                  },
+                  "pan": {
+                     
+                  }
+               },
+               "play": {
+                  "other-play": {
+                     
+                  },
+                  "semi-pitched": {
+                     
+                  },
+                  "ipa": {
+                     
+                  },
+                  "mute": {
+                     
+                  }
+               },
+               "swing": {
+                  "swing-style": {
+                     
+                  },
+                  "straight": {
+                     
+                  },
+                  "swing-type": {
+                     
+                  },
+                  "first": {
+                     
+                  },
+                  "second": {
+                     
+                  }
+               },
+               "offset": {
+                  
+               }
+            },
+            "link": {
+               
+            }
+         }
+      },
+      "work": {
+         "work-number": {
+            
+         },
+         "work-title": {
+            
+         },
+         "opus": {
+            
+         }
+      },
+      "credit": {
+         "bookmark": {
+            
+         },
+         "credit-symbol": {
+            
+         },
+         "credit-image": {
+            
+         },
+         "credit-words": {
+            
+         },
+         "credit-type": {
+            
+         },
+         "link": {
+            
+         }
+      }
+   }
+}

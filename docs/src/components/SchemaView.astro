@@ -4,6 +4,6 @@ const hrefTree = `/musicxml/${schema}-reference/element-tree/`;
 const hrefList = `/musicxml/${schema}-reference/elements/`;
 ---
 <p>
-  {current === 'tree' ? <em>Tree view</em> : <a href={hrefTree}>Tree view</a>} |
-  {current === 'tree' ? <a href={hrefList}>Alphabetical list</a> : <strong>Alphabetical list</strong>}
+  {current === 'tree' ? <span class="active">Tree view</span> : <a href={hrefTree}>Tree view</a>} |
+  {current === 'tree' ? <a href={hrefList}>Alphabetical list</a> : <span class="active">Alphabetical list</span>}
 </p>
