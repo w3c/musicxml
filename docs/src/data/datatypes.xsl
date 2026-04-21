@@ -34,31 +34,33 @@
 
   <xsl:template match="xs:simpleType" as="map(*)*">
     <xsl:param name="name"/>
-    <xsl:variable name="base" select="xs:string(xs:restriction/@base)"/>
+    <xsl:variable name="base" select="(xs:string(xs:restriction/@base), fn:tokenize(xs:union/@memberTypes, ' '))"/>
     <xsl:sequence select="map {
       'name': if (@name) then xs:string(@name) else $name,
       'documentation': xs:annotation/xs:documentation/text(),
-      'base': $base,
-      'type': if (xs:restriction[xs:enumeration]) then 'values'
-        else if (xs:restriction[xs:pattern]) then 'regex'
-        else if (xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then 'range'
+      'base': array{$base},
+      'type': if (.//xs:restriction[xs:enumeration]) then 'values'
+        else if (.//xs:restriction[xs:pattern]) then 'regex'
+        else if (.//xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then 'range'
         else (),
-      'value': if (xs:restriction[xs:enumeration]) then fn:fold-left(xs:restriction/xs:enumeration, array{}, function($a, $v) {
+      'value': if (.//xs:restriction[xs:enumeration]) then fn:fold-left(.//xs:restriction/xs:enumeration, array{}, function($a, $v) {
         array:append($a, map {
           'value': xs:string($v/@value),
           'documentation': $v/xs:annotation/xs:documentation/text()
         })
-      }) else if (xs:restriction[xs:pattern]) then xs:string(xs:restriction/xs:pattern/@value)
-      else if (xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then fn:fold-left(xs:restriction/*, map{}, function($m, $v) {
+      }) else if (.//xs:restriction[xs:pattern]) then xs:string(.//xs:restriction/xs:pattern/@value)
+      else if (.//xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then fn:fold-left(.//xs:restriction/*, map{}, function($m, $v) {
         map:put($m, $v/local-name(), xs:string($v/@value))
       }) else ()
     }"/>
-    <xsl:if test="starts-with($base, 'xs:')">
-      <xsl:sequence select="map {
-        'name': $base,
-        'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize($base, ':')[2] || ').'
-      }"/>
-    </xsl:if>
+    <xsl:for-each select="$base">
+      <xsl:if test="starts-with(current(), 'xs:')">
+        <xsl:sequence select="map {
+          'name': current(),
+          'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize(current(), ':')[2] || ').'
+        }"/>
+      </xsl:if>
+    </xsl:for-each>
   </xsl:template>
 
   <xsl:template mode="xs-ref" match="xs:attribute[@ref]">
@@ -80,7 +82,7 @@
         <xsl:sequence select="map {
           'name': $schema || ':' || xs:string(@name),
           'documentation': (),
-          'base': xs:string(@type),
+          'base': array{xs:string(@type)},
           'type': (),
           'value': ()
         }"/>

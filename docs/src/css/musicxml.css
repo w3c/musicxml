@@ -2,7 +2,8 @@ span.line:has(.highlighted-word) {
   font-weight: bolder;
 }
 .parents a:not(:last-child)::after,
-.examples a:not(:last-child)::after {
+.examples a:not(:last-child)::after,
+.bases a:not(:last-child)::after {
   content: ", ";
 }
 table.musicxml {

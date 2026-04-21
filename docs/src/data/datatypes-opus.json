@@ -2,7 +2,9 @@
    "xlink-actuate": {
       "name": "xlink:actuate",
       "documentation": null,
-      "base": "xs:NMTOKEN",
+      "base": [
+         "xs:NMTOKEN"
+      ],
       "type": "values",
       "value": [
          {
@@ -34,14 +36,18 @@
    "xlink-href": {
       "name": "xlink:href",
       "documentation": null,
-      "base": "xs:anyURI",
+      "base": [
+         "xs:anyURI"
+      ],
       "type": null,
       "value": null
    },
    "xlink-type": {
       "name": "xlink:type",
       "documentation": null,
-      "base": "xs:NMTOKEN",
+      "base": [
+         "xs:NMTOKEN"
+      ],
       "type": "values",
       "value": [
          {
@@ -53,14 +59,18 @@
    "xlink-role": {
       "name": "xlink:role",
       "documentation": null,
-      "base": "xs:token",
+      "base": [
+         "xs:token"
+      ],
       "type": null,
       "value": null
    },
    "xlink-show": {
       "name": "xlink:show",
       "documentation": null,
-      "base": "xs:NMTOKEN",
+      "base": [
+         "xs:NMTOKEN"
+      ],
       "type": "values",
       "value": [
          {
@@ -88,14 +98,18 @@
    "xlink-title": {
       "name": "xlink:title",
       "documentation": null,
-      "base": "xs:token",
+      "base": [
+         "xs:token"
+      ],
       "type": null,
       "value": null
    },
    "yes-no": {
       "name": "yes-no",
       "documentation": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
-      "base": "xs:token",
+      "base": [
+         "xs:token"
+      ],
       "type": "values",
       "value": [
          {
