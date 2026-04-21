@@ -22,9 +22,9 @@ layout: ../layouts/Base.astro
 
 **Participate:**
 
-- [GitHub w3c/musicxml](https://github.com/w3c/musicxml)
-- [File a bug](https://github.com/w3c/musicxml/issues)
-- [Commit history](https://github.com/w3c/musicxml/commits/gh-pages)
+- [GitHub w3c-cg/musicxml](https://github.com/w3c-cg/musicxml)
+- [File a bug](https://github.com/w3c-cg/musicxml/issues)
+- [Commit history](https://github.com/w3c-cg/musicxml/commits/gh-pages)
 
 Copyright © 2004-2025 the Contributors to the MusicXML Specification, published by the [Music Notation Community Group](https://www.w3.org/community/music-notation/) under the [W3C Community Contributor License Agreement (CLA)](https://www.w3.org/community/about/process/cla/). A human-readable [summary](https://www.w3.org/community/about/process/summary/) is available.
 
