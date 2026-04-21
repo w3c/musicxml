@@ -1,17 +1,17 @@
 span.line:has(.highlighted-word) {
   font-weight: bolder;
 }
-span.line a,
-.parents a,
-.examples a,
-.content a {
-  text-decoration: none;
-}
 .parents a:not(:last-child)::after,
 .examples a:not(:last-child)::after {
   content: ", ";
-  text-decoration: none;
 }
-table.attributes td:first-child {
+table.musicxml {
+  border-top: 1px solid #ccc;
+}
+table.musicxml th,td {
+  padding: 20px 20px 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+table.musicxml td:first-child {
   font-weight: bold;
 }

@@ -6,7 +6,7 @@ import BaseLayout from '../../layouts/Base.astro';
 import { getIds, getXML } from './listings.ts';
 
 export function getStaticPaths() {
-  return getIds().map((id) => ({
+  return getIds().map(id => ({
     params: { id },
   }));
 }

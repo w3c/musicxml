@@ -4,15 +4,15 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/Base.astro';
 import DataTypeLink from '@components/DataTypeLink.astro';
 
-const datatypes = await getCollection('musicxmlDatatypes');
+const datatypes = await getCollection('containerDatatypes');
 const frontmatter = {
   title: 'Data types used in MusicXML'
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  <ul class="listing">
+  <ul>
     {datatypes.map(datatype => (
-      <li><DataTypeLink type={datatype.data.name} schema="musicxml"/></li>
+      <li><DataTypeLink type={datatype.data.name} schema="container"/></li>
     ))}
   </ul>
 </BaseLayout>

@@ -5,7 +5,7 @@ import BaseLayout from '../../../layouts/Base.astro';
 import DataType from '@components/DataType.astro';
 
 export async function getStaticPaths() {
-  const datatypes = await getCollection('musicxmlDatatypes');
+  const datatypes = await getCollection('soundsDatatypes');
   return Object.values(datatypes).map(datatype => ({
     params: { id: datatype.id },
     props: { datatype }
@@ -18,5 +18,5 @@ const frontmatter = {
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  <DataType datatype={datatype} schema="musicxml"/>
+  <DataType datatype={datatype} schema="sounds"/>
 </BaseLayout>

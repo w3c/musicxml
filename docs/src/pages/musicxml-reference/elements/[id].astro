@@ -7,7 +7,7 @@ import elementName from '../../../utils/ElementName';
 
 export async function getStaticPaths() {
   const elements = await getCollection('musicxmlElements');
-  return Object.values(elements).map((element) => ({
+  return Object.values(elements).map(element => ({
     params: { id: element.id },
     props: { element }
   }));

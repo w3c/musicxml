@@ -7,7 +7,7 @@ import BaseLayout from '../../../layouts/Base.astro';
 
 export function getStaticPaths() {
   const examples = import.meta.glob('../../../data/examples/container-reference/*.md', { eager: true });
-  return Object.values(examples).map((example) => ({
+  return Object.values(examples).map(example => ({
     params: { id: Path.parse(example.file).name },
     props: { example }
   }));

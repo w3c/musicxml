@@ -13,7 +13,7 @@ const frontmatter = {
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  {Object.values(examples).sort((e1, e2) => e1.frontmatter.title.localeCompare(e2.frontmatter.title)).map((example) => {
+  {Object.values(examples).sort((a,b) => a.frontmatter.title.localeCompare(b.frontmatter.title)).map(example => {
     const image = example.frontmatter.image ? `/src/assets/img/${example.frontmatter.tutorial ? 'notation' : 'examples'}/${example.frontmatter.image}` : null;
     const name = Path.parse(example.file).name;
     return (

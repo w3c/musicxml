@@ -23,32 +23,33 @@
 
   <xsl:template match="/">
     <xsl:variable name="datatypes" as="map(*)*">
-      <xsl:apply-templates select="xs:schema/xs:simpleType | xs:schema//xs:attribute[@ref]">
-        <xsl:with-param name="schema" select="''"/>
+      <xsl:apply-templates select="xs:schema/xs:simpleType">
+        <xsl:with-param name="name" select="()"/>
       </xsl:apply-templates>
+      <xsl:apply-templates mode="xs-ref" select="xs:schema//xs:attribute[@ref]"/>
       <xsl:apply-templates mode="xs-type" select="xs:schema//xs:attribute[starts-with(@type, 'xs:')]"/>
     </xsl:variable>
     <xsl:sequence select="array:fold-left(array{$datatypes}, map{}, function($m, $v) { map:put($m, fn:replace(fn:replace($v('name'), ':', '-'), 'xs-', 'xsd-'), $v) })"/>
   </xsl:template>
 
-  <xsl:template match="xs:simpleType | xs:attribute[@name]" as="map(*)*">
-    <xsl:param name="schema"/>
-    <xsl:variable name="base" select="if (.//xs:restriction[@base]) then xs:string(.//xs:restriction/@base) else xs:string(@type)"/>
+  <xsl:template match="xs:simpleType" as="map(*)*">
+    <xsl:param name="name"/>
+    <xsl:variable name="base" select="xs:string(xs:restriction/@base)"/>
     <xsl:sequence select="map {
-      'name': $schema || xs:string(@name),
-      'documentation': .//xs:annotation/xs:documentation/text(),
+      'name': if (@name) then xs:string(@name) else $name,
+      'documentation': xs:annotation/xs:documentation/text(),
       'base': $base,
-      'type': if (.//xs:restriction[xs:enumeration]) then 'values'
-        else if (.//xs:restriction[xs:pattern]) then 'regex'
-        else if (.//xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then 'range'
-        else 'unknown',
-      'value': if (.//xs:restriction[xs:enumeration]) then fn:fold-left(.//xs:restriction/xs:enumeration, array{}, function($a, $v) {
+      'type': if (xs:restriction[xs:enumeration]) then 'values'
+        else if (xs:restriction[xs:pattern]) then 'regex'
+        else if (xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then 'range'
+        else (),
+      'value': if (xs:restriction[xs:enumeration]) then fn:fold-left(xs:restriction/xs:enumeration, array{}, function($a, $v) {
         array:append($a, map {
           'value': xs:string($v/@value),
-          'documentation': $v//xs:annotation/xs:documentation/text()
+          'documentation': $v/xs:annotation/xs:documentation/text()
         })
-      }) else if (.//xs:restriction[xs:pattern]) then xs:string(.//xs:restriction/xs:pattern/@value)
-      else if (.//xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then fn:fold-left(.//xs:restriction/*, map{}, function($m, $v) {
+      }) else if (xs:restriction[xs:pattern]) then xs:string(xs:restriction/xs:pattern/@value)
+      else if (xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then fn:fold-left(xs:restriction/*, map{}, function($m, $v) {
         map:put($m, $v/local-name(), xs:string($v/@value))
       }) else ()
     }"/>
@@ -60,14 +61,34 @@
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="xs:attribute[@ref]">
+  <xsl:template mode="xs-ref" match="xs:attribute[@ref]">
     <xsl:variable name="schema" select="if (fn:tokenize(@ref , ':')[1] = 'xlink') then $xlink else $xml"/>
-    <xsl:apply-templates select="$schema//xs:attribute[@name=fn:tokenize(current()/@ref , ':')[2]]">
-      <xsl:with-param name="schema" select="fn:tokenize(@ref , ':')[1] || ':'"/>
+    <xsl:apply-templates mode="xs-schema" select="$schema//xs:attribute[@name=fn:tokenize(current()/@ref , ':')[2]]">
+      <xsl:with-param name="schema" select="fn:tokenize(@ref , ':')[1]"/>
     </xsl:apply-templates>
   </xsl:template>
 
-  <xsl:template mode="xs-type" match="xs:attribute">
+  <xsl:template mode="xs-schema" match="xs:attribute">
+    <xsl:param name="schema"/>
+    <xsl:choose>
+      <xsl:when test="xs:simpleType">
+        <xsl:apply-templates select="xs:simpleType">
+          <xsl:with-param name="name" select="$schema || ':' || xs:string(@name)"/>
+        </xsl:apply-templates>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="map {
+          'name': $schema || ':' || xs:string(@name),
+          'documentation': (),
+          'base': xs:string(@type),
+          'type': (),
+          'value': ()
+        }"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template mode="xs-type" match="xs:attribute[@type]">
     <xsl:sequence select="map {
       'name': xs:string(@type),
       'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize(@type, ':')[2] || ').'

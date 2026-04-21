@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import MarkdownIt from 'markdown-it';
 import DataTypeLink from './DataTypeLink.astro';
 import ElementLink from './ElementLink.astro';
+import DataTypeValueRow from './DataTypeValueRow.astro';
 
 const md = new MarkdownIt();
 const elements = await getCollection('musicxmlElements');
@@ -12,17 +13,16 @@ const usages = elements.reduce((usages, element) => {
   if (element.data.children && element.data.children.type === 'type' && element.data.children.value === datatype.data.name) {
     usages.push({ element });
   }
-  element.data.attributes?.forEach((attribute) => {
+  element.data.attributes?.forEach(attribute => {
     if (attribute.type === datatype.data.name) {
       usages.push({ element, attribute });
     }
   })
   return usages;
-}, ([] as any[])).sort((a, b) => {
+}, ([] as any[])).sort((a,b) => {
+  // Objects without attribute come first, thanks Copilot.
   const aHasAttribute = 'attribute' in a;
   const bHasAttribute = 'attribute' in b;
-
-  // Objects without attribute come first
   if (!aHasAttribute && bHasAttribute) return -1;
   if (aHasAttribute && !bHasAttribute) return 1;
   return 0;
@@ -30,13 +30,36 @@ const usages = elements.reduce((usages, element) => {
 ---
 {datatype.data.documentation && <p class="description" set:html={md.render(datatype.data.documentation)} />}
 
-{datatype.data.base && <p>Base type: <DataTypeLink type={datatype.data.base} schema={schema}/></p>}
-
-<section class="values">
+{(datatype.data.base || datatype.data.type) && <section class="values">
   <h2>Allowed values</h2>
-</section>
+  {datatype.data.base && <p>Base type: <DataTypeLink type={datatype.data.base} schema={schema}/></p>}
 
-<section class="usage">
+  {datatype.data.type === 'values' ? (
+    <table class="musicxml">
+      <tbody>
+        {datatype.data.value.sort((a,b) => {
+          // "yes" always comes first, "no" always second, thanks Copilot.
+          const order: any = { 'yes': 0, 'no': 1, 'on': 0, 'off': 1 };
+          const oa = order[a.value] ?? 2;
+          const ob = order[b.value] ?? 2;
+          if (oa !== ob) return oa - ob;
+          return a.value.localeCompare(b.value);
+        }).map(value => <DataTypeValueRow datatype={datatype} value={value} />)}
+      </tbody>
+    </table>
+  ) : datatype.data.type === 'regex' ? (
+    <p>Regex pattern: <span class="regex" set:html={md.renderInline(`\`${datatype.data.value}\``)} /></p>
+  ) : datatype.data.type === 'range' ? (
+    <Fragment>
+      {'minInclusive' in datatype.data.value && <p>Minimum allowed value: <span class="range">{datatype.data.value.minInclusive}</span></p>}
+      {'minExclusive' in datatype.data.value && <p>Minimum allowed value: <span class="range">&gt; {datatype.data.value.minExclusive}</span></p>}
+      {'maxInclusive' in datatype.data.value && <p>Maximum allowed value: <span class="range">{datatype.data.value.maxInclusive}</span></p>}
+      {'maxExclusive' in datatype.data.value && <p>Maximum allowed value: <span class="range">&lt; {datatype.data.value.maxExclusive}</span></p>}
+    </Fragment>
+  ) : ''}
+</section>}
+
+{usages.length > 0 && <section class="usage">
   <h2>Where is this type used?</h2>
-  {usages.map((usage) => <p><ElementLink schema={schema} tag={usage.element.data.name}/>{usage.attribute && <span> — “{usage.attribute.name}” attribute</span>}</p>)}
-</section>
+  {usages.map(usage => <p><ElementLink schema={schema} tag={usage.element.data.name}/>{usage.attribute && <span> — “{usage.attribute.name}” attribute</span>}</p>)}
+</section>}

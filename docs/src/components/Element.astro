@@ -18,7 +18,7 @@ const tag_ = Object.keys(defaultElementsMap).find(tag => defaultElementsMap[tag]
 const regex_ = tag_ ? new RegExp(`<${tag_}[\\s>\/]`, 'mi') : null;
 // Filter examples containing this element.
 const regex = new RegExp(`<${element.id}[\\s>\/]`, 'mi');
-const examples_ = Object.values(examples).filter((example) =>
+const examples_ = Object.values(examples).filter(example =>
   regex.test(example.rawContent()) ||
   (example.frontmatter.elements_map && Object.values(example.frontmatter.elements_map).includes(element.id)) ||
   (!example.frontmatter.elements_map && regex_?.test(example.rawContent()))
@@ -26,7 +26,7 @@ const examples_ = Object.values(examples).filter((example) =>
 ---
 <p class="parents">
   Parent element{element.data.parents.length > 1 ? 's' : ''}: {element.data.parents.length > 0 ?
-    element.data.parents.sort((a, b) => a.localeCompare(b)).map((parent) => <ElementLink tag={parent} schema={schema}/>) : 'None'
+    element.data.parents.sort((a,b) => a.localeCompare(b)).map(parent => <ElementLink tag={parent} schema={schema}/>) : 'None'
   }
 </p>
 
@@ -42,7 +42,7 @@ const examples_ = Object.values(examples).filter((example) =>
 <section class="attributes">
   <h2>Attributes</h2>
   {element.data.attributes && element.data.attributes.length > 0 ? (
-    <table class="attributes">
+    <table class="musicxml">
       <thead>
         <tr>
           <th>Name</th>
@@ -52,7 +52,7 @@ const examples_ = Object.values(examples).filter((example) =>
         </tr>
       </thead>
       <tbody>
-        {element.data.attributes.map((attribute) => (
+        {element.data.attributes.sort((a,b) => a.name.localeCompare(b.name)).map(attribute => (
           <tr>
             <td>{attribute.name}</td>
             <td><DataTypeLink schema={schema} type={attribute.type} /></td>
@@ -69,7 +69,7 @@ const examples_ = Object.values(examples).filter((example) =>
   <h2>Examples</h2>
   {examples_.length > 0 ? (
     <p>This element is used in the following example{examples_.length > 1 ? 's' : ''}:</p>
-    <p>{examples_.map((example) => {
+    <p>{examples_.sort((a,b) => a.frontmatter.title.localeCompare(b.frontmatter.title)).map(example => {
       return <ExampleLink example={example} schema={schema}/>;
     })}</p>) : <p>This element has no examples.</p>
   }

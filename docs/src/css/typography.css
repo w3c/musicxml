@@ -114,7 +114,7 @@ abbr:where([title]) {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--color-w3c-blue);
 }
 

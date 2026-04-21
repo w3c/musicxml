@@ -6,7 +6,7 @@ import Element from '@components/Element.astro';
 
 export async function getStaticPaths() {
   const elements = await getCollection('containerElements');
-  return Object.values(elements).map((element) => ({
+  return Object.values(elements).map(element => ({
     params: { id: element.id },
     props: { element }
   }));

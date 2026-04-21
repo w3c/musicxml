@@ -23,23 +23,19 @@
          }
       ]
    },
-   "xs-token": {
-      "name": "xs:token",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token)."
-   },
-   "xs-NMTOKEN": {
+   "xsd-NMTOKEN": {
       "name": "xs:NMTOKEN",
       "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NMTOKEN)."
    },
-   "xs-anyURI": {
-      "name": "xs:anyURI",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#anyURI)."
+   "xsd-token": {
+      "name": "xs:token",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token)."
    },
    "xlink-href": {
       "name": "xlink:href",
       "documentation": null,
       "base": "xs:anyURI",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "xlink-type": {
@@ -58,7 +54,7 @@
       "name": "xlink:role",
       "documentation": null,
       "base": "xs:token",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "xlink-show": {
@@ -93,7 +89,7 @@
       "name": "xlink:title",
       "documentation": null,
       "base": "xs:token",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "yes-no": {

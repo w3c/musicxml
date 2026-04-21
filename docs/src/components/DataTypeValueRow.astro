@@ -1,0 +1,14 @@
+---
+import MarkdownIt from 'markdown-it';
+import { Image } from 'astro:assets';
+
+const md = new MarkdownIt();
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/datatypes/*.png');
+const { datatype, value } = Astro.props;
+const image = `/src/assets/img/datatypes/${datatype.data.name}-${value.value.replace(/\s/, '-')}.png`;
+---
+<tr>
+  <td>{value.value}</td>
+  <td>{value.documentation && md.render(value.documentation)}</td>
+  <td>{image in images && <Image src={images[image]()} alt={value.value} />}</td>
+</tr>

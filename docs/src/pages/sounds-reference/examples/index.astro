@@ -10,7 +10,7 @@ const frontmatter = {
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  {Object.values(examples).map((example) => (
+  {Object.values(examples).map(example => (
     <a href={"/musicxml/sounds-reference/examples/" + Path.parse(example.file).name + "/"}>{example.frontmatter.title}</a>
     <p/>
   ))}

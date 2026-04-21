@@ -30,7 +30,7 @@
       "name": "font-family",
       "documentation": "The font-family is a comma-separated list of font names. These can be specific font styles such as Maestro or Opus, or one of several generic font styles: music, engraved, handwritten, text, serif, sans-serif, handwritten, cursive, fantasy, and monospace. The music, engraved, and handwritten values refer to music fonts; the rest refer to text fonts. The fantasy style refers to decorative text such as found in older German-style printing.",
       "base": "comma-separated-text",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "font-weight": {
@@ -253,7 +253,7 @@
       "name": "staff-line-position",
       "documentation": "The staff-line-position type indicates the line position on a given staff. Staff lines are numbered from bottom to top, with 1 being the bottom line on a staff. A staff-line-position value can extend beyond the range of the lines on the current staff.",
       "base": "xs:integer",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "tip-direction": {
@@ -300,14 +300,14 @@
       "name": "milliseconds",
       "documentation": "The milliseconds type represents an integral number of milliseconds.",
       "base": "xs:nonNegativeInteger",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "millimeters": {
       "name": "millimeters",
       "documentation": "The millimeters type is a number representing millimeters. This is used in the scaling element to provide a default scaling from tenths to physical units.",
       "base": "xs:decimal",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "caesura-value": {
@@ -386,7 +386,7 @@
       "name": "yes-no-number",
       "documentation": "The yes-no-number type is used for attributes that can be either boolean or numeric values.",
       "base": null,
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "percent": {
@@ -461,15 +461,10 @@
    },
    "xml-lang": {
       "name": "xml:lang",
-      "documentation": "Attempting to install the relevant ISO 2- and 3-letter\n         codes as the enumerated possible values is probably never\n         going to be a realistic possibility.  See\n         RFC 3066 at http:\/\/www.ietf.org\/rfc\/rfc3066.txt and the IANA registry\n         at http:\/\/www.iana.org\/assignments\/lang-tag-apps.htm for\n         further information.\n\n         The union allows for the 'un-declaration' of xml:lang with\n         the empty string.",
-      "base": "xs:string",
-      "type": "values",
-      "value": [
-         {
-            "value": "",
-            "documentation": null
-         }
-      ]
+      "documentation": null,
+      "base": null,
+      "type": null,
+      "value": null
    },
    "harmon-closed-value": {
       "name": "harmon-closed-value",
@@ -510,14 +505,9 @@
    "positive-integer-or-empty": {
       "name": "positive-integer-or-empty",
       "documentation": "The positive-integer-or-empty values can be either a positive integer or an empty string.",
-      "base": "xs:string",
-      "type": "values",
-      "value": [
-         {
-            "value": "",
-            "documentation": null
-         }
-      ]
+      "base": null,
+      "type": null,
+      "value": null
    },
    "smufl-segno-glyph-name": {
       "name": "smufl-segno-glyph-name",
@@ -1184,7 +1174,7 @@
       "name": "staff-line",
       "documentation": "The staff-line type indicates the line on a given staff. Staff lines are numbered from bottom to top, with 1 being the bottom line on a staff.",
       "base": "xs:positiveInteger",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "staff-type": {
@@ -1409,7 +1399,7 @@
       "name": "smufl-glyph-name",
       "documentation": "The smufl-glyph-name type is used for attributes that reference a specific Standard Music Font Layout (SMuFL) character. The value is a SMuFL canonical glyph name, not a code point. For instance, the value for a standard piano pedal mark would be keyboardPedalPed, not U+E650.",
       "base": "xs:NMTOKEN",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "pitched-value": {
@@ -1559,7 +1549,7 @@
       "name": "semitones",
       "documentation": "The semitones type is a number representing semitones, used for chromatic alteration. A value of -1 corresponds to a flat and a value of 1 to a sharp. Decimal values like 0.5 (quarter tone sharp) are used for microtones.",
       "base": "xs:decimal",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "metal-value": {
@@ -1762,7 +1752,7 @@
       "name": "measure-text",
       "documentation": "The measure-text type is used for the text attribute of measure elements. It has at least one character. The implicit attribute of the measure element should be set to \"yes\" rather than setting the text attribute to an empty string.",
       "base": "xs:token",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "degree-symbol-value": {
@@ -2112,7 +2102,7 @@
       "name": "distance-type",
       "documentation": "The distance-type defines what type of distance is being defined in a distance element. Values include beam and hyphen. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.",
       "base": "xs:token",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "breath-mark-value": {
@@ -2147,7 +2137,7 @@
       "name": "line-width-type",
       "documentation": "The line-width-type defines what type of line is being defined in a line-width element. Values include beam, bracket, dashes, enclosure, ending, extend, heavy barline, leger, light barline, octave shift, pedal, slur middle, slur tip, staff, stem, tie middle, tie tip, tuplet bracket, and wedge. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.",
       "base": "xs:token",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "tremolo-type": {
@@ -2242,7 +2232,7 @@
       "name": "divisions",
       "documentation": "The divisions type is used to express values in terms of the musical divisions defined by the divisions element. It is preferred that these be integer values both for MIDI interoperability and to avoid roundoff errors.",
       "base": "xs:decimal",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "xsd-string": {
@@ -2365,7 +2355,7 @@
       "name": "staff-number",
       "documentation": "The staff-number type indicates staff numbers within a multi-staff part. Staves are numbered from top to bottom, with 1 being the top staff on a part.",
       "base": "xs:positiveInteger",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "upright-inverted": {
@@ -2476,7 +2466,7 @@
       "name": "xlink:href",
       "documentation": null,
       "base": "xs:anyURI",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "xlink-type": {
@@ -2495,7 +2485,7 @@
       "name": "xlink:role",
       "documentation": null,
       "base": "xs:token",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "xlink-show": {
@@ -2574,7 +2564,7 @@
       "name": "xlink:title",
       "documentation": null,
       "base": "xs:token",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "wood-value": {
@@ -2821,7 +2811,7 @@
       "name": "font-size",
       "documentation": "The font-size can be one of the CSS font sizes (xx-small, x-small, small, medium, large, x-large, xx-large) or a numeric point size.",
       "base": null,
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "font-style": {
@@ -2859,14 +2849,9 @@
    "number-or-normal": {
       "name": "number-or-normal",
       "documentation": "The number-or-normal values can be either a decimal number or the string \"normal\". This is used by the line-height and letter-spacing attributes.",
-      "base": "xs:token",
-      "type": "values",
-      "value": [
-         {
-            "value": "normal",
-            "documentation": null
-         }
-      ]
+      "base": null,
+      "type": null,
+      "value": null
    },
    "start-stop-single": {
       "name": "start-stop-single",
@@ -2955,7 +2940,7 @@
       "name": "glyph-type",
       "documentation": "The glyph-type defines what type of glyph is being defined in a glyph element. Values include quarter-rest, g-clef-ottava-bassa, c-clef, f-clef, percussion-clef, octave-shift-up-8, octave-shift-down-8, octave-shift-continue-8, octave-shift-down-15, octave-shift-up-15, octave-shift-continue-15, octave-shift-down-22, octave-shift-up-22, and octave-shift-continue-22. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.\n\nA quarter-rest type specifies the glyph to use when a note has a rest element and a type value of quarter. The c-clef, f-clef, and percussion-clef types specify the glyph to use when a clef sign element value is C, F, or percussion respectively. The g-clef-ottava-bassa type specifies the glyph to use when a clef sign element value is G and the clef-octave-change element value is -1. The octave-shift types specify the glyph to use when an octave-shift type attribute value is up, down, or continue and the octave-shift size attribute value is 8, 15, or 22.",
       "base": "xs:token",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "non-negative-decimal": {
@@ -3552,21 +3537,21 @@
       "name": "mode",
       "documentation": "The mode type is used to specify major\/minor and other mode distinctions. Valid mode values include major, minor, dorian, phrygian, lydian, mixolydian, aeolian, ionian, locrian, and none.",
       "base": "xs:string",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "string-number": {
       "name": "string-number",
       "documentation": "The string-number type indicates a string number. Strings are numbered from high to low, with 1 being the highest pitched full-length string.",
       "base": "xs:positiveInteger",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "tenths": {
       "name": "tenths",
       "documentation": "The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.\n\nDistances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.",
       "base": "xs:decimal",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "two-note-turn": {
@@ -3629,7 +3614,7 @@
       "name": "fifths",
       "documentation": "The fifths type represents the number of flats or sharps in a traditional key signature. Negative numbers are used for flats and positive numbers for sharps, reflecting the key's placement within the circle of fifths (hence the type name).",
       "base": "xs:integer",
-      "type": "unknown",
+      "type": null,
       "value": null
    },
    "fan": {

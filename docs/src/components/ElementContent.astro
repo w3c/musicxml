@@ -57,7 +57,7 @@ const cardinality = (() => {
       content.type === 'sequence' ? ((content.value.length > 1 || content.value[0].type !== 'element') ? (
         <span>In this order{cardinality !== 'Required' && <Fragment>&nbsp;({cardinality})</Fragment>}</span>
         <ul>
-          {content.value.map((child) => <li><Astro.self schema={schema} content={child} parent={content.type} /></li>)}
+          {content.value.map(child => <li><Astro.self schema={schema} content={child} parent={content.type} /></li>)}
         </ul>
       ) : (
         <Fragment>{content.value.map((child, i) =>
@@ -68,7 +68,7 @@ const cardinality = (() => {
       )) : (
         <span>{cardinality}</span>
         <ul>
-          {content.value.map((child) => <li><Astro.self schema={schema} content={child} parent={content.type} /></li>)}
+          {content.value.map(child => <li><Astro.self schema={schema} content={child} parent={content.type} /></li>)}
         </ul>
       )
     )

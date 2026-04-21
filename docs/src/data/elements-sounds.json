@@ -1,6 +1,9 @@
 {
    "ensemble": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "sound"
       ],
@@ -35,6 +38,8 @@
             },
             {
                "type": "sequence",
+               "min": "1",
+               "max": "1",
                "value": [
                   {
                      "type": "element",
@@ -75,6 +80,8 @@
    "sounds": {
       "children": {
          "type": "sequence",
+         "min": "1",
+         "max": "1",
          "value": [
             {
                "type": "element",
@@ -89,7 +96,10 @@
       "documentation": "The sounds element with a sounds type is the root element for a MusicXML sounds document."
    },
    "solo": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "sound"
       ],
@@ -105,7 +115,10 @@
       "documentation": "The solo and ensemble elements are used when an application has different IDs for solo and ensemble sounds, as represented by the solo and ensemble elements in a MusicXML score file. The solo type corresponds to the solo element in the MusicXML score file. The element content is the application or library sound ID.\n\nMultiple solo and ensemble elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which solo element is primary when mapping from a MusicXML sound id."
    },
    "any": {
-      "children": null,
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
       "parents": [
          "sound"
       ],
