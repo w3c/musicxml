@@ -4,7 +4,6 @@ elements:
 - arrow
 - arrow-direction
 - arrow-style
-image: arrow-element.png
 ---
 ```xml
 <notations>

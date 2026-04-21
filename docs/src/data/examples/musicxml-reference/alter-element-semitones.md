@@ -1,7 +1,6 @@
 ---
 title: '<alter> (Semitones)'
 elements: alter
-image: alter-element-semitones.png
 ---
 ```xml
 <measure number="5">

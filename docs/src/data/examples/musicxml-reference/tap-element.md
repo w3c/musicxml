@@ -1,7 +1,6 @@
 ---
 title: '<tap>'
 elements: tap
-image: tap-element.png
 ---
 ```xml
 <measure number="10" width="162">

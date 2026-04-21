@@ -1,7 +1,6 @@
 ---
 title: '<glissando> (Single)'
 elements: glissando
-image: glissando-element-single.png
 ---
 ```xml
 <measure number="18">

@@ -1,7 +1,6 @@
 ---
 title: '<credit-image>'
 elements: credit-image
-image: credit-image-element.png
 ---
 ```xml
 <credit page="1">

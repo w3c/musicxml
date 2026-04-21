@@ -1,7 +1,6 @@
 ---
 title: '<step>'
 elements: step
-image: step-element.png
 ---
 ```xml
 <note default-x="80">

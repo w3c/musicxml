@@ -4,7 +4,6 @@ elements:
 - accordion-registration
 - accordion-high
 - accordion-middle
-image: accordion-registration-element.png
 ---
 ```xml
 <direction>

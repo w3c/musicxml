@@ -1,6 +1,5 @@
 ---
 title: 'Tutorial: Chopin Prelude'
-image: chopin.png
 tutorial: true
 ---
 ```xml

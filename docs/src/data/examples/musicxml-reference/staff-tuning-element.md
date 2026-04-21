@@ -4,7 +4,6 @@ elements:
 - staff-tuning
 - tuning-step
 - tuning-octave
-image: staff-tuning-element.png
 ---
 ```xml
 <staff-details>

@@ -1,7 +1,6 @@
 ---
 title: '<slide>'
 elements: slide
-image: slide-element.png
 ---
 ```xml
 <measure number="40">

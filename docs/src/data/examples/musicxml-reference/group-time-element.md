@@ -1,7 +1,6 @@
 ---
 title: '<group-time>'
 elements: group-time
-image: group-time-element.png
 ---
 ```xml
 <part-group number="1" type="start">

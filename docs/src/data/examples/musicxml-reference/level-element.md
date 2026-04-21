@@ -1,7 +1,6 @@
 ---
 title: '<level>'
 elements: level
-image: level-element.png
 ---
 ```xml
 <note default-x="27">

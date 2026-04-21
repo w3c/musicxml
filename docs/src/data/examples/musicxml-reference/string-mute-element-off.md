@@ -1,7 +1,6 @@
 ---
 title: '<string-mute> (Off)'
 elements: string-mute
-image: string-mute-element-off.png
 ---
 ```xml
 <direction placement="above">

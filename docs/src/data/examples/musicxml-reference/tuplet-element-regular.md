@@ -1,7 +1,6 @@
 ---
 title: '<tuplet> (Regular)'
 elements: tuplet-regular
-image: tuplet-element-regular.png
 ---
 ```xml
 <measure number="71">

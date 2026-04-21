@@ -8,7 +8,6 @@ elements:
 - actual-notes
 - normal-notes
 - normal-type
-image: metronome-note-element.png
 ---
 ```xml
 <direction placement="above">

@@ -1,6 +1,5 @@
 ---
 title: 'Alto Clef'
-image: alto-clef.png
 ---
 ```xml
 <clef>

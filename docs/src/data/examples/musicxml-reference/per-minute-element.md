@@ -1,7 +1,6 @@
 ---
 title: '<per-minute>'
 elements: per-minute
-image: per-minute-element.png
 ---
 ```xml
 <direction directive="yes" placement="above">

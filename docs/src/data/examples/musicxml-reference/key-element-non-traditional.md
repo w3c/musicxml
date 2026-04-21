@@ -1,6 +1,5 @@
 ---
 title: '<key> (Non-Traditional)'
-image: key-element-non-traditional.png
 ---
 ```xml
 <key>

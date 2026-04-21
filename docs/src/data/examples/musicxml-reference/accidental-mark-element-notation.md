@@ -1,7 +1,6 @@
 ---
 title: '<accidental-mark> (Notation)'
 elements: accidental-mark
-image: accidental-mark-element-notation.png
 ---
 ```xml
 <note default-x="84">

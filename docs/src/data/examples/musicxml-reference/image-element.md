@@ -1,7 +1,6 @@
 ---
 title: '<image>'
 elements: image
-image: image-element.png
 ---
 ```xml
 <direction placement="above">

@@ -4,7 +4,6 @@ elements:
 - numeral-key
 - numeral-fifths
 - numeral-mode
-image: numeral-key-element.png
 ---
 ```xml
 <harmony default-y="31">

@@ -1,7 +1,6 @@
 ---
 title: '<tremolo> (Double)'
 elements: tremolo
-image: tremolo-element-double.png
 ---
 ```xml
 <measure number="92" width="345">

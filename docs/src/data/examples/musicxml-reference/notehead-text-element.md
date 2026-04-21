@@ -1,6 +1,5 @@
 ---
 title: '<notehead-text>'
-image: notehead-text-element.png
 ---
 ```xml
 <notehead-text>

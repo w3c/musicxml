@@ -1,7 +1,6 @@
 ---
 title: '<line-detail>'
 elements: line-detail
-image: line-detail-element.png
 ---
 ```xml
 <measure number="35">

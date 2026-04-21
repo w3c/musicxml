@@ -1,7 +1,6 @@
 ---
 title: '<mp>'
 elements: mp
-image: mp-element.png
 ---
 ```xml
 <direction placement="below">

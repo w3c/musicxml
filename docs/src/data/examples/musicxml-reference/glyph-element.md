@@ -1,7 +1,6 @@
 ---
 title: '<glyph>'
 elements: glyph
-image: glyph-element.png
 ---
 ```xml
 <appearance>

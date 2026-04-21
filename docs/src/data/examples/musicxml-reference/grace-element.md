@@ -1,7 +1,6 @@
 ---
 title: '<grace>'
 elements: grace
-image: grace-element.png
 ---
 ```xml
 <measure number="54">

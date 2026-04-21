@@ -1,7 +1,6 @@
 ---
 title: '<ipa>'
 elements: ipa
-image: ipa-element.png
 ---
 ```xml
 <note default-x="452">

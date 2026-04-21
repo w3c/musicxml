@@ -1,7 +1,6 @@
 ---
 title: '<with-bar>'
 elements: with-bar
-image: with-bar-element.png
 ---
 ```xml
 <measure number="9" width="120">

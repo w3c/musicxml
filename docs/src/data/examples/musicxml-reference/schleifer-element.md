@@ -1,7 +1,6 @@
 ---
 title: '<schleifer>'
 elements: schleifer
-image: schleifer-element.png
 ---
 ```xml
 <measure number="28" width="168">

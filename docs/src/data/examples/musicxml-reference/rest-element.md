@@ -1,7 +1,6 @@
 ---
 title: '<rest>'
 elements: rest
-image: rest-element.png
 ---
 ```xml
 <note>

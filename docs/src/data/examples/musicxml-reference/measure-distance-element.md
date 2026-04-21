@@ -1,7 +1,6 @@
 ---
 title: '<measure-distance>'
 elements: measure-distance
-image: measure-distance-element.png
 ---
 ```xml
 <measure number="9" width="219">

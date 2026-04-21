@@ -3,7 +3,6 @@ title: '<grouping>'
 elements:
 - grouping
 - feature
-image: grouping-element.png
 ---
 ```xml
 <part id="P8">

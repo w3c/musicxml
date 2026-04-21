@@ -1,7 +1,6 @@
 ---
 title: '<barre>'
 elements: barre
-image: barre-element.png
 ---
 ```xml
 <frame default-y="93" halign="center" unplayed="x" valign="top">

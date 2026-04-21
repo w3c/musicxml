@@ -3,7 +3,6 @@ title: '<backup>'
 elements:
 - backup
 - duration
-image: backup-element.png
 ---
 ```xml
 <measure number="112">

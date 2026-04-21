@@ -1,7 +1,6 @@
 ---
 title: '<wedge>'
 elements: wedge
-image: wedge-element.png
 ---
 ```xml
 <measure number="17">

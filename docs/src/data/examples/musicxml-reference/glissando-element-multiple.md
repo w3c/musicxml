@@ -1,7 +1,6 @@
 ---
 title: '<glissando> (Multiple)'
 elements: glissando
-image: glissando-element-multiple.png
 ---
 ```xml
 <part id="P1">

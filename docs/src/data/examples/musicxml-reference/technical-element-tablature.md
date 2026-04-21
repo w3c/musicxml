@@ -1,7 +1,6 @@
 ---
 title: '<technical> (Tablature)'
 elements: technical
-image: technical-element-tab.png
 ---
 ```xml
 <note default-x="83" print-dot="no">

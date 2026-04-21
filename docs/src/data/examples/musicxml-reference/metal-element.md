@@ -1,7 +1,6 @@
 ---
 title: '<metal>'
 elements: metal
-image: metal-element.png
 ---
 ```xml
 <direction placement="above">

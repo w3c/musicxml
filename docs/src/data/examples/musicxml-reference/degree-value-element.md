@@ -1,7 +1,6 @@
 ---
 title: '<degree-value>'
 elements: degree-value
-image: degree-value-element.png
 ---
 ```xml
 <harmony default-y="40">

@@ -1,7 +1,6 @@
 ---
 title: '<f>'
 elements: f
-image: f-element.png
 ---
 ```xml
 <direction placement="below">

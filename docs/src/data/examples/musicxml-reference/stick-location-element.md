@@ -1,7 +1,6 @@
 ---
 title: '<stick-location>'
 elements: stick-location
-image: stick-location-element.png
 ---
 ```xml
 <direction placement="above">

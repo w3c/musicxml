@@ -7,7 +7,6 @@ elements:
 - virtual-instrument
 - virtual-library
 - virtual-name
-image: instrument-change-element.png
 ---
 ```xml
 <score-partwise version="4.1">

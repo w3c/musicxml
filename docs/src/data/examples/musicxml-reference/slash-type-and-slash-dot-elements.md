@@ -3,7 +3,6 @@ title: '<slash-type> and <slash-dot>'
 elements:
 - slash-type
 - slash-dot
-image: slash-type-slash-dot-elements.png
 ---
 ```xml
 <measure-style>

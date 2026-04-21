@@ -1,6 +1,5 @@
 ---
 title: 'Tutorial: Percussion'
-image: percussion.png
 tutorial: true
 ---
 ```xml

@@ -1,7 +1,6 @@
 ---
 title: '<part-link>'
 elements: part-link
-image: part-link-element.png
 ---
 ```xml
 <score-part id="P9">

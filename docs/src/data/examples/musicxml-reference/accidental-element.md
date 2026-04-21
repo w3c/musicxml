@@ -1,7 +1,6 @@
 ---
 title: '<accidental>'
 elements: accidental
-image: accidental-element.png
 ---
 ```xml
 <note default-x="83">

@@ -1,6 +1,5 @@
 ---
 title: 'Mezzo Soprano Clef'
-image: mezzo-soprano-clef.png
 ---
 ```xml
 <clef>

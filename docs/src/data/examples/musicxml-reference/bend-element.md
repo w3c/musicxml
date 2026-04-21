@@ -3,7 +3,6 @@ title: '<bend>'
 elements:
 - bend
 - bend-alter
-image: bend-element.png
 ---
 ```xml
 <technical>

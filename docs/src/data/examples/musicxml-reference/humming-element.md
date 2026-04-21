@@ -1,7 +1,6 @@
 ---
 title: '<humming>'
 elements: humming
-image: humming-element.png
 ---
 ```xml
 <measure number="3" width="110">

@@ -5,7 +5,6 @@ elements:
 - direction-type
 - words
 - staff
-image: system-attribute-also-top.png
 description: The also-top value of the system attribute indicates that the `<direction>` element should appear on this staff in addition to the top staff of the system.
 ---
 ```xml

@@ -1,7 +1,6 @@
 ---
 title: '<multiple-rest>'
 elements: multiple-rest
-image: multiple-rest-element.png
 ---
 ```xml
 <part id="P1">

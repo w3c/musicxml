@@ -1,6 +1,5 @@
 ---
 title: 'Tutorial: Tablature'
-image: tab.png
 tutorial: true
 ---
 ```xml

@@ -9,7 +9,7 @@
   "scripts": {
     "start": "astro dev",
     "build:schemas": "for xsd in container musicxml opus sounds; do for xsl in elements elements-tree datatypes; do xslt3 -xsl:src/xsl/$xsl.xsl -s:../schema/$xsd.xsd > src/data/$xsl-$xsd.json; done; done",
-    "build": "npm run build:schemas && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

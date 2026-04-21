@@ -1,7 +1,6 @@
 ---
 title: '<glass>'
 elements: glass
-image: glass-element.png
 ---
 ```xml
 <direction placement="above">

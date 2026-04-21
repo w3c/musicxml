@@ -1,7 +1,6 @@
 ---
 title: '<arpeggiate>'
 elements: arpeggiate
-image: arpeggiate-element.png
 ---
 ```xml
 <measure number="23">

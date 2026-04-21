@@ -1,7 +1,6 @@
 ---
 title: '<straight>'
 elements: straight
-image: straight-element.png
 ---
 ```xml
 <direction directive="yes" placement="above" system="only-top">

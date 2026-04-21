@@ -1,6 +1,5 @@
 ---
 title: '<interchangeable>'
-image: interchangeable-element.png
 ---
 ```xml
 <time>

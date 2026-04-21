@@ -1,7 +1,6 @@
 ---
 title: '<prefix>'
 elements: prefix
-image: prefix-element.png
 ---
 ```xml
 <figured-bass>

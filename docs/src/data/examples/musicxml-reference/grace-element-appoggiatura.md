@@ -1,7 +1,6 @@
 ---
 title: '<grace> (Appoggiatura)'
 elements: grace
-image: grace-element-appoggiatura.png
 ---
 ```xml
 <note>

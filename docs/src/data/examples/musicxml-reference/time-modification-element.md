@@ -1,7 +1,6 @@
 ---
 title: '<time-modification>'
 elements: time-modification
-image: time-modification-element.png
 ---
 ```xml
 <measure number="3">

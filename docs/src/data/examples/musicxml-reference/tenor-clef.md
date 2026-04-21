@@ -1,6 +1,5 @@
 ---
 title: 'Tenor Clef'
-image: tenor-clef.png
 ---
 ```xml
 <clef>

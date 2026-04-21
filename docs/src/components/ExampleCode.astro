@@ -11,9 +11,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/
 const { example, schema } = Astro.props;
 const snippet = example.rawContent().replace(/```xml|```/g, '').trim();
 const name = Path.parse(example.file).name;
-const image = example.frontmatter.image ? `/src/assets/img/${example.frontmatter.tutorial ? 'notation' : 'examples'}/${example.frontmatter.image}` : null;
+const image = `/src/assets/img/${example.frontmatter.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
 ---
-{image && (
+{image in images && (
   <Image src={images[image]()} alt={name} />
 )}
 {example.frontmatter.description && (

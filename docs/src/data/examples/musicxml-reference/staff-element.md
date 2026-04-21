@@ -1,7 +1,6 @@
 ---
 title: '<staff>'
 elements: staff
-image: staff-element.png
 ---
 ```xml
 <measure number="5">

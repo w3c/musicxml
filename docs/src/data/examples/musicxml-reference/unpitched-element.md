@@ -1,7 +1,6 @@
 ---
 title: '<unpitched>'
 elements: unpitched
-image: unpitched-element.png
 ---
 ```xml
 <measure number="1">

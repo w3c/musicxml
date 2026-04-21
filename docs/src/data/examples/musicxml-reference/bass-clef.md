@@ -1,6 +1,5 @@
 ---
 title: 'Bass Clef'
-image: bass-clef.png
 ---
 ```xml
 <clef>

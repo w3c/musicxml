@@ -1,7 +1,6 @@
 ---
 title: '<turn>'
 elements: turn
-image: turn-element.png
 ---
 ```xml
 <note default-x="264">

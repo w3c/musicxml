@@ -1,7 +1,6 @@
 ---
 title: '<tremolo> (Single)'
 elements: tremolo
-image: tremolo-element-single.png
 ---
 ```xml
 <note default-x="156">

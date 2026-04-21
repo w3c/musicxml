@@ -1,7 +1,6 @@
 ---
 title: '<sfzp>'
 elements: sfzp
-image: sfzp-element.png
 ---
 ```xml
 <direction placement="below">

@@ -3,7 +3,6 @@ title: '<hole>'
 elements:
 - hole
 - hole-closed
-image: hole-element.png
 ---
 ```xml
 <technical>

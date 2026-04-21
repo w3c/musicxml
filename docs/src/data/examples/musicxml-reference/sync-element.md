@@ -1,7 +1,6 @@
 ---
 title: '<sync>'
 elements: sync
-image: sync-element.png
 ---
 ```xml
 <part id="P1">

@@ -5,7 +5,6 @@ elements:
 - tuplet-actual
 - tuplet-number
 - tuplet-type
-image: tuplet-element-nested.png
 ---
 ```xml
 <measure number="23">

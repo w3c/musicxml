@@ -1,7 +1,6 @@
 ---
 title: '<accent>'
 elements: accent
-image: accent-element.png
 ---
 ```xml
 <note default-x="36">

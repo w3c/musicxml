@@ -5,7 +5,6 @@ elements:
 - duration
 - voice
 - staff
-image: forward-element.png
 ---
 ```xml
 <measure number="12" width="265">

@@ -4,7 +4,6 @@ elements:
 - metronome
 - beat-unit
 - per-minute
-image: metronome-element.png
 ---
 ```xml
 <direction placement="above">

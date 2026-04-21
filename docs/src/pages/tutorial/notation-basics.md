@@ -8,7 +8,7 @@ MIDI represents musical performance information, but leaves out a great deal of 
 
 Let us look again at the [example](../../musicxml-reference/examples/tutorial-apres-un-reve/) we used in the previous section - the first four bars of "Après un rêve" by Gabriel Fauré:
 
-![Après un rêve](../../assets/img/notation/reve.png)
+![Après un rêve](../../assets/img/tutorial/tutorial-apres-un-reve.png)
 
 Clearly our discussion of the MIDI-compatible portion of MusicXML left out many things represented in this music. Where are the tempo and dynamic markings: the Andantino, pp, dolce, crescendo and diminuendo wedges? Where are stem directions stored? The downstem on the initial G in the voice part is not what many programs would default to. How is the beaming represented, so that all the eighth notes are beamed together in the piano part, but separated into triplets in the voice part? How are the piano chords split between staves? How are accidentals indicated, including courtesy accidentals like the A-flat in the fourth bar?
 

@@ -3,7 +3,6 @@ title: '<pan> and <elevation>'
 elements:
 - pan
 - elevation
-image: pan-elevation-elements.png
 ---
 ```xml
 <direction placement="above">

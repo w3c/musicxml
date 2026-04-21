@@ -1,7 +1,6 @@
 ---
 title: '<doit>'
 elements: doit
-image: doit-element.png
 ---
 ```xml
 <notations>

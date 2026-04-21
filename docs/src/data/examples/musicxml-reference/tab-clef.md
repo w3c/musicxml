@@ -1,6 +1,5 @@
 ---
 title: 'TAB Clef'
-image: tab-clef.png
 ---
 ```xml
 <clef>

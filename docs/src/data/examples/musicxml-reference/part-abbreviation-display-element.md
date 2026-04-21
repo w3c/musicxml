@@ -1,6 +1,5 @@
 ---
 title: '<part-abbreviation-display>'
-image: part-abbreviation-display-element.png
 ---
 ```xml
 <part-abbreviation-display>

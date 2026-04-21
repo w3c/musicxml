@@ -4,7 +4,6 @@ elements:
 - pitch
 - step
 - octave
-image: pitch-element.png
 ---
 ```xml
 <note default-x="87">

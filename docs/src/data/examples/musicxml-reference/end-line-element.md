@@ -1,7 +1,6 @@
 ---
 title: '<end-line>'
 elements: end-line
-image: end-line-element.png
 ---
 ```xml
 <note default-x="26">

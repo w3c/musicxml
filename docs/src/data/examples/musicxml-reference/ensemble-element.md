@@ -1,7 +1,6 @@
 ---
 title: '<ensemble>'
 elements: ensemble
-image: ensemble-element.png
 ---
 ```xml
 <score-part id="P1">

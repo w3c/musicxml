@@ -1,7 +1,6 @@
 ---
 title: '<fingering> (Frame)'
 elements: fingering
-image: fingering-element-frame.png
 ---
 ```xml
 <harmony font-family="Arial">

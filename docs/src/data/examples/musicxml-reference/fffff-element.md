@@ -1,7 +1,6 @@
 ---
 title: '<fffff>'
 elements: fffff
-image: fffff-element.png
 ---
 ```xml
 <direction placement="below">

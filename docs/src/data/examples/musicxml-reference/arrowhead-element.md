@@ -1,7 +1,6 @@
 ---
 title: '<arrowhead>'
 elements: arrowhead
-image: arrowhead-element.png
 ---
 ```xml
 <notations>

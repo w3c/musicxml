@@ -1,7 +1,6 @@
 ---
 title: '<bookmark>'
 elements: bookmark
-image: bookmark-element.png
 ---
 ```xml
 <measure number="73">

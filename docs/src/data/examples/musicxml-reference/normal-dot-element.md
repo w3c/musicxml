@@ -1,7 +1,6 @@
 ---
 title: '<normal-dot>'
 elements: normal-dot
-image: normal-dot-element.png
 ---
 ```xml
 <note default-x="82">

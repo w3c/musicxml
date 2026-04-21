@@ -8,7 +8,7 @@ Tablature notation provides a direct guideline to the strings and frets used to 
 
 Here is a simple [one-measure guitar part example](../../musicxml-reference/examples/tutorial-tablature/) that we will use to illustrate the basic MusicXML tablature features, using the standard 6-string guitar tuning:
 
-![Guitar Part](../../assets/img/notation/tab.png)
+![Guitar Part](../../assets/img/tutorial/tutorial-tablature.png)
 
 The fret and string information needed to generate tablature for guitar and other stringed instruments is handled the same way as technical indications for other instruments, such as piano fingerings and violin bowings. The [`<technical>`](../../musicxml-reference/elements/technical/) element contains these types of notations, and two of its component elements represent the note's [`<fret>`](../../musicxml-reference/elements/fret/) and [`<string>`](../../musicxml-reference/elements/string/). Frets are numbered starting at 0 for the open string. Strings are numbered starting at 1 for the highest string on the instrument.
 

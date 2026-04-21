@@ -3,7 +3,6 @@ title: '<barline>'
 elements:
 - barline
 - bar-style
-image: barline-element.png
 ---
 ```xml
 <measure number="10" width="367">

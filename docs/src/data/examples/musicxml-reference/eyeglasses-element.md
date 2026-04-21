@@ -1,7 +1,6 @@
 ---
 title: '<eyeglasses>'
 elements: eyeglasses
-image: eyeglasses-element.png
 ---
 ```xml
 <direction-type>

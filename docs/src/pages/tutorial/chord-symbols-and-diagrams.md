@@ -12,7 +12,7 @@ MusicXML’s [`<harmony>`](../../musicxml-reference/elements/harmony/) element p
 
 Here is a [three-bar example](../../musicxml-reference/examples/tutorial-chord-symbols/) of a simple lead sheet. It contains the melody together with chord symbols and diagrams for how to play the chords on a guitar:
 
-![Lead Sheet](../../assets/img/notation/chord.png)
+![Lead Sheet](../../assets/img/tutorial/tutorial-chord-symbols.png)
 
 The first chord is a G major sixth chord with the fifth (D) in the bass. The second chord is notated as an A major chord with an added ninth degree. Another analysis might be to call it a dominant ninth chord with a missing seventh degree. MusicXML supports both types of analysis. For this example, we follow the written chord diagram notation. The third chord, an A11, will be discussed in the chord diagram section, as it includes both fingerings and a barre symbol.
 

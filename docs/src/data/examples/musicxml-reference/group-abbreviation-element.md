@@ -1,7 +1,6 @@
 ---
 title: '<group-abbreviation>'
 elements: group-abbreviation
-image: group-abbreviation-element.png
 ---
 ```xml
 <part-group number="3" type="start">

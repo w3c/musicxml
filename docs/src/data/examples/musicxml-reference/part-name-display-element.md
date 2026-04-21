@@ -1,6 +1,5 @@
 ---
 title: '<part-name-display>'
-image: part-name-display-element.png
 ---
 ```xml
 <part-name-display>

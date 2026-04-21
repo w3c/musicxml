@@ -11,7 +11,6 @@ elements:
 - sign
 - line
 - part-transpose
-image: concert-score-for-part-elements.png
 ---
 ```xml
 <score-partwise version="4.1">

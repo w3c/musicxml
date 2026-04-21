@@ -1,7 +1,6 @@
 ---
 title: '<alter> (Microtones)'
 elements: alter
-image: alter-element-microtones.png
 ---
 ```xml
 <pitch>

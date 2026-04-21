@@ -1,6 +1,5 @@
 ---
 title: 'Baritone C Clef'
-image: baritone-c-clef.png
 ---
 ```xml
 <clef>

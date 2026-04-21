@@ -1,7 +1,6 @@
 ---
 title: '<chord>'
 elements: chord
-image: chord-element.png
 ---
 ```xml
 <measure number="55">

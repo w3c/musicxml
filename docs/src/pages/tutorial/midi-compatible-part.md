@@ -8,7 +8,7 @@ We encourage programs writing MusicXML to write as much accurate data as they ca
 
 As an [example](../../musicxml-reference/examples/tutorial-apres-un-reve/), we will use the first four bars of "Après un rêve" by Gabriel Fauré:
 
-![Après un rêve](../../assets/img/notation/reve.png)
+![Après un rêve](../../assets/img/tutorial/tutorial-apres-un-reve.png)
 
 ## Attributes
 
@@ -196,7 +196,7 @@ MusicXML has [`<end-line>`](../../musicxml-reference/elements/end-line/) and [`<
 
 While monophonic instruments like trumpet, flute, and voice move along one note at a time, instruments like the piano can have many musical lines at once. Take this simple [example](../../musicxml-reference/examples/tutorial-chopin-prelude/) from the first bar of Frederic Chopin's Prelude, Op. 28, No. 20:
 
-![](../../assets/img/notation/chopin.png)
+![](../../assets/img/tutorial/tutorial-chopin-prelude.png)
 
 Within the piano part, there are two musical lines for the left hand and right hand, represented in the two staves. On the third beat of the bar, the right hand divides into two lines as well.
 

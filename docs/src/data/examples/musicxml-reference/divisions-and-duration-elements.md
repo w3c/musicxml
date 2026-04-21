@@ -3,7 +3,6 @@ title: '<divisions> and <duration>'
 elements:
 - divisions
 - duration
-image: divisions-duration-elements.png
 ---
 ```xml
 <measure number="1">

@@ -1,6 +1,5 @@
 ---
 title: '<scordatura>'
-image: scordatura-element.png
 ---
 ```xml
 <scordatura>

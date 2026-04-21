@@ -1,7 +1,6 @@
 ---
 title: '<damp>'
 elements: damp
-image: damp-element.png
 ---
 ```xml
 <measure number="10">

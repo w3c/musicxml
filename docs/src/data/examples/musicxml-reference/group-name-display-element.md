@@ -4,7 +4,6 @@ elements:
 - group-name-display
 - display-text
 - accidental-text
-image: group-name-display-element.png
 ---
 ```xml
 <part-group number="3" type="start">

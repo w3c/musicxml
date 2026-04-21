@@ -1,7 +1,6 @@
 ---
 title: '<lyric>'
 elements: lyric
-image: lyric-element.png
 ---
 ```xml
 <measure number="9">

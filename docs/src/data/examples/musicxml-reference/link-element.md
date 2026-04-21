@@ -1,7 +1,6 @@
 ---
 title: '<link>'
 elements: link
-image: link-element.png
 ---
 ```xml
 <measure number="2" width="305">

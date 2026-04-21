@@ -1,7 +1,6 @@
 ---
 title: '<ending>'
 elements: ending
-image: ending-element.png
 ---
 ```xml
 <part id="P1">

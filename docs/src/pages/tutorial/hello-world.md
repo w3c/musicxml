@@ -6,7 +6,7 @@ Brian Kernighan and Dennis Ritchie popularized the practice of writing a program
 
 In MusicXML, a song with the lyrics "hello, world" is actually more complicated than we need for a simple MusicXML file. Let us keep things even simpler: a one-measure piece of music that contains a whole note on middle C, based in 4/4 time:
 
-![Middle C](../../assets/img/notation/hello-world.png)
+![Middle C](../../assets/img/tutorial/tutorial-hello-world.png)
 
 Here it is in MusicXML:
 

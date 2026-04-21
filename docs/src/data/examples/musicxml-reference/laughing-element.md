@@ -1,7 +1,6 @@
 ---
 title: '<laughing>'
 elements: laughing
-image: laughing-element.png
 ---
 ```xml
 <note default-x="45">

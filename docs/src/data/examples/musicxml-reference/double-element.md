@@ -1,7 +1,6 @@
 ---
 title: '<double>'
 elements: double
-image: double-element.png
 ---
 ```xml
 <measure number="1" width="251">

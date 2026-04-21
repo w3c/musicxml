@@ -1,7 +1,6 @@
 ---
 title: '<voice>'
 elements: voice
-image: voice-element.png
 ---
 ```xml
 <measure number="12">

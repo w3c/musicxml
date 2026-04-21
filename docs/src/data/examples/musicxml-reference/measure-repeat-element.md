@@ -1,7 +1,6 @@
 ---
 title: '<measure-repeat>'
 elements: measure-repeat
-image: measure-repeat-element.png
 ---
 ```xml
 <part id="P1">

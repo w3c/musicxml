@@ -1,7 +1,6 @@
 ---
 title: '<group-barline>'
 elements: group-barline
-image: group-barline-element.png
 ---
 ```xml
 <part-group number="1" type="start">

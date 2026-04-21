@@ -1,7 +1,6 @@
 ---
 title: '<n>'
 elements: n
-image: n-element.png
 ---
 ```xml
 <measure number="13" width="161">

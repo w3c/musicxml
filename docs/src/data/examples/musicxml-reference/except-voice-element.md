@@ -1,7 +1,6 @@
 ---
 title: '<except-voice>'
 elements: except-voice
-image: except-voice-element.png
 ---
 ```xml
 <measure number="119" width="220">

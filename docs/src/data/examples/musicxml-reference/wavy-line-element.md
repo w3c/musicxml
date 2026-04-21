@@ -1,7 +1,6 @@
 ---
 title: '<wavy-line>'
 elements: wavy-line
-image: wavy-line-element.png
 ---
 ```xml
 <measure number="2">

@@ -1,7 +1,6 @@
 ---
 title: '<ppppp>'
 elements: ppppp
-image: ppppp-element.png
 ---
 ```xml
 <direction placement="below">

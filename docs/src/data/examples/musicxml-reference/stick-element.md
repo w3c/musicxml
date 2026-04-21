@@ -4,7 +4,6 @@ elements:
 - stick
 - stick-type
 - stick-material
-image: stick-element.png
 ---
 ```xml
 <direction-type>

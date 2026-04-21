@@ -1,7 +1,6 @@
 ---
 title: '<syllabic>'
 elements: syllabic
-image: syllabic-element.png
 ---
 ```xml
 <measure number="38">

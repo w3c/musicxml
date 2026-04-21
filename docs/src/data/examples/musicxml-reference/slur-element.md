@@ -1,7 +1,6 @@
 ---
 title: '<slur>'
 elements: slur
-image: slur-element.png
 ---
 ```xml
 <measure number="13">

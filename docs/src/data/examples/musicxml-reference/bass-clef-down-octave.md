@@ -1,6 +1,5 @@
 ---
 title: 'Bass Clef (Down Octave)'
-image: bass-clef-down-octave.png
 ---
 ```xml
 <clef>

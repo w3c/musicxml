@@ -6,7 +6,6 @@ elements:
 - second
 - swing-type
 - swing-style
-image: swing-element.png
 ---
 ```xml
 <direction directive="yes" placement="above" system="only-top">

@@ -1,7 +1,6 @@
 ---
 title: '<pitched>'
 elements: pitched
-image: pitched-element.png
 ---
 ```xml
 <direction placement="above">

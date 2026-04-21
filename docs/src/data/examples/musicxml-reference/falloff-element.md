@@ -1,7 +1,6 @@
 ---
 title: '<falloff>'
 elements: falloff
-image: falloff-element.png
 ---
 ```xml
 <notations>

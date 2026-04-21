@@ -1,7 +1,6 @@
 ---
 title: '<root-alter>'
 elements: root-alter
-image: root-alter-element.png
 ---
 ```xml
 <harmony font-family="Arial">

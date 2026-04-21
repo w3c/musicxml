@@ -1,7 +1,6 @@
 ---
 title: '<artificial>'
 elements: artificial
-image: artificial-element.png
 ---
 ```xml
 <measure number="12">

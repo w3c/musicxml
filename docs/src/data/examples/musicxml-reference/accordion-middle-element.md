@@ -1,7 +1,6 @@
 ---
 title: '<accordion-middle>'
 elements: accordion-middle
-image: accordion-middle-element.png
 ---
 ```xml
 <accordion-registration>

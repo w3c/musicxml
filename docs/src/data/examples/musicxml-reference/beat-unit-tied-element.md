@@ -4,7 +4,6 @@ elements:
 - beat-unit-tied
 - beat-unti
 - beat-unit-dot
-image: beat-unit-tied-element.png
 ---
 ```xml
 <metronome>

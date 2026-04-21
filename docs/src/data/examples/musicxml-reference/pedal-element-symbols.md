@@ -1,7 +1,6 @@
 ---
 title: '<pedal> (Symbols)'
 elements: pedal
-image: pedal-element-symbols.png
 ---
 ```xml
 <measure number="3" width="245">

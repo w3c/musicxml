@@ -4,7 +4,6 @@ elements:
 - group-abbreviation-display
 - display-text
 - accidental-text
-image: group-abbreviation-display-element.png
 ---
 ```xml
 <part-group number="3" type="start">

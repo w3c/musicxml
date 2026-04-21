@@ -1,7 +1,6 @@
 ---
 title: '<tied>'
 elements: tied
-image: tied-element.png
 ---
 ```xml
 <measure number="85" width="216">

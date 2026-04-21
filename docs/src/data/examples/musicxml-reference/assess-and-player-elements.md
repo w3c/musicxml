@@ -5,7 +5,6 @@ elements:
 - player-name
 - listen
 - assess
-image: assess-player-elements.png
 description: A women's choral part is set up so that on three-way splits, first sopranos should sing the top note, second sopranos should sing the middle note, and all altos should sing the bottom note. A listening application can then see if the pitch is correct based on which player is selected.
 ---
 ```xml

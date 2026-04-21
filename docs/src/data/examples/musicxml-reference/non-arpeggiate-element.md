@@ -1,7 +1,6 @@
 ---
 title: '<non-arpeggiate>'
 elements: non-arpeggiate
-image: non-arpeggiate-element.png
 ---
 ```xml
 <measure number="6">

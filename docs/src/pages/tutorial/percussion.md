@@ -18,7 +18,7 @@ MusicXML allows percussion music to be represented both as heard and as notated 
 
 To illustrate MusicXML's percussion features, here is a [two-bar example](../../musicxml-reference/examples/tutorial-percussion/) for two players: one on a drum kit, and one on cowbell:
 
-![Two Bar Percussion](../../assets/img/notation/percussion.png)
+![Two Bar Percussion](../../assets/img/tutorial/tutorial-percussion.png)
 
 In the drum part, the top space (B in bass clef) is used for the cymbal (diamond notehead) and hi-hat (x notehead). The E space is used for the snare drum, and the bottom A space is used for the bass drum. The cowbell player has only one instrument, so it is represented on a one-line staff.
 

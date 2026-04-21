@@ -1,7 +1,6 @@
 ---
 title: '<attributes>'
 elements: attributes
-image: attributes-element.png
 ---
 ```xml
 <measure number="1" width="375">

@@ -1,6 +1,5 @@
 ---
 title: 'Tutorial: Chord Symbols'
-image: chord.png
 tutorial: true
 ---
 ```xml

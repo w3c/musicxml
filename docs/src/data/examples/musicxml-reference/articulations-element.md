@@ -3,7 +3,6 @@ title: '<articulations>'
 elements:
 - articulations
 - staccato
-image: articulations-element.png
 ---
 ```xml
 <notations>

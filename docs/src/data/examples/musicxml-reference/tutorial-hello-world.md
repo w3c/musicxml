@@ -1,6 +1,5 @@
 ---
 title: 'Tutorial: Hello, World'
-image: hello-world.png
 tutorial: true
 ---
 ```xml

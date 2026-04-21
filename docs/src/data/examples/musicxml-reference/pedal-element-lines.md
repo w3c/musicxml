@@ -1,7 +1,6 @@
 ---
 title: '<pedal> (Lines)'
 elements: pedal
-image: pedal-element-lines.png
 ---
 ```xml
 <part id="P1">

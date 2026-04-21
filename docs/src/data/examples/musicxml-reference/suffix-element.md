@@ -1,7 +1,6 @@
 ---
 title: '<suffix>'
 elements: suffix
-image: suffix-element-accidental.png
 ---
 ```xml
 <figured-bass default-y="-80">

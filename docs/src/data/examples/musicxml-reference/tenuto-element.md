@@ -1,7 +1,6 @@
 ---
 title: '<tenuto>'
 elements: tenuto
-image: tenuto-element.png
 ---
 ```xml
 <notations>

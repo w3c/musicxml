@@ -14,10 +14,10 @@ const frontmatter = {
 ---
 <BaseLayout frontmatter={frontmatter}>
   {Object.values(examples).sort((a,b) => a.frontmatter.title.localeCompare(b.frontmatter.title)).map(example => {
-    const image = example.frontmatter.image ? `/src/assets/img/${example.frontmatter.tutorial ? 'notation' : 'examples'}/${example.frontmatter.image}` : null;
     const name = Path.parse(example.file).name;
+    const image = `/src/assets/img/${example.frontmatter.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
     return (
-      image && <Image src={images[image]()} alt={name} />
+      <Fragment>{image in images && <Image src={images[image]()} alt={name} />}</Fragment>
       <a href={"/musicxml/musicxml-reference/examples/" + name + "/"}>{example.frontmatter.title}</a>
       <p/>
     );

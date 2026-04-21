@@ -1,7 +1,6 @@
 ---
 title: '<elision>'
 elements: elision
-image: elision-element.png
 ---
 ```xml
 <lyric default-y="-80" number="1">

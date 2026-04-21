@@ -1,7 +1,6 @@
 ---
 title: '<accidental-mark> (Ornament)'
 elements: accidental-mark
-image: accidental-mark-element-ornament.png
 ---
 ```xml
 <note default-x="229">

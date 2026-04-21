@@ -4,7 +4,6 @@ elements:
 - transpose
 - diatonic
 - chromatic
-image: transpose-element.png
 ---
 ```xml
 <attributes>

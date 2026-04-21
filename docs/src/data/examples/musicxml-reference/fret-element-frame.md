@@ -1,7 +1,6 @@
 ---
 title: '<fret> (Frame)'
 elements: fret
-image: fret-element-frame.png
 ---
 ```xml
 <harmony default-y="110" font-family="Arial">

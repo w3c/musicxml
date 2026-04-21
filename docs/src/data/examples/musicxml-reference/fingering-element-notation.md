@@ -1,7 +1,6 @@
 ---
 title: '<fingering> (Notation)'
 elements: fingering
-image: fingering-element-notation.png
 ---
 ```xml
 <notations>

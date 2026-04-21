@@ -1,7 +1,6 @@
 ---
 title: '<bracket>'
 elements: bracket
-image: bracket-element.png
 ---
 ```xml
 <measure number="14">

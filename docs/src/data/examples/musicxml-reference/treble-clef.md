@@ -1,6 +1,5 @@
 ---
 title: 'Treble Clef'
-image: treble-clef.png
 ---
 ```xml
 <clef>

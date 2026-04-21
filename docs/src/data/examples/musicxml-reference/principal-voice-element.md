@@ -1,7 +1,6 @@
 ---
 title: '<principal-voice>'
 elements: principal-voice
-image: principal-voice-element.png
 ---
 ```xml
 <measure number="97" width="167">

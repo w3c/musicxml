@@ -1,7 +1,6 @@
 ---
 title: '<extend> (Figured Bass)'
 elements: extend
-image: extend-element-figure.png
 ---
 ```xml
 <measure number="74">

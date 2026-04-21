@@ -1,7 +1,6 @@
 ---
 title: '<trill-mark>'
 elements: trill-mark
-image: trill-mark-element.png
 ---
 ```xml
 <note default-x="13">

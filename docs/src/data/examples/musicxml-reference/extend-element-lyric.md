@@ -1,7 +1,6 @@
 ---
 title: '<extend> (Lyric)'
 elements: extend
-image: extend-element-lyric.png
 ---
 ```xml
 <measure number="80">

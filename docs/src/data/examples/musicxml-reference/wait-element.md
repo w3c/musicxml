@@ -1,7 +1,6 @@
 ---
 title: '<wait>'
 elements: wait
-image: wait-element.png
 ---
 ```xml
 <measure number="146">

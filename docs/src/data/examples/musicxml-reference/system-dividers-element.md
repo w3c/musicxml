@@ -4,7 +4,6 @@ elements:
 - system-dividers
 - left-divider
 - right-divider
-image: system-dividers-element.png
 ---
 ```xml
 <system-layout>

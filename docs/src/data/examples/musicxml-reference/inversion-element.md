@@ -1,7 +1,6 @@
 ---
 title: '<inversion>'
 elements: inversion
-image: inversion-element.png
 ---
 ```xml
 <harmony default-y="-80">
