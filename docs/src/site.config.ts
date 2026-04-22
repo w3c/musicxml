@@ -6,7 +6,7 @@ export const siteInfo: SiteInfo = {
 	title: 'MusicXML',
 	specVersion: '4.1',
 	isDraft: true,
-  isDev: import.meta.env.DEV
+  isDev: import.meta.env.MODE === 'development'
 }
 
 /**

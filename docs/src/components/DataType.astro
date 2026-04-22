@@ -1,12 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 
-import MarkdownIt from 'markdown-it';
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import DataTypeLink from './DataTypeLink.astro';
 import ElementLink from './ElementLink.astro';
 import DataTypeValueRow from './DataTypeValueRow.astro';
 
-const md = new MarkdownIt();
+const processor = await createMarkdownProcessor();
 const elements = await getCollection('musicxmlElements');
 const { datatype, schema } = Astro.props;
 const usages = elements.reduce((usages, element) => {
@@ -28,7 +28,7 @@ const usages = elements.reduce((usages, element) => {
   return 0;
 });
 ---
-{datatype.data.documentation && <p class="description" set:html={md.render(datatype.data.documentation)} />}
+{datatype.data.documentation && <p class="description" set:html={(await processor.render(datatype.data.documentation)).code} />}
 
 {(datatype.data.base || datatype.data.type) && <section class="values">
   <h2>Allowed values</h2>
@@ -50,7 +50,7 @@ const usages = elements.reduce((usages, element) => {
       </tbody>
     </table>
   ) : datatype.data.type === 'regex' ? (
-    <p>Regex pattern: <span class="regex" set:html={md.renderInline(`\`${datatype.data.value}\``)} /></p>
+    <Fragment set:html={(await processor.render(`Regex pattern: \`${datatype.data.value}\``)).code}/>
   ) : datatype.data.type === 'range' ? (
     <Fragment>
       {'minInclusive' in datatype.data.value && <p>Minimum allowed value: <span class="range">{datatype.data.value.minInclusive}</span></p>}

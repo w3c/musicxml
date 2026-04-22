@@ -2,11 +2,11 @@
 import { Code } from 'astro:components';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
-import MarkdownIt from 'markdown-it';
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import Path from 'node:path';
 import { defaultElementsMap } from '../site.config';
 
-const md = new MarkdownIt();
+const processor = await createMarkdownProcessor();
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 const { example, schema } = Astro.props;
 const snippet = example.rawContent().replace(/```xml|```/g, '').trim();
@@ -17,7 +17,7 @@ const image = `/src/assets/img/${example.frontmatter.tutorial ? 'tutorial' : 'ex
   <Image src={images[image]()} alt={name} />
 )}
 {example.frontmatter.description && (
-  <p set:html={md.render(example.frontmatter.description)} />
+  <p set:html={(await processor.render(example.frontmatter.description)).code} />
 )}
 <p/>
 <Code lang="xml" code={snippet}

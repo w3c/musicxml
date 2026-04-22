@@ -1,13 +1,13 @@
 ---
 import { Image } from 'astro:assets';
-import MarkdownIt from 'markdown-it';
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import ElementLink from '@components/ElementLink.astro';
 import ExampleLink from '@components/ExampleLink.astro';
 import ElementContent from '@components/ElementContent.astro';
 import DataTypeLink from './DataTypeLink.astro';
 import { defaultElementsMap } from '../site.config';
 
-const md = new MarkdownIt();
+const processor = await createMarkdownProcessor();
 const { element, schema } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/elements/*.png');
 const examples = import.meta.glob('../data/examples/**/*.md', { eager: true });
@@ -32,7 +32,7 @@ const examples_ = Object.values(examples).filter(example =>
 
 {image in images && <Image src={images[image]()} alt={element.id} />}
 
-{element.data.documentation && <p class="description" set:html={md.render(element.data.documentation)} />}
+{element.data.documentation && <p class="description" set:html={(await processor.render(element.data.documentation)).code} />}
 
 <section class="content">
   <h2>Content</h2>

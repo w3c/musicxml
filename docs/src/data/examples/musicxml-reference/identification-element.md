@@ -1,6 +1,5 @@
 ---
 title: '<identification>'
-elements: identification
 ---
 ```xml
 <identification>
