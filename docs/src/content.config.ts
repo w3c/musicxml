@@ -53,23 +53,17 @@ const soundsElements = defineCollection({
   schema: ElementType,
 });
 
-const TreeElementType = z.record(z.string(), z.object());
-
 const containerElementsTree = defineCollection({
   loader: file("src/data/elements-tree-container.json"),
-  schema: TreeElementType,
 });
 const musicxmlElementsTree = defineCollection({
   loader: file("src/data/elements-tree-musicxml.json"),
-  schema: TreeElementType,
 });
 const opusElementsTree = defineCollection({
   loader: file("src/data/elements-tree-opus.json"),
-  schema: TreeElementType,
 });
 const soundsElementsTree = defineCollection({
   loader: file("src/data/elements-tree-sounds.json"),
-  schema: TreeElementType,
 });
 
 const DataTypeType = z.discriminatedUnion('type', [
