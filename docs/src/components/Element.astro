@@ -1,11 +1,17 @@
 ---
 import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import ElementLink from '@components/ElementLink.astro';
 import ExampleLink from '@components/ExampleLink.astro';
 import ElementContent from '@components/ElementContent.astro';
 import DataTypeLink from './DataTypeLink.astro';
 import { defaultElementsMap } from '../site.config';
+
+interface Props {
+  element: CollectionEntry<'musicxmlElements' | 'containerElements' | 'opusElements' | 'soundsElements'>,
+  schema: string
+}
 
 const processor = await createMarkdownProcessor();
 const { element, schema } = Astro.props;

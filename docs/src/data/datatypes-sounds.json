@@ -1,11 +1,13 @@
 {
    "xsd-NMTOKEN": {
       "name": "xs:NMTOKEN",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NMTOKEN)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NMTOKEN).",
+      "type": "none"
    },
    "xsd-token": {
       "name": "xs:token",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token).",
+      "type": "none"
    },
    "yes-no": {
       "name": "yes-no",
@@ -27,6 +29,7 @@
    },
    "xsd-ID": {
       "name": "xs:ID",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#ID)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#ID).",
+      "type": "none"
    }
 }

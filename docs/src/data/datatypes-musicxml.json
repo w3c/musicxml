@@ -36,7 +36,7 @@
       "base": [
          "comma-separated-text"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "font-weight": {
@@ -283,7 +283,7 @@
       "base": [
          "xs:integer"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "tip-direction": {
@@ -334,7 +334,7 @@
       "base": [
          "xs:nonNegativeInteger"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "millimeters": {
@@ -343,7 +343,7 @@
       "base": [
          "xs:decimal"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "caesura-value": {
@@ -431,7 +431,7 @@
          "yes-no",
          "xs:decimal"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "percent": {
@@ -510,7 +510,8 @@
    },
    "xsd-date": {
       "name": "xs:date",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#date)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#date).",
+      "type": "none"
    },
    "xml-lang": {
       "name": "xml:lang",
@@ -843,7 +844,8 @@
    },
    "xsd-nonNegativeInteger": {
       "name": "xs:nonNegativeInteger",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#nonNegativeInteger)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#nonNegativeInteger).",
+      "type": "none"
    },
    "right-left-middle": {
       "name": "right-left-middle",
@@ -1023,7 +1025,8 @@
    },
    "xsd-NMTOKEN": {
       "name": "xs:NMTOKEN",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NMTOKEN)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NMTOKEN).",
+      "type": "none"
    },
    "smufl-lyrics-glyph-name": {
       "name": "smufl-lyrics-glyph-name",
@@ -1036,7 +1039,8 @@
    },
    "xsd-decimal": {
       "name": "xs:decimal",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#decimal)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#decimal).",
+      "type": "none"
    },
    "line-length": {
       "name": "line-length",
@@ -1159,7 +1163,8 @@
    },
    "xsd-language": {
       "name": "xs:language",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#language)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#language).",
+      "type": "none"
    },
    "symbol-size": {
       "name": "symbol-size",
@@ -1211,7 +1216,8 @@
    },
    "xsd-integer": {
       "name": "xs:integer",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#integer)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#integer).",
+      "type": "none"
    },
    "membrane-value": {
       "name": "membrane-value",
@@ -1297,7 +1303,7 @@
       "base": [
          "xs:positiveInteger"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "staff-type": {
@@ -1542,7 +1548,7 @@
       "base": [
          "xs:NMTOKEN"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "pitched-value": {
@@ -1706,7 +1712,7 @@
       "base": [
          "xs:decimal"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "metal-value": {
@@ -1919,7 +1925,7 @@
       "base": [
          "xs:token"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "degree-symbol-value": {
@@ -2143,7 +2149,8 @@
    },
    "xsd-positiveInteger": {
       "name": "xs:positiveInteger",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#positiveInteger)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#positiveInteger).",
+      "type": "none"
    },
    "clef-sign": {
       "name": "clef-sign",
@@ -2293,7 +2300,7 @@
       "base": [
          "xs:token"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "breath-mark-value": {
@@ -2332,7 +2339,7 @@
       "base": [
          "xs:token"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "tremolo-type": {
@@ -2433,16 +2440,18 @@
       "base": [
          "xs:decimal"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "xsd-string": {
       "name": "xs:string",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#string)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#string).",
+      "type": "none"
    },
    "xsd-token": {
       "name": "xs:token",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token).",
+      "type": "none"
    },
    "fermata-shape": {
       "name": "fermata-shape",
@@ -2568,7 +2577,7 @@
       "base": [
          "xs:positiveInteger"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "upright-inverted": {
@@ -2685,7 +2694,7 @@
       "base": [
          "xs:anyURI"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "xlink-type": {
@@ -2708,7 +2717,7 @@
       "base": [
          "xs:token"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "xlink-show": {
@@ -2795,7 +2804,7 @@
       "base": [
          "xs:token"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "wood-value": {
@@ -3016,15 +3025,18 @@
    },
    "xsd-IDREF": {
       "name": "xs:IDREF",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#IDREF)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#IDREF).",
+      "type": "none"
    },
    "xsd-NCName": {
       "name": "xs:NCName",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NCName)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NCName).",
+      "type": "none"
    },
    "xsd-anyURI": {
       "name": "xs:anyURI",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#anyURI)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#anyURI).",
+      "type": "none"
    },
    "xml-space": {
       "name": "xml:space",
@@ -3051,7 +3063,7 @@
          "xs:decimal",
          "css-font-size"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "font-style": {
@@ -3199,7 +3211,7 @@
       "base": [
          "xs:token"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "non-negative-decimal": {
@@ -3838,7 +3850,7 @@
       "base": [
          "xs:string"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "string-number": {
@@ -3847,7 +3859,7 @@
       "base": [
          "xs:positiveInteger"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "tenths": {
@@ -3856,7 +3868,7 @@
       "base": [
          "xs:decimal"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "two-note-turn": {
@@ -3927,7 +3939,7 @@
       "base": [
          "xs:integer"
       ],
-      "type": null,
+      "type": "none",
       "value": null
    },
    "fan": {
@@ -4108,6 +4120,7 @@
    },
    "xsd-ID": {
       "name": "xs:ID",
-      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#ID)."
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#ID).",
+      "type": "none"
    }
 }

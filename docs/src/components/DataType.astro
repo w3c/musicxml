@@ -1,10 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
-
+import type { CollectionEntry } from 'astro:content';
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import DataTypeLink from './DataTypeLink.astro';
 import ElementLink from './ElementLink.astro';
 import DataTypeValueRow from './DataTypeValueRow.astro';
+
+interface Props {
+  datatype: CollectionEntry<'musicxmlDatatypes' | 'containerDatatypes' | 'opusDatatypes' | 'soundsDatatypes'>,
+  schema: string
+}
 
 const processor = await createMarkdownProcessor();
 const elements = await getCollection('musicxmlElements');

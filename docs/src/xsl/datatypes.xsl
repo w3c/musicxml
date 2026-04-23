@@ -42,7 +42,7 @@
       'type': if (.//xs:restriction[xs:enumeration]) then 'values'
         else if (.//xs:restriction[xs:pattern]) then 'regex'
         else if (.//xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then 'range'
-        else (),
+        else 'none',
       'value': if (.//xs:restriction[xs:enumeration]) then fn:fold-left(.//xs:restriction/xs:enumeration, array{}, function($a, $v) {
         array:append($a, map {
           'value': xs:string($v/@value),
@@ -57,7 +57,8 @@
       <xsl:if test="starts-with(current(), 'xs:')">
         <xsl:sequence select="map {
           'name': current(),
-          'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize(current(), ':')[2] || ').'
+          'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize(current(), ':')[2] || ').',
+          'type': 'none'
         }"/>
       </xsl:if>
     </xsl:for-each>
@@ -83,7 +84,7 @@
           'name': $schema || ':' || xs:string(@name),
           'documentation': (),
           'base': array{xs:string(@type)},
-          'type': (),
+          'type': 'none',
           'value': ()
         }"/>
       </xsl:otherwise>
@@ -93,7 +94,8 @@
   <xsl:template mode="xs-type" match="xs:attribute[@type]">
     <xsl:sequence select="map {
       'name': xs:string(@type),
-      'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize(@type, ':')[2] || ').'
+      'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize(@type, ':')[2] || ').',
+      'type': 'none'
     }"/>
   </xsl:template>
 </xsl:stylesheet>

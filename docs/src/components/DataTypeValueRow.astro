@@ -1,6 +1,12 @@
 ---
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  datatype: CollectionEntry<'musicxmlDatatypes' | 'containerDatatypes' | 'opusDatatypes' | 'soundsDatatypes'>,
+  value: any
+}
 
 const processor = await createMarkdownProcessor();
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/datatypes/*.png');
