@@ -6,7 +6,7 @@ export const siteInfo: SiteInfo = {
 	title: 'MusicXML',
 	specVersion: '4.1',
 	isDraft: true,
-  isDev: import.meta.env.MODE === 'development'
+  isDev: import.meta.env.MODE === 'development' || !import.meta.env.SITE.includes('w3c-cg.github.io')
 }
 
 /**
