@@ -12,6 +12,7 @@
   xmlns:array="http://www.w3.org/2005/xpath-functions/array"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:fn="http://www.w3.org/2005/xpath-functions"
+  xmlns:musicxml="http://www.w3.org/2021/06/musicxml40"
   exclude-result-prefixes="#all"
 >
   <xsl:output method="json" indent="yes" encoding="UTF-8"/>
@@ -22,11 +23,22 @@
   <xsl:mode name="attributes" on-no-match="deep-skip"/>
   <xsl:mode name="children" on-no-match="deep-skip"/>
 
+  <xsl:param name="element" select="()"/>
+
   <xsl:template match="/">
     <xsl:variable name="hierarchy" as="element()*">
-      <xsl:apply-templates select="xs:schema/xs:element" mode="hierarchy">
-        <xsl:with-param name="parents" select="()"/>
-      </xsl:apply-templates>
+      <xsl:choose>
+        <xsl:when test="$element">
+          <xsl:apply-templates select="//xs:element[@name=$element]" mode="hierarchy">
+            <xsl:with-param name="parents" select="()"/>
+          </xsl:apply-templates>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="xs:schema/xs:element" mode="hierarchy">
+            <xsl:with-param name="parents" select="()"/>
+          </xsl:apply-templates>
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:variable>
     <xsl:call-template name="output">
       <xsl:with-param name="hierarchy" select="$hierarchy"/>
@@ -35,25 +47,14 @@
 
   <xsl:template match="xs:element" mode="hierarchy">
     <xsl:param name="parents" as="xs:string*"/>
-    <!--
-      SPECIAL CASE!! We need to differentiate between <measure> and <part>
-      in their <score-partwise> and <score-timewise> version, so we "invent"
-      new tag names for each. We will need to do the opposite work on the frontend,
-      i.e. bring those invented tag names back to the real ones.
-    -->
-    <xsl:variable name="element-name" select="
-      if (@name = 'part') then (
-        if ($parents = 'score-partwise') then 'part-partwise' else 'part-timewise'
-      ) else if (@name = 'measure') then (
-        if ($parents = 'score-timewise') then 'measure-timewise' else 'measure-partwise'
-      ) else @name
-    "/>
+    <xsl:variable name="element-name" select="musicxml:elementName($parents, .)"/>
     <xsl:element name="{$element-name}">
       <xsl:attribute name="attribute" select="false()"/>
       <xsl:attribute name="parents" select="$parents"/>
       <xsl:attribute name="documentation">
         <xsl:value-of select="(
           xs:annotation/xs:documentation/text(),
+          /xs:schema/xs:complexType//xs:element[@name=current()/@name]/xs:annotation/xs:documentation/text(),
           /xs:schema/xs:complexType[@name=current()/@type]/xs:annotation/xs:documentation/text(),
           /xs:schema/xs:group[@name=current()/@name]/xs:annotation/xs:documentation/text(),
           ''
@@ -77,6 +78,7 @@
               /xs:schema/xs:complexType[@name=current()/@type]
             " mode="children">
               <xsl:with-param name="parents" select="($parents, $element-name)"/>
+              <xsl:with-param name="cardinality" select="map{}"/>
             </xsl:apply-templates>
           </xsl:otherwise>
         </xsl:choose>
@@ -110,73 +112,94 @@
 
   <xsl:template match="xs:element" mode="children" as="map(*)">
     <xsl:param name="parents"/>
-    <!--
-      SPECIAL CASE!! We need to differentiate between <measure> and <part>
-      in their <score-partwise> and <score-timewise> version, so we "invent"
-      new tag names for each. We will need to do the opposite work on the frontend,
-      i.e. bring those invented tag names back to the real ones.
-    -->
-    <xsl:variable name="element-name" select="
-      if (@name = 'part') then (
-        if ($parents = 'score-partwise') then 'part-partwise' else 'part-timewise'
-      ) else if (@name = 'measure') then (
-        if ($parents = 'score-timewise') then 'measure-timewise' else 'measure-partwise'
-      ) else @name
-    "/>
-    <xsl:sequence select="map {
-      'type': 'element',
-      'min': xs:string((@minOccurs, '1')[1]),
-      'max': xs:string((@maxOccurs, '1')[1]),
-      'value': xs:string($element-name)
-    }"/>
+    <xsl:param name="cardinality"/>
+    <xsl:variable name="element-name" select="musicxml:elementName($parents, .)"/>
+    <xsl:sequence select="map:merge((map {
+        'type': 'element',
+        'value': xs:string($element-name)
+      }, musicxml:cardinality($cardinality, map {
+        'min': xs:string((@minOccurs, '1')[1]),
+        'max': xs:string((@maxOccurs, '1')[1])
+      })
+    ))"/>
   </xsl:template>
 
   <xsl:template match="xs:complexType | xs:group[@name]" mode="children" as="map(*)*">
     <xsl:param name="parents"/>
+    <xsl:param name="cardinality"/>
     <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice | xs:complexContent | xs:simpleContent" mode="#current">
       <xsl:with-param name="parents" select="$parents"/>
+      <xsl:with-param name="cardinality" select="$cardinality"/>
     </xsl:apply-templates>
   </xsl:template>
 
   <xsl:template match="xs:sequence" mode="children" as="map(*)*">
     <xsl:param name="parents"/>
+    <xsl:param name="cardinality"/>
     <xsl:variable name="sequence" as="map(*)*">
       <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current">
         <xsl:with-param name="parents" select="$parents"/>
+        <xsl:with-param name="cardinality" select="map{}"/>
       </xsl:apply-templates>
     </xsl:variable>
-    <xsl:sequence select="map {
-      'type': 'sequence',
-      'min': xs:string((@minOccurs, '1')[1]),
-      'max': xs:string((@maxOccurs, '1')[1]),
-      'value': array{$sequence}
-    }"/>
+    <xsl:choose>
+      <xsl:when test="count($sequence) = 1">
+        <xsl:sequence select="map:merge((map {
+            'type': $sequence[1]('type'),
+            'value': $sequence[1]('value')
+          }, musicxml:cardinality($cardinality, map {
+            'min': $sequence[1]('min'),
+            'max': $sequence[1]('max')
+          })
+        ))"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="map:merge((map {
+            'type': 'sequence',
+            'value': array{$sequence}
+          }, musicxml:cardinality($cardinality, map {
+            'min': xs:string((@minOccurs, '1')[1]),
+            'max': xs:string((@maxOccurs, '1')[1])
+          })
+        ))"/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="xs:choice" mode="children" as="map(*)*">
     <xsl:param name="parents"/>
+    <xsl:param name="cardinality"/>
     <xsl:variable name="choice" as="map(*)*">
       <xsl:apply-templates select="xs:element | xs:complexType | xs:sequence | xs:group[@ref] | xs:choice" mode="#current">
         <xsl:with-param name="parents" select="$parents"/>
+        <xsl:with-param name="cardinality" select="map{}"/>
       </xsl:apply-templates>
     </xsl:variable>
-    <xsl:sequence select="map {
-      'type': 'choice',
-      'min': xs:string((@minOccurs, '1')[1]),
-      'max': xs:string((@maxOccurs, '1')[1]),
-      'value': array{$choice}
-    }"/>
+    <xsl:sequence select="map:merge((map {
+        'type': 'choice',
+        'value': array{$choice}
+      }, musicxml:cardinality($cardinality, map {
+        'min': xs:string((@minOccurs, '1')[1]),
+        'max': xs:string((@maxOccurs, '1')[1])
+      })
+    ))"/>
   </xsl:template>
 
   <xsl:template match="xs:group[@ref]" mode="children">
     <xsl:param name="parents"/>
+    <xsl:param name="cardinality"/>
     <xsl:apply-templates select="/xs:schema/xs:group[@name=current()/@ref]" mode="#current">
       <xsl:with-param name="parents" select="$parents"/>
+      <xsl:with-param name="cardinality" select="musicxml:cardinality($cardinality, map {
+        'min': xs:string(@minOccurs),
+        'max': xs:string(@maxOccurs)
+      })"/>
     </xsl:apply-templates>
   </xsl:template>
 
   <xsl:template match="xs:simpleContent[xs:extension[@base]]" mode="children">
     <xsl:param name="parents"/>
+    <xsl:param name="cardinality"/>
     <xsl:sequence select="map {
       'type': 'type',
       'value': xs:string(xs:extension/@base)
@@ -185,8 +208,10 @@
 
   <xsl:template match="xs:complexContent[xs:extension[@base]]" mode="children">
     <xsl:param name="parents"/>
+    <xsl:param name="cardinality"/>
     <xsl:apply-templates select="/xs:schema/xs:complexType[@name=current()/xs:extension/@base]" mode="#current">
       <xsl:with-param name="parents" select="$parents"/>
+      <xsl:with-param name="cardinality" select="map{}"/>
     </xsl:apply-templates>
   </xsl:template>
 
@@ -293,4 +318,31 @@
       return $m2
     "/>
   </xsl:template>
+
+  <xsl:function name="musicxml:cardinality">
+    <xsl:param name="parent" as="map(*)"/>
+    <xsl:param name="current" as="map(*)"/>
+    <xsl:sequence select="map {
+      'min': ($parent('min'), $current('min'))[1],
+      'max': ($parent('max'), $current('max'))[1]
+    }"/>
+  </xsl:function>
+
+  <xsl:function name="musicxml:elementName">
+    <xsl:param name="parents" as="xs:string*"/>
+    <xsl:param name="current" as="element()"/>
+    <!--
+      SPECIAL CASE!! We need to differentiate between <measure> and <part>
+      in their <score-partwise> and <score-timewise> version, so we "invent"
+      new tag names for each. We will need to do the opposite work on the frontend,
+      i.e. bring those invented tag names back to the real ones.
+    -->
+    <xsl:sequence select="
+      if ($current/@name = 'part') then (
+        if ($parents = 'score-partwise') then 'part-partwise' else 'part-timewise'
+      ) else if ($current/@name = 'measure') then (
+        if ($parents = 'score-timewise') then 'measure-timewise' else 'measure-partwise'
+      ) else $current/@name
+    "/>
+  </xsl:function>
 </xsl:stylesheet>

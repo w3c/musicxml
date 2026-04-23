@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import ViteRestart from 'vite-plugin-restart';
 
 const setLayout = () => {
   return function (_, file) {
@@ -29,7 +30,12 @@ export default defineConfig({
     remarkPlugins: [setLayout],
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [
+      tailwindcss(),
+      ViteRestart({
+        restart: ['src/data/**', '!src/xsl/**']
+      })
+    ]
   },
   site: 'https://davidmatthew-ie.github.io',
   base: '/musicxml',

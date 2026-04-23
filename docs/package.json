@@ -11,12 +11,14 @@
     "build:schemas": "for xsd in container musicxml opus sounds; do for xsl in elements elements-tree datatypes; do xslt3 -xsl:src/xsl/$xsl.xsl -s:../schema/$xsd.xsd > src/data/$xsl-$xsd.json; done; done",
     "build": "npm run build:schemas && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "debug:xsl": "run() { xslt3 -xsl:src/xsl/\"$1\".xsl -s:../schema/\"$2\".xsd ${@:3}; }; run"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.3",
     "tailwindcss": "^4.2.2",
+    "vite-plugin-restart": "^2.0.0",
     "xslt3": "^2.7.0"
   },
   "devDependencies": {

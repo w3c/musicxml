@@ -48,41 +48,41 @@
    "opus": {
       "children": {
          "type": "sequence",
-         "min": "1",
-         "max": "1",
          "value": [
             {
                "type": "element",
+               "value": "title",
                "min": "0",
-               "max": "1",
-               "value": "title"
+               "max": "1"
             },
             {
                "type": "choice",
-               "min": "0",
-               "max": "unbounded",
                "value": [
                   {
                      "type": "element",
+                     "value": "opus",
                      "min": "1",
-                     "max": "1",
-                     "value": "opus"
+                     "max": "1"
                   },
                   {
                      "type": "element",
+                     "value": "opus-link",
                      "min": "1",
-                     "max": "1",
-                     "value": "opus-link"
+                     "max": "1"
                   },
                   {
                      "type": "element",
+                     "value": "score",
                      "min": "1",
-                     "max": "1",
-                     "value": "score"
+                     "max": "1"
                   }
-               ]
+               ],
+               "min": "0",
+               "max": "unbounded"
             }
-         ]
+         ],
+         "min": "1",
+         "max": "1"
       },
       "parents": [
          "opus"
