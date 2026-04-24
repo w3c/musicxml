@@ -103,6 +103,7 @@
    <sound id="drum.atsimevu"/>
    <sound id="drum.axatse"/>
    <sound id="drum.bass-drum"/>
+   <sound id="drum.bass-drum.pipe-band"/>
    <sound id="drum.bata"/>
    <sound id="drum.bata.itotele"/>
    <sound id="drum.bata.iya"/>
@@ -143,6 +144,11 @@
    <sound id="drum.group.chinese"/>
    <sound id="drum.group.ewe"/>
    <sound id="drum.group.indian"/>
+   <sound id="drum.group.multi-bass"/>
+   <sound id="drum.group.multi-bass.marching"/>
+   <sound id="drum.group.multi-toms"/>
+   <sound id="drum.group.multi-toms.marching"/>
+   <sound id="drum.group.multi-toms.marching.line"/>
    <sound id="drum.group.set"/>
    <sound id="drum.hand-drum"/>
    <sound id="drum.hira-daiko"/>
@@ -198,6 +204,9 @@
    <sound id="drum.slit-drum.krin"/>
    <sound id="drum.snare-drum"/>
    <sound id="drum.snare-drum.electric"/>
+   <sound id="drum.snare-drum.marching"/>
+   <sound id="drum.snare-drum.marching.line"/>
+   <sound id="drum.snare-drum.pipe-band"/>
    <sound id="drum.sogo"/>
    <sound id="drum.surdo"/>
    <sound id="drum.tabla"/>
@@ -217,6 +226,9 @@
    <sound id="drum.tar"/>
    <sound id="drum.tasha"/>
    <sound id="drum.tenor-drum"/>
+   <sound id="drum.tenor-drum.marching"/>
+   <sound id="drum.tenor-drum.marching.line"/>
+   <sound id="drum.tenor-drum.pipe-band"/>
    <sound id="drum.teponaxtli"/>
    <sound id="drum.thavil"/>
    <sound id="drum.the-box"/>
@@ -362,6 +374,8 @@
    <sound id="metal.cymbal.hand"/>
    <sound id="metal.cymbal.kesi"/>
    <sound id="metal.cymbal.manjeera"/>
+   <sound id="metal.cymbal.marching"/>
+   <sound id="metal.cymbal.marching.line"/>
    <sound id="metal.cymbal.reverse"/>
    <sound id="metal.cymbal.ride"/>
    <sound id="metal.cymbal.sizzle"/>
