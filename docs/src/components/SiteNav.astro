@@ -1,12 +1,24 @@
 ---
 import { siteInfo } from '../site.config';
 import CGLogo from '@assets/img/logos/w3cg.svg';
+import LinkIcon from '@assets/icons/link-square-01-twotone-rounded.svg';
 
 const reportStatus = `${ siteInfo.isDraft ? 'Draft' : 'Final' } Report`;
 ---
 
 <div id="site-nav" class="fixed top-0 h-full px-10 border-r border-neutral-300 flex flex-col bg-olive-100 -translate-x-full lg:translate-x-0 transition-transform duration-400">
 	<nav class="overflow-y-auto scrollbar-hidden pt-32 pb-24">
+		{ 
+			siteInfo.isDev && 
+				<a 
+				  class="flex items-center justify-center text-sm absolute w-full top-14 left-0 py-1.5 bg-olive-100/80 backdrop-blur border-b border-neutral-300"
+					href={`https://w3c-cg.github.io${Astro.url.pathname}`}
+					target="w3c-cg.github.io"
+					>
+					<span>View page on production site</span>
+					<LinkIcon class="ml-2 w-4" />
+				</a>
+		}
 		<a href="/musicxml/" class="flex items-center mb-8 no-underline">
 			<CGLogo class="w-16 h-16" />
 			<p class="font-bold text-base w-24 leading-6">{ reportStatus }</p>

@@ -17,6 +17,4 @@ import MenuIcon from '@icons/menu-02-stroke-standard.svg';
     <div>{ siteInfo.title } { siteInfo.specVersion } { siteInfo.isDraft && 'Draft' }</div>
   </a>
 
-  {siteInfo.isDev && <a class="absolute right translate-x-1/2" href={`https://w3c-cg.github.io${Astro.url.pathname}`} target="w3c-cg.github.io">See this page on the production site</a>}
-
 </header>
