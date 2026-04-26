@@ -1,17 +1,25 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 import Path from 'node:path';
-
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/Base.astro';
 
-const examples = import.meta.glob('../../../data/examples/opus-reference/*.md', { eager: true });
+const examples = await getCollection('opusExamples');
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 
 const frontmatter = {
   title: 'Opus example documents',
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  {Object.values(examples).map(example => (
-    <a href={"/musicxml/opus-reference/examples/" + Path.parse(example.file).name + "/"}>{example.frontmatter.title}</a>
-    <p/>
-  ))}
+  {Object.values(examples).sort((a,b) => a.data.title.localeCompare(b.data.title)).map(example => {
+    const name = Path.parse(example.filePath!).name;
+    const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
+    return (
+      <Fragment>{image in images && <Image src={images[image]()} alt={name} />}</Fragment>
+      <a href={`/musicxml/opus-reference/examples/${example.id}/`}>{example.data.title}</a>
+      <p/>
+    );
+  })}
 </BaseLayout>

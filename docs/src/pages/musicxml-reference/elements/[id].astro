@@ -1,9 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-
-import BaseLayout from '../../../layouts/Base.astro';
 import Element from '@components/Element.astro';
-import elementName from '../../../utils/ElementName';
 
 export async function getStaticPaths() {
   const elements = await getCollection('musicxmlElements');
@@ -14,10 +11,5 @@ export async function getStaticPaths() {
 }
 
 const { element } = Astro.props;
-const frontmatter = {
-  title: `The ${elementName(element.data.name)} element`,
-}
 ---
-<BaseLayout frontmatter={frontmatter}>
-  <Element element={element} schema="musicxml"/>
-</BaseLayout>
+<Element element={ element } schema="musicxml"/>

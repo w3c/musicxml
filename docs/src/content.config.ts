@@ -1,5 +1,6 @@
 import { defineCollection } from 'astro:content';
 import { file } from 'astro/loaders';
+import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const ElementValueType = z.discriminatedUnion('type', [
@@ -118,8 +119,47 @@ const soundsDatatypes = defineCollection({
   schema: DataTypeType,
 });
 
+const containerExamples = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/data/examples/container',
+    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+  }),
+});
+const musicxmlExamples = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/data/examples/musicxml',
+    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+  }),
+});
+const opusExamples = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/data/examples/opus',
+    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+  }),
+});
+const soundsExamples = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/data/examples/sounds',
+    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+  }),
+});
+
+const notes = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/data/notes',
+    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+  }),
+});
+
 export const collections = {
   containerElements, musicxmlElements, opusElements, soundsElements,
   containerElementsTree, musicxmlElementsTree, opusElementsTree, soundsElementsTree,
   containerDatatypes, musicxmlDatatypes, opusDatatypes, soundsDatatypes,
+  containerExamples, musicxmlExamples, opusExamples, soundsExamples,
+  notes,
 };

@@ -2,10 +2,10 @@
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import Path from 'node:path';
-
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/Base.astro';
 
-const examples = import.meta.glob('../../../data/examples/musicxml-reference/*.md', { eager: true });
+const examples = await getCollection('musicxmlExamples');
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 
 const frontmatter = {
@@ -13,12 +13,12 @@ const frontmatter = {
 }
 ---
 <BaseLayout frontmatter={frontmatter}>
-  {Object.values(examples).sort((a,b) => a.frontmatter.title.localeCompare(b.frontmatter.title)).map(example => {
-    const name = Path.parse(example.file).name;
-    const image = `/src/assets/img/${example.frontmatter.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
+  {Object.values(examples).sort((a,b) => a.data.title.localeCompare(b.data.title)).map(example => {
+    const name = Path.parse(example.filePath!).name;
+    const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
     return (
       <Fragment>{image in images && <Image src={images[image]()} alt={name} />}</Fragment>
-      <a href={"/musicxml/musicxml-reference/examples/" + name + "/"}>{example.frontmatter.title}</a>
+      <a href={`/musicxml/musicxml-reference/examples/${example.id}/`}>{example.data.title}</a>
       <p/>
     );
   })}

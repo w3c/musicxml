@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/Base.astro';
 import SchemaView from '@components/SchemaView.astro';
 import TreeElement from '@components/TreeElement.astro';
-import type { map } from 'astro:schema';
 
 const elements = (await getCollection('musicxmlElementsTree')).sort((a,b) => a.id.localeCompare(b.id));
 

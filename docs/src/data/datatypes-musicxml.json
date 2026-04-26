@@ -339,7 +339,7 @@
    },
    "millimeters": {
       "name": "millimeters",
-      "documentation": "The millimeters type is a number representing millimeters. This is used in the scaling element to provide a default scaling from tenths to physical units.",
+      "documentation": "The millimeters type is a number representing millimeters. This is used in the &lt;scaling&gt; element to provide a default scaling from tenths to physical units.",
       "base": [
          "xs:decimal"
       ],
@@ -1066,7 +1066,7 @@
    },
    "show-tuplet": {
       "name": "show-tuplet",
-      "documentation": "The show-tuplet type indicates whether to show a part of a tuplet relating to the tuplet-actual element, both the tuplet-actual and tuplet-normal elements, or neither.",
+      "documentation": "The show-tuplet type indicates whether to show a part of a tuplet relating to the &lt;tuplet-actual&gt; element, both the tuplet-actual and tuplet-normal elements, or neither.",
       "base": [
          "xs:token"
       ],
@@ -1476,7 +1476,7 @@
    },
    "tied-type": {
       "name": "tied-type",
-      "documentation": "The tied-type type is used as an attribute of the tied element to specify where the visual representation of a tie begins and ends. A tied element which joins two notes of the same pitch can be specified with tied-type start on the first note and tied-type stop on the second note. To indicate a note should be undamped, use a single tied element with tied-type let-ring. For other ties that are visually attached to a single note, such as a tie leading into or out of a repeated section or coda, use two tied elements on the same note, one start and one stop.\n\nIn start-stop cases, ties can add more elements using a continue type. This is typically used to specify the formatting of cross-system ties.\n\nWhen multiple elements with the same tag are used within the same note, their order within the MusicXML document should match the musical score order. For example, a note with a tie at the end of a first ending should have the tied element with a type of start precede the tied element with a type of stop.",
+      "documentation": "The tied-type type is used as an attribute of the &lt;tied&gt; element to specify where the visual representation of a tie begins and ends. A tied element which joins two notes of the same pitch can be specified with tied-type start on the first note and tied-type stop on the second note. To indicate a note should be undamped, use a single tied element with tied-type let-ring. For other ties that are visually attached to a single note, such as a tie leading into or out of a repeated section or coda, use two tied elements on the same note, one start and one stop.\n\nIn start-stop cases, ties can add more elements using a continue type. This is typically used to specify the formatting of cross-system ties.\n\nWhen multiple elements with the same tag are used within the same note, their order within the MusicXML document should match the musical score order. For example, a note with a tie at the end of a first ending should have the &lt;tied&gt; element with a type of start precede the &lt;tied&gt; element with a type of stop.",
       "base": [
          "xs:token"
       ],
@@ -1921,7 +1921,7 @@
    },
    "measure-text": {
       "name": "measure-text",
-      "documentation": "The measure-text type is used for the text attribute of measure elements. It has at least one character. The implicit attribute of the measure element should be set to \"yes\" rather than setting the text attribute to an empty string.",
+      "documentation": "The measure-text type is used for the text attribute of measure elements. It has at least one character. The implicit attribute of the &lt;measure&gt; element should be set to \"yes\" rather than setting the text attribute to an empty string.",
       "base": [
          "xs:token"
       ],
@@ -2014,7 +2014,7 @@
    },
    "principal-voice-symbol": {
       "name": "principal-voice-symbol",
-      "documentation": "The principal-voice-symbol type represents the type of symbol used to indicate a principal or secondary voice. The \"plain\" value represents a plain square bracket. The value of \"none\" is used for analysis markup when the principal-voice element does not have a corresponding appearance in the score.",
+      "documentation": "The principal-voice-symbol type represents the type of symbol used to indicate a principal or secondary voice. The \"plain\" value represents a plain square bracket. The value of \"none\" is used for analysis markup when the &lt;principal-voice&gt; element does not have a corresponding appearance in the score.",
       "base": [
          "xs:string"
       ],
@@ -2078,7 +2078,7 @@
    },
    "ending-number": {
       "name": "ending-number",
-      "documentation": "The ending-number type is used to specify either a comma-separated list of positive integers without leading zeros, or a string of zero or more spaces. It is used for the number attribute of the ending element. The zero or more spaces version is used when software knows that an ending is present, but cannot determine the type of the ending.",
+      "documentation": "The ending-number type is used to specify either a comma-separated list of positive integers without leading zeros, or a string of zero or more spaces. It is used for the number attribute of the &lt;ending&gt; element. The zero or more spaces version is used when software knows that an ending is present, but cannot determine the type of the ending.",
       "base": [
          "xs:token"
       ],
@@ -2154,7 +2154,7 @@
    },
    "clef-sign": {
       "name": "clef-sign",
-      "documentation": "The clef-sign type represents the different clef symbols. The jianpu sign indicates that the music that follows should be in jianpu numbered notation, just as the TAB sign indicates that the music that follows should be in tablature notation. Unlike TAB, a jianpu sign does not correspond to a visual clef notation.\n\nThe none sign is deprecated as of MusicXML 4.0. Use the clef element's print-object attribute instead. When the none sign is used, notes should be displayed as if in treble clef.",
+      "documentation": "The clef-sign type represents the different clef symbols. The jianpu sign indicates that the music that follows should be in jianpu numbered notation, just as the TAB sign indicates that the music that follows should be in tablature notation. Unlike TAB, a jianpu sign does not correspond to a visual clef notation.\n\nThe none sign is deprecated as of MusicXML 4.0. Use the &lt;clef&gt; element's print-object attribute instead. When the none sign is used, notes should be displayed as if in treble clef.",
       "base": [
          "xs:string"
       ],
@@ -2436,7 +2436,7 @@
    },
    "divisions": {
       "name": "divisions",
-      "documentation": "The divisions type is used to express values in terms of the musical divisions defined by the divisions element. It is preferred that these be integer values both for MIDI interoperability and to avoid roundoff errors.",
+      "documentation": "The divisions type is used to express values in terms of the musical divisions defined by the &lt;divisions&gt; element. It is preferred that these be integer values both for MIDI interoperability and to avoid roundoff errors.",
       "base": [
          "xs:decimal"
       ],
@@ -2551,7 +2551,7 @@
    },
    "harmony-arrangement": {
       "name": "harmony-arrangement",
-      "documentation": "The harmony-arrangement type indicates how stacked chords and bass notes are displayed within a harmony element. The vertical value specifies that the second element appears below the first. The horizontal value specifies that the second element appears to the right of the first. The diagonal value specifies that the second element appears both below and to the right of the first.",
+      "documentation": "The harmony-arrangement type indicates how stacked chords and bass notes are displayed within a harmony element. The vertical value specifies that the &lt;second&gt; element appears below the first. The horizontal value specifies that the &lt;second&gt; element appears to the right of the first. The diagonal value specifies that the &lt;second&gt; element appears both below and to the right of the first.",
       "base": [
          "xs:token"
       ],
@@ -2752,7 +2752,7 @@
    },
    "degree-type-value": {
       "name": "degree-type-value",
-      "documentation": "The degree-type-value type indicates whether the current degree element is an addition, alteration, or subtraction to the kind of the current chord in the harmony element.",
+      "documentation": "The degree-type-value type indicates whether the current degree element is an addition, alteration, or subtraction to the kind of the current chord in the &lt;harmony&gt; element.",
       "base": [
          "xs:string"
       ],
@@ -2903,7 +2903,7 @@
    },
    "notehead-value": {
       "name": "notehead-value",
-      "documentation": "\nThe notehead-value type indicates shapes other than the open and closed ovals associated with note durations. \n\nThe values do, re, mi, fa, fa up, so, la, and ti correspond to Aikin's 7-shape system.  The fa up shape is typically used with upstems; the fa shape is typically used with downstems or no stems.\n\nThe arrow shapes differ from triangle and inverted triangle by being centered on the stem. Slashed and back slashed notes include both the normal notehead and a slash. The triangle shape has the tip of the triangle pointing up; the inverted triangle shape has the tip of the triangle pointing down. The left triangle shape is a right triangle with the hypotenuse facing up and to the left.\n\nThe other notehead covers noteheads other than those listed here. It is usually used in combination with the smufl attribute to specify a particular SMuFL notehead. The smufl attribute may be used with any notehead value to help specify the appearance of symbols that share the same MusicXML semantics. Noteheads in the SMuFL Note name noteheads and Note name noteheads supplement ranges (U+E150–U+E1AF and U+EEE0–U+EEFF) should not use the smufl attribute or the \"other\" value, but instead use the notehead-text element.",
+      "documentation": "\nThe notehead-value type indicates shapes other than the open and closed ovals associated with note durations.\n\nThe values do, re, mi, fa, fa up, so, la, and ti correspond to Aikin's 7-shape system.  The fa up shape is typically used with upstems; the fa shape is typically used with downstems or no stems.\n\nThe arrow shapes differ from triangle and inverted triangle by being centered on the stem. Slashed and back slashed notes include both the normal notehead and a slash. The triangle shape has the tip of the triangle pointing up; the inverted triangle shape has the tip of the triangle pointing down. The left triangle shape is a right triangle with the hypotenuse facing up and to the left.\n\nThe other notehead covers noteheads other than those listed here. It is usually used in combination with the smufl attribute to specify a particular SMuFL notehead. The smufl attribute may be used with any notehead value to help specify the appearance of symbols that share the same MusicXML semantics. Noteheads in the SMuFL Note name noteheads and Note name noteheads supplement ranges (U+E150–U+E1AF and U+EEE0–U+EEFF) should not use the smufl attribute or the \"other\" value, but instead use the &lt;notehead-text&gt; element.",
       "base": [
          "xs:string"
       ],
@@ -3207,7 +3207,7 @@
    },
    "glyph-type": {
       "name": "glyph-type",
-      "documentation": "The glyph-type defines what type of glyph is being defined in a glyph element. Values include quarter-rest, g-clef-ottava-bassa, c-clef, f-clef, percussion-clef, octave-shift-up-8, octave-shift-down-8, octave-shift-continue-8, octave-shift-down-15, octave-shift-up-15, octave-shift-continue-15, octave-shift-down-22, octave-shift-up-22, and octave-shift-continue-22. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.\n\nA quarter-rest type specifies the glyph to use when a note has a rest element and a type value of quarter. The c-clef, f-clef, and percussion-clef types specify the glyph to use when a clef sign element value is C, F, or percussion respectively. The g-clef-ottava-bassa type specifies the glyph to use when a clef sign element value is G and the clef-octave-change element value is -1. The octave-shift types specify the glyph to use when an octave-shift type attribute value is up, down, or continue and the octave-shift size attribute value is 8, 15, or 22.",
+      "documentation": "The glyph-type defines what type of glyph is being defined in a glyph element. Values include quarter-rest, g-clef-ottava-bassa, c-clef, f-clef, percussion-clef, octave-shift-up-8, octave-shift-down-8, octave-shift-continue-8, octave-shift-down-15, octave-shift-up-15, octave-shift-continue-15, octave-shift-down-22, octave-shift-up-22, and octave-shift-continue-22. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.\n\nA quarter-rest type specifies the glyph to use when a note has a rest element and a type value of quarter. The c-clef, f-clef, and percussion-clef types specify the glyph to use when a clef sign element value is C, F, or percussion respectively. The g-clef-ottava-bassa type specifies the glyph to use when a clef sign element value is G and the &lt;clef-octave-change&gt; element value is -1. The octave-shift types specify the glyph to use when an octave-shift type attribute value is up, down, or continue and the octave-shift size attribute value is 8, 15, or 22.",
       "base": [
          "xs:token"
       ],
@@ -3543,7 +3543,7 @@
    },
    "swing-type-value": {
       "name": "swing-type-value",
-      "documentation": "The swing-type-value type specifies the note type, either eighth or 16th, to which the ratio defined in the swing element is applied.",
+      "documentation": "The swing-type-value type specifies the note type, either eighth or 16th, to which the ratio defined in the &lt;swing&gt; element is applied.",
       "base": [
          "note-type-value"
       ],
@@ -3864,7 +3864,7 @@
    },
    "tenths": {
       "name": "tenths",
-      "documentation": "The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.\n\nDistances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the scaling element, not the local tenths as adjusted by the staff-size element.",
+      "documentation": "The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.\n\nDistances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the &lt;scaling&gt; element, used in the &lt;defaults&gt; element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the &lt;scaling&gt; element, not the local tenths as adjusted by the &lt;staff-size&gt; element.",
       "base": [
          "xs:decimal"
       ],

@@ -1,3 +1,5 @@
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
+
 /**
  * Formats the MusicXML element as a title.
  *
@@ -5,7 +7,7 @@
  * To differentiate between them, the elements-musicxml.json listing calls them
  * \<measure-partwise\> and \<measure-timewise\>, respectively, and same for \<part-partwise\> and \<part-timewise\>.
  */
-export default function elementName(tag: string): string {
+export function elementName(tag: string): string {
   const name =
     tag === 'part-partwise' ? '<part> (partwise)' : (
     tag === 'part-timewise' ? '<part> (timewise)' : (
@@ -14,4 +16,14 @@ export default function elementName(tag: string): string {
     `<${tag}>`
   )));
   return name;
+}
+
+/**
+ * Processes XML Schema `xs:documentation` annotations to convert them to proper markdown.
+ */
+export async function annotationMarkdown(annotation: string): Promise<string> {
+  const processor = await createMarkdownProcessor();
+  return (await processor.render(
+    annotation.trim().replaceAll('<', '`<').replaceAll('>', '>`')
+  )).code;
 }

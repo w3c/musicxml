@@ -2,22 +2,20 @@
 import { Code } from 'astro:components';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
-import { createMarkdownProcessor } from '@astrojs/markdown-remark';
-import Path from 'node:path';
 import { defaultElementsMap } from '../site.config';
+import { annotationMarkdown } from '../utils';
 
-const processor = await createMarkdownProcessor();
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 const { example, schema } = Astro.props;
-const snippet = example.rawContent().replace(/```xml|```/g, '').trim();
-const name = Path.parse(example.file).name;
-const image = `/src/assets/img/${example.frontmatter.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
+const snippet = example.body.replace(/```xml|```/g, '').trim();
+const name = example.id;
+const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
 ---
 {image in images && (
   <Image src={images[image]()} alt={name} />
 )}
-{example.frontmatter.description && (
-  <p set:html={(await processor.render(example.frontmatter.description)).code} />
+{example.data.description && (
+  <p set:html={annotationMarkdown(example.data.description)} />
 )}
 <p/>
 <Code lang="xml" code={snippet}
@@ -40,15 +38,15 @@ transformers={[
         child.children[0].type === 'text'
       ).forEach(child => {
         let tag = child.children[0].value;
-        if (example.frontmatter.elements_map && tag in example.frontmatter.elements_map) {
-          tag = example.frontmatter.elements_map[tag];
+        if (example.data.elements_map && tag in example.data.elements_map) {
+          tag = example.data.elements_map[tag];
         }
         else if (tag in defaultElementsMap) {
           tag = defaultElementsMap[tag];
         }
         child.tagName = 'a';
         child.properties.href = `/musicxml/${schema}-reference/elements/${tag}/`;
-        if (Array.isArray(example.frontmatter.elements) ? example.frontmatter.elements.indexOf(tag) > -1 : example.frontmatter.elements === tag) {
+        if (Array.isArray(example.data.elements) ? example.data.elements.indexOf(tag) > -1 : example.data.elements === tag) {
           this.addClassToHast(child, 'highlighted-word');
         }
       });
