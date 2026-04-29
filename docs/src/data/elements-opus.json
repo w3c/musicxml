@@ -43,7 +43,7 @@
          }
       ],
       "name": "opus-link",
-      "documentation": "An opus-link provides a link to another opus document, allowing for multiple levels of opus collections via linking as well as nesting."
+      "documentation": ""
    },
    "opus": {
       "children": {
@@ -96,7 +96,7 @@
          }
       ],
       "name": "opus",
-      "documentation": "The opus type is used for the root element of a MusicXML opus. Each opus is made up of a series of score, opus-link, and\/or nested opus elements. The document-attributes attribute group includes the version attribute. Future versions may include more metadata elements. In this version, we just include the title of the opus."
+      "documentation": ""
    },
    "title": {
       "children": {
@@ -159,6 +159,6 @@
          }
       ],
       "name": "score",
-      "documentation": "The score elements provide the links to the individual scores within an opus. The new-page attribute, added in Version 2.0, is used to indicate if the first page of the score is different than the last page of the previous score. If new-page is \"yes\", then a different page is used; if \"no\", then the same page is used. The default value is implementation-dependent."
+      "documentation": ""
    }
 }

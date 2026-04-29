@@ -55,8 +55,6 @@
         <xsl:value-of select="(
           xs:annotation/xs:documentation/text(),
           /xs:schema/xs:complexType//xs:element[@name=current()/@name]/xs:annotation/xs:documentation/text(),
-          /xs:schema/xs:complexType[@name=current()/@type]/xs:annotation/xs:documentation/text(),
-          /xs:schema/xs:group[@name=current()/@name]/xs:annotation/xs:documentation/text(),
           ''
         )[1]"/>
       </xsl:attribute>
@@ -247,8 +245,6 @@
       <xsl:attribute name="documentation">
         <xsl:value-of select="(
           xs:annotation/xs:documentation/text(),
-          /xs:schema/xs:complexType[@name=current()/@type]/xs:annotation/xs:documentation/text(),
-          /xs:schema/xs:group[@name=current()/@name]/xs:annotation/xs:documentation/text(),
           ''
         )[1]"/>
       </xsl:attribute>

@@ -36,7 +36,7 @@ const usages = elements.reduce((usages, element) => {
 ---
 {datatype.data.documentation && <p class="description" set:html={annotationMarkdown(datatype.data.documentation)} />}
 
-{(datatype.data.base || datatype.data.type) && <section class="values">
+{(datatype.data.base || (datatype.data.type && datatype.data.type !== 'none')) && <section class="values">
   <h2>Allowed values</h2>
   {datatype.data.base && <p class="bases">Base type{datatype.data.base.length > 1 && 's'}:
     {datatype.data.base.sort((a,b) => a.localeCompare(b)).map(base => <DataTypeLink type={base} schema={schema}/>)}
