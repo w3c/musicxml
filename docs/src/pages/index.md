@@ -62,7 +62,7 @@ If you wish to make comments regarding this document, please send them to [publi
 - [Code Generation](tutorial/code-generation/)
 
 ### File Listings
-- [Overview](listings/overview/)
+- [Overview](listings/)
 - [musicxml.xsd](listings/musicxml.xsd/)
 - [xlink.xsd](listings/xlink.xsd/)
 - [xml.xsd](listings/xml.xsd/)

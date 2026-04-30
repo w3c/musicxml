@@ -239,8 +239,8 @@
   <xsl:template match="xs:attribute" mode="attributes">
     <xsl:element name="{@name|@ref}">
       <xsl:attribute name="attribute" select="true()"/>
-      <xsl:attribute name="type" select="@type"/>
-      <xsl:attribute name="default" select="@defaultault"/>
+      <xsl:attribute name="type" select="(@type,@ref)[1]"/>
+      <xsl:attribute name="default" select="@default"/>
       <xsl:attribute name="use" select="@use"/>
       <xsl:attribute name="documentation">
         <xsl:value-of select="(

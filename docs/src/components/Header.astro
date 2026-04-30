@@ -1,4 +1,5 @@
 ---
+import { url } from '../utils';
 import { siteInfo } from '../site.config';
 import DocsIcon from '@icons/document-code-twotone-rounded.svg';
 import MenuIcon from '@icons/menu-02-stroke-standard.svg';
@@ -12,7 +13,7 @@ import MenuIcon from '@icons/menu-02-stroke-standard.svg';
     </button>
   </div>
 
-  <a href="/musicxml/" class="absolute left-1/2 -translate-x-1/2 flex items-center font-bold text-zinc-700">
+  <a href={ url('') } class="absolute left-1/2 -translate-x-1/2 flex items-center font-bold text-zinc-700">
     <DocsIcon class="w-7 mr-2" />
     <div>{ siteInfo.title } { siteInfo.specVersion } { siteInfo.isDraft && 'Draft' }</div>
   </a>

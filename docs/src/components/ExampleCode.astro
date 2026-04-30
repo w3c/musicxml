@@ -4,6 +4,7 @@ import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import { defaultElementsMap } from '../site.config';
 import { annotationMarkdown } from '../utils';
+import { url } from '../utils';
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 const { example, schema } = Astro.props;
@@ -45,7 +46,7 @@ transformers={[
           tag = defaultElementsMap[tag];
         }
         child.tagName = 'a';
-        child.properties.href = `/musicxml/${schema}-reference/elements/${tag}/`;
+        child.properties.href = url(`${schema}-reference/elements/${tag}/`);
         if (Array.isArray(example.data.elements) ? example.data.elements.indexOf(tag) > -1 : example.data.elements === tag) {
           this.addClassToHast(child, 'highlighted-word');
         }

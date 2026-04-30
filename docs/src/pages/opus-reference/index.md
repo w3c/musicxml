@@ -2,10 +2,10 @@
 title: Opus reference
 ---
 ## Elements
-[See all…](/musicxml/opus-reference/element-tree/)
+[See all…](./element-tree/)
 
 ## Data types
-[See all…](/musicxml/opus-reference/data-types/)
+[See all…](./data-types/)
 
 ## Examples
-[See all…](/musicxml/opus-reference/examples/)
+[See all…](./examples/)

@@ -2,10 +2,10 @@
 title: Sounds reference
 ---
 ## Elements
-[See all…](/musicxml/sounds-reference/element-tree/)
+[See all…](./element-tree/)
 
 ## Data types
-[See all…](/musicxml/sounds-reference/data-types/)
+[See all…](./data-types/)
 
 ## Examples
-[See all…](/musicxml/sounds-reference/examples/)
+[See all…](./examples/)

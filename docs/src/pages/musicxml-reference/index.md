@@ -2,10 +2,10 @@
 title: MusicXML reference
 ---
 ## Elements
-[See all…](/musicxml/musicxml-reference/element-tree/)
+[See all…](./element-tree/)
 
 ## Data types
-[See all…](/musicxml/musicxml-reference/data-types/)
+[See all…](./data-types/)
 
 ## Examples
-[See all…](/musicxml/musicxml-reference/examples/)
+[See all…](./examples/)

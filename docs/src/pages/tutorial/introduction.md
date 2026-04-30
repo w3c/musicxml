@@ -6,4 +6,4 @@ MusicXML is a digital sheet music interchange and distribution format. The goal 
 
 The goal of this tutorial is to introduce MusicXML to software developers who are interesting in reading or writing MusicXML files. MusicXML has many features that are required to support the demands of professional-level music software. But you do not need to use or understand all these elements to get started.
 
-Next: [Hello World in MusicXML](/musicxml/tutorial/hello-world/)
+Next: [Hello World in MusicXML](../hello-world/)

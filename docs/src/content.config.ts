@@ -33,6 +33,7 @@ const ElementType = z.object({
     required: z.boolean(),
     name: z.string(),
     type: z.string(),
+    default: z.optional(z.string()),
     documentation: z.string(),
   })))
 });

@@ -2,10 +2,10 @@
 title: Container reference
 ---
 ## Elements
-[See all…](/musicxml/container-reference/element-tree/)
+[See all…](./element-tree/)
 
 ## Data types
-[See all…](/musicxml/container-reference/data-types/)
+[See all…](./data-types/)
 
 ## Examples
-[See all…](/musicxml/container-reference/examples/)
+[See all…](./examples/)

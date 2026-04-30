@@ -1,4 +1,5 @@
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
+import { siteInfo } from './site.config';
 
 /**
  * Formats the MusicXML element as a title.
@@ -27,3 +28,8 @@ export async function annotationMarkdown(annotation: string): Promise<string> {
     annotation.trim().replaceAll('<', '`<').replaceAll('>', '>`')
   )).code;
 }
+
+/**
+ * Make a site URL including config.base.
+ */
+export const url = (path: string) => `${siteInfo.base}/${path}`;

@@ -44,5 +44,6 @@ export default defineConfig({
     '/sounds-reference/elements/ensemble-sounds/': '/musicxml/sounds-reference/elements/ensemble/',
     '/sounds-reference/elements/solo-sounds/': '/musicxml/sounds-reference/elements/solo/',
     '/sounds-reference/elements/sound-sounds/': '/musicxml/sounds-reference/elements/sound/',
+    '/musicxml-reference/elements/opus-reference/': '/musicxml/musicxml-reference/elements/opus/'
   }
 });

@@ -54,7 +54,7 @@ const breadcrumbs = createTrail(currentPath);
 	  breadcrumbs.map((breadcrumb, index) => {
 			if (index !== breadcrumbs.length - 1) {
 				return (
-					<a class="no-underline" href={ breadcrumb.link }>
+					<a class="no-underline" href={ `${breadcrumb.link}/` }>
 						{ breadcrumb.text }
 					</a>
 					<span class="mx-1">&gt;</span>

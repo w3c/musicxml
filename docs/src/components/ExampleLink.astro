@@ -1,7 +1,8 @@
 ---
 import Path from 'node:path';
+import { url } from '../utils';
 
 const { example, schema } = Astro.props;
-const href = `/musicxml/${schema}-reference/examples/${Path.parse(example.file).name}/`;
+const href = url(`${schema}-reference/examples/${Path.parse(example.file).name}/`);
 ---
 <a href={href}>{example.frontmatter.title}</a>

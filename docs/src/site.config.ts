@@ -1,12 +1,23 @@
 interface SiteInfo {
-  [key: string]: string | boolean
+  [key: string]: any
 }
 
 export const siteInfo: SiteInfo = {
 	title: 'MusicXML',
 	specVersion: '4.1',
 	isDraft: true,
-  isDev: import.meta.env.MODE === 'development' || !import.meta.env.SITE.includes('w3c-cg.github.io')
+  isDev: import.meta.env.MODE === 'development' || !import.meta.env.SITE.includes('w3c-cg.github.io'),
+
+  // FIXME!! The following are copies of entries in astro.config.mjs
+  // because `astro build` chokes when we import astro.config.mjs
+  base: '/musicxml',
+  redirects: {
+    '/sounds-reference/elements/any-sounds/': '/musicxml/sounds-reference/elements/any/',
+    '/sounds-reference/elements/ensemble-sounds/': '/musicxml/sounds-reference/elements/ensemble/',
+    '/sounds-reference/elements/solo-sounds/': '/musicxml/sounds-reference/elements/solo/',
+    '/sounds-reference/elements/sound-sounds/': '/musicxml/sounds-reference/elements/sound/',
+    '/musicxml-reference/elements/opus-reference/': '/musicxml/musicxml-reference/elements/opus/'
+  }
 }
 
 /**

@@ -1,23 +1,24 @@
 ---
 import { Code } from 'astro:components';
-
+import { readFileSync, readdirSync } from 'node:fs';
+import { basename, resolve } from 'node:path';
 import BaseLayout from '../../layouts/Base.astro';
 
-import { getIds, getXML } from './listings.ts';
+function getXML(id: string): string {
+  return readFileSync(resolve('../schema', `${id}`), 'utf-8');
+}
 
 export function getStaticPaths() {
-  return getIds().map(id => ({
-    params: { id },
-  }));
+  return readdirSync('../schema')
+    .filter(f => f.endsWith('.xsd') || f.endsWith('.xsl') || f.endsWith('.xml'))
+    .map(f => basename(f)).map(id => ({ params: { id } }));
 }
 
 const { id } = Astro.params;
-const xml = getXML(id!);
-
 const frontmatter = {
   title: id,
 }
 ---
-<BaseLayout frontmatter={frontmatter}>
-  <Code lang="xml" code={xml} />
+<BaseLayout frontmatter={ frontmatter }>
+  <Code lang="xml" code={ getXML(id) } />
 </BaseLayout>
