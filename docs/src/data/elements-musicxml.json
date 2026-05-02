@@ -900,7 +900,7 @@
          {
             "required": false,
             "name": "type",
-            "documentation": "Distinguishes different creative contributions. Thus there can be multiple <creator> elements within an <identification> element. Standard values are composer, lyricist, and arranger. Other values may be used for different types of creative roles. This attribute should usually be used even if there is just a single <creator> element.",
+            "documentation": "Standard values are music, words, and arrangement, but other types may be used. This attribute is only needed when there are multiple <encoder> elements.",
             "type": "xs:token"
          }
       ],
@@ -3114,14 +3114,14 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Distinguishes multiple pull-offs when they overlap in MusicXML document order.",
             "type": "start-stop"
          },
          {
             "default": "1",
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Indicates if this is the start or stop of the pull-off. The default value is 1.",
             "type": "number-level"
          },
          {
@@ -3186,7 +3186,7 @@
          }
       ],
       "name": "pull-off",
-      "documentation": ""
+      "documentation": "The <pull-off> element is used in guitar and fretted instrument notation. Since a single slur can be marked over many notes, the <pull-off> element is separate so the individual pair of notes can be specified. The element content can be used to specify how the <pull-off> should be notated. An empty element leaves this choice up to the application."
    },
    "pre-bend": {
       "children": null,
@@ -3208,12 +3208,12 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "",
+            "documentation": "Distinguishes different SMuFL glyphs for a particular pictogram within the [Tuned mallet percussion pictograms](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/tuned-mallet-percussion-pictograms.html) range.",
             "type": "smufl-pictogram-glyph-name"
          }
       ],
       "name": "pitched",
-      "documentation": ""
+      "documentation": "The <pitched> element represents pictograms for pitched percussion instruments."
    },
    "release": {
       "children": null,
@@ -3224,12 +3224,12 @@
          {
             "required": false,
             "name": "offset",
-            "documentation": "",
+            "documentation": "Specifies where the release starts in terms of divisions relative to the current note.",
             "type": "divisions"
          }
       ],
       "name": "release",
-      "documentation": ""
+      "documentation": "The <release> element indicates that a bend is a release rather than a normal bend or pre-bend. The first-beat and last-beat attributes of the parent <bend> element are relative to the original note position, not this offset value."
    },
    "relation": {
       "children": {
@@ -3243,12 +3243,12 @@
          {
             "required": false,
             "name": "type",
-            "documentation": "Distinguishes different creative contributions. Thus there can be multiple <creator> elements within an <identification> element. Standard values are composer, lyricist, and arranger. Other values may be used for different types of creative roles. This attribute should usually be used even if there is just a single <creator> element.",
+            "documentation": "Standard type values are music, words, and arrangement, but other types may be used.",
             "type": "xs:token"
          }
       ],
       "name": "relation",
-      "documentation": "A related resource for the music that is encoded. This is similar to the Dublin Core relation element. Standard type values are music, words, and arrangement, but other types may be used."
+      "documentation": "The <relation> element describes a related resource for the music that is encoded. This is similar to the [Dublin Core relation element](https:\/\/www.dublincore.org\/specifications\/dublin-core\/dcmi-terms\/elements11\/relation\/)."
    },
    "swing-style": {
       "children": {
@@ -3259,7 +3259,7 @@
          "swing"
       ],
       "name": "swing-style",
-      "documentation": ""
+      "documentation": "The <swing-style> element is a string describing the style of swing used."
    },
    "software": {
       "children": {
@@ -3270,7 +3270,7 @@
          "encoding"
       ],
       "name": "software",
-      "documentation": ""
+      "documentation": "The <software> element specifies what software created the digital encoding."
    },
    "supports": {
       "children": null,
@@ -3281,30 +3281,30 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "If yes, the absence of a particular element with a specified attribute or value is meaningful. It indicates that this information is not present in the score. If no, the absence is not meaningful because the encoding does not include this type of information.",
             "type": "yes-no"
          },
          {
             "required": true,
             "name": "element",
-            "documentation": "",
+            "documentation": "Indicates the element that is supported or not by the encoding.",
             "type": "xs:NMTOKEN"
          },
          {
             "required": false,
             "name": "attribute",
-            "documentation": "",
+            "documentation": "Indicates a specific element attribute that is supported or not by the encoding.",
             "type": "xs:NMTOKEN"
          },
          {
             "required": false,
             "name": "value",
-            "documentation": "",
+            "documentation": "Indicates a specific attribute value that is supported or not by the encoding. Only used together with the attribute attribute.",
             "type": "xs:token"
          }
       ],
       "name": "supports",
-      "documentation": ""
+      "documentation": "The <supports> element indicates if a MusicXML encoding supports a particular MusicXML element. This is recommended for elements like <beam>, <stem>, and <accidental>, where the absence of an element is ambiguous if you do not know if the encoding supports that element. It also allows programs to indicate support for specific attributes, or specific attributes with specific values. This lets applications communicate, for example, that all system and\/or page breaks are contained in the MusicXML file."
    },
    "scaling": {
       "children": {
@@ -3330,7 +3330,7 @@
          "defaults"
       ],
       "name": "scaling",
-      "documentation": ""
+      "documentation": "Margins, page sizes, and distances are all measured in tenths to keep MusicXML data in a consistent coordinate system as much as possible. The translation to absolute units is done with the <scaling> element, which specifies how many millimeters are equal to how many tenths. For a staff height of 7 mm, <millimeters> would be set to 7 while <tenths> is set to 40. The ability to set a formula rather than a single scaling factor helps avoid roundoff errors."
    },
    "music-font": {
       "children": null,
@@ -3440,7 +3440,7 @@
          }
       ],
       "name": "stopped",
-      "documentation": "The <stopped> element represents the stopped symbol, which looks like a plus sign. The smufl attribute distinguishes different SMuFL glyphs that have a similar appearance such as handbellsMalletBellSuspended and guitarClosePedal. If not present, the default glyph is brassMuteClosed."
+      "documentation": "The <stopped> element represents the stopped symbol, which looks like a plus sign. The smufl attribute distinguishes different Standard Music Font Layout (SMuFL) glyphs that have a similar appearance such as handbellsMalletBellSuspended and guitarClosePedal. If not present, the default glyph is brassMuteClosed."
    },
    "staccato": {
       "children": null,
@@ -3591,7 +3591,7 @@
          "lyric"
       ],
       "name": "syllabic",
-      "documentation": ""
+      "documentation": "The <syllabic> element indicates lyric hyphenation. The single, begin, end, and middle values represent single-syllable words, word-beginning syllables, word-ending syllables, and mid-word syllables, respectively."
    },
    "straight": {
       "children": null,
@@ -3599,7 +3599,7 @@
          "swing"
       ],
       "name": "straight",
-      "documentation": ""
+      "documentation": "The <straight> element specifies that no swing is present, so consecutive notes have equal durations."
    },
    "tremolo": {
       "children": {
@@ -3917,7 +3917,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "",
+            "documentation": "Specifies an ID that is unique to the entire document.",
             "type": "smufl-pictogram-glyph-name"
          }
       ],
@@ -5024,13 +5024,13 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if this is the start or stop of the principal voice.",
             "type": "start-stop"
          },
          {
             "required": true,
             "name": "symbol",
-            "documentation": "",
+            "documentation": "Indicates the type of symbol used. When used for analysis separate from any printed score markings, it should be set to none. Otherwise if the type is stop it should be set to plain.",
             "type": "principal-voice-symbol"
          },
          {
@@ -5107,7 +5107,7 @@
          }
       ],
       "name": "principal-voice",
-      "documentation": ""
+      "documentation": "The <principal-voice> element represents principal and secondary voices in a score, either for analysis or for square bracket symbols that appear in a score. The content of the <principal-voice> element is used for analysis and may be any text value."
    },
    "fingernails": {
       "children": null,
@@ -5554,7 +5554,7 @@
          "defaults"
       ],
       "name": "system-layout",
-      "documentation": ""
+      "documentation": "A system is a group of staves that are read and played simultaneously. The <system-layout> element includes left and right margins and the vertical distance from the previous system.\n\nSometimes the sum of measure widths in a system may not equal the system width specified by the layout elements due to roundoff or other errors. The behavior when reading MusicXML files in these cases is application-dependent. For instance, applications may find that the system layout data is more reliable than the sum of the measure widths, and adjust the measure widths accordingly.\n\nWhen used in the <defaults> element, the <system-layout> element defines a default appearance for all systems in the score. If no <system-layout> element is present in the <defaults> element, default system layout values are chosen by the application.\n\nWhen used in the <print> element, the <system-layout> element affects the appearance of the current system only. All other systems use the default values as determined by the <defaults> element. If any child elements are missing from the <system-layout> element in a <print> element, the values determined by the <defaults> element are used there as well. This type of <system-layout> element need only be read from or written to the first visible part in the score."
    },
    "system-margins": {
       "children": {
@@ -5580,7 +5580,7 @@
          "system-layout"
       ],
       "name": "system-margins",
-      "documentation": ""
+      "documentation": "System margins are relative to the page margins. Positive values indent and negative values reduce the margin size."
    },
    "lyric-language": {
       "children": null,
@@ -5800,12 +5800,12 @@
          {
             "required": true,
             "name": "id",
-            "documentation": "Refers to the <score-instrument> affected by the change.",
+            "documentation": "An identifier for this <score-instrument> that is unique to this document.",
             "type": "xs:ID"
          }
       ],
       "name": "score-instrument",
-      "documentation": ""
+      "documentation": "The <score-instrument> element represents a single instrument within a <score-part>. As with the <score-part> element, each <score-instrument> has a required ID attribute, a name, and an optional abbreviation.\n\nA <score-instrument> element is also required if the score specifies MIDI 1.0 channels, banks, or programs. An initial <midi-instrument> assignment can also be made here. MusicXML software should be able to automatically assign reasonable channels and instruments without these elements in simple cases, such as where part names match General MIDI instrument names.\n\nThe <score-instrument> element can also distinguish multiple instruments of the same type that are on the same part, such as Clarinet 1 and Clarinet 2 instruments within a Clarinets 1 and 2 part."
    },
    "virtual-instrument": {
       "children": {
@@ -5843,7 +5843,7 @@
          "play"
       ],
       "name": "semi-pitched",
-      "documentation": ""
+      "documentation": "The <semi-pitched> element represents categories of indefinite pitch for percussion instruments."
    },
    "page-width": {
       "children": {
@@ -5854,7 +5854,7 @@
          "page-layout"
       ],
       "name": "page-width",
-      "documentation": ""
+      "documentation": "The <page-width> element specifies the page width in tenths."
    },
    "identification": {
       "children": {
@@ -5952,7 +5952,7 @@
          "score-partwise"
       ],
       "name": "part-list",
-      "documentation": ""
+      "documentation": "The <part-list> element identifies the different musical parts in this document. Each part has an ID that is used later within the musical data. Since parts may be encoded separately and combined later, identification elements are present at both the score and <score-part> levels.\n\nThere must be at least one <score-part>, combined as desired with <part-group> elements that indicate braces and brackets. Parts are ordered from top to bottom in a score based on the order in which they appear in the <part-list>."
    },
    "part-link": {
       "children": {
@@ -6018,7 +6018,7 @@
          }
       ],
       "name": "part-link",
-      "documentation": ""
+      "documentation": "The &lt;part-link&gt; element allows MusicXML data for both score and parts to be contained within a single compressed MusicXML file. It links a &lt;score-part&gt; from a score document to MusicXML documents that contain parts data. In the case of a single compressed MusicXML file, the link href values are paths that are relative to the root folder of the zip file."
    },
    "part-group": {
       "children": {
@@ -6096,19 +6096,19 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates the start or stop of the <part-group>.",
             "type": "start-stop"
          },
          {
             "default": "1",
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Distinguishes overlapping and nested <part-group> elements, not a sequence of <part-group> elements. The default value is 1.",
             "type": "xs:token"
          }
       ],
       "name": "part-group",
-      "documentation": ""
+      "documentation": "The <part-group> element indicates groupings of parts in the score, usually indicated by braces and brackets. Braces that are used for multi-staff parts should be defined in the <attributes> element for that part. The <part-group> start element appears before the first <score-part> in the group. The <part-group> stop element appears after the last <score-part> in the group.\n\nAs with parts, a <part-group> can have a name and abbreviation. Values for the child elements are ignored at the stop of a <part-group>.\n\nA <part-group> element is not needed for a single multi-staff part. By default, multi-staff parts include a brace symbol and (if appropriate given the <bar-style>) common barlines. The symbol formatting for a multi-staff part can be more fully specified using the <part-symbol> element."
    },
    "part-name": {
       "children": {
@@ -6187,7 +6187,7 @@
          }
       ],
       "name": "part-name",
-      "documentation": ""
+      "documentation": "The <part-name> and <part-abbreviation> elements describe the name and abbreviation of a <score-part> element, respectively. Formatting attributes for these elements were deprecated in Version 2.0 in favor of the <part-name-display> and <part-abbreviation-display> elements."
    },
    "part-clef": {
       "children": {
@@ -6219,7 +6219,7 @@
          "for-part"
       ],
       "name": "part-clef",
-      "documentation": "The <part-clef> element is used for transpositions that also include a change of clef, as for instruments such as bass clarinet."
+      "documentation": "The <part-clef> element is used for transpositions from concert scores that also include a change of clef, as for instruments such as bass clarinet.\n\nThe child elements of the <part-clef> element have the same meaning as for the <clef> element. However that meaning applies to a transposed part created from the existing score file."
    },
    "group-barline": {
       "children": {
@@ -6510,7 +6510,7 @@
          }
       ],
       "name": "per-minute",
-      "documentation": ""
+      "documentation": "The <per-minute> element can be a number, or a text description including numbers. If a font is specified, it overrides the font specified for the overall <metronome> element. This allows separate specification of a music font for the <beat-unit> and a text font for the numeric value, in cases where a single metronome font is not used."
    },
    "percussion": {
       "children": {
@@ -6670,7 +6670,7 @@
          }
       ],
       "name": "percussion",
-      "documentation": ""
+      "documentation": "The <percussion> element is used to define percussion pictogram symbols. The organization of these symbols follows the definitions in Kurt Stone's \"Music Notation in the Twentieth Century\" on pages 206-212 and 223. More pictograms have been added to the ones listed in Stone, based on how usage has evolved since the book was published in 1980."
    },
    "numeral-alter": {
       "children": {
@@ -6839,7 +6839,7 @@
          }
       ],
       "name": "part-abbreviation",
-      "documentation": ""
+      "documentation": "The <part-name> and <part-abbreviation> elements describe the name and abbreviation of a <score-part> element, respectively. Formatting attributes for these elements were deprecated in Version 2.0 in favor of the <part-name-display> and <part-abbreviation-display> elements."
    },
    "octave-shift": {
       "children": null,
@@ -7049,7 +7049,7 @@
          "page-margins"
       ],
       "name": "right-margin",
-      "documentation": ""
+      "documentation": "The <right-margin> element specifies the right margin for the parent element in tenths."
    },
    "work-number": {
       "children": {
@@ -7082,7 +7082,7 @@
          "time"
       ],
       "name": "senza-misura",
-      "documentation": "A senza-misura element explicitly indicates that no time signature is present. The <optional> element content indicates the symbol to be used, if any, such as an X. The <time> element's symbol attribute is not used when a senza-misura element is present."
+      "documentation": "A <senza-misura> element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used, if any, such as an X. The <time> element's symbol attribute is not used when a <senza-misura> element is present."
    },
    "root-step": {
       "children": {
@@ -7096,7 +7096,7 @@
          {
             "required": false,
             "name": "text",
-            "documentation": "",
+            "documentation": "Indicates how the root should appear in a score if not using the element contents.",
             "type": "xs:token"
          },
          {
@@ -7155,7 +7155,7 @@
          }
       ],
       "name": "root-step",
-      "documentation": ""
+      "documentation": "The <root-step> element represents the pitch step of the root of the current chord within the harmony element."
    },
    "root-alter": {
       "children": {
@@ -7234,7 +7234,7 @@
          }
       ],
       "name": "root-alter",
-      "documentation": "The <root-alter> element represents the chromatic alteration of the root of the current chord within the <harmony> element. In some chord styles, the text for the <root-step> element may include root-alter information. In that case, the print-object attribute of the <root-alter> element can be set to no. The location attribute indicates whether the alteration should appear to the left or the right of the root-step; it is right by default."
+      "documentation": "The <root-alter> element represents the chromatic alteration of the root of the current chord within the <harmony> element. In some chord styles, the text for the <root-step> element may include <root-alter> information. In that case, the print-object attribute of the <root-alter> element can be set to no."
    },
    "hole-closed": {
       "children": {
@@ -7404,7 +7404,7 @@
          }
       ],
       "name": "rehearsal",
-      "documentation": "The <rehearsal> element specifies letters, numbers, and section names that are notated in the score for reference during rehearsal. The enclosure is square if not specified. The language is Italian (\"it\") if not specified. Left justification is used if not specified."
+      "documentation": "The <rehearsal> element specifies letters, numbers, and section names that are notated in the score for reference during rehearsal. The enclosure is square if not specified. Left justification is used if not specified."
    },
    "part-symbol": {
       "children": {
@@ -7418,13 +7418,13 @@
          {
             "required": false,
             "name": "top-staff",
-            "documentation": "",
+            "documentation": "Specifies the top staff of the symbol when it does not extend across the entire part.",
             "type": "staff-number"
          },
          {
             "required": false,
             "name": "bottom-staff",
-            "documentation": "",
+            "documentation": "Specifies the bottom staff of the symbol when it does not extend across the entire part.",
             "type": "staff-number"
          },
          {
@@ -7459,7 +7459,7 @@
          }
       ],
       "name": "part-symbol",
-      "documentation": "The <part-symbol> element indicates how a symbol for a multi-staff part is indicated in the score."
+      "documentation": "The <part-symbol> element indicates how a symbol for a multi-staff part is indicated in the score; brace is the default value.\n\nThe top-staff and bottom-staff attributes are used when the brace does not extend across the entire part. For example, in a 3-staff organ part, the top-staff will typically be 1 for the right hand, while the bottom-staff will typically be 2 for the left hand. Staff 3 for the pedals is usually outside the brace. By default, the presence of a <part-symbol> element that does not extend across the entire part also indicates a corresponding change in the common barlines within a part."
    },
    "line-detail": {
       "children": null,
@@ -7735,7 +7735,7 @@
          "staff-details"
       ],
       "name": "staff-type",
-      "documentation": ""
+      "documentation": "The <staff-type> element specifies different uses for the staff, as listed in the staff-type data type."
    },
    "staff-size": {
       "children": {
@@ -7749,12 +7749,12 @@
          {
             "required": false,
             "name": "scaling",
-            "documentation": "",
+            "documentation": "Specifies the percentage scaling that applies to the notation. Values less that 100 make the notation smaller while values over 100 make the notation larger.",
             "type": "non-negative-decimal"
          }
       ],
       "name": "staff-size",
-      "documentation": ""
+      "documentation": "The <staff-size> element indicates how large a staff space is on this staff, expressed as a percentage of the work's default scaling. Values less than 100 make the staff space smaller while values over 100 make the staff space larger. A <staff-type> of cue, ossia, or editorial implies a <staff-size> of less than 100, but the exact value is implementation-dependent unless specified here. Staff size affects staff height only, not the relationship of the staff to the left and right margins.\n\nIn some cases, a <staff-size> different than 100 also scales the notation on the staff, such as with a cue staff. In other cases, such as percussion staves, the lines may be more widely spaced without scaling the notation on the staff. The scaling attribute allows these two cases to be distinguished."
    },
    "slash-dot": {
       "children": null,
@@ -8006,7 +8006,7 @@
          }
       ],
       "name": "schleifer",
-      "documentation": "The name for this ornament is based on the German, to avoid confusion with the more common slide element defined earlier."
+      "documentation": "The name for the <schleifer> element is based on the German ornament name, to avoid confusion with the <slide> element."
    },
    "swing-type": {
       "children": {
@@ -8017,7 +8017,7 @@
          "swing"
       ],
       "name": "swing-type",
-      "documentation": ""
+      "documentation": "The <swing-type> element specifies the note type, either eighth or 16th, to which the <first> to <second> ratio is applied. The value is eighth if this element is not present."
    },
    "stick-type": {
       "children": {
@@ -8028,7 +8028,7 @@
          "stick"
       ],
       "name": "stick-type",
-      "documentation": ""
+      "documentation": "The <stick-type> element represents the shape of pictograms where the material in the stick, mallet, or beater is represented in the pictogram."
    },
    "movement-title": {
       "children": {
@@ -8151,7 +8151,7 @@
          "system-layout"
       ],
       "name": "system-distance",
-      "documentation": ""
+      "documentation": "The <system-distance> is measured from the bottom line of the previous system to the top line of the current system. It is ignored for the first system on a page."
    },
    "system-dividers": {
       "children": {
@@ -8177,7 +8177,7 @@
          "system-layout"
       ],
       "name": "system-dividers",
-      "documentation": ""
+      "documentation": "The <system-dividers> element indicates the presence or absence of system dividers (also known as system separation marks) between systems displayed on the same page. Dividers on the left and right side of the page are controlled by the <left-divider> and <right-divider> elements respectively.\n\nWhen used in the <print> element, the <system-dividers> element affects the dividers that would appear between the current system and the previous system."
    },
    "appearance": {
       "children": {
@@ -8381,12 +8381,12 @@
          {
             "required": true,
             "name": "id",
-            "documentation": "",
+            "documentation": "Specifies an ID for this <score-part> that is unique to the entire document.",
             "type": "xs:ID"
          }
       ],
       "name": "score-part",
-      "documentation": "Each MusicXML part corresponds to a track in a Standard MIDI Format 1 file. The <score-instrument> elements are used when there are multiple instruments per track. The <midi-device> element is used to make a MIDI device or port assignment for the given track. Initial midi-instrument assignments may be made here as well."
+      "documentation": "The <score-part> element collects part-wide information for each part in a score. Often each MusicXML part corresponds to a track in a Standard MIDI Format 1 file. In this case, the <midi-device> element is used to make a MIDI device or port assignment for the given track or specific MIDI instruments. Initial <midi-instrument> assignments may be made here as well."
    },
    "scordatura": {
       "children": {
@@ -8407,7 +8407,7 @@
          }
       ],
       "name": "scordatura",
-      "documentation": ""
+      "documentation": "Scordatura string tunings are represented by a series of <accord> elements, similar to the <staff-tuning> elements. Strings are numbered from high to low."
    },
    "measure-partwise": {
       "children": {
@@ -9422,12 +9422,12 @@
             "default": "1.0",
             "required": false,
             "name": "version",
-            "documentation": "",
+            "documentation": "The version attribute was added in Version 1.1 for the score-partwise and score-timewise documents. It provides an easier way to get version information than through the MusicXML public ID. The default value is 1.0 to make it possible for programs that handle later versions to distinguish earlier version files reliably. Programs that write MusicXML 1.1 or later files should set this attribute.",
             "type": "xs:token"
          }
       ],
       "name": "score-partwise",
-      "documentation": "The <score-partwise> element is the <root> element for a partwise MusicXML score. It includes a score-header group followed by a series of parts with measures inside. The document-attributes attribute group includes the version attribute."
+      "documentation": "The <score-partwise> element is the root element for a partwise MusicXML score. It includes score header information followed by a series of <part> elements with <measure> elements inside."
    },
    "base-pitch": {
       "children": null,
@@ -9859,12 +9859,12 @@
             "default": "1.0",
             "required": false,
             "name": "version",
-            "documentation": "",
+            "documentation": "The version attribute was added in Version 1.1 for the score-partwise and score-timewise documents. It provides an easier way to get version information than through the MusicXML public ID. The default value is 1.0 to make it possible for programs that handle later versions to distinguish earlier version files reliably. Programs that write MusicXML 1.1 or later files should set this attribute.",
             "type": "xs:token"
          }
       ],
       "name": "score-timewise",
-      "documentation": "The <score-timewise> element is the <root> element for a timewise MusicXML score. It includes a score-header group followed by a series of measures with parts inside. The document-attributes attribute group includes the version attribute."
+      "documentation": "The <score-timewise> element is the root element for a timewise MusicXML score. It includes score header information followed by a series of <measure> elements with <part> elements inside."
    },
    "arrow-style": {
       "children": {
@@ -10015,7 +10015,7 @@
          }
       ],
       "name": "snap-pizzicato",
-      "documentation": "The <snap-pizzicato> element represents the snap pizzicato symbol. This is a circle with a line, where the line comes inside the circle. It is distinct from the thumb-position symbol, where the line does not come inside the circle."
+      "documentation": "The <snap-pizzicato> element represents the snap pizzicato symbol. This is a circle with a line, where the line comes inside the circle. It is distinct from the <thumb-position> symbol, where the line does not come inside the circle."
    },
    "arrow-direction": {
       "children": {
@@ -10275,7 +10275,7 @@
          "percussion"
       ],
       "name": "stick-location",
-      "documentation": ""
+      "documentation": "The <stick-location> element represents pictograms for the location of sticks, beaters, or mallets on cymbals, gongs, drums, and other instruments."
    },
    "group-name-display": {
       "children": {
@@ -10344,7 +10344,7 @@
          }
       ],
       "name": "part-abbreviation-display",
-      "documentation": ""
+      "documentation": "The <part-abbreviation-display> element is used for exact formatting of multi-font text in part abbreviations to the left of the system. The print-object attribute can be used to determine what, if anything, is printed at the start of each system.\n\nFormatting specified in the <part-abbreviation-display> element overrides formatting specified in the <part-abbreviation> element."
    },
    "player-name": {
       "children": {
@@ -10550,7 +10550,7 @@
          "stick"
       ],
       "name": "stick-material",
-      "documentation": ""
+      "documentation": "The <stick-material> element represents the material being displayed in a stick pictogram."
    },
    "beat-repeat": {
       "children": {
@@ -10789,7 +10789,7 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Specifies if the string mute is going on or off.",
             "type": "on-off"
          },
          {
@@ -10866,7 +10866,7 @@
          }
       ],
       "name": "string-mute",
-      "documentation": ""
+      "documentation": "The <string-mute> element represents string mute on and mute off symbols."
    },
    "instruments": {
       "children": {
@@ -10952,7 +10952,7 @@
          }
       ],
       "name": "other-dynamics",
-      "documentation": ""
+      "documentation": "The <other-dynamics> element allows other dynamic marks that are not covered by combinations of the individual <dynamics> child elements."
    },
    "staff-layout": {
       "children": {
@@ -10969,12 +10969,12 @@
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Refers to staff numbers within the part, from top to bottom on the system. A value of 1 is used if not present.",
             "type": "staff-number"
          }
       ],
       "name": "staff-layout",
-      "documentation": ""
+      "documentation": "The <staff-layout> element includes the vertical distance from the bottom line of the previous staff in this system to the top line of the staff specified by the number attribute.\n\nWhen used in the <defaults> element, the values apply to all systems in all parts. When used in the <print> element, the values apply to the current system only. This value is ignored for the first staff in a system."
    },
    "staff-lines": {
       "children": {
@@ -10985,7 +10985,7 @@
          "staff-details"
       ],
       "name": "staff-lines",
-      "documentation": "The <staff-lines> element specifies the number of lines and is usually used for a non 5-line staff. If the <staff-lines> element is present, the appearance of each line may be individually specified with a line-detail element. "
+      "documentation": "The <staff-lines> element specifies the number of lines and is usually used for a non 5-line staff. If the <staff-lines> element is present, the appearance of each line may be individually specified with a <line-detail> element."
    },
    "other-articulation": {
       "children": {
@@ -11075,7 +11075,7 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Specifies the type of staff division symbol.",
             "type": "staff-divide-symbol"
          },
          {
@@ -11187,12 +11187,12 @@
          {
             "required": true,
             "name": "line",
-            "documentation": "",
+            "documentation": "Indicates the staff line for this tuning, numbered from bottom to top.",
             "type": "staff-line"
          }
       ],
       "name": "staff-tuning",
-      "documentation": ""
+      "documentation": "The <staff-tuning> element specifies the open, non-capo tuning of the lines on a tablature staff."
    },
    "eyeglasses": {
       "children": null,
@@ -11285,7 +11285,7 @@
          "staff-layout"
       ],
       "name": "staff-distance",
-      "documentation": ""
+      "documentation": "The <staff-distance> element represents the vertical distance from the bottom line of the previous staff in this system to the top line of the current staff."
    },
    "staff-details": {
       "children": {
@@ -11345,13 +11345,13 @@
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Specifies the staff number from top to bottom within the part. The value is 1 if not present.",
             "type": "staff-number"
          },
          {
             "required": false,
             "name": "show-frets",
-            "documentation": "",
+            "documentation": "Indicates whether to show tablature frets as numbers (0, 1, 2) or letters (a, b, c). It is numbers if not specified.",
             "type": "show-frets"
          },
          {
@@ -11748,7 +11748,7 @@
          "harmonic"
       ],
       "name": "sounding-pitch",
-      "documentation": "The sounding-pitch is the pitch which is heard when playing the harmonic."
+      "documentation": "The presence of the <sounding-pitch> element indicates this is the pitch which is heard when playing the harmonic."
    },
    "frame-note": {
       "children": {
@@ -12038,7 +12038,7 @@
          "harp-pedals"
       ],
       "name": "pedal-tuning",
-      "documentation": ""
+      "documentation": "The <pedal-tuning> element specifies the tuning of a single harp pedal."
    },
    "first-fret": {
       "children": {
@@ -12145,7 +12145,7 @@
          }
       ],
       "name": "right-divider",
-      "documentation": ""
+      "documentation": "The <right-divider> element indicates the presence or absence of a system divider (also known as a system separation mark) displayed on the right side of the page.\n\nThe default vertical position is half the <system-distance> value from the top of the system that is below the divider. The default horizontal position is the right system margin."
    },
    "figure-number": {
       "children": {
@@ -12363,12 +12363,12 @@
          {
             "required": false,
             "name": "type",
-            "documentation": "",
+            "documentation": "Specifies whether the margins apply to even pages, odd pages, or both. This attribute is not needed when used as part of a <print> element. The value is both if omitted when used in the <defaults> element.",
             "type": "margin-type"
          }
       ],
       "name": "page-margins",
-      "documentation": ""
+      "documentation": "The <page-margins> element specifies page margins in tenths either for both even and odd pages, or via separate odd and even page number values."
    },
    "page-layout": {
       "children": {
@@ -12408,7 +12408,7 @@
          "defaults"
       ],
       "name": "page-layout",
-      "documentation": ""
+      "documentation": "Page layout can be defined both in score-wide <defaults> and in the <print> element. If no <page-layout> element is present in the <defaults> element, default page layout values are chosen by the application.\n\nWhen used in the <print> element, the <page-layout> element affects the appearance of the current page only. All other pages use the default values as determined by the <defaults> element. If any child elements are missing from the <page-layout> element in a <print> element, the values determined by the <defaults> element are used there as well."
    },
    "page-height": {
       "children": {
@@ -12419,7 +12419,7 @@
          "page-layout"
       ],
       "name": "page-height",
-      "documentation": ""
+      "documentation": "The <page-height> element specifies the page height in tenths."
    },
    "virtual-name": {
       "children": {
@@ -13216,12 +13216,12 @@
          {
             "required": true,
             "name": "id",
-            "documentation": "",
+            "documentation": "An IDREF back to a <score-part> element within the <part-list> element.",
             "type": "xs:IDREF"
          }
       ],
       "name": "part-partwise",
-      "documentation": ""
+      "documentation": "The <part> element is the top level of musical organization below the <score-partwise> document element. It contains a sequence of <measure> elements."
    },
    "numeral-root": {
       "children": {
@@ -13811,7 +13811,7 @@
          }
       ],
       "name": "part-name-display",
-      "documentation": ""
+      "documentation": "The <part-name-display> element is used for exact formatting of multi-font text in part names to the left of the system. The print-object attribute can be used to determine what, if anything, is printed at the start of each system.\n\nFormatting specified in the <part-name-display> element overrides formatting specified in the <part-name> element."
    },
    "instrument": {
       "children": null,
@@ -13940,7 +13940,7 @@
          "for-part"
       ],
       "name": "part-transpose",
-      "documentation": "The <chromatic> element in a part-transpose element will usually have a non-zero value, since octave transpositions can be represented in concert scores using the <transpose> element."
+      "documentation": "The child elements of the <part-transpose> element have the same meaning as for the <transpose> element. However that meaning applies to a transposed part created from the existing score file.\n\nThe <chromatic> element in a <part-transpose> element will usually have a non-zero value, since octave transpositions can be represented in concert scores using the <transpose> element."
    },
    "soft-accent": {
       "children": null,
@@ -14010,7 +14010,7 @@
          }
       ],
       "name": "soft-accent",
-      "documentation": "The <soft-accent> element indicates a soft accent that is not as heavy as a normal accent. It is often notated as <>. It can be combined with other articulations to implement the first eight symbols in the SMuFL Articulation supplement range."
+      "documentation": "The <soft-accent> element indicates a soft accent that is not as heavy as a normal accent. It is often notated as <>. It can be combined with other articulations to implement the first eight symbols in the [Standard Music Font Layout (SMuFL) Articulation supplement range](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/articulation-supplement.html)."
    },
    "time-relation": {
       "children": {
@@ -14362,12 +14362,12 @@
          {
             "required": true,
             "name": "id",
-            "documentation": "",
+            "documentation": "An IDREF back to a <score-part> element within the <part-list> element.",
             "type": "xs:IDREF"
          }
       ],
       "name": "part-timewise",
-      "documentation": ""
+      "documentation": "The <part> element includes the basic musical data such as <note>s within a <score-timewise> document."
    },
    "tuplet-actual": {
       "children": {
@@ -14959,12 +14959,12 @@
          {
             "required": false,
             "name": "type",
-            "documentation": "Distinguishes different creative contributions. Thus there can be multiple <creator> elements within an <identification> element. Standard values are composer, lyricist, and arranger. Other values may be used for different types of creative roles. This attribute should usually be used even if there is just a single <creator> element.",
+            "documentation": "Standard type values are music, words, and arrangement, but other types may be used. This attribute is only needed when there are multiple <rights> elements.",
             "type": "xs:token"
          }
       ],
       "name": "rights",
-      "documentation": "The <rights> element is borrowed from Dublin Core. It contains copyright and other intellectual property notices. Words, music, and derivatives can have different types, so multiple rights elements with different type attributes are supported. Standard type values are music, words, and arrangement, but other types may be used. The type attribute is only needed when there are multiple rights elements."
+      "documentation": "The <rights> element contains copyright and other intellectual property notices. This is similar to the [Dublin Core rights element](https:\/\/www.dublincore.org\/specifications\/dublin-core\/dcmi-terms\/elements11\/rights\/). Words, music, and derivatives can have different types, so multiple <rights> elements with different type attributes are supported."
    },
    "rest": {
       "children": {
@@ -14993,12 +14993,12 @@
          {
             "required": false,
             "name": "measure",
-            "documentation": "",
+            "documentation": "If yes, this indicates this is a complete measure rest.",
             "type": "yes-no"
          }
       ],
       "name": "rest",
-      "documentation": ""
+      "documentation": "The <rest> element indicates notated rests or silences. A <rest> element is usually empty, but placement on the staff can be specified using <display-step> and <display-octave> elements."
    },
    "repeat": {
       "children": null,
@@ -15009,30 +15009,30 @@
          {
             "required": true,
             "name": "direction",
-            "documentation": "",
+            "documentation": "The start of the repeat has a forward direction while the end of the repeat has a backward direction.",
             "type": "backward-forward"
          },
          {
             "required": false,
             "name": "times",
-            "documentation": "",
+            "documentation": "Indicates the number of times the repeated section is played. It is only used with backward repeats that are not part of an ending.",
             "type": "xs:nonNegativeInteger"
          },
          {
             "required": false,
             "name": "after-jump",
-            "documentation": "",
+            "documentation": "Indicates if the repeats are played after a jump due to a da capo or dal segno. It is only used with backward repeats that are not part of an ending.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "winged",
-            "documentation": "",
+            "documentation": "Indicates whether the repeat has winged extensions that appear above and below the barline.",
             "type": "winged"
          }
       ],
       "name": "repeat",
-      "documentation": ""
+      "documentation": "The <repeat> element represents repeat marks."
    },
    "rf": {
       "children": null,
@@ -15040,7 +15040,7 @@
          "dynamics"
       ],
       "name": "rf",
-      "documentation": ""
+      "documentation": "The <rf> element represents a rinforzando rf dynamic marking."
    },
    "rfz": {
       "children": null,
@@ -15048,7 +15048,7 @@
          "dynamics"
       ],
       "name": "rfz",
-      "documentation": ""
+      "documentation": "The <rfz> element represents a rinforzando rfz dynamic marking."
    },
    "root": {
       "children": {
@@ -15074,7 +15074,7 @@
          "harmony"
       ],
       "name": "root",
-      "documentation": ""
+      "documentation": "The <root> element indicates a pitch like C, D, E vs. a scale degree like 1, 2, 3. It is used with chord symbols in popular music. The <root> element has a <root-step> and optional <root-alter> element similar to the <step> and <alter> elements, but renamed to distinguish the different musical meanings."
    },
    "group-symbol": {
       "children": {
@@ -15128,7 +15128,7 @@
          "identification"
       ],
       "name": "source",
-      "documentation": "The source for the music that is encoded. This is similar to the Dublin Core source element."
+      "documentation": "The <source> element describes the source for the music that is encoded. This is similar to the [Dublin Core source element](https:\/\/www.dublincore.org\/specifications\/dublin-core\/dcmi-terms\/elements11\/source\/)."
    },
    "sound": {
       "children": {
@@ -15190,103 +15190,103 @@
          {
             "required": false,
             "name": "tempo",
-            "documentation": "",
+            "documentation": "Tempo is expressed in quarter notes per minute. If 0, the sound-generating program should prompt the user at the time of compiling a sound (MIDI) file.",
             "type": "non-negative-decimal"
          },
          {
             "required": false,
             "name": "dynamics",
-            "documentation": "",
+            "documentation": "Dynamics (or MIDI velocity) are expressed as a percentage of the default forte value (90 for MIDI 1.0).",
             "type": "non-negative-decimal"
          },
          {
             "required": false,
             "name": "dacapo",
-            "documentation": "",
+            "documentation": "Indicates to go back to the beginning of the movement. When used it always has the value \"yes\".\n\nBy default, a dacapo attribute indicates that the jump should occur the first time through. The times that jumps occur can be changed by using the time-only attribute.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "segno",
-            "documentation": "",
+            "documentation": "Indicates the end point for a backward jump to a segno sign. If there are multiple jumps, the value of these parameters can be used to name and distinguish them.",
             "type": "xs:token"
          },
          {
             "required": false,
             "name": "dalsegno",
-            "documentation": "",
+            "documentation": "Indicates the starting point for a backward jump to a segno sign. If there are multiple jumps, the value of these parameters can be used to name and distinguish them.\n\nBy default, a dalsegno attribute indicates that the jump should occur the first time through. The times that jumps occur can be changed by using the time-only attribute.",
             "type": "xs:token"
          },
          {
             "required": false,
             "name": "coda",
-            "documentation": "",
+            "documentation": "Indicates the end point for a forward jump to a coda sign. If there are multiple jumps, the value of these parameters can be used to name and distinguish them.",
             "type": "xs:token"
          },
          {
             "required": false,
             "name": "tocoda",
-            "documentation": "",
+            "documentation": "Indicates the starting point for a forward jump to a coda sign. If there are multiple jumps, the value of these parameters can be used to name and distinguish them.\n\nBy default, a tocoda attribute indicates the jump should occur the second time through. The times that jumps occur can be changed by using the time-only attribute.",
             "type": "xs:token"
          },
          {
             "required": false,
             "name": "divisions",
-            "documentation": "",
+            "documentation": "If the segno or coda attributes are used, the divisions attribute can be used to indicate the number of divisions per quarter note. Otherwise sound and MIDI generating programs may have to recompute this.",
             "type": "divisions"
          },
          {
             "required": false,
             "name": "forward-repeat",
-            "documentation": "",
+            "documentation": "Indicates that a forward repeat sign is implied but not displayed. It is used for example in two-part forms with repeats, such as a minuet and trio where no repeat is displayed at the start of the trio. This usually occurs after a barline. When used it always has the value of \"yes\".",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "fine",
-            "documentation": "",
+            "documentation": "Follows the final note or rest in a movement with a da capo or dal segno direction. If numeric, the value represents the actual duration of the final note or rest, which can be ambiguous in written notation and different among parts and voices. The value may also be \"yes\" to indicate no change to the final duration.",
             "type": "xs:token"
          },
          {
             "required": false,
             "name": "time-only",
-            "documentation": "",
+            "documentation": "Indicates which times to apply the sound element if the <sound> element applies only particular times through a repeat.",
             "type": "time-only"
          },
          {
             "required": false,
             "name": "pizzicato",
-            "documentation": "",
+            "documentation": "Affects all following notes. Yes indicates pizzicato, no indicates arco.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "pan",
-            "documentation": "",
+            "documentation": "Allows placing of sound in a 3-D space relative to the listener, expressed in degrees ranging from -180 to 180. 0 is straight ahead, -90 is hard left, 90 is hard right, and -180 and 180 are directly behind the listener.\n\nDeprecated as of Version 2.0. The <pan> element in the <midi-instrument> element should be used instead. If both are present, the <pan> element takes priority.",
             "type": "rotation-degrees"
          },
          {
             "required": false,
             "name": "elevation",
-            "documentation": "",
+            "documentation": "Allows placing of sound in a 3-D space relative to the listener, expressed in degrees ranging from -180 to 180. 0 is level with the listener, 90 is directly above, and -90 is directly below.\n\nDeprecated as of Version 2.0. The <elevation> element in the <midi-instrument> element should be used instead. If both are present, the <elevation> element takes priority.",
             "type": "rotation-degrees"
          },
          {
             "required": false,
             "name": "damper-pedal",
-            "documentation": "",
+            "documentation": "Effects playback of the the common right piano pedal and its MIDI controller equivalent. The yes value indicates the pedal is depressed; no indicates the pedal is released. A numeric value from 0 to 100 may also be used for half pedaling. This value is the percentage that the pedal is depressed. A value of 0 is equivalent to no, and a value of 100 is equivalent to yes.",
             "type": "yes-no-number"
          },
          {
             "required": false,
             "name": "soft-pedal",
-            "documentation": "",
+            "documentation": "Effects playback of the the common left piano pedal and its MIDI controller equivalent. The yes value indicates the pedal is depressed; no indicates the pedal is released. A numeric value from 0 to 100 may also be used for half pedaling. This value is the percentage that the pedal is depressed. A value of 0 is equivalent to no, and a value of 100 is equivalent to yes.",
             "type": "yes-no-number"
          },
          {
             "required": false,
             "name": "sostenuto-pedal",
-            "documentation": "",
+            "documentation": "Effects playback of the the common center piano pedal and its MIDI controller equivalent. The yes value indicates the pedal is depressed; no indicates the pedal is released. A numeric value from 0 to 100 may also be used for half pedaling. This value is the percentage that the pedal is depressed. A value of 0 is equivalent to no, and a value of 100 is equivalent to yes.",
             "type": "yes-no-number"
          },
          {
@@ -15297,7 +15297,7 @@
          }
       ],
       "name": "sound",
-      "documentation": ""
+      "documentation": "The <sound> element contains general playback parameters. They can stand alone within a part\/measure, or be a component element within a direction.\n\nInstrument changes, MIDI devices, MIDI instruments, and playback techniques are changed using the <instrument-change>, <midi-device>, <midi-instrument>, and <play> elements. When there are multiple instances of these elements, they should be grouped together by instrument using the id attribute values.\n\nThe <offset> element is used to indicate that the sound takes place offset from the current score position. If the <sound> element is a child of a <direction> element, the sound <offset> element overrides the direction <offset> element if both elements are present. Note that the offset reflects the intended musical position for the change in sound. It should not be used to compensate for latency issues in particular hardware configurations."
    },
    "solo": {
       "children": null,
@@ -15317,7 +15317,7 @@
          "pitch"
       ],
       "name": "step",
-      "documentation": ""
+      "documentation": "The <step> element represents a step of the diatonic scale, represented using the English letters A through G."
    },
    "stem": {
       "children": {
@@ -15331,25 +15331,25 @@
          {
             "required": false,
             "name": "default-x",
-            "documentation": "",
+            "documentation": "For down and up stems, changes the computation of the default horizontal position of the end of the stem. The origin is changed relative to the left-hand side of the note. Positive x is right and negative x is left.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "default-y",
-            "documentation": "",
+            "documentation": "For down and up stems, changes the computation of the default vertical position of the end of the stem. The origin is changed relative to the top line of the staff. Positive y is up and negative y is down.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "relative-x",
-            "documentation": "",
+            "documentation": "For down and up stems, changes the horizontal position of the end of the stem relative to the default position, either as computed by the individual program, or as overridden by the default-x attribute. Positive x is right and negative x is left.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "relative-y",
-            "documentation": "",
+            "documentation": "For down and up stems, changes the vertical position of the end of the stem relative to the default position, either as computed by the individual program, or as overridden by the default-y attribute. Positive y lengthens a stem while negative y shortens it. Negative values of relative-y that would flip a stem instead of shortening it are ignored.",
             "type": "tenths"
          },
          {
@@ -15360,7 +15360,7 @@
          }
       ],
       "name": "stem",
-      "documentation": ""
+      "documentation": "Values for the <stem> element can be down, up, none, or double. A <stem> element associated with a <rest> refers to a stemlet."
    },
    "staff": {
       "children": {
@@ -15374,7 +15374,7 @@
          "note"
       ],
       "name": "staff",
-      "documentation": "Staff assignment is only needed for music notated on multiple staves. Used by both notes and directions. Staff values are numbers, with 1 referring to the top-most staff in a part."
+      "documentation": "Staff assignment is only needed for music notated on multiple staves. Staff values are numbers, with 1 referring to the top-most staff in a part."
    },
    "staves": {
       "children": {
@@ -15459,7 +15459,7 @@
          }
       ],
       "name": "string",
-      "documentation": ""
+      "documentation": "The <string> element is used with tablature notation, regular notation (where it is often circled), and chord diagrams. String numbers start with 1 for the highest pitched full-length string."
    },
    "stress": {
       "children": null,
@@ -15558,24 +15558,24 @@
          {
             "required": false,
             "name": "tip",
-            "documentation": "",
+            "documentation": "Represents the direction in which the tip of a stick or beater points, using Unicode arrow terminology.",
             "type": "tip-direction"
          },
          {
             "required": false,
             "name": "parentheses",
-            "documentation": "",
+            "documentation": "Indicates the presence of parentheses around the round beater part of a pictogram. The value is no if not specified.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "dashed-circle",
-            "documentation": "",
+            "documentation": "Indicates the presence of a dashed circle around the round beater part of a pictogram. The value is no if not specified.",
             "type": "yes-no"
          }
       ],
       "name": "stick",
-      "documentation": ""
+      "documentation": "The <stick> element represents pictograms where the material of the stick, mallet, or beater is included."
    },
    "slur": {
       "children": null,
@@ -15586,14 +15586,14 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if this is the start, stop, or continuation of the slur.",
             "type": "start-stop-continue"
          },
          {
             "default": "1",
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Distinguishes multiple slurs when they overlap in MusicXML document order.",
             "type": "number-level"
          },
          {
@@ -15700,7 +15700,7 @@
          }
       ],
       "name": "slur",
-      "documentation": ""
+      "documentation": "Most slurs are represented with two <slur> elements: one with a start type, and one with a stop type. Slurs can add more elements using a continue type. This is typically used to specify the formatting of cross-system slurs, or to specify the shape of very complex slurs.\n\nNormal slurs and S-shaped slurs need only two bezier points: one associated with the start of the slur, the other with the stop. Complex slurs and slurs divided over system breaks can specify additional bezier data at <slur> elements with a continue type."
    },
    "slide": {
       "children": {
@@ -15714,14 +15714,14 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if this is the start or stop of the slide.",
             "type": "start-stop"
          },
          {
             "default": "1",
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Distinguishes multiple slides when they overlap in MusicXML document order. The default value is 1.",
             "type": "number-level"
          },
          {
@@ -15870,24 +15870,24 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates the starting or stopping point of the section displaying slash notation.",
             "type": "start-stop"
          },
          {
             "required": false,
             "name": "use-dots",
-            "documentation": "",
+            "documentation": "Indicates whether or not to use dots as well (for instance, with mixed rhythm patterns). The value is no if not specified. This attribute only has effect if use-stems is no.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "use-stems",
-            "documentation": "",
+            "documentation": "If the slash is on every beat, use-stems is no (the default). To indicate rhythms but not pitches, use-stems is set to yes.",
             "type": "yes-no"
          }
       ],
       "name": "slash",
-      "documentation": ""
+      "documentation": "The <slash> element indicates that slash notation is to be used.\n\nThe stop type indicates the first beat where slash notation no longer displayed. Both the start and stop of the slash notation should be specified unless the slashes are displayed through the end of the part."
    },
    "shake": {
       "children": null,
@@ -15999,7 +15999,7 @@
          }
       ],
       "name": "shake",
-      "documentation": "The <shake> element has a similar appearance to an inverted-mordent element."
+      "documentation": "The <shake> element has a similar appearance to an <inverted-mordent> element."
    },
    "smear": {
       "children": null,
@@ -16177,7 +16177,7 @@
          "dynamics"
       ],
       "name": "sf",
-      "documentation": ""
+      "documentation": "The <sf> element represents a sforzando sf dynamic marking."
    },
    "sfp": {
       "children": null,
@@ -16185,7 +16185,7 @@
          "dynamics"
       ],
       "name": "sfp",
-      "documentation": ""
+      "documentation": "The <sfp> element represents a sforzando piano sfp dynamic marking."
    },
    "sfpp": {
       "children": null,
@@ -16193,7 +16193,7 @@
          "dynamics"
       ],
       "name": "sfpp",
-      "documentation": ""
+      "documentation": "The <sfpp> element represents a sforzando pianissimo sfpp dynamic marking."
    },
    "sfz": {
       "children": null,
@@ -16201,7 +16201,7 @@
          "dynamics"
       ],
       "name": "sfz",
-      "documentation": ""
+      "documentation": "The <sfz> element represents a sforzando sfz dynamic marking."
    },
    "sfzp": {
       "children": null,
@@ -16209,7 +16209,7 @@
          "dynamics"
       ],
       "name": "sfzp",
-      "documentation": ""
+      "documentation": "The <sfzp> element represents a sforzando piano sfzp dynamic marking."
    },
    "sffz": {
       "children": null,
@@ -16217,7 +16217,7 @@
          "dynamics"
       ],
       "name": "sffz",
-      "documentation": ""
+      "documentation": "The <sffz> element represents a sforzando sffz dynamic marking."
    },
    "segno": {
       "children": null,
@@ -16301,12 +16301,12 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "",
+            "documentation": "Specifies the exact glyph to be used for the segno sign.",
             "type": "smufl-segno-glyph-name"
          }
       ],
       "name": "segno",
-      "documentation": ""
+      "documentation": "The <segno> element is the visual indicator of a segno sign. A <sound> element is also needed to guide playback applications reliably."
    },
    "second": {
       "children": {
@@ -16317,7 +16317,7 @@
          "swing"
       ],
       "name": "second",
-      "documentation": ""
+      "documentation": "The <second> element is the part of the swing ratio that refers to the second of two consecutive notes."
    },
    "symbol": {
       "children": {
@@ -16467,30 +16467,30 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Specifies the style that a score following application should use to synchronize an accompaniment with a performer.",
             "type": "sync-type"
          },
          {
             "required": false,
             "name": "latency",
-            "documentation": "",
+            "documentation": "Specifies a latency time in milliseconds that the listening application should expect from the performer.",
             "type": "milliseconds"
          },
          {
             "required": false,
             "name": "player",
-            "documentation": "",
+            "documentation": "Restricts the element to apply to a single <player>.",
             "type": "xs:IDREF"
          },
          {
             "required": false,
             "name": "time-only",
-            "documentation": "",
+            "documentation": "Restricts the element to apply to a set of times through a repeated section.",
             "type": "time-only"
          }
       ],
       "name": "sync",
-      "documentation": ""
+      "documentation": "The <sync> element specifies the style that a score following application should use the synchronize an accompaniment with a performer. If this element is not included in a score, default synchronization depends on the application."
    },
    "swing": {
       "children": {
@@ -16548,7 +16548,7 @@
          "sound"
       ],
       "name": "swing",
-      "documentation": ""
+      "documentation": "The <swing> element specifies whether or not to use swing playback, where consecutive on-beat \/ off-beat eighth or 16th notes are played with unequal nominal durations.\n\nThe <first> and <second> elements are positive integers that specify the ratio between durations of consecutive notes. For example, a <first> element with a value of 2 and a <second> element with a value of 1 applied to eighth notes specifies a quarter note \/ eighth note tuplet playback, where the first note is twice as long as the second note. Ratios should be specified with the smallest integers possible. For example, a ratio of 6 to 4 should be specified as 3 to 2 instead.\n\nThe <swing> element has no effect for playback of grace notes, notes where a <type> element is not present, and notes where the specified <duration> is different than the nominal value associated with the specified <type>. If a swung note has attack and release attributes, those values modify the swung playback."
    },
    "sign": {
       "children": {
@@ -16627,7 +16627,7 @@
          }
       ],
       "name": "suffix",
-      "documentation": "Values for the <suffix> element include plus and the accidental values sharp, flat, natural, double-sharp, flat-flat, and sharp-sharp. Suffixes include both symbols that come after the figure number and those that overstrike the figure number. The suffix values slash, back-slash, and vertical are used for slashed numbers indicating chromatic alteration. The orientation and display of the slash usually depends on the figure number. The <suffix> element may contain additional values for symbols specific to particular figured bass styles."
+      "documentation": "Values for the <suffix> element include plus and the accidental values sharp, flat, natural, double-sharp, flat-flat, and sharp-sharp. Suffixes include both symbols that come after the figure number and those that overstrike the figure number. The <suffix> values slash, back-slash, and vertical are used for slashed numbers indicating chromatic alteration. The orientation and display of the slash usually depends on the figure number. The <suffix> element may contain additional values for symbols specific to particular figured bass styles."
    },
    "tenths": {
       "children": {
@@ -18486,7 +18486,7 @@
          "dynamics"
       ],
       "name": "p",
-      "documentation": ""
+      "documentation": "The <p> element represents a piano dynamic marking."
    },
    "play": {
       "children": {
@@ -18528,12 +18528,12 @@
          {
             "required": false,
             "name": "id",
-            "documentation": "",
+            "documentation": "Refers to a specific <score-instrument> to which this playback applies.",
             "type": "xs:IDREF"
          }
       ],
       "name": "play",
-      "documentation": ""
+      "documentation": "The <play> element specifies playback techniques to be used in conjunction with the <instrument-sound> element. When used as part of a <sound> element, it applies to all notes going forward in score order. In multi-instrument parts, the affected instrument should be specified using the id attribute. When used as part of a <note> element, it applies to the current note only."
    },
    "player": {
       "children": {
@@ -18549,12 +18549,12 @@
          {
             "required": true,
             "name": "id",
-            "documentation": "",
+            "documentation": "An identifier for this <player> that is unique within this document.",
             "type": "xs:ID"
          }
       ],
       "name": "player",
-      "documentation": ""
+      "documentation": "The <player> element allows for multiple players per <score-part> for use in listening applications. One player may play multiple instruments, while a single instrument may include multiple players in divisi sections."
    },
    "pluck": {
       "children": {
@@ -18627,7 +18627,7 @@
          }
       ],
       "name": "pluck",
-      "documentation": "The <pluck> element is used to specify the plucking fingering on a fretted instrument, where the <fingering> element refers to the fretting fingering. Typical values are p, i, m, a for pulgar\/thumb, indicio\/index, medio\/middle, and anular\/ring fingers."
+      "documentation": "The <pluck> element is used to specify the plucking fingering on a fretted instrument, where the fingering element refers to the fretting fingering. Typical values are p, i, m, a for pulgar\/thumb, indicio\/index, medio\/middle, and anular\/ring fingers."
    },
    "plop": {
       "children": null,
@@ -18738,7 +18738,7 @@
          "midi-instrument"
       ],
       "name": "pan",
-      "documentation": "The pan and elevation elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For pan, 0 is straight ahead, -90 is hard left, 90 is hard right, and -180 and 180 are directly behind the listener."
+      "documentation": "The <pan> and <elevation> elements allow placing of sound in a 3-D space relative to the listener. Both are expressed in degrees ranging from -180 to 180. For pan, 0 is straight ahead, -90 is hard left, 90 is hard right, and -180 and 180 are directly behind the listener."
    },
    "pitch": {
       "children": {
@@ -18770,7 +18770,7 @@
          "note"
       ],
       "name": "pitch",
-      "documentation": ""
+      "documentation": "Pitch is represented as a combination of the step of the diatonic scale, the chromatic alteration, and the octave."
    },
    "pp": {
       "children": null,
@@ -18778,7 +18778,7 @@
          "dynamics"
       ],
       "name": "pp",
-      "documentation": ""
+      "documentation": "The <pp> element represents a pianissimo dynamic marking."
    },
    "ppp": {
       "children": null,
@@ -18786,7 +18786,7 @@
          "dynamics"
       ],
       "name": "ppp",
-      "documentation": ""
+      "documentation": "The <ppp> element represents a triple piano dynamic marking."
    },
    "pppp": {
       "children": null,
@@ -18794,7 +18794,7 @@
          "dynamics"
       ],
       "name": "pppp",
-      "documentation": ""
+      "documentation": "The <pppp> element represents a pppp dynamic marking."
    },
    "ppppp": {
       "children": null,
@@ -18802,7 +18802,7 @@
          "dynamics"
       ],
       "name": "ppppp",
-      "documentation": ""
+      "documentation": "The <ppppp> element represents a ppppp dynamic marking."
    },
    "pppppp": {
       "children": null,
@@ -18810,7 +18810,7 @@
          "dynamics"
       ],
       "name": "pppppp",
-      "documentation": ""
+      "documentation": "The <pppppp> element represents a pppppp dynamic marking."
    },
    "pf": {
       "children": null,
@@ -18818,7 +18818,7 @@
          "dynamics"
       ],
       "name": "pf",
-      "documentation": ""
+      "documentation": "The <pf> element represents a piano forte dynamic marking."
    },
    "pedal": {
       "children": null,
@@ -18829,31 +18829,31 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Distinguishes different types of pedal directions.",
             "type": "pedal-type"
          },
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Distinguishes multiple pedals when they overlap in MusicXML document order.",
             "type": "number-level"
          },
          {
             "required": false,
             "name": "line",
-            "documentation": "",
+            "documentation": "If yes, then pedal lines are used.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "sign",
-            "documentation": "",
+            "documentation": "If yes, then Ped, Sost, and * signs are used. For compatibility with older versions, it is yes if not specified if the line attribute is no, and is no if not specified if the line attribute is yes. If no, the alignment attributes are ignored.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "abbreviated",
-            "documentation": "",
+            "documentation": "Used only when the sign attribute is yes and the type is start or sostenuto; otherwise it is ignored. If yes, the short P and S signs are used. If no, the full Ped and Sost signs are used. It is no if not specified.",
             "type": "yes-no"
          },
          {
@@ -18930,7 +18930,7 @@
          }
       ],
       "name": "pedal",
-      "documentation": ""
+      "documentation": "The <pedal> element represents piano pedal marks, including damper and sostenuto pedal marks. The soft pedal is not included here because there is no special symbol or graphic used for it beyond what can be specified with <words> and <bracket> elements."
    },
    "prefix": {
       "children": {
@@ -19064,31 +19064,31 @@
          {
             "required": false,
             "name": "staff-spacing",
-            "documentation": "",
+            "documentation": "Specifies spacing between multiple staves in tenths of staff space. Deprecated as of Version 1.1; the staff-layout element should be used instead. If both are present, the staff-layout values take priority.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "new-system",
-            "documentation": "",
+            "documentation": "Indicates whether to force a system break, or to force the current music onto the same system as the preceding music. Normally this is the first music data within a measure. If used in multi-part music, the attributes should be placed in the same positions within each part, or the results are undefined.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "new-page",
-            "documentation": "",
+            "documentation": "Indicates whether to force a page break, or to force the current music onto the same page as the preceding music. Normally this is the first music data within a measure. If used in multi-part music, the attributes should be placed in the same positions within each part, or the results are undefined.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "blank-page",
-            "documentation": "",
+            "documentation": "The number of blank pages to insert before the current measure. It is ignored if new-page is not \"yes\". These blank pages have no music, but may have text or images specified by the credit element. This is used to allow a combination of pages that are all text, or all text and images, together with pages of music.",
             "type": "xs:positiveInteger"
          },
          {
             "required": false,
             "name": "page-number",
-            "documentation": "",
+            "documentation": "Sets the number of a new page. It is ignored if new-page is not \"yes\".",
             "type": "xs:token"
          },
          {
@@ -19099,7 +19099,7 @@
          }
       ],
       "name": "print",
-      "documentation": ""
+      "documentation": "The <print> element contains general printing parameters, including layout elements. The <part-name-display> and <part-abbreviation-display> elements may also be used here to change how a part name or abbreviation is displayed over the course of a piece. They take effect when the current measure or a succeeding measure starts a new system.\n\nLayout group elements in a <print> element only apply to the current page, system, or staff. Music that follows continues to take the default values from the layout determined by the <defaults> element."
    },
    "volume": {
       "children": {
