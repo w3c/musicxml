@@ -20,7 +20,12 @@ export function elementName(tag: string): string {
 }
 
 /**
- * Processes XML Schema `xs:documentation` annotations to convert them to proper markdown.
+ * Processes XML Schema <xs:documentation> annotations.
+ *
+ * - Transform tags to Markdown code backticks
+ * - Render the Markdown
+ * - Catch SMuFL chars and render them with a special class
+ * - Remove surrounding <p> that the Markdown processor automatically adds
  */
 export async function annotationMarkdown(annotation: string): Promise<string> {
   if (!annotation.length) throw("MISSING ATTRIBUTE DOC!!");
@@ -28,7 +33,9 @@ export async function annotationMarkdown(annotation: string): Promise<string> {
   const processor = await createMarkdownProcessor();
   return (await processor.render(
     annotation.trim().replaceAll('<', '`<').replaceAll('>', '>`')
-  )).code;
+  )).code
+  .replace(/([\uE000-\uFFFF])/g, match => `<span class="smufl">${match}</span>`)
+  .replaceAll(/^(?:<p>)+|(?:<\/p>)+$/g, '');
 }
 
 /**

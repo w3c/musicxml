@@ -38,7 +38,7 @@
     <xsl:variable name="base" select="(xs:string(xs:restriction/@base), fn:tokenize(xs:union/@memberTypes, ' '))"/>
     <xsl:sequence select="map {
       'name': if (@name) then xs:string(@name) else $name,
-      'documentation': (xs:annotation/xs:documentation/text(), $documentation)[1],
+      'documentation': xs:string((xs:annotation/xs:documentation/text(), $documentation)[1]),
       'base': array{$base},
       'type': if (.//xs:restriction[xs:enumeration]) then 'values'
         else if (.//xs:restriction[xs:pattern]) then 'regex'
@@ -47,7 +47,7 @@
       'value': if (.//xs:restriction[xs:enumeration]) then fn:fold-left(.//xs:restriction/xs:enumeration, array{}, function($a, $v) {
         array:append($a, map {
           'value': xs:string($v/@value),
-          'documentation': $v/xs:annotation/xs:documentation/text()
+          'documentation': xs:string($v/xs:annotation/xs:documentation/text())
         })
       }) else if (.//xs:restriction[xs:pattern]) then xs:string(.//xs:restriction/xs:pattern/@value)
       else if (.//xs:restriction[xs:minInclusive or xs:maxInclusive or xs:minExclusive or xs:maxExclusive]) then fn:fold-left(.//xs:restriction/*, map{}, function($m, $v) {
@@ -84,7 +84,7 @@
       <xsl:otherwise>
         <xsl:sequence select="map {
           'name': $schema || ':' || xs:string(@name),
-          'documentation': xs:annotation/xs:documentation/text(),
+          'documentation': xs:string(xs:annotation/xs:documentation/text()),
           'base': array{xs:string(@type)},
           'type': 'none',
           'value': ()

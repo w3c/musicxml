@@ -24,6 +24,19 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       weights: [400],
       styles: ["normal"]
+    },
+    {
+      name: "SMuFL",
+      cssVariable: "--font-smufl",
+      provider: fontProviders.local(),
+      options: {
+        variants: [{
+          src: ['./src/assets/fonts/BravuraText.woff2'],
+          weight: 'normal',
+          style: 'normal',
+          unicodeRange: ['U+E???'],
+        }]
+      }
     }
   ],
   markdown: {

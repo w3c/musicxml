@@ -1,6 +1,9 @@
 ---
 title: '<unpitched>'
-elements: unpitched
+elements:
+- unpitched
+- display-step
+- display-octave
 ---
 ```xml
 <measure number="1">

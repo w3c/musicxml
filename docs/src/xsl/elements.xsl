@@ -51,14 +51,12 @@
     <xsl:element name="{$element-name}">
       <xsl:attribute name="attribute" select="false()"/>
       <xsl:attribute name="parents" select="$parents"/>
-      <xsl:attribute name="documentation">
-        <xsl:value-of select="(
-          xs:annotation/xs:documentation/text(),
-          /xs:schema/xs:complexType//xs:element[@name=current()/@name]/xs:annotation/xs:documentation/text(),
-          /xs:schema/xs:element[@name=current()/@name]/xs:annotation/xs:documentation/text(),
-          ''
-        )[1]"/>
-      </xsl:attribute>
+      <xsl:attribute name="documentation" select="(
+        xs:annotation/xs:documentation/text(),
+        /xs:schema/xs:complexType//xs:element[@name=current()/@name]/xs:annotation/xs:documentation/text(),
+        /xs:schema/xs:element[@name=current()/@name]/xs:annotation/xs:documentation/text(),
+        ''
+      )[1]"/>
       <xsl:variable name="children" as="map(*)*">
         <xsl:choose>
           <xsl:when test="@type and not(/xs:schema/xs:complexType[@name=current()/@type])">

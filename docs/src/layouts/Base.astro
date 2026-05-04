@@ -31,6 +31,8 @@ const { frontmatter, headings } = Astro.props;
 
 		<Font cssVariable="--font-noto-serif" preload={ true } />
 
+		<Font cssVariable="--font-smufl" preload={ true } />
+
 		<title>{ !isFront && `${frontmatter.title} | `}{ siteInfo.title } { siteInfo.specVersion } { siteInfo.isDraft && 'Draft' }</title>
 
 	</head>

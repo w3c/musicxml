@@ -51,14 +51,7 @@ if (!datatype.data.documentation) throw "MISSING DATATYPE DOCUMENTATION!!";
   {datatype.data.type === 'values' ? (
     <table class="musicxml">
       <tbody>
-        {datatype.data.value.sort((a,b) => {
-          // "yes" always comes first, "no" always second, thanks Copilot.
-          const order: any = { 'yes': 0, 'no': 1, 'on': 0, 'off': 1, 'normal': 0 };
-          const oa = order[a.value] ?? 2;
-          const ob = order[b.value] ?? 2;
-          if (oa !== ob) return oa - ob;
-          return a.value.localeCompare(b.value);
-        }).map(value => <DataTypeValueRow datatype={datatype} value={value} />)}
+        {datatype.data.value.map(value => <DataTypeValueRow datatype={datatype} value={value} />)}
       </tbody>
     </table>
   ) : datatype.data.type === 'regex' ? (

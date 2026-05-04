@@ -21,7 +21,6 @@ const headings = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i
   };
 })
 .filter(heading => !!heading.slug);
-
 ---
 <BaseLayout frontmatter={ frontmatter } headings={ headings }>
   <SchemaView schema="musicxml" current="list"/>

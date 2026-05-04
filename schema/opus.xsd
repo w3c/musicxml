@@ -36,8 +36,16 @@ The XML catalog at catalog.xml supports validating against a local copy of this 
 			<xs:documentation>The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="yes"/>
-			<xs:enumeration value="no"/>
+			<xs:enumeration value="yes">
+				<xs:annotation>
+					<xs:documentation>True.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="no">
+				<xs:annotation>
+					<xs:documentation>False.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 

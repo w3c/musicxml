@@ -11,10 +11,12 @@ interface Props {
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/datatypes/*.png');
 const { datatype, value } = Astro.props;
 const image = `/src/assets/img/datatypes/${datatype.data.name}-${value.value.replace(/\s/, '-')}.png`;
-const display = !value.value.length ? '(empty string)' : value.value;
+const display = !value.value.length ? '<empty string>' : value.value;
 ---
 <tr>
   <td>{display}</td>
-  <td>{value.documentation && <Fragment set:html={annotationMarkdown(value.documentation)}/>}</td>
-  <td>{image in images && <Image src={images[image]()} alt={display} />}</td>
+  <td>
+  {image in images && <Image src={images[image]()} alt={`${datatype.data.name}: ${display}`} />}
+  {value.documentation && <Fragment set:html={annotationMarkdown(value.documentation)}/>}
+  </tr>
 </tr>

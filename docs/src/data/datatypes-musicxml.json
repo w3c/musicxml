@@ -9,15 +9,15 @@
       "value": [
          {
             "value": "left",
-            "documentation": null
+            "documentation": "Left horizontal alignment or justification."
          },
          {
             "value": "center",
-            "documentation": null
+            "documentation": "Center horizontal alignment or justification."
          },
          {
             "value": "right",
-            "documentation": null
+            "documentation": "Right horizontal alignment or justification."
          }
       ]
    },
@@ -41,7 +41,7 @@
    },
    "font-weight": {
       "name": "font-weight",
-      "documentation": "The font-weight type represents a simplified version of the CSS font-weight property.",
+      "documentation": "The font-weight type represents a simplified version of the [CSS font-weight property](https:\/\/www.w3.org\/TR\/2018\/REC-css-fonts-3-20180920\/#font-prop-desc).",
       "base": [
          "xs:token"
       ],
@@ -67,11 +67,11 @@
       "value": [
          {
             "value": "left",
-            "documentation": null
+            "documentation": "This element appears to the left of the reference element."
          },
          {
             "value": "right",
-            "documentation": null
+            "documentation": "This element appears to the right of the reference element."
          }
       ]
    },
@@ -85,11 +85,11 @@
       "value": [
          {
             "value": "straight",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "curved",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
@@ -129,67 +129,67 @@
       "value": [
          {
             "value": "anvil",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "auto horn",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "bird whistle",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "cannon",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "duck call",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "gun shot",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "klaxon horn",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "lions roar",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "lotus flute",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "megaphone",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "police whistle",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "siren",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "slide whistle",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "thunder sheet",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "wind machine",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "wind whistle",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
@@ -225,7 +225,7 @@
    },
    "midi-128": {
       "name": "midi-128",
-      "documentation": "The midi-128 type is used to express MIDI 1.0 values that range from 1 to 128.",
+      "documentation": "The midi-128 type is used to express MIDI 1.0 values that range from 1 to 128. MusicXML uses 1-based numbers rather than 0-based numbers often found in MIDI 1.0 documentation.",
       "base": [
          "xs:positiveInteger"
       ],
@@ -249,7 +249,7 @@
    },
    "midi-16384": {
       "name": "midi-16384",
-      "documentation": "The midi-16384 type is used to express MIDI 1.0 values that range from 1 to 16,384.",
+      "documentation": "The midi-16384 type is used to express MIDI 1.0 values that range from 1 to 16,384. MusicXML uses 1-based numbers rather than 0-based numbers often found in MIDI 1.0 documentation.",
       "base": [
          "xs:positiveInteger"
       ],
@@ -339,7 +339,7 @@
    },
    "millimeters": {
       "name": "millimeters",
-      "documentation": "The millimeters type is a number representing millimeters. This is used in the &lt;scaling&gt; element to provide a default scaling from tenths to physical units.",
+      "documentation": "The millimeters type is a number representing millimeters. This is used in the <scaling> element to provide a default scaling from tenths to physical units.",
       "base": [
          "xs:decimal"
       ],
@@ -356,27 +356,27 @@
       "value": [
          {
             "value": "normal",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "thick",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "short",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "curved",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "single",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "",
-            "documentation": null
+            "documentation": "The empty value is equivalent to the normal value."
          }
       ]
    },
@@ -537,15 +537,15 @@
       "value": [
          {
             "value": "yes",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "no",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "half",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
@@ -559,11 +559,11 @@
       "value": [
          {
             "value": "over",
-            "documentation": null
+            "documentation": "Tips of curved lines are overhand (tips down)."
          },
          {
             "value": "under",
-            "documentation": null
+            "documentation": "Tips of curved lines are underhand (tips up)."
          }
       ]
    },
@@ -592,7 +592,7 @@
    },
    "accidental-value": {
       "name": "accidental-value",
-      "documentation": "The accidental-value type represents notated accidentals supported by MusicXML. In the MusicXML 2.0 DTD this was a string with values that could be included. The XSD strengthens the data typing to an enumerated list. The quarter- and three-quarters- accidentals are Tartini-style quarter-tone accidentals. The -down and -up accidentals are quarter-tone accidentals that include arrows pointing down or up. The slash- accidentals are used in Turkish classical music. The numbered sharp and flat accidentals are superscripted versions of the accidental signs, used in Turkish folk music. The sori and koron accidentals are microtonal sharp and flat accidentals used in Iranian and Persian music. The other accidental covers accidentals other than those listed here. It is usually used in combination with the smufl attribute to specify a particular SMuFL accidental. The smufl attribute may be used with any accidental value to help specify the appearance of symbols that share the same MusicXML semantics.",
+      "documentation": "The accidental-value type represents notated accidentals supported by MusicXML. In the MusicXML 2.0 DTD this was a string with values that could be included. The XSD strengthens the data typing to an enumerated list. The quarter- and three-quarters- accidentals are Tartini-style quarter-tone accidentals. The -down and -up accidentals are quarter-tone accidentals that include arrows pointing down or up. The slash- accidentals are used in Turkish classical music. The numbered sharp and flat accidentals are superscripted versions of the accidental signs, used in Turkish folk music. The sori and koron accidentals are microtonal sharp and flat accidentals used in Iranian and Persian music. The other accidental covers accidentals other than those listed here. It is usually used in combination with the smufl attribute to specify a particular Standard Music Font Layout (SMuFL) accidental. The smufl attribute may be used with any accidental value to help specify the appearance of symbols that share the same MusicXML semantics.",
       "base": [
          "xs:string"
       ],
@@ -600,167 +600,167 @@
       "value": [
          {
             "value": "sharp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "natural",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "double-sharp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sharp-sharp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat-flat",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "natural-sharp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "natural-flat",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "quarter-flat",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "quarter-sharp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "three-quarters-flat",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "three-quarters-sharp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sharp-down",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sharp-up",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "natural-down",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "natural-up",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat-down",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat-up",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "double-sharp-down",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "double-sharp-up",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat-flat-down",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat-flat-up",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "arrow-down",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "arrow-up",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "triple-sharp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "triple-flat",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "slash-quarter-sharp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "slash-sharp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "slash-flat",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "double-slash-flat",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sharp-1",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sharp-2",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sharp-3",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sharp-5",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat-1",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat-2",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat-3",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flat-4",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sori",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "koron",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "other",
-            "documentation": null
+            "documentation": "Covers accidentals other than those listed here. It is usually used in combination with the smufl attribute to specify a particular Standard Music Font Layout (SMuFL) accidental."
          }
       ]
    },
@@ -796,15 +796,15 @@
       "value": [
          {
             "value": "glass harmonica",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "glass harp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "wind chimes",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
@@ -871,7 +871,7 @@
    },
    "pedal-type": {
       "name": "pedal-type",
-      "documentation": "The pedal-type simple type is used to distinguish types of pedal directions. The start value indicates the start of a damper pedal, while the sostenuto value indicates the start of a sostenuto pedal. The other values can be used with either the damper or sostenuto pedal. The soft pedal is not included here because there is no special symbol or graphic used for it beyond what can be specified with words and bracket elements.\n\nThe change, continue, discontinue, and resume types are used when the line attribute is yes. The change type indicates a pedal lift and retake indicated with an inverted V marking. The continue type allows more precise formatting across system breaks and for more complex pedaling lines. The discontinue type indicates the end of a pedal line that does not include the explicit lift represented by the stop type. The resume type indicates the start of a pedal line that does not include the downstroke represented by the start type. It can be used when a line resumes after being discontinued, or to start a pedal line that is preceded by a text or symbol representation of the pedal.",
+      "documentation": "The pedal-type distinguishes types of pedal directions.",
       "base": [
          "xs:token"
       ],
@@ -879,31 +879,31 @@
       "value": [
          {
             "value": "start",
-            "documentation": null
+            "documentation": "Indicates the start of a damper pedal."
          },
          {
             "value": "stop",
-            "documentation": null
+            "documentation": "Indicates a pedal lift without a retake."
          },
          {
             "value": "sostenuto",
-            "documentation": null
+            "documentation": "Indicates the start of a sostenuto pedal."
          },
          {
             "value": "change",
-            "documentation": null
+            "documentation": "Indicates a pedal lift and retake indicated with an inverted V marking. Used when the <pedal> line attribute is yes."
          },
          {
             "value": "continue",
-            "documentation": null
+            "documentation": "Allows more precise formatting across system breaks and for more complex pedaling lines. Used when the <pedal> line attribute is yes."
          },
          {
             "value": "discontinue",
-            "documentation": null
+            "documentation": "Indicates the end of a pedal line that does not include the explicit lift represented by the stop type. Used when the <pedal> line attribute is yes."
          },
          {
             "value": "resume",
-            "documentation": null
+            "documentation": "Indicates the start of a pedal line that does not include the downstroke represented by the start type. It can be used when a line resumes after being discontinued, or to start a pedal line that is preceded by a text or symbol representation of the pedal. Used when the <pedal> line attribute is yes."
          }
       ]
    },
@@ -990,10 +990,6 @@
       "type": "values",
       "value": [
          {
-            "value": "none",
-            "documentation": null
-         },
-         {
             "value": "brace",
             "documentation": null
          },
@@ -1008,6 +1004,10 @@
          {
             "value": "square",
             "documentation": null
+         },
+         {
+            "value": "none",
+            "documentation": "No symbol is displayed."
          }
       ]
    },
@@ -1052,21 +1052,21 @@
       "value": [
          {
             "value": "short",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "medium",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "long",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
    "show-tuplet": {
       "name": "show-tuplet",
-      "documentation": "The show-tuplet type indicates whether to show a part of a tuplet relating to the &lt;tuplet-actual&gt; element, both the tuplet-actual and tuplet-normal elements, or neither.",
+      "documentation": "The show-tuplet type indicates whether to show a part of a tuplet relating to the <tuplet-actual> element, both the tuplet-actual and tuplet-normal elements, or neither.",
       "base": [
          "xs:token"
       ],
@@ -1116,15 +1116,15 @@
       "value": [
          {
             "value": "odd",
-            "documentation": null
+            "documentation": "Margins apply to odd pages only."
          },
          {
             "value": "even",
-            "documentation": null
+            "documentation": "Margins apply to even pages only."
          },
          {
             "value": "both",
-            "documentation": null
+            "documentation": "Margins apply to both even and odd pages."
          }
       ]
    },
@@ -1229,71 +1229,71 @@
       "value": [
          {
             "value": "bass drum",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "bass drum on side",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "bongos",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "Chinese tomtom",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "conga drum",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "cuica",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "goblet drum",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "Indo-American tomtom",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "Japanese tomtom",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "military drum",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "snare drum",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "snare drum snares off",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "tabla",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "tambourine",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "tenor drum",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "timbales",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "tomtom",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
@@ -1476,7 +1476,7 @@
    },
    "tied-type": {
       "name": "tied-type",
-      "documentation": "The tied-type type is used as an attribute of the &lt;tied&gt; element to specify where the visual representation of a tie begins and ends. A tied element which joins two notes of the same pitch can be specified with tied-type start on the first note and tied-type stop on the second note. To indicate a note should be undamped, use a single tied element with tied-type let-ring. For other ties that are visually attached to a single note, such as a tie leading into or out of a repeated section or coda, use two tied elements on the same note, one start and one stop.\n\nIn start-stop cases, ties can add more elements using a continue type. This is typically used to specify the formatting of cross-system ties.\n\nWhen multiple elements with the same tag are used within the same note, their order within the MusicXML document should match the musical score order. For example, a note with a tie at the end of a first ending should have the &lt;tied&gt; element with a type of start precede the &lt;tied&gt; element with a type of stop.",
+      "documentation": "The tied-type type is used as an attribute of the <tied> element to specify where the visual representation of a tie begins and ends. A tied element which joins two notes of the same pitch can be specified with tied-type start on the first note and tied-type stop on the second note. To indicate a note should be undamped, use a single tied element with tied-type let-ring. For other ties that are visually attached to a single note, such as a tie leading into or out of a repeated section or coda, use two tied elements on the same note, one start and one stop.\n\nIn start-stop cases, ties can add more elements using a continue type. This is typically used to specify the formatting of cross-system ties.\n\nWhen multiple elements with the same tag are used within the same note, their order within the MusicXML document should match the musical score order. For example, a note with a tie at the end of a first ending should have the <tied> element with a type of start precede the <tied> element with a type of stop.",
       "base": [
          "xs:token"
       ],
@@ -1561,47 +1561,47 @@
       "value": [
          {
             "value": "celesta",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "chimes",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "glockenspiel",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "lithophone",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "mallet",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "marimba",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "steel drums",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "tubaphone",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "tubular chimes",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "vibraphone",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "xylophone",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
@@ -1717,7 +1717,7 @@
    },
    "metal-value": {
       "name": "metal-value",
-      "documentation": "The metal-value type represents pictograms for metal percussion instruments. The hi-hat value refers to a pictogram like Stone's high-hat cymbals but without the long vertical line at the bottom.",
+      "documentation": "The metal-value type represents pictograms for metal percussion instruments. The hi-hat value refers to a pictogram like high-hat cymbals, but without the long vertical line at the bottom.",
       "base": [
          "xs:string"
       ],
@@ -1725,131 +1725,131 @@
       "value": [
          {
             "value": "agogo",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "almglocken",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "bell",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "bell plate",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "bell tree",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "brake drum",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "cencerro",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "chain rattle",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "Chinese cymbal",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "cowbell",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "crash cymbals",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "crotale",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "cymbal tongs",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "domed gong",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "finger cymbals",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "flexatone",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "gong",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "hi-hat",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "high-hat cymbals",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "handbell",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "jaw harp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "jingle bells",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "musical saw",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "shell bells",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sistrum",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sizzle cymbal",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "sleigh bells",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "suspended cymbal",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "tam tam",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "tam tam with beater",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "triangle",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "Vietnamese hat",
-            "documentation": null
+            "documentation": "๲"
          }
       ]
    },
@@ -1877,7 +1877,7 @@
    },
    "note-size-type": {
       "name": "note-size-type",
-      "documentation": "The note-size-type type indicates the type of note being defined by a note-size element. The grace-cue type is used for notes of grace-cue size. The grace type is used for notes of cue size that include a grace element. The cue type is used for all other notes with cue size, whether defined explicitly or implicitly via a cue element. The large type is used for notes of large size.",
+      "documentation": "The note-size-type type indicates the type of note size being defined by a <note-size> element.",
       "base": [
          "xs:token"
       ],
@@ -1885,19 +1885,19 @@
       "value": [
          {
             "value": "cue",
-            "documentation": null
+            "documentation": "The cue type is used for notes of cue size that do not include a <grace> element, whether defined explicitly or implicitly via a <cue> element."
          },
          {
             "value": "grace",
-            "documentation": null
+            "documentation": "The grace type is used for notes of cue size that include a <grace> element."
          },
          {
             "value": "grace-cue",
-            "documentation": null
+            "documentation": "The grace-cue type is used for notes of grace-cue size."
          },
          {
             "value": "large",
-            "documentation": null
+            "documentation": "The large type is used for notes of large size."
          }
       ]
    },
@@ -1921,7 +1921,7 @@
    },
    "measure-text": {
       "name": "measure-text",
-      "documentation": "The measure-text type is used for the text attribute of measure elements. It has at least one character. The implicit attribute of the &lt;measure&gt; element should be set to \"yes\" rather than setting the text attribute to an empty string.",
+      "documentation": "The measure-text type is used for the text attribute of measure elements. It has at least one character. The implicit attribute of the measure element should be set to \"yes\" rather than setting the text attribute to an empty string.",
       "base": [
          "xs:token"
       ],
@@ -1938,23 +1938,23 @@
       "value": [
          {
             "value": "major",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "minor",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "augmented",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "diminished",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "half-diminished",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
@@ -2008,13 +2008,13 @@
          },
          {
             "value": "none",
-            "documentation": null
+            "documentation": "No barline appears."
          }
       ]
    },
    "principal-voice-symbol": {
       "name": "principal-voice-symbol",
-      "documentation": "The principal-voice-symbol type represents the type of symbol used to indicate a principal or secondary voice. The \"plain\" value represents a plain square bracket. The value of \"none\" is used for analysis markup when the &lt;principal-voice&gt; element does not have a corresponding appearance in the score.",
+      "documentation": "The principal-voice-symbol type represents the type of symbol used to indicate a principal or secondary voice.",
       "base": [
          "xs:string"
       ],
@@ -2022,19 +2022,19 @@
       "value": [
          {
             "value": "Hauptstimme",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "Nebenstimme",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "plain",
-            "documentation": null
+            "documentation": " if the type is start,  if the type is stop."
          },
          {
             "value": "none",
-            "documentation": null
+            "documentation": "Used for analysis markup when the <principal-voice> element does not have a corresponding appearance in the score."
          }
       ]
    },
@@ -2078,7 +2078,7 @@
    },
    "ending-number": {
       "name": "ending-number",
-      "documentation": "The ending-number type is used to specify either a comma-separated list of positive integers without leading zeros, or a string of zero or more spaces. It is used for the number attribute of the &lt;ending&gt; element. The zero or more spaces version is used when software knows that an ending is present, but cannot determine the type of the ending.",
+      "documentation": "The ending-number type is used to specify either a comma-separated list of positive integers without leading zeros, or a string of zero or more spaces. It is used for the number attribute of the <ending> element. The zero or more spaces version is used when software knows that an ending is present, but cannot determine the type of the ending.",
       "base": [
          "xs:token"
       ],
@@ -2143,7 +2143,7 @@
          },
          {
             "value": "other",
-            "documentation": null
+            "documentation": "Another direction besides one of those listed."
          }
       ]
    },
@@ -2154,7 +2154,7 @@
    },
    "clef-sign": {
       "name": "clef-sign",
-      "documentation": "The clef-sign type represents the different clef symbols. The jianpu sign indicates that the music that follows should be in jianpu numbered notation, just as the TAB sign indicates that the music that follows should be in tablature notation. Unlike TAB, a jianpu sign does not correspond to a visual clef notation.\n\nThe none sign is deprecated as of MusicXML 4.0. Use the &lt;clef&gt; element's print-object attribute instead. When the none sign is used, notes should be displayed as if in treble clef.",
+      "documentation": "The clef-sign type represents the different clef symbols.",
       "base": [
          "xs:string"
       ],
@@ -2178,15 +2178,15 @@
          },
          {
             "value": "TAB",
-            "documentation": null
+            "documentation": "The TAB sign indicates that the music that follows should be in tablature notation."
          },
          {
             "value": "jianpu",
-            "documentation": null
+            "documentation": "The jianpu sign indicates that the music that follows should be in jianpu numbered notation. Unlike TAB, a jianpu sign does not correspond to a visual clef notation."
          },
          {
             "value": "none",
-            "documentation": null
+            "documentation": "Deprecated as of MusicXML 4.0. Use the clef element's print-object attribute instead. When the none sign is used, notes should be displayed as if in treble clef."
          }
       ]
    },
@@ -2296,7 +2296,7 @@
    },
    "distance-type": {
       "name": "distance-type",
-      "documentation": "The distance-type defines what type of distance is being defined in a distance element. Values include beam and hyphen. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.",
+      "documentation": "The distance-type defines what type of distance is being defined in a <distance> element. Values include:\n\n- beam\n- hyphen\n\nThis is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.\n\nThe beam type represents the distance between beam. The hyphen type represents the distance between hyphens in lyrics.",
       "base": [
          "xs:token"
       ],
@@ -2312,30 +2312,30 @@
       "type": "values",
       "value": [
          {
-            "value": "",
-            "documentation": null
-         },
-         {
             "value": "comma",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "tick",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "upbow",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "salzedo",
-            "documentation": null
+            "documentation": ""
+         },
+         {
+            "value": "",
+            "documentation": "The exact symbol used is application-dependent."
          }
       ]
    },
    "line-width-type": {
       "name": "line-width-type",
-      "documentation": "The line-width-type defines what type of line is being defined in a line-width element. Values include beam, bracket, dashes, enclosure, ending, extend, heavy barline, leger, light barline, octave shift, pedal, slur middle, slur tip, staff, stem, tie middle, tie tip, tuplet bracket, and wedge. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.",
+      "documentation": "The line-width-type defines what type of line is being defined in a <line-width> element. Values include:\n\n- beam\n- bracket\n- dashes\n- enclosure\n- ending\n- extend\n- heavy barline\n- leger\n- light barline\n- octave shift\n- pedal\n- slur middle\n- slur tip\n- staff\n- stem\n- tie middle\n- tie tip\n- tuplet bracket\n- wedge\n\nThis is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.",
       "base": [
          "xs:token"
       ],
@@ -2436,7 +2436,7 @@
    },
    "divisions": {
       "name": "divisions",
-      "documentation": "The divisions type is used to express values in terms of the musical divisions defined by the &lt;divisions&gt; element. It is preferred that these be integer values both for MIDI interoperability and to avoid roundoff errors.",
+      "documentation": "The divisions type is used to express values in terms of the musical divisions defined by the divisions element. It is preferred that these be integer values both for MIDI interoperability and to avoid roundoff errors.",
       "base": [
          "xs:decimal"
       ],
@@ -2463,39 +2463,39 @@
       "value": [
          {
             "value": "normal",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "angled",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "square",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "double-angled",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "double-square",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "double-dot",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "half-curve",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "curlew",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "",
-            "documentation": null
+            "documentation": "The empty value is equivalent to the normal value."
          }
       ]
    },
@@ -2551,7 +2551,7 @@
    },
    "harmony-arrangement": {
       "name": "harmony-arrangement",
-      "documentation": "The harmony-arrangement type indicates how stacked chords and bass notes are displayed within a harmony element. The vertical value specifies that the &lt;second&gt; element appears below the first. The horizontal value specifies that the &lt;second&gt; element appears to the right of the first. The diagonal value specifies that the &lt;second&gt; element appears both below and to the right of the first.",
+      "documentation": "The harmony-arrangement type indicates how stacked chords and bass notes are displayed within a harmony element. The vertical value specifies that the second element appears below the first. The horizontal value specifies that the second element appears to the right of the first. The diagonal value specifies that the second element appears both below and to the right of the first.",
       "base": [
          "xs:token"
       ],
@@ -2600,7 +2600,7 @@
    },
    "beater-value": {
       "name": "beater-value",
-      "documentation": "The beater-value type represents pictograms for beaters, mallets, and sticks that do not have different materials represented in the pictogram. The finger and hammer values are in addition to Stone's list.",
+      "documentation": "The beater-value type represents pictograms for beaters, mallets, and sticks that do not have different materials represented in the pictogram.",
       "base": [
          "xs:string"
       ],
@@ -2608,83 +2608,83 @@
       "value": [
          {
             "value": "bow",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "chime hammer",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "coin",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "drum stick",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "finger",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "fingernail",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "fist",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "guiro scraper",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "hammer",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "hand",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "jazz stick",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "knitting needle",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "metal hammer",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "slide brush on gong",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "snare stick",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "spoon mallet",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "superball",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "triangle beater",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "triangle beater plain",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "wire brush",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
@@ -2752,7 +2752,7 @@
    },
    "degree-type-value": {
       "name": "degree-type-value",
-      "documentation": "The degree-type-value type indicates whether the current degree element is an addition, alteration, or subtraction to the kind of the current chord in the &lt;harmony&gt; element.",
+      "documentation": "The degree-type-value type indicates whether the current degree element is an addition, alteration, or subtraction to the kind of the current chord in the harmony element.",
       "base": [
          "xs:string"
       ],
@@ -2760,15 +2760,15 @@
       "value": [
          {
             "value": "add",
-            "documentation": null
+            "documentation": "If the degree element is in addition to the kind of the current chord."
          },
          {
             "value": "alter",
-            "documentation": null
+            "documentation": "If the degree element is an alteration to the kind of the current chord."
          },
          {
             "value": "subtract",
-            "documentation": null
+            "documentation": "If the degree element is a subtraction from the kind of the current chord."
          }
       ]
    },
@@ -2903,7 +2903,7 @@
    },
    "notehead-value": {
       "name": "notehead-value",
-      "documentation": "\nThe notehead-value type indicates shapes other than the open and closed ovals associated with note durations.\n\nThe values do, re, mi, fa, fa up, so, la, and ti correspond to Aikin's 7-shape system.  The fa up shape is typically used with upstems; the fa shape is typically used with downstems or no stems.\n\nThe arrow shapes differ from triangle and inverted triangle by being centered on the stem. Slashed and back slashed notes include both the normal notehead and a slash. The triangle shape has the tip of the triangle pointing up; the inverted triangle shape has the tip of the triangle pointing down. The left triangle shape is a right triangle with the hypotenuse facing up and to the left.\n\nThe other notehead covers noteheads other than those listed here. It is usually used in combination with the smufl attribute to specify a particular SMuFL notehead. The smufl attribute may be used with any notehead value to help specify the appearance of symbols that share the same MusicXML semantics. Noteheads in the SMuFL Note name noteheads and Note name noteheads supplement ranges (U+E150–U+E1AF and U+EEE0–U+EEFF) should not use the smufl attribute or the \"other\" value, but instead use the &lt;notehead-text&gt; element.",
+      "documentation": "\nThe notehead-value type indicates shapes other than the open and closed ovals associated with note durations.\n\nThe values do, re, mi, fa, fa up, so, la, and ti correspond to Aikin's 7-shape system. The fa up shape is typically used with upstems; the fa shape is typically used with downstems or no stems.\n\nThe arrow shapes differ from triangle and inverted triangle by being centered on the stem. Slashed and back slashed notes include both the normal notehead and a slash. The triangle shape has the tip of the triangle pointing up; the inverted triangle shape has the tip of the triangle pointing down. The left triangle shape is a right triangle with the hypotenuse facing up and to the left.\n\nThe other notehead covers noteheads other than those listed here. It is usually used in combination with the smufl attribute to specify a particular SMuFL notehead. The smufl attribute may be used with any notehead value to help specify the appearance of symbols that share the same MusicXML semantics. Noteheads in the SMuFL Note name noteheads and Note name noteheads supplement ranges (U+E150–U+E1AF and U+EEE0–U+EEFF) should not use the smufl attribute or the \"other\" value, but instead use the notehead-text element.",
       "base": [
          "xs:string"
       ],
@@ -2987,39 +2987,39 @@
          },
          {
             "value": "do",
-            "documentation": null
+            "documentation": "As in Aikin's 7-shape system."
          },
          {
             "value": "re",
-            "documentation": null
+            "documentation": "As in Aikin's 7-shape system."
          },
          {
             "value": "mi",
-            "documentation": null
+            "documentation": "As in Aikin's 7-shape system."
          },
          {
             "value": "fa",
-            "documentation": null
+            "documentation": "As in Aikin's 7-shape system, typically used with downstems or no stems."
          },
          {
             "value": "fa up",
-            "documentation": null
+            "documentation": "As in Aikin's 7-shape system, typically used with upstems."
          },
          {
             "value": "so",
-            "documentation": null
+            "documentation": "As in Aikin's 7-shape system."
          },
          {
             "value": "la",
-            "documentation": null
+            "documentation": "As in Aikin's 7-shape system."
          },
          {
             "value": "ti",
-            "documentation": null
+            "documentation": "As in Aikin's 7-shape system."
          },
          {
             "value": "other",
-            "documentation": null
+            "documentation": "Noteheads other than those listed here. This value is usually used in combination with the smufl attribute to specify a particular SMuFL notehead. The smufl attribute may also be used with any notehead value to help specify the appearance of symbols that share the same MusicXML semantics. Noteheads in the SMuFL Note name noteheads and Note name noteheads supplement ranges (U+E150–U+E1AF and U+EEE0–U+EEFF) should not use the smufl attribute or the other value, but instead use the <notehead-text> element."
          }
       ]
    },
@@ -3058,7 +3058,7 @@
    },
    "font-size": {
       "name": "font-size",
-      "documentation": "The font-size can be one of the CSS font sizes (xx-small, x-small, small, medium, large, x-large, xx-large) or a numeric point size.",
+      "documentation": "The font-size can be one of the [CSS font sizes](https:\/\/www.w3.org\/TR\/css-fonts-3\/#font-size-prop) or a decimal point size.",
       "base": [
          "xs:decimal",
          "css-font-size"
@@ -3068,7 +3068,7 @@
    },
    "font-style": {
       "name": "font-style",
-      "documentation": "The font-style type represents a simplified version of the CSS font-style property.",
+      "documentation": "The font-style type represents a simplified version of the [CSS font-style property](https:\/\/www.w3.org\/TR\/2018\/REC-css-fonts-3-20180920\/#font-prop-desc).",
       "base": [
          "xs:token"
       ],
@@ -3094,11 +3094,11 @@
       "value": [
          {
             "value": "above",
-            "documentation": null
+            "documentation": "This element appears above the reference element."
          },
          {
             "value": "below",
-            "documentation": null
+            "documentation": "This element appears below the reference element."
          }
       ]
    },
@@ -3148,51 +3148,51 @@
       "value": [
          {
             "value": "belltree",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "damp",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "echo",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "gyro",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "hand martellato",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "mallet lift",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "mallet table",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "martellato",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "martellato lift",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "muted martellato",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "pluck lift",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "swing",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
@@ -3207,7 +3207,7 @@
    },
    "glyph-type": {
       "name": "glyph-type",
-      "documentation": "The glyph-type defines what type of glyph is being defined in a glyph element. Values include quarter-rest, g-clef-ottava-bassa, c-clef, f-clef, percussion-clef, octave-shift-up-8, octave-shift-down-8, octave-shift-continue-8, octave-shift-down-15, octave-shift-up-15, octave-shift-continue-15, octave-shift-down-22, octave-shift-up-22, and octave-shift-continue-22. This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.\n\nA quarter-rest type specifies the glyph to use when a note has a rest element and a type value of quarter. The c-clef, f-clef, and percussion-clef types specify the glyph to use when a clef sign element value is C, F, or percussion respectively. The g-clef-ottava-bassa type specifies the glyph to use when a clef sign element value is G and the &lt;clef-octave-change&gt; element value is -1. The octave-shift types specify the glyph to use when an octave-shift type attribute value is up, down, or continue and the octave-shift size attribute value is 8, 15, or 22.",
+      "documentation": "The glyph-type defines what type of glyph is being defined in a <glyph> element. Values include:\n\n- quarter-rest\n- g-clef-ottava-bassa\n- c-clef\n- f-clef\n- percussion-clef\n- octave-shift-up-8\n- octave-shift-down-8\n- octave-shift-continue-8\n- octave-shift-down-15\n- octave-shift-up-15\n- octave-shift-continue-15\n- octave-shift-down-22\n- octave-shift-up-22\n- octave-shift-continue-22\n\nThis is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.\n\nA quarter-rest type specifies the glyph to use when a note has a <rest> element and a <type> value of quarter.\n\nThe c-clef, f-clef, and percussion-clef types specify the glyph to use when a clef <sign> element value is C, F, or percussion respectively.\n\nThe g-clef-ottava-bassa type specifies the glyph to use when a clef <sign> element value is G and the <clef-octave-change> element value is -1.\n\nThe octave-shift types specify the glyph to use when an <octave-shift> type attribute value is up, down, or continue and the <octave-shift> size attribute value is 8, 15, or 22.",
       "base": [
          "xs:token"
       ],
@@ -3227,7 +3227,7 @@
    },
    "yyyy-mm-dd": {
       "name": "yyyy-mm-dd",
-      "documentation": "Calendar dates are represented yyyy-mm-dd format, following ISO 8601. This is a W3C XML Schema date type, but without the optional timezone data.",
+      "documentation": "Calendar dates are represented yyyy-mm-dd format, following [ISO 8601](https:\/\/www.iso.org\/iso-8601-date-and-time-format.html). This is a W3C XML Schema date type, but without the optional timezone data.",
       "base": [
          "xs:date"
       ],
@@ -3236,7 +3236,7 @@
    },
    "number-level": {
       "name": "number-level",
-      "documentation": "Slurs, tuplets, and many other features can be concurrent and overlap within a single musical part. The number-level entity distinguishes up to 16 concurrent objects of the same type when the objects overlap in MusicXML document order. Values greater than 6 are usually only needed for music with a large number of divisi staves in a single part, or if there are more than 6 cross-staff arpeggios in a single measure. When a number-level value is implied, the value is 1 by default.\n\nWhen polyphonic parts are involved, the ordering within a MusicXML document can differ from musical score order. As an example, say we have a piano part in 4\/4 where within a single measure, all the notes on the top staff are followed by all the notes on the bottom staff. In this example, each staff has a slur that starts on beat 2 and stops on beat 3, and there is a third slur that goes from beat 1 of one staff to beat 4 of the other staff.\n\nIn this situation, the two mid-measure slurs can use the same number because they do not overlap in MusicXML document order, even though they do overlap in musical score order. Within the MusicXML document, the top staff slur will both start and stop before the bottom staff slur starts and stops.\n\nIf the cross-staff slur starts in the top staff and stops in the bottom staff, it will need a separate number from the mid-measure slurs because it overlaps those slurs in MusicXML document order. However, if the cross-staff slur starts in the bottom staff and stops in the top staff, all three slurs can use the same number. None of them overlap within the MusicXML document, even though they all overlap each other in the musical score order. Within the MusicXML document, the start and stop of the top-staff slur will be followed by the stop and start of the cross-staff slur, followed by the start and stop of the bottom-staff slur.\n\nAs this example demonstrates, a reading program should be prepared to handle cases where the number-levels start and stop in an arbitrary order. Because the start and stop values refer to musical score order, a program may find the stopping point of an object earlier in the MusicXML document than it will find its starting point.",
+      "documentation": "Slurs, tuplets, and many other features can be concurrent and overlap within a single musical part. The number-level entity distinguishes up to 16 concurrent objects of the same type when the objects overlap in MusicXML document order. Values greater than 6 are usually only needed for music with a large number of divisi staves in a single part, or if there are more than 6 cross-staff arpeggios in a single measure. When a number-level value is optional and has no default value, it is 1 if not specified.\n\nWhen polyphonic parts are involved, the ordering within a MusicXML document can differ from musical score order. As an example, say we have a piano part in 4\/4 where within a single measure, all the notes on the top staff are followed by all the notes on the bottom staff. In this example, each staff has a slur that starts on beat 2 and stops on beat 3, and there is a third slur that goes from beat 1 of one staff to beat 4 of the other staff.\n\nIn this situation, the two mid-measure slurs can use the same number because they do not overlap in MusicXML document order, even though they do overlap in musical score order. Within the MusicXML document, the top staff slur will both start and stop before the bottom staff slur starts and stops.\n\nIf the cross-staff slur starts in the top staff and stops in the bottom staff, it will need a separate number from the mid-measure slurs because it overlaps those slurs in MusicXML document order. However, if the cross-staff slur starts in the bottom staff and stops in the top staff, all three slurs can use the same number. None of them overlap within the MusicXML document, even though they all overlap each other in the musical score order. Within the MusicXML document, the start and stop of the top-staff slur will be followed by the stop and start of the cross-staff slur, followed by the start and stop of the bottom-staff slur.\n\nAs this example demonstrates, a reading program should be prepared to handle cases where the number-levels start and stop in an arbitrary order. Because the start and stop values refer to musical score order, a program may find the stopping point of an object earlier in the MusicXML document than it will find its starting point.",
       "base": [
          "xs:positiveInteger"
       ],
@@ -3324,7 +3324,7 @@
          },
          {
             "value": "none",
-            "documentation": null
+            "documentation": "No enclosure is displayed."
          }
       ]
    },
@@ -3356,7 +3356,7 @@
    },
    "numeral-mode": {
       "name": "numeral-mode",
-      "documentation": "The numeral-mode type specifies the mode similar to the mode type, but with a restricted set of values. The different minor values are used to interpret numeral-root values of 6 and 7 when present in a minor key. The harmonic minor value sharpens the 7 and the melodic minor value sharpens both 6 and 7. If a minor mode is used without qualification, either in the mode or numeral-mode elements, natural minor is used.",
+      "documentation": "The numeral-mode type specifies the mode similar to the mode type, but with a restricted set of values. The different minor values are used to interpret <numeral-root> values of 6 and 7 when present in a minor key. The harmonic minor value sharpens the 7 and the melodic minor value sharpens both 6 and 7. If a minor mode is used without qualification, either in the <mode> or <numeral-mode> elements, natural minor is used.",
       "base": [
          "xs:string"
       ],
@@ -3364,23 +3364,23 @@
       "value": [
          {
             "value": "major",
-            "documentation": null
+            "documentation": "Numerals are interpreted relative to a major scale."
          },
          {
             "value": "minor",
-            "documentation": null
+            "documentation": "Numerals are interpreted relative to a natural minor scale."
          },
          {
             "value": "natural minor",
-            "documentation": null
+            "documentation": "Numerals are interpreted relative to a natural minor scale."
          },
          {
             "value": "melodic minor",
-            "documentation": null
+            "documentation": "Numerals are interpreted relative to an ascending melodic minor scale with raised 6th and 7th degrees."
          },
          {
             "value": "harmonic minor",
-            "documentation": null
+            "documentation": "Numerals are interpreted relative to a harmonic minor scale with a raised 7th degree."
          }
       ]
    },
@@ -3481,15 +3481,15 @@
       "value": [
          {
             "value": "explicit",
-            "documentation": null
+            "documentation": "All notes present in the music."
          },
          {
             "value": "implied",
-            "documentation": null
+            "documentation": "Some notes are missing but implied."
          },
          {
             "value": "alternate",
-            "documentation": null
+            "documentation": "Alternate analysis."
          }
       ]
    },
@@ -3543,7 +3543,7 @@
    },
    "swing-type-value": {
       "name": "swing-type-value",
-      "documentation": "The swing-type-value type specifies the note type, either eighth or 16th, to which the ratio defined in the &lt;swing&gt; element is applied.",
+      "documentation": "The swing-type-value type specifies the note type, either eighth or 16th, to which the ratio defined in the <swing> element is applied.",
       "base": [
          "note-type-value"
       ],
@@ -3561,7 +3561,7 @@
    },
    "color": {
       "name": "color",
-      "documentation": "The color type indicates the color of an element. Color may be represented as hexadecimal RGB triples, as in HTML, or as hexadecimal ARGB tuples, with the A indicating alpha of transparency. An alpha value of 00 is totally transparent; FF is totally opaque. If RGB is used, the A value is assumed to be FF.\n\nFor instance, the RGB value \"#800080\" represents purple. An ARGB value of \"#40800080\" would be a transparent purple.\n\nAs in SVG 1.1, colors are defined in terms of the sRGB color space (IEC 61966).",
+      "documentation": "The color type indicates the color of an element. Color may be represented as hexadecimal RGB triples, as in HTML, or as hexadecimal ARGB tuples, with the A indicating alpha of transparency. An alpha value of 00 is totally transparent; FF is totally opaque. If RGB is used, the A value is assumed to be FF.\n\nFor instance, the RGB value \"#800080\" represents purple. An ARGB value of \"#40800080\" would be a transparent purple.\n\nAs in [SVG 1.1](https:\/\/www.w3.org\/TR\/SVG11\/color.html), colors are defined in terms of the [sRGB color space (IEC 61966)](https:\/\/www.color.org\/srgb04.xalter).",
       "base": [
          "xs:token"
       ],
@@ -3570,7 +3570,7 @@
    },
    "css-font-size": {
       "name": "css-font-size",
-      "documentation": "The css-font-size type includes the CSS font sizes used as an alternative to a numeric point size.",
+      "documentation": "The css-font-size type includes the [CSS font sizes](https:\/\/www.w3.org\/TR\/css-fonts-3\/#font-size-prop) used as an alternative to a numeric point size. In CSS these refer to an entry in a table of font sizes computed and kept by the user agent. The scaling is relative to the reference value of medium.",
       "base": [
          "xs:token"
       ],
@@ -3578,31 +3578,31 @@
       "value": [
          {
             "value": "xx-small",
-            "documentation": null
+            "documentation": "Scaling factor guideline: 3\/5 of medium."
          },
          {
             "value": "x-small",
-            "documentation": null
+            "documentation": "Scaling factor guideline: 3\/4 of medium."
          },
          {
             "value": "small",
-            "documentation": null
+            "documentation": "Scaling factor guideline: 8\/9 of medium."
          },
          {
             "value": "medium",
-            "documentation": null
+            "documentation": "Scaling factor guideline: equal to medium."
          },
          {
             "value": "large",
-            "documentation": null
+            "documentation": "Scaling factor guideline: 6\/5 of medium."
          },
          {
             "value": "x-large",
-            "documentation": null
+            "documentation": "Scaling factor guideline: 3\/2 of medium."
          },
          {
             "value": "xx-large",
-            "documentation": null
+            "documentation": "Scaling factor guideline: 2\/1 of medium."
          }
       ]
    },
@@ -3634,7 +3634,7 @@
    },
    "kind-value": {
       "name": "kind-value",
-      "documentation": "A kind-value indicates the type of chord. Degree elements can then add, subtract, or alter from these starting points. Values include:\n\nTriads:\n\tmajor (major third, perfect fifth)\n\tminor (minor third, perfect fifth)\n\taugmented (major third, augmented fifth)\n\tdiminished (minor third, diminished fifth)\nSevenths:\n\tdominant (major triad, minor seventh)\n\tmajor-seventh (major triad, major seventh)\n\tminor-seventh (minor triad, minor seventh)\n\tdiminished-seventh (diminished triad, diminished seventh)\n\taugmented-seventh (augmented triad, minor seventh)\n\thalf-diminished (diminished triad, minor seventh)\n\tmajor-minor (minor triad, major seventh)\nSixths:\n\tmajor-sixth (major triad, added sixth)\n\tminor-sixth (minor triad, added sixth)\nNinths:\n\tdominant-ninth (dominant-seventh, major ninth)\n\tmajor-ninth (major-seventh, major ninth)\n\tminor-ninth (minor-seventh, major ninth)\n11ths (usually as the basis for alteration):\n\tdominant-11th (dominant-ninth, perfect 11th)\n\tmajor-11th (major-ninth, perfect 11th)\n\tminor-11th (minor-ninth, perfect 11th)\n13ths (usually as the basis for alteration):\n\tdominant-13th (dominant-11th, major 13th)\n\tmajor-13th (major-11th, major 13th)\n\tminor-13th (minor-11th, major 13th)\nSuspended:\n\tsuspended-second (major second, perfect fifth)\n\tsuspended-fourth (perfect fourth, perfect fifth)\nFunctional sixths:\n\tNeapolitan\n\tItalian\n\tFrench\n\tGerman\nOther:\n\tpedal (pedal-point bass)\n\tpower (perfect fifth)\n\tTristan\n\nThe \"other\" kind is used when the harmony is entirely composed of add elements.\n\nThe \"none\" kind is used to explicitly encode absence of chords or functional harmony. In this case, the root, numeral, or function element has no meaning. When using the root or numeral element, the root-step or numeral-step text attribute should be set to the empty string to keep the root or numeral from being displayed.",
+      "documentation": "A kind-value indicates the type of chord. Degree elements can then add, subtract, or alter from these starting points. The 11th and 13th values are usually used as a basis for alteration.",
       "base": [
          "xs:string"
       ],
@@ -3642,141 +3642,141 @@
       "value": [
          {
             "value": "major",
-            "documentation": null
+            "documentation": "Triad: major third, perfect fifth."
          },
          {
             "value": "minor",
-            "documentation": null
+            "documentation": "Triad: minor third, perfect fifth."
          },
          {
             "value": "augmented",
-            "documentation": null
+            "documentation": "Triad: major third, augmented fifth."
          },
          {
             "value": "diminished",
-            "documentation": null
+            "documentation": "Triad: minor third, diminished fifth."
          },
          {
             "value": "dominant",
-            "documentation": null
+            "documentation": "Seventh: major triad, minor seventh."
          },
          {
             "value": "major-seventh",
-            "documentation": null
+            "documentation": "Seventh: major triad, major seventh."
          },
          {
             "value": "minor-seventh",
-            "documentation": null
+            "documentation": "Seventh: minor triad, minor seventh."
          },
          {
             "value": "diminished-seventh",
-            "documentation": null
+            "documentation": "Seventh: diminished triad, diminished seventh."
          },
          {
             "value": "augmented-seventh",
-            "documentation": null
+            "documentation": "Seventh: augmented triad, minor seventh."
          },
          {
             "value": "half-diminished",
-            "documentation": null
+            "documentation": "Seventh: diminished triad, minor seventh."
          },
          {
             "value": "major-minor",
-            "documentation": null
+            "documentation": "Seventh: minor triad, major seventh."
          },
          {
             "value": "major-sixth",
-            "documentation": null
+            "documentation": "Sixth: major triad, added sixth."
          },
          {
             "value": "minor-sixth",
-            "documentation": null
+            "documentation": "Sixth: minor triad, added sixth."
          },
          {
             "value": "dominant-ninth",
-            "documentation": null
+            "documentation": "Ninth: dominant, major ninth."
          },
          {
             "value": "major-ninth",
-            "documentation": null
+            "documentation": "Ninth: major-seventh, major ninth."
          },
          {
             "value": "minor-ninth",
-            "documentation": null
+            "documentation": "Ninth: minor-seventh, major ninth."
          },
          {
             "value": "dominant-11th",
-            "documentation": null
+            "documentation": "11th: dominant-ninth, perfect 11th."
          },
          {
             "value": "major-11th",
-            "documentation": null
+            "documentation": "11th: major-ninth, perfect 11th."
          },
          {
             "value": "minor-11th",
-            "documentation": null
+            "documentation": "11th: minor-ninth, perfect 11th."
          },
          {
             "value": "dominant-13th",
-            "documentation": null
+            "documentation": "13th: dominant-11th, major 13th."
          },
          {
             "value": "major-13th",
-            "documentation": null
+            "documentation": "13th: major-11th, major 13th."
          },
          {
             "value": "minor-13th",
-            "documentation": null
+            "documentation": "13th: minor-11th, major 13th."
          },
          {
             "value": "suspended-second",
-            "documentation": null
+            "documentation": "Suspended: major second, perfect fifth."
          },
          {
             "value": "suspended-fourth",
-            "documentation": null
+            "documentation": "Suspended: perfect fourth, perfect fifth."
          },
          {
             "value": "Neapolitan",
-            "documentation": null
+            "documentation": "Functional Neapolitan sixth."
          },
          {
             "value": "Italian",
-            "documentation": null
+            "documentation": "Functional Italian sixth."
          },
          {
             "value": "French",
-            "documentation": null
+            "documentation": "Functional French sixth."
          },
          {
             "value": "German",
-            "documentation": null
+            "documentation": "Functional German sixth."
          },
          {
             "value": "pedal",
-            "documentation": null
+            "documentation": "Pedal-point bass."
          },
          {
             "value": "power",
-            "documentation": null
+            "documentation": "Perfect fifth."
          },
          {
             "value": "Tristan",
-            "documentation": null
+            "documentation": "Augmented fourth, augmented sixth, augmented ninth."
          },
          {
             "value": "other",
-            "documentation": null
+            "documentation": "Used when the harmony is entirely composed of add elements."
          },
          {
             "value": "none",
-            "documentation": null
+            "documentation": "Used to explicitly encode the absence of chords or functional harmony. In this case, the <root> <numeral>, or <function> element has no meaning. When using the <root> or <numeral> element, the <root-step> or <numeral-step> text attribute should be set to the empty string to keep the root or numeral from being displayed."
          }
       ]
    },
    "mute": {
       "name": "mute",
-      "documentation": "The mute type represents muting for different instruments, including brass, winds, and strings. The on and off values are used for undifferentiated mutes. The remaining values represent specific mutes.",
+      "documentation": "The mute type represents muting playback for different instruments, including brass, winds, and strings. The on and off values are used for undifferentiated mutes. The remaining values represent specific mutes.",
       "base": [
          "xs:string"
       ],
@@ -3864,7 +3864,7 @@
    },
    "tenths": {
       "name": "tenths",
-      "documentation": "The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.\n\nDistances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the &lt;scaling&gt; element, used in the &lt;defaults&gt; element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the &lt;scaling&gt; element, not the local tenths as adjusted by the &lt;staff-size&gt; element.",
+      "documentation": "The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.\n\nDistances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the <scaling> element, used in the <defaults> element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the <scaling> element, not the local tenths as adjusted by the <staff-size> element.",
       "base": [
          "xs:decimal"
       ],
@@ -3903,11 +3903,11 @@
       "value": [
          {
             "value": "yes",
-            "documentation": null
+            "documentation": "True."
          },
          {
             "value": "no",
-            "documentation": null
+            "documentation": "False."
          }
       ]
    },
@@ -3960,7 +3960,7 @@
          },
          {
             "value": "none",
-            "documentation": null
+            "documentation": "No fanning present."
          }
       ]
    },
@@ -4068,15 +4068,15 @@
       "value": [
          {
             "value": "yes",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "no",
-            "documentation": null
+            "documentation": ""
          },
          {
             "value": "half",
-            "documentation": null
+            "documentation": ""
          }
       ]
    },
