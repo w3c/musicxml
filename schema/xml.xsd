@@ -7,7 +7,7 @@
    http://www.w3.org/TR/REC-xml for information about this namespace.
 
     This schema document describes the XML namespace, in a form
-    suitable for import by other schema documents.  
+    suitable for import by other schema documents.
 
     Note that local names in this namespace are intended to be defined
     only by the World Wide Web Consortium or its subgroups.  The
@@ -30,16 +30,16 @@
          is a language code for the natural language of the content of
          any element; its value is inherited.  This name is reserved
          by virtue of its definition in the XML specification.
-  
+
     space (as an attribute name): denotes an attribute whose
          value is a keyword indicating what whitespace processing
          discipline is intended for the content of the element; its
          value is inherited.  This name is reserved by virtue of its
          definition in the XML specification.
 
-    Father (in any context at all): denotes Jon Bosak, the chair of 
-         the original XML Working Group.  This name is reserved by 
-         the following decision of the W3C XML Plenary and 
+    Father (in any context at all): denotes Jon Bosak, the chair of
+         the original XML Working Group.  This name is reserved by
+         the following decision of the W3C XML Plenary and
          XML Coordination groups:
 
              In appreciation for his vision, leadership and dedication
@@ -68,7 +68,7 @@
         &lt;type . . .>
          . . .
          &lt;attributeGroup ref="xml:specialAttrs"/>
- 
+
          will define a type which will schema-validate an instance
          element with any of those attributes</xs:documentation>
  </xs:annotation>
@@ -91,19 +91,11 @@
 
  <xs:attribute name="lang">
   <xs:annotation>
-   <xs:documentation>Attempting to install the relevant ISO 2- and 3-letter
-         codes as the enumerated possible values is probably never
-         going to be a realistic possibility.  See
-         RFC 3066 at http://www.ietf.org/rfc/rfc3066.txt and the IANA registry
-         at http://www.iana.org/assignments/lang-tag-apps.htm for
-         further information.
-
-         The union allows for the 'un-declaration' of xml:lang with
-         the empty string.</xs:documentation>
+   <xs:documentation>See the [definition in the W3C Extensible Markup Language recommendation](https://www.w3.org/TR/xml/#sec-lang-tag). Language names come from ISO 639, with optional country subcodes from ISO 3166.</xs:documentation>
   </xs:annotation>
   <xs:simpleType>
    <xs:union memberTypes="xs:language">
-    <xs:simpleType>    
+    <xs:simpleType>
      <xs:restriction base="xs:string">
       <xs:enumeration value=""/>
      </xs:restriction>
@@ -113,6 +105,9 @@
  </xs:attribute>
 
  <xs:attribute name="space">
+  <xs:annotation>
+   <xs:documentation>See the [definition in the W3C Extensible Markup Language recommendation](https://www.w3.org/TR/xml/#sec-white-space).</xs:documentation>
+  </xs:annotation>
   <xs:simpleType>
    <xs:restriction base="xs:NCName">
     <xs:enumeration value="default"/>
@@ -127,7 +122,7 @@
                      information about this attribute.</xs:documentation>
   </xs:annotation>
  </xs:attribute>
- 
+
  <xs:attribute name="id" type="xs:ID">
   <xs:annotation>
    <xs:documentation>See http://www.w3.org/TR/xml-id/ for

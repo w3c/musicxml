@@ -1,7 +1,7 @@
 {
    "xlink-actuate": {
       "name": "xlink:actuate",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
       "base": [
          "xs:NMTOKEN"
       ],
@@ -37,7 +37,7 @@
    },
    "xlink-href": {
       "name": "xlink:href",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-locators).",
       "base": [
          "xs:anyURI"
       ],
@@ -46,7 +46,7 @@
    },
    "xlink-type": {
       "name": "xlink:type",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-types). MusicXML only supports the simple type.",
       "base": [
          "xs:NMTOKEN"
       ],
@@ -60,7 +60,7 @@
    },
    "xlink-role": {
       "name": "xlink:role",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
       "base": [
          "xs:token"
       ],
@@ -69,7 +69,7 @@
    },
    "xlink-show": {
       "name": "xlink:show",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
       "base": [
          "xs:NMTOKEN"
       ],
@@ -99,7 +99,7 @@
    },
    "xlink-title": {
       "name": "xlink:title",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
       "base": [
          "xs:token"
       ],

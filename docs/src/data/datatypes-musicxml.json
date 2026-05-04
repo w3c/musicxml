@@ -400,7 +400,7 @@
    },
    "xlink-actuate": {
       "name": "xlink:actuate",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
       "base": [
          "xs:NMTOKEN"
       ],
@@ -515,7 +515,7 @@
    },
    "xml-lang": {
       "name": "xml:lang",
-      "documentation": null,
+      "documentation": "See the [definition in the W3C Extensible Markup Language recommendation](https:\/\/www.w3.org\/TR\/xml\/#sec-lang-tag). Language names come from ISO 639, with optional country subcodes from ISO 3166.",
       "base": [
          "xs:language"
       ],
@@ -2690,7 +2690,7 @@
    },
    "xlink-href": {
       "name": "xlink:href",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-locators).",
       "base": [
          "xs:anyURI"
       ],
@@ -2699,7 +2699,7 @@
    },
    "xlink-type": {
       "name": "xlink:type",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-types). MusicXML only supports the simple type.",
       "base": [
          "xs:NMTOKEN"
       ],
@@ -2713,7 +2713,7 @@
    },
    "xlink-role": {
       "name": "xlink:role",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
       "base": [
          "xs:token"
       ],
@@ -2722,7 +2722,7 @@
    },
    "xlink-show": {
       "name": "xlink:show",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
       "base": [
          "xs:NMTOKEN"
       ],
@@ -2800,7 +2800,7 @@
    },
    "xlink-title": {
       "name": "xlink:title",
-      "documentation": null,
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
       "base": [
          "xs:token"
       ],
@@ -3040,7 +3040,7 @@
    },
    "xml-space": {
       "name": "xml:space",
-      "documentation": null,
+      "documentation": "See the [definition in the W3C Extensible Markup Language recommendation](https:\/\/www.w3.org\/TR\/xml\/#sec-white-space).",
       "base": [
          "xs:NCName"
       ],

@@ -55,6 +55,7 @@
         <xsl:value-of select="(
           xs:annotation/xs:documentation/text(),
           /xs:schema/xs:complexType//xs:element[@name=current()/@name]/xs:annotation/xs:documentation/text(),
+          /xs:schema/xs:element[@name=current()/@name]/xs:annotation/xs:documentation/text(),
           ''
         )[1]"/>
       </xsl:attribute>

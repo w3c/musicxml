@@ -36,7 +36,7 @@ const examples_ = Object.values(examples).filter(example =>
 );
 
 // Get extra notes.
-const note = await getEntry('notes', `${schema}-${element.id}`);
+const note = await getEntry('notes', `${schema}/${element.id}`);
 const { Content } = note ? await render(note) : { Content: null };
 
 // Prepare base layout.
@@ -50,6 +50,8 @@ const headings = [
   { depth: 2, slug: 'examples', text: 'Examples'},
 ];
 if (!note) headings.shift();
+
+if (!element.data.documentation) throw("MISSING ELEMENT DOCUMENTATION!!");
 ---
 <BaseLayout frontmatter={ frontmatter } headings={ headings }>
 

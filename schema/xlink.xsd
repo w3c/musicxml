@@ -14,25 +14,43 @@ A human-readable summary is available:
 	https://www.w3.org/community/about/agreements/fsa-deed/
 
 This is the W3C XML Schema (XSD) version of the MusicXML 4.0 language. Validation is tightened by moving MusicXML definitions from comments into schema data types and definitions. Character entities and other entity usages that are not supported in W3C XML Schema have also been removed. However, the features of W3C XML Schema make it easier to define variations of the MusicXML format, either via extension or restriction.
-	
+
 This schema module defines the subset of XLink attributes that are supported in the MusicXML schema. All definitions here are in the XLink namespace.</xs:documentation>
 	</xs:annotation>
-	
-	<xs:attribute name="href" type="xs:anyURI"/>
+
+	<xs:attribute name="href" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-locators).</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
 
 	<xs:attribute name="type">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-types). MusicXML only supports the simple type.</xs:documentation>
+		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:NMTOKEN">
 				<xs:enumeration value="simple"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
-	
-	<xs:attribute name="role" type="xs:token"/>
 
-	<xs:attribute name="title" type="xs:token"/>
-	
+	<xs:attribute name="role" type="xs:token">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-semantics).</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
+	<xs:attribute name="title" type="xs:token">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-semantics).</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
 	<xs:attribute name="show">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-behaviors).</xs:documentation>
+		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:NMTOKEN">
 				<xs:enumeration value="new"/>
@@ -45,6 +63,9 @@ This schema module defines the subset of XLink attributes that are supported in 
 	</xs:attribute>
 
 	<xs:attribute name="actuate">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-behaviors).</xs:documentation>
+		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:NMTOKEN">
 				<xs:enumeration value="onRequest"/>

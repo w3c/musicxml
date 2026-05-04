@@ -11,11 +11,15 @@ interface Props {
   datatype: CollectionEntry<'musicxmlDatatypes' | 'containerDatatypes' | 'opusDatatypes' | 'soundsDatatypes'>,
   schema: string
 }
-
-const processor = await createMarkdownProcessor();
-const elements = await getCollection('musicxmlElements');
 const { datatype, schema } = Astro.props;
-const usages = elements.reduce((usages, element) => {
+const processor = await createMarkdownProcessor();
+const elements = {
+  container: await getCollection("containerElements"),
+  musicxml: await getCollection("musicxmlElements"),
+  opus: await getCollection("opusElements"),
+  sounds: await getCollection("soundsElements"),
+}
+const usages = elements[schema].reduce((usages, element) => {
   if (element.data.children && element.data.children.type === 'type' && element.data.children.value === datatype.data.name) {
     usages.push({ element });
   }
@@ -33,6 +37,8 @@ const usages = elements.reduce((usages, element) => {
   if (aHasAttribute && !bHasAttribute) return 1;
   return 0;
 });
+
+if (!datatype.data.documentation) throw "MISSING DATATYPE DOCUMENTATION!!";
 ---
 {datatype.data.documentation && <p class="description" set:html={annotationMarkdown(datatype.data.documentation)} />}
 
@@ -47,7 +53,7 @@ const usages = elements.reduce((usages, element) => {
       <tbody>
         {datatype.data.value.sort((a,b) => {
           // "yes" always comes first, "no" always second, thanks Copilot.
-          const order: any = { 'yes': 0, 'no': 1, 'on': 0, 'off': 1 };
+          const order: any = { 'yes': 0, 'no': 1, 'on': 0, 'off': 1, 'normal': 0 };
           const oa = order[a.value] ?? 2;
           const ob = order[b.value] ?? 2;
           if (oa !== ob) return oa - ob;

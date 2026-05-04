@@ -22,7 +22,7 @@ have been removed. The features of W3C XML Schema make it easier to define
 variations of the MusicXML format, either via extension or restriction.
 
 An opus collects MusicXML scores together into a larger entity. The individual scores could be movements in a symphony, scenes or acts in an opera, or songs in an album. The opus definition allows arbitrary nesting either via an opus (included in the document) or an opus-link (linked like scores). Future versions of the MusicXML format may expand this schema to include reference data and other metadata related to musical scores.
-		
+
 The XML catalog at catalog.xml supports validating against a local copy of this XSD rather than the networked version. Software often has trouble using system IDs due to factors such as restrictions on network access, or resources having moved from the original specified location. To validate with the MusicXML XSD, use a schema URI of "http://www.musicxml.org/xsd/opus.xsd".</xs:documentation>
 	</xs:annotation>
 
@@ -49,22 +49,50 @@ The XML catalog at catalog.xml supports validating against a local copy of this 
 
 The version attribute was added in Version 2.0 for opus documents. It provides an easier way to get version information than through the MusicXML public ID. The default value is 1.0 to make it possible for programs that handle later versions to distinguish earlier version files reliably. Programs that write MusicXML 2.0 or later opus files should set this attribute.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="version" type="xs:token" default="1.0"/>
+		<xs:attribute name="version" type="xs:token" default="1.0">
+			<xs:annotation>
+				<xs:documentation>The version attribute was added in Version 2.0 for opus documents. It provides an easier way to get version information than through the MusicXML public ID. The default value is 1.0 to make it possible for programs that handle later versions to distinguish earlier version files reliably. Programs that write MusicXML 2.0 or later opus files should set this attribute.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:attributeGroup>
-	
+
 	<xs:attributeGroup name="link-attributes">
 		<xs:annotation>
 			<xs:documentation>The link-attributes group includes all the simple XLink attributes supported in the MusicXML format.</xs:documentation>
 		</xs:annotation>
 		<!--<xs:attribute ref="xmnls:xlink" fixed="http://www.w3.org/1999/xlink"/>-->
-		<xs:attribute ref="xlink:href" use="required"/>
-		<xs:attribute ref="xlink:type" fixed="simple"/>
-		<xs:attribute ref="xlink:role"/>
-		<xs:attribute ref="xlink:title"/>
-		<xs:attribute ref="xlink:show" default="replace"/>
-		<xs:attribute ref="xlink:actuate" default="onRequest"/>
+		<xs:attribute ref="xlink:href" use="required">
+			<xs:annotation>
+				<xs:documentation>The href attribute provides the data that allows an application to find a remote resource or resource fragment. See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-locators).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute ref="xlink:type" fixed="simple">
+			<xs:annotation>
+				<xs:documentation>The type attribute identifies XLink element types. In MusicXML, the value is always simple. See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-types).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute ref="xlink:role">
+			<xs:annotation>
+				<xs:documentation>The role attribute indicates a property of the link. See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-semantics).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute ref="xlink:title">
+			<xs:annotation>
+				<xs:documentation>The title attribute describes the meaning of a link or resource in a human-readable fashion. See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-semantics).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute ref="xlink:show" default="replace">
+			<xs:annotation>
+				<xs:documentation>The show attribute is used to communicate the desired presentation of the ending resource on traversal from the starting resource. The default value is replace. See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-behaviors).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute ref="xlink:actuate" default="onRequest">
+			<xs:annotation>
+				<xs:documentation>The actuate attribute is used to communicate the desired timing of traversal from the starting resource to the ending resource. The default value is onRequest. See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-behaviors).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:attributeGroup>
-	
+
 	<!-- Complex types -->
 
 	<xs:complexType name="opus">
@@ -74,13 +102,22 @@ The version attribute was added in Version 2.0 for opus documents. It provides a
 		<xs:sequence>
 			<xs:element name="title" type="xs:string" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The title element specifies the title of an opus document.</xs:documentation>
+					<xs:documentation>The &lt;title&gt; element specifies the title of an opus document.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element name="opus" type="opus"/>
-				<xs:element name="opus-link" type="opus-link"/>
-				<xs:element name="score" type="score"/>
+				<xs:element name="opus-link" type="opus-link">
+					<xs:annotation>
+						<xs:documentation>An &lt;opus-link&gt; provides a link to another opus document, allowing for multiple levels of opus collections via linking as well as nesting.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="score" type="score">
+					<xs:annotation>
+						<xs:documentation>The &lt;score&gt; elements provide the links to the individual scores within an opus.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 			</xs:choice>
 		</xs:sequence>
 		<xs:attributeGroup ref="document-attributes"/>
@@ -98,14 +135,18 @@ The version attribute was added in Version 2.0 for opus documents. It provides a
 			<xs:documentation>The score elements provide the links to the individual scores within an opus. The new-page attribute, added in Version 2.0, is used to indicate if the first page of the score is different than the last page of the previous score. If new-page is "yes", then a different page is used; if "no", then the same page is used. The default value is implementation-dependent.</xs:documentation>
 		</xs:annotation>
 		<xs:attributeGroup ref="link-attributes"/>
-		<xs:attribute name="new-page" type="yes-no"/>
+		<xs:attribute name="new-page" type="yes-no">
+			<xs:annotation>
+				<xs:documentation>Used to indicate if the first page of the score is different than the last page of the previous score. If yes, then a different page is used. If no, then the same page is used. The default value is implementation-dependent.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 
 	<!-- Global element that is the root for MusicXML opus files -->
 
 	<xs:element name="opus" type="opus" block="extension substitution" final="#all">
 		<xs:annotation>
-			<xs:documentation>The opus element with an opus type is the root element for a MusicXML opus.</xs:documentation>
+			<xs:documentation>The &lt;opus&gt; element is the root element of a MusicXML opus. Each opus is made up of a series of &lt;score&gt;, &lt;opus-link&gt;, and/or nested &lt;opus&gt; elements. Future versions may include more metadata elements. In this version, we just include the title of the opus.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 </xs:schema>

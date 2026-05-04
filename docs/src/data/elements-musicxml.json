@@ -3060,7 +3060,7 @@
          }
       ],
       "name": "notehead",
-      "documentation": "The <notehead> element indicates shapes other than the open and closed ovals associated with note durations.\n\nThe smufl attribute can be used to specify a particular notehead, allowing application interoperability without requiring every Standard Music Font Layout (SMuFL) glyph to have a MusicXML element equivalent. This attribute can be used either with the other value, or to refine a specific notehead value such as cluster.\n\nNoteheads in the SMuFL [Note name noteheads](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/note-name-noteheads.html) and [Note name noteheads supplement ranges](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/note-name-noteheads-supplement.html) (U+E150–U+E1AF and U+EEE0–U+EEFF) should not use the smufl attribute or the other value, but instead use the <notehead-text> element."
+      "documentation": "The <notehead> element indicates shapes other than the open and closed ovals associated with note durations.\n\nThe smufl attribute can be used to specify a particular notehead, allowing application interoperability without requiring every Standard Music Font Layout (SMuFL) glyph to have a MusicXML element equivalent. This attribute can be used either with the other value, or to refine a specific notehead value such as cluster.\n\nNoteheads in the SMuFL [Note name noteheads range](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/note-name-noteheads.html) and [Note name noteheads supplement range](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/note-name-noteheads-supplement.html) (U+E150–U+E1AF and U+EEE0–U+EEFF) should not use the smufl attribute or the other value, but instead use the <notehead-text> element."
    },
    "natural": {
       "children": null,
@@ -3614,7 +3614,7 @@
             "default": "single",
             "required": false,
             "name": "type",
-            "documentation": "",
+            "documentation": "Single-note tremolos use single, double-note tremolos use start or stop, and unmeasured tremolos use unmeasured. The default value is single for compatibility with Version 1.1.",
             "type": "tremolo-type"
          },
          {
@@ -3685,7 +3685,7 @@
          }
       ],
       "name": "tremolo",
-      "documentation": ""
+      "documentation": "The <tremolo> element can be used to indicate single-note, double-note, or unmeasured tremolos. The text of the element indicates the number of tremolo marks and is an integer from 0 to 8. Note that the number of attached beams is not included in this value, but is represented separately using the <beam element>. The value should be 0 for unmeasured tremolos.\n\nWhen using double-note tremolos, the duration of each note in the tremolo should correspond to half of the notated type value. A <time-modification> element should also be added with an <actual-notes> value of 2 and a <normal-notes> value of 1. If used within a tuplet, this 2\/1 ratio should be multiplied by the existing tuplet ratio.\n\nThe smufl attribute specifies the glyph to use from the [Standard Music Font Layout (SMuFL) Tremolos range](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/tremolos.html) for an unmeasured tremolo. It is ignored for other tremolo types. The SMuFL buzzRoll glyph is used if the attribute is missing.\n\nUsing repeater beams for indicating tremolos is deprecated as of Version 3.0."
    },
    "metronome": {
       "children": {
@@ -3917,12 +3917,12 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Specifies an ID that is unique to the entire document.",
+            "documentation": "Distinguishes different SMuFL stylistic alternates.",
             "type": "smufl-pictogram-glyph-name"
          }
       ],
       "name": "timpani",
-      "documentation": ""
+      "documentation": "The <timpani> element represents the timpani pictogram."
    },
    "unstress": {
       "children": null,
@@ -4065,7 +4065,7 @@
          }
       ],
       "name": "with-bar",
-      "documentation": "The <with-bar> element indicates that the bend is to be done at the bridge with a whammy or vibrato bar. The content of the element indicates how this should be notated. Content values of \"scoop\" and \"dip\" refer to the SMuFL guitarVibratoBarScoop and guitarVibratoBarDip glyphs."
+      "documentation": "The <with-bar> element indicates that the bend is to be done at the bridge with a whammy or vibrato bar. The content of the element indicates how this should be notated. Content values of \"scoop\" and \"dip\" refer to the Standard Music Font Layout (SMuFL) guitarVibratoBarScoop and guitarVibratoBarDip glyphs."
    },
    "miscellaneous-field": {
       "children": {
@@ -4136,12 +4136,12 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "The appearance type being specified.",
             "type": "xs:token"
          }
       ],
       "name": "other-appearance",
-      "documentation": ""
+      "documentation": "The <other-appearance> element is used to define any graphical settings not yet in the current version of the MusicXML format. This allows extended representation, though without application interoperability."
    },
    "credit-symbol": {
       "children": {
@@ -4892,7 +4892,7 @@
          }
       ],
       "name": "tuplet-type",
-      "documentation": ""
+      "documentation": "The <tuplet-type> element indicates the graphical note type of the notes for this portion of the tuplet."
    },
    "inverted-turn": {
       "children": null,
@@ -5294,7 +5294,7 @@
          }
       ],
       "name": "other-technical",
-      "documentation": "The <other-technical> element is used to define any technical indications not yet in the MusicXML format. The smufl attribute can be used to specify a particular glyph, allowing application interoperability without requiring every SMuFL technical indication to have a MusicXML element equivalent. Using the <other-technical> element without the smufl attribute allows for extended representation, though without application interoperability."
+      "documentation": "The <other-technical> element is used to define any technical indications not yet in the MusicXML format. The smufl attribute can be used to specify a particular glyph, allowing application interoperability without requiring every Standard Music Font Layout (SMuFL) technical indication to have a MusicXML element equivalent. Using the <other-technical> element without the smufl attribute allows for extended representation, though without application interoperability."
    },
    "metronome-dot": {
       "children": null,
@@ -5510,12 +5510,12 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates the type of playback to which the element content applies.",
             "type": "xs:token"
          }
       ],
       "name": "other-play",
-      "documentation": ""
+      "documentation": "The <other-play> element represents other types of playback not otherwise specified within the <play> element."
    },
    "system-layout": {
       "children": {
@@ -5733,7 +5733,7 @@
          }
       ],
       "name": "ornaments",
-      "documentation": ""
+      "documentation": "Ornaments can be any of several types, followed optionally by accidentals. The <accidental-mark> element's content is represented the same as an <accidental> element, but with a different name to reflect the different musical meaning."
    },
    "score-instrument": {
       "children": {
@@ -5832,7 +5832,7 @@
          "score-instrument"
       ],
       "name": "virtual-instrument",
-      "documentation": ""
+      "documentation": "The <virtual-instrument> element defines a specific virtual instrument used for an <instrument sound>."
    },
    "semi-pitched": {
       "children": {
@@ -6421,24 +6421,24 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates the type of listening to which the element content applies.",
             "type": "xs:token"
          },
          {
             "required": false,
             "name": "player",
-            "documentation": "",
+            "documentation": "Restricts the element to apply to a single player.",
             "type": "xs:IDREF"
          },
          {
             "required": false,
             "name": "time-only",
-            "documentation": "",
+            "documentation": "Restrict the element to apply to a set of times through a repeated section.",
             "type": "time-only"
          }
       ],
       "name": "other-listen",
-      "documentation": ""
+      "documentation": "The <other-listen> element represents other types of listening control and interaction that are specific to a note."
    },
    "beat-unit-dot": {
       "children": null,
@@ -7037,7 +7037,7 @@
          }
       ],
       "name": "other-direction",
-      "documentation": ""
+      "documentation": "The <other-direction> element is used to define any <direction> symbols not yet in the MusicXML format. The smufl attribute can be used to specify a particular direction symbol, allowing application interoperability without requiring every SMuFL glyph to have a MusicXML element equivalent. Using the <other-direction> element without the smufl attribute allows for extended representation, though without application interoperability."
    },
    "right-margin": {
       "children": {
@@ -8081,7 +8081,7 @@
          }
       ],
       "name": "tuplet-dot",
-      "documentation": ""
+      "documentation": "The <tuplet-dot> element is used to specify dotted tuplet types."
    },
    "top-margin": {
       "children": {
@@ -8092,7 +8092,7 @@
          "page-margins"
       ],
       "name": "top-margin",
-      "documentation": ""
+      "documentation": "The <top-margin> element specifies the top page margin in tenths."
    },
    "midi-device": {
       "children": {
@@ -8683,7 +8683,7 @@
          }
       ],
       "name": "thumb-position",
-      "documentation": "The <thumb-position> element represents the thumb position symbol. This is a circle with a line, where the line does not come within the circle. It is distinct from the snap pizzicato symbol, where the line comes inside the circle."
+      "documentation": "The <thumb-position> element represents the thumb position symbol. This is a circle with a line, where the line does not come within the circle. It is distinct from the <snap-pizzicato> symbol, where the line comes inside the circle."
    },
    "trill-mark": {
       "children": null,
@@ -8795,7 +8795,7 @@
          }
       ],
       "name": "trill-mark",
-      "documentation": "The <trill-mark> element represents the trill-mark symbol."
+      "documentation": "The <trill-mark> element represents the trill symbol."
    },
    "technical": {
       "children": {
@@ -9003,7 +9003,7 @@
          }
       ],
       "name": "technical",
-      "documentation": ""
+      "documentation": "The <technical> element groups together technical indications that give performance information for specific instruments."
    },
    "beat-unit": {
       "children": {
@@ -9278,7 +9278,7 @@
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Allows a transposition to apply to only the specified staff in the part. If absent, the transposition applies to all staves in the part. Per-staff transposition is most often used in parts that represent multiple instruments.",
             "type": "staff-number"
          },
          {
@@ -9289,7 +9289,7 @@
          }
       ],
       "name": "transpose",
-      "documentation": "If the part is being encoded for a transposing instrument in written vs. concert pitch, the transposition must be encoded in the <transpose> element using the transpose type."
+      "documentation": "The <transpose> element represents what must be added to a written pitch to get a correct sounding pitch. It is used for encoding parts for transposing instruments that are in written vs. concert pitch."
    },
    "frame-frets": {
       "children": {
@@ -10397,7 +10397,7 @@
          "note"
       ],
       "name": "unpitched",
-      "documentation": ""
+      "documentation": "The <unpitched> element represents notes that are notated on the staff but lack definite pitch, such as unpitched percussion and speaking voice. If the child elements are not present, the note is placed on the middle line of the staff. This is generally used with a one-line staff. Notes in percussion clef should always use an <unpitched> element rather than a <pitch> element."
    },
    "inverted-mordent": {
       "children": null,
@@ -10933,7 +10933,7 @@
          }
       ],
       "name": "word-font",
-      "documentation": ""
+      "documentation": "The <word-font> element represents the default values for the word font in the score."
    },
    "other-dynamics": {
       "children": {
@@ -11064,7 +11064,7 @@
          }
       ],
       "name": "other-articulation",
-      "documentation": "The <other-articulation> element is used to define any articulations not yet in the MusicXML format. The smufl attribute can be used to specify a particular articulation, allowing application interoperability without requiring every SMuFL articulation to have a MusicXML element equivalent. Using the <other-articulation> element without the smufl attribute allows for extended representation, though without application interoperability."
+      "documentation": "The <other-articulation> element is used to define any articulations not yet in the MusicXML format. The smufl attribute can be used to specify a particular articulation, allowing application interoperability without requiring every Standard Music Font Layout (SMuFL) articulation to have a MusicXML element equivalent. Using the <other-articulation> element without the smufl attribute allows for extended representation, though without application interoperability."
    },
    "staff-divide": {
       "children": null,
@@ -11152,7 +11152,7 @@
          }
       ],
       "name": "staff-divide",
-      "documentation": ""
+      "documentation": "The <staff-divide> element represents the staff division arrow symbols found in the [Standard Music Font Layout (SMuFL) Staff brackets and dividers range](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/staff-brackets-and-dividers.html) at code points U+E00B, U+E00C, and U+E00D."
    },
    "staff-tuning": {
       "children": {
@@ -11424,7 +11424,7 @@
          "note"
       ],
       "name": "time-modification",
-      "documentation": ""
+      "documentation": "Time modification indicates tuplets, double-note tremolos, and other durational changes. A <time-modification> element shows how the cumulative, sounding effect of tuplets and double-note tremolos compare to the written note type represented by the <type> and <dot> elements. Nested tuplets and other notations that use more detailed information need both the <time-modification> and <tuplet> elements to be represented accurately."
    },
    "other-notation": {
       "children": {
@@ -11438,14 +11438,14 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if this is a single-note notation, or the start or stop of a multi-note notation.",
             "type": "start-stop-single"
          },
          {
             "default": "1",
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Distinguishes multiple notations when they overlap in MusicXML document order. The default value is 1.",
             "type": "number-level"
          },
          {
@@ -11528,7 +11528,7 @@
          }
       ],
       "name": "other-notation",
-      "documentation": ""
+      "documentation": "The <other-notation> element is used to define any notations not yet in the MusicXML format. It handles notations where more specific extension elements such as <other-dynamics> and <other-technical> are not appropriate.\n\nThe smufl attribute can be used to specify a particular notation, allowing application interoperability without requiring every Standard Music Font Layout (SMuFL) glyph to have a MusicXML element equivalent. Using the <other-notation> element without the smufl attribute allows for extended representation, though without application interoperability."
    },
    "notehead-text": {
       "children": {
@@ -11633,7 +11633,7 @@
          }
       ],
       "name": "other-ornament",
-      "documentation": "The <other-ornament> element is used to define any ornaments not yet in the MusicXML format. The smufl attribute can be used to specify a particular ornament, allowing application interoperability without requiring every SMuFL ornament to have a MusicXML element equivalent. Using the <other-ornament> element without the smufl attribute allows for extended representation, though without application interoperability."
+      "documentation": "The <other-ornament> element is used to define any ornaments not yet in the MusicXML format. The smufl attribute can be used to specify a particular ornament, allowing application interoperability without requiring every Standard Music Font Layout (SMuFL) ornament to have a MusicXML element equivalent. Using the <other-ornament> element without the smufl attribute allows for extended representation, though without application interoperability."
    },
    "wavy-line": {
       "children": null,
@@ -11645,19 +11645,19 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if this is the start, stop, or continuation of the wavy line. The value should be continue whenever used within a <barline> element.",
             "type": "start-stop-continue"
          },
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Distinguishes multiple wavy lines when they overlap in MusicXML document order.",
             "type": "number-level"
          },
          {
             "required": false,
             "name": "smufl",
-            "documentation": "",
+            "documentation": "Specifies a particular wavy line glyph from the [Standard Music Font Layout (SMuFL) Multi-segment lines range](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/multi-segment-lines.html).",
             "type": "smufl-wavy-line-glyph-name"
          },
          {
@@ -11740,7 +11740,7 @@
          }
       ],
       "name": "wavy-line",
-      "documentation": ""
+      "documentation": "Wavy lines are one way to indicate trills and vibrato."
    },
    "sounding-pitch": {
       "children": null,
@@ -11915,7 +11915,7 @@
          "system-layout"
       ],
       "name": "top-system-distance",
-      "documentation": ""
+      "documentation": "The <top-system-distance> is measured from the page's top margin to the top line of the first system. It is ignored for all but the first system on a page."
    },
    "fingering": {
       "children": {
@@ -12820,7 +12820,7 @@
          "harmonic"
       ],
       "name": "touching-pitch",
-      "documentation": "The touching-pitch is the pitch at which the string is touched lightly to produce the harmonic."
+      "documentation": "The presence of the <touching-pitch> element indicates this is the pitch at which the string is touched lightly to produce the harmonic."
    },
    "articulations": {
       "children": {
@@ -13079,7 +13079,7 @@
          {
             "required": true,
             "name": "id",
-            "documentation": "",
+            "documentation": "Refers to the <score-instrument> affected by the change.",
             "type": "xs:IDREF"
          }
       ],
@@ -13098,24 +13098,24 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates the type of listening to which the element content applies.",
             "type": "xs:token"
          },
          {
             "required": false,
             "name": "player",
-            "documentation": "",
+            "documentation": "Restricts the element to apply to a single player.",
             "type": "xs:IDREF"
          },
          {
             "required": false,
             "name": "time-only",
-            "documentation": "",
+            "documentation": "Restrict the element to apply to a set of times through a repeated section.",
             "type": "time-only"
          }
       ],
       "name": "other-listening",
-      "documentation": ""
+      "documentation": "The <other-listening> element represents other types of listening control and interaction that change the state of the listening application from the specified point in the performance onward."
    },
    "metronome-arrows": {
       "children": null,
@@ -14021,7 +14021,7 @@
          "interchangeable"
       ],
       "name": "time-relation",
-      "documentation": ""
+      "documentation": "The <time-relation> element indicates the symbol used to represent the interchangeable aspect of dual time signatures, as specified in the time-relation type."
    },
    "inversion": {
       "children": {
@@ -14399,7 +14399,7 @@
          "tuplet"
       ],
       "name": "tuplet-actual",
-      "documentation": "The <tuplet-actual> element provides optional full control over how the actual part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the <time-modification> element."
+      "documentation": "The <tuplet-actual> element provides optional full control over how the actual part of the <tuplet> is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the <time-modification> element."
    },
    "work": {
       "children": {
@@ -14432,7 +14432,7 @@
          "score-partwise"
       ],
       "name": "work",
-      "documentation": ""
+      "documentation": "Works are optionally identified by number and title. The <work> element also may indicate a link to the <opus> document that composes multiple scores into a collection."
    },
    "words": {
       "children": {
@@ -14583,7 +14583,7 @@
          }
       ],
       "name": "words",
-      "documentation": "The <words> element specifies a standard text direction. The enclosure is none if not specified. The language is Italian (\"it\") if not specified. Left justification is used if not specified."
+      "documentation": "The <words> element specifies a standard text direction. The enclosure attribute is none if not specified. Left justification is used if not specified."
    },
    "wood": {
       "children": {
@@ -14597,12 +14597,12 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "",
+            "documentation": "Distinguishes different SMuFL stylistic alternates.",
             "type": "smufl-pictogram-glyph-name"
          }
       ],
       "name": "wood",
-      "documentation": ""
+      "documentation": "The <wood> element represents pictograms for wood percussion instruments."
    },
    "tuplet-number": {
       "children": {
@@ -14646,7 +14646,7 @@
          }
       ],
       "name": "tuplet-number",
-      "documentation": ""
+      "documentation": "The <tuplet-number> element indicates the number of notes for this portion of the tuplet."
    },
    "tuplet-normal": {
       "children": {
@@ -14678,7 +14678,7 @@
          "tuplet"
       ],
       "name": "tuplet-normal",
-      "documentation": "The <tuplet-normal> element provides optional full control over how the normal part of the tuplet is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the <time-modification> element."
+      "documentation": "The <tuplet-normal> element provides optional full control over how the normal part of the <tuplet> is displayed, including number and note type (with dots). If any of these elements are absent, their values are based on the <time-modification> element."
    },
    "wait": {
       "children": null,
@@ -14689,18 +14689,18 @@
          {
             "required": false,
             "name": "player",
-            "documentation": "",
+            "documentation": "Restricts the <wait> to apply to a single player.",
             "type": "xs:IDREF"
          },
          {
             "required": false,
             "name": "time-only",
-            "documentation": "",
+            "documentation": "Restricts the <wait> to apply to a set of times through a repeated section.",
             "type": "time-only"
          }
       ],
       "name": "wait",
-      "documentation": ""
+      "documentation": "The <wait> element specifies a point where the accompaniment should wait for a performer event before continuing. This typically happens at the start of new sections or after a held note or indeterminate music. These waiting points cannot always be inferred reliably from the contents of the displayed score."
    },
    "wedge": {
       "children": null,
@@ -14711,25 +14711,25 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "The value is crescendo for the start of a wedge that is closed at the left side, diminuendo for the start of a wedge that is closed on the right side, and stop for the end of a wedge.",
             "type": "wedge-type"
          },
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Distinguishes multiple wedges when they overlap in MusicXML document order.",
             "type": "number-level"
          },
          {
             "required": false,
             "name": "spread",
-            "documentation": "",
+            "documentation": "Indicates the gap between the top and bottom of the wedge as measured in tenths. Ignored if specified at the start of a crescendo wedge or the end of a diminuendo wedge.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "niente",
-            "documentation": "",
+            "documentation": "A value is yes indicates that a circle appears at the point of the wedge, indicating a crescendo from nothing or diminuendo to nothing. It is no if not specified, and used only when the type is crescendo, or the type is stop for a wedge that began with a diminuendo type.",
             "type": "yes-no"
          },
          {
@@ -14788,7 +14788,7 @@
          }
       ],
       "name": "wedge",
-      "documentation": ""
+      "documentation": "The <wedge> element represents crescendo and diminuendo wedge symbols. The line-type attribute is solid if not specified."
    },
    "opus": {
       "children": null,
@@ -15647,43 +15647,43 @@
          {
             "required": false,
             "name": "orientation",
-            "documentation": "",
+            "documentation": "Indicates whether slurs and ties are overhand (tips down) or underhand (tips up). This is distinct from the placement attribute used by any notation type.",
             "type": "over-under"
          },
          {
             "required": false,
             "name": "bezier-x",
-            "documentation": "",
+            "documentation": "The horizontal position of an outgoing bezier point for slurs and ties with a start type, or of an incoming bezier point for slurs and ties with types of stop or continue.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "bezier-y",
-            "documentation": "",
+            "documentation": "The vertical position of an outgoing bezier point for slurs and ties with a start type, or of an incoming bezier point for slurs and ties with types of stop or continue.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "bezier-x2",
-            "documentation": "",
+            "documentation": "The horizontal position of an outgoing bezier point for slurs with a continue type. Not valid for other types.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "bezier-y2",
-            "documentation": "",
+            "documentation": "The vertical position of an outgoing bezier point for slurs with a continue type. Not valid for other types.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "bezier-offset",
-            "documentation": "",
+            "documentation": "The horizontal position of an outgoing bezier point for slurs and ties with a start type, or of an incoming bezier point for slurs and ties with types of stop or continue. If both the bezier-x and bezier-offset attributes are present, the bezier-x attribute takes priority. This attribute is deprecated as of MusicXML 3.1.",
             "type": "divisions"
          },
          {
             "required": false,
             "name": "bezier-offset2",
-            "documentation": "",
+            "documentation": "The horizontal position of an outgoing bezier point for slurs with a continue type. Not valid for other types. If both the bezier-x2 and bezier-offset2 attributes are present, the bezier-x2 attribute takes priority. This attribute is deprecated as of MusicXML 3.1.",
             "type": "divisions"
          },
          {
@@ -15828,7 +15828,7 @@
          }
       ],
       "name": "slide",
-      "documentation": ""
+      "documentation": "The <glissando> and <slide> elements both indicate rapidly moving from one pitch to the other so that individual notes are not discerned. A <slide> is continuous between the two pitches and defaults to a solid line. The optional text is printed alongside the line."
    },
    "slash": {
       "children": {
@@ -16638,7 +16638,7 @@
          "scaling"
       ],
       "name": "tenths",
-      "documentation": ""
+      "documentation": "The <tenths> element contains the number of tenths that correspond to the given number of millimeters within the <scaling> element formula. Setting this to 40 allows the <millimeters> element to specify the size of a 5-line staff."
    },
    "tenuto": {
       "children": null,
@@ -16782,7 +16782,7 @@
          {
             "required": false,
             "name": "xml:lang",
-            "documentation": "",
+            "documentation": "Specifies the language used in the element content.",
             "type": "xml:lang"
          },
          {
@@ -16793,7 +16793,7 @@
          }
       ],
       "name": "text",
-      "documentation": ""
+      "documentation": "The <text> element represents a syllable or portion of a syllable for lyric text underlay. A hyphen in the element content should only be used for an actual hyphenated word."
    },
    "tie": {
       "children": null,
@@ -16804,18 +16804,18 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if this is the start or stop of the tie.",
             "type": "start-stop"
          },
          {
             "required": false,
             "name": "time-only",
-            "documentation": "",
+            "documentation": "Indicates which particular times to apply a <tie> element through a repeated section.",
             "type": "time-only"
          }
       ],
       "name": "tie",
-      "documentation": ""
+      "documentation": "The <tie> element indicates that a tie begins or ends with this note. The <tie> element indicates sound; the <tied> element indicates notation."
    },
    "tied": {
       "children": null,
@@ -16826,13 +16826,13 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if this is the start, stop, or continuation of a tie, or if this is a tie indicating that an instrument should be undamped.",
             "type": "tied-type"
          },
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Rarely needed to disambiguate ties, since note pitches will usually suffice. It is available for use in more complex tied notation situations.",
             "type": "number-level"
          },
          {
@@ -16886,43 +16886,43 @@
          {
             "required": false,
             "name": "orientation",
-            "documentation": "",
+            "documentation": "Indicates whether slurs and ties are overhand (tips down) or underhand (tips up). This is distinct from the placement attribute used by any notation type.",
             "type": "over-under"
          },
          {
             "required": false,
             "name": "bezier-x",
-            "documentation": "",
+            "documentation": "The horizontal position of an outgoing bezier point for slurs and ties with a start type, or of an incoming bezier point for slurs and ties with types of stop or continue.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "bezier-y",
-            "documentation": "",
+            "documentation": "The vertical position of an outgoing bezier point for slurs and ties with a start type, or of an incoming bezier point for slurs and ties with types of stop or continue.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "bezier-x2",
-            "documentation": "",
+            "documentation": "The horizontal position of an outgoing bezier point for slurs with a continue type. Not valid for other types.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "bezier-y2",
-            "documentation": "",
+            "documentation": "The vertical position of an outgoing bezier point for slurs with a continue type. Not valid for other types.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "bezier-offset",
-            "documentation": "",
+            "documentation": "The horizontal position of an outgoing bezier point for slurs and ties with a start type, or of an incoming bezier point for slurs and ties with types of stop or continue. If both the bezier-x and bezier-offset attributes are present, the bezier-x attribute takes priority. This attribute is deprecated as of MusicXML 3.1.",
             "type": "divisions"
          },
          {
             "required": false,
             "name": "bezier-offset2",
-            "documentation": "",
+            "documentation": "The horizontal position of an outgoing bezier point for slurs with a continue type. Not valid for other types. If both the bezier-x2 and bezier-offset2 attributes are present, the bezier-x2 attribute takes priority. This attribute is deprecated as of MusicXML 3.1.",
             "type": "divisions"
          },
          {
@@ -16939,7 +16939,7 @@
          }
       ],
       "name": "tied",
-      "documentation": ""
+      "documentation": "The <tied> element represents the notated tie. The <tie> element represents the tie sound.\n\nTies that join two notes of the same pitch together should be represented with a <tied> element on the first note with type=\"start\" and a <tied> element on the second note with type=\"stop\". This can also be done if the two notes being tied are enharmonically equivalent, but have different step values. It is not recommended to use <tied> elements to join two notes with enharmonically inequivalent pitches.\n\nTies that indicate that an instrument should be undamped are specified with a single <tied> element with type=\"let-ring\".\n\nTies that are visually attached to only one note, other than undamped ties, should be specified with two <tied> elements on the same note, first type=\"start\" then type=\"stop\". This can be used to represent ties into or out of repeated sections or codas.\n\nWhen multiple <tied> elements with the same tag are used within the same note, their order within the MusicXML document should match the musical score order. For example, a note with a tie at the end of a first ending should have the <tied> element with a type of start precede the <tied> element with a type of stop.\n\nNormal ties need only two bezier points: one associated with the start of the tie, the other with the stop. Ties divided over system breaks can specify additional bezier data at <tied> elements with a continue type."
    },
    "time": {
       "children": {
@@ -16994,19 +16994,19 @@
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Allows a time signature to apply to only the specified staff in the part. If absent, the time signature applies to all staves in the part.",
             "type": "staff-number"
          },
          {
             "required": false,
             "name": "symbol",
-            "documentation": "",
+            "documentation": "Indicates how to display a time signature, such as by using common and cut time symbols or a single number display.",
             "type": "time-symbol"
          },
          {
             "required": false,
             "name": "separator",
-            "documentation": "",
+            "documentation": "Indicates how to display the arrangement between the <beats> and <beat-type> values in a time signature.",
             "type": "time-separator"
          },
          {
@@ -17089,7 +17089,7 @@
          }
       ],
       "name": "time",
-      "documentation": "Time signatures are represented by the <beats> element for the numerator and the <beat-type> element for the denominator."
+      "documentation": "Time signatures are represented by the <beats> element for the numerator and the <beat-type> element for the denominator. Multiple pairs of <beat> and <beat-type> elements are used for composite time signatures with multiple denominators, such as 2\/4 + 3\/8. A composite such as 3+2\/8 requires only one <beat>\/<beat-type> pair.\n\nThe print-object attribute allows a time signature to be specified but not printed, as is the case for excerpts from the middle of a score. The value is \"yes\" if not present."
    },
    "type": {
       "children": {
@@ -17103,12 +17103,12 @@
          {
             "required": false,
             "name": "size",
-            "documentation": "",
+            "documentation": "Indicates full, cue, grace-cue, or large size. If not specified, the value is full for regular notes, grace-cue for notes that contain both <grace> and <cue> elements, and cue for notes that contain either a <cue> or a <grace> element, but not both.",
             "type": "symbol-size"
          }
       ],
       "name": "type",
-      "documentation": ""
+      "documentation": "The <type> element indicates the graphic note type. Values range from 1024th to maxima."
    },
    "tuplet": {
       "children": {
@@ -17137,31 +17137,31 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if this is the start or stop of the tuplet.",
             "type": "start-stop"
          },
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Distinguishes nested tuplets.",
             "type": "number-level"
          },
          {
             "required": false,
             "name": "bracket",
-            "documentation": "",
+            "documentation": "Indicates the presence of a bracket. If unspecified, the result is implementation-dependent.",
             "type": "yes-no"
          },
          {
             "required": false,
             "name": "show-number",
-            "documentation": "",
+            "documentation": "Used to display either the number of actual notes, the number of both actual and normal notes, or neither. It is actual if not specified.",
             "type": "show-tuplet"
          },
          {
             "required": false,
             "name": "show-type",
-            "documentation": "",
+            "documentation": "Used to display either the actual type, both the actual and normal types, or neither. It is none if not specified.",
             "type": "show-tuplet"
          },
          {
@@ -17208,7 +17208,7 @@
          }
       ],
       "name": "tuplet",
-      "documentation": ""
+      "documentation": "A <tuplet> element is present when a tuplet is to be displayed graphically, in addition to the sound data provided by the <time-modification> elements.\n\nWhereas a <time-modification> element shows how the cumulative, sounding effect of tuplets and double-note tremolos compare to the written note type, the <tuplet> element describes how this is displayed. The <tuplet> element also provides more detailed representation information than the <time-modification> element, and is needed to represent nested tuplets and other complex tuplets accurately."
    },
    "turn": {
       "children": null,
@@ -17340,7 +17340,7 @@
          {
             "required": false,
             "name": "hand",
-            "documentation": "",
+            "documentation": "Specifies the symbol to use If the element is empty. It is ignored if the tap glyph is already specified by the element content. If neither element content nor the hand attribute are present, the display is application-specific.",
             "type": "tap-hand"
          },
          {
@@ -17405,7 +17405,7 @@
          }
       ],
       "name": "tap",
-      "documentation": ""
+      "documentation": "The <tap> element indicates a tap on the fretboard. The element content allows specification of the notation; + and T are common choices."
    },
    "toe": {
       "children": null,
@@ -17481,7 +17481,7 @@
          }
       ],
       "name": "toe",
-      "documentation": ""
+      "documentation": "The <toe> element is used with organ pedals."
    },
    "glyph": {
       "children": {
@@ -19123,7 +19123,7 @@
          "note"
       ],
       "name": "voice",
-      "documentation": ""
+      "documentation": "A voice is a sequence of musical events (e.g. notes, chords, rests) that proceeds linearly in time. The <voice> element is used to distinguish between multiple voices in individual parts."
    },
    "n": {
       "children": null,
@@ -19501,25 +19501,25 @@
          {
             "required": false,
             "name": "default-x",
-            "documentation": "",
+            "documentation": "Changes the computation of the default horizontal position. The origin is changed relative to the start of the entire current measure, at either the left barline or the start of the system. Positive x is right and negative x is left.\n\nThis attribute provides higher-resolution positioning data than the <offset> element. Applications reading a MusicXML file that can understand both features should generally rely on this attribute for its greater accuracy.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "default-y",
-            "documentation": "",
+            "documentation": "Changes the computation of the default vertical position. The origin is changed relative to the top line of the staff. Positive y is up and negative y is down.\n\nThis attribute provides higher-resolution positioning data than the placement attribute. Applications reading a MusicXML file that can understand both attributes should generally rely on this attribute for its greater accuracy.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "relative-x",
-            "documentation": "",
+            "documentation": "Changes the horizontal position relative to the default position, either as computed by the individual program, or as overridden by the default-x attribute. Positive x is right and negative x is left. It should be interpreted in the context of the <offset> element or directive attribute if those are present.",
             "type": "tenths"
          },
          {
             "required": false,
             "name": "relative-y",
-            "documentation": "",
+            "documentation": "Changes the vertical position relative to the default position, either as computed by the individual program, or as overridden by the default-y attribute. Positive y is up and negative y is down. It should be interpreted in the context of the placement attribute if that is present.",
             "type": "tenths"
          },
          {
@@ -20086,13 +20086,13 @@
          {
             "required": true,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if this is the start, stop, or continuation of the dashes.",
             "type": "start-stop-continue"
          },
          {
             "required": false,
             "name": "number",
-            "documentation": "",
+            "documentation": "Distinguishes multiple dashes when they overlap in MusicXML document order.",
             "type": "number-level"
          },
          {
@@ -21440,7 +21440,7 @@
             "default": "up",
             "required": false,
             "name": "type",
-            "documentation": "",
+            "documentation": "Indicates if the point of the accent is down or up. The default value is up.",
             "type": "up-down"
          }
       ],

@@ -16,7 +16,9 @@ export const siteInfo: SiteInfo = {
     '/sounds-reference/elements/ensemble-sounds/': '/musicxml/sounds-reference/elements/ensemble/',
     '/sounds-reference/elements/solo-sounds/': '/musicxml/sounds-reference/elements/solo/',
     '/sounds-reference/elements/sound-sounds/': '/musicxml/sounds-reference/elements/sound/',
-    '/musicxml-reference/elements/opus-reference/': '/musicxml/musicxml-reference/elements/opus/'
+    '/musicxml-reference/elements/opus-reference/': '/musicxml/musicxml-reference/elements/opus/',
+    '/opus-reference/data-types/yes-no-opus/': '/musicxml/opus-reference/data-types/yes-no/',
+    '/sounds-reference/data-types/yes-no-sounds/': '/musicxml/sounds-reference/data-types/yes-no/',
   }
 }
 

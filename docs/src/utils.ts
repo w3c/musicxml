@@ -23,6 +23,8 @@ export function elementName(tag: string): string {
  * Processes XML Schema `xs:documentation` annotations to convert them to proper markdown.
  */
 export async function annotationMarkdown(annotation: string): Promise<string> {
+  if (!annotation.length) throw("MISSING ATTRIBUTE DOC!!");
+
   const processor = await createMarkdownProcessor();
   return (await processor.render(
     annotation.trim().replaceAll('<', '`<').replaceAll('>', '>`')

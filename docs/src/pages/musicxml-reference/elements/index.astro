@@ -4,13 +4,26 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/Base.astro';
 import ElementLink from '@components/ElementLink.astro';
 import SchemaView from '@components/SchemaView.astro';
+import { undefined } from 'astro:schema';
 
 const elements = await getCollection('musicxmlElements');
 const frontmatter = {
   title: 'Elements used in MusicXML'
 }
+
+// Extract the h2 and h3 headings needed for the PageNav component.
+const headings = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i))
+.map(letter => {
+  return {
+    depth: 2,
+    slug: elements.find(element => 0 === element.id.charAt(0).localeCompare(letter, undefined, { sensitivity: 'base' }))?.id,
+    text: letter
+  };
+})
+.filter(heading => !!heading.slug);
+
 ---
-<BaseLayout frontmatter={frontmatter}>
+<BaseLayout frontmatter={ frontmatter } headings={ headings }>
   <SchemaView schema="musicxml" current="list"/>
   <ul>
     {elements.map(element => (

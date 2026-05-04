@@ -34,10 +34,11 @@
 
   <xsl:template match="xs:simpleType" as="map(*)*">
     <xsl:param name="name"/>
+    <xsl:param name="documentation"/>
     <xsl:variable name="base" select="(xs:string(xs:restriction/@base), fn:tokenize(xs:union/@memberTypes, ' '))"/>
     <xsl:sequence select="map {
       'name': if (@name) then xs:string(@name) else $name,
-      'documentation': xs:annotation/xs:documentation/text(),
+      'documentation': (xs:annotation/xs:documentation/text(), $documentation)[1],
       'base': array{$base},
       'type': if (.//xs:restriction[xs:enumeration]) then 'values'
         else if (.//xs:restriction[xs:pattern]) then 'regex'
@@ -77,12 +78,13 @@
       <xsl:when test="xs:simpleType">
         <xsl:apply-templates select="xs:simpleType">
           <xsl:with-param name="name" select="$schema || ':' || xs:string(@name)"/>
+          <xsl:with-param name="documentation" select="xs:annotation/xs:documentation/text()"/>
         </xsl:apply-templates>
       </xsl:when>
       <xsl:otherwise>
         <xsl:sequence select="map {
           'name': $schema || ':' || xs:string(@name),
-          'documentation': (),
+          'documentation': xs:annotation/xs:documentation/text(),
           'base': array{xs:string(@type)},
           'type': 'none',
           'value': ()
