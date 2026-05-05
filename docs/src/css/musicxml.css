@@ -8,6 +8,10 @@ span.line:has(.highlighted-word) {
 }
 table.musicxml {
   border-top: 1px solid #ccc;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  white-space: inherit;
 }
 table.musicxml th,td {
   padding: 20px 20px 20px 0;
