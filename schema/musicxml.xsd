@@ -600,7 +600,7 @@ As this example demonstrates, a reading program should be prepared to handle cas
 
 	<xs:simpleType name="smufl-wavy-line-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-wavy-line-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) wavy line character. The value is a SMuFL canonical glyph name that either starts with wiggle, or begins with guitar and ends with VibratoStroke. This includes all the glyphs in the Multi-segment lines range, excluding the beam glyphs.</xs:documentation>
+			<xs:documentation>The smufl-wavy-line-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) wavy line character. The value is a SMuFL canonical glyph name that either starts with wiggle, or begins with guitar and ends with VibratoStroke. This includes all the glyphs in the [Multi-segment lines range](https://www.w3.org/2021/03/smufl14/tables/multi-segment-lines.html), excluding the beam glyphs.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="smufl-glyph-name">
 			<xs:pattern value="(wiggle\c+)|(guitar\c*VibratoStroke)"/>
@@ -627,8 +627,16 @@ The values of start and stop refer to how an element appears in musical score or
 When multiple elements with the same tag are used within the same note, their order within the MusicXML document should match the musical score order.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="start"/>
-			<xs:enumeration value="stop"/>
+			<xs:enumeration value="start">
+				<xs:annotation>
+					<xs:documentation>Starting point of an element.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="stop">
+				<xs:annotation>
+					<xs:documentation>Stopping point of an element.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -641,9 +649,21 @@ The values of start, stop, and continue refer to how an element appears in music
 When multiple elements with the same tag are used within the same note, their order within the MusicXML document should match the musical score order. For example, a note that marks both the end of one slur and the start of a new slur should have the incoming slur element with a type of stop precede the outgoing slur element with a type of start.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="start"/>
-			<xs:enumeration value="stop"/>
-			<xs:enumeration value="continue"/>
+			<xs:enumeration value="start">
+				<xs:annotation>
+					<xs:documentation>Starting point of an element.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="stop">
+				<xs:annotation>
+					<xs:documentation>Stopping point of an element.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="continue">
+				<xs:annotation>
+					<xs:documentation>Continuation of an element, including system breaks.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -654,9 +674,21 @@ When multiple elements with the same tag are used within the same note, their or
 When multiple elements with the same tag are used within the same note, their order within the MusicXML document should match the musical score order.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="start"/>
-			<xs:enumeration value="stop"/>
-			<xs:enumeration value="single"/>
+			<xs:enumeration value="start">
+				<xs:annotation>
+					<xs:documentation>Starting point of a multi-note element.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="stop">
+				<xs:annotation>
+					<xs:documentation>Stopping point of a multi-note element.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="single">
+				<xs:annotation>
+					<xs:documentation>Single-note element.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -672,10 +704,26 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The symbol-size type is used to distinguish between full, cue sized, grace cue sized, and oversized symbols.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="full"/>
-			<xs:enumeration value="cue"/>
-			<xs:enumeration value="grace-cue"/>
-			<xs:enumeration value="large"/>
+			<xs:enumeration value="full">
+				<xs:annotation>
+					<xs:documentation>Use a full-sized symbol.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="cue">
+				<xs:annotation>
+					<xs:documentation>Use a cue-sized symbol, generally smaller than a full-sized symbol.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="grace-cue">
+				<xs:annotation>
+					<xs:documentation>Use a grace-cue-sized symbol, generally smaller than a cue-sized symbol.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="large">
+				<xs:annotation>
+					<xs:documentation>Use an oversized symbol.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -683,36 +731,68 @@ When multiple elements with the same tag are used within the same note, their or
 		<xs:annotation>
 			<xs:documentation>The tenths type is a number representing tenths of interline staff space (positive or negative). Both integer and decimal values are allowed, such as 5 for a half space and 2.5 for a quarter space. Interline space is measured from the middle of a staff line.
 
-Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the &lt;scaling&gt; element, used in the &lt;defaults&gt; element at the start of a score. Individual staves can apply a scaling factor to adjust staff size. When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the &lt;scaling&gt; element, not the local tenths as adjusted by the &lt;staff-size&gt; element.</xs:documentation>
+Distances in a MusicXML file are measured in tenths of staff space. Tenths are then scaled to millimeters within the scaling element, used in the defaults element at the start of a score. Individual staves can apply a scaling factor to adjust staff size.
+
+When a MusicXML element or attribute refers to tenths, it means the global tenths defined by the &lt;scaling&gt; element, not the local tenths as adjusted by the &lt;staff-size&gt; element.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:decimal"/>
 	</xs:simpleType>
 
 	<xs:simpleType name="text-direction">
 		<xs:annotation>
-			<xs:documentation>The text-direction type is used to adjust and override the Unicode bidirectional text algorithm, similar to the Directionality data category in the W3C Internationalization Tag Set recommendation. Values are ltr (left-to-right embed), rtl (right-to-left embed), lro (left-to-right bidi-override), and rlo (right-to-left bidi-override). The default value is ltr. This type is typically used by applications that store text in left-to-right visual order rather than logical order. Such applications can use the lro value to better communicate with other applications that more fully support bidirectional text.</xs:documentation>
+			<xs:documentation>The text-direction type is used to adjust and override the Unicode bidirectional text algorithm, similar to the Directionality data category in the [W3C Internationalization Tag Set recommendation](https://www.w3.org/TR/2007/REC-its-20070403/#directionality).</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="ltr"/>
-			<xs:enumeration value="rtl"/>
-			<xs:enumeration value="lro"/>
-			<xs:enumeration value="rlo"/>
+			<xs:enumeration value="ltr">
+				<xs:annotation>
+					<xs:documentation>Left-to-right embed.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="rtl">
+				<xs:annotation>
+					<xs:documentation>Right-to-left embed.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="lro">
+				<xs:annotation>
+					<xs:documentation>Left-to-right bidi-override.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="rlo">
+				<xs:annotation>
+					<xs:documentation>Right-to-left bidi-override.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="tied-type">
 		<xs:annotation>
-			<xs:documentation>The tied-type type is used as an attribute of the &lt;tied&gt; element to specify where the visual representation of a tie begins and ends. A tied element which joins two notes of the same pitch can be specified with tied-type start on the first note and tied-type stop on the second note. To indicate a note should be undamped, use a single tied element with tied-type let-ring. For other ties that are visually attached to a single note, such as a tie leading into or out of a repeated section or coda, use two tied elements on the same note, one start and one stop.
+			<xs:documentation>The tied-type type is used as an attribute of the tied element to specify where the visual representation of a tie begins and ends. A &lt;tied&gt; element which joins two notes of the same pitch can be specified with tied-type start on the first note and tied-type stop on the second note. To indicate a note should be undamped, use a single &lt;tied&gt; element with tied-type let-ring. For other ties that are visually attached to a single note, such as a tie leading into or out of a repeated section or coda, use two &lt;tied&gt; elements on the same note, one start and one stop.
 
-In start-stop cases, ties can add more elements using a continue type. This is typically used to specify the formatting of cross-system ties.
-
-When multiple elements with the same tag are used within the same note, their order within the MusicXML document should match the musical score order. For example, a note with a tie at the end of a first ending should have the &lt;tied&gt; element with a type of start precede the &lt;tied&gt; element with a type of stop.</xs:documentation>
+In start-stop cases, ties can add more elements using a continue type. This is typically used to specify the formatting of cross-system ties.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="start"/>
-			<xs:enumeration value="stop"/>
-			<xs:enumeration value="continue"/>
-			<xs:enumeration value="let-ring"/>
+			<xs:enumeration value="start">
+				<xs:annotation>
+					<xs:documentation>Start of a tie.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="stop">
+				<xs:annotation>
+					<xs:documentation>End of a tie.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="continue">
+				<xs:annotation>
+					<xs:documentation>Continuation of a tie, usually used for cross-system formatting.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="let-ring">
+				<xs:annotation>
+					<xs:documentation>A tie that indicates an instrument should be undamped.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -730,8 +810,16 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The top-bottom type is used to indicate the top or bottom part of a vertical shape like non-arpeggiate.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="top"/>
-			<xs:enumeration value="bottom"/>
+			<xs:enumeration value="top">
+				<xs:annotation>
+					<xs:documentation>Top of the vertical shape.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="bottom">
+				<xs:annotation>
+					<xs:documentation>Bottom of the vertical shape.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -740,10 +828,26 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The tremolo-type is used to distinguish double-note, single-note, and unmeasured tremolos.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="start"/>
-			<xs:enumeration value="stop"/>
-			<xs:enumeration value="single"/>
-			<xs:enumeration value="unmeasured"/>
+			<xs:enumeration value="start">
+				<xs:annotation>
+					<xs:documentation>Start of a double-note tremolo.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="stop">
+				<xs:annotation>
+					<xs:documentation>Stop of a double-note tremolo.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="single">
+				<xs:annotation>
+					<xs:documentation>Single-note tremolo.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="unmeasured">
+				<xs:annotation>
+					<xs:documentation>Unmeasured tremolo.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -793,8 +897,16 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The upright-inverted type describes the appearance of a fermata element. The value is upright if not specified.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="upright"/>
-			<xs:enumeration value="inverted"/>
+			<xs:enumeration value="upright">
+				<xs:annotation>
+					<xs:documentation>&#xE4C0;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="inverted">
+				<xs:annotation>
+					<xs:documentation>&#xE4C1;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -803,10 +915,26 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The valign type is used to indicate vertical alignment to the top, middle, bottom, or baseline of the text. If the text is on multiple lines, baseline alignment refers to the baseline of the lowest line of text. Defaults are implementation-dependent.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="top"/>
-			<xs:enumeration value="middle"/>
-			<xs:enumeration value="bottom"/>
-			<xs:enumeration value="baseline"/>
+			<xs:enumeration value="top">
+				<xs:annotation>
+					<xs:documentation>Aligned to the top of the text.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="middle">
+				<xs:annotation>
+					<xs:documentation>Aligned to the middle of the text.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="bottom">
+				<xs:annotation>
+					<xs:documentation>Aligned to the bottom of the text.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="baseline">
+				<xs:annotation>
+					<xs:documentation>Aligned to the baseline of the text. If the text is on multiple lines, aligned to the baseline of the lowest line of text.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -815,9 +943,21 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The valign-image type is used to indicate vertical alignment for images and graphics, so it does not include a baseline value. Defaults are implementation-dependent.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="top"/>
-			<xs:enumeration value="middle"/>
-			<xs:enumeration value="bottom"/>
+			<xs:enumeration value="top">
+				<xs:annotation>
+					<xs:documentation>Aligned to the top of the image.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="middle">
+				<xs:annotation>
+					<xs:documentation>Aligned to the middle of the image.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="bottom">
+				<xs:annotation>
+					<xs:documentation>Aligned to the bottom of the image.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -942,14 +1082,34 @@ When multiple elements with the same tag are used within the same note, their or
 
 	<xs:simpleType name="staff-type">
 		<xs:annotation>
-			<xs:documentation>The staff-type value can be ossia, editorial, cue, alternate, or regular. An ossia staff represents music that can be played instead of what appears on the regular staff. An editorial staff also represents musical alternatives, but is created by an editor rather than the composer. It can be used for suggested interpretations or alternatives from other sources. A cue staff represents music from another part. An alternate staff shares the same music as the prior staff, but displayed differently (e.g., treble and bass clef, standard notation and tablature). It is not included in playback. An alternate staff provides more information to an application reading a file than encoding the same music in separate parts, so its use is preferred in this situation if feasible. A regular staff is the standard default staff-type.</xs:documentation>
+			<xs:documentation>The staff-type value specifies different uses for the staff.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="ossia"/>
-			<xs:enumeration value="editorial"/>
-			<xs:enumeration value="cue"/>
-			<xs:enumeration value="alternate"/>
-			<xs:enumeration value="regular"/>
+			<xs:enumeration value="ossia">
+				<xs:annotation>
+					<xs:documentation>An ossia staff represents music that can be played instead of what appears on the regular staff.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="editorial">
+				<xs:annotation>
+					<xs:documentation>An editorial staff represents musical alternatives created by an editor rather than the composer. It can be used for suggested interpretations or alternatives from other sources.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="cue">
+				<xs:annotation>
+					<xs:documentation>A cue staff represents music from another part.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="alternate">
+				<xs:annotation>
+					<xs:documentation>An alternate staff shares the same music as the prior staff, but displayed differently (e.g., treble and bass clef, standard notation and tablature). It is not included in playback. An alternate staff provides more information to an application reading a file than encoding the same music in separate parts, so its use is preferred in this situation if feasible.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="regular">
+				<xs:annotation>
+					<xs:documentation>A regular staff is the standard default staff-type.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -982,7 +1142,7 @@ When multiple elements with the same tag are used within the same note, their or
 
 	<xs:simpleType name="time-symbol">
 		<xs:annotation>
-			<xs:documentation>The time-symbol type indicates how to display a time signature. The normal value is the usual fractional display, and is the implied symbol type if none is specified. Other options are the common and cut time symbols, as well as a single number with an implied denominator. The note symbol indicates that the beat-type should be represented with the corresponding downstem note rather than a number. The dotted-note symbol indicates that the beat-type should be represented with a dotted downstem note that corresponds to three times the beat-type value, and a numerator that is one third the beats value.</xs:documentation>
+			<xs:documentation>The time-symbol type indicates how to display a time signature. The normal value is the usual fractional display, and is the implied symbol type if none is specified. Other options are the common and cut time symbols, as well as a single number with an implied denominator. The note symbol indicates that the &lt;beat-type&gt; should be represented with the corresponding downstem note rather than a number. The dotted-note symbol indicates that the &lt;beat-type&gt; should be represented with a dotted downstem note that corresponds to three times the &lt;beat-type&gt; value, and a numerator that is one third the &lt;beats&gt; value.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="common"/>
@@ -1043,20 +1203,44 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The right-left-middle type is used to specify barline location.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="right"/>
-			<xs:enumeration value="left"/>
-			<xs:enumeration value="middle"/>
+			<xs:enumeration value="right">
+				<xs:annotation>
+					<xs:documentation>Right barline.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="left">
+				<xs:annotation>
+					<xs:documentation>Left barline.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="middle">
+				<xs:annotation>
+					<xs:documentation>Mid-measure barline.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="start-stop-discontinue">
 		<xs:annotation>
-			<xs:documentation>The start-stop-discontinue type is used to specify ending types. Typically, the start type is associated with the left barline of the first measure in an ending. The stop and discontinue types are associated with the right barline of the last measure in an ending. Stop is used when the ending mark concludes with a downward jog, as is typical for first endings. Discontinue is used when there is no downward jog, as is typical for second endings that do not conclude a piece.</xs:documentation>
+			<xs:documentation>The start-stop-discontinue type is used to specify &lt;ending&gt; types.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="start"/>
-			<xs:enumeration value="stop"/>
-			<xs:enumeration value="discontinue"/>
+			<xs:enumeration value="start">
+				<xs:annotation>
+					<xs:documentation>Used with the left barline of the first measure in an ending.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="stop">
+				<xs:annotation>
+					<xs:documentation>Used with the right barline of the last measure in an ending. Indicates the ending mark concludes with a downward jog, as is typical for first endings</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="discontinue">
+				<xs:annotation>
+					<xs:documentation>Used with the right barline of the last measure in an ending. Indicates there is no downward jog, as is typical for second endings that do not conclude a piece.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -2041,9 +2225,21 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The staff-divide-symbol type is used for staff division symbols. The down, up, and up-down values correspond to SMuFL code points U+E00B, U+E00C, and U+E00D respectively.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="down"/>
-			<xs:enumeration value="up"/>
-			<xs:enumeration value="up-down"/>
+			<xs:enumeration value="down">
+				<xs:annotation>
+					<xs:documentation>&#xE00B;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="up">
+				<xs:annotation>
+					<xs:documentation>&#xE00C;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="up-down">
+				<xs:annotation>
+					<xs:documentation>&#xE00D;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -2061,39 +2257,95 @@ When multiple elements with the same tag are used within the same note, their or
 
 	<xs:simpleType name="sync-type">
 		<xs:annotation>
-			<xs:documentation>The sync-type type specifies the style that a score following application should use to synchronize an accompaniment with a performer. The none type indicates no synchronization to the performer. The tempo type indicates synchronization based on the performer tempo rather than individual events in the score. The event type indicates synchronization by following the performance of individual events in the score rather than the performer tempo. The mostly-tempo and mostly-event types combine these two approaches, with mostly-tempo giving more weight to tempo and mostly-event giving more weight to performed events. The always-event type provides the strictest synchronization by not being forgiving of missing performed events.</xs:documentation>
+			<xs:documentation>The sync-type type specifies the style that a score following application should use to synchronize an accompaniment with a performer.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="none"/>
-			<xs:enumeration value="tempo"/>
-			<xs:enumeration value="mostly-tempo"/>
-			<xs:enumeration value="mostly-event"/>
-			<xs:enumeration value="event"/>
-			<xs:enumeration value="always-event"/>
+			<xs:enumeration value="none">
+				<xs:annotation>
+					<xs:documentation>No synchronization to the performer.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="tempo">
+				<xs:annotation>
+					<xs:documentation>Synchronization is based on the performer tempo rather than individual events in the score.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="mostly-tempo">
+				<xs:annotation>
+					<xs:documentation>Combines the tempo and event approaches, giving more weight to tempo.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="mostly-event">
+				<xs:annotation>
+					<xs:documentation>Combines the tempo and event approaches, giving more weight to performed events.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="event">
+				<xs:annotation>
+					<xs:documentation>Synchronization follows the performance of individual events in the score rather than the performer tempo.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="always-event">
+				<xs:annotation>
+					<xs:documentation>Provides the strictest synchronization by not being forgiving of missing performed events.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="system-relation-number">
 		<xs:annotation>
-			<xs:documentation>The system-relation-number type distinguishes measure numbers that are associated with a system rather than the particular part where the element appears. A value of only-top or only-bottom indicates that the number should appear only on the top or bottom part of the current system, respectively. A value of also-top or also-bottom indicates that the number should appear on both the current part and the top or bottom part of the current system, respectively. If these values appear in a score, when parts are created the number should only appear once in this part, not twice. A value of none indicates that the number is associated only with the current part, not with the system.</xs:documentation>
+			<xs:documentation>The system-relation-number type distinguishes measure numbers that are associated with a system rather than the particular part where the element appears.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="only-top"/>
-			<xs:enumeration value="only-bottom"/>
-			<xs:enumeration value="also-top"/>
-			<xs:enumeration value="also-bottom"/>
-			<xs:enumeration value="none"/>
+			<xs:enumeration value="only-top">
+				<xs:annotation>
+					<xs:documentation>The number should appear only on the top part of the current system.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="only-bottom">
+				<xs:annotation>
+					<xs:documentation>The number should appear only on the bottom part of the current system.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="also-top">
+				<xs:annotation>
+					<xs:documentation>The number should appear on both the current part and the top part of the current system. If these values appear in a score, when parts are created the number should only appear once in this part, not twice.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="also-bottom">
+				<xs:annotation>
+					<xs:documentation>The number should appear on both the current part and the bottom part of the current system. If these values appear in a score, when parts are created the number should only appear once in this part, not twice.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="none">
+				<xs:annotation>
+					<xs:documentation>The number is associated only with the current part, not with the system.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="system-relation">
 		<xs:annotation>
-			<xs:documentation>The system-relation type distinguishes elements that are associated with a system rather than the particular part where the element appears. A value of only-top indicates that the element should appear only on the top part of the current system. A value of also-top indicates that the element should appear on both the current part and the top part of the current system. If this value appears in a score, when parts are created the element should only appear once in this part, not twice. A value of none indicates that the element is associated only with the current part, not with the system.</xs:documentation>
+			<xs:documentation>The system-relation type distinguishes elements that are associated with a system rather than the particular part where the element appears.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="system-relation-number">
-			<xs:enumeration value="only-top"/>
-			<xs:enumeration value="also-top"/>
-			<xs:enumeration value="none"/>
+			<xs:enumeration value="only-top">
+				<xs:annotation>
+					<xs:documentation>The element should appear only on the top part of the current system.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="also-top">
+				<xs:annotation>
+					<xs:documentation>The element should appear on both the current part and the top part of the current system. If this value appears in a score, when parts are created the element should only appear once in this part, not twice.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="none">
+				<xs:annotation>
+					<xs:documentation>The element is associated only with the current part, not with the system.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -2118,10 +2370,26 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The stick-location type represents pictograms for the location of sticks, beaters, or mallets on cymbals, gongs, drums, and other instruments.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="center"/>
-			<xs:enumeration value="rim"/>
-			<xs:enumeration value="cymbal bell"/>
-			<xs:enumeration value="cymbal edge"/>
+			<xs:enumeration value="center">
+				<xs:annotation>
+					<xs:documentation>&#xE7FF;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="rim">
+				<xs:annotation>
+					<xs:documentation>&#xE72A;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="cymbal bell">
+				<xs:annotation>
+					<xs:documentation>&#xE729;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="cymbal edge">
+				<xs:annotation>
+					<xs:documentation>&#xE802;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -2130,11 +2398,31 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The stick-material type represents the material being displayed in a stick pictogram.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="soft"/>
-			<xs:enumeration value="medium"/>
-			<xs:enumeration value="hard"/>
-			<xs:enumeration value="shaded"/>
-			<xs:enumeration value="x"/>
+			<xs:enumeration value="soft">
+				<xs:annotation>
+					<xs:documentation>&#xE770;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="medium">
+				<xs:annotation>
+					<xs:documentation>&#xE774;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="hard">
+				<xs:annotation>
+					<xs:documentation>&#xE778;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="shaded">
+				<xs:annotation>
+					<xs:documentation>&#xE77C;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="x">
+				<xs:annotation>
+					<xs:documentation>&#xE7C7;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -2143,16 +2431,56 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The stick-type type represents the shape of pictograms where the material in the stick, mallet, or beater is represented in the pictogram.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="bass drum"/>
-			<xs:enumeration value="double bass drum"/>
-			<xs:enumeration value="glockenspiel"/>
-			<xs:enumeration value="gum"/>
-			<xs:enumeration value="hammer"/>
-			<xs:enumeration value="superball"/>
-			<xs:enumeration value="timpani"/>
-			<xs:enumeration value="wound"/>
-			<xs:enumeration value="xylophone"/>
-			<xs:enumeration value="yarn"/>
+			<xs:enumeration value="bass drum">
+				<xs:annotation>
+					<xs:documentation>&#xE798;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="double bass drum">
+				<xs:annotation>
+					<xs:documentation>&#xE7A0;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="glockenspiel">
+				<xs:annotation>
+					<xs:documentation>&#xE780;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="gum">
+				<xs:annotation>
+					<xs:documentation>&#xE7BB;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="hammer">
+				<xs:annotation>
+					<xs:documentation>&#xE7CD;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="superball">
+				<xs:annotation>
+					<xs:documentation>&#xE7AE;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="timpani">
+				<xs:annotation>
+					<xs:documentation>&#xE788;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="wound">
+				<xs:annotation>
+					<xs:documentation>&#xE7B3;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="xylophone">
+				<xs:annotation>
+					<xs:documentation>&#xE770;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="yarn">
+				<xs:annotation>
+					<xs:documentation>&#xE7A2;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -2161,22 +2489,54 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The up-down-stop-continue type is used for octave-shift elements, indicating the direction of the shift from their true pitched values because of printing difficulty.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="up"/>
-			<xs:enumeration value="down"/>
-			<xs:enumeration value="stop"/>
-			<xs:enumeration value="continue"/>
+			<xs:enumeration value="up">
+				<xs:annotation>
+					<xs:documentation>Start of an &lt;octave-shift&gt; up, such as 8va bassa.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="down">
+				<xs:annotation>
+					<xs:documentation>Start of an &lt;octave-shift&gt; down, such as 8va.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="stop">
+				<xs:annotation>
+					<xs:documentation>Stop of an &lt;octave-shift&gt;.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="continue">
+				<xs:annotation>
+					<xs:documentation>Continuation of an &lt;octave-shift&gt;, including system breaks.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="wedge-type">
 		<xs:annotation>
-			<xs:documentation>The wedge type is crescendo for the start of a wedge that is closed at the left side, diminuendo for the start of a wedge that is closed on the right side, and stop for the end of a wedge. The continue type is used for formatting wedges over a system break, or for other situations where a single wedge is divided into multiple segments.</xs:documentation>
+			<xs:documentation>The wedge-type type is used to specify &lt;wedge&gt; types.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="crescendo"/>
-			<xs:enumeration value="diminuendo"/>
-			<xs:enumeration value="stop"/>
-			<xs:enumeration value="continue"/>
+			<xs:enumeration value="crescendo">
+				<xs:annotation>
+					<xs:documentation>Start of a crescendo &lt;wedge&gt; that is closed on the left side.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="diminuendo">
+				<xs:annotation>
+					<xs:documentation>Start of a diminuendo &lt;wedge&gt; that is closed on the right side.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="stop">
+				<xs:annotation>
+					<xs:documentation>Stop of a &lt;wedge&gt;.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="continue">
+				<xs:annotation>
+					<xs:documentation>Continuation of a &lt;wedge&gt;, including system breaks.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -2185,27 +2545,111 @@ When multiple elements with the same tag are used within the same note, their or
 			<xs:documentation>The wood-value type represents pictograms for wood percussion instruments. The maraca and maracas values distinguish the one- and two-maraca versions of the pictogram.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="bamboo scraper"/>
-			<xs:enumeration value="board clapper"/>
-			<xs:enumeration value="cabasa"/>
-			<xs:enumeration value="castanets"/>
-			<xs:enumeration value="castanets with handle"/>
-			<xs:enumeration value="claves"/>
-			<xs:enumeration value="football rattle"/>
-			<xs:enumeration value="guiro"/>
-			<xs:enumeration value="log drum"/>
-			<xs:enumeration value="maraca"/>
-			<xs:enumeration value="maracas"/>
-			<xs:enumeration value="quijada"/>
-			<xs:enumeration value="rainstick"/>
-			<xs:enumeration value="ratchet"/>
-			<xs:enumeration value="reco-reco"/>
-			<xs:enumeration value="sandpaper blocks"/>
-			<xs:enumeration value="slit drum"/>
-			<xs:enumeration value="temple block"/>
-			<xs:enumeration value="vibraslap"/>
-			<xs:enumeration value="whip"/>
-			<xs:enumeration value="wood block"/>
+			<xs:enumeration value="bamboo scraper">
+				<xs:annotation>
+					<xs:documentation>&#xE6FB;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="board clapper">
+				<xs:annotation>
+					<xs:documentation>&#xE6F7;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="cabasa">
+				<xs:annotation>
+					<xs:documentation>&#xE743;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="castanets">
+				<xs:annotation>
+					<xs:documentation>&#xE6F8;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="castanets with handle">
+				<xs:annotation>
+					<xs:documentation>&#xE6F9;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="claves">
+				<xs:annotation>
+					<xs:documentation>&#xE6F2;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="football rattle">
+				<xs:annotation>
+					<xs:documentation>&#xE6F5;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="guiro">
+				<xs:annotation>
+					<xs:documentation>&#xE6F3;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="log drum">
+				<xs:annotation>
+					<xs:documentation>&#xE6DF;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="maraca">
+				<xs:annotation>
+					<xs:documentation>&#xE741;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="maracas">
+				<xs:annotation>
+					<xs:documentation>&#xE742;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="quijada">
+				<xs:annotation>
+					<xs:documentation>&#xE6FA;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="rainstick">
+				<xs:annotation>
+					<xs:documentation>&#xE747;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ratchet">
+				<xs:annotation>
+					<xs:documentation>&#xE6F4;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="reco-reco">
+				<xs:annotation>
+					<xs:documentation>&#xE6FC;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="sandpaper blocks">
+				<xs:annotation>
+					<xs:documentation>&#xE762;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="slit drum">
+				<xs:annotation>
+					<xs:documentation>&#xE6E0;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="temple block">
+				<xs:annotation>
+					<xs:documentation>&#xE6F1;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="vibraslap">
+				<xs:annotation>
+					<xs:documentation>&#xE745;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="whip">
+				<xs:annotation>
+					<xs:documentation>&#xE6F6;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="wood block">
+				<xs:annotation>
+					<xs:documentation>&#xE6F0;</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -2997,7 +3441,11 @@ The other notehead covers noteheads other than those listed here. It is usually 
 			<xs:enumeration value="down"/>
 			<xs:enumeration value="up"/>
 			<xs:enumeration value="double"/>
-			<xs:enumeration value="none"/>
+			<xs:enumeration value="none">
+				<xs:annotation>
+					<xs:documentation>No stem appears.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -3543,8 +3991,16 @@ By default, all these attributes are set to yes. If print-object is set to no, t
 			<xs:documentation>The swing-type-value type specifies the note type, either eighth or 16th, to which the ratio defined in the &lt;swing&gt; element is applied.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="note-type-value">
-			<xs:enumeration value="16th"/>
-			<xs:enumeration value="eighth"/>
+			<xs:enumeration value="16th">
+				<xs:annotation>
+					<xs:documentation>The &lt;swing&gt; ratio applies to 16th notes.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="eighth">
+				<xs:annotation>
+					<xs:documentation>The &lt;swing&gt; ratio applies to eighth notes.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 

@@ -5,4 +5,4 @@ const { type, schema } = Astro.props;
 const slug = type.replace(':', '-').replace('xs-', 'xsd-');
 const href = url(`${schema}-reference/data-types/${slug}/`);
 ---
-<a id={ type } href={ href }>{ type }</a>
+<a id={ slug } href={ href }>{ type }</a>

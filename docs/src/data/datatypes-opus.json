@@ -9,19 +9,19 @@
       "value": [
          {
             "value": "onRequest",
-            "documentation": null
+            "documentation": "An application should traverse from the starting resource to the ending resource only on a post-loading event triggered for the purpose of traversal. This is the default value."
          },
          {
             "value": "onLoad",
-            "documentation": null
+            "documentation": "An application should traverse to the ending resource immediately on loading the starting resource."
          },
          {
             "value": "other",
-            "documentation": null
+            "documentation": "The behavior of an application traversing to the ending resource is unconstrained by this specification. The application should look for other markup present in the link to determine the appropriate behavior."
          },
          {
             "value": "none",
-            "documentation": null
+            "documentation": "The behavior of an application traversing to the ending resource is unconstrained by this specification. No other markup is present to help the application determine the appropriate behavior."
          }
       ]
    },
@@ -54,7 +54,7 @@
       "value": [
          {
             "value": "simple",
-            "documentation": null
+            "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#dt-simplelink)."
          }
       ]
    },
@@ -77,23 +77,23 @@
       "value": [
          {
             "value": "new",
-            "documentation": null
+            "documentation": "An application traversing to the ending resource should load it in a new window, frame, pane, or other relevant presentation context."
          },
          {
             "value": "replace",
-            "documentation": null
+            "documentation": "An application traversing to the ending resource should load the resource in the same window, frame, pane, or other relevant presentation context in which the starting resource was loaded. This is the default value."
          },
          {
             "value": "embed",
-            "documentation": null
+            "documentation": "An application traversing to the ending resource should load its presentation in place of the presentation of the starting resource."
          },
          {
             "value": "other",
-            "documentation": null
+            "documentation": "The behavior of an application traversing to the ending resource is unconstrained by this specification. The application should look for other markup present in the link to determine the appropriate behavior."
          },
          {
             "value": "none",
-            "documentation": null
+            "documentation": "The behavior of an application traversing to the ending resource is unconstrained by this specification. No other markup is present to help the application determine the appropriate behavior."
          }
       ]
    },
