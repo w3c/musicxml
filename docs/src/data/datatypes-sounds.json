@@ -19,11 +19,11 @@
       "value": [
          {
             "value": "yes",
-            "documentation": null
+            "documentation": "True."
          },
          {
             "value": "no",
-            "documentation": null
+            "documentation": "False."
          }
       ]
    },
