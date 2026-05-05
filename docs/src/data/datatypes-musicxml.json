@@ -372,7 +372,7 @@
          },
          {
             "value": "single",
-            "documentation": ""
+            "documentation": ""
          },
          {
             "value": "",
@@ -2072,7 +2072,7 @@
          },
          {
             "value": "other",
-            "documentation": null
+            "documentation": "Another style besides one of those listed."
          }
       ]
    },

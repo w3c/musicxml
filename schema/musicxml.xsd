@@ -2595,7 +2595,11 @@ This is left as a string so that other application-specific types can be defined
 			<xs:enumeration value="hollow"/>
 			<xs:enumeration value="paired"/>
 			<xs:enumeration value="combined"/>
-			<xs:enumeration value="other"/>
+			<xs:enumeration value="other">
+				<xs:annotation>
+					<xs:documentation>Another style besides one of those listed.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -2682,7 +2686,7 @@ This is left as a string so that other application-specific types can be defined
 			</xs:enumeration>
 			<xs:enumeration value="single">
 				<xs:annotation>
-					<xs:documentation>&#xF42C;</xs:documentation>
+					<xs:documentation>&#xE4D7;</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="">
