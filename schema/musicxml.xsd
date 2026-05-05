@@ -1846,7 +1846,7 @@ When multiple elements with the same tag are used within the same note, their or
 			</xs:enumeration>
 			<xs:enumeration value="Vietnamese hat">
 				<xs:annotation>
-					<xs:documentation>&#xE72;</xs:documentation>
+					<xs:documentation>&#xE725;</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
