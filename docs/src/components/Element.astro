@@ -85,8 +85,7 @@ if (!element.data.documentation) throw("MISSING ELEMENT DOCUMENTATION!!");
         <tr>
           <th>Name</th>
           <th>Type</th>
-          <th>Required?</th>
-          <th>Default</th>
+          <th>Required?<span class="default">(Default)</span></th>
           <th>Description</th>
         </tr>
       </thead>
@@ -95,8 +94,9 @@ if (!element.data.documentation) throw("MISSING ELEMENT DOCUMENTATION!!");
           <tr>
             <td>{attribute.name}</td>
             <td><DataTypeLink schema={schema} type={attribute.type} /></td>
-            <td>{attribute.required ? 'Yes' : 'No'}</td>
-            <td>{attribute.default}</td>
+            <td>{attribute.required ? 'Yes' : 'No'}
+              {attribute.default && <span class="default">({attribute.default})</span>}
+            </td>
             <td set:html={annotationMarkdown(attribute.documentation)} />
           </tr>
         ))}

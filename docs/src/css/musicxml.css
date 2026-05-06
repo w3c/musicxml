@@ -30,6 +30,9 @@ h2.tree, h3.tree {
 section.example {
   margin-bottom: calc(2em / 1.5);
 }
+span.default {
+  display: block;
+}
 .smufl {
   font-family: var(--font-smufl);
   font-size: var(--text-7xl);
