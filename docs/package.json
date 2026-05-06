@@ -12,7 +12,8 @@
     "build": "npm run build:schemas && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "debug:xsl": "run() { xslt3 -xsl:src/xsl/\"$1\".xsl -s:../schema/\"$2\".xsd ${@:3}; }; run"
+    "debug:xsl": "run() { xslt3 -xsl:src/xsl/\"$1\".xsl -s:../schema/\"$2\".xsd ${@:3}; }; run",
+    "debug:xsd": "run() { xmllint --schema src/xsl/XMLSchema.xsd ../schema/\"$1\".xsd --noout; }; run"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
