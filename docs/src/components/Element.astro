@@ -18,8 +18,8 @@ interface Props {
 const { element, schema } = Astro.props;
 
 // Get element image if any.
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/elements/*.png');
-const image = `/src/assets/img/elements/${element.id}.png`;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/elements/**/*.png');
+const image = `/src/assets/img/elements/${schema}/${element.id}.png`;
 
 // Find associated examples.
 const examples = import.meta.glob('../data/examples/**/*.md', { eager: true });

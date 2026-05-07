@@ -27,7 +27,7 @@ const headings = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i
 <BaseLayout frontmatter={ frontmatter } headings={ headings }>
   {Object.values(examples).sort((a,b) => a.data.title.localeCompare(b.data.title)).map(example => {
     const name = Path.parse(example.filePath!).name;
-    const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
+    const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : 'examples/musicxml'}/${name}.png`;
     return (
       <section class="example" id={ example.id }>
       <Fragment>{image in images && <Image src={images[image]()} alt={name} />}</Fragment>

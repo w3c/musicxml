@@ -44,10 +44,10 @@ These sections take their corresponding XML Schema as source of truth, transform
 - Read the above JSON listings into [Astro content collections](https://docs.astro.build/en/guides/content-collections/).
 - Generate listing and detail pages for each collection using standard Astro constructs.
 - The Astro components `Element.astro` and `ElementContent.astro` are responsible for rendering XML Schema elements.
-- Illustrative images for elements are found in `docs/src/assets/img/elements/`. An image is included in an element detail page when its filename matches the element name.
+- Illustrative images for elements are found in `docs/src/assets/img/elements/[schema]`. An image is included in an element detail page when its filename matches the element name.
 - Additional Markdown notes for elements are found in `docs/data/notes/[schema]`. A note is included in an element detail page when its filename matches the element name.
 - The Astro components `DataType.astro` and `DataTypeValueRow.astro` are responsible for rendering XML Schema data types.
-- Illustrative images for data type enumeration values are found in `docs/src/assets/img/datatypes/`. An image is shown for an enumeration value when its filename matches the datatype-value name.
+- Illustrative images for data type enumeration values are found in `docs/src/assets/img/datatypes/[schema]`. An image is shown for an enumeration value when its filename matches the datatype-value name.
 
 ## XML Schema examples
 For each schema, a folder of Markdown examples in `docs/src/data/examples/[schema]` is read into an Astro collection. The examples are expected to follow a specific format to be recognized:
@@ -68,7 +68,7 @@ description: Narrative describing the example.
 [..]
 '''
 ```
-In addition, illustrative images are found in `docs/src/assets/img/examples/`. An image is included in an example when their filenames match.
+Illustrative images are found in `docs/src/assets/img/examples/[schema]`. An image is included in an example when their filenames match.
 
 ## Development
 - To build the full site: `npm i && npm run build`

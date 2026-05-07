@@ -51,7 +51,7 @@ if (!datatype.data.documentation) throw "MISSING DATATYPE DOCUMENTATION!!";
   {datatype.data.type === 'values' ? (
     <table class="musicxml">
       <tbody>
-        {datatype.data.value.map(value => <DataTypeValueRow datatype={datatype} value={value} />)}
+        {datatype.data.value.map(value => <DataTypeValueRow datatype={datatype} value={value} schema={schema}/>)}
       </tbody>
     </table>
   ) : datatype.data.type === 'regex' ? (

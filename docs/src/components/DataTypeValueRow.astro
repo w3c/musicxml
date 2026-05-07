@@ -8,9 +8,9 @@ interface Props {
   value: any
 }
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/datatypes/*.png');
-const { datatype, value } = Astro.props;
-const image = `/src/assets/img/datatypes/${datatype.data.name}-${value.value.replace(/\s/, '-')}.png`;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/datatypes/**/*.png');
+const { datatype, value, schema } = Astro.props;
+const image = `/src/assets/img/datatypes/${schema}/${datatype.data.name}-${value.value.replace(/\s/, '-')}.png`;
 const display = !value.value.length ? '<empty string>' : value.value;
 ---
 <tr>

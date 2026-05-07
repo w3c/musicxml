@@ -16,7 +16,7 @@ const frontmatter = {
 <BaseLayout frontmatter={frontmatter}>
   {Object.values(examples).sort((a,b) => a.data.title.localeCompare(b.data.title)).map(example => {
     const name = Path.parse(example.filePath!).name;
-    const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
+    const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : 'examples/sounds'}/${name}.png`;
     return (
       <Fragment>{image in images && <Image src={images[image]()} alt={name} />}</Fragment>
       <a href={url(`sounds-reference/examples/${example.id}/`)}>{example.data.title}</a>

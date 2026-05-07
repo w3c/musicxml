@@ -10,7 +10,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/
 const { example, schema } = Astro.props;
 const snippet = example.body.replace(/```xml|```/g, '').trim();
 const name = example.id;
-const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : 'examples'}/${name}.png`;
+const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : ('examples/' + schema)}/${name}.png`;
 ---
 {image in images && (
   <Image src={images[image]()} alt={name} />
