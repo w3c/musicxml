@@ -86,7 +86,7 @@ if (!element.data.documentation) throw("MISSING ELEMENT DOCUMENTATION!!");
           <th>Name</th>
           <th>Type</th>
           <th class="required">Required?<span class="default">(Default)</span></th>
-          <th class="description desktop">Description</th>
+          <th class="attribute-description desktop">Description</th>
         </tr>
       </thead>
       <tbody>
@@ -97,9 +97,9 @@ if (!element.data.documentation) throw("MISSING ELEMENT DOCUMENTATION!!");
             <td class="required">{attribute.required ? 'Yes' : 'No'}
               {attribute.default && <span class="default">({attribute.default})</span>}
             </td>
-            <td class="description desktop" set:html={annotationMarkdown(attribute.documentation)}/>
+            <td class="attribute-description desktop" set:html={annotationMarkdown(attribute.documentation)}/>
           </tr>
-          <tr class="description mobile">
+          <tr class="attribute-description mobile">
             <td colspan="3" set:html={annotationMarkdown(attribute.documentation)}/>
           </tr>
         ))}

@@ -25,15 +25,22 @@ table.musicxml th,td {
 table.musicxml td:first-child {
   font-weight: bold;
 }
+table.musicxml p {
+  font-size: inherit;
+  margin-bottom: 0;
+}
+table.musicxml .attribute-description {
+  width: 50%;
+}
+table.musicxml .enumeration-description {
+  width: 65%;
+}
 table.musicxml tr.mobile {
   border-top: 0;
 }
 table.musicxml tr.mobile td {
   padding-top: 0;
   font-weight: normal;
-}
-table.musicxml .value-description {
-  width: 65%;
 }
 @media (width >= 48rem) {
   table.musicxml .mobile {
@@ -69,4 +76,8 @@ span.default {
 .smufl {
   font-family: var(--font-smufl);
   font-size: var(--text-7xl);
+}
+
+.content p, ul, ol {
+  font-size: var(--text-base);
 }

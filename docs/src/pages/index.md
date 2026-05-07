@@ -42,10 +42,10 @@ If you wish to make comments regarding this document, please send them to [publi
 
 ## Reference
 
-- [Container reference](container-reference/)
-- [MusicXML reference](musicxml-reference/)
-- [Opus reference](opus-reference/)
-- [Sounds reference](sounds-reference/)
+- [Container Reference](container-reference/)
+- [MusicXML Reference](musicxml-reference/)
+- [Opus Reference](opus-reference/)
+- [Sounds Reference](sounds-reference/)
 
 ## Additional Information
 
