@@ -1,5 +1,5 @@
 ---
-title: MusicXML reference
+title: MusicXML Reference
 ---
 ## Elements
 [See all…](./element-tree/)

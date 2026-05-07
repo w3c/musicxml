@@ -1,5 +1,5 @@
 ---
-title: Opus reference
+title: Opus Reference
 ---
 ## Elements
 [See all…](./element-tree/)

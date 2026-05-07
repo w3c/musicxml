@@ -1,5 +1,5 @@
 ---
-title: Container reference
+title: Container Reference
 ---
 ## Elements
 [See all…](./element-tree/)

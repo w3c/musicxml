@@ -1,5 +1,5 @@
 ---
-title: Sounds reference
+title: Sounds Reference
 ---
 ## Elements
 [See all…](./element-tree/)
