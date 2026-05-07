@@ -28,6 +28,7 @@
       </xsl:apply-templates>
       <xsl:apply-templates mode="xs-ref" select="xs:schema//xs:attribute[@ref]"/>
       <xsl:apply-templates mode="xs-type" select="xs:schema//xs:attribute[starts-with(@type, 'xs:')]"/>
+      <xsl:apply-templates select="xs:schema//xs:extension[starts-with(@base, 'xs:')]"/>
     </xsl:variable>
     <xsl:sequence select="array:fold-left(array{$datatypes}, map{}, function($m, $v) { map:put($m, fn:replace(fn:replace($v('name'), ':', '-'), 'xs-', 'xsd-'), $v) })"/>
   </xsl:template>
@@ -97,6 +98,14 @@
     <xsl:sequence select="map {
       'name': xs:string(@type),
       'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize(@type, ':')[2] || ').',
+      'type': 'none'
+    }"/>
+  </xsl:template>
+
+  <xsl:template match="xs:extension[@base]">
+    <xsl:sequence select="map {
+      'name': xs:string(@base),
+      'documentation': 'See the [definition in the W3C XML Schema standard](https://www.w3.org/TR/xmlschema-2/#' || fn:tokenize(@base, ':')[2] || ').',
       'type': 'none'
     }"/>
   </xsl:template>
