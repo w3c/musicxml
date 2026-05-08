@@ -8,7 +8,7 @@ import ElementContent from '@components/ElementContent.astro';
 import DataTypeLink from './DataTypeLink.astro';
 import { defaultElementsMap } from '../site.config';
 import { annotationMarkdown, elementName } from  '../utils';
-import BaseLayout from '../layouts/Base.astro';
+import BaseLayout from '@layouts/Base.astro';
 
 interface Props {
   element: CollectionEntry<'musicxmlElements' | 'containerElements' | 'opusElements' | 'soundsElements'>,

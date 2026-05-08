@@ -3,7 +3,7 @@ import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import Path from 'node:path';
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../../layouts/Base.astro';
+import BaseLayout from '@layouts/Base.astro';
 import { url } from '../../../utils';
 
 const examples = await getCollection('containerExamples');

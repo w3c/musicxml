@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ListIcon from '@icons/list-plus-solid-rounded.svg';
-import BaseLayout from '../../../layouts/Base.astro';
+import BaseLayout from '@layouts/Base.astro';
 import SchemaView from '@components/SchemaView.astro';
 import TreeElement from '@components/TreeElement.astro';
 
@@ -40,7 +40,7 @@ const frontmatter = {
     <ListIcon class="w-4 text-w3c-blue mr-2 transition group-hover:text-white" />
     <span>Collapse/Expand All</span>
   </button>
-  
+
   <ul id="musicxml-tree">
     {elements.map(element => <li><TreeElement level={2} tag={element.id} children={element.data} schema="musicxml" /></li>)}
   </ul>
@@ -52,8 +52,8 @@ const frontmatter = {
 let expanded = true;
 
 /**
- * Helper function to determine if a link element (or its parent if 
- * the link is wrapped in a h3) have a <ul> list sibling. Returns the 
+ * Helper function to determine if a link element (or its parent if
+ * the link is wrapped in a h3) have a <ul> list sibling. Returns the
  * list sibling if found, returns false otherwise.
  */
 const getListSibling = (link) => {
@@ -115,7 +115,7 @@ document.querySelectorAll('#musicxml-tree a').forEach((link, index) => {
 // Functionality for the collapse/expand all button.
 document.getElementById('collapse-all')?.addEventListener('click', () => {
   const buttons = document.querySelectorAll('#musicxml-tree button');
-  
+
   // Simulate a click event.
   buttons.forEach((button) => {
     let expandedStateMatch = expanded && button.getAttribute('aria-expanded') == 'true';

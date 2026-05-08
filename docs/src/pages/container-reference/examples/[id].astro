@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ExampleCode from '@components/ExampleCode.astro';
-import BaseLayout from '../../../layouts/Base.astro';
+import BaseLayout from '@layouts/Base.astro';
 
 export async function getStaticPaths() {
   const examples = await getCollection('containerExamples');

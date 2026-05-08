@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import { readFileSync, readdirSync } from 'node:fs';
 import { basename, resolve } from 'node:path';
-import BaseLayout from '../../layouts/Base.astro';
+import BaseLayout from '@layouts/Base.astro';
 import { copyTransformer } from '../../utils';
 
 function getXML(id: string): string {
