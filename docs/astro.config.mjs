@@ -2,6 +2,7 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import ViteRestart from 'vite-plugin-restart';
+import { copyTransformer } from './src/utils';
 
 const setLayout = () => {
   return function (_, file) {
@@ -41,6 +42,10 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [setLayout],
+    shikiConfig: {
+      theme: 'github-dark-high-contrast',
+      transformers: [copyTransformer()],
+    },
   },
   vite: {
     plugins: [

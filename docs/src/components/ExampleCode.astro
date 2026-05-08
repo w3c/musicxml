@@ -3,7 +3,7 @@ import { Code } from 'astro:components';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import { defaultElementsMap } from '../site.config';
-import { annotationMarkdown } from '../utils';
+import { annotationMarkdown, copyTransformer } from '../utils';
 import { url } from '../utils';
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
@@ -21,6 +21,7 @@ const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : ('examples
 <p/>
 <Code lang="xml" code={snippet}
 transformers={[
+  copyTransformer(),
   {
     line(node) {
       // The syntax highlighter calls back this function for each line,

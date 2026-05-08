@@ -1,5 +1,9 @@
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
+import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button';
 import { siteInfo } from './site.config';
+
+const { default: iconCodeCopy } = await import(`/src/assets/icons/code-copy.svg?raw`);
+const { default: iconCodeCopied } = await import(`/src/assets/icons/code-copied.svg?raw`);
 
 /**
  * Formats the MusicXML element as a title.
@@ -42,3 +46,29 @@ export async function annotationMarkdown(annotation: string): Promise<string> {
  * Make a site URL including config.base.
  */
 export const url = (path: string) => `${siteInfo.base}/${path}`;
+
+/**
+ * Convert SVG to Data URL
+ * @see https://github.com/F1LT3R/svg-to-dataurl
+ */
+const svgToDataURL = (svgStr: string) => {
+	const encoded = encodeURIComponent(svgStr)
+		.replace(/'/g, '%27')
+		.replace(/"/g, '%22');
+
+	const header = 'data:image/svg+xml,';
+	const dataUrl = header + encoded;
+
+	return dataUrl;
+}
+
+/**
+ * Make a code copy Shiki transformer.
+ */
+export const copyTransformer = () => transformerCopyButton({
+  enableDarkMode: true,
+  duration: 2000,
+  display: 'ready',
+  successIcon: svgToDataURL(iconCodeCopied),
+  copyIcon: svgToDataURL(iconCodeCopy),
+});

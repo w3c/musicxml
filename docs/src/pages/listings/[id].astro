@@ -3,6 +3,7 @@ import { Code } from 'astro:components';
 import { readFileSync, readdirSync } from 'node:fs';
 import { basename, resolve } from 'node:path';
 import BaseLayout from '../../layouts/Base.astro';
+import { copyTransformer } from '../../utils';
 
 function getXML(id: string): string {
   return readFileSync(resolve('../schema', `${id}`), 'utf-8');
@@ -20,5 +21,10 @@ const frontmatter = {
 }
 ---
 <BaseLayout frontmatter={ frontmatter }>
-  <Code lang="xml" code={ getXML(id) } theme="github-dark-high-contrast" />
+  <Code
+    lang='xml'
+    theme='github-dark-high-contrast'
+    transformers={[copyTransformer()]}
+    code={ getXML(id) }
+  />
 </BaseLayout>
