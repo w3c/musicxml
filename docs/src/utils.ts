@@ -1,6 +1,6 @@
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button';
-import { siteInfo } from './site.config';
+import { siteInfo } from '@/site.config';
 
 const { default: iconCodeCopy } = await import(`/src/assets/icons/code-copy.svg?raw`);
 const { default: iconCodeCopied } = await import(`/src/assets/icons/code-copied.svg?raw`);
@@ -51,16 +51,7 @@ export const url = (path: string) => `${siteInfo.base}/${path}`;
  * Convert SVG to Data URL
  * @see https://github.com/F1LT3R/svg-to-dataurl
  */
-const svgToDataURL = (svgStr: string) => {
-	const encoded = encodeURIComponent(svgStr)
-		.replace(/'/g, '%27')
-		.replace(/"/g, '%22');
-
-	const header = 'data:image/svg+xml,';
-	const dataUrl = header + encoded;
-
-	return dataUrl;
-}
+const svgToDataURL = (svgStr: string) => `data:image/svg+xml,${encodeURIComponent(svgStr).replace(/'/g, '%27').replace(/"/g, '%22')}`;
 
 /**
  * Make a code copy Shiki transformer.

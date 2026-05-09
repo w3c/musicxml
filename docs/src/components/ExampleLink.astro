@@ -1,6 +1,6 @@
 ---
 import Path from 'node:path';
-import { url } from '../utils';
+import { url } from '@/utils';
 
 const { example, schema } = Astro.props;
 const href = url(`${schema}-reference/examples/${Path.parse(example.file).name}/`);

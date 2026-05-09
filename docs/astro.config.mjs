@@ -2,7 +2,12 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import ViteRestart from 'vite-plugin-restart';
-import { copyTransformer } from './src/utils';
+import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button';
+
+// FIXME!! These things are defined in utils.ts but importing it here creates circular dependencies.
+const svgToDataURL = svgStr => `data:image/svg+xml,${encodeURIComponent(svgStr).replace(/'/g, '%27').replace(/"/g, '%22')}`;
+const { default: iconCodeCopy } = await import(`/src/assets/icons/code-copy.svg?raw`);
+const { default: iconCodeCopied } = await import(`/src/assets/icons/code-copied.svg?raw`);
 
 const setLayout = () => {
   return function (_, file) {
@@ -44,7 +49,13 @@ export default defineConfig({
     remarkPlugins: [setLayout],
     shikiConfig: {
       theme: 'github-dark-high-contrast',
-      transformers: [copyTransformer()],
+      transformers: [transformerCopyButton({
+        enableDarkMode: true,
+        duration: 2000,
+        display: 'ready',
+        successIcon: svgToDataURL(iconCodeCopied),
+        copyIcon: svgToDataURL(iconCodeCopy),
+      })],
     },
   },
   vite: {

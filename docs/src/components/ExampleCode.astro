@@ -3,7 +3,7 @@ import { Code } from 'astro:components';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import { defaultElementsMap } from '../site.config';
-import { annotationMarkdown, copyTransformer, url } from '../utils';
+import { annotationMarkdown, copyTransformer, url } from '@/utils';
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 const { example, schema } = Astro.props;

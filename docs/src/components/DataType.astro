@@ -5,7 +5,7 @@ import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import DataTypeLink from './DataTypeLink.astro';
 import ElementLink from './ElementLink.astro';
 import DataTypeValueRow from './DataTypeValueRow.astro';
-import { annotationMarkdown } from '../utils';
+import { annotationMarkdown } from '@/utils';
 
 interface Props {
   datatype: CollectionEntry<'musicxmlDatatypes' | 'containerDatatypes' | 'opusDatatypes' | 'soundsDatatypes'>,

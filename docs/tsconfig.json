@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "paths": {
+      "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@icons/*": ["./src/assets/icons/*"],
-      "@layouts/*": ["./src/layouts/*"]
+      "@layouts/*": ["./src/layouts/*"],
+      "@css/*": ["./src/css/*"],
     },
     "strictNullChecks": true,
     "allowJs": true

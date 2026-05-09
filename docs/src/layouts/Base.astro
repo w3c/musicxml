@@ -5,8 +5,8 @@ import Header from '@components/Header.astro';
 import SiteNav from '@components/SiteNav.astro';
 import PageNav from '@components/PageNav.astro';
 import { siteInfo } from '../site.config';
-import { url } from '../utils';
-import '../css/index.css';
+import { url } from '@/utils';
+import '@css/index.css';
 
 const currentPath = Astro.url.pathname;
 const isFront = currentPath === url('');

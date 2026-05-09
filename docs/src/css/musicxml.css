@@ -35,6 +35,9 @@ table.musicxml .attribute-description {
 table.musicxml .enumeration-description {
   width: 65%;
 }
+table.musicxml .required {
+  text-align: center;
+}
 table.musicxml tr.mobile {
   border-top: 0;
 }
@@ -50,9 +53,6 @@ table.musicxml tr.mobile td {
 @media (width < 48rem) {
   table.musicxml .desktop {
     display: none;
-  }
-  table.musicxml .required {
-    text-align: right;
   }
 }
 

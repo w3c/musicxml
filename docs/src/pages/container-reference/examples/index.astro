@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import Path from 'node:path';
 import { getCollection } from 'astro:content';
 import BaseLayout from '@layouts/Base.astro';
-import { url } from '../../../utils';
+import { url } from '@/utils';
 
 const examples = await getCollection('containerExamples');
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
