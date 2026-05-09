@@ -69,6 +69,12 @@ section.example {
   margin-bottom: calc(2em / 1.5);
 }
 
+span[title] {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-zinc-400);
+}
+
 span.default {
   display: block;
 }

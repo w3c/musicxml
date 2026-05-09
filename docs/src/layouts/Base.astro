@@ -1,10 +1,11 @@
 ---
 import { Font } from 'astro:assets';
+import { Tooltips } from 'astro-tooltips';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import Header from '@components/Header.astro';
 import SiteNav from '@components/SiteNav.astro';
 import PageNav from '@components/PageNav.astro';
-import { siteInfo } from '../site.config';
+import { siteInfo } from '@/site.config';
 import { url } from '@/utils';
 import '@css/index.css';
 
@@ -32,6 +33,8 @@ const { frontmatter, headings } = Astro.props;
 		<Font cssVariable="--font-noto-serif" preload={ true } />
 
 		<Font cssVariable="--font-smufl" preload={ true } />
+
+		<Tooltips />
 
 		<title>{ !isFront && `${frontmatter.title} | `}{ siteInfo.title } { siteInfo.specVersion } { siteInfo.isDraft && 'Draft' }</title>
 
