@@ -32,7 +32,7 @@ export function elementName(tag: string): string {
  * - Remove surrounding <p> that the Markdown processor automatically adds
  */
 export async function annotationMarkdown(annotation: string): Promise<string> {
-  if (!annotation.length) throw("MISSING ATTRIBUTE DOC!!");
+  if (!annotation.length) throw("MISSING ATTRIBUTE DOCUMENTATION!!");
 
   const processor = await createMarkdownProcessor();
   return (await processor.render(
@@ -51,7 +51,7 @@ export const url = (path: string) => `${siteInfo.base}/${path}`;
  * Convert SVG to Data URL
  * @see https://github.com/F1LT3R/svg-to-dataurl
  */
-const svgToDataURL = (svgStr: string) => `data:image/svg+xml,${encodeURIComponent(svgStr).replace(/'/g, '%27').replace(/"/g, '%22')}`;
+export const svgToDataURL = (svgStr: string) => `data:image/svg+xml,${encodeURIComponent(svgStr).replace(/'/g, '%27').replace(/"/g, '%22')}`;
 
 /**
  * Make a code copy Shiki transformer.

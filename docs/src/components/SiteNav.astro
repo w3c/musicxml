@@ -109,11 +109,10 @@ if (siteInfo.redirects) {
 	const siteNav = document.getElementById('site-nav')!;
 
 	// Initial opened state is true for desktop, false for mobile.
-	let navIsOpen = window.matchMedia('(width >= 64rem)').matches;
-	let ariaExpanded = navIsOpen ? 'true' : 'false';
+	let navIsOpen = window.matchMedia('(width >= 80rem)').matches;
 
 	// Initialise the aria-expanded state.
-	menuBtn.setAttribute('aria-expanded', ariaExpanded);
+	menuBtn.setAttribute('aria-expanded', navIsOpen ? 'true' : 'false');
 
 	function handleMenu() {
 

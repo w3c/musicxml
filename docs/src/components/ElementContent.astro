@@ -57,7 +57,7 @@ const title = `Cardinality: ${tooltip}`;
       <Fragment>{(parent?.type !== 'choice' || cardinality !== 'Required') && <Fragment>&nbsp;(<span title={title}>{cardinality}</span>)</Fragment>}</Fragment>
       ) : (
       content.type === 'sequence' ? (
-        <span>In this order{cardinality !== 'Required' && <Fragment>&nbsp;({cardinality})</Fragment>}</span>
+        <span>In this order{cardinality !== 'Required' && <Fragment>&nbsp;(<span title={title}>{cardinality}</span>)</Fragment>}</span>
         <ul>
           {content.value.map(child => <li><Astro.self schema={schema} content={child} parent={content} /></li>)}
         </ul>

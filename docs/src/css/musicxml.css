@@ -87,3 +87,12 @@ span.default {
 .content p, ul, ol {
   font-size: var(--text-base);
 }
+
+pre:has(code) {
+  padding-bottom: calc(var(--spacing) * 5);
+}
+pre:has(code) code {
+  scrollbar-width: thin;
+  scrollbar-color: #85E89D black;
+  padding-bottom: calc(var(--spacing) * 3);
+}

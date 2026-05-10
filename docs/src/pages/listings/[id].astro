@@ -4,6 +4,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { basename, resolve } from 'node:path';
 import BaseLayout from '@layouts/Base.astro';
 import { copyTransformer } from '@/utils';
+import { downloadTransformer } from '@/download.transformer';
 
 function getXML(id: string): string {
   return readFileSync(resolve('../schema', `${id}`), 'utf-8');
@@ -24,7 +25,7 @@ const frontmatter = {
   <Code
     lang='xml'
     theme='github-dark-high-contrast'
-    transformers={[copyTransformer()]}
+    transformers={[copyTransformer(), downloadTransformer({ filename: id })]}
     code={ getXML(id) }
   />
 </BaseLayout>
