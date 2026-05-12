@@ -39,9 +39,9 @@ This can be worked around by editing the version of the musicxml.xsd file you us
 This will let xjc parse the schema. Now it will encounter the other problems listed above. We will get error messages like these:
 
 ```bash
-- \[ERROR\] Element "link" shows up in more than one properties.
-- \[ERROR\] Property "Segno" is already defined. Use <jaxb:property> to resolve this conflict.
-- \[ERROR\] Property "Segno" is already defined. Use <jaxb:property> to resolve this conflict.
+- [ERROR] Element "link" shows up in more than one properties.
+- [ERROR] Property "Segno" is already defined. Use <jaxb:property> to resolve this conflict.
+- [ERROR] Property "Segno" is already defined. Use <jaxb:property> to resolve this conflict.
 ```
 
 JAXB and xjc allow you to specify an external bindings file to guide the choice of data bindings. These files typically have an .xjb file extension. You can then specify the external bindings file in the -b parameter when running xjc from the command line.
