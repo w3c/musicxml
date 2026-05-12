@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import ListIcon from '@icons/list-plus-solid-rounded.svg';
 import BaseLayout from '@layouts/Base.astro';
 import SchemaView from '@components/SchemaView.astro';
 import TreeElement from '@components/TreeElement.astro';
+import ExpandCollapseTree from '@/components/ExpandCollapseTree.astro';
 
 const elements = (await getCollection('musicxmlElementsTree')).sort((a,b) => a.id.localeCompare(b.id));
 
@@ -31,99 +31,12 @@ const frontmatter = {
 ---
 <BaseLayout frontmatter={ frontmatter } headings={ headings }>
 
-  <SchemaView schema="musicxml" current="tree"/>
+  <SchemaView schema="musicxml" current="tree" />
 
-  <button
-    id="collapse-all"
-    aria-controls="musicxml-tree"
-    class="group flex items-center justify-center border-2 px-3 py-1.5 text-sm text-w3c-blue border-w3c-blue rounded-lg cursor-pointer transition hover:bg-w3c-blue hover:text-white active:bg-sky-900">
-    <ListIcon class="w-4 text-w3c-blue mr-2 transition group-hover:text-white" />
-    <span>Collapse/Expand All</span>
-  </button>
+  <ExpandCollapseTree target="#musicxml-tree" />
 
   <ul id="musicxml-tree">
     {elements.map(element => <li><TreeElement level={2} tag={element.id} children={element.data} schema="musicxml" /></li>)}
   </ul>
 
 </BaseLayout>
-
-<script>
-// All elements are initially expanded.
-let expanded = true;
-
-/**
- * Helper function to determine if a link element (or its parent if
- * the link is wrapped in a h3) have a <ul> list sibling. Returns the
- * list sibling if found, returns false otherwise.
- */
-const getListSibling = (link) => {
-
-  // Return the link's next sibling if == <ul>.
-  const sibling = link.nextElementSibling ?? null;
-  if (sibling && sibling.nodeName == 'UL') return sibling;
-
-  // Return the parent h3's sibling if == <ul>.
-  const h3Parent = link.parentElement?.nodeName == 'H3' ? link.parentElement: null;
-  const h3Sibling = h3Parent ? h3Parent.nextElementSibling : null;
-  if (h3Sibling && h3Sibling.nodeName == 'UL') return h3Sibling;
-
-  // Otherwise return false.
-  return false;
-}
-
-// For each link, create a button to expand/collapse its list sibling.
-document.querySelectorAll('#musicxml-tree a').forEach((link, index) => {
-
-  // If there is a <ul> list sibling.
-  if (getListSibling(link)) {
-
-    // Get the list and assign it an id
-    const list = getListSibling(link);
-    list.id = list ? `list-${index}` : null;
-
-    // Create a button and tie its aria attributes to the list.
-    const button = document.createElement('button');
-    button.setAttribute('aria-controls', list.id);
-    button.setAttribute('aria-expanded', 'true');
-    button.classList.add('cursor-pointer', 'w-16', 'group')
-    button.title = 'Expand/Collapse';
-
-    // Append an SVG and retrieve it for transformation.
-    button.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 p-0.5 rounded-full bg-w3c-blue/10 fill-w3c-blue ml-1.5 relative top-1 group-hover:fill-white group-hover:bg-w3c-blue transition origin-center">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7061 11.7928C19.0966 12.1833 19.0966 12.8165 18.7061 13.207L12.7061 19.207C12.3156 19.5975 11.6825 19.5975 11.2919 19.207L5.29188 13.207C4.90135 12.8165 4.90135 12.1834 5.29187 11.7928C5.68239 11.4023 6.31555 11.4023 6.70608 11.7928L11.999 17.0857L17.2919 11.7928C17.6824 11.4022 18.3156 11.4022 18.7061 11.7928Z" />
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7064 4.7924C19.0969 5.18293 19.097 5.81609 18.7064 6.20662L12.7065 12.2066C12.316 12.5971 11.6828 12.5971 11.2923 12.2066L5.29222 6.20667C4.90169 5.81615 4.90169 5.18298 5.29221 4.79246C5.68273 4.40193 6.31589 4.40192 6.70642 4.79245L11.9994 10.0853L17.2922 4.79241C17.6827 4.40188 18.3159 4.40188 18.7064 4.7924Z" />
-      </svg>`;
-    const svg = button.getElementsByTagName('svg')[0];
-    link.after(button);
-
-    // Toggle the list visibility on click.
-    button.addEventListener('click', () => {
-      if (button.getAttribute('aria-expanded') == 'true') {
-        list.style.display = 'none';
-        button.setAttribute('aria-expanded', 'false');
-        svg.style.rotate = '-90deg';
-      } else {
-        list.style.display = 'block';
-        button.setAttribute('aria-expanded', 'true');
-        svg.style.rotate = '';
-      }
-    });
-  }
-});
-
-// Functionality for the collapse/expand all button.
-document.getElementById('collapse-all')?.addEventListener('click', () => {
-  const buttons = document.querySelectorAll('#musicxml-tree button');
-
-  // Simulate a click event.
-  buttons.forEach((button) => {
-    let expandedStateMatch = expanded && button.getAttribute('aria-expanded') == 'true';
-    let collapsedStateMatch = !expanded && button.getAttribute('aria-expanded') == 'false';
-    if (expandedStateMatch || collapsedStateMatch) button.click();
-  });
-
-  expanded = !expanded;
-});
-
-</script>

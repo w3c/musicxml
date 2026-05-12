@@ -1,0 +1,99 @@
+---
+import ListIcon from '@icons/list-plus-solid-rounded.svg';
+
+const { default: iconExpand } = await import(`/src/assets/icons/expand-collapse.svg?raw`);
+const { target } = Astro.props;
+---
+<button
+  id="collapse-all"
+  aria-controls={target}
+  class="group flex elements-center justify-center border-2 px-3 py-1.5 text-sm text-w3c-blue border-w3c-blue rounded-lg cursor-pointer transition hover:bg-w3c-blue hover:text-white active:bg-sky-900">
+  <ListIcon class="w-4 text-w3c-blue mr-2 transition group-hover:text-white" />
+  <span>Collapse/Expand All</span>
+</button>
+
+<script is:inline define:vars={{ iconExpand, target }}>
+document.addEventListener('DOMContentLoaded', () => {
+  // All elements are initially expanded.
+  let expanded = true;
+
+  /**
+   * Helper function to determine if a given element (or its parent if
+   * the element is wrapped in a h3) have a <ul> list sibling. Returns the
+   * list sibling if found, returns false otherwise.
+   */
+  const getListSibling = (element) => {
+    // If top-level, ignore.
+    if (element.parentElement?.nodeName == 'DIV') return null;
+
+    // Return the element's next sibling if == <ul>.
+    const sibling = element.nextElementSibling ?? null;
+    if (sibling && sibling.nodeName == 'UL') return sibling;
+
+    // Return the parent h3's sibling if == <ul>.
+    const h3Parent = element.parentElement?.nodeName == 'H3' ? element.parentElement: null;
+    const h3Sibling = h3Parent ? h3Parent.nextElementSibling : null;
+    if (h3Sibling && h3Sibling.nodeName == 'UL') return h3Sibling;
+
+    // Otherwise return false.
+    return false;
+  }
+
+  // For each element, create a button to expand/collapse its list sibling.
+  let anyAdded = false;
+  document.querySelectorAll(`${target} a, ${target} span`).forEach((element, index) => {
+    // If there is a <ul> list sibling.
+    let list;
+    if (list = getListSibling(element)) {
+
+      // Get the list and assign it an id
+      anyAdded = true;
+      list.id = `list-${index}`;
+
+      // Create a button and tie its aria attributes to the list.
+      const button = document.createElement('button');
+      button.setAttribute('aria-controls', list.id);
+      button.setAttribute('aria-expanded', 'true');
+      button.classList.add('cursor-pointer', 'w-16', 'group')
+      button.title = 'Expand/Collapse';
+
+      // Append an SVG and retrieve it for transformation.
+      button.innerHTML = iconExpand;
+      const svg = button.getElementsByTagName('svg')[0];
+      element.after(button);
+
+      // Toggle the list visibility on click.
+      button.addEventListener('click', () => {
+        if (button.getAttribute('aria-expanded') == 'true') {
+          list.style.display = 'none';
+          button.setAttribute('aria-expanded', 'false');
+          svg.style.rotate = '-90deg';
+        } else {
+          list.style.display = 'block';
+          button.setAttribute('aria-expanded', 'true');
+          svg.style.rotate = '';
+        }
+      });
+    }
+  });
+
+  // If no collapse button added, remove the global one.
+  if (!anyAdded) {
+    document.getElementById('collapse-all').remove();
+  }
+
+  // Functionality for the collapse/expand all button.
+  document.getElementById('collapse-all').addEventListener('click', () => {
+    const buttons = document.querySelectorAll(`${target} button`);
+
+    // Simulate a click event.
+    buttons.forEach((button) => {
+      let expandedStateMatch = expanded && button.getAttribute('aria-expanded') == 'true';
+      let collapsedStateMatch = !expanded && button.getAttribute('aria-expanded') == 'false';
+      if (expandedStateMatch || collapsedStateMatch) button.click();
+    });
+
+    expanded = !expanded;
+  });
+});
+</script>

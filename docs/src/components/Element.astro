@@ -9,6 +9,7 @@ import DataTypeLink from './DataTypeLink.astro';
 import { defaultElementsMap } from '../site.config';
 import { annotationMarkdown, elementName } from  '@/utils';
 import BaseLayout from '@layouts/Base.astro';
+import ExpandCollapseTree from './ExpandCollapseTree.astro';
 
 interface Props {
   element: CollectionEntry<'musicxmlElements' | 'containerElements' | 'opusElements' | 'soundsElements'>,
@@ -74,7 +75,15 @@ if (!element.data.documentation) throw("MISSING ELEMENT DOCUMENTATION!!");
 
 <section class="content">
   <h2 id="content">Content</h2>
-  <ElementContent schema={schema} content={element.data.children} />
+  {element.data.children && !['type', 'element'].includes(element.data.children.type) ?
+    <Fragment>
+    <ExpandCollapseTree target="#content-tree" />
+    <div id="content-tree">
+      <ElementContent schema={schema} content={element.data.children} />
+    </div>
+    </Fragment> :
+    <ElementContent schema={schema} content={element.data.children} />
+  }
 </section>
 
 <section class="attributes">

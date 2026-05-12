@@ -44,7 +44,6 @@ export const downloadTransformer = (options: DownloadButtonOptions): ShikiTransf
         })],
       )
       node.children.push(button)
-      console.log(options.downloadIcon);
       node.children.push({
         type: 'element',
         tagName: 'style',

@@ -96,3 +96,13 @@ pre:has(code) code {
   scrollbar-color: #85E89D black;
   padding-bottom: calc(var(--spacing) * 3);
 }
+
+#content-tree {
+  padding-top: 1rem;
+}
+.content:not(:has(#collapse-all)) #content-tree {
+  padding-top: 0;
+}
+#content-tree > ul {
+  margin-top: 0;
+}
