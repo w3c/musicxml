@@ -9,7 +9,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: var(--text-5xl);
+  font-size: var(--text-4xl);
   margin-top: 0;
   margin-bottom: calc(1em / 1.2);
   line-height: 1.1;
@@ -25,28 +25,28 @@ h1 {
 } */
 
 h2 {
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
   margin-top: 2em;
   margin-bottom: 1em;
   line-height: calc(2em / 1.5);
 }
 
 h3 {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   margin-top: calc(5em / 3);
   margin-bottom: calc(1em / 1.5);
   line-height: 1.5;
 }
 
 h4 {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   margin-top: calc(16em / 9);
   margin-bottom: calc(1em / 1.75);
   line-height: 1.5;
 }
 
 p, ul, ol {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   max-width: 65ch;
   line-height: 1.6;
   margin-top: 1.25em;
@@ -55,7 +55,7 @@ p, ul, ol {
 }
 
 p.lead, blockquote, blockquote p {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
 }
 
 blockquote {
@@ -83,7 +83,7 @@ blockquote::before {
   left: --spacing(8);
   content: "\201C";
   color: var(--color-zinc-400);
-  font-size: var(--text-10xl);
+  font-size: var(--text-9xl);
   line-height: 1;
 }
 
@@ -209,30 +209,30 @@ h1 + *, h2 + *, h3 + *, h4 + * {
 
 @media (width >= 48rem) {
   h1 {
-    font-size:  var(--text-8xl);
+    font-size:  var(--text-7xl);
   }
 
   h2 {
-    font-size: var(--text-5xl);
-  }
-
-  h3 {
     font-size: var(--text-4xl);
   }
 
+  h3 {
+    font-size: var(--text-3xl);
+  }
+
   h4 {
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
   }
 
   p, ul, ol {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     line-height: 1.75;
     margin-top: calc(2em / 1.5);
     margin-bottom: calc(2em / 1.5);
   }
 
   p.lead, blockquote, blockquote p {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
   }
 
   code, kbd {
