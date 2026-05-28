@@ -181,7 +181,6 @@ ul ul, ol ul {
 
 pre {
   border-radius: var(--radius-md);
-  padding: --spacing(6);
 }
 
 code {
@@ -189,7 +188,11 @@ code {
 }
 
 pre code {
+  padding: --spacing(8);
+  width: 100%;
   font-weight: 400;
+  overflow: auto !important;
+  max-height: 65dvh;
 }
 
 kbd {
@@ -242,14 +245,10 @@ h1 + *, h2 + *, h3 + *, h4 + * {
   h1 + *, h2 + *, h3 + *, h4 + * {
     margin-top: 0;
   }
-
-  pre {
-    padding: --spacing(8);
-  }
 }
 
 @media (width >= 80rem) {
-  pre {
+  pre code {
     padding: --spacing(10);
   }
 }

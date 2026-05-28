@@ -17,10 +17,10 @@
   },
   "dependencies": {
     "@selemondev/shiki-transformer-copy-button": "^1.1.0",
-    "@tailwindcss/vite": "^4.2.2",
+    "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.1.3",
     "astro-tooltips": "^0.6.2",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.3.0",
     "vite-plugin-restart": "^2.0.0",
     "xslt3": "^2.7.0"
   },

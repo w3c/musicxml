@@ -1,5 +1,13 @@
 ---
 import { siteInfo } from '../site.config';
+
+type Breadcrumb = {
+	link: string,
+	text: string
+};
+
+type Breadcrumbs = Breadcrumb[];
+
 const { currentPath, pageTitle } = Astro.props;
 const baseTitle = `${ siteInfo.title } ${ siteInfo.specVersion }${ siteInfo.isDraft ? ' Draft' : '' }`;
 
@@ -15,24 +23,28 @@ const createTrail = (path: string) => {
   const segments = path.split('/').filter(segment => segment !== '');
 
 	// Initialise the breadcrumbs array.
-	const crumbs : object[] = [];
+	const crumbs : Breadcrumbs = [];
 
 	// Populate the breadcrumbs.
 	segments.forEach((segment, index) => {
-	  const crumb = {};
+
+		let text, link;
 
 		// Use baseTitle for first entry, pageTitle for last.
 		if (index === 0) {
-			crumb.text = baseTitle;
+			text = baseTitle;
 		} else if (index === segments.length - 1) {
-			crumb.text = pageTitle;
+			text = pageTitle;
 		} else {
 			// Convert segment to title case, but make exception for 'XML'.
-			crumb.text = toTitleCase(segment.replace('-', ' ')).replace('xml', 'XML');
+			text = toTitleCase(segment.replace('-', ' ')).replace('xml', 'XML');
 		}
 
 		// Create a temporary link from the current segment.
-		crumb.link = `/${segment}`;
+		link = `/${segment}`;
+
+		// Populate the breadcrumb.
+		const crumb: Breadcrumb = { text, link };
 
 		// Update the array.
 		crumbs.push(crumb);

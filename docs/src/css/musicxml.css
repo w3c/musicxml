@@ -16,40 +16,51 @@ table.musicxml {
   width: 100%;
   white-space: inherit;
 }
+
 table.musicxml tr {
   border-top: 1px solid #ccc;
 }
+
 table.musicxml th,td {
   padding: 20px 20px 20px 0;
 }
+
 table.musicxml td:first-child {
   font-weight: bold;
 }
+
 table.musicxml p {
   font-size: inherit;
   margin-bottom: 0;
 }
+
 table.musicxml .attribute-description {
   width: 50%;
 }
+
 table.musicxml .enumeration-description {
   width: 65%;
 }
+
 table.musicxml .required {
   text-align: center;
 }
+
 table.musicxml tr.mobile {
   border-top: 0;
 }
+
 table.musicxml tr.mobile td {
   padding-top: 0;
   font-weight: normal;
 }
+
 @media (width >= 48rem) {
   table.musicxml .mobile {
     display: none;
   }
 }
+
 @media (width < 48rem) {
   table.musicxml .desktop {
     display: none;
@@ -88,21 +99,14 @@ span.default {
   font-size: var(--text-base);
 }
 
-pre:has(code) {
-  padding-bottom: calc(var(--spacing) * 5);
-}
-pre:has(code) code {
-  scrollbar-width: thin;
-  scrollbar-color: #85E89D black;
-  padding-bottom: calc(var(--spacing) * 3);
-}
-
 #content-tree {
   padding-top: 1rem;
 }
+
 .content:not(:has(#collapse-all)) #content-tree {
   padding-top: 0;
 }
+
 #content-tree > ul {
   margin-top: 0;
 }

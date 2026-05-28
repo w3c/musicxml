@@ -7,7 +7,7 @@ const { target } = Astro.props;
 <button
   id="collapse-all"
   aria-controls={target}
-  class="group flex elements-center justify-center border-2 px-3 py-1.5 text-sm text-w3c-blue border-w3c-blue rounded-lg cursor-pointer transition hover:bg-w3c-blue hover:text-white active:bg-sky-900">
+  class="group flex items-center justify-center border-2 px-3 py-1.5 text-sm text-w3c-blue border-w3c-blue rounded-lg cursor-pointer transition hover:bg-w3c-blue hover:text-white active:bg-sky-900">
   <ListIcon class="w-4 text-w3c-blue mr-2 transition group-hover:text-white" />
   <span>Collapse/Expand All</span>
 </button>
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**
    * Helper function to determine if a given element (or its parent if
-   * the element is wrapped in a h3) have a <ul> list sibling. Returns the
+   * the element is wrapped in a h3) has a <ul> list sibling. Returns the
    * list sibling if found, returns false otherwise.
    */
   const getListSibling = (element) => {
