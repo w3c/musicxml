@@ -31,9 +31,11 @@ const regex_ = tag_ ? new RegExp(`<${tag_}[\\s>\/]`, 'mi') : null;
 // Filter examples containing this element.
 const regex = new RegExp(`<${element.id}[\\s>\/]`, 'mi');
 const examples_ = Object.values(examples).filter(example =>
-  regex.test(example.rawContent()) ||
-  (example.frontmatter.elements_map && Object.values(example.frontmatter.elements_map).includes(element.id)) ||
-  (!example.frontmatter.elements_map && regex_?.test(example.rawContent()))
+  example.file.includes(`/${schema}/`) && (
+    regex.test(example.rawContent()) ||
+    (example.frontmatter.elements_map && Object.values(example.frontmatter.elements_map).includes(element.id)) ||
+    (!example.frontmatter.elements_map && regex_?.test(example.rawContent()))
+  )
 );
 
 // Get extra notes.
