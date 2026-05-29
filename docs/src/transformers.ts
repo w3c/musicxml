@@ -6,23 +6,6 @@ import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button
 const { default: iconCodeCopy } = await import(`/src/assets/icons/code-copy.svg?raw`);
 const { default: iconCodeCopied } = await import(`/src/assets/icons/code-copied.svg?raw`);
 const { default: iconDownload } = await import(`/src/assets/icons/code-download.svg?raw`);
-const cssBtnVars = `
-:root {
-  --button-border-color: #2e2e32;
-  --button-bg: #0a0c10;
-  --button-bg-hover: #1b1b1f;
-
-  --button-border-color-dark: #2e2e32;
-  --button-bg-dark: transparent;
-  --button-bg-hover-dark: #1b1b1f;
-
-  --button-top: 6px;
-  --button-right: 10px;
-  --button-z-index: 20;
-  --button-radius: 6px;
-  --button-size: 30px;
-  --icon-size: 20px;
-}`;
 
 /**
  * Make a code copy Shiki transformer.
@@ -32,8 +15,7 @@ export const copyTransformer = () => transformerCopyButton({
   duration: 2000,
   display: 'ready',
   successIcon: svgToDataURL(iconCodeCopied),
-  copyIcon: svgToDataURL(iconCodeCopy),
-  cssVariables: cssBtnVars
+  copyIcon: svgToDataURL(iconCodeCopy)
 });
 
 export interface DownloadButtonOptions {
@@ -52,92 +34,14 @@ export interface DownloadButtonOptions {
 export const downloadTransformer = (options: DownloadButtonOptions): ShikiTransformer => {
 
   function buttonStyles({
-    downloadIcon = svgToDataURL(iconDownload),
-    display = 'ready',
-    enableDarkMode = false,
-    cssVariables = `
-    :root {
-      --button-download-right: 44px;
-    }`,
+    downloadIcon = svgToDataURL(iconDownload)
   }: {
     downloadIcon?: string
     display?: 'hover' | 'ready'
     enableDarkMode?: boolean
     cssVariables?: string
   }) {
-    let styles = `
-  ${cssVariables}
-
-  pre {
-    position: relative;
-    overflow: auto;
-  }
-
-  pre:has(code) code {
-    display: block;
-  }
-
-  pre:has(code) button.shiki-transformer-button-download {
-    position: absolute;
-    top: var(--button-top);
-    right: var(--button-download-right);
-    z-index: var(--button-z-index);
-
-    width: var(--button-size);
-    height: var(--button-size);
-    border-radius: var(--button-radius);
-    border: 1px solid var(--button-border-color);
-
-    background-color: var(--button-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-    transition: background-color .2s, opacity .2s;
-  }
-
-  pre:has(code) button.shiki-transformer-button-download:hover {
-    background-color: var(--button-bg-hover);
-  }
-
-  pre:has(code) button.shiki-transformer-button-download .ready {
-    width: var(--icon-size);
-    height: var(--icon-size);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-  pre:has(code) button.shiki-transformer-button-download .ready {
-    background-image: url("${downloadIcon}");
-  }
-  ` 
-
-    if (display === 'hover') {
-      styles += `
-      pre:has(code) button.shiki-transformer-button-download {
-        opacity: 0;
-      }
-      pre:has(code):hover button.shiki-transformer-button-download {
-        opacity: 1;
-      }`
-    }
-
-    if (enableDarkMode) {
-      styles += `
-  html.dark pre:has(code) button.shiki-transformer-button-download {
-    background-color: var(--button-bg-dark);
-    border-color: var(--button-border-color-dark);
-  }
-
-  html.dark pre:has(code) button.shiki-transformer-button-download:hover {
-    background-color: var(--button-bg-hover-dark);
-  }
-  `
-    }
-
-    return styles
+    return `.shiki-transformer-button-download .ready { background-image: url("${downloadIcon}") }`;
   }
 
   return {

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./base.css" layer(base);
 @import "./typography.css" layer(base);
+@import "./code.css" layer(base);
 @import "./musicxml.css" layer(base);
 @custom-variant dark (&:where(.dark, .dark *));
 @utility container { margin: auto }

@@ -15,15 +15,6 @@ h1 {
   line-height: 1.1;
 }
 
-/* h1:after {
-  display: block;
-  margin-top: --spacing(1.5);
-  height: 0.4rem;
-  width: 2rem;
-  background-color: var(--color-olive-500);
-  content: '';
-} */
-
 h2 {
   font-size: var(--text-2xl);
   margin-top: 2em;
@@ -183,18 +174,6 @@ pre {
   border-radius: var(--radius-md);
 }
 
-code {
-  font-weight: 700;
-}
-
-pre code {
-  padding: --spacing(8);
-  width: 100%;
-  font-weight: 400;
-  overflow: auto !important;
-  max-height: 65dvh;
-}
-
 kbd {
   font-style: italic;
   letter-spacing: var(--tracking-tighter);
@@ -238,7 +217,7 @@ h1 + *, h2 + *, h3 + *, h4 + * {
     font-size: var(--text-lg);
   }
 
-  code, kbd {
+  kbd {
     font-size: var(--text-base);
   }
 

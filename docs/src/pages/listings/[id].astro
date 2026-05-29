@@ -23,7 +23,7 @@ const frontmatter = {
 <BaseLayout frontmatter={ frontmatter }>
   <Code
     lang='xml'
-    theme='github-dark-high-contrast'
+    theme='github-dark'
     transformers={[copyTransformer(), downloadTransformer({ filename: id })]}
     code={ getXML(id) }
   />
