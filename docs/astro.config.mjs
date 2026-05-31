@@ -48,7 +48,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [setLayout],
     shikiConfig: {
-      theme: 'github-dark',
+      theme: 'github-dark-high-contrast',
       transformers: [transformerCopyButton({
         enableDarkMode: true,
         duration: 2000,

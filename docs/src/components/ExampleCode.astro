@@ -19,7 +19,7 @@ const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : ('examples
   <p set:html={annotationMarkdown(example.data.description)} />
 )}
 <p/>
-<Code lang="xml" code={snippet}
+<Code lang="xml" theme="github-dark-high-contrast" code={snippet}
 transformers={[
   copyTransformer(),
   {
