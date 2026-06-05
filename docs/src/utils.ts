@@ -1,6 +1,8 @@
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import { siteInfo } from '@/site.config';
 
+export type Schema = 'container' | 'musicxml' | 'opus' | 'sounds';
+
 /**
  * Formats the MusicXML element as a title.
  *

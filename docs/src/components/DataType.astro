@@ -6,6 +6,7 @@ import DataTypeLink from './DataTypeLink.astro';
 import ElementLink from './ElementLink.astro';
 import DataTypeValueRow from './DataTypeValueRow.astro';
 import { annotationMarkdown } from '@/utils';
+import type { Schema } from '@/utils';
 
 interface Props {
   datatype: CollectionEntry<'musicxmlDatatypes' | 'containerDatatypes' | 'opusDatatypes' | 'soundsDatatypes'>,
@@ -19,7 +20,7 @@ const elements = {
   opus: await getCollection("opusElements"),
   sounds: await getCollection("soundsElements"),
 }
-const usages = elements[schema].reduce((usages, element) => {
+const usages = elements[schema as Schema].reduce((usages, element) => {
   if (element.data.children && element.data.children.type === 'type' && element.data.children.value === datatype.data.name) {
     usages.push({ element });
   }
@@ -68,5 +69,5 @@ if (!datatype.data.documentation) throw "MISSING DATATYPE DOCUMENTATION!!";
 
 {usages.length > 0 && <section class="usage">
   <h2>Where is this type used?</h2>
-  {usages.map(usage => <p><ElementLink schema={schema} tag={usage.element.data.name}/>{usage.attribute && <span> — “{usage.attribute.name}” attribute</span>}</p>)}
+  {usages.map(usage => <p><ElementLink schema={schema} tag={usage.element.data.name}/>{usage.attribute && <span> — <strong>{usage.attribute.name}</strong> attribute</span>}</p>)}
 </section>}
