@@ -76,3 +76,6 @@ Illustrative images are found in `docs/src/assets/img/examples/[schema]`. An ima
 - To rebuild the JSON listings from modified XSD schema files: `npm run build:schemas`
 - To debug an XSL transformation against a given schema: `npm run debug:xsl transformation schema` (without file extensions)
 - To validate a modified XSD schema (requires `xmllint`): `npm run debug:xsd schema` (without file extension)
+
+## Deployment
+- Set ORIGIN environment variable to be your host URL's origin (default is https://w3c-cg.github.io). `.env` works too.

@@ -66,7 +66,7 @@ export default defineConfig({
       })
     ]
   },
-  site: 'https://davidmatthew-ie.github.io',
+  site: import.meta.env.ORIGIN || 'https://w3c-cg.github.io',
   base: '/musicxml',
   redirects: {
     '/sounds-reference/elements/any-sounds/': '/musicxml/sounds-reference/elements/any/',

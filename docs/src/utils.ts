@@ -43,7 +43,7 @@ export async function annotationMarkdown(annotation: string): Promise<string> {
 /**
  * Make a site URL including config.base.
  */
-export const url = (path: string) => `${siteInfo.base}/${path}`;
+export const url = (path: string) => `${import.meta.env.BASE_URL}/${path}`;
 
 /**
  * Convert SVG to Data URL

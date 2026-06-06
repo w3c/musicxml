@@ -10,7 +10,6 @@ export const siteInfo: SiteInfo = {
 
   // FIXME!! The following are copies of entries in astro.config.mjs
   // because `astro build` chokes when we import astro.config.mjs
-  base: '/musicxml',
   redirects: {
     '/sounds-reference/elements/any-sounds/': '/musicxml/sounds-reference/elements/any/',
     '/sounds-reference/elements/ensemble-sounds/': '/musicxml/sounds-reference/elements/ensemble/',

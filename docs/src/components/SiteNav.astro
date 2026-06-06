@@ -11,7 +11,7 @@ if (siteInfo.redirects) {
 	const index = Object.values(siteInfo.redirects).findIndex(redirect => redirect === Astro.url.pathname);
 	if (index > -1) {
 		// This is not a local URL so we're not using url() function.
-		redirect = `${siteInfo.base}${Object.keys(siteInfo.redirects)[index]}`;
+		redirect = `${import.meta.env.BASE_URL}${Object.keys(siteInfo.redirects)[index]}`;
 	}
 }
 ---
