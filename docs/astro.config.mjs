@@ -1,8 +1,12 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
+import { loadEnv } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import ViteRestart from 'vite-plugin-restart';
 import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button';
+
+// Load env
+const { ORIGIN } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
 // FIXME!! These things are defined in utils.ts but importing it here creates circular dependencies.
 const svgToDataURL = svgStr => `data:image/svg+xml,${encodeURIComponent(svgStr).replace(/'/g, '%27').replace(/"/g, '%22')}`;
@@ -66,7 +70,7 @@ export default defineConfig({
       })
     ]
   },
-  site: import.meta.env.ORIGIN || 'https://w3c-cg.github.io',
+  site: ORIGIN || 'https://w3c-cg.github.io',
   base: '/musicxml',
   redirects: {
     '/sounds-reference/elements/any-sounds/': '/musicxml/sounds-reference/elements/any/',
