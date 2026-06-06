@@ -24,6 +24,8 @@ jobs:
         uses: withastro/action@v5
         with:
           path: ./docs
+        env:
+          ORIGIN: ${{ vars.ORIGIN }}
 
   deploy:
     needs: build
