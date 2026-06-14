@@ -33,30 +33,42 @@ factors such as restrictions on network access, or resources having moved from t
 original specified location. To validate with the MusicXML XSD,
 use a schema URI of "http://www.musicxml.org/xsd/sounds.xsd".</xs:documentation>
     </xs:annotation>
-    
+
     <!-- Simple types -->
-    
+
     <xs:simpleType name="yes-no">
         <xs:annotation>
             <xs:documentation>The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:token">
-            <xs:enumeration value="yes"/>
-            <xs:enumeration value="no"/>
+			<xs:enumeration value="yes">
+				<xs:annotation>
+					<xs:documentation>True.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="no">
+				<xs:annotation>
+					<xs:documentation>False.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <!-- Complex types -->
-    
+
     <xs:complexType name="sounds">
         <xs:annotation>
             <xs:documentation>The sounds type is used for the root element of a MusicXML sounds file. It contains one or more sound elements.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="sound" type="sound" maxOccurs="unbounded"/>
+            <xs:element name="sound" type="sound" maxOccurs="unbounded">
+               <xs:annotation>
+                    <xs:documentation>The &lt;sound&gt; element lists one of the standard sounds available in MusicXML 4.0. The optional &lt;any&gt;, &lt;solo&gt;, and &lt;ensemble&gt; elements can be used for mapping MusicXML sound IDs to an application&apos;s or virtual instrument library&apos;s method of identifying sounds. These methods could include Sibelius SoundWorld IDs, capella genericsound IDs, and General MIDI patch numbers.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="sound">
         <xs:annotation>
             <xs:documentation>The sound type lists one of the standard sounds available in MusicXML 4.0. The required id attribute lists the MusicXML sound identifier string used by the instrument-sound element.
@@ -66,16 +78,36 @@ The optional any, solo, and ensemble elements can be used for mapping MusicXML s
 The primary attribute is used when multiple sound elements map to the same application or library ID. In this case, the primary attribute indicates which of the MusicXML IDs is primary when mapping to a MusicXML sound id.</xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="any" type="any" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="any" type="any" minOccurs="0" maxOccurs="unbounded">
+               <xs:annotation>
+                    <xs:documentation>The &lt;any&gt; element is used when a MusicXML ID refers to a single application or library sound ID, regardless of whether a solo or ensemble sound is used. The element content is the application or library sound ID.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:sequence>
-                <xs:element name="solo" type="solo" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="ensemble" type="ensemble" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="solo" type="solo" minOccurs="0" maxOccurs="unbounded">
+                  <xs:annotation>
+                        <xs:documentation>The &lt;solo&gt; and &lt;ensemble&gt; elements are used when an application has different IDs for solo and ensemble sounds, as represented by the &lt;solo&gt; and &lt;ensemble&gt; elements in a MusicXML score file. The &lt;solo&gt; element corresponds to the &lt;solo&gt; element in the MusicXML score file. The element content is the application or library sound ID.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="ensemble" type="ensemble" minOccurs="0" maxOccurs="unbounded">
+                   <xs:annotation>
+                        <xs:documentation>The &lt;solo&gt; and &lt;ensemble&gt; elements are used when an application has different IDs for solo and ensemble sounds, as represented by the &lt;solo&gt; and &lt;ensemble&gt; elements in a MusicXML score file. The &lt;ensemble&gt; element corresponds to the &lt;ensemble&gt; element in the MusicXML score file. The element content is the application or library sound ID.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
             </xs:sequence>
         </xs:choice>
-        <xs:attribute name="id" type="xs:ID" use="required"/>
-        <xs:attribute name="primary" type="yes-no"/>
+        <xs:attribute name="id" type="xs:ID" use="required">
+           <xs:annotation>
+                <xs:documentation>The MusicXML sound identifier string used by the &lt;instrument-sound&gt; element in a score file.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="primary" type="yes-no">
+           <xs:annotation>
+                <xs:documentation>Used when multiple &lt;sound&gt; elements map to the same application or library ID. In this case, it indicates which of the MusicXML IDs is primary when mapping to a MusicXML sound id.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
     </xs:complexType>
-    
+
     <xs:complexType name="any">
         <xs:annotation>
             <xs:documentation>The any type is used when a MusicXML ID refers to a single application or library sound ID, regardless of whether a solo or ensemble sound is used. The element content is the application or library sound ID.
@@ -84,11 +116,15 @@ Multiple any elements can be used when multiple application sounds map to the sa
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="primary" type="yes-no"/>
+                <xs:attribute name="primary" type="yes-no">
+                    <xs:annotation>
+                        <xs:documentation>Multiple &lt;any&gt; elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which of the &lt;any&gt; elements is primary when mapping from a MusicXML sound id.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-    
+
     <xs:complexType name="ensemble">
         <xs:annotation>
             <xs:documentation>The solo and ensemble elements are used when an application has different IDs for solo and ensemble sounds, as represented by the solo and ensemble elements in a MusicXML score file. The ensemble type corresponds to the ensemble element in the MusicXML score file. The element content is the application or library sound ID.
@@ -99,12 +135,20 @@ Multiple solo and ensemble elements can be used when multiple application sounds
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="number" type="xs:NMTOKEN"/>
-                <xs:attribute name="primary" type="yes-no"/>
+                <xs:attribute name="number" type="xs:NMTOKEN">
+                    <xs:annotation>
+                        <xs:documentation>Represents the size of the ensemble, corresponding to the content of the &lt;ensemble&gt; element in a MusicXML score file.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="primary" type="yes-no">
+                    <xs:annotation>
+                        <xs:documentation>Multiple &lt;solo&gt; and &lt;ensemble&gt; elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which &lt;ensemble&gt; element is primary when mapping from a MusicXML sound id.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-    
+
     <xs:complexType name="solo">
         <xs:annotation>
             <xs:documentation>The solo and ensemble elements are used when an application has different IDs for solo and ensemble sounds, as represented by the solo and ensemble elements in a MusicXML score file. The solo type corresponds to the solo element in the MusicXML score file. The element content is the application or library sound ID.
@@ -113,16 +157,24 @@ Multiple solo and ensemble elements can be used when multiple application sounds
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="primary" type="yes-no"/>
+                <xs:attribute name="primary" type="yes-no">
+                   <xs:annotation>
+                        <xs:documentation>Multiple &lt;solo&gt; and &lt;ensemble&gt; elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which &lt;solo&gt; element is primary when mapping from a MusicXML sound id.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-    
+
     <!-- Global element that is the root for MusicXML opus files -->
-    
+
     <xs:element name="sounds" type="sounds" block="extension substitution" final="#all">
         <xs:annotation>
-            <xs:documentation>The sounds element with a sounds type is the root element for a MusicXML sounds document.</xs:documentation>
+            <xs:documentation>Starting with Version 3.0, the MusicXML format includes a standard set of instrument sounds to identify musical timbres. These values are used in the &lt;instrument-sound&gt; element.
+
+The standard sounds are listed in the sounds.xml file included with MusicXML 4.0. The &lt;sounds&gt; element is the document element for this file.
+
+Applications may wish to provide a modified version of the sounds.xml file, where the element content includes an application&apos;s method for identifying sounds.</xs:documentation>
         </xs:annotation>
     </xs:element>
 </xs:schema>

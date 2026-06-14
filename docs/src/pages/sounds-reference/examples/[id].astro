@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import ExampleCode from '@components/ExampleCode.astro';
+import BaseLayout from '@layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const examples = await getCollection('soundsExamples');
+  return examples.map(example => ({
+    params: { id: example.id },
+    props: { example }
+  }));
+}
+
+const { example } = Astro.props;
+const frontmatter = {
+  title: example.data.title
+};
+---
+<BaseLayout frontmatter={frontmatter}>
+  <ExampleCode example={example} schema="sounds"/>
+</BaseLayout>

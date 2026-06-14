@@ -14,43 +14,104 @@ A human-readable summary is available:
 	https://www.w3.org/community/about/agreements/fsa-deed/
 
 This is the W3C XML Schema (XSD) version of the MusicXML 4.0 language. Validation is tightened by moving MusicXML definitions from comments into schema data types and definitions. Character entities and other entity usages that are not supported in W3C XML Schema have also been removed. However, the features of W3C XML Schema make it easier to define variations of the MusicXML format, either via extension or restriction.
-	
+
 This schema module defines the subset of XLink attributes that are supported in the MusicXML schema. All definitions here are in the XLink namespace.</xs:documentation>
 	</xs:annotation>
-	
-	<xs:attribute name="href" type="xs:anyURI"/>
+
+	<xs:attribute name="href" type="xs:anyURI">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-locators).</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
 
 	<xs:attribute name="type">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-types). MusicXML only supports the simple type.</xs:documentation>
+		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:NMTOKEN">
-				<xs:enumeration value="simple"/>
+				<xs:enumeration value="simple">
+					<xs:annotation>
+						<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#dt-simplelink).</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
-	
-	<xs:attribute name="role" type="xs:token"/>
 
-	<xs:attribute name="title" type="xs:token"/>
-	
+	<xs:attribute name="role" type="xs:token">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-semantics).</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
+	<xs:attribute name="title" type="xs:token">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-semantics).</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
 	<xs:attribute name="show">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-behaviors).</xs:documentation>
+		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:NMTOKEN">
-				<xs:enumeration value="new"/>
-				<xs:enumeration value="replace"/>
-				<xs:enumeration value="embed"/>
-				<xs:enumeration value="other"/>
-				<xs:enumeration value="none"/>
+				<xs:enumeration value="new">
+					<xs:annotation>
+						<xs:documentation>An application traversing to the ending resource should load it in a new window, frame, pane, or other relevant presentation context.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="replace">
+					<xs:annotation>
+						<xs:documentation>An application traversing to the ending resource should load the resource in the same window, frame, pane, or other relevant presentation context in which the starting resource was loaded. This is the default value.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="embed">
+					<xs:annotation>
+						<xs:documentation>An application traversing to the ending resource should load its presentation in place of the presentation of the starting resource.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="other">
+					<xs:annotation>
+						<xs:documentation>The behavior of an application traversing to the ending resource is unconstrained by this specification. The application should look for other markup present in the link to determine the appropriate behavior.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="none">
+					<xs:annotation>
+						<xs:documentation>The behavior of an application traversing to the ending resource is unconstrained by this specification. No other markup is present to help the application determine the appropriate behavior.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>
 
 	<xs:attribute name="actuate">
+		<xs:annotation>
+			<xs:documentation>See the [definition in the XML Linking Language recommendation](https://www.w3.org/TR/xlink11/#link-behaviors).</xs:documentation>
+		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:NMTOKEN">
-				<xs:enumeration value="onRequest"/>
-				<xs:enumeration value="onLoad"/>
-				<xs:enumeration value="other"/>
-				<xs:enumeration value="none"/>
+				<xs:enumeration value="onRequest">
+					<xs:annotation>
+						<xs:documentation>An application should traverse from the starting resource to the ending resource only on a post-loading event triggered for the purpose of traversal. This is the default value.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="onLoad">
+					<xs:annotation>
+						<xs:documentation>An application should traverse to the ending resource immediately on loading the starting resource.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="other">
+					<xs:annotation>
+						<xs:documentation>The behavior of an application traversing to the ending resource is unconstrained by this specification. The application should look for other markup present in the link to determine the appropriate behavior.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
+				<xs:enumeration value="none">
+					<xs:annotation>
+						<xs:documentation>The behavior of an application traversing to the ending resource is unconstrained by this specification. No other markup is present to help the application determine the appropriate behavior.</xs:documentation>
+					</xs:annotation>
+				</xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:attribute>

@@ -1,0 +1,38 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Path from 'node:path';
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/Base.astro';
+import { url } from '@/utils';
+
+const examples = await getCollection('musicxmlExamples');
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
+
+const frontmatter = {
+  title: 'MusicXML example documents',
+}
+
+// Extract the h2 and h3 headings needed for the PageNav component.
+const headings = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i))
+.map(letter => {
+  return {
+    depth: 2,
+    slug: examples.find(example => 0 === example.id.charAt(0).localeCompare(letter, undefined, { sensitivity: 'base' }))?.id,
+    text: letter
+  };
+})
+.filter(heading => !!heading.slug);
+---
+<BaseLayout frontmatter={ frontmatter } headings={ headings }>
+  {Object.values(examples).sort((a,b) => a.data.title.localeCompare(b.data.title)).map(example => {
+    const name = Path.parse(example.filePath!).name;
+    const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : 'examples/musicxml'}/${name}.png`;
+    return (
+      <section class="example" id={ example.id }>
+      <Fragment>{image in images && <Image src={images[image]()} alt={name} />}</Fragment>
+      <a href={url(`musicxml-reference/examples/${example.id}/`)}>{example.data.title}</a>
+      </section>
+    );
+  })}
+</BaseLayout>

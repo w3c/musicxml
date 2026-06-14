@@ -1,0 +1,112 @@
+span.line:has(.highlighted-word) {
+  font-weight: bolder;
+}
+
+.parents a:not(:last-child)::after,
+.examples a:not(:last-child)::after,
+.bases a:not(:last-child)::after {
+  content: ", ";
+}
+
+table.musicxml {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  white-space: inherit;
+}
+
+table.musicxml tr {
+  border-top: 1px solid #ccc;
+}
+
+table.musicxml th,td {
+  padding: 20px 20px 20px 0;
+}
+
+table.musicxml td:first-child {
+  font-weight: bold;
+}
+
+table.musicxml p {
+  font-size: inherit;
+  margin-bottom: 0;
+}
+
+table.musicxml .attribute-description {
+  width: 50%;
+}
+
+table.musicxml .enumeration-description {
+  width: 65%;
+}
+
+table.musicxml .required {
+  text-align: center;
+}
+
+table.musicxml tr.mobile {
+  border-top: 0;
+}
+
+table.musicxml tr.mobile td {
+  padding-top: 0;
+  font-weight: normal;
+}
+
+@media (width >= 48rem) {
+  table.musicxml .mobile {
+    display: none;
+  }
+}
+
+@media (width < 48rem) {
+  table.musicxml .desktop {
+    display: none;
+  }
+}
+
+h2.tree, h3.tree {
+  margin: inherit;
+  font: inherit;
+}
+
+.active {
+  font-weight: bold;
+}
+
+section.example {
+  margin-bottom: calc(2em / 1.5);
+}
+
+span[title] {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-zinc-400);
+}
+
+span.default {
+  display: block;
+}
+
+.smufl {
+  font-family: var(--font-smufl);
+  font-size: var(--text-7xl);
+}
+
+.content p, ul, ol {
+  font-size: var(--text-base);
+}
+
+#content-tree {
+  padding-top: 1rem;
+}
+
+.content:not(:has(#collapse-all)) #content-tree {
+  padding-top: 0;
+}
+
+#content-tree > ul {
+  margin-top: 0;
+}

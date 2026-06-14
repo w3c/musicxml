@@ -1,0 +1,30 @@
+---
+import { Code } from 'astro:components';
+import { readFileSync, readdirSync } from 'node:fs';
+import { basename, resolve } from 'node:path';
+import BaseLayout from '@layouts/Base.astro';
+import { downloadTransformer, copyTransformer } from '@/transformers';
+
+function getXML(id: string): string {
+  return readFileSync(resolve('../schema', `${id}`), 'utf-8');
+}
+
+export function getStaticPaths() {
+  return readdirSync('../schema')
+    .filter(f => f.endsWith('.xsd') || f.endsWith('.xsl') || f.endsWith('.xml'))
+    .map(f => basename(f)).map(id => ({ params: { id } }));
+}
+
+const { id } = Astro.params;
+const frontmatter = {
+  title: id,
+}
+---
+<BaseLayout frontmatter={ frontmatter }>
+  <Code
+    lang='xml'
+    theme='github-dark-high-contrast'
+    transformers={[copyTransformer(), downloadTransformer({ filename: id })]}
+    code={ getXML(id) }
+  />
+</BaseLayout>

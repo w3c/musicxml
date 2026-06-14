@@ -1,0 +1,75 @@
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+table {
+  position: relative;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: left;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+thead {
+  border-bottom: 1px solid var(--color-granite-l2);
+}
+
+.dark thead {
+  border-bottom-color: var(--color-granite-d1);
+}
+
+th {
+  color: var(--color-green);
+  font-weight: bold;
+  padding: 0 0.75em 0.75em;
+}
+
+th:first-child {
+  padding-left: 0;
+}
+
+.dark th {
+  color: var(--color-granite-l3);
+}
+
+tr {
+  border-bottom: 1px solid var(--color-granite-l3);
+}
+
+.dark tr {
+  border-bottom-color: var(--color-zinc-600);
+}
+
+td {
+  padding: 0.75em;
+}
+
+td:first-child {
+  padding-left: 0;
+}
+
+hr {
+  border-color: var(--color-zinc-400);
+  margin-top: --spacing(12);
+  margin-bottom: --spacing(12);
+}
+
+.dark hr {
+  border-color: var(--color-zinc-600);
+}
+
+:target {
+  scroll-margin-top: --spacing(24);
+}
+
+@media (width >= 48rem) {
+  table {
+    display: table;
+    table-layout: auto;
+    white-space: normal;
+  }
+}

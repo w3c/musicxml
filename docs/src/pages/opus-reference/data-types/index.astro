@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '@layouts/Base.astro';
+import DataTypeLink from '@components/DataTypeLink.astro';
+
+const datatypes = await getCollection('opusDatatypes');
+const frontmatter = {
+  title: 'Data types used in MusicXML'
+}
+---
+<BaseLayout frontmatter={frontmatter}>
+  <ul class="listing">
+    {datatypes.map(datatype => (
+      <li><DataTypeLink type={datatype.data.name} schema="opus"/></li>
+    ))}
+  </ul>
+</BaseLayout>

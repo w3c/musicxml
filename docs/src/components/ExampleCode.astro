@@ -1,0 +1,58 @@
+---
+import { Code } from 'astro:components';
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { defaultElementsMap } from '../site.config';
+import { annotationMarkdown, url } from '@/utils';
+import { copyTransformer } from '@/transformers';
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
+const { example, schema } = Astro.props;
+const snippet = example.body.replace(/```xml|```/g, '').trim();
+const name = example.id;
+const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : ('examples/' + schema)}/${name}.png`;
+---
+{image in images && (
+  <Image src={images[image]()} alt={name} />
+)}
+{example.data.description && (
+  <p set:html={annotationMarkdown(example.data.description)} />
+)}
+<p/>
+<Code lang="xml" theme="github-dark-high-contrast" code={snippet}
+transformers={[
+  copyTransformer(),
+  {
+    line(node) {
+      // The syntax highlighter calls back this function for each line,
+      // with its children as parsed tokens. The opening/closing tag brackets `<` or `</`
+      // is a separate token from the tag name that follows is.
+      // So we first catch the opening/closing tag brackets and match the next token
+      // to an XML element. We then change the HTML for that next token to be <a>,
+      // linking to the reference page of the XML element.
+      node.children.filter((child, i) => i > 0 &&
+        node.children[i-1].type === 'element' &&
+        node.children[i-1].children.length === 1 &&
+        node.children[i-1].children[0].type === 'text' &&
+        (node.children[i-1].children[0].value.endsWith('<') || node.children[i-1].children[0].value.endsWith('</')) &&
+        child.type === 'element' &&
+        child.children.length === 1 &&
+        child.children[0].type === 'text'
+      ).forEach(child => {
+        let tag = child.children[0].value;
+        if (example.data.elements_map && tag in example.data.elements_map) {
+          tag = example.data.elements_map[tag];
+        }
+        else if (tag in defaultElementsMap) {
+          tag = defaultElementsMap[tag];
+        }
+        child.tagName = 'a';
+        child.properties.href = url(`${schema}-reference/elements/${tag}/`);
+        if (Array.isArray(example.data.elements) ? example.data.elements.indexOf(tag) > -1 : example.data.elements === tag) {
+          this.addClassToHast(child, 'highlighted-word');
+        }
+      });
+    }
+  }
+]}
+/>

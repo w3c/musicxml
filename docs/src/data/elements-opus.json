@@ -1,0 +1,169 @@
+{
+   "opus-link": {
+      "children": null,
+      "parents": [
+         "opus"
+      ],
+      "attributes": [
+         {
+            "required": true,
+            "name": "xlink:href",
+            "documentation": "The href attribute provides the data that allows an application to find a remote resource or resource fragment. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-locators).",
+            "type": "xlink:href"
+         },
+         {
+            "required": false,
+            "name": "xlink:type",
+            "documentation": "The type attribute identifies XLink element types. In MusicXML, the value is always simple. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-types).",
+            "type": "xlink:type"
+         },
+         {
+            "required": false,
+            "name": "xlink:role",
+            "documentation": "The role attribute indicates a property of the link. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
+            "type": "xlink:role"
+         },
+         {
+            "required": false,
+            "name": "xlink:title",
+            "documentation": "The title attribute describes the meaning of a link or resource in a human-readable fashion. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
+            "type": "xlink:title"
+         },
+         {
+            "default": "replace",
+            "required": false,
+            "name": "xlink:show",
+            "documentation": "The show attribute is used to communicate the desired presentation of the ending resource on traversal from the starting resource. The default value is replace. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
+            "type": "xlink:show"
+         },
+         {
+            "default": "onRequest",
+            "required": false,
+            "name": "xlink:actuate",
+            "documentation": "The actuate attribute is used to communicate the desired timing of traversal from the starting resource to the ending resource. The default value is onRequest. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
+            "type": "xlink:actuate"
+         }
+      ],
+      "name": "opus-link",
+      "documentation": "An <opus-link> provides a link to another opus document, allowing for multiple levels of opus collections via linking as well as nesting."
+   },
+   "opus": {
+      "children": {
+         "type": "sequence",
+         "value": [
+            {
+               "type": "element",
+               "value": "title",
+               "min": "0",
+               "max": "1"
+            },
+            {
+               "type": "choice",
+               "value": [
+                  {
+                     "type": "element",
+                     "value": "opus",
+                     "min": "1",
+                     "max": "1"
+                  },
+                  {
+                     "type": "element",
+                     "value": "opus-link",
+                     "min": "1",
+                     "max": "1"
+                  },
+                  {
+                     "type": "element",
+                     "value": "score",
+                     "min": "1",
+                     "max": "1"
+                  }
+               ],
+               "min": "0",
+               "max": "unbounded"
+            }
+         ],
+         "min": "1",
+         "max": "1"
+      },
+      "parents": [
+         "opus"
+      ],
+      "attributes": [
+         {
+            "default": "1.0",
+            "required": false,
+            "name": "version",
+            "documentation": "The version attribute was added in Version 2.0 for opus documents. It provides an easier way to get version information than through the MusicXML public ID. The default value is 1.0 to make it possible for programs that handle later versions to distinguish earlier version files reliably. Programs that write MusicXML 2.0 or later opus files should set this attribute.",
+            "type": "xs:token"
+         }
+      ],
+      "name": "opus",
+      "documentation": "The <opus> element is the root element of a MusicXML opus. Each opus is made up of a series of <score>, <opus-link>, and\/or nested <opus> elements. Future versions may include more metadata elements. In this version, we just include the title of the opus."
+   },
+   "title": {
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
+      "parents": [
+         "opus"
+      ],
+      "name": "title",
+      "documentation": "The <title> element specifies the title of an opus document."
+   },
+   "score": {
+      "children": null,
+      "parents": [
+         "opus"
+      ],
+      "attributes": [
+         {
+            "required": true,
+            "name": "xlink:href",
+            "documentation": "The href attribute provides the data that allows an application to find a remote resource or resource fragment. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-locators).",
+            "type": "xlink:href"
+         },
+         {
+            "required": false,
+            "name": "xlink:type",
+            "documentation": "The type attribute identifies XLink element types. In MusicXML, the value is always simple. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-types).",
+            "type": "xlink:type"
+         },
+         {
+            "required": false,
+            "name": "xlink:role",
+            "documentation": "The role attribute indicates a property of the link. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
+            "type": "xlink:role"
+         },
+         {
+            "required": false,
+            "name": "xlink:title",
+            "documentation": "The title attribute describes the meaning of a link or resource in a human-readable fashion. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
+            "type": "xlink:title"
+         },
+         {
+            "default": "replace",
+            "required": false,
+            "name": "xlink:show",
+            "documentation": "The show attribute is used to communicate the desired presentation of the ending resource on traversal from the starting resource. The default value is replace. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
+            "type": "xlink:show"
+         },
+         {
+            "default": "onRequest",
+            "required": false,
+            "name": "xlink:actuate",
+            "documentation": "The actuate attribute is used to communicate the desired timing of traversal from the starting resource to the ending resource. The default value is onRequest. See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
+            "type": "xlink:actuate"
+         },
+         {
+            "required": false,
+            "name": "new-page",
+            "documentation": "Used to indicate if the first page of the score is different than the last page of the previous score. If yes, then a different page is used. If no, then the same page is used. The default value is implementation-dependent.",
+            "type": "yes-no"
+         }
+      ],
+      "name": "score",
+      "documentation": "The <score> elements provide the links to the individual scores within an opus.\n\t\t\t\t\t\t"
+   }
+}

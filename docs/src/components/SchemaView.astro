@@ -1,0 +1,11 @@
+---
+import { url } from '@/utils';
+
+const { schema, current } = Astro.props;
+const hrefTree = url(`${schema}-reference/element-tree/`);
+const hrefList = url(`${schema}-reference/elements/`);
+---
+<p>
+  {current === 'tree' ? <span class="active">Tree view</span> : <a href={hrefTree}>Tree view</a>} |
+  {current === 'tree' ? <a href={hrefList}>Alphabetical list</a> : <span class="active">Alphabetical list</span>}
+</p>

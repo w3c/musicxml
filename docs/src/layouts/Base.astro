@@ -1,0 +1,67 @@
+---
+import { Font } from 'astro:assets';
+import { Tooltips } from 'astro-tooltips';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import Header from '@components/Header.astro';
+import SiteNav from '@components/SiteNav.astro';
+import PageNav from '@components/PageNav.astro';
+import { siteInfo } from '@/site.config';
+import { url } from '@/utils';
+import '@css/index.css';
+
+const currentPath = Astro.url.pathname;
+const isFront = currentPath === url('');
+const { frontmatter, headings } = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth">
+
+	<head>
+
+		<meta charset="utf-8" />
+
+		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+
+		<link rel="icon" href="/favicon.ico" />
+
+		<meta name="viewport" content="width=device-width" />
+
+		<meta name="generator" content={ Astro.generator } />
+
+		<Font cssVariable="--font-noto-sans" preload={ true } />
+
+		<Font cssVariable="--font-noto-serif" preload={ true } />
+
+		<Font cssVariable="--font-smufl" preload={ true } />
+
+		<Tooltips />
+
+		<title>{ !isFront && `${frontmatter.title} | `}{ siteInfo.title } { siteInfo.specVersion } { siteInfo.isDraft && 'Draft' }</title>
+
+	</head>
+
+	<body class="flex flex-col min-h-screen bg-olive-50 text-zinc-700">
+
+		<Header />
+
+		<SiteNav />
+
+		<main class="mx-auto px-4 py-12 lg:py-20 w-3xl max-w-full">
+
+		  { !isFront && <Breadcrumbs pageTitle={ frontmatter.title } currentPath={ currentPath } /> }
+
+			<article>
+
+				<h1>{ frontmatter.title }</h1>
+
+				<slot />
+
+			</article>
+
+		</main>
+
+		<PageNav headings={ headings } />
+
+	</body>
+
+</html>

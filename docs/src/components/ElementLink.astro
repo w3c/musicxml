@@ -1,0 +1,7 @@
+---
+import { url, elementName } from '@/utils';
+
+const { tag, schema } = Astro.props;
+const href = url(`${schema}-reference/elements/${tag}/`);
+---
+<a id={ tag } href={ href }>{ elementName(tag) }</a>

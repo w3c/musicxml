@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '@layouts/Base.astro';
+import ElementLink from '@components/ElementLink.astro';
+import SchemaView from '@components/SchemaView.astro';
+
+const elements = await getCollection('soundsElements');
+const frontmatter = {
+  title: 'Elements used in Sounds'
+}
+---
+<BaseLayout frontmatter={frontmatter}>
+  <SchemaView schema="sounds" current="list"/>
+  <ul>
+    {elements.map(element => (
+      <li><ElementLink tag={element.id} schema="sounds"/></li>
+    ))}
+  </ul>
+</BaseLayout>

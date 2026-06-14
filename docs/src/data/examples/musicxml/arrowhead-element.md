@@ -1,0 +1,15 @@
+---
+title: '<arrowhead>'
+elements: arrowhead
+---
+```xml
+<notations>
+   <technical>
+      <arrow placement="above">
+         <arrow-direction>down</arrow-direction>
+         <arrow-style>filled</arrow-style>
+         <arrowhead/>
+      </arrow>
+   </technical>
+</notations>
+```

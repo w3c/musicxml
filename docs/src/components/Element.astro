@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { getEntry, render } from 'astro:content';
+import ElementLink from '@components/ElementLink.astro';
+import ExampleLink from '@components/ExampleLink.astro';
+import ElementContent from '@components/ElementContent.astro';
+import DataTypeLink from './DataTypeLink.astro';
+import { defaultElementsMap } from '../site.config';
+import { annotationMarkdown, elementName } from  '@/utils';
+import BaseLayout from '@layouts/Base.astro';
+import ExpandCollapseTree from './ExpandCollapseTree.astro';
+
+interface Props {
+  element: CollectionEntry<'musicxmlElements' | 'containerElements' | 'opusElements' | 'soundsElements'>,
+  schema: string
+}
+
+const { element, schema } = Astro.props;
+
+// Get element image if any.
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/elements/**/*.png');
+const image = `/src/assets/img/elements/${schema}/${element.id}.png`;
+
+// Find associated examples.
+const examples = import.meta.glob('../data/examples/**/*.md', { eager: true });
+// Check the default elements map and construct a regex if it's found.
+// Only test this regex if the example's elements map is absent.
+const tag_ = Object.keys(defaultElementsMap).find(tag => defaultElementsMap[tag] === element.id);
+const regex_ = tag_ ? new RegExp(`<${tag_}[\\s>\/]`, 'mi') : null;
+// Filter examples containing this element.
+const regex = new RegExp(`<${element.id}[\\s>\/]`, 'mi');
+const examples_ = Object.values(examples).filter(example =>
+  example.file.includes(`/${schema}/`) && (
+    regex.test(example.rawContent()) ||
+    (example.frontmatter.elements_map && Object.values(example.frontmatter.elements_map).includes(element.id)) ||
+    (!example.frontmatter.elements_map && regex_?.test(example.rawContent()))
+  )
+);
+
+// Get extra notes.
+const note = await getEntry('notes', `${schema}/${element.id}`);
+const { Content } = note ? await render(note) : { Content: null };
+
+// Prepare base layout.
+const frontmatter = {
+  title: `The ${elementName(element.data.name)} element`,
+}
+const headings = [
+  { depth: 2, slug: 'notes', text: 'Notes'},
+  { depth: 2, slug: 'content', text: 'Content'},
+  { depth: 2, slug: 'attributes', text: 'Attributes'},
+  { depth: 2, slug: 'examples', text: 'Examples'},
+];
+if (!note) headings.shift();
+
+if (!element.data.documentation) throw("MISSING ELEMENT DOCUMENTATION!!");
+---
+<BaseLayout frontmatter={ frontmatter } headings={ headings }>
+
+<p class="parents">
+  Parent element{element.data.parents.length > 1 ? 's' : ''}: {element.data.parents.length > 0 ?
+    element.data.parents.sort((a,b) => a.localeCompare(b)).map(parent => <ElementLink tag={parent} schema={schema}/>) : 'None'
+  }
+</p>
+
+{image in images && <Image src={images[image]()} alt={element.id} />}
+
+{element.data.documentation && <p class="description" set:html={annotationMarkdown(element.data.documentation)} />}
+
+{note &&
+<section class="notes">
+  <h2 id="notes">Notes</h2>
+  <Content />
+</section>
+}
+
+<section class="content">
+  <h2 id="content">Content</h2>
+  {element.data.children && !['type', 'element'].includes(element.data.children.type) ?
+    <Fragment>
+    <ExpandCollapseTree target="#content-tree" />
+    <div id="content-tree">
+      <ElementContent schema={schema} content={element.data.children} />
+    </div>
+    </Fragment> :
+    <ElementContent schema={schema} content={element.data.children} />
+  }
+</section>
+
+<section class="attributes">
+  <h2 id="attributes">Attributes</h2>
+  {element.data.attributes && element.data.attributes.length > 0 ? (
+    <table class="musicxml">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th class="required">Required?<span class="default">(Default)</span></th>
+          <th class="attribute-description desktop">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {element.data.attributes.sort((a,b) => (a.required !== b.required) ? (b.required ? 1 : -1) : a.name.localeCompare(b.name)).map(async (attribute) => (
+          <tr>
+            <td>{attribute.name}</td>
+            <td><DataTypeLink schema={schema} type={attribute.type} /></td>
+            <td class="required">{attribute.required ? 'Yes' : 'No'}
+              {attribute.default && <span class="default">({attribute.default})</span>}
+            </td>
+            <td class="attribute-description desktop" set:html={annotationMarkdown(attribute.documentation)}/>
+          </tr>
+          <tr class="attribute-description mobile">
+            <td colspan="3" set:html={annotationMarkdown(attribute.documentation)}/>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  ): <p>None.</p>}
+</section>
+
+<section class="examples">
+  <h2 id="examples">Examples</h2>
+  {examples_.length > 0 ? (
+    <p>This element is used in the following example{examples_.length > 1 ? 's' : ''}:</p>
+    <p>{examples_.sort((a,b) => a.frontmatter.title.localeCompare(b.frontmatter.title)).map(example => {
+      return <ExampleLink example={example} schema={schema}/>;
+    })}</p>) : <p>This element has no examples.</p>
+  }
+</section>
+
+</BaseLayout>

@@ -1,0 +1,40 @@
+{
+   "xsd-NMTOKEN": {
+      "name": "xs:NMTOKEN",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NMTOKEN).",
+      "type": "none"
+   },
+   "xsd-string": {
+      "name": "xs:string",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#string).",
+      "type": "none"
+   },
+   "xsd-token": {
+      "name": "xs:token",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token).",
+      "type": "none"
+   },
+   "yes-no": {
+      "name": "yes-no",
+      "documentation": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
+      "base": [
+         "xs:token"
+      ],
+      "type": "values",
+      "value": [
+         {
+            "value": "yes",
+            "documentation": "True."
+         },
+         {
+            "value": "no",
+            "documentation": "False."
+         }
+      ]
+   },
+   "xsd-ID": {
+      "name": "xs:ID",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#ID).",
+      "type": "none"
+   }
+}

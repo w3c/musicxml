@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/Base.astro';
+import SchemaView from '@components/SchemaView.astro';
+import TreeElement from '@components/TreeElement.astro';
+import ExpandCollapseTree from '@/components/ExpandCollapseTree.astro';
+
+const elements = (await getCollection('musicxmlElementsTree')).sort((a,b) => a.id.localeCompare(b.id));
+
+// Extract the h2 and h3 headings needed for the PageNav component.
+const headings : object[] = [];
+elements.forEach(element => {
+  headings.push({
+    depth: 2,
+    slug: element.id,
+    text: element.id
+  });
+  const children = Object.keys(element.data).sort();
+  children.forEach(child => {
+    headings.push({
+      depth: 3,
+      slug: child,
+      text: child
+    });
+  });
+});
+
+const frontmatter = {
+  title: 'Elements used in MusicXML'
+}
+---
+<BaseLayout frontmatter={ frontmatter } headings={ headings }>
+
+  <SchemaView schema="musicxml" current="tree" />
+
+  <ExpandCollapseTree target="#musicxml-tree" />
+
+  <ul id="musicxml-tree">
+    {elements.map(element => <li><TreeElement level={2} tag={element.id} children={element.data} schema="musicxml" /></li>)}
+  </ul>
+
+</BaseLayout>

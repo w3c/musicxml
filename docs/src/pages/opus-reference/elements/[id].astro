@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import Element from '@components/Element.astro';
+
+export async function getStaticPaths() {
+  const elements = await getCollection('opusElements');
+  return Object.values(elements).map(element => ({
+    params: { id: element.id },
+    props: { element }
+  }));
+}
+
+const { element } = Astro.props;
+---
+<Element element={element} schema="opus"/>

@@ -1,0 +1,72 @@
+---
+import DataTypeLink from '@components/DataTypeLink.astro';
+import ElementLink from '@components/ElementLink.astro';
+
+const { content, schema, parent } = Astro.props;
+
+const { cardinality, tooltip } = (() => {
+  if (!content) return { cardinality: '', tooltip: '' };
+  if (content.type === 'element' || content.type === 'sequence') {
+    if (content.min === '0' && content.max === '0') {
+      return { cardinality: "Forbidden", tooltip: "0" };
+    }
+    if (content.min === '0' && content.max === '1') {
+      return { cardinality: "Optional", tooltip: "0..1" };
+    }
+    else if (content.min === '0' && content.max === 'unbounded') {
+      return { cardinality: "Zero or more times", tooltip: "0..N" };
+    }
+    else if (content.min === '1' && content.max === '1') {
+      return { cardinality: "Required", tooltip: "1..1" };
+    }
+    else if (content.min === '1' && content.max === 'unbounded') {
+      return { cardinality: "One or more times", tooltip: "1..N" };
+    }
+    else {
+      return { cardinality: `${content.min} to ${content.max} times`, tooltip: `${content.min}..${content.max}` };
+    }
+  }
+  else if (content.type === 'choice') {
+    if (content.min === '0' && content.max === '0') {
+      return { cardinality: "None of the following", tooltip: "0" };
+    }
+    if (content.min === '0' && content.max === '1') {
+      return { cardinality: "Zero or one of the following", tooltip: "0..1" };
+    }
+    else if (content.min === '0' && content.max === 'unbounded') {
+      return { cardinality: "Zero or more of the following", tooltip: "0..N" };
+    }
+    else if (content.min === '1' && content.max === '1') {
+      return { cardinality: "Exactly one of the following", tooltip: "1..1" };
+    }
+    else if (content.min === '1' && content.max === 'unbounded') {
+      return { cardinality: "One or more of the following", tooltip: "1..N" };
+    }
+    else {
+      return { cardinality: `${content.min} to ${content.max} of the following`, tooltip: `${content.min}..${content.max}` };
+    }
+  }
+  return { cardinality: '', tooltip: '' };
+})();
+const title = `Cardinality: ${tooltip}`;
+---
+{content ? (
+  content.type === 'type' ? <DataTypeLink schema={schema} type={content.value} /> : (
+    content.type === 'element' ? (
+      <ElementLink tag={content.value} schema={schema} />
+      <Fragment>{(parent?.type !== 'choice' || cardinality !== 'Required') && <Fragment>&nbsp;(<span title={title}>{cardinality}</span>)</Fragment>}</Fragment>
+      ) : (
+      content.type === 'sequence' ? (
+        <span>In this order{cardinality !== 'Required' && <Fragment>&nbsp;(<span title={title}>{cardinality}</span>)</Fragment>}</span>
+        <ul>
+          {content.value.map(child => <li><Astro.self schema={schema} content={child} parent={content} /></li>)}
+        </ul>
+      ) : (
+        <span>{cardinality}</span>
+        <ul>
+          {content.value.map(child => <li><Astro.self schema={schema} content={child} parent={content} /></li>)}
+        </ul>
+      )
+    )
+  )
+) : <p>Always empty.</p>}

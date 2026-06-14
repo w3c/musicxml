@@ -36,8 +36,8 @@ java.util.zip package and Java JAR files. It is based on the Info-ZIP format des
 The JAR file format is specified at:
 
     https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html
-            
-Note that, compatible with JAR files, file names should be encoded in UTF-8 format. 
+
+Note that, compatible with JAR files, file names should be encoded in UTF-8 format.
 
 Files with the zip container are compressed the DEFLATE algorithm.
 The DEFLATE Compressed Data Format (RFC 1951) is specified at:
@@ -70,7 +70,7 @@ applications be prepared to read files with the .xml extension as well.
 
 It is recommended that applications that run on macOS and iOS use the following
 Uniform Type Identifier for MusicXML files:
-            
+
     <array>
         <dict>
             <key>UTTypeIdentifier</key>
@@ -126,18 +126,24 @@ IDs due to factors such as restrictions on network access, or resources having
 moved from the original specified location. To validate with the MusicXML XSD, use a
 schema URI of "http://www.musicxml.org/xsd/sounds.xsd".</xs:documentation>
     </xs:annotation>
-    
+
     <!-- Complex types -->
-    
+
     <xs:complexType name="container">
         <xs:annotation>
             <xs:documentation>The container type is used for the root element of a MusicXML sounds file. It contains a single rootfiles elements.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="rootfiles" type="rootfiles"/>
+            <xs:element name="rootfiles" type="rootfiles">
+                <xs:annotation>
+                    <xs:documentation>The &lt;rootfiles&gt; element includes the starting points for the different representations of a MusicXML score. The MusicXML root must be described in the first &lt;rootfile&gt; element. Additional &lt;rootfile&gt; elements can describe alternate versions such as PDF and audio files.
+
+When a MusicXML file contains both a score file and separate files for individual parts, the score file is the one that is referenced in the first &lt;rootfile&gt; element. The part files can be linked from within the score file and need not be listed here.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="rootfiles">
         <xs:annotation>
             <xs:documentation>The rootfiles element includes the starting points for the different representations of a MusicXML score. The MusicXML root must be described in the first rootfile element. Additional rootfile elements can describe alternate versions such as PDF and audio files.
@@ -145,25 +151,38 @@ schema URI of "http://www.musicxml.org/xsd/sounds.xsd".</xs:documentation>
 When a MusicXML file contains both a score file and separate files for individual parts, the score file is the one that is referenced in the first rootfile element. The part files can be linked from within the score file and need not be listed here.</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="rootfile" type="rootfile" maxOccurs="unbounded"/>
+            <xs:element name="rootfile" type="rootfile" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>The &lt;rootfile&gt; element describes each top-level file in the MusicXML container. A MusicXML file used as a &lt;rootfile&gt; may have &lt;score-partwise&gt;, &lt;score-timewise&gt;, or &lt;opus&gt; as its document element.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="rootfile">
         <xs:annotation>
             <xs:documentation>The rootfile element describes each top-level file in the MusicXML container. A MusicXML file used as a rootfile may have score-partwise, score-timewise, or opus as its document element.
 
 The required full-path attribute provides the path relative to the root folder of the zip file. The optional media-type attribute identifies the media type of different top-level root files. It is an error to have a non-MusicXML media-type value in the first rootfile in a rootfiles element. If no media-type value is present, a MusicXML file is assumed.</xs:documentation>
         </xs:annotation>
-        <xs:attribute name="full-path" type="xs:token" use="required"/>
-        <xs:attribute name="media-type" type="xs:token"/>
+        <xs:attribute name="full-path" type="xs:token" use="required">
+           <xs:annotation>
+                <xs:documentation>Provides the path relative to the root folder of the zip file.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="media-type" type="xs:token">
+           <xs:annotation>
+                <xs:documentation>Identifies the media type of different top-level root files. It is an error to have a non-MusicXML media-type value in the first &lt;rootfile&gt; in a &lt;rootfiles&gt; element. If no media-type value is present, a MusicXML file is assumed.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
     </xs:complexType>
-    
+
     <!-- Global element that is the root for MusicXML opus files -->
-    
+
     <xs:element name="container" type="container" block="extension substitution" final="#all">
         <xs:annotation>
-            <xs:documentation>The container element with a container type is the root element of the META-INF/container.xml file.</xs:documentation>
+            <xs:documentation>Starting with Version 2.0, the MusicXML format includes a standard zip compressed version. These zip files can contain multiple MusicXML files as well as other media files for images and sound. The container element is the document element for the META-INF/container.xml file. The container describes the starting point for the MusicXML version of the file, as well as alternate renditions such as PDF and audio versions of the musical score.
+</xs:documentation>
         </xs:annotation>
     </xs:element>
 </xs:schema>

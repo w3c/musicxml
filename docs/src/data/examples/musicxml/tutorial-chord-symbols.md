@@ -1,0 +1,305 @@
+---
+title: 'Tutorial: Chord Symbols'
+tutorial: true
+---
+```xml
+<score-partwise version="4.1">
+   <movement-title>Chord Symbol Example</movement-title>
+   <identification>
+      <encoding>
+         <software>Finale v28.0 for Mac</software>
+         <encoding-date>2024-04-16</encoding-date>
+         <supports element="print" attribute="new-system" type="yes" value="yes"/>
+         <supports element="print" attribute="new-page" type="yes" value="yes"/>
+         <supports element="accidental" type="yes"/>
+         <supports element="beam" type="yes"/>
+         <supports element="stem" type="yes"/>
+      </encoding>
+   </identification>
+   <defaults>
+      <scaling>
+         <millimeters>7.2319</millimeters>
+         <tenths>40</tenths>
+      </scaling>
+      <page-layout>
+         <page-height>1545</page-height>
+         <page-width>1194</page-width>
+         <page-margins type="both">
+            <left-margin>70</left-margin>
+            <right-margin>366</right-margin>
+            <top-margin>88</top-margin>
+            <bottom-margin>88</bottom-margin>
+         </page-margins>
+      </page-layout>
+      <system-layout>
+         <system-margins>
+            <left-margin>0</left-margin>
+            <right-margin>0</right-margin>
+         </system-margins>
+         <system-distance>121</system-distance>
+         <top-system-distance>70</top-system-distance>
+      </system-layout>
+      <appearance>
+         <line-width type="stem">1.4583</line-width>
+         <line-width type="beam">5</line-width>
+         <line-width type="staff">1.4583</line-width>
+         <line-width type="light barline">1.4583</line-width>
+         <line-width type="heavy barline">5</line-width>
+         <line-width type="leger">1.4583</line-width>
+         <line-width type="ending">1.4583</line-width>
+         <line-width type="wedge">1.4583</line-width>
+         <line-width type="enclosure">1.4583</line-width>
+         <line-width type="tuplet bracket">1.4583</line-width>
+         <note-size type="grace">60</note-size>
+         <note-size type="cue">60</note-size>
+         <distance type="hyphen">60</distance>
+         <distance type="beam">7.5</distance>
+      </appearance>
+      <music-font font-family="Maestro,engraved" font-size="20.5"/>
+      <word-font font-family="Times New Roman" font-size="10.25"/>
+   </defaults>
+   <part-list>
+      <score-part id="P1">
+         <part-name print-object="no">MusicXML Part</part-name>
+         <score-instrument id="P1-I1">
+            <instrument-name>Grand Piano</instrument-name>
+         </score-instrument>
+         <midi-instrument id="P1-I1">
+            <midi-channel>1</midi-channel>
+            <midi-program>1</midi-program>
+            <volume>80</volume>
+            <pan>0</pan>
+         </midi-instrument>
+      </score-part>
+   </part-list>
+   <part id="P1">
+      <measure number="1" width="282">
+         <print>
+            <system-layout>
+               <system-margins>
+                  <left-margin>127</left-margin>
+                  <right-margin>0</right-margin>
+               </system-margins>
+               <top-system-distance>211</top-system-distance>
+            </system-layout>
+            <measure-numbering>system</measure-numbering>
+         </print>
+         <attributes>
+            <divisions>2</divisions>
+            <key>
+               <fifths>2</fifths>
+               <mode>major</mode>
+            </key>
+            <time>
+               <beats>4</beats>
+               <beat-type>4</beat-type>
+            </time>
+            <clef>
+               <sign>G</sign>
+               <line>2</line>
+            </clef>
+         </attributes>
+         <sound tempo="120"/>
+         <harmony default-y="100">
+            <root>
+               <root-step>G</root-step>
+            </root>
+            <kind halign="center" text="6">major-sixth</kind>
+            <bass arrangement="horizontal">
+               <bass-step>D</bass-step>
+            </bass>
+            <frame default-y="83" halign="center" relative-x="5" unplayed="x" valign="top">
+               <frame-strings>6</frame-strings>
+               <frame-frets>5</frame-frets>
+               <frame-note>
+                  <string>5</string>
+                  <fret>5</fret>
+               </frame-note>
+               <frame-note>
+                  <string>4</string>
+                  <fret>5</fret>
+               </frame-note>
+               <frame-note>
+                  <string>3</string>
+                  <fret>4</fret>
+               </frame-note>
+               <frame-note>
+                  <string>2</string>
+                  <fret>3</fret>
+               </frame-note>
+               <frame-note>
+                  <string>1</string>
+                  <fret>0</fret>
+               </frame-note>
+            </frame>
+         </harmony>
+         <note default-x="121">
+            <pitch>
+               <step>D</step>
+               <octave>5</octave>
+            </pitch>
+            <duration>2</duration>
+            <voice>1</voice>
+            <type>quarter</type>
+            <stem default-y="-45">down</stem>
+         </note>
+         <note default-x="165">
+            <pitch>
+               <step>D</step>
+               <octave>5</octave>
+            </pitch>
+            <duration>2</duration>
+            <voice>1</voice>
+            <type>quarter</type>
+            <stem default-y="-45">down</stem>
+         </note>
+         <note default-x="210">
+            <pitch>
+               <step>G</step>
+               <octave>4</octave>
+            </pitch>
+            <duration>4</duration>
+            <voice>1</voice>
+            <type>half</type>
+            <stem default-y="5">up</stem>
+         </note>
+      </measure>
+      <measure number="2" width="175">
+         <note default-x="14">
+            <pitch>
+               <step>D</step>
+               <octave>5</octave>
+            </pitch>
+            <duration>4</duration>
+            <voice>1</voice>
+            <type>half</type>
+            <stem default-y="-45">down</stem>
+         </note>
+         <note default-x="85">
+            <pitch>
+               <step>G</step>
+               <octave>4</octave>
+            </pitch>
+            <duration>2</duration>
+            <voice>1</voice>
+            <type>quarter</type>
+            <stem default-y="5">up</stem>
+         </note>
+         <note default-x="129">
+            <pitch>
+               <step>E</step>
+               <octave>5</octave>
+            </pitch>
+            <duration>2</duration>
+            <voice>1</voice>
+            <type>quarter</type>
+            <stem default-y="-40">down</stem>
+         </note>
+      </measure>
+      <measure number="3" width="174">
+         <harmony default-y="100">
+            <root>
+               <root-step>A</root-step>
+            </root>
+            <kind halign="center" parentheses-degrees="yes">major</kind>
+            <degree>
+               <degree-value>9</degree-value>
+               <degree-alter>0</degree-alter>
+               <degree-type text="">add</degree-type>
+            </degree>
+            <frame default-y="83" halign="center" unplayed="x" valign="top">
+               <frame-strings>6</frame-strings>
+               <frame-frets>4</frame-frets>
+               <first-fret location="right" text="6fr.">6</first-fret>
+               <frame-note>
+                  <string>5</string>
+                  <fret>7</fret>
+               </frame-note>
+               <frame-note>
+                  <string>4</string>
+                  <fret>7</fret>
+               </frame-note>
+               <frame-note>
+                  <string>3</string>
+                  <fret>6</fret>
+               </frame-note>
+               <frame-note>
+                  <string>2</string>
+                  <fret>0</fret>
+               </frame-note>
+               <frame-note>
+                  <string>1</string>
+                  <fret>0</fret>
+               </frame-note>
+            </frame>
+         </harmony>
+         <note default-x="14">
+            <pitch>
+               <step>E</step>
+               <octave>5</octave>
+            </pitch>
+            <duration>2</duration>
+            <voice>1</voice>
+            <type>quarter</type>
+            <stem default-y="-40">down</stem>
+         </note>
+         <note default-x="58">
+            <pitch>
+               <step>E</step>
+               <octave>5</octave>
+            </pitch>
+            <duration>2</duration>
+            <voice>1</voice>
+            <type>quarter</type>
+            <stem default-y="-40">down</stem>
+         </note>
+         <harmony default-y="100">
+            <root>
+               <root-step>A</root-step>
+            </root>
+            <kind halign="center" text="11">dominant-11th</kind>
+            <frame default-y="83" halign="center" unplayed="x" valign="top">
+               <frame-strings>6</frame-strings>
+               <frame-frets>5</frame-frets>
+               <frame-note>
+                  <string>5</string>
+                  <fret>0</fret>
+               </frame-note>
+               <frame-note>
+                  <string>4</string>
+                  <fret>6</fret>
+                  <fingering>3</fingering>
+               </frame-note>
+               <frame-note>
+                  <string>3</string>
+                  <fret>4</fret>
+                  <fingering>2</fingering>
+               </frame-note>
+               <frame-note>
+                  <string>2</string>
+                  <fret>3</fret>
+                  <fingering>1</fingering>
+                  <barre type="start"/>
+               </frame-note>
+               <frame-note>
+                  <string>1</string>
+                  <fret>3</fret>
+                  <fingering>1</fingering>
+                  <barre type="stop"/>
+               </frame-note>
+            </frame>
+         </harmony>
+         <note default-x="102">
+            <pitch>
+               <step>E</step>
+               <octave>5</octave>
+            </pitch>
+            <duration>4</duration>
+            <voice>1</voice>
+            <type>half</type>
+            <stem default-y="-40">down</stem>
+         </note>
+      </measure>
+   </part>
+</score-partwise>
+```

@@ -1,0 +1,84 @@
+---
+import { siteInfo } from '../site.config';
+
+type Breadcrumb = {
+	link: string,
+	text: string
+};
+
+type Breadcrumbs = Breadcrumb[];
+
+const { currentPath, pageTitle } = Astro.props;
+const baseTitle = `${ siteInfo.title } ${ siteInfo.specVersion }${ siteInfo.isDraft ? ' Draft' : '' }`;
+
+const toTitleCase = (str: string) => {
+  return str.replace(
+    /\w\S*/g,
+    text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+  );
+}
+
+const createTrail = (path: string) => {
+	// Split the path, removing any empty entries.
+  const segments = path.split('/').filter(segment => segment !== '');
+
+	// Initialise the breadcrumbs array.
+	const crumbs : Breadcrumbs = [];
+
+	// Populate the breadcrumbs.
+	segments.forEach((segment, index) => {
+
+		let text, link;
+
+		// Use baseTitle for first entry, pageTitle for last.
+		if (index === 0) {
+			text = baseTitle;
+		} else if (index === segments.length - 1) {
+			text = pageTitle;
+		} else {
+			// Convert segment to title case, but make exception for 'XML'.
+			text = toTitleCase(segment.replace('-', ' ')).replace('xml', 'XML');
+		}
+
+		// Create a temporary link from the current segment.
+		link = `/${segment}`;
+
+		// Populate the breadcrumb.
+		const crumb: Breadcrumb = { text, link };
+
+		// Update the array.
+		crumbs.push(crumb);
+
+		// Build up the links based on previous entries.
+		if (index >= 1) {
+			crumb.link = crumbs[index - 1].link + crumbs[index].link;
+		}
+	});
+
+	return crumbs;
+}
+
+const breadcrumbs = createTrail(currentPath);
+---
+
+<div class="mb-8 lg:mb-12 text-base text-zinc-500">
+	{
+	  breadcrumbs.map((breadcrumb, index) => {
+			if (index !== breadcrumbs.length - 1) {
+				return (
+					<a class="no-underline" href={ `${breadcrumb.link}/` }>
+						{ breadcrumb.text }
+					</a>
+					<span class="mx-1">&gt;</span>
+				);
+			} else {
+				return (
+					<span>
+						{ breadcrumb.text }
+					</span>
+				)
+			}
+		})
+	}
+</div>
+

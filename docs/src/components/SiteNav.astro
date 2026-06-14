@@ -1,0 +1,145 @@
+---
+import CGLogo from '@assets/img/logos/w3cg.svg';
+import LinkIcon from '@assets/icons/link-square-01-twotone-rounded.svg';
+import { siteInfo } from '../site.config';
+import { url } from '@/utils';
+
+const reportStatus = `${ siteInfo.isDraft ? 'Draft' : 'Final' } Report`;
+
+let redirect = null;
+if (siteInfo.redirects) {
+	const index = Object.values(siteInfo.redirects).findIndex(redirect => redirect === Astro.url.pathname);
+	if (index > -1) {
+		// This is not a local URL so we're not using url() function.
+		redirect = `${import.meta.env.BASE_URL}${Object.keys(siteInfo.redirects)[index]}`;
+	}
+}
+---
+
+<div id="site-nav" class="fixed top-0 h-full px-10 border-r border-neutral-300 flex flex-col bg-olive-100 -translate-x-full xl:translate-x-0 transition-transform duration-400 z-20">
+	<nav class="overflow-y-auto scrollbar-hidden pt-32 pb-24">
+		{
+			siteInfo.isDev &&
+				<a
+				  class="flex items-center justify-center text-sm absolute w-full top-14 left-0 py-1.5 bg-olive-100/80 backdrop-blur border-b border-neutral-300"
+					href={`https://w3c-cg.github.io${redirect ?? Astro.url.pathname}`}
+					target="w3c-cg.github.io"
+					>
+					<span>View page on production site</span>
+					<LinkIcon class="ml-2 w-4" />
+				</a>
+		}
+		<a href={url('')} class="flex items-center mb-8 no-underline">
+			<CGLogo class="w-16 h-16" />
+			<p class="font-bold text-base w-24 leading-6">{ reportStatus }</p>
+		</a>
+		<ul class="list-none m-0 p-0 text-base [&_a]:text-zinc-700 [&_a]:no-underline [&_a]:hover:underline">
+			<li class="font-bold"><a href={url('')}>Introduction</a></li>
+			<li class="font-bold"><a href={url('tutorial/introduction/')}>Tutorial</a></li>
+			<ul class="list-none text-base">
+				<li><a href={url('tutorial/hello-world/')}>"Hello World"</a></li>
+				<li><a href={url('tutorial/structure-of-musicxml-files/')}>File Structure</a></li>
+				<li><a href={url('tutorial/midi-compatible-part/')}>MIDI-Compatible Part</a></li>
+				<li><a href={url('tutorial/notation-basics/')}>Notation Basics</a></li>
+				<li><a href={url('tutorial/chord-symbols-and-diagrams/')}>Chord Symbols</a></li>
+				<li><a href={url('tutorial/tablature/')}>Tablature</a></li>
+				<li><a href={url('tutorial/percussion/')}>Percussion</a></li>
+				<li><a href={url('tutorial/compressed-mxl-files/')}>Compressed .MXL Files</a></li>
+				<li><a href={url('tutorial/code-generation/')}>Code Generation</a></li>
+			</ul>
+			<li class="font-bold"><a href={url('musicxml-reference/')}>MusicXML Reference</a></li>
+			<ul class="list-none text-base">
+				<li><a href={url('musicxml-reference/element-tree/')}>Elements</a></li>
+				<li><a href={url('musicxml-reference/data-types/')}>Data Types</a></li>
+				<li><a href={url('musicxml-reference/examples/')}>Examples</a></li>
+			</ul>
+			<li class="font-bold"><a href={url('container-reference/')}>Container Reference</a></li>
+			<ul class="list-none text-base">
+				<li><a href={url('container-reference/element-tree/')}>Elements</a></li>
+				<li><a href={url('container-reference/data-types/')}>Data Types</a></li>
+				<li><a href={url('container-reference/examples/')}>Examples</a></li>
+			</ul>
+			<li class="font-bold"><a href={url('opus-reference/')}>Opus Reference</a></li>
+			<ul class="list-none text-base">
+				<li><a href={url('opus-reference/element-tree/')}>Elements</a></li>
+				<li><a href={url('opus-reference/data-types/')}>Data Types</a></li>
+				<li><a href={url('opus-reference/examples/')}>Examples</a></li>
+			</ul>
+			<li class="font-bold"><a href={url('sounds-reference/')}>Sounds Reference</a></li>
+			<ul class="list-none text-base">
+				<li><a href={url('sounds-reference/element-tree/')}>Elements</a></li>
+				<li><a href={url('sounds-reference/data-types/')}>Data Types</a></li>
+				<li><a href={url('sounds-reference/examples/')}>Examples</a></li>
+			</ul>
+			<li class="font-bold"><a href={url('listings/')}>File Listings</a></li>
+			<ul class="list-none text-base">
+				<li><a href={url('listings/musicxml.xsd/')}>musicxml.xsd</a></li>
+				<li><a href={url('listings/xlink.xsd/')}>xlink.xsd</a></li>
+				<li><a href={url('listings/xml.xsd/')}>xml.xsd</a></li>
+				<li><a href={url('listings/container.xsd/')}>container.xsd</a></li>
+				<li><a href={url('listings/opus.xsd/')}>opus.xsd</a></li>
+				<li><a href={url('listings/sounds.xsd/')}>sounds.xsd</a></li>
+				<li><a href={url('listings/sounds.xml/')}>sounds.xml</a></li>
+				<li><a href={url('listings/catalog.xml/')}>catalog.xml</a></li>
+				<li><a href={url('listings/to40.xsl/')}>to40.xsl</a></li>
+				<li><a href={url('listings/to31.xsl/')}>to31.xsl</a></li>
+				<li><a href={url('listings/to30.xsl/')}>to30.xsl</a></li>
+				<li><a href={url('listings/to20.xsl/')}>to20.xsl</a></li>
+				<li><a href={url('listings/to11.xsl/')}>to11.xsl</a></li>
+				<li><a href={url('listings/to10.xsl/')}>to10.xsl</a></li>
+				<li><a href={url('listings/parttime.xsl/')}>parttime.xsl</a></li>
+				<li><a href={url('listings/timepart.xsl/')}>timepart.xsl</a></li>
+			</ul>
+			<li class="font-bold"><a href={url('version-history/')}>Version History</a></li>
+			<ul class="list-none text-base">
+				<li><a href={url('version-history/41/')}>Version 4.1</a></li>
+				<li><a href={url('version-history/40/')}>Version 4.0</a></li>
+				<li><a href={url('version-history/31/')}>Version 3.1</a></li>
+				<li><a href={url('version-history/30/')}>Version 3.0</a></li>
+				<li><a href={url('version-history/20/')}>Version 2.0</a></li>
+				<li><a href={url('version-history/11/')}>Version 1.1</a></li>
+				<li><a href={url('version-history/10/')}>Version 1.0</a></li>
+			</ul>
+		</ul>
+  </nav>
+</div>
+
+<script>
+	const menuBtn = document.getElementById('menu-btn')!;
+	const siteNav = document.getElementById('site-nav')!;
+
+	// Initial opened state is true for desktop, false for mobile.
+	let navIsOpen = window.matchMedia('(width >= 80rem)').matches;
+
+	// Initialise the aria-expanded state.
+	menuBtn.setAttribute('aria-expanded', navIsOpen ? 'true' : 'false');
+
+	function handleMenu() {
+
+		// Remove these Tailwind classes if they exist.
+		if (siteNav.classList.contains('-translate-x-full')) {
+			siteNav.classList.remove('-translate-x-full',  'lg:translate-x-0');
+		}
+
+		// Toggle visibility and aria-expanded state.
+		if (navIsOpen) {
+			siteNav.style.transform = 'translateX(-100%)';
+			menuBtn.setAttribute('aria-expanded', 'false');
+		} else {
+			siteNav.style.transform = 'translateX(0)';
+			menuBtn.setAttribute('aria-expanded', 'true');
+		}
+
+		// Update state.
+		navIsOpen = !navIsOpen;
+	}
+
+	// Ensure event is also keyboard accessible.
+	menuBtn.addEventListener('click', handleMenu);
+	menuBtn.addEventListener('keydown', (event) => {
+		if (event.key === 'Enter') {
+			event.preventDefault();
+			handleMenu();
+		}
+	});
+</script>

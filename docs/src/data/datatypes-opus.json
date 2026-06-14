@@ -1,0 +1,127 @@
+{
+   "xlink-actuate": {
+      "name": "xlink:actuate",
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
+      "base": [
+         "xs:NMTOKEN"
+      ],
+      "type": "values",
+      "value": [
+         {
+            "value": "onRequest",
+            "documentation": "An application should traverse from the starting resource to the ending resource only on a post-loading event triggered for the purpose of traversal. This is the default value."
+         },
+         {
+            "value": "onLoad",
+            "documentation": "An application should traverse to the ending resource immediately on loading the starting resource."
+         },
+         {
+            "value": "other",
+            "documentation": "The behavior of an application traversing to the ending resource is unconstrained by this specification. The application should look for other markup present in the link to determine the appropriate behavior."
+         },
+         {
+            "value": "none",
+            "documentation": "The behavior of an application traversing to the ending resource is unconstrained by this specification. No other markup is present to help the application determine the appropriate behavior."
+         }
+      ]
+   },
+   "xsd-NMTOKEN": {
+      "name": "xs:NMTOKEN",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#NMTOKEN).",
+      "type": "none"
+   },
+   "xsd-token": {
+      "name": "xs:token",
+      "documentation": "See the [definition in the W3C XML Schema standard](https:\/\/www.w3.org\/TR\/xmlschema-2\/#token).",
+      "type": "none"
+   },
+   "xlink-href": {
+      "name": "xlink:href",
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-locators).",
+      "base": [
+         "xs:anyURI"
+      ],
+      "type": "none",
+      "value": null
+   },
+   "xlink-type": {
+      "name": "xlink:type",
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-types). MusicXML only supports the simple type.",
+      "base": [
+         "xs:NMTOKEN"
+      ],
+      "type": "values",
+      "value": [
+         {
+            "value": "simple",
+            "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#dt-simplelink)."
+         }
+      ]
+   },
+   "xlink-role": {
+      "name": "xlink:role",
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
+      "base": [
+         "xs:token"
+      ],
+      "type": "none",
+      "value": null
+   },
+   "xlink-show": {
+      "name": "xlink:show",
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-behaviors).",
+      "base": [
+         "xs:NMTOKEN"
+      ],
+      "type": "values",
+      "value": [
+         {
+            "value": "new",
+            "documentation": "An application traversing to the ending resource should load it in a new window, frame, pane, or other relevant presentation context."
+         },
+         {
+            "value": "replace",
+            "documentation": "An application traversing to the ending resource should load the resource in the same window, frame, pane, or other relevant presentation context in which the starting resource was loaded. This is the default value."
+         },
+         {
+            "value": "embed",
+            "documentation": "An application traversing to the ending resource should load its presentation in place of the presentation of the starting resource."
+         },
+         {
+            "value": "other",
+            "documentation": "The behavior of an application traversing to the ending resource is unconstrained by this specification. The application should look for other markup present in the link to determine the appropriate behavior."
+         },
+         {
+            "value": "none",
+            "documentation": "The behavior of an application traversing to the ending resource is unconstrained by this specification. No other markup is present to help the application determine the appropriate behavior."
+         }
+      ]
+   },
+   "xlink-title": {
+      "name": "xlink:title",
+      "documentation": "See the [definition in the XML Linking Language recommendation](https:\/\/www.w3.org\/TR\/xlink11\/#link-semantics).",
+      "base": [
+         "xs:token"
+      ],
+      "type": "none",
+      "value": null
+   },
+   "yes-no": {
+      "name": "yes-no",
+      "documentation": "The yes-no type is used for boolean-like attributes. We cannot use W3C XML Schema booleans due to their restrictions on expression of boolean values.",
+      "base": [
+         "xs:token"
+      ],
+      "type": "values",
+      "value": [
+         {
+            "value": "yes",
+            "documentation": "True."
+         },
+         {
+            "value": "no",
+            "documentation": "False."
+         }
+      ]
+   }
+}

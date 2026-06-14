@@ -1,0 +1,129 @@
+{
+   "ensemble": {
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
+      "parents": [
+         "sound"
+      ],
+      "attributes": [
+         {
+            "required": false,
+            "name": "number",
+            "documentation": "Represents the size of the ensemble, corresponding to the content of the <ensemble> element in a MusicXML score file.",
+            "type": "xs:NMTOKEN"
+         },
+         {
+            "required": false,
+            "name": "primary",
+            "documentation": "Multiple <solo> and <ensemble> elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which <ensemble> element is primary when mapping from a MusicXML sound id.",
+            "type": "yes-no"
+         }
+      ],
+      "name": "ensemble",
+      "documentation": "The <solo> and <ensemble> elements are used when an application has different IDs for solo and ensemble sounds, as represented by the <solo> and <ensemble> elements in a MusicXML score file. The <ensemble> element corresponds to the <ensemble> element in the MusicXML score file. The element content is the application or library sound ID."
+   },
+   "sound": {
+      "children": {
+         "type": "choice",
+         "value": [
+            {
+               "type": "element",
+               "value": "any",
+               "min": "0",
+               "max": "unbounded"
+            },
+            {
+               "type": "sequence",
+               "value": [
+                  {
+                     "type": "element",
+                     "value": "solo",
+                     "min": "0",
+                     "max": "unbounded"
+                  },
+                  {
+                     "type": "element",
+                     "value": "ensemble",
+                     "min": "0",
+                     "max": "unbounded"
+                  }
+               ],
+               "min": "1",
+               "max": "1"
+            }
+         ],
+         "min": "1",
+         "max": "1"
+      },
+      "parents": [
+         "sounds"
+      ],
+      "attributes": [
+         {
+            "required": true,
+            "name": "id",
+            "documentation": "The MusicXML sound identifier string used by the <instrument-sound> element in a score file.",
+            "type": "xs:ID"
+         },
+         {
+            "required": false,
+            "name": "primary",
+            "documentation": "Used when multiple <sound> elements map to the same application or library ID. In this case, it indicates which of the MusicXML IDs is primary when mapping to a MusicXML sound id.",
+            "type": "yes-no"
+         }
+      ],
+      "name": "sound",
+      "documentation": "The <sound> element lists one of the standard sounds available in MusicXML 4.0. The optional <any>, <solo>, and <ensemble> elements can be used for mapping MusicXML sound IDs to an application's or virtual instrument library's method of identifying sounds. These methods could include Sibelius SoundWorld IDs, capella genericsound IDs, and General MIDI patch numbers."
+   },
+   "sounds": {
+      "children": {
+         "type": "element",
+         "value": "sound",
+         "min": "1",
+         "max": "unbounded"
+      },
+      "parents": [],
+      "name": "sounds",
+      "documentation": "Starting with Version 3.0, the MusicXML format includes a standard set of instrument sounds to identify musical timbres. These values are used in the <instrument-sound> element.\n\nThe standard sounds are listed in the sounds.xml file included with MusicXML 4.0. The <sounds> element is the document element for this file.\n\nApplications may wish to provide a modified version of the sounds.xml file, where the element content includes an application's method for identifying sounds."
+   },
+   "solo": {
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
+      "parents": [
+         "sound"
+      ],
+      "attributes": [
+         {
+            "required": false,
+            "name": "primary",
+            "documentation": "Multiple <solo> and <ensemble> elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which <solo> element is primary when mapping from a MusicXML sound id.",
+            "type": "yes-no"
+         }
+      ],
+      "name": "solo",
+      "documentation": "The <solo> and <ensemble> elements are used when an application has different IDs for solo and ensemble sounds, as represented by the <solo> and <ensemble> elements in a MusicXML score file. The <solo> element corresponds to the <solo> element in the MusicXML score file. The element content is the application or library sound ID."
+   },
+   "any": {
+      "children": {
+         "type": "type",
+         "value": "xs:string"
+      },
+      "parents": [
+         "sound"
+      ],
+      "attributes": [
+         {
+            "required": false,
+            "name": "primary",
+            "documentation": "Multiple <any> elements can be used when multiple application sounds map to the same MusicXML sound id. The primary attribute indicates which of the <any> elements is primary when mapping from a MusicXML sound id.",
+            "type": "yes-no"
+         }
+      ],
+      "name": "any",
+      "documentation": "The <any> element is used when a MusicXML ID refers to a single application or library sound ID, regardless of whether a solo or ensemble sound is used. The element content is the application or library sound ID."
+   }
+}
