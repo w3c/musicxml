@@ -2,7 +2,7 @@
   "name": "musicxml-docs",
   "description": "MusicXML documentation site.",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "node": ">=22.12.0"
   },
