@@ -52,6 +52,7 @@ export const downloadTransformer = (options: DownloadButtonOptions): ShikiTransf
         {
           'class': 'shiki-transformer-button-download',
           'role': 'button',
+          'title': 'Download as file',
           'aria-label': 'Download as file',
           'aria-live': 'polite',
           'onclick': `
