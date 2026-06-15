@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install libxml2-utils
       - name: Checkout repository using git
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Run tests
         run: cd test && ./test.sh
 
@@ -31,9 +31,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository using git
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install, build, and upload site
-        uses: withastro/action@v5
+        uses: withastro/action@v6
         with:
           path: ./docs
         env:
@@ -48,4 +48,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
