@@ -27,7 +27,7 @@ jobs:
 
   build:
     needs: test
-    if: github.repository == 'w3c-cg/musicxml'
+    # if: github.repository == 'w3c-cg/musicxml'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository using git
