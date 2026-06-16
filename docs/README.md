@@ -78,5 +78,5 @@ Illustrative images are found in `docs/src/assets/img/examples/[schema]`. An ima
 - To validate a modified XSD schema (requires `xmllint`): `npm run debug:xsd schema` (without file extension)
 
 ## Deployment
-- Set ORIGIN environment variable to be your host URL's origin (default is https://w3c-cg.github.io). `.env` works too.
-- If ORIGIN is left unset or blank, the GitHub CI/CD will not proceed with build / deploy steps.
+- Set `ORIGIN` environment variable to be your host URL's origin (default is https://w3c-cg.github.io). `.env` works too.
+- If `ORIGIN` is left unset or blank, the GitHub CI/CD will not proceed with build / deploy steps.

@@ -29,7 +29,7 @@ export interface DownloadButtonOptions {
 /**
  * File download Shiki transformer.
  *
- * @see https://github.com/selemondev/shiki-transformer-download-button
+ * @see https://github.com/selemondev/shiki-transformer-copy-button
  */
 export const downloadTransformer = (options: DownloadButtonOptions): ShikiTransformer => {
 
@@ -52,6 +52,7 @@ export const downloadTransformer = (options: DownloadButtonOptions): ShikiTransf
         {
           'class': 'shiki-transformer-button-download',
           'role': 'button',
+          'title': 'Download as file',
           'aria-label': 'Download as file',
           'aria-live': 'polite',
           'onclick': `
