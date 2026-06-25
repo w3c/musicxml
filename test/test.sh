@@ -43,11 +43,18 @@ test_schema_valid() {
 
 test_suite_valid() {
     tmp=$(mktemp -d)
-    sed 's|schemaLocation="http://www.musicxml.org/xsd/|schemaLocation="|g' ../schema/musicxml.xsd > "$tmp/musicxml.xsd"
+    awk '{gsub(/schemaLocation="http:\/\/www\.musicxml\.org\/xsd\//, "schemaLocation=\""); print}' ../schema/musicxml.xsd > "$tmp/musicxml.xsd"
     cp ../schema/xlink.xsd ../schema/xml.xsd "$tmp"
     find musicxmlTestSuite -name '*.xml' -print0 | while read -d $'\0' file
     do
-        xmllint --schema "$tmp/musicxml.xsd" "$file" --noout || return $?
+        xmllint --schema "$tmp/musicxml.xsd" "$file" --noout
+        status=$?
+        if [[ $file == *invalid* && $status == 0 ]]; then
+            echo -e "$file" expected to fail
+            return 1
+        elif [[ $file != *invalid* && $status != 0 ]]; then
+            return $status
+        fi
     done
 }
 
