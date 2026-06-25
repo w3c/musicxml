@@ -1,0 +1,22 @@
+name: Run tests only
+
+on:
+  push:
+    branches: [ '!gh-pages' ]
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install libxml2-utils
+      - name: Checkout repository using git
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+      - name: Run tests
+        run: cd test && ./test.sh
