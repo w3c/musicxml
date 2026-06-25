@@ -22,6 +22,8 @@ jobs:
         run: sudo apt-get update && sudo apt-get install libxml2-utils
       - name: Checkout repository using git
         uses: actions/checkout@v6
+        with:
+          submodules: recursive
       - name: Run tests
         run: cd test && ./test.sh
 

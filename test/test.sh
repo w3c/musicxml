@@ -34,20 +34,21 @@ run_test() {
 # TEST FUNCTIONS
 # ============================================================================
 
-test_musicxml_valid() {
-    xmllint --schema XMLSchema.xsd ../schema/musicxml.xsd --noout
+test_schema_valid() {
+    xmllint --schema XMLSchema.xsd ../schema/musicxml.xsd --noout || return $?
+    xmllint --schema XMLSchema.xsd ../schema/container.xsd --noout || return $?
+    xmllint --schema XMLSchema.xsd ../schema/opus.xsd --noout || return $?
+    xmllint --schema XMLSchema.xsd ../schema/sounds.xsd --noout || return $?
 }
 
-test_container_valid() {
-    xmllint --schema XMLSchema.xsd ../schema/container.xsd --noout
-}
-
-test_opus_valid() {
-    xmllint --schema XMLSchema.xsd ../schema/opus.xsd --noout
-}
-
-test_sounds_valid() {
-    xmllint --schema XMLSchema.xsd ../schema/sounds.xsd --noout
+test_suite_valid() {
+    tmp=$(mktemp -d)
+    sed 's|schemaLocation="http://www.musicxml.org/xsd/|schemaLocation="|g' ../schema/musicxml.xsd > "$tmp/musicxml.xsd"
+    cp ../schema/xlink.xsd ../schema/xml.xsd "$tmp"
+    find musicxmlTestSuite -name '*.xml' -print0 | while read -d $'\0' file
+    do
+        xmllint --schema "$tmp/musicxml.xsd" "$file" --noout || return $?
+    done
 }
 
 # ============================================================================
