@@ -13,6 +13,7 @@ NC='\033[0m' # No Color
 TESTS_RUN=0
 TESTS_PASSED=0
 TESTS_FAILED=0
+TESTS_LIST=()
 
 # Run a single test function
 run_test() {
@@ -27,6 +28,7 @@ run_test() {
     else
         echo -e "${RED}FAIL${NC}"
         ((TESTS_FAILED++))
+        TESTS_LIST+=($test_name)
     fi
 }
 
@@ -35,26 +37,59 @@ run_test() {
 # ============================================================================
 
 test_schema_valid() {
+    #
+    # Verify that all MusicXML XSD schemas are syntactically correct.
+    #
     xmllint --schema XMLSchema.xsd ../schema/musicxml.xsd --noout || return $?
     xmllint --schema XMLSchema.xsd ../schema/container.xsd --noout || return $?
     xmllint --schema XMLSchema.xsd ../schema/opus.xsd --noout || return $?
     xmllint --schema XMLSchema.xsd ../schema/sounds.xsd --noout || return $?
 }
 
-test_suite_valid() {
-    tmp=$(mktemp -d)
+test_suite_syntax() {
+    #
+    # Verify that all MusicXML files in the test suite are syntactically correct.
+    # - Files with .invalid.xml are expected to fail
+    # - The schema musicxml.xsd needs to be "fudged" to update the location of the complementary schemas xlink.xsd and xml.xsd
+    #   @see https://github.com/w3c-cg/musicxml/discussions/445
+    #
+    local tmp=$(mktemp -d)
     awk '{gsub(/schemaLocation="http:\/\/www\.musicxml\.org\/xsd\//, "schemaLocation=\""); print}' ../schema/musicxml.xsd > "$tmp/musicxml.xsd"
     cp ../schema/xlink.xsd ../schema/xml.xsd "$tmp"
-    find musicxmlTestSuite -name '*.xml' -print0 | while read -d $'\0' file
+    find musicxmlTestSuite -name '*.xml' -print0 | sort -z | while read -d $'\0' file
     do
         xmllint --schema "$tmp/musicxml.xsd" "$file" --noout
-        status=$?
-        if [[ $file == *invalid* && $status == 0 ]]; then
-            echo -e "$file" expected to fail
-            return 1
-        elif [[ $file != *invalid* && $status != 0 ]]; then
-            return $status
+        local status=$?
+        if [[ $file == *.invalid.xml* && $status == 0 ]]; then
+            echo -e "$file" is expected to fail
+            exit 1 # exit not return because the pipe opens a subshell
+        elif [[ $file != *.invalid.xml* && $status != 0 ]]; then
+            exit $status
         fi
+    done
+}
+
+test_suite_schematron() {
+    #
+    # Verify that all MusicXML files in the test suite pass the semantic validations.
+    # - Files are associated with a Schematron schema by appending the schema filename
+    # - Files are expected to pass syntactic validation
+    # - Files with .fail.xml are expected to fail the semantic validation
+    #
+    find validations -name '*.sch' -print0 | sort -z | while read -d $'\0' schema
+    do
+        pattern=$(basename "${schema/.sch//}")
+        find musicxmlTestSuite -name "*.$pattern*.xml" -print0 | sort -z | while read -d $'\0' file
+        do
+            ./schematron.py "$schema" "$file" --noout
+            local status=$?
+            if [[ $file == *.fail.xml* && $status == 0 ]]; then
+                echo -e "$file" is expected to fail
+                exit 1 # exit not return because the pipe opens a subshell
+            elif [[ $file != *.fail.xml* && $status != 0 ]]; then
+                exit $status
+            fi
+        done
     done
 }
 
@@ -88,7 +123,7 @@ main() {
         echo -e "${GREEN}All tests passed!${NC}"
         exit 0
     else
-        echo -e "${RED}Some tests failed.${NC}"
+        echo -e "${RED}Some tests failed:${NC} ${TESTS_LIST[*]}"
         exit 1
     fi
 }
