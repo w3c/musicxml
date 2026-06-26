@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install libxml2-utils
+        run: sudo apt-get update && sudo apt-get install libxml2-utils python3-lxml
       - name: Checkout repository using git
         uses: actions/checkout@v6
         with:
