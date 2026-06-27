@@ -36,10 +36,10 @@ ASSERTIONS_FILE=assertions.json
 
 # Get assertion expectation of test and schema
 # The default behaviour is:
-# - Expect a "pass" for validation with musicxml.xsd
-# - Expect to "skip" for validation with any other schema
+# - Expect a "pass" for validation with *.xsd
+# - Expect to "skip" for validation with *.sch
 get_assertion() {
-    echo $(jq -r --arg test "$1" --arg schema "$2" '.[$test][$schema] // (if $schema == "musicxml.xsd" then "pass" else "skip" end)' $ASSERTIONS_FILE)
+    echo $(jq -r --arg test "$1" --arg schema "$2" '.[$test][$schema] // (if $schema | endswith(".sch") then "skip" else "pass" end)' $ASSERTIONS_FILE)
 }
 
 # ============================================================================

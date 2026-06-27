@@ -5,3 +5,34 @@
 - jq
 - python 3.x
 - lxml
+
+## Architecture
+The test suite is run by Bash script `test.sh`. It makes 3 validations:
+
+- The MusicXML schemas (`schema/*.xsd`) are _syntactically_ valid with `XMLSchema.xsd`
+- The MusicXML test files (`musicxmlTestSuite/xmlFiles/*.xml`) are _syntactically_ valid with `musicxml.xsd`
+- The MusicXML test files are _semantically_ valid with selected Schematron validations at `validations/*.sch`
+
+## Skip, pass or fail?
+Some MusicXML test files are intentionally invalid, whether syntactically or semantically. In those cases, the test suite should correctly detect failures without failing the test run. We would also like to skip selected test files with selected validations.
+
+To determine which test files are expected to skip / pass / fail against a given validation, the file `assertions.json` is used. It contains entries such as:
+
+```json
+{
+  "41g-PartNoId.xml": {
+    "musicxml.xsd": "fail"
+  },
+  "74a-FiguredBass.xml": {
+    "musicxml.xsd": "fail"
+  },
+  "99d-AccordionInvalid.xml": {
+    "musicxml.xsd": "fail"
+  },
+  "99e-Repeats.xml": {
+    "coda-tocoda.sch": "fail"
+  }
+}
+```
+
+By default, any test file is expected to `pass` against `musicxml.xsd` unless otherwise noted. Also by default, any test file is expected to `skip` any Schematron validation `.sch` unless otherwise noted.
