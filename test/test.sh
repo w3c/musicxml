@@ -15,6 +15,9 @@ TESTS_PASSED=0
 TESTS_FAILED=0
 TESTS_LIST=()
 
+# Assertions file
+ASSERTIONS_FILE=assertions.json
+
 # Run a single test function
 run_test() {
     local test_name=$1
@@ -31,8 +34,6 @@ run_test() {
         TESTS_LIST+=($test_name)
     fi
 }
-
-ASSERTIONS_FILE=assertions.json
 
 # Get assertion expectation of test and schema
 # The default behaviour is:
