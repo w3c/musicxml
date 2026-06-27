@@ -32,11 +32,21 @@ run_test() {
     fi
 }
 
+ASSERTIONS_FILE=assertions.json
+
+# Get assertion expectation of test and schema
+# The default behaviour is:
+# - Expect a "pass" for validation with musicxml.xsd
+# - Expect to "skip" for validation with any other schema
+get_assertion() {
+    echo $(jq -r --arg test "$1" --arg schema "$2" '.[$test][$schema] // (if $schema == "musicxml.xsd" then "pass" else "skip" end)' $ASSERTIONS_FILE)
+}
+
 # ============================================================================
 # TEST FUNCTIONS
 # ============================================================================
 
-test_schema_valid() {
+test_001_schema_valid() {
     #
     # Verify that all MusicXML XSD schemas are syntactically correct.
     #
@@ -46,30 +56,33 @@ test_schema_valid() {
     xmllint --schema XMLSchema.xsd ../schema/sounds.xsd --noout || return $?
 }
 
-test_suite_syntax() {
+test_002_suite_syntax() {
     #
     # Verify that all MusicXML files in the test suite are syntactically correct.
     # - Files with .invalid.xml are expected to fail
     # - The schema musicxml.xsd needs to be "fudged" to update the location of the complementary schemas xlink.xsd and xml.xsd
     #   @see https://github.com/w3c-cg/musicxml/discussions/445
     #
-    local tmp=$(mktemp -d)
-    awk '{gsub(/schemaLocation="http:\/\/www\.musicxml\.org\/xsd\//, "schemaLocation=\""); print}' ../schema/musicxml.xsd > "$tmp/musicxml.xsd"
-    cp ../schema/xlink.xsd ../schema/xml.xsd "$tmp"
+    local temp=$(mktemp -d)
+    awk '{gsub(/schemaLocation="http:\/\/www\.musicxml\.org\/xsd\//, "schemaLocation=\""); print}' ../schema/musicxml.xsd > "$temp/musicxml.xsd"
+    cp ../schema/xlink.xsd ../schema/xml.xsd "$temp"
     find musicxmlTestSuite -name '*.xml' -print0 | sort -z | while read -d $'\0' file
     do
-        xmllint --schema "$tmp/musicxml.xsd" "$file" --noout
+        local assert=$(get_assertion "$(basename "$file")" "musicxml.xsd")
+        if [[ $assert == "skip" ]]; then continue; fi
+
+        xmllint --schema "$temp/musicxml.xsd" "$file" --noout
         local status=$?
-        if [[ $file == *.invalid.xml* && $status == 0 ]]; then
+        if [[ $assert == "fail" && $status == 0 ]]; then
             echo -e "$file" is expected to fail
             exit 1 # exit not return because the pipe opens a subshell
-        elif [[ $file != *.invalid.xml* && $status != 0 ]]; then
+        elif [[ $assert == "pass" && $status != 0 ]]; then
             exit $status
         fi
     done
 }
 
-test_suite_schematron() {
+test_003_suite_schematron() {
     #
     # Verify that all MusicXML files in the test suite pass the semantic validations.
     # - Files are associated with a Schematron schema by appending the schema filename
@@ -78,15 +91,17 @@ test_suite_schematron() {
     #
     find validations -name '*.sch' -print0 | sort -z | while read -d $'\0' schema
     do
-        pattern=$(basename "${schema/.sch//}")
-        find musicxmlTestSuite -name "*.$pattern*.xml" -print0 | sort -z | while read -d $'\0' file
+        find musicxmlTestSuite -name '*.xml' -print0 | sort -z | while read -d $'\0' file
         do
+            local assert=$(get_assertion "$(basename "$file")" "$(basename "$schema")")
+            if [[ $assert == "skip" ]]; then continue; fi
+
             ./schematron.py "$schema" "$file" --noout
             local status=$?
-            if [[ $file == *.fail.xml* && $status == 0 ]]; then
+            if [[ $assert == "fail" && $status == 0 ]]; then
                 echo -e "$file" is expected to fail
                 exit 1 # exit not return because the pipe opens a subshell
-            elif [[ $file != *.fail.xml* && $status != 0 ]]; then
+            elif [[ $assert == "pass" && $status != 0 ]]; then
                 exit $status
             fi
         done
