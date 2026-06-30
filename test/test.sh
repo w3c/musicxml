@@ -50,11 +50,15 @@ get_assertion() {
 test_001_schema_valid() {
     #
     # Verify that all MusicXML XSD schemas are syntactically correct.
+    # - The schema XMLSchema.xsd needs to be "fudged" to update the location of the complementary schema xml.xsd
     #
-    xmllint --schema XMLSchema.xsd ../schema/musicxml.xsd --noout || return $?
-    xmllint --schema XMLSchema.xsd ../schema/container.xsd --noout || return $?
-    xmllint --schema XMLSchema.xsd ../schema/opus.xsd --noout || return $?
-    xmllint --schema XMLSchema.xsd ../schema/sounds.xsd --noout || return $?
+    local temp=$(mktemp -d)
+    awk '{gsub(/schemaLocation="http:\/\/www\.w3\.org\/2001\//, "schemaLocation=\""); print}' ./XMLSchema.xsd > "$temp/XMLSchema.xsd"
+    cp ../schema/xml.xsd "$temp"
+    xmllint --schema "$temp/XMLSchema.xsd" ../schema/musicxml.xsd --noout || return $?
+    xmllint --schema "$temp/XMLSchema.xsd" ../schema/container.xsd --noout || return $?
+    xmllint --schema "$temp/XMLSchema.xsd" ../schema/opus.xsd --noout || return $?
+    xmllint --schema "$temp/XMLSchema.xsd" ../schema/sounds.xsd --noout || return $?
 }
 
 test_002_suite_syntax() {
