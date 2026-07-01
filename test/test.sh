@@ -50,7 +50,6 @@ get_assertion() {
 test_001_schema_valid() {
     #
     # Verify that all MusicXML XSD schemas are syntactically correct.
-    # - The schema XMLSchema.xsd needs to be "fudged" to update the location of the complementary schema xml.xsd
     #
     XML_CATALOG_FILES=./catalog.xml xmllint --schema XMLSchema.xsd ../schema/musicxml.xsd --noout || return $?
     XML_CATALOG_FILES=./catalog.xml xmllint --schema XMLSchema.xsd ../schema/container.xsd --noout || return $?
@@ -61,9 +60,6 @@ test_001_schema_valid() {
 test_002_suite_syntax() {
     #
     # Verify that all MusicXML files in the test suite are syntactically correct.
-    # - Files with .invalid.xml are expected to fail
-    # - The schema musicxml.xsd needs to be "fudged" to update the location of the complementary schemas xlink.xsd and xml.xsd
-    #   @see https://github.com/w3c-cg/musicxml/discussions/445
     #
     find musicxmlTestSuite -name '*.xml' -print0 | sort -z | while read -d $'\0' file
     do
@@ -84,9 +80,6 @@ test_002_suite_syntax() {
 test_003_suite_schematron() {
     #
     # Verify that all MusicXML files in the test suite pass the semantic validations.
-    # - Files are associated with a Schematron schema by appending the schema filename
-    # - Files are expected to pass syntactic validation
-    # - Files with .fail.xml are expected to fail the semantic validation
     #
     find validations -name '*.sch' -print0 | sort -z | while read -d $'\0' schema
     do
