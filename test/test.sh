@@ -40,7 +40,12 @@ run_test() {
 # - Expect a "pass" for validation with *.xsd
 # - Expect to "skip" for validation with *.sch
 get_assertion() {
-    echo $(jq -r --arg test "$1" --arg schema "$2" '.[$test][$schema] // (if $schema | endswith(".sch") then "skip" else "pass" end)' $ASSERTIONS_FILE)
+    echo $(jq -r --arg test "$1" --arg schema "$2" '.[$test][$schema] // (if $schema | endswith(".sch") then "skip" else "pass" end)' "$ASSERTIONS_FILE")
+}
+
+# Get Schematron validations for given test
+get_validations() {
+  jq -r --arg test "$1" '(.[$test] // {}) | keys[] | select(endswith(".sch"))' "$ASSERTIONS_FILE"
 }
 
 # ============================================================================
@@ -81,14 +86,13 @@ test_003_suite_schematron() {
     #
     # Verify that all MusicXML files in the test suite pass the semantic validations.
     #
-    find validations -name '*.sch' -print0 | sort -z | while read -d $'\0' schema
+    find musicxmlTestSuite -name '*.xml' -print0 | sort -z | while read -d $'\0' file
     do
-        find musicxmlTestSuite -name '*.xml' -print0 | sort -z | while read -d $'\0' file
-        do
-            local assert=$(get_assertion "$(basename "$file")" "$(basename "$schema")")
+        while IFS= read -r schema; do
+            local assert=$(get_assertion "$(basename "$file")" "$schema")
             if [[ $assert == "skip" ]]; then continue; fi
 
-            ./schematron.py "$schema" "$file" --noout
+            ./schematron.py "validations/$schema" "$file" --noout
             local status=$?
             if [[ $assert == "fail" && $status == 0 ]]; then
                 echo -e "$file" is expected to fail
@@ -96,7 +100,7 @@ test_003_suite_schematron() {
             elif [[ $assert == "pass" && $status != 0 ]]; then
                 exit $status
             fi
-        done
+        done < <(get_validations "$(basename "$file")")
     done
 }
 
