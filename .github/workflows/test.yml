@@ -2,7 +2,7 @@ name: Run tests only
 
 on:
   push:
-    branches: [ '!gh-pages' ]
+    branches: ['*', '!gh-pages']
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install libxml2-utils
+        run: sudo apt-get update && sudo apt-get install libxml2-utils python3-lxml jq
       - name: Checkout repository using git
         uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Run tests
-        run: cd test && ./test.sh
+        run: cd tests && ./test.sh

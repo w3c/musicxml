@@ -1,0 +1,14 @@
+{
+  "41g-PartNoId.xml": {
+    "musicxml.xsd": "fail"
+  },
+  "74a-FiguredBass.xml": {
+    "musicxml.xsd": "fail"
+  },
+  "99d-AccordionInvalid.xml": {
+    "musicxml.xsd": "fail"
+  },
+  "repeats.musicxml": {
+    "coda-tocoda.sch": "fail"
+  }
+}
