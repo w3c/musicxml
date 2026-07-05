@@ -66,7 +66,7 @@ test_002_suite_syntax() {
     #
     # Verify that all MusicXML files in the test suite are syntactically correct.
     #
-    find musicxmlTestSuite -name '*.xml' -print0 | sort -z | while read -d $'\0' file
+    find files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
     do
         local assert=$(get_assertion "$(basename "$file")" "musicxml.xsd")
         if [[ $assert == "skip" ]]; then continue; fi
@@ -86,7 +86,7 @@ test_003_suite_schematron() {
     #
     # Verify that all MusicXML files in the test suite pass the semantic validations.
     #
-    find musicxmlTestSuite -name '*.xml' -print0 | sort -z | while read -d $'\0' file
+    find files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
     do
         while IFS= read -r schema; do
             local assert=$(get_assertion "$(basename "$file")" "$schema")

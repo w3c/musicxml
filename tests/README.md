@@ -9,14 +9,14 @@
 ```shell
 sudo apt-get update && sudo apt-get install libxml2-utils python3-lxml jq
 git clone --recurse-submodules git@github.com:w3c-cg/musicxml.git
-cd test && ./test.sh
+cd tests && ./test.sh
 ```
 
 ## Theory of operation
 The test suite is run by Bash script `test.sh`. It performs 3 types of validations:
 
 - The MusicXML schemas (`../schema/*.xsd`) are _syntactically_ valid with `XMLSchema.xsd` (a copy of the [official XML Schema 1.0 for XML Schemas](https://www.w3.org/2001/XMLSchema))
-- The MusicXML test files (`musicxmlTestSuite/xmlFiles/*.xml`) are _syntactically_ valid with `musicxml.xsd`
+- The MusicXML test files (`files/**/*.xml,*.musicxml`) are _syntactically_ valid with `musicxml.xsd`
 - The MusicXML test files are _semantically_ valid with selected [Schematron validations](https://www.schematron.com/) at `validations/*.sch`
 
 ## Skip, pass or fail?
@@ -35,7 +35,7 @@ To determine which test files are expected to skip / pass / fail against a given
   "99d-AccordionInvalid.xml": {
     "musicxml.xsd": "fail"
   },
-  "99e-Repeats.xml": {
+  "repeats.musicxml": {
     "coda-tocoda.sch": "fail"
   }
 }

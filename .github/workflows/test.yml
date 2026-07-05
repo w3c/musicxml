@@ -19,4 +19,4 @@ jobs:
         with:
           submodules: recursive
       - name: Run tests
-        run: cd test && ./test.sh
+        run: cd tests && ./test.sh

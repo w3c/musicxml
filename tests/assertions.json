@@ -8,7 +8,7 @@
   "99d-AccordionInvalid.xml": {
     "musicxml.xsd": "fail"
   },
-  "99e-Repeats.xml": {
+  "repeats.musicxml": {
     "coda-tocoda.sch": "fail"
   }
 }
