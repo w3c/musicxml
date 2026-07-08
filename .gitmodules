@@ -1,3 +1,3 @@
-[submodule "test/musicxmlTestSuite"]
-	path = tests/files/musicxmlTestSuite
-	url = git@github.com:cuthbertLab/musicxmlTestSuite.git
+[submodule "tests/files/musicxml-tests"]
+	path = tests/files/musicxml-tests
+	url = git@github.com:w3c-cg/musicxmlTestSuite.git
