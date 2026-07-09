@@ -10,5 +10,51 @@
   },
   "repeats.musicxml": {
     "coda-tocoda.sch": "fail"
+  },
+  "coda-tocoda-fail-extraCoda.musicxml": {
+    "coda-tocoda.sch": "fail"
+  },
+  "coda-tocoda-fail-extraToCoda.musicxml": {
+    "coda-tocoda.sch": "fail"
+  },
+  "coda-tocoda-fail-noCoda.musicxml": {
+    "coda-tocoda.sch": "fail"
+  },
+  "coda-tocoda-fail-noToCoda.musicxml": {
+    "coda-tocoda.sch": "fail"
+  },
+  "coda-tocoda-pass.musicxml": {
+    "coda-tocoda.sch": "pass"
+  },
+  "coda-tocoda-twoeach-pass.musicxml": {
+    "coda-tocoda.sch": "pass"
+  },
+  "coda-tocoda-twoeach-wrongid-fail.musicxml": {
+    "coda-tocoda.sch": "fail"
+  },
+  "measure-beats-fail.musicxml": {
+    "measure-beats.sch": "fail"
+  },
+  "measure-beats-pass.musicxml": {
+    "measure-beats.sch": "pass"
+  },
+  "segno-dalsegno-fail-extraSegno.musicxml": {
+    "segno-dalsegno.sch": "fail"
+  },
+  "segno-dalsegno-fail-id-mismatch.musicxml": {
+    "segno-dalsegno.sch": "fail"
+  },
+  "segno-dalsegno-fail-nodalsegno.musicxml": {
+    "segno-dalsegno.sch": "fail"
+  },
+  "segno-dalsegno-fail-nosegno.musicxml": {
+    "segno-dalsegno.sch": "fail"
+  },
+  "segno-dalsegno-pass.musicxml": {
+    "segno-dalsegno.sch": "pass"
+  },
+  "segno-dalsegno-twoeach-wrongid-fail.musicxml": {
+    "segno-dalsegno.sch": "fail"
   }
 }
+
