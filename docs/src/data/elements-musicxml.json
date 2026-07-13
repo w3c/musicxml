@@ -2517,6 +2517,13 @@
             "name": "placement",
             "documentation": "Indicates whether something is above or below another element, such as a note or a notation.",
             "type": "above-below"
+         },
+         {
+            "default": "1",
+            "required": false,
+            "name": "number",
+            "documentation": "Allows various types of harmonics to be grouped together. The default value is 1.",
+            "type": "number-level"
          }
       ],
       "name": "harmonic",

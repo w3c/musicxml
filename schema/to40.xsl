@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  MusicXML to31.xsl stylesheet
+  MusicXML to40.xsl stylesheet
 
   Version 4.1 Draft
 
