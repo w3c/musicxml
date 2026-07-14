@@ -2,7 +2,7 @@
 <score-partwise
   version="4.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.musicxml.org/xsd/musicxml.xsd">
+  xsi:noNamespaceSchemaLocation="http://www.musicxml.org/xsd/musicxml.xsd">
   <part-list>
     <score-part id="P1">
       <part-name></part-name>

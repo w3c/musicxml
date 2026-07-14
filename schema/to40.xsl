@@ -52,7 +52,7 @@
 
   <!-- Remove new attributes. -->
   <xsl:template
-    match="score-partwise/@xsi:schemaLocation"/>
+    match="score-partwise/@xsi:noNamespaceSchemaLocation"/>
 
   <xsl:template
     match="harmonic/@number"/>

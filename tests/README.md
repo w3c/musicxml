@@ -13,11 +13,12 @@ cd tests && ./test.sh
 ```
 
 ## Theory of operation
-The test suite is run by Bash script `test.sh`. It performs 3 types of validations:
+The test suite is run by Bash script `test.sh`. It performs the following types of validations:
 
 - The MusicXML schemas (`../schema/*.xsd`) are _syntactically_ valid with `XMLSchema.xsd` (a copy of the [official XML Schema 1.0 for XML Schemas](https://www.w3.org/2001/XMLSchema))
 - The MusicXML test files (`files/**/*.xml,*.musicxml`) are _syntactically_ valid with `musicxml.xsd`
-- The MusicXML test files are _semantically_ valid with selected [Schematron validations](https://www.schematron.com/) at `validations/*.sch`
+- Select MusicXML test files are _semantically_ valid with [Schematron validations](https://www.schematron.com/) at `validations/*.sch`
+- Select MusicXML test files, when downgraded to the previous MusicXML schema version (via `../schema/toXY.xsl`), are _syntactically_ valid with the corresponding previous version of `musicxml.xsd` (as per the `git` tag `vX.Y`)
 
 ## Skip, pass or fail?
 Some MusicXML test files are intentionally invalid, whether syntactically or semantically. In those cases, the test suite should correctly detect failures without failing the test run. We would also like to skip selected test files with selected validations.
@@ -37,6 +38,9 @@ To determine which test files are expected to skip / pass / fail against a given
   },
   "repeats.musicxml": {
     "coda-tocoda.sch": "fail"
+  },
+  "harmonic-element.musicxml": {
+    "to40.xsl": "pass"
   }
 }
 ```
