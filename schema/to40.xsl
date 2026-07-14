@@ -24,6 +24,7 @@
 
 <xsl:stylesheet
   version="1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <!--
@@ -49,16 +50,12 @@
     attributes.
   -->
 
-  <!-- Additions in note.mod -->
+  <!-- Remove new attributes. -->
+  <xsl:template
+    match="score-partwise/@xsi:schemaLocation"/>
 
-  <!-- Additions in attributes.mod -->
-
-  <!-- Additions in common.mod -->
-
-  <!-- Additions in direction.mod -->
-
-  <!-- Additions in score.mod -->
-
+  <xsl:template
+    match="harmonic/@number"/>
 
   <!--
     Convert score version attribute to 4.0.
@@ -72,19 +69,20 @@
     The identity transformation. Used for everything that
     stays the same in 4.0.
   -->
-
   <xsl:template match="text()">
     <xsl:value-of select="." />
   </xsl:template>
 
-  <!--
-    Whitespace within an xsl:copy could cause problems with
-    empty elements.
-  -->
-  <xsl:template match="*|@*|comment()|processing-instruction()">
-    <xsl:copy><xsl:apply-templates
-        select="*|@*|comment()|processing-instruction()|text()"
-    /></xsl:copy>
+  <!-- Copy elements -->
+  <xsl:template match="*" priority="-1">
+    <xsl:element name="{name()}">
+        <xsl:apply-templates select="node()|@*"/>
+    </xsl:element>
+  </xsl:template>
+
+  <!-- Copy all other nodes -->
+  <xsl:template match="node()|@*" priority="-2">
+    <xsl:copy />
   </xsl:template>
 
 </xsl:stylesheet>

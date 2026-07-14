@@ -1,13 +1,3 @@
----
-title: '<harmonic>'
-elements:
-- harmonic
-- base-pitch
-- artificial
-- touching-pitch
-source: "Paganini, N. Caprice in E Major. Op. 1, No. 9"
----
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <score-partwise
   version="4.1"
@@ -99,4 +89,3 @@ source: "Paganini, N. Caprice in E Major. Op. 1, No. 9"
     </measure>
   </part>
 </score-partwise>
-```
