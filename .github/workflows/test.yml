@@ -15,9 +15,9 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install libxml2-utils python3-lxml jq
       - name: Checkout repository using git
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
-          fetch-tags: 1
+          fetch-depth: 0
       - name: Run tests
         run: cd tests && ./test.sh
