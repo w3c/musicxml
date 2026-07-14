@@ -113,7 +113,8 @@ test_004_previous_version() {
     # Verify that to40.xsl transformation works and validates against the previous version of the schema.
     #
     local tempdir=$(mktemp -d)
-    git --work-tree="$tempdir" checkout "$PREVIOUS_VERSION_TAG" -- schema
+    trap "rm -rf $tempdir" 0 1 2 3 15   # clean up on exit
+    GIT_INDEX_FILE="$tempdir/git" GIT_WORK_TREE="$tempdir" git checkout "$PREVIOUS_VERSION_TAG" -- schema
 
     find files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
     do
