@@ -110,7 +110,7 @@ test_003_suite_schematron() {
 
 test_004_previous_version() {
     #
-    # Verify that to40.xsl transformation works and validates against the previous version of the schema.
+    # Verify that toXX.xsl transformation works and validates against the corresponding version XX of the schema.
     #
     local tempdir=$(mktemp -d)
     trap "rm -rf $tempdir" 0 1 2 3 15   # clean up on exit
