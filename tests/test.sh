@@ -118,7 +118,7 @@ test_004_previous_version() {
 
     find files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
     do
-        local assert=$(get_assertion "$(basename "$file")" "to.xsl")
+        local assert=$(get_assertion "$(basename "$file")" "$PREVIOUS_VERSION_XSL")
         if [[ $assert == "skip" ]]; then continue; fi
 
         local previous="$tempdir/$(basename "$file")"

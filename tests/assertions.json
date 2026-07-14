@@ -12,6 +12,6 @@
     "coda-tocoda.sch": "fail"
   },
   "harmonic-element.musicxml": {
-    "to.xsl": "pass"
+    "to40.xsl": "pass"
   }
 }
