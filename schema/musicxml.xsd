@@ -8514,7 +8514,7 @@ Figures are ordered from top to bottom. The value of parentheses is "no" if not 
 		<xs:attributeGroup ref="placement"/>
 		<xs:attribute name="number" type="number-level" default="1">
 			<xs:annotation>
-				<xs:documentation>Allows various types of harmonics to be grouped together. The default value is 1.</xs:documentation>
+				<xs:documentation>Allows various types of harmonics to be grouped together when multiple harmonics are played within a chord. The default value is 1.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>

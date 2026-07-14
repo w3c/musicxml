@@ -2522,7 +2522,7 @@
             "default": "1",
             "required": false,
             "name": "number",
-            "documentation": "Allows various types of harmonics to be grouped together. The default value is 1.",
+            "documentation": "Allows various types of harmonics to be grouped together when multiple harmonics are played within a chord. The default value is 1.",
             "type": "number-level"
          }
       ],
