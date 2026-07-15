@@ -1,4 +1,5 @@
 ---
+import fs from 'node:fs';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { getEntry, render } from 'astro:content';
@@ -30,13 +31,18 @@ const tag_ = Object.keys(defaultElementsMap).find(tag => defaultElementsMap[tag]
 const regex_ = tag_ ? new RegExp(`<${tag_}[\\s>\/]`, 'mi') : null;
 // Filter examples containing this element.
 const regex = new RegExp(`<${element.id}[\\s>\/]`, 'mi');
-const examples_ = Object.values(examples).filter(example =>
-  example.file.includes(`/${schema}/`) && (
-    regex.test(example.rawContent()) ||
-    (example.frontmatter.elements_map && Object.values(example.frontmatter.elements_map).includes(element.id)) ||
-    (!example.frontmatter.elements_map && regex_?.test(example.rawContent()))
-  )
-);
+const examples_ = Object.values(examples).filter(example => {
+  if (!example.file.includes(`/${schema}/`)) return false;
+  if (regex.test(example.rawContent())) return true;
+  if (example.frontmatter.elements_map && Object.values(example.frontmatter.elements_map).includes(element.id)) return true;
+  if (!example.frontmatter.elements_map && regex_?.test(example.rawContent())) return true;
+  const musicxml = example.file.replace('.md', '.musicxml');
+  if (fs.existsSync(musicxml)) {
+    const snippet = fs.readFileSync(musicxml, 'utf8').trim();
+    if (regex.test(snippet)) return true;
+  }
+  return false;
+});
 
 // Get extra notes.
 const note = await getEntry('notes', `${schema}/${element.id}`);
