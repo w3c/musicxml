@@ -73,9 +73,9 @@ MusicXML examples can be stored in the same folder `docs/src/data/examples/[sche
 ## Development
 - To build the full site: `npm i && npm run build`
 - To develop and hot-reload: `npm run start`
-- To rebuild the JSON listings from modified XSD schema files: `npm run build:schemas`
-- To debug an XSL transformation against a given schema: `npm run debug:xsl transformation schema` (without file extensions)
-- To validate a modified XSD schema (requires `xmllint`): `npm run debug:xsd schema` (without file extension)
+- To rebuild the JSON listings from modified XSD schema files: `npm run build:schema`
+- To debug an XSL transformation against a given schema: `npm run debug:xsl transformation schema-file` (without file extensions)
+- To validate a modified XSD schema (requires `xmllint`): `npm run debug:xsd schema-file` (without file extension)
 
 ## Deployment
 - Set `ORIGIN` environment variable to be your host URL's origin (default is https://w3c-cg.github.io). `.env` works too.
