@@ -5693,12 +5693,12 @@ Barlines have a location attribute to make it easier to process barlines indepen
 					<xs:documentation>Wavy lines are one way to indicate trills and vibrato.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="segno" type="segno" minOccurs="0">
+			<xs:element name="segno" type="segno" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The &lt;segno&gt; element is the visual indicator of a segno sign. A &lt;sound&gt; element is also needed to guide playback applications reliably.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="coda" type="coda" minOccurs="0">
+			<xs:element name="coda" type="coda" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The &lt;coda&gt; element is the visual indicator of a coda sign. A &lt;sound&gt; element is also needed to guide playback applications reliably.</xs:documentation>
 				</xs:annotation>

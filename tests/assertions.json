@@ -13,5 +13,8 @@
   },
   "harmonic-element.musicxml": {
     "to40.xsl": "pass"
+  },
+  "barline-multiple-coda.musicxml": {
+    "to40.xsl": "pass"
   }
 }
