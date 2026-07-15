@@ -110,7 +110,7 @@ test_003_suite_schematron() {
 
 test_004_previous_version() {
     #
-    # Verify that toXX.xsl transformation works and validates against the corresponding version XX of the schema.
+    # Verify that toXY.xsl transformation works and validates against the corresponding git tag vX.Y of the schema.
     #
     local tempdir=$(mktemp -d)
     trap "rm -rf $tempdir" 0 1 2 3 15   # clean up on exit
