@@ -23,7 +23,7 @@ def main():
     target_doc = etree.parse(target_file)
   valid = schematron.validate(target_doc)
 
-  if not args.noout:
+  if not valid or not args.noout:
     sys.stdout.write(str(schematron.validation_report))
 
   if valid:

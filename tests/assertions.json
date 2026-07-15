@@ -8,10 +8,16 @@
   "99d-AccordionInvalid.xml": {
     "musicxml.xsd": "fail"
   },
-  "repeats.musicxml": {
-    "coda-tocoda.sch": "fail"
+  "repeats-jumps.musicxml": {
+    "repeats-jumps.sch": "pass"
+  },
+  "repeats-jumps-invalid.musicxml": {
+    "repeats-jumps.sch": "fail"
   },
   "harmonic-element.musicxml": {
+    "to40.xsl": "pass"
+  },
+  "barline-multiple-coda.musicxml": {
     "to40.xsl": "pass"
   }
 }

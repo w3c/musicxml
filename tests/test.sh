@@ -146,7 +146,9 @@ main() {
 
     # Discover all test_* functions and run them
     while IFS= read -r test_name; do
-        run_test "$test_name"
+        if [[ -z "$TEST_NAME" || "$test_name" =~ "$TEST_NAME" ]]; then
+            run_test "$test_name"
+        fi
     done < <(declare -F | awk '{print $3}' | grep '^test_' | sort)
 
     # Print summary

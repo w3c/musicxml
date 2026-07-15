@@ -57,6 +57,10 @@
   <xsl:template
     match="harmonic/@number"/>
 
+  <!-- Remove new/modified elements. -->
+  <xsl:template
+    match="barline/coda[preceding-sibling::coda] | barline/segno[preceding-sibling::segno]"/>
+
   <!--
     Convert score version attribute to 4.0.
   -->
