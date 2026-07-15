@@ -56,7 +56,7 @@ get_validations() {
 # TEST FUNCTIONS
 # ============================================================================
 
-test1_001_schema_valid() {
+test_001_schema_valid() {
     #
     # Verify that all MusicXML XSD schemas are syntactically correct.
     #
@@ -66,7 +66,7 @@ test1_001_schema_valid() {
     XML_CATALOG_FILES=./catalog.xml xmllint --schema XMLSchema.xsd ../schema/sounds.xsd --noout || return $?
 }
 
-test1_002_suite_syntax() {
+test_002_suite_syntax() {
     #
     # Verify that all MusicXML files in the test suite are syntactically correct.
     #
@@ -86,7 +86,7 @@ test1_002_suite_syntax() {
     done
 }
 
-test1_003_suite_schematron() {
+test_003_suite_schematron() {
     #
     # Verify that all MusicXML files in the test suite pass the semantic validations.
     #
