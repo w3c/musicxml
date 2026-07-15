@@ -4,8 +4,8 @@
   MusicXML parttime.xsl stylesheet
 
   Version 4.1 Draft
-  
-  Copyright © 2004-2024 the Contributors to the MusicXML
+
+  Copyright © 2004-2026 the Contributors to the MusicXML
   Specification, published by the W3C Music Notation Community
   Group under the W3C Community Contributor License Agreement
   (CLA):
@@ -17,7 +17,7 @@
      https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
-<!-- 
+<!--
   Parttime.xsl is an XSLT stylesheet for transforming
   partwise MusicXML scores into timewise scores. Thus
   instead of having measures included within each part,
@@ -33,7 +33,7 @@
 
   <!--
     XML output, with a DOCTYPE referring the timewise DTD.
-    Here we use the full Internet URL. 
+    Here we use the full Internet URL.
   -->
   <xsl:output method="xml" indent="yes" encoding="UTF-8"
     omit-xml-declaration="no" standalone="no"
@@ -44,7 +44,7 @@
     For the root, only look for score-partwise and
     score-timewise. Anything else as a root element gets
     ignored.
-  -->  
+  -->
   <xsl:template match="/">
     <xsl:apply-templates select="./score-partwise"/>
     <xsl:apply-templates select="./score-timewise"/>
@@ -63,9 +63,9 @@
   <xsl:template match="text()">
     <xsl:value-of select="." />
   </xsl:template>
-	
+
   <!--
-    Whitespace within an xsl:copy could cause problems with 
+    Whitespace within an xsl:copy could cause problems with
     empty elements.
   -->
   <xsl:template match="*|@*|comment()|processing-instruction()">
@@ -82,10 +82,10 @@
     all others) from within that loop.
   -->
   <xsl:template match="score-partwise">
-	
+
     <!-- Create the score-timewise element. -->
     <xsl:element name="score-timewise">
-		
+
       <!--
         Copy the seven score header elements and their
         children. The DTD specifies that these occur, if
@@ -99,24 +99,24 @@
       <xsl:apply-templates select="defaults"/>
       <xsl:apply-templates select="credit"/>
       <xsl:apply-templates select="part-list"/>
-			
+
       <!--
         Now loop through all measures in the first part.
       -->
       <xsl:for-each select="part[1]/measure">
-		
+
         <!--
           Bind measure number to a variable for use
-          throughout the loop, including inner loop 
+          throughout the loop, including inner loop
           where we will lose the immediate context.
         -->
         <xsl:variable name="measure-number">
           <xsl:value-of select="@number"/>
         </xsl:variable>
-				
+
         <!-- Create the measure element. -->
         <xsl:element name="measure">
-				
+
           <!--
             Now we need to copy the measure attributes.
           -->
@@ -143,22 +143,22 @@
               <xsl:value-of select="@width"/>
             </xsl:attribute>
           </xsl:if>
-				
+
           <!--
             Now for the inner loop. We go back to the root
             ancestor, and loop through each part and
             measure, looking for the ones that match the
             measure number, and add it here.
-						
+
             This is inefficient. but it provides a working
             starting point.
           -->
           <xsl:for-each select="../../part/measure">
             <xsl:if test="@number=$measure-number">
-					
+
               <!-- Create the part element. -->
               <xsl:element name="part">
-						
+
                 <!-- Copy the ID from the parent part element. -->
                 <xsl:attribute name="id">
                   <xsl:value-of select="parent::part/@id"/>
@@ -172,9 +172,9 @@
               </xsl:element>
             </xsl:if>
           </xsl:for-each>
-					
+
         </xsl:element>
       </xsl:for-each>
-    </xsl:element>       
+    </xsl:element>
   </xsl:template>
 </xsl:stylesheet>

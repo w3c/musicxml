@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -24,9 +24,9 @@
 	simple XLink support. The link element serves as an outgoing
 	XLink. The bookmark element serves as a well-defined target
 	for an incoming XLink. The link-attributes entity is also
-	used to connect a MusicXML score with MusicXML parts or a 
+	used to connect a MusicXML score with MusicXML parts or a
 	MusicXML opus. If a relative link is used within a document
-	that is part of a compressed MusicXML file, the link is 
+	that is part of a compressed MusicXML file, the link is
 	relative to the root folder of the zip file.
 -->
 
@@ -81,7 +81,7 @@
     position NMTOKEN #IMPLIED
     %position;
 >
-	
+
 <!ELEMENT bookmark EMPTY>
 <!ATTLIST bookmark
     id    ID     #REQUIRED

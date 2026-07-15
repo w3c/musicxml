@@ -18,6 +18,10 @@ TESTS_LIST=()
 # Assertions file
 ASSERTIONS_FILE=assertions.json
 
+# Version information
+PREVIOUS_VERSION_TAG=v4.0
+PREVIOUS_VERSION_XSL=to40.xsl
+
 # Run a single test function
 run_test() {
     local test_name=$1
@@ -40,7 +44,7 @@ run_test() {
 # - Expect a "pass" for validation with *.xsd
 # - Expect to "skip" for validation with *.sch
 get_assertion() {
-    echo $(jq -r --arg test "$1" --arg schema "$2" '.[$test][$schema] // (if $schema | endswith(".sch") then "skip" else "pass" end)' "$ASSERTIONS_FILE")
+    echo $(jq -r --arg test "$1" --arg schema "$2" '.[$test][$schema] // (if $schema | endswith(".xsd") then "pass" else "skip" end)' "$ASSERTIONS_FILE")
 }
 
 # Get Schematron validations for given test
@@ -66,7 +70,7 @@ test_002_suite_syntax() {
     #
     # Verify that all MusicXML files in the test suite are syntactically correct.
     #
-    find files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
+    find -L files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
     do
         local assert=$(get_assertion "$(basename "$file")" "musicxml.xsd")
         if [[ $assert == "skip" ]]; then continue; fi
@@ -86,7 +90,7 @@ test_003_suite_schematron() {
     #
     # Verify that all MusicXML files in the test suite pass the semantic validations.
     #
-    find files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
+    find -L files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
     do
         while IFS= read -r schema; do
             local assert=$(get_assertion "$(basename "$file")" "$schema")
@@ -101,6 +105,32 @@ test_003_suite_schematron() {
                 exit $status
             fi
         done < <(get_validations "$(basename "$file")")
+    done
+}
+
+test_004_previous_version() {
+    #
+    # Verify that toXY.xsl transformation works and validates against the corresponding git tag vX.Y of the schema.
+    #
+    local tempdir=$(mktemp -d)
+    trap "rm -rf $tempdir" 0 1 2 3 15   # clean up on exit
+    GIT_INDEX_FILE="$tempdir/git" GIT_WORK_TREE="$tempdir" git checkout "$PREVIOUS_VERSION_TAG" -- schema
+
+    find -L files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
+    do
+        local assert=$(get_assertion "$(basename "$file")" "$PREVIOUS_VERSION_XSL")
+        if [[ $assert == "skip" ]]; then continue; fi
+
+        local previous="$tempdir/$(basename "$file")"
+        XML_CATALOG_FILES=../schema/catalog.xml xsltproc "../schema/$PREVIOUS_VERSION_XSL" "$file" > "$previous" || exit $?
+        XML_CATALOG_FILES="$tempdir/schema/catalog.xml" xmllint --schema "$tempdir/schema/musicxml.xsd" "$previous" --noout
+        local status=$?
+        if [[ $assert == "fail" && $status == 0 ]]; then
+            echo -e "$file" is expected to fail
+            exit 1 # exit not return because the pipe opens a subshell
+        elif [[ $assert == "pass" && $status != 0 ]]; then
+            exit $status
+        fi
     done
 }
 

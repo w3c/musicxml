@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -26,35 +26,35 @@
 	for notation, analysis, retrieval, and performance
 	applications. Therefore it is intended to be sufficient,
 	not optimal, for these applications.
-	
+
 	The MusicXML format is based on the MuseData and Humdrum
 	formats. Humdrum explicitly represents the two-dimensional
 	nature of musical scores by a 2-D layout notation. Since the
 	XML format is hierarchical, we cannot do this explicitly.
 	Instead, there are two top-level formats:
-	
+
 	partwise.dtd   Represents scores by part/instrument
 	timewise.dtd   Represents scores by time/measure (deprecated)
-	
+
 	Thus partwise.dtd contains measures within each part,
 	while timewise.dtd contains parts within each measure.
 	XSLT stylesheets are provided to convert between the
 	two formats.
-	
-	The partwise and timewise score DTDs represent a single 
-	movement of music. Multiple movements or other musical 
+
+	The partwise and timewise score DTDs represent a single
+	movement of music. Multiple movements or other musical
 	collections are presented using opus.dtd. An opus
 	document contains XLinks to individual scores.
-	
+
 	Suggested use:
-	
+
 	<!DOCTYPE score-partwise PUBLIC
 		"-//Recordare//DTD MusicXML 4.1 Partwise//EN"
 		"http://www.musicxml.org/dtds/partwise.dtd">
-	
+
 	This DTD is made up of a series of component DTD modules,
 	all of which are included here.
-	
+
 	The XML catalog at catalog.xml supports validating against a
 	local copy of this DTD rather than the networked version in
 	the system ID. Software often has trouble using system IDs
@@ -70,7 +70,7 @@
 	the partwise and timewise DTDs. The values for these
 	entities are what distinguish the partwise and timewise
 	DTD files.
---> 
+-->
 <!ENTITY % partwise "INCLUDE">
 <!ENTITY % timewise "IGNORE">
 
@@ -94,7 +94,7 @@
 	"layout.mod">
 %layout;
 
-<!-- 
+<!--
 	The identity DTD module contains identification and
 	metadata elements.
 -->
@@ -140,7 +140,7 @@
 	"barline.mod">
 %barline;
 
-<!-- 
+<!--
 	The direction DTD module contains elements for musical
 	directions not tied to individual notes. This includes
 	harmony and chord symbol elements.

@@ -10,5 +10,8 @@
   },
   "repeats.musicxml": {
     "coda-tocoda.sch": "fail"
+  },
+  "harmonic-element.musicxml": {
+    "to40.xsl": "pass"
   }
 }

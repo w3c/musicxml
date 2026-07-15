@@ -6,7 +6,7 @@
 
   Version 4.1 Draft
 
-  Copyright © 2004-2021 the Contributors to the MusicXML
+  Copyright © 2004-2026 the Contributors to the MusicXML
   Specification, published by the W3C Music Notation Community
   Group under the W3C Community Contributor License Agreement
   (CLA):
@@ -36,7 +36,7 @@
   <xsl:template match="text()">
     <xsl:value-of select="." />
   </xsl:template>
-  
+
   <xsl:template match="*|@*|comment()|processing-instruction()">
     <xsl:copy>
       <xsl:apply-templates
@@ -56,5 +56,5 @@
       </xsl:apply-templates>
     </xsl:element>
   </xsl:template>
- 
+
 </xsl:stylesheet>

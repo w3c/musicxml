@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -23,7 +23,7 @@
 	This direction DTD module contains the direction element
 	and its children. Directions are generally not note-specific,
 	but instead are associated with a part or the overall score.
-	
+
 	Harmony indications and general print and sound
 	suggestions are likewise not necessarily attached to
 	particular note elements, and are included here as well.
@@ -36,7 +36,7 @@
 	and bass notes are displayed within a harmony element. The
 	vertical value specifies that the second element appears
 	below the first. The horizontal value specifies that the
-	second element appears to the right of the first. The 
+	second element appears to the right of the first. The
 	diagonal value specifies that the second element appears
 	both below and to the right of the first.
 -->
@@ -48,8 +48,8 @@
 	the tip of a stick or beater points, using Unicode arrow
 	terminology.
 -->
-<!ENTITY % tip-direction 
-	"(up | down | left | right | 
+<!ENTITY % tip-direction
+	"(up | down | left | right |
 	  northwest | northeast | southeast | southwest)">
 
 <!-- Elements -->
@@ -64,8 +64,8 @@
 	note element that follows it in score order that is not in a
 	different voice.
 
-	By default, a series of direction-type elements and a 
-	series of child elements of a direction-type within a 
+	By default, a series of direction-type elements and a
+	series of child elements of a direction-type within a
 	single direction element follow one another in sequence
 	visually. For a series of direction-type children, non-
 	positional formatting attributes are carried over from
@@ -74,7 +74,7 @@
 <!ELEMENT direction (direction-type+, offset?,
 	%editorial-voice;, staff?, sound?, listening?)>
 <!ATTLIST direction
-    %placement; 
+    %placement;
     %directive;
     %system-relation;
     %optional-unique-id;
@@ -102,7 +102,7 @@
 -->
 
 <!--
-	The rehearsal element specifies letters, numbers, and 
+	The rehearsal element specifies letters, numbers, and
 	section names that are notated in the score for reference
 	during rehearsal. The enclosure is square if not specified.
 	The language is Italian ("it") if not specified. Left
@@ -118,7 +118,7 @@
 	The words element specifies a standard text direction. The
 	enclosure is none if not specified. The language is Italian
 	("it") if not specified. Left justification is used if not
-	specified. 
+	specified.
 -->
 <!ELEMENT words (#PCDATA)>
 <!ATTLIST words
@@ -143,11 +143,11 @@
 	Wedge spread is measured in tenths of staff line space.
 	The type is crescendo for the start of a wedge that is
 	closed at the left side, and diminuendo for the start
-	of a wedge that is closed on the right side. Spread 
+	of a wedge that is closed on the right side. Spread
 	values at the start of a crescendo wedge or end of a
 	diminuendo wedge are ignored. The niente attribute is yes
 	if a circle appears at the point of the wedge, indicating
-	a crescendo from nothing or diminuendo to nothing. It is 
+	a crescendo from nothing or diminuendo to nothing. It is
 	no by default, and used only when the type is crescendo,
 	or the type is stop for a wedge that began with a diminuendo
 	type. The line-type is solid if not specified. The continue
@@ -203,13 +203,13 @@
     %optional-unique-id;
 >
 
-<!-- 
+<!--
 	The pedal element represents piano pedal marks, including
 	damper and sostenuto pedal marks. The soft pedal is not
 	included here because there is no special symbol or graphic
 	used for it beyond what can be specified with words and
 	bracket elements.
-	
+
 	The start type indicates the start of a damper pedal, while
 	the sostenuto type indicates the start of a sostenuto pedal.
 	The other types can be used with either the damper or
@@ -248,13 +248,13 @@
     line %yes-no; #IMPLIED
     sign %yes-no; #IMPLIED
     abbreviated %yes-no; #IMPLIED
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
 >
 
 <!--
 	Metronome marks and other metric relationships.
-	
+
 	The beat-unit values are the same as for a type element,
 	and the beat-unit-dot works like the dot element. The
 	beat-unit-tied type indicates a beat-unit that is tied to
@@ -265,7 +265,7 @@
 	specified. The print-object attribute is set to no in
 	cases where the metronome element represents a relationship
 	or range that is not displayed in the music notation.
-	
+
 	If a font is specified for the per-minute element,
 	it overrides the font specified for the overall metronome
 	element. This allows separate specification of a music font
@@ -286,14 +286,14 @@
 	element describes the relationship symbol that goes between the
 	two sets of metronome-note elements. The currently allowed
 	value is equals, but this may expand in future versions.
-	If the element is empty, the equals value is used. The 
+	If the element is empty, the equals value is used. The
 	metronome-relation and the following set of metronome-note
 	elements are optional to allow display of an isolated
 	Grundschlagnote.
 -->
-<!ELEMENT metronome 
+<!ELEMENT metronome
 	((beat-unit, beat-unit-dot*, beat-unit-tied*,
-	 (per-minute | 
+	 (per-minute |
 	  (beat-unit, beat-unit-dot*, beat-unit-tied*))) |
 	(metronome-arrows?, metronome-note+,
 	 (metronome-relation, metronome-note+)?))>
@@ -308,14 +308,14 @@
 <!ELEMENT beat-unit-dot EMPTY>
 <!ELEMENT beat-unit-tied
 	(beat-unit, beat-unit-dot*)>
-<!ELEMENT per-minute (#PCDATA)> 
+<!ELEMENT per-minute (#PCDATA)>
 <!ATTLIST per-minute
     %font;
 >
 
 <!ELEMENT metronome-note
 	(metronome-type, metronome-dot*,
-	 metronome-beam*, metronome-tied?, 
+	 metronome-beam*, metronome-tied?,
 	 metronome-tuplet?)>
 <!ELEMENT metronome-relation (#PCDATA)>
 <!ELEMENT metronome-type (#PCDATA)>
@@ -330,7 +330,7 @@
     type %start-stop; #REQUIRED
 >
 <!ELEMENT metronome-tuplet
-	(actual-notes, normal-notes, 
+	(actual-notes, normal-notes,
 	 (normal-type, normal-dot*)?)>
 <!ATTLIST metronome-tuplet
     type %start-stop; #REQUIRED
@@ -352,11 +352,11 @@
     number %number-level; #IMPLIED
     size CDATA "8"
     %dashed-formatting;
-    %print-style; 
+    %print-style;
     %optional-unique-id;
 >
 
-<!-- 
+<!--
 	The harp-pedals element is used to create harp pedal
 	diagrams. The pedal-step and pedal-alter elements use
 	the same values as the step and alter elements. For
@@ -366,7 +366,7 @@
 -->
 <!ELEMENT harp-pedals (pedal-tuning)+>
 <!ATTLIST harp-pedals
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
 >
 <!ELEMENT pedal-tuning (pedal-step, pedal-alter)>
@@ -376,19 +376,19 @@
 <!-- Harp damping marks -->
 <!ELEMENT damp EMPTY>
 <!ATTLIST damp
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
 >
 <!ELEMENT damp-all EMPTY>
 <!ATTLIST damp-all
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
 >
 
 <!-- Eyeglasses, common in commercial music. -->
 <!ELEMENT eyeglasses EMPTY>
 <!ATTLIST eyeglasses
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
 >
 
@@ -396,14 +396,14 @@
 <!ELEMENT string-mute EMPTY>
 <!ATTLIST string-mute
     type (on | off) #REQUIRED
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
 >
 
-<!-- 
+<!--
 	Scordatura string tunings are represented by a series
-	of accord elements. The tuning-step, tuning-alter, 
-	and tuning-octave elements are also used with the 
+	of accord elements. The tuning-step, tuning-alter,
+	and tuning-octave elements are also used with the
 	staff-tuning element, and are defined in the common.mod
 	file. Strings are numbered from high to low.
 -->
@@ -438,11 +438,11 @@
     width %tenths; #IMPLIED
     %position;
     %halign;
-    %valign-image; 
+    %valign-image;
     %optional-unique-id;
 >
 
-<!-- 
+<!--
 	The principal-voice element represents principal and
 	secondary voices in a score, either for analysis or for
 	square bracket symbols that appear in a score. The element
@@ -479,14 +479,14 @@
 <!ELEMENT accordion-registration
 	(accordion-high?, accordion-middle?, accordion-low?)>
 <!ATTLIST accordion-registration
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
 >
 <!ELEMENT accordion-high EMPTY>
 <!ELEMENT accordion-middle (#PCDATA)>
 <!ELEMENT accordion-low EMPTY>
 
-<!-- 
+<!--
 	The staff-divide element is used for staff division symbols.
 	The down, up, and up-down type values correspond to SMuFL
 	code points U+E00B, U+E00C, and U+E00D respectively.
@@ -494,7 +494,7 @@
 <!ELEMENT staff-divide EMPTY>
 <!ATTLIST staff-divide
     type (down | up | up-down) #REQUIRED
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
 >
 
@@ -508,11 +508,11 @@
 -->
 <!ELEMENT percussion
 	(glass | metal | wood | pitched | membrane | effect |
-	 timpani | beater | stick | stick-location | 
+	 timpani | beater | stick | stick-location |
 	 other-percussion)>
 <!ATTLIST percussion
     %print-style-align;
-    %enclosure; 
+    %enclosure;
     %optional-unique-id;
 >
 
@@ -635,7 +635,7 @@
 
 <!ELEMENT beater (#PCDATA)>
 <!ATTLIST beater
-	tip %tip-direction; #IMPLIED 
+	tip %tip-direction; #IMPLIED
 >
 
 <!--
@@ -657,8 +657,8 @@
 <!ELEMENT stick (stick-type, stick-material)>
 <!ATTLIST stick
 	tip %tip-direction; #IMPLIED
-	parentheses %yes-no; #IMPLIED 
-	dashed-circle %yes-no; #IMPLIED 
+	parentheses %yes-no; #IMPLIED
+	dashed-circle %yes-no; #IMPLIED
 >
 <!ELEMENT stick-type (#PCDATA)>
 <!ELEMENT stick-material (#PCDATA)>
@@ -694,7 +694,7 @@
 <!ATTLIST other-direction
 	%print-object;
     %print-style-align;
-    %smufl; 
+    %smufl;
     %optional-unique-id;
 >
 
@@ -704,9 +704,9 @@
 	the current musical location. The current musical location
 	is always within the current measure, even at the end of
 	a measure.
-	
+
 	The offset affects the visual appearance of the direction.
-	If the sound attribute is "yes", then the offset affects 
+	If the sound attribute is "yes", then the offset affects
 	playback and listening too. If the sound attribute is "no",
 	then any sound or listening associated with the direction
 	takes effect at the current location. The sound attribute
@@ -726,20 +726,20 @@
 	The harmony element represents harmony analysis, including
 	chord symbols in popular music as well as functional harmony
 	analysis in classical music.
-	
+
 	If there are alternate harmonies possible, this can be
 	specified using multiple harmony elements differentiated
 	by type. Explicit harmonies have all note present in the
 	music; implied have some notes missing but implied;
-	alternate represents alternate analyses. 
-	
+	alternate represents alternate analyses.
+
 	The print-object attribute controls whether or not anything
 	is printed due to the harmony element. The print-frame
 	attribute controls printing of a frame or fretboard diagram.
 	The print-style entity sets the default for the harmony,
 	but individual elements can override this with their own
 	print-style values.
-	
+
 	A harmony element can contain many stacked chords (e.g.
 	V of II). A sequence of harmony-chord entities is used for
 	this type of secondary function, where V of II would be
@@ -754,7 +754,7 @@
 <!ENTITY % harmony-chord "((root | numeral | function),
 	kind, inversion?, bass?, degree*)">
 
-<!ELEMENT harmony ((%harmony-chord;)+, frame?, 
+<!ELEMENT harmony ((%harmony-chord;)+, frame?,
 	offset?, %editorial;, staff?)>
 <!ATTLIST harmony
     type (explicit | implied | alternate) #IMPLIED
@@ -777,7 +777,7 @@
 	numerals with roman numeral text, has been deprecated as of
 	MusicXML 4.0.
 
-	The root element has a root-step and optional root-alter 
+	The root element has a root-step and optional root-alter
 	element similar to the step and alter elements in a pitch,
 	but renamed to distinguish the different musical meanings.
 	The root-step text attribute indicates how the root should
@@ -801,13 +801,13 @@
     %print-style;
     location %left-right; #IMPLIED
 >
-	
+
 <!--
-	The numeral element represents the Roman numeral or 
+	The numeral element represents the Roman numeral or
 	Nashville number part of a harmony. It requires that the
 	key be specified in the encoding, either with a key or
 	numeral-key element.
-	
+
 	The numeral-root element represents the Roman numeral or
 	Nashville number as a positive integer from 1 to 7. The
 	text attribute indicates how the numeral should appear in
@@ -816,7 +816,7 @@
 	numeral, and "5" if displayed as a Nashville number. If the
 	text attribute is not specified, the display is application-
 	dependent.
-	
+
 	The numeral-alter element represents an alteration to the
 	numeral-root, similar to the alter element for a pitch.
 	The print-object attribute can be used to hide an alteration
@@ -825,7 +825,7 @@
 	is not displayed. The location attribute indicates whether
 	the alteration should appear to the left or the right of
 	the numeral-root; it is left by default.
-	
+
 	The numeral-key element is used when the key for the numeral
 	is different than the key specified by the key signature.
 	The numeral-fifths element specifies the key in the same way
@@ -876,7 +876,7 @@
 	Kind indicates the type of chord. Degree elements
 	can then add, subtract, or alter from these
 	starting points. Values include:
-	
+
 	Triads:
 	    major (major third, perfect fifth)
 	    minor (minor third, perfect fifth)
@@ -921,10 +921,10 @@
 	    pedal (pedal-point bass)
 	    power (perfect fifth)
 	    Tristan
-	
+
 	The "other" kind is used when the harmony is entirely
-	composed of add elements. 
-	
+	composed of add elements.
+
 	The "none" kind is used to explicitly encode absence of
 	chords or functional harmony. In this case, the root,
 	numeral, or function element has no meaning. When using
@@ -957,16 +957,16 @@
 	attribute follows the symbol. The stack-degrees attribute
 	is yes if the degree elements should be stacked above each
 	other. The parentheses-degrees attribute is yes if all the
-	degrees should be in parentheses. The bracket-degrees 
+	degrees should be in parentheses. The bracket-degrees
 	attribute is yes if all the degrees should be in a bracket.
 	If not specified, these values are implementation-specific.
 	The alignment attributes are for the entire harmony-chord
 	entity of which this kind element is a part.
-	
+
 	The text attribute may use strings such as "13sus" that
 	refer to both the kind and one or more degree elements.
 	In this case, the corresponding degree elements should
-	have the print-object attribute set to "no" to keep 
+	have the print-object attribute set to "no" to keep
 	redundant alterations from being displayed.
 -->
 <!ELEMENT kind (#PCDATA)>
@@ -1039,22 +1039,22 @@
 	degree-alter is relative to the degree already in the
 	chord based on its kind element. If the degree-type is
 	add, the degree-alter is relative to a dominant chord
-	(major and perfect intervals except for a minor 
+	(major and perfect intervals except for a minor
 	seventh). The print-object attribute can be used to
 	keep the degree from printing separately when it has
 	already taken into account in the text attribute of
 	the kind element. The plus-minus attribute is used to
 	indicate if plus and minus symbols should be used
 	instead of sharp and flat symbols to display the degree
-	alteration. It is no if not specified. 
+	alteration. It is no if not specified.
 
 	The degree-value and degree-type text attributes specify
 	how the value and type of the degree should be displayed.
 	The degree-value symbol attribute indicates that a symbol
 	should be used in specifying the degree. If the symbol
 	attribute is present, the value of the text attribute
-	follows the symbol. 
-	
+	follows the symbol.
+
 	A harmony of kind "other" can be spelled explicitly by
 	using a series of degree elements together with a root.
 -->
@@ -1064,7 +1064,7 @@
 >
 <!ELEMENT degree-value (#PCDATA)>
 <!ATTLIST degree-value
-    symbol (major | minor | augmented | 
+    symbol (major | minor | augmented |
             diminished | half-diminished) #IMPLIED
     text CDATA #IMPLIED
     %print-style;
@@ -1084,19 +1084,19 @@
 	The frame element represents a frame or fretboard diagram
 	used together with a chord symbol. The representation is
 	based on the NIFF guitar grid with additional information.
-	The frame-strings and frame-frets elements give the 
-	overall size of the frame in vertical lines (strings) and 
+	The frame-strings and frame-frets elements give the
+	overall size of the frame in vertical lines (strings) and
 	horizontal spaces (frets).
 
 	The frame element's unplayed attribute indicates what to
 	display above a string that has no associated frame-note
 	element. Typical values are x and the empty string. If the
 	attribute is not present, the display of the unplayed
-	string is application-defined. 
+	string is application-defined.
 -->
-<!ELEMENT frame 
+<!ELEMENT frame
 	(frame-strings, frame-frets, first-fret?, frame-note+)>
-<!ATTLIST frame 
+<!ATTLIST frame
     %position;
     %color;
     %halign;
@@ -1132,11 +1132,11 @@
 -->
 <!ELEMENT frame-note (string, fret, fingering?, barre?)>
 
-<!-- 
-	The barre element indicates placing a finger over 
-	multiple strings on a single fret. The type is "start" 
-	for the lowest pitched string (e.g., the string with 
-	the highest MusicXML number) and is "stop" for the 
+<!--
+	The barre element indicates placing a finger over
+	multiple strings on a single fret. The type is "start"
+	for the lowest pitched string (e.g., the string with
+	the highest MusicXML number) and is "stop" for the
 	highest pitched string.
 -->
 <!ELEMENT barre EMPTY>
@@ -1154,7 +1154,7 @@
 	distinguishing of what grouping elements are in what
 	hierarchy. Feature elements contained within a "stop"
 	type of grouping may be ignored.
-	
+
 	This element is flexible to allow for non-standard analyses.
 	Future versions of the MusicXML format may add elements
 	that can represent more standardized categories of analysis
@@ -1180,7 +1180,7 @@
 	to change how a part name or abbreviation is displayed over
 	the course of a piece. They take effect when the current
 	measure or a succeeding measure starts a new system.
-	
+
 	The new-system and new-page attributes indicate whether
 	to force a system or page break, or to force the current
 	music onto the same system or page as the preceding music.
@@ -1216,19 +1216,19 @@
     new-system %yes-no; #IMPLIED
     new-page %yes-no; #IMPLIED
     blank-page NMTOKEN #IMPLIED
-    page-number CDATA #IMPLIED	
+    page-number CDATA #IMPLIED
     %optional-unique-id;
 >
 
 <!--
 	The measure-numbering element describes how measure numbers
 	are displayed on this part. Values may be none, measure, or
-	system. The text attribute from the measure element is used 
+	system. The text attribute from the measure element is used
 	for display, or the number attribute if the text attribute
-	is not present. Measures with an implicit attribute set to 
-	"yes" never display a measure number, regardless of the 
-	measure-numbering setting. 
-	
+	is not present. Measures with an implicit attribute set to
+	"yes" never display a measure number, regardless of the
+	measure-numbering setting.
+
 	The optional staff attribute refers to staff numbers within
 	the part, from top to bottom on the system. It indicates
 	which staff is used as the reference point for vertical
@@ -1246,9 +1246,9 @@
 	only appear once in this part, not twice. A value of none
 	indicates that the number is associated only with the
 	current part, not with the system.
-	
-	The optional multiple-rest-always and multiple-rest-range 
-	attributes describe how measure numbers are shown on 
+
+	The optional multiple-rest-always and multiple-rest-range
+	attributes describe how measure numbers are shown on
 	multiple rests when the measure-numbering value is not set
 	to none. The multiple-rest-always attribute is set to yes
 	when the measure number should always be shown, even if the
@@ -1260,7 +1260,7 @@
 -->
 <!ELEMENT measure-numbering (#PCDATA)>
 <!ATTLIST measure-numbering
-    system (none | only-top | also-top | 
+    system (none | only-top | also-top |
             only-bottom | also-bottom) #IMPLIED
     staff CDATA #IMPLIED
     multiple-rest-always %yes-no; #IMPLIED
@@ -1268,21 +1268,21 @@
     %print-style-align;
 >
 
-<!-- 
+<!--
 	The sound element contains general playback parameters.
 	They can stand alone within a part/measure, or be a
 	component element within a direction.
-	
+
 	Tempo is expressed in quarter notes per minute. If 0,
 	the sound-generating program should prompt the user at the
 	time of compiling a sound (MIDI) file.
-	
+
 	Dynamics (or MIDI velocity) are expressed as a percentage
 	of the default forte value (90 for MIDI 1.0).
-	
+
 	Dacapo indicates to go back to the beginning of the
 	movement. When used it always has the value "yes".
-	
+
 	Segno and dalsegno are used for backwards jumps to a
 	segno sign; coda and tocoda are used for forward jumps
 	to a coda sign. If there are multiple jumps, the value
@@ -1291,54 +1291,54 @@
 	can also be used to indicate the number of divisions
 	per quarter note. Otherwise sound and MIDI generating
 	programs may have to recompute this.
-	
+
 	By default, a dalsegno or dacapo attribute indicates that
-	the jump should occur the first time through, while a 
+	the jump should occur the first time through, while a
 	tocoda attribute indicates the jump should occur the second
 	time through. The time that jumps occur can be changed by
 	using the time-only attribute.
-	
+
 	The forward-repeat attribute indicates that a forward
 	repeat sign is implied but not displayed. It is used for
 	example in two-part forms with repeats, such as a minuet
 	and trio where no repeat is displayed at the start of the
 	trio. This usually occurs after a barline. When used it
 	always has the value of "yes".
-	
+
 	The fine attribute follows the final note or rest in a
 	movement with a da capo or dal segno direction. If numeric,
 	the value represents the actual duration of the final note or
-	rest, which can be ambiguous in written notation and 
-	different among parts and voices. The value may also be 
+	rest, which can be ambiguous in written notation and
+	different among parts and voices. The value may also be
 	"yes" to indicate no change to the final duration.
-	
+
 	If the sound element applies only particular times through a
 	repeat, the time-only attribute indicates which times to apply
 	the sound element. The value is a comma-separated list of
 	positive integers arranged in ascending order, indicating
 	which times through the repeated section that the element
 	applies.
-	
+
 	Pizzicato in a sound element effects all following notes.
 	Yes indicates pizzicato, no indicates arco.
 
-	The pan and elevation attributes are deprecated in 
+	The pan and elevation attributes are deprecated in
 	Version 2.0. The pan and elevation elements in
 	the midi-instrument element should be used instead.
 	The meaning of the pan and elevation attributes is
 	the same as for the pan and elevation elements. If
 	both are present, the mid-instrument elements take
 	priority.
-	
-	The damper-pedal, soft-pedal, and sostenuto-pedal 
+
+	The damper-pedal, soft-pedal, and sostenuto-pedal
 	attributes effect playback of the three common piano
 	pedals and their MIDI controller equivalents. The yes
-	value indicates the pedal is depressed; no indicates 
+	value indicates the pedal is depressed; no indicates
 	the pedal is released. A numeric value from 0 to 100
 	may also be used for half pedaling. This value is the
 	percentage that the pedal is depressed. A value of 0 is
 	equivalent to no, and a value of 100 is equivalent to yes.
-	
+
 	Instrument changes, MIDI devices, MIDI instruments, and
 	playback techniques are changed using the instrument-change
 	element and elements defined in the common.mod file. When
@@ -1349,13 +1349,13 @@
 	The offset element is used to indicate that the sound takes
 	place offset from the current score position. If the sound
 	element is a child of a direction element, the sound offset
-	element overrides the direction offset element if both 
+	element overrides the direction offset element if both
 	elements are present. Note that the offset reflects the
 	intended musical position for the change in sound. It
-	should not be used to compensate for latency issues in 
+	should not be used to compensate for latency issues in
 	particular hardware configurations.
 -->
-<!ELEMENT sound ((instrument-change?, midi-device?, 
+<!ELEMENT sound ((instrument-change?, midi-device?,
     midi-instrument?, play?)*, swing?, offset?)>
 <!ATTLIST sound
     tempo CDATA #IMPLIED
@@ -1393,13 +1393,13 @@
 
 <!--
 	The swing element specifies whether or not to use swing
-	playback, where consecutive on-beat / off-beat eighth or 
-	16th notes are played with unequal nominal durations. 
-	
+	playback, where consecutive on-beat / off-beat eighth or
+	16th notes are played with unequal nominal durations.
+
 	The straight element specifies that no swing is present,
 	so consecutive notes have equal durations.
-	
-	The first and second elements are positive integers that 
+
+	The first and second elements are positive integers that
 	specify the ratio between durations of consecutive notes.
 	For example, a first element with a value of 2 and a second
 	element with a value of 1 applied to eighth notes specifies
@@ -1408,11 +1408,11 @@
 	should be specified with the smallest integers possible.
 	For example, a ratio of 6 to 4 should be specified as 3 to 2
 	instead.
-	
-	The optional swing-type element specifies the note type, 
+
+	The optional swing-type element specifies the note type,
 	either eighth or 16th, to which the ratio is applied. The
 	value is eighth if this element is not present.
-	
+
 	The optional swing-style element is a string describing the
 	style of swing used.
 
@@ -1432,7 +1432,7 @@
 <!ELEMENT swing-type (#PCDATA)>
 <!ELEMENT swing-style (#PCDATA)>
 
-<!-- 
+<!--
 	The listen and listening elements, new in Version 4.0,
 	specify different ways that a score following or machine
 	listening application can interact with a performer. The
@@ -1441,7 +1441,7 @@
 	the performance onward. If multiple child elements of the
 	same type are present, they should have distinct player
 	and/or time-only attributes.
-	
+
 	The offset element is used to indicate that the listening
 	change takes place offset from the current score position.
 	If the listening element is a child of a direction element,
@@ -1453,7 +1453,7 @@
 -->
 <!ELEMENT listening ((sync | other-listening)+, offset?)>
 
-<!-- 
+<!--
 	The sync element specifies the style that a score following
 	application should use to synchronize an accompaniment with
 	a performer. The none type indicates no synchronization to
@@ -1469,8 +1469,8 @@
 	forgiving of missing performed events. If this element is
 	not included in a score, default synchronization depends
 	on the application.
-	
-	The optional latency attribute specifies a time in 
+
+	The optional latency attribute specifies a time in
 	milliseconds that the listening application should expect
 	from the performer. The optional player and time-only
 	attributes restrict the element to apply to a single player
@@ -1478,14 +1478,14 @@
 -->
 <!ELEMENT sync EMPTY>
 <!ATTLIST sync
-    type (none | tempo | mostly-tempo | 
+    type (none | tempo | mostly-tempo |
           mostly-event | event | always-event) #REQUIRED
     latency CDATA #IMPLIED
     player IDREF #IMPLIED
     %time-only;
 >
 
-<!-- 
+<!--
 	The other-listening element represents other types of
 	listening control and interaction. The required type
 	attribute indicates the type of listening to which the

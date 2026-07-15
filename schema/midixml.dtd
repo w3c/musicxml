@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -25,13 +25,13 @@
 	MusicXML format and other formats where note on and note off
 	are not represented as discrete events. To convert to
 	Standard MIDI Files, delta values must be used.
-	
+
 	Suggested use:
-	
+
 	<!DOCTYPE MIDIFile PUBLIC
 		"-//Recordare//DTD MusicXML 4.0 MIDI//EN"
 		"http://www.musicxml.org/dtds/midixml.dtd">
-		
+
 	The XML catalog at catalog.xml supports validating against a
 	local copy of this DTD rather than the networked version in
 	the system ID. Software often has trouble using system IDs
@@ -42,7 +42,7 @@
 <!--
 	For Standard MIDI Files, channels are required; events
 	are not rechannelized.
---> 
+-->
 <!ENTITY % ChannelRequired "#REQUIRED">
 
 <!-- Component DTD modules -->
@@ -50,9 +50,9 @@
 <!--
 	The MMA MIDI DTD contains the definitions of all MIDI
 	events. Its regular address is:
-	
+
 	http://www.midi.org/dtds/MIDIEvents10.dtd
-	
+
 	For convenience, we include a local copy with our
 	definition, and reference that here.
 -->
@@ -77,14 +77,14 @@
 	are defined below. The MIDIChannelMessage and MIDIMessage
 	events are defined in the MMA's MIDI DTD (RP-038).
 -->
-<!ENTITY % MetaEvent 
+<!ENTITY % MetaEvent
 	"(SequenceNumber | TextEvent | CopyrightNotice |
 	 TrackName | InstrumentName | Lyric | Marker |
 	 CuePoint | ProgramName | DeviceName | Port |
 	 MIDIChannelPrefix | EndOfTrack | SetTempo |
 	 SMPTEOffset | TimeSignature | KeySignature |
 	 SequencerSpecific | OtherMetaEvent)">
-	 
+
 <!ENTITY % SysExEvent
 	"(SystemExclusive | EndOfExclusive)">
 

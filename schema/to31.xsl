@@ -5,7 +5,7 @@
 
   Version 4.1 Draft
 
-  Copyright © 2004-2024 the Contributors to the MusicXML
+  Copyright © 2004-2026 the Contributors to the MusicXML
   Specification, published by the W3C Music Notation Community
   Group under the W3C Community Contributor License Agreement
   (CLA):
@@ -54,21 +54,21 @@
   <!-- Remove new elements. -->
   <xsl:template
     match="listen"/>
-  
+
   <!-- Remove all but the first instrument element -->
-  <xsl:template 
+  <xsl:template
     match="instrument[position() > 1]"/>
 
-  <!-- 
+  <!--
     Remove accidental SMuFL attributes with new values.
   -->
-  <xsl:template 
+  <xsl:template
     match="accidental/@smufl[not(starts-with(., 'acc'))]"/>
 
-  <!-- 
+  <!--
     Remove elements with number attributes greater than 6.
   -->
-  <xsl:template 
+  <xsl:template
     match="arpeggiate[number(@number) > 6] |
     glissando[number(@number) > 6] |
     hammer-on[number(@number) > 6] |
@@ -81,14 +81,14 @@
     tuplet[number(@number) > 6]"/>
 
   <!-- Remove new attributes. -->
-  <xsl:template 
-    match="arpeggiate/@unbroken | bend/@shape | 
+  <xsl:template
+    match="arpeggiate/@unbroken | bend/@shape |
       figured-bass/@halign | figured-bass/@valign |
       figured-bass/@placement | release/@offset"/>
 
   <!-- Additions in attributes.mod -->
 
-  <!-- 
+  <!--
     Remove double elements that have an above value other
     than no, then remove the above attribute altogether.
     Make sure the tests have the right priority so the
@@ -104,48 +104,48 @@
   <!-- Remove new elements. -->
   <xsl:template
     match="for-part | line-detail"/>
-  
+
   <!-- Remove new attributes. -->
-  <xsl:template 
+  <xsl:template
     match="staff-size/@scaling"/>
-  
+
   <!-- Additions in barline.mod -->
 
   <!-- Remove new attributes. -->
-  <xsl:template 
+  <xsl:template
     match="ending/@system | repeat/@after-jump"/>
 
   <!-- Additions in common.mod -->
 
-  <!-- 
+  <!--
     Remove level elements that have a type other than
     single, then remove the type attribute altogether.
     Make sure the tests have the right priority so the
     levels are removed first, before the type attribute
     is removed.
   -->
-  <xsl:template 
+  <xsl:template
     match="level/@type"/>
 
   <xsl:template priority="1"
     match="level[@type != 'single']"/>
 
-  <!-- 
+  <!--
     Remove enclosure attributes with inverted-bracket value.
   -->
-  <xsl:template 
+  <xsl:template
     match="@enclosure[. = 'inverted-bracket']"/>
 
-  <!-- 
+  <!--
     Remove elements with number attributes greater than 6.
   -->
   <xsl:template priority="1"
     match="wavy-line[number(@number) > 6]"/>
-  
+
   <!-- Remove new attributes. -->
-  <xsl:template 
+  <xsl:template
     match="wavy-line/@smufl"/>
-  
+
   <!-- Additions in direction.mod -->
 
   <!--
@@ -154,53 +154,53 @@
     instead of removing the entire element so that we do not
     leave dangling pedal elements after the conversion.
   -->
-  <xsl:template 
+  <xsl:template
     match="pedal/@type[. = 'discontinue']">
     <xsl:attribute name="type">stop</xsl:attribute>
   </xsl:template>
-  <xsl:template 
+  <xsl:template
     match="pedal/@type[. = 'resume']">
     <xsl:attribute name="type">start</xsl:attribute>
   </xsl:template>
-  
-  <!-- 
+
+  <!--
     Remove entire harmony that has a new numeral child element.
   -->
   <xsl:template
     match="harmony[numeral]"/>
-  
-  <!-- 
+
+  <!--
     Remove elements with number attributes greater than 6.
   -->
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type/bracket[number(@number) > 6]] |
       direction[direction-type/dashes[number(@number) > 6]] |
       direction[direction-type/octave-shift[number(@number) > 6]] |
       direction[direction-type/pedal[number(@number) > 6]] |
       direction[direction-type/wedge[number(@number) > 6]]"/>
-  
+
   <!-- Remove new elements. -->
   <xsl:template
-    match="bass-separator | instrument-change | 
+    match="bass-separator | instrument-change |
       listening | swing"/>
-  
+
   <!-- Remove new attributes. -->
-  <xsl:template 
+  <xsl:template
     match="direction/@system | harmony/@system |
-      harmony/@arrangement | bass/@arrangement | 
-      inversion/@text | metronome/@print-object | 
+      harmony/@arrangement | bass/@arrangement |
+      inversion/@text | metronome/@print-object |
       measure-numbering/@system | measure-numbering/@staff |
-      measure-numbering/@multiple-rest-always | 
+      measure-numbering/@multiple-rest-always |
       measure-numbering/@multiple-rest-range |
-      effect/@smufl | membrane/@smufl | metal/@smufl | 
+      effect/@smufl | membrane/@smufl | metal/@smufl |
       timpani/@smufl | wood/@smufl"/>
-  
+
   <!-- Additions in score.mod -->
 
   <!-- Remove new elements. -->
   <xsl:template
     match="concert-score | part-link | player"/>
-  
+
   <!--
     Convert score version attribute to 3.1.
   -->

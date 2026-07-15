@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -58,7 +58,7 @@
 	  (%full-note;, duration, (tie, tie?)?)),
 	 instrument*, %editorial-voice;, type?, dot*,
 	 accidental?, time-modification?, stem?, notehead?,
-	 notehead-text?, staff?, beam*, notations*, lyric*, 
+	 notehead-text?, staff?, beam*, notations*, lyric*,
 	 play?, listen?)>
 
 <!--
@@ -135,7 +135,7 @@
 <!ELEMENT cue EMPTY>
 
 <!--
-	The grace element indicates the presence of a grace note. 
+	The grace element indicates the presence of a grace note.
 	The slash attribute for a grace note is yes for slashed
 	grace notes. The steal-time-previous attribute indicates the
 	percentage of time to steal from the previous note for the
@@ -343,7 +343,7 @@
 	value can be slash, triangle, diamond, square, cross, x,
 	circle-x, inverted triangle, arrow down, arrow up, circled,
 	slashed, back slashed, normal, cluster, circle dot,
-	left triangle, rectangle, other, or none. 
+	left triangle, rectangle, other, or none.
 
 	For shape note music, the element values do, re, mi, fa,
 	fa up, so, la, and ti are also used, corresponding to Aikin's
@@ -949,7 +949,7 @@
 
 <!--
 	The stopped element represents the stopped symbol, which
-	looks like a plus sign. The smufl attribute can be used to 
+	looks like a plus sign. The smufl attribute can be used to
 	distinguish different SMuFL glyphs that have a similar
 	appearance such as handbellsMalletBellSuspended and
 	guitarClosePedal. If not present, the default glyph is
@@ -1003,8 +1003,8 @@
 	The bend-alter element indicates the number of semitones
 	in the bend, similar to the alter element. As with the
 	alter element, numbers like 0.5 can be used to indicate
-	microtones. 
-	
+	microtones.
+
 	Negative bend-alter values indicate pre-bends or releases.
 	The pre-bend and release elements are used to distinguish
 	what is intended. A single note with a bend and release
@@ -1017,12 +1017,12 @@
 	offset value. Because the bend-alter element represents the
 	number of steps in the bend, a release after a bend has a
 	negative bend-alter value, not a zero value.
-	
+
 	The shape attribute distinguishes between the angled bend
 	symbols commonly used in standard notation and the curved
 	bend symbols commonly used in both tablature and standard
 	notation.
-	
+
 	A with-bar element indicates that the bend is to be done
 	at the bridge with a whammy or vibrato bar. The content
 	of the element indicates how this should be notated.
@@ -1061,7 +1061,7 @@
 -->
 <!ELEMENT tap (#PCDATA)>
 <!ATTLIST tap
-    hand (left | right) #IMPLIED	
+    hand (left | right) #IMPLIED
     %print-style;
     %placement;
 >
@@ -1149,7 +1149,7 @@
 	descriptive representation.
 -->
 <!ELEMENT arrow
-	((arrow-direction, arrow-style?, arrowhead?) | 
+	((arrow-direction, arrow-style?, arrowhead?) |
 	 circular-arrow)>
 <!ATTLIST arrow
     %print-style;
@@ -1207,7 +1207,7 @@
 
 <!--
 	The open element represents the open symbol, which
-	looks like a circle. The smufl attribute can be used to 
+	looks like a circle. The smufl attribute can be used to
 	distinguish different SMuFL glyphs that have a similar
 	appearance such as brassMuteOpen and guitarOpenPedal.
 	If not present, the default glyph is brassMuteOpen.
@@ -1424,7 +1424,7 @@
 
 <!--
 	The soft-accent element indicates a soft accent that is
-	not as heavy as a normal accent. It is often notated as 
+	not as heavy as a normal accent. It is often notated as
 	&lt;&gt;. It can be combined with other articulations to
 	implement the first eight symbols in the SMuFL Articulation
 	supplement range.
@@ -1524,7 +1524,7 @@
 	come from ISO 639, with optional country subcodes from
 	ISO 3166. Justification is center by default; placement is
 	below by default. Vertical alignment is to the baseline of
-	the text and horizontal alignment matches justification. 
+	the text and horizontal alignment matches justification.
 	The print-object attribute can override a note's print-lyric
 	attribute in cases where only some lyrics on a note are
 	printed, as when lyrics for later verses are printed in a
@@ -1599,7 +1599,7 @@
 <!ELEMENT end-line EMPTY>
 <!ELEMENT end-paragraph EMPTY>
 
-<!-- 
+<!--
 	The listen and listening elements, new in Version 4.0,
 	specify different ways that a score following or machine
 	listening application can interact with a performer. The
@@ -1610,7 +1610,7 @@
 -->
 <!ELEMENT listen ((assess | wait | other-listen)+)>
 
-<!-- 
+<!--
 	By default, an assessment application should assess all
 	notes without a cue child element, and not assess any note
 	with a cue child element. The assess element allows this
@@ -1630,7 +1630,7 @@
     %time-only;
 >
 
-<!-- 
+<!--
 	The wait element specifies a point where the accompaniment
 	should wait for a performer event before continuing. This
 	typically happens at the start of new sections or after a
@@ -1646,8 +1646,8 @@
     %time-only;
 >
 
-<!-- 
-	The other-listen element represents other types of listening 
+<!--
+	The other-listen element represents other types of listening
 	control and interaction. The required type attribute
 	indicates the type of listening to which the element content
 	applies. The optional player and time-only attributes

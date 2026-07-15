@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -31,7 +31,7 @@
 
 <!ELEMENT opus EMPTY>
 <!ATTLIST opus
-    %link-attributes; 
+    %link-attributes;
 >
 
 <!ELEMENT movement-number (#PCDATA)>
@@ -51,19 +51,19 @@
 	choice of what to use is determined by the application.
 -->
 <!ELEMENT defaults
-	(scaling?, concert-score?, %common-layout;, appearance?, 
+	(scaling?, concert-score?, %common-layout;, appearance?,
 	 music-font?, word-font?, lyric-font*, lyric-language*)>
 
-<!--  
+<!--
 	The presence of a concert-score element indicates that
 	a score is displayed in concert pitch. It is used for
 	scores that contain parts for transposing instruments.
 
-	A document with a concert-score element may not contain any 
+	A document with a concert-score element may not contain any
 	transpose elements that have non-zero values for either the
 	diatonic or chromatic elements. Concert scores may include
 	octave transpositions, so transpose elements with a double
-	element or a non-zero octave-change element value are 
+	element or a non-zero octave-change element value are
 	permitted.
 -->
 <!ELEMENT concert-score EMPTY>
@@ -120,8 +120,8 @@
 	lyricist, rights, and part name.
 -->
 <!ELEMENT credit
-	(credit-type*, link*, bookmark*, 
-	 (credit-image | 
+	(credit-type*, link*, bookmark*,
+	 (credit-image |
 	  ((credit-words | credit-symbol),
 	   (link*, bookmark*, (credit-words | credit-symbol))*)))>
 <!ATTLIST credit
@@ -153,7 +153,7 @@
     type CDATA #REQUIRED
     height %tenths; #IMPLIED
     width %tenths; #IMPLIED
-    %position; 
+    %position;
     %halign;
     %valign-image;
     %optional-unique-id;
@@ -170,7 +170,7 @@
 	and brackets. Parts are ordered from top to bottom in
 	a score based on the order in which they appear in the
 	part-list.
-	
+
 	Often each MusicXML part corresponds to a track in a
 	Standard MIDI Format 1 file. In this case, the midi-device
 	element is used to make a MIDI device or port assignment
@@ -187,7 +187,7 @@
 	(part-group | score-part)*)>
 <!ELEMENT score-part (identification?,
 	part-link*, part-name, part-name-display?,
-	part-abbreviation?, part-abbreviation-display?, 
+	part-abbreviation?, part-abbreviation-display?,
 	group*, score-instrument*, player*,
 	(midi-device?, midi-instrument?)*)>
 <!ATTLIST score-part
@@ -200,9 +200,9 @@
 	MusicXML file. It links a score-part from a score document
 	to MusicXML documents that contain parts data. In the case
 	of a single compressed MusicXML file, the link href values
-	are paths that are relative to the root folder of the zip 
+	are paths that are relative to the root folder of the zip
 	file.
-	
+
 	Multiple part-link elements can link a condensed part within
 	a score document to multiple MusicXML parts documents. For
 	example, a "Clarinet 1 and 2" part in a score document could
@@ -211,7 +211,7 @@
 	the score-instruments within a score-part are in which
 	part document. The instrument-link id attribute refers to a
 	score-instrument id attribute.
-	
+
 	Multiple part-link elements can reference different types
 	of linked documents, such as parts and condensed score. The
 	optional group-link elements identify the groups used in
@@ -262,9 +262,9 @@
 	that are used for multi-staff parts should be defined in
 	the attributes element for that part. The part-group start
 	element appears before the first score-part in the group.
-	The part-group stop element appears after the last 
+	The part-group stop element appears after the last
 	score-part in the group.
-	
+
 	The number attribute is used to distinguish overlapping
 	and nested part-groups, not the sequence of groups. As
 	with parts, groups can have a name and abbreviation.
@@ -284,7 +284,7 @@
 	Mensurstrich. The group-time element indicates that the
 	displayed time signatures should stretch across all parts
 	and staves in the group. Values for the child elements
-	are ignored at the stop of a group. 
+	are ignored at the stop of a group.
 
 	A part-group element is not needed for a single multi-staff
 	part. By default, multi-staff parts include a brace symbol
@@ -350,18 +350,18 @@
 	channels and instruments without these elements in simple
 	cases, such as where part names match General MIDI
 	instrument names.
-	
+
 	The score-instrument element can also distinguish multiple
 	instruments of the same type that are on the same part,
 	such as Clarinet 1 and Clarinet 2 instruments within a
 	Clarinets 1 and 2 part.
 
-	The virtual-instrument-data entity is defined in the 
-	common.mod file, as it can be used within both the 
+	The virtual-instrument-data entity is defined in the
+	common.mod file, as it can be used within both the
 	score-part and instrument-change elements.
 -->
 <!ELEMENT score-instrument
-	(instrument-name, instrument-abbreviation?, 
+	(instrument-name, instrument-abbreviation?,
 	%virtual-instrument-data;)>
 <!ATTLIST score-instrument
     id ID #REQUIRED
@@ -382,8 +382,8 @@
 	The player element allows for multiple players per
 	score-part for use in listening applications. One player
 	may play multiple instruments, while a single instrument
-	may include multiple players in divisi sections. 
-	
+	may include multiple players in divisi sections.
+
 	The player-name element is typically used within a software
 	application, rather than appearing on the printed page of a
 	score.
@@ -408,7 +408,7 @@
 	The score-header entity contains basic score metadata
 	about the work and movement, score-wide defaults for
 	layout and fonts, credits that appear on the first page,
-	and the part list. 
+	and the part list.
 -->
 <!ENTITY % score-header
 	"(work?, movement-number?, movement-title?,
@@ -429,7 +429,7 @@
 <!ELEMENT score-partwise (%score-header;, part+)>
 <!ATTLIST score-partwise
     %document-attributes;
->	
+>
 <!ELEMENT part (measure+)>
 <!ELEMENT measure (%music-data;)>
 ]]>
@@ -437,7 +437,7 @@
 <!ELEMENT score-timewise (%score-header;, measure+)>
 <!ATTLIST score-timewise
     %document-attributes;
->	
+>
 <!ELEMENT measure (part+)>
 <!ELEMENT part (%music-data;)>
 ]]>
@@ -455,12 +455,12 @@
 	the measure number should never appear, such as pickup
 	measures and the last half of mid-measure repeats. The
 	value is "no" if not specified.
-	
+
 	The non-controlling attribute is intended for use in
 	multimetric music like the Don Giovanni minuet. If set
 	to "yes", the left barline in this measure does not
 	coincide with the left barline of measures in other
-	parts. The value is "no" if not specified. 
+	parts. The value is "no" if not specified.
 
 	In partwise files, the number attribute should be the same
 	for measures in different parts that share the same left
@@ -469,7 +469,7 @@
 	together with the implicit or non-controlling attributes
 	being set to "yes". For a pickup measure, the number
 	attribute is typically set to "0" and the implicit attribute
-	is typically set to "yes". 
+	is typically set to "yes".
 
 	If measure numbers are not unique within a part, this can
 	cause problems for conversions between partwise and timewise
@@ -485,7 +485,7 @@
 	Measure width is specified in tenths. These are the
 	global tenths specified in the scaling element, not
 	local tenths as modified by the staff-size element.
-	The width covers the entire measure from barline 
+	The width covers the entire measure from barline
 	or system start to barline or system end.
 -->
 <!ATTLIST measure

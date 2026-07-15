@@ -5,7 +5,7 @@
 
   Version 4.1 Draft
 
-  Copyright © 2004-2024 the Contributors to the MusicXML
+  Copyright © 2004-2026 the Contributors to the MusicXML
   Specification, published by the W3C Music Notation Community
   Group under the W3C Community Contributor License Agreement
   (CLA):
@@ -52,30 +52,30 @@
   <!-- Additions in note.mod -->
 
   <!--
-    Earlier versions of MusicXML allow notes to have a 
+    Earlier versions of MusicXML allow notes to have a
     grace or cue element, but not both. Remove any cue
     element that follows a grace element.
-  -->  
-  <xsl:template 
+  -->
+  <xsl:template
     match="note/cue[preceding-sibling::grace]"/>
 
   <!-- Remove new elements. -->
   <xsl:template
-    match="arrowhead | brass-bend | flip | golpe | 
+    match="arrowhead | brass-bend | flip | golpe |
       half-muted | harmon-mute | haydn |
-      inverted-vertical-turn | open | 
+      inverted-vertical-turn | open |
       smear | soft-accent"/>
 
   <!-- Remove new id attributes. -->
-  <xsl:template 
-    match="note/@id | beam/@id | 
+  <xsl:template
+    match="note/@id | beam/@id |
       notations/@id | tied/@id |
-      slur/@id | tuplet/@id | 
+      slur/@id | tuplet/@id |
       glissando/@id | slide/@id |
       other-notation/@id | ornaments/@id |
       accidental-mark/@id | technical/@id |
       articulations/@id | arpeggiate/@id |
-      non-arpeggiate/@id | lyric/@id | 
+      non-arpeggiate/@id | lyric/@id |
       figured-bass/@id"/>
 
   <!--
@@ -130,8 +130,8 @@
     Remove new element-specific attributes.
   -->
   <xsl:template
-    match="accidental-mark/@parentheses | 
-      accidental-mark/@bracket | accidental-mark/@size | 
+    match="accidental-mark/@parentheses |
+      accidental-mark/@bracket | accidental-mark/@size |
       lyric/@time-only | note/@print-leger |
       tap/@hand"/>
 
@@ -152,7 +152,7 @@
       other-ornament/@smufl | other-technical/@smufl"/>
 
   <!--
-    Do not copy text for caesura elements, or for breath-mark 
+    Do not copy text for caesura elements, or for breath-mark
     elements with new values.
   -->
   <xsl:template
@@ -167,7 +167,7 @@
     with our removal of the cue element from notes that
     contain both grace and cue elements.
   -->
-  <xsl:template 
+  <xsl:template
     match="@size[. = 'grace-cue']">
     <xsl:attribute name="size">grace</xsl:attribute>
   </xsl:template>
@@ -175,8 +175,8 @@
   <!-- Additions in attributes.mod -->
 
   <!-- Remove new id attributes. -->
-  <xsl:template 
-    match="key/@id | time/@id | 
+  <xsl:template
+    match="key/@id | time/@id |
       clef/@id | transpose/@id |
       measure-style/@id"/>
 
@@ -199,7 +199,7 @@
   <!-- Additions in barline.mod -->
 
   <!-- Remove new id attributes. -->
-  <xsl:template 
+  <xsl:template
     match="barline/@id"/>
 
   <!-- Additions in common.mod -->
@@ -210,22 +210,22 @@
       <xsl:text>n</xsl:text>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="pf">
     <xsl:element name="other-dynamics">
       <xsl:text>pf</xsl:text>
     </xsl:element>
   </xsl:template>
-  
+
   <xsl:template match="sfzp">
     <xsl:element name="other-dynamics">
       <xsl:text>sfzp</xsl:text>
     </xsl:element>
   </xsl:template>
-  
+
   <!-- Remove new id attributes. -->
-  <xsl:template 
-    match="fermata/@id | segno/@id | 
+  <xsl:template
+    match="fermata/@id | segno/@id |
       coda/@id | dynamics/@id"/>
 
   <!--
@@ -242,11 +242,11 @@
     match="accidental-text/@smufl | other-dynamics/@smufl |
       coda/@smufl | segno/@smufl"/>
 
-  <!-- 
+  <!--
     Remove enclosure attributes that have values of pentagon,
     hexagon, heptagon, octagon, nonagon, or decagon.
   -->
-  <xsl:template 
+  <xsl:template
     match="@enclosure[. = 'pentagon' or . = 'hexagon' or
       . = 'heptagon' or . = 'octagon' or
       . = 'nonagon' or . = 'decagon']"/>
@@ -262,12 +262,12 @@
       select="*|@*|comment()|processing-instruction()"
     /></xsl:copy>
   </xsl:template>
-    
+
   <!-- Additions in direction.mod -->
 
   <!-- Remove new id attributes. -->
-  <xsl:template 
-    match="direction/@id | direction-type/@id | 
+  <xsl:template
+    match="direction/@id | direction-type/@id |
       rehearsal/@id | words/@id |
       wedge/@id | dashes/@id |
       bracket/@id | pedal/@id |
@@ -285,7 +285,7 @@
   <!-- Remove smufl attributes. -->
   <xsl:template
     match="glass/@smufl | pitched/@smufl |
-      other-direction/@smufl | 
+      other-direction/@smufl |
       other-percussion/@smufl"/>
 
   <!--
@@ -304,12 +304,12 @@
     so that we do not leave a dangling pedal element with a
     stop type after the conversion.
   -->
-  <xsl:template 
+  <xsl:template
     match="pedal/@type[. = 'sostenuto']">
     <xsl:attribute name="type">start</xsl:attribute>
   </xsl:template>
 
-  <!-- 
+  <!--
     Remove pedal elements that have a number greater
     than 1, then remove the number and abbreviated
     attributes altogether. Make sure the tests have
@@ -324,33 +324,33 @@
 
   <!-- Remove new optional elements. -->
   <xsl:template
-    match="beat-unit-tied | metronome-arrows | 
+    match="beat-unit-tied | metronome-arrows |
       metronome-tied"/>
 
-  <!-- 
-    For safety, remove entire direction that has a new 
+  <!--
+    For safety, remove entire direction that has a new
     enumeration value in percussion child elements.
   -->
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[percussion[beater[
       . = 'drum stick' or . = 'slide brush on gong' or
       . = 'superball']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[percussion[effect[
       . = 'lotus flute' or . = 'megaphone']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[percussion[glass[
       . = 'glass harmonica' or . = 'glass harp']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[percussion[membrane[
       . = 'Chinese tomtom' or . = 'cuica' or
       . = 'Indo-American tomtom' or . = 'Japanese tomtom' or
       . = 'tabla']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[percussion[metal[
       . = 'agogo' or . = 'bell tree' or
       . = 'cencerro' or . = 'chain rattle' or
@@ -358,18 +358,18 @@
       . = 'musical saw' or . = 'shell bells' or
       . = 'tam tam with beater']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[percussion[pitched[
       . = 'celesta' or . = 'lithophone' or
       . = 'steel drums' or . = 'tubaphone']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[percussion[stick[stick-type[
       . = 'glockenspiel' or . = 'gum' or
       . = 'hammer' or . = 'superball' or
       . = 'wound']]]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[percussion[wood[
       . = 'bamboo scraper' or . = 'castanets with handle' or
       . = 'football rattle' or . = 'quijada' or
@@ -390,10 +390,10 @@
   <xsl:template
     match="glyph"/>
 
-  <!-- 
+  <!--
     Remove note-size element with a grace-cue type.
   -->
-  <xsl:template 
+  <xsl:template
     match="note-size[@type = 'grace-cue']"/>
 
   <!-- Additions in score.mod -->
@@ -403,8 +403,8 @@
     match="credit-symbol"/>
 
   <!-- Remove new id attributes. -->
-  <xsl:template 
-    match="credit/@id | credit-image/@id | 
+  <xsl:template
+    match="credit/@id | credit-image/@id |
       credit-words/@id | measure/@id"/>
 
   <!-- Remove new image attributes. -->

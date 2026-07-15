@@ -1,4 +1,5 @@
 ---
+import fs from 'node:fs';
 import { Code } from 'astro:components';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
@@ -8,8 +9,9 @@ import { copyTransformer } from '@/transformers';
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.png');
 const { example, schema } = Astro.props;
-const snippet = example.body.replace(/```xml|```/g, '').trim();
 const name = example.id;
+const musicxml = `./src/data/examples/${schema}/${name}.musicxml`;
+const snippet = fs.existsSync(musicxml) ? fs.readFileSync(musicxml, 'utf8').trim() : example.body.replace(/```xml|```/g, '').trim();
 const image = `/src/assets/img/${example.data.tutorial ? 'tutorial' : ('examples/' + schema)}/${name}.png`;
 ---
 {image in images && (
