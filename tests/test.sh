@@ -56,7 +56,7 @@ get_validations() {
 # TEST FUNCTIONS
 # ============================================================================
 
-test_001_schema_valid() {
+test1_001_schema_valid() {
     #
     # Verify that all MusicXML XSD schemas are syntactically correct.
     #
@@ -66,7 +66,7 @@ test_001_schema_valid() {
     XML_CATALOG_FILES=./catalog.xml xmllint --schema XMLSchema.xsd ../schema/sounds.xsd --noout || return $?
 }
 
-test_002_suite_syntax() {
+test1_002_suite_syntax() {
     #
     # Verify that all MusicXML files in the test suite are syntactically correct.
     #
@@ -86,7 +86,7 @@ test_002_suite_syntax() {
     done
 }
 
-test_003_suite_schematron() {
+test1_003_suite_schematron() {
     #
     # Verify that all MusicXML files in the test suite pass the semantic validations.
     #
@@ -122,7 +122,7 @@ test_004_previous_version() {
         if [[ $assert == "skip" ]]; then continue; fi
 
         local previous="$tempdir/$(basename "$file")"
-        ./xslt.py "../schema/$PREVIOUS_VERSION_XSL" "$file" > "$previous" || exit $?
+        XML_CATALOG_FILES=../schema/catalog.xml xsltproc "../schema/$PREVIOUS_VERSION_XSL" "$file" > "$previous" || exit $?
         XML_CATALOG_FILES="$tempdir/schema/catalog.xml" xmllint --schema "$tempdir/schema/musicxml.xsd" "$previous" --noout
         local status=$?
         if [[ $assert == "fail" && $status == 0 ]]; then
