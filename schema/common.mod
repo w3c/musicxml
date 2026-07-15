@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -36,11 +36,11 @@
 
 		http://www.w3.org/2003/entities/
 -->
-<!ENTITY % isolat1 PUBLIC 
+<!ENTITY % isolat1 PUBLIC
 	"ISO 8879:1986//ENTITIES Added Latin 1//EN//XML"
 	"isolat1.ent">
 %isolat1;
-<!ENTITY % isolat2 PUBLIC 
+<!ENTITY % isolat2 PUBLIC
 	"ISO 8879:1986//ENTITIES Added Latin 2//EN//XML"
 	"isolat2.ent">
 %isolat2;
@@ -60,8 +60,8 @@
 	The tenths entity is a number representing tenths of
 	interline space (positive or negative) for use in
 	attributes. The layout-tenths entity is the same for
-	use in elements. Both integer and decimal values are 
-	allowed, such as 5 for a half space and 2.5 for a 
+	use in elements. Both integer and decimal values are
+	allowed, such as 5 for a half space and 2.5 for a
 	quarter space. Interline space is measured from the
 	middle of a staff line.
 -->
@@ -69,13 +69,13 @@
 <!ENTITY % layout-tenths "(#PCDATA)">
 
 <!--
-	The start-stop and start-stop-continue entities are used 
-	for musical elements that can either start or stop, such 
+	The start-stop and start-stop-continue entities are used
+	for musical elements that can either start or stop, such
 	as slurs, tuplets, and wedges. The start-stop-continue
 	entity is used when there is a need to refer to an
 	intermediate point in the symbol, as for complex slurs
 	or for specifying formatting of symbols across system
-	breaks. 
+	breaks.
 
 	The start-stop-single entity is used when the same element
 	is used for multi-note and single-note notations, as for
@@ -101,10 +101,10 @@
 	attached to a single note, such as a tie leading into or
 	out of a repeated section or coda, use two tied elements on
 	the same note, one start and one stop.
-	
+
 	When multiple elements with the same tag are used within the
 	same note, their order within the MusicXML document should
-	match the musical score order. For example, a note that 
+	match the musical score order. For example, a note that
 	marks both the end of one slur and the start of a new slur
 	should have the incoming slur element with a type of stop
 	precede the outgoing slur element with a type of start. A
@@ -172,16 +172,16 @@
 <!ENTITY % number-of-lines "(0 | 1 | 2 | 3)">
 
 <!--
-	The enclosure-shape entity describes the shape and 
+	The enclosure-shape entity describes the shape and
 	presence / absence of an enclosure around text. A bracket
 	enclosure is similar to a rectangle with the bottom line
 	missing, as is common in jazz notation. An inverted-bracket
-	enclosure is similar to a rectangle with the top line 
+	enclosure is similar to a rectangle with the top line
 	missing.
 -->
-<!ENTITY % enclosure-shape 
-	"(rectangle | square | oval | circle | 
-	  bracket | inverted-bracket | triangle | 
+<!ENTITY % enclosure-shape
+	"(rectangle | square | oval | circle |
+	  bracket | inverted-bracket | triangle |
 	  diamond | pentagon | hexagon | heptagon |
 	  octagon | nonagon | decagon | none)">
 
@@ -195,7 +195,7 @@
 	part, or if there are more than 6 cross-staff arpeggios
 	in a single measure. When a number-level value is implied,
 	the value is 1 by default.
-	
+
 	When polyphonic parts are involved, the ordering within a
 	MusicXML document can differ from musical score order. As
 	an example, say we have a piano part in 4/4 where within a
@@ -204,14 +204,14 @@
 	staff has a slur that starts on beat 2 and stops on beat 3,
 	and there is a third slur that goes from beat 1 of one staff
 	to beat 4 of the other staff.
-	
+
 	In this situation, the two mid-measure slurs can use the
 	same number because they do not overlap in MusicXML document
 	order, even though they do overlap in musical score order.
 	Within the MusicXMLXML document, the top staff slur will
 	both start and stop before the bottom staff slur starts and
 	stops.
-	
+
 	If the cross-staff slur starts in the top staff and stops
 	in the bottom staff, it will need a separate number from
 	the mid-measure slurs because it overlaps those slurs in
@@ -223,7 +223,7 @@
 	document, the start and stop of the top-staff slur will
 	be followed by the stop and start of the cross-staff slur,
 	followed by the start and stop of the bottom-staff slur.
-	
+
 	As this example demonstrates, a reading program should be
 	prepared to handle cases where the number-levels start and
 	stop in an arbitrary order. Because the start and stop
@@ -231,8 +231,8 @@
 	stopping point of an object earlier in the MusicXML document
 	than it will find its starting point.
 -->
-<!ENTITY % number-level 
-    "(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 
+<!ENTITY % number-level
+    "(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
       9 | 10 | 11 | 12 | 13 | 14 | 15 | 16)">
 
 <!--
@@ -255,13 +255,13 @@
 <!ENTITY % smufl-glyph-name "NMTOKEN">
 
 <!--
-	Common structures for formatting attribute definitions. 
+	Common structures for formatting attribute definitions.
 -->
 
 <!--
 	For most elements, any program will compute a default x
 	and y position. The position attributes let this be changed
-	two ways. 
+	two ways.
 
 	The default-x and default-y attributes change the
 	computation of the default position. For most elements,
@@ -285,11 +285,11 @@
 	at either the left barline or the start of the system.
 
 	When the default-x attribute is used within a child element
-	of the part-name-display, part-abbreviation-display, 
+	of the part-name-display, part-abbreviation-display,
 	group-name-display, or group-abbreviation-display elements,
-	it changes the origin relative to the start of the first 
+	it changes the origin relative to the start of the first
 	measure on the system. These values are used when the current
-	measure or a succeeding measure starts a new system. The same 
+	measure or a succeeding measure starts a new system. The same
 	change of origin is used for the group-symbol element.
 
 	For the note, figured-bass, and harmony elements, the
@@ -301,11 +301,11 @@
 	default-y attributes adjust the origin relative to the
 	bottom left-hand corner of the specified page.
 
-	The relative-x and relative-y attributes change the position 
+	The relative-x and relative-y attributes change the position
 	relative to the default position, either as computed by the
 	individual program, or as overridden by the default-x and
 	default-y attributes.
-	
+
 	Positive x is right, negative x is left; positive y is up,
 	negative y is down. All units are in tenths of interline
 	space. For stems, positive relative-y lengthens a stem
@@ -335,7 +335,7 @@
 <!--
 	The placement attribute indicates whether something is
 	above or below another element, such as a note or a
-	notation. 
+	notation.
 -->
 <!ENTITY % placement
 	"placement %above-below; #IMPLIED">
@@ -350,7 +350,7 @@
 	"orientation (over | under) #IMPLIED">
 
 <!--
-	The directive entity changes the default-x position 
+	The directive entity changes the default-x position
 	of a direction. It indicates that the left-hand side of the
 	direction is aligned with the left-hand side of the time
 	signature. If no time signature is present, it is aligned
@@ -360,33 +360,33 @@
 -->
 <!ENTITY % directive
 	"directive  %yes-no;  #IMPLIED">
-	
+
 <!--
 	The bezier entity is used to indicate the curvature of
-	slurs and ties, representing the control points for a 
-	cubic bezier curve. For ties, the bezier entity is 
+	slurs and ties, representing the control points for a
+	cubic bezier curve. For ties, the bezier entity is
 	used with the tied element.
 
-	Normal slurs, S-shaped slurs, and ties need only two 
-	bezier points: one associated with the start of the slur 
-	or tie, the other with the stop. Complex slurs and slurs 
-	divided over system breaks can specify additional 
+	Normal slurs, S-shaped slurs, and ties need only two
+	bezier points: one associated with the start of the slur
+	or tie, the other with the stop. Complex slurs and slurs
+	divided over system breaks can specify additional
 	bezier data at slur elements with a continue type.
-	
+
 	The bezier-x, bezier-y, and bezier-offset attributes
-	describe the outgoing bezier point for slurs and ties 
+	describe the outgoing bezier point for slurs and ties
 	with a start type, and the incoming bezier point for
-	slurs and ties with types of stop or continue. The 
-	bezier-x2, bezier-y2, and bezier-offset2 attributes 
-	are only valid with slurs of type continue, and 
+	slurs and ties with types of stop or continue. The
+	bezier-x2, bezier-y2, and bezier-offset2 attributes
+	are only valid with slurs of type continue, and
 	describe the outgoing bezier point.
-	
+
 	The bezier-x, bezier-y, bezier-x2, and bezier-y2
 	attributes are specified in tenths, relative to any
 	position settings associated with the slur or tied
 	element. The bezier-offset and bezier-offset2
 	attributes are measured in terms of musical divisions,
-	like the offset element. 
+	like the offset element.
 
 	The bezier-offset and bezier-offset2 attributes are
 	deprecated as of MusicXML 3.1. If both the bezier-x
@@ -428,14 +428,14 @@
 	 font-style   CDATA  #IMPLIED
 	 font-size    CDATA  #IMPLIED
 	 font-weight  CDATA  #IMPLIED">
-	
+
 <!--
 	The color entity indicates the color of an element.
 	Color may be represented as hexadecimal RGB triples,
 	as in HTML, or as hexadecimal ARGB tuples, with the
 	A indicating alpha of transparency. An alpha value
 	of 00 is totally transparent; FF is totally opaque.
-	If RGB is used, the A value is assumed to be FF. 
+	If RGB is used, the A value is assumed to be FF.
 
 	For instance, the RGB value "#800080" represents
 	purple. An ARGB value of "#40800080" would be a
@@ -458,7 +458,7 @@
 	"underline  %number-of-lines;  #IMPLIED
 	 overline  %number-of-lines;   #IMPLIED
 	 line-through  %number-of-lines;   #IMPLIED">
-	
+
 <!--
 	The justify entity is used to indicate left, center, or
 	right justification. The default value varies for different
@@ -470,7 +470,7 @@
 	"justify (left | center | right) #IMPLIED">
 
 <!--
-	In cases where text extends over more than one line, 
+	In cases where text extends over more than one line,
 	horizontal alignment and justify values can be different.
 	The most typical case is for credits, such as:
 
@@ -479,10 +479,10 @@
 
 	Typically this type of credit is aligned to the right,
 	so that the position information refers to the right-
-	most part of the text. But in this example, the text 
+	most part of the text. But in this example, the text
 	is center-justified, not right-justified.
 
-	The halign attribute is used in these situations. If it 
+	The halign attribute is used in these situations. If it
 	is not present, its value is the same as for the justify
 	attribute. For elements where a justify attribute is not
 	allowed, the default is implementation-dependent.
@@ -492,8 +492,8 @@
 
 <!--
 	The valign entity is used to indicate vertical
-	alignment to the top, middle, bottom, or baseline 
-	of the text. If the text is on multiple lines, 
+	alignment to the top, middle, bottom, or baseline
+	of the text. If the text is on multiple lines,
 	baseline alignment refers to the baseline of the
 	lowest line of text. Defaults are implementation-
 	dependent.
@@ -523,9 +523,9 @@
 <!--
 	The line-height entity specified text leading. Values
 	are either "normal" or a number representing the
-	percentage of the current font height  to use for 
-	leading. The default is "normal". The exact normal 
-	value is implementation-dependent, but values 
+	percentage of the current font height  to use for
+	leading. The default is "normal". The exact normal
+	value is implementation-dependent, but values
 	between 100 and 120 are recommended.
 -->
 <!ENTITY % line-height
@@ -605,7 +605,7 @@
 	The dashed-formatting entity represents the length of
 	dashes and spaces in a dashed line. Both the dash-length
 	and space-length attributes are represented in tenths.
-	These attributes are ignored if the corresponding 
+	These attributes are ignored if the corresponding
 	line-type attribute is not dashed.
 -->
 <!ENTITY % dashed-formatting
@@ -615,7 +615,7 @@
 <!--
 	The printout entity allows a way to specify not to print
 	print an object (e.g. note or rest), its augmentation
-	dots, or its lyrics. This is especially useful for notes 
+	dots, or its lyrics. This is especially useful for notes
 	that overlap in different voices, or for chord sheets
 	that contain lyrics and chords but no melody. For wholly
 	invisible notes, such as those providing sound-only data,
@@ -623,7 +623,7 @@
 	no space is left for this note. The print-spacing value
 	is only used if no note, dot, or lyric is being printed.
 
-	By default, all these attributes are set to yes. If 
+	By default, all these attributes are set to yes. If
 	print-object is set to no, print-dot and print-lyric are
 	interpreted to also be set to no if they are not present.
 -->
@@ -640,7 +640,7 @@
 	 print-lyric   %yes-no;  #IMPLIED">
 
 <!--
-	The text-formatting entity contains the common formatting 
+	The text-formatting entity contains the common formatting
 	attributes for text elements. Default values may differ
 	across the elements that use this entity.
 -->
@@ -672,7 +672,7 @@
 	 %enclosure;">
 
 <!--
-	The level-display entity allows specification of three 
+	The level-display entity allows specification of three
 	common ways to indicate editorial indications: putting
 	parentheses or square brackets around a symbol, or making
 	the symbol a different size. If not specified, they are
@@ -685,26 +685,26 @@
 	 size        %symbol-size;  #IMPLIED">
 
 <!--
-	Common structures for playback attribute definitions. 
+	Common structures for playback attribute definitions.
 -->
 
 <!--
 	The trill-sound entity includes attributes used to guide
 	the sound of trills, mordents, turns, shakes, and wavy
 	lines. The default choices are:
-	
+
 		start-note = "upper"
 		trill-step = "whole"
 		two-note-turn = "none"
 		accelerate = "no"
 		beats = "4" (minimum of "2").
-	
+
 	Second-beat and last-beat are percentages for landing on
 	the indicated beat, with defaults of 25 and 75 respectively.
-	
+
 	For mordent and inverted-mordent elements, the defaults
 	are different:
-	
+
 		The default start-note is "main", not "upper".
 		The default for beats is "3", not "4".
 		The default for second-beat is "12", not "25".
@@ -727,7 +727,7 @@
 	first-beat indicates the percentage of the duration for
 	starting a bend; the last-beat the percentage for ending it.
 	The default choices are:
-	
+
 		accelerate = "no"
 		beats = "4" (minimum of "2")
 		first-beat = "25"
@@ -751,7 +751,7 @@
 	"time-only CDATA #IMPLIED">
 
 <!--
-	Common structures for other attribute definitions. 
+	Common structures for other attribute definitions.
 -->
 
 <!--
@@ -761,14 +761,14 @@
 
 	The version attribute was added in Version 1.1 for the
 	score-partwise and score-timewise documents, and in
-	Version 2.0 for opus documents. It provides an easier 
+	Version 2.0 for opus documents. It provides an easier
 	way to get version information than through the MusicXML
 	public ID. The default value is 1.0 to make it possible
 	for programs that handle later versions to distinguish
 	earlier version files reliably. Programs that write
 	MusicXML 1.1 or later files should set this attribute.
 -->
-<!ENTITY % document-attributes 
+<!ENTITY % document-attributes
 	"version  CDATA  '1.0'">
 
 <!--
@@ -782,7 +782,7 @@
 
 <!--
 	The smufl entity is used to indicate a particular Standard
-	Music Font Layout (SMuFL) character. Sometimes this is a 
+	Music Font Layout (SMuFL) character. Sometimes this is a
 	formatting choice, and sometimes this is a refinement of
 	the semantic meaning of an element.
 -->
@@ -804,9 +804,9 @@
 -->
 <!ENTITY % system-relation
     "system (none | only-top | also-top) #IMPLIED">
-    
+
 <!--
-	Common structures for element definitions. 
+	Common structures for element definitions.
 -->
 
 <!--
@@ -818,12 +818,12 @@
 <!ENTITY % editorial-voice "(footnote?, level?, voice?)">
 
 <!--
-    Virtual instrument data can be part of either the 
+    Virtual instrument data can be part of either the
     score-instrument element at the start of a part,
     or an instrument-change element within a part.
 -->
-<!ENTITY % virtual-instrument-data 
-    "(instrument-sound?, (solo | ensemble)?, 
+<!ENTITY % virtual-instrument-data
+    "(instrument-sound?, (solo | ensemble)?,
      virtual-instrument?)">
 
 <!-- Elements -->
@@ -838,15 +838,15 @@
 	the level element contains identifying and/or descriptive
 	text about the editorial status of the parent element. A
 	voice is a sequence of musical events (e.g. notes, chords,
-	rests) that proceeds linearly in time. 
-	
+	rests) that proceeds linearly in time.
+
 	If the reference attribute for the level element is yes,
 	this indicates editorial information that is for display
 	only and should not affect playback. For instance, a modern
 	edition of older music may set reference="yes" on the
 	attributes containing the music's original clef, key, and
-	time signature. It is no if not specified. 
-	
+	time signature. It is no if not specified.
+
 	The type attribute for the level element indicates whether
 	the editorial information applies to the start of a series
 	of symbols, the end of a series of symbols, or a single
@@ -867,14 +867,14 @@
 
 <!--
 	Fermata and wavy-line elements can be applied both to notes
-	and to barlines, so they are defined here. 
-	
+	and to barlines, so they are defined here.
+
 	Wavy lines are one way to indicate trills and vibrato.
 	When used with a barline element, they should always have
 	type="continue" set. The smufl attribute specifies a
 	particular wavy line glyph from the SMuFL Multi-segment
 	lines range.
-	
+
 	The fermata text content represents the shape of the fermata
 	sign and may be normal, angled, square, double-angled,
 	double-square, double-dot, half-curve, curlew, or an empty
@@ -893,9 +893,9 @@
     number %number-level; #IMPLIED
     %smufl;
     %position;
-    %placement; 
+    %placement;
     %color;
-    %trill-sound; 
+    %trill-sound;
 >
 
 <!--
@@ -916,14 +916,14 @@
 -->
 <!ELEMENT segno EMPTY>
 <!ATTLIST segno
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
     %smufl;
 >
 
 <!ELEMENT coda EMPTY>
 <!ATTLIST coda
-    %print-style-align; 
+    %print-style-align;
     %optional-unique-id;
     %smufl;
 >
@@ -933,7 +933,7 @@
 	metronome-tuplet elements. The actual-notes element
 	describes how many notes are played in the time usually
 	occupied by the number of normal-notes. If the normal-notes
-	type is different than the current note type (e.g., a 
+	type is different than the current note type (e.g., a
 	quarter note within an eighth note triplet), then the
 	normal-notes type (e.g. eighth) is specified in the
 	normal-type and normal-dot elements. The content of the
@@ -954,14 +954,14 @@
 	of these dynamic elements. The other-dynamics element allows
 	other dynamic marks that are not covered here. Dynamics may
 	also be combined as in <sf/><mp/>.
-	
+
 	These letter dynamic symbols are separated from crescendo,
 	decrescendo, and wedge indications. Dynamic representation
 	is inconsistent in scores. Many things are assumed by the
 	composer and left out, such as returns to original dynamics.
 	The MusicXML format captures what is in the score, but does
 	not try to be optimal for analysis or synthesis of dynamics.
-	
+
 	The placement attribute is used when the dynamics are
 	associated with a note. It is ignored when the dynamics
 	are associated with a direction. In that case the direction
@@ -969,12 +969,12 @@
 -->
 <!ELEMENT dynamics ((p | pp | ppp | pppp | ppppp | pppppp |
 	f | ff | fff | ffff | fffff | ffffff | mp | mf | sf |
-	sfp | sfpp | fp | rf | rfz | sfz | sffz | fz | 
+	sfp | sfpp | fp | rf | rfz | sfz | sffz | fz |
 	n | pf | sfzp | other-dynamics)*)>
 <!ATTLIST dynamics
-    %print-style-align; 
+    %print-style-align;
     %placement;
-    %text-decoration; 
+    %text-decoration;
     %enclosure;
     %optional-unique-id;
 >
@@ -1019,7 +1019,7 @@
 	Fingering is typically indicated 1,2,3,4,5. Multiple
 	fingerings may be given, typically to substitute
 	fingerings in the middle of a note. The substitution
-	and alternate values are "no" if the attribute is 
+	and alternate values are "no" if the attribute is
 	not present. For guitar and other fretted instruments,
 	the fingering element represents the fretting finger;
 	the pluck element represents the plucking finger.
@@ -1028,7 +1028,7 @@
 <!ATTLIST fingering
     substitution %yes-no; #IMPLIED
     alternate %yes-no; #IMPLIED
-    %print-style; 
+    %print-style;
     %placement;
 >
 
@@ -1042,7 +1042,7 @@
 <!ELEMENT fret (#PCDATA)>
 <!ATTLIST fret
     %font;
-    %color; 
+    %color;
 >
 <!ELEMENT string (#PCDATA)>
 <!ATTLIST string
@@ -1084,7 +1084,7 @@
 >
 
 <!--
-	The part-name-display and part-abbreviation-display 
+	The part-name-display and part-abbreviation-display
 	elements are used in both the score.mod and direction.mod
 	files. They allow more precise control of how part names
 	and abbreviations appear throughout a score. The
@@ -1112,7 +1112,7 @@
 	of a particular virtual or MIDI instrument specification
 	and allows playback to be shared more easily between
 	applications and libraries.
-	
+
 	The virtual-instrument element defines a specific virtual
 	instrument used for an instrument sound. The
 	virtual-library element indicates the virtual instrument
@@ -1164,7 +1164,7 @@
     id IDREF #REQUIRED
 >
 
-<!-- 
+<!--
 	MIDI 1.0 channel numbers range from 1 to 16.
 -->
 <!ELEMENT midi-channel (#PCDATA)>
@@ -1190,7 +1190,7 @@
 -->
 <!ELEMENT midi-unpitched (#PCDATA)>
 
-<!-- 
+<!--
 	The volume value is a percentage of the maximum
 	ranging from 0 to 100, with decimal values allowed.
 	This corresponds to a scaling value for the MIDI 1.0
@@ -1198,7 +1198,7 @@
  -->
 <!ELEMENT volume (#PCDATA)>
 
-<!-- 
+<!--
 	Pan and elevation allow placing of sound in a 3-D space
 	relative to the listener. Both are expressed in degrees
 	ranging from -180 to 180. For pan, 0 is straight ahead,
@@ -1210,7 +1210,7 @@
 <!ELEMENT pan (#PCDATA)>
 <!ELEMENT elevation (#PCDATA)>
 
-<!-- 
+<!--
 	The play element specifies playback techniques to be used
 	in conjunction with the instrument-sound element. When used
 	as part of a sound element, it applies to all notes going
@@ -1224,14 +1224,14 @@
     id IDREF #IMPLIED
 >
 
-<!-- 
+<!--
 	The ipa element represents International Phonetic Alphabet
 	(IPA) sounds for vocal music. String content is limited to
 	IPA 2015 symbols represented in Unicode 13.0.
 -->
 <!ELEMENT ipa (#PCDATA)>
 
-<!-- 
+<!--
 	The mute element represents muting for different
 	instruments, including brass, winds, and strings. The on
 	and off values are used for undifferentiated mutes. The
@@ -1241,14 +1241,14 @@
 -->
 <!ELEMENT mute (#PCDATA)>
 
-<!-- 
+<!--
 	The semi-pitched element represents categories of indefinite
 	pitch for percussion instruments. Values are high,
 	medium-high, medium, medium-low, low, and very-low.
 -->
 <!ELEMENT semi-pitched (#PCDATA)>
 
-<!-- 
+<!--
 	The other-play element represents other types of playback.
 	The required type attribute indicates the type of playback
 	to which the element content applies.

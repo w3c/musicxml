@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -30,11 +30,11 @@
 	definition for that file.
 
 	Suggested use:
-	
+
 	<!DOCTYPE sounds PUBLIC
 		"-//Recordare//DTD MusicXML 4.0 Sounds//EN"
 		"http://www.musicxml.org/dtds/sounds.dtd">
-	
+
 	The XML catalog at catalog.xml supports validating against a
 	local copy of this DTD rather than the networked version in
 	the system ID. Software often has trouble using system IDs

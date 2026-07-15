@@ -6,7 +6,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -36,17 +36,17 @@
 -->
 
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    
+
     <!-- W3C XML Schema -->
     <group>
         <uri name="http://www.musicxml.org/xsd/musicxml.xsd" uri="musicxml.xsd"/>
         <uri name="http://www.musicxml.org/xsd/opus.xsd" uri="opus.xsd"/>
         <uri name="http://www.musicxml.org/xsd/xlink.xsd" uri="xlink.xsd"/>
-        <uri name="http://www.musicxml.org/xsd/xml.xsd" uri="xml.xsd"/>        
+        <uri name="http://www.musicxml.org/xsd/xml.xsd" uri="xml.xsd"/>
         <uri name="http://www.musicxml.org/xsd/container.xsd" uri="container.xsd"/>
-        <uri name="http://www.musicxml.org/xsd/sounds.xsd" uri="sounds.xsd"/>        
+        <uri name="http://www.musicxml.org/xsd/sounds.xsd" uri="sounds.xsd"/>
     </group>
-    
+
     <!-- DTD -->
     <group prefer="public">
 
@@ -68,7 +68,7 @@
         <public publicId="-//Recordare//ELEMENTS MusicXML 4.1 Score//EN" uri="score.mod"/>
         <public publicId="ISO 8879:1986//ENTITIES Added Latin 1//EN//XML" uri="isolat1.ent"/>
         <public publicId="ISO 8879:1986//ENTITIES Added Latin 2//EN//XML" uri="isolat2.ent"/>
-        
+
         <!-- Older versions -->
         <public publicId="-//Recordare//DTD MusicXML 4.0 Partwise//EN" uri="partwise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 4.0 Timewise//EN" uri="timewise.dtd"/>
@@ -100,7 +100,7 @@
         <public publicId="-//Recordare//ELEMENTS MusicXML 3.1 Barline//EN" uri="barline.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 3.1 Direction//EN" uri="direction.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 3.1 Score//EN" uri="score.mod"/>
-        
+
         <public publicId="-//Recordare//DTD MusicXML 3.0 Partwise//EN" uri="partwise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 3.0 Timewise//EN" uri="timewise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 3.0 Opus//EN" uri="opus.dtd"/>
@@ -116,7 +116,7 @@
         <public publicId="-//Recordare//ELEMENTS MusicXML 3.0 Barline//EN" uri="barline.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 3.0 Direction//EN" uri="direction.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 3.0 Score//EN" uri="score.mod"/>
-        
+
         <public publicId="-//Recordare//DTD MusicXML 2.0 Partwise//EN" uri="partwise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 2.0 Timewise//EN" uri="timewise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 2.0 Opus//EN" uri="opus.dtd"/>
@@ -131,7 +131,7 @@
         <public publicId="-//Recordare//ELEMENTS MusicXML 2.0 Barline//EN" uri="barline.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 2.0 Direction//EN" uri="direction.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 2.0 Score//EN" uri="score.mod"/>
-        
+
         <public publicId="-//Recordare//DTD MusicXML 1.1 Partwise//EN" uri="partwise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 1.1 Timewise//EN" uri="timewise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 1.1 Opus//EN" uri="opus.dtd"/>
@@ -145,7 +145,7 @@
         <public publicId="-//Recordare//ELEMENTS MusicXML 1.1 Barline//EN" uri="barline.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 1.1 Direction//EN" uri="direction.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 1.1 Score//EN" uri="score.mod"/>
-        
+
         <public publicId="-//Recordare//DTD MusicXML 1.0 Partwise//EN" uri="partwise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 1.0 Timewise//EN" uri="timewise.dtd"/>
         <public publicId="-//Recordare//DTD MusicXML 1.0 Opus//EN" uri="opus.dtd"/>
@@ -159,7 +159,7 @@
         <public publicId="-//Recordare//ELEMENTS MusicXML 1.0 Barline//EN" uri="barline.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 1.0 Direction//EN" uri="direction.mod"/>
         <public publicId="-//Recordare//ELEMENTS MusicXML 1.0 Score//EN" uri="score.mod"/>
-        
+
         <!-- SYSTEM -->
         <system systemId="http://www.musicxml.org/dtds/partwise.dtd" uri="partwise.dtd"/>
         <system systemId="http://www.musicxml.org/dtds/timewise.dtd" uri="timewise.dtd"/>
@@ -178,5 +178,5 @@
         <system systemId="http://www.musicxml.org/dtds/score.mod" uri="score.mod"/>
         <system systemId="http://www.musicxml.org/dtds/isolat1.ent" uri="isolat1.ent"/>
         <system systemId="http://www.musicxml.org/dtds/isolat2.ent" uri="isolat2.ent"/>
-    </group>   
+    </group>
 </catalog>

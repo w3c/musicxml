@@ -5,7 +5,7 @@
 
   Version 4.1 Draft
 
-  Copyright © 2004-2024 the Contributors to the MusicXML
+  Copyright © 2004-2026 the Contributors to the MusicXML
   Specification, published by the W3C Music Notation Community
   Group under the W3C Community Contributor License Agreement
   (CLA):
@@ -17,7 +17,7 @@
      https://www.w3.org/community/about/agreements/cla-deed/
 -->
 
-<!-- 
+<!--
   Timepart.xsl is an XSLT stylesheet for transforming
   timewise MusicXML scores into partwise scores. Thus
   instead of having parts included within each measure,
@@ -44,7 +44,7 @@
     For the root, only look for score-partwise and
     score-timewise. Anything else as a root element gets
     ignored.
-  -->  
+  -->
   <xsl:template match="/">
     <xsl:apply-templates select="./score-partwise"/>
     <xsl:apply-templates select="./score-timewise"/>
@@ -63,9 +63,9 @@
   <xsl:template match="text()">
     <xsl:value-of select="." />
   </xsl:template>
-	
+
   <!--
-    Whitespace within an xsl:copy could cause problems with 
+    Whitespace within an xsl:copy could cause problems with
     empty elements.
   -->
   <xsl:template match="*|@*|comment()|processing-instruction()">
@@ -82,10 +82,10 @@
     and all others) from within that loop.
   -->
   <xsl:template match="score-timewise">
-	
+
     <!-- Create the score-partwise element. -->
     <xsl:element name="score-partwise">
-		
+
       <!--
         Copy the seven score header elements and their
         children. The DTD specifies that these occur, if
@@ -99,12 +99,12 @@
       <xsl:apply-templates select="defaults"/>
       <xsl:apply-templates select="credit"/>
       <xsl:apply-templates select="part-list"/>
-			
+
       <!--
         Now loop through all parts in the first measure.
       -->
       <xsl:for-each select="measure[1]/part">
-			
+
         <!--
           Bind part ID to a variable for use throughout the
           loop, including inner loop where we will lose the
@@ -113,33 +113,33 @@
         <xsl:variable name="part-id">
           <xsl:value-of select="@id"/>
         </xsl:variable>
-				
+
         <!-- Create the part element. -->
         <xsl:element name="part">
-				
+
           <!--
             Now we need to copy the part id attribute.
           -->
           <xsl:copy-of select="@id" />
-					
+
           <!--
             Now for the inner loop. We go back to the root
             ancestor, and loop through each measure and
             part, looking for the ones that match the part
             ID, and add it here.
-						
+
             This is inefficient. but it provides a working
             starting point.
           -->
           <xsl:for-each select="../../measure/part">
             <xsl:if test="@id=$part-id">
-						
+
               <!-- Create the measure element. -->
               <xsl:element name="measure">
-							
+
                 <!--
-                  Copy the attributes from the parent 
-                  measure element. 
+                  Copy the attributes from the parent
+                  measure element.
                 -->
                 <xsl:attribute name="number">
                   <xsl:value-of select="parent::measure/@number"/>
@@ -165,7 +165,7 @@
                     <xsl:value-of select="parent::measure/@width"/>
                   </xsl:attribute>
                 </xsl:if>
-								
+
                 <!--
                   Now copy all the descendants using
                   identity transforms.
@@ -174,9 +174,9 @@
               </xsl:element>
             </xsl:if>
           </xsl:for-each>
-					
+
         </xsl:element>
       </xsl:for-each>
-    </xsl:element>       
+    </xsl:element>
   </xsl:template>
 </xsl:stylesheet>

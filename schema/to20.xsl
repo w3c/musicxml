@@ -5,7 +5,7 @@
 
   Version 4.1 Draft
 
-  Copyright © 2004-2024 the Contributors to the MusicXML
+  Copyright © 2004-2026 the Contributors to the MusicXML
   Specification, published by the W3C Music Notation Community
   Group under the W3C Community Contributor License Agreement
   (CLA):
@@ -37,20 +37,20 @@
     doctype-public="-//Recordare//DTD MusicXML 2.0 Partwise//EN"/>
 
   <!--
-    For the root, only look for score-partwise. Anything else 
+    For the root, only look for score-partwise. Anything else
     as a root element gets ignored.
-  -->  
+  -->
   <xsl:template match="/">
     <xsl:apply-templates select="./score-partwise"/>
   </xsl:template>
 
   <!--
-    Transformations that remove post-2.0 elements and 
+    Transformations that remove post-2.0 elements and
     attributes.
   -->
-  
+
   <!-- Additions in note.mod -->
-  <xsl:template 
+  <xsl:template
     match="notehead-text |
       tied/@dash-length | tied/@space-length |
       slur/@dash-length | slur/@space-length |
@@ -62,22 +62,22 @@
       falloff/@dash-length | falloff/@space-length |
       extend/@default-x | extend/@default-y |
       extend/@relative-x | extend/@relative-y |
-      extend/@type | rest/@measure | 
+      extend/@type | rest/@measure |
       breath-mark/text() | tie/@time-only |
       turn/@slash | delayed-turn/@slash |
       inverted-turn/@slash | delayed-inverted-turn |
-      vertical-turn | hole | arrow | handbell | 
+      vertical-turn | hole | arrow | handbell |
       mordent/@approach | inverted-mordent/@approach |
       mordent/@departure | inverted-mordent/@departure |
       notations/@print-object | lyric/@print-object"/>
 
   <!--
-    Remove accidental and accidental-mark elements with 
+    Remove accidental and accidental-mark elements with
     new values.
   -->
-  <xsl:template 
-    match="accidental[. = 'sharp-down' or . = 'sharp-up' or 
-        . = 'natural-down' or . = 'natural-up' or 
+  <xsl:template
+    match="accidental[. = 'sharp-down' or . = 'sharp-up' or
+        . = 'natural-down' or . = 'natural-up' or
         . = 'flat-down' or . = 'flat-up' or
         . = 'triple-sharp' or . = 'triple-flat' or
         . = 'slash-quarter-sharp' or . = 'slash-sharp' or
@@ -88,9 +88,9 @@
         . = 'flat-3' or . = 'flat-4' or
         . = 'sori' or . = 'koron']"/>
 
-  <xsl:template 
-    match="accidental-mark[. = 'sharp-down' or . = 'sharp-up' or 
-        . = 'natural-down' or . = 'natural-up' or 
+  <xsl:template
+    match="accidental-mark[. = 'sharp-down' or . = 'sharp-up' or
+        . = 'natural-down' or . = 'natural-up' or
         . = 'flat-down' or . = 'flat-up' or
         . = 'triple-sharp' or . = 'triple-flat' or
         . = 'slash-quarter-sharp' or . = 'slash-sharp' or
@@ -102,89 +102,89 @@
         . = 'sori' or . = 'koron']"/>
 
   <!-- Remove type elements with new values. -->
-  <xsl:template 
-    match="type[. = '1024th' or . = '512th' or 
-        . = 'maxima']"/> 
+  <xsl:template
+    match="type[. = '1024th' or . = '512th' or
+        . = 'maxima']"/>
 
   <!-- Remove notehead elements with new values. -->
-  <xsl:template 
-    match="notehead[. = 'fa up' or . = 'circle dot' or 
-          . = 'left triangle' or . = 'rectangle']"/> 
+  <xsl:template
+    match="notehead[. = 'fa up' or . = 'circle dot' or
+          . = 'left triangle' or . = 'rectangle']"/>
 
   <!-- Remove beam element with new number values -->
-  <xsl:template 
+  <xsl:template
     match="beam[@number[. = '7' or . = '8']]"/>
 
   <!-- Remove tremolo element with new number values -->
-  <xsl:template 
+  <xsl:template
     match="tremolo[. = '7' or . = '8']"/>
 
-  <!-- 
-    Remove tied elements with new continue value for the 
+  <!--
+    Remove tied elements with new continue value for the
     for the type attribute.
   -->
-  <xsl:template 
+  <xsl:template
     match="tied[@type[. = 'continue']]"/>
 
   <!-- Additions in attributes.mod -->
 
-  <xsl:template 
-    match="key-accidental | interchangeable | 
+  <xsl:template
+    match="key-accidental | interchangeable |
       senza-misura/text() | transpose/@number |
       time/@halign | time/@valign |
       time/@separator | clef/@after-barline"/>
 
   <!-- Remove cancel location attribute with new values -->
-  <xsl:template 
+  <xsl:template
     match="cancel/@location[. = 'before-barline']"/>
 
   <!-- Remove time symbol attribute with new values -->
-  <xsl:template 
+  <xsl:template
     match="time/@symbol[. = 'note' or . = 'dotted-note']"/>
 
   <!-- Remove all but first transpose element -->
-  <xsl:template 
+  <xsl:template
     match="attributes/transpose[position() > 1]"/>
 
   <!-- Remove jianpu clefs altogether -->
-  <xsl:template 
+  <xsl:template
     match="clef[//sign[.='jianpu']]"/>
 
   <!-- Remove part-symbol element with new square value -->
-  <xsl:template 
+  <xsl:template
     match="part-symbol[.='square']"/>
 
   <!-- Additions in barline.mod -->
-  <xsl:template 
+  <xsl:template
     match="repeat/@winged"/>
 
   <!-- Additions in common.mod -->
 
-  <xsl:template 
+  <xsl:template
     match="dynamics/@halign | dynamics/@valign |
       dynamics/@underline | dynamics/@overline |
       dynamics/@line-through | dynamics/@enclosure |
       coda/@halign | coda/@valign |
       segno/@halign | segno/@valign |
       midi-device/@id | play | @xml:space"/>
-  
-  <!-- 
-    Remove display-text and accidental-text enclosure 
+
+  <!--
+    Remove display-text and accidental-text enclosure
     attributes that have values of square, circle, or bracket.
   -->
-  <xsl:template 
+  <xsl:template
     match="display-text/@enclosure[. = 'square' or . = 'circle' or
                    . = 'bracket' or . = 'triangle' or
                    . = 'diamond'] "/>
-  <xsl:template 
+  <xsl:template
     match="accidental-text/@enclosure[. = 'square' or . = 'circle' or
                     . = 'bracket' or . = 'triangle' or
                     . = 'diamond'] "/>
 
   <!-- Remove accidental-text elements with new values. -->
-  <xsl:template 
-    match="accidental-text[. = 'sharp-down' or . = 'sharp-up' or 
-        . = 'natural-down' or . = 'natural-up' or 
+  <xsl:template
+    match="accidental-text[. = 'sharp-down' or . = 'sharp-up' or
+        . = 'natural-down' or . = 'natural-up' or
         . = 'flat-down' or . = 'flat-up' or
         . = 'triple-sharp' or . = 'triple-flat' or
         . = 'slash-quarter-sharp' or . = 'slash-sharp' or
@@ -197,10 +197,10 @@
 
   <!-- Additions in direction.mod -->
 
-  <xsl:template 
+  <xsl:template
     match="rehearsal/@justify | rehearsal/@halign |
       rehearsal/@valign | rehearsal/@letter-spacing |
-      rehearsal/@line-height | 
+      rehearsal/@line-height |
       wedge/@line-type | wedge/@niente |
       wedge/@dash-length | wedge/@space-length |
       bracket/@dash-length | bracket/@space-length |
@@ -218,82 +218,82 @@
       metronome/@justify | frame/@unplayed |
       degree-value/@symbol | sound/midi-device"/>
 
-  <!-- 
-    For safety, remove entire direction that has a new 
+  <!--
+    For safety, remove entire direction that has a new
     continue value for the type attribute.
   -->
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[wedge[@type[. = 'continue']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[dashes[@type[. = 'continue']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[bracket[@type[. = 'continue']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[octave-shift[@type[. = 'continue']]]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[pedal[@type[. = 'continue']]]]"/>
 
-  <!-- 
+  <!--
     For safety, remove entire direction that has a new
     MusicXML 3.0 direction-type child.
   -->
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[string-mute]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[principal-voice]]"/>
 
-  <xsl:template 
+  <xsl:template
     match="direction[direction-type[percussion]]"/>
 
-  <!-- 
+  <!--
     Remove rehearsal enclosure attributes that have values
     of rectangle, oval, bracket, triangle, or diamond.
   -->
-  <xsl:template 
+  <xsl:template
     match="rehearsal/@enclosure[. = 'rectangle' or . = 'oval' or
               . = 'bracket' or . = 'triangle' or
               . = 'diamond'] "/>
 
-  <!-- 
+  <!--
     Remove words enclosure attributes that have values
     of square, circle, bracket, triangle, or diamond.
   -->
-  <xsl:template 
+  <xsl:template
     match="words/@enclosure[. = 'square' or . = 'circle' or
               . = 'bracket' or . = 'triangle' or
               . = 'diamond'] "/>
 
   <!-- Remove metronome-beam element with new number values -->
-  <xsl:template 
+  <xsl:template
     match="metronome-beam[@number[. = '7' or . = '8']]"/>
 
   <!-- Additions in layout.mod -->
-  <xsl:template 
+  <xsl:template
     match="distance | system-dividers"/>
-  
+
   <!-- Additions in score.mod -->
 
-  <xsl:template 
+  <xsl:template
     match="credit-type | instrument-sound | virtual-instrument"/>
-  
+
   <!-- Remove all but first midi-device element -->
-  <xsl:template 
+  <xsl:template
     match="score-part/midi-device[position() > 1]"/>
 
   <!-- Remove group-symbol element with new square value -->
-  <xsl:template 
+  <xsl:template
     match="group-symbol[.='square']"/>
 
-  <!-- 
+  <!--
     Remove credit-words enclosure attributes that have
     values of square, circle, bracket, triangle, or diamond.
   -->
-  <xsl:template 
+  <xsl:template
     match="credit-words/@enclosure[. = 'square' or . = 'circle' or
                    . = 'bracket' or . = 'triangle' or
                    . = 'diamond'] "/>
@@ -301,7 +301,7 @@
   <!--
     Convert score version attribute to 2.0
   -->
-  <xsl:template 
+  <xsl:template
     match="score-partwise/@version">
     <xsl:attribute name="version">2.0</xsl:attribute>
   </xsl:template>
@@ -314,9 +314,9 @@
   <xsl:template match="text()">
     <xsl:value-of select="." />
   </xsl:template>
-  
+
   <!--
-    Whitespace within an xsl:copy could cause problems with 
+    Whitespace within an xsl:copy could cause problems with
     empty elements.
   -->
   <xsl:template match="*|@*|comment()|processing-instruction()">

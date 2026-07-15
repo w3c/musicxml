@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -30,7 +30,7 @@
 	barlines that subdivide measures in complex meters. The two
 	fermata elements allow for fermatas on both sides of the
 	barline (the lower one inverted).
-	
+
 	Barlines have a location attribute to make it easier to
 	process barlines independently of the other musical data
 	in a score. It is often easier to set up measures
@@ -50,7 +50,7 @@
 
 <!-- Elements -->
 
-<!ELEMENT barline (bar-style?, %editorial;, wavy-line?, 
+<!ELEMENT barline (bar-style?, %editorial;, wavy-line?,
 	segno?, coda?, (fermata, fermata?)?, ending?, repeat?)>
 <!ATTLIST barline
     location (right | left | middle) "right"
@@ -62,7 +62,7 @@
 
 <!--
 	Bar-style contains style information. Choices are
-	regular, dotted, dashed, heavy, light-light, 
+	regular, dotted, dashed, heavy, light-light,
 	light-heavy, heavy-light, heavy-heavy, tick (a
 	short stroke through the top line), short (a partial
 	barline between the 2nd and 4th lines), and none.
@@ -138,6 +138,6 @@
     direction (backward | forward) #REQUIRED
     times CDATA #IMPLIED
     after-jump %yes-no; #IMPLIED
-    winged (none | straight | curved | 
+    winged (none | straight | curved |
 		double-straight | double-curved) #IMPLIED
 >

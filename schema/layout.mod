@@ -3,7 +3,7 @@
 
 	Version 4.1 Draft
 
-	Copyright © 2004-2021 the Contributors to the MusicXML
+	Copyright © 2004-2026 the Contributors to the MusicXML
 	Specification, published by the W3C Music Notation Community
 	Group under the W3C Community Contributor License Agreement
 	(CLA):
@@ -41,7 +41,7 @@
 	system, and staff layout elements that is common to both
 	the defaults and print elements.
 -->
-<!ENTITY % common-layout 
+<!ENTITY % common-layout
  	"(page-layout?, system-layout?, staff-layout*)">
 
 <!-- Elements -->
@@ -61,7 +61,7 @@
 <!ELEMENT millimeters (#PCDATA)>
 <!ELEMENT tenths %layout-tenths;>
 
-<!-- 
+<!--
 	Margin elements are included within many of the larger
 	layout elements.
 -->
@@ -81,29 +81,29 @@
 	If no page-layout element is present in the defaults
 	element, default page layout values are chosen by the
 	application.
-	
+
 	When used in the print element, the page-layout element
 	affects the appearance of the current page only. All
 	other pages use the default values as determined by the
 	defaults element. If any child elements are missing from
-	the page-layout element in a print element, the values 
+	the page-layout element in a print element, the values
 	determined by the defaults element are used there as well.
 -->
-<!ELEMENT page-layout ((page-height, page-width)?, 
+<!ELEMENT page-layout ((page-height, page-width)?,
 	(page-margins, page-margins?)?)>
 <!ELEMENT page-height %layout-tenths;>
 <!ELEMENT page-width %layout-tenths;>
-<!ELEMENT page-margins (left-margin, right-margin, 
+<!ELEMENT page-margins (left-margin, right-margin,
 	top-margin, bottom-margin)>
 <!ATTLIST page-margins
     type (odd | even | both) #IMPLIED
 >
 
 <!--
-	A system is a group of staves that are read and played 
-	simultaneously. System layout includes left and right 
+	A system is a group of staves that are read and played
+	simultaneously. System layout includes left and right
 	margins, the vertical distance from the previous system,
-	and the presence or absence of system dividers. 
+	and the presence or absence of system dividers.
 
 	Margins are relative to the page margins. Positive values
 	indent and negative values reduce the margin size. The
@@ -127,18 +127,18 @@
 	If no system-layout element is present in the defaults
 	element, default system layout values are chosen by the
 	application.
-	
+
 	When used in the print element, the system-layout element
 	affects the appearance of the current system only. All
 	other systems use the default values as determined by the
 	defaults element. If any child elements are missing from
-	the system-layout element in a print element, the values 
+	the system-layout element in a print element, the values
 	determined by the defaults element are used there as well.
-	This type of system-layout element need only be read from 
+	This type of system-layout element need only be read from
 	or written to the first visible part in the score.
 -->
 <!ELEMENT system-layout
-	(system-margins?, system-distance?, 
+	(system-margins?, system-distance?,
 	 top-system-distance?, system-dividers?)>
 <!ELEMENT system-margins (left-margin, right-margin)>
 <!ELEMENT system-distance %layout-tenths;>
@@ -157,18 +157,18 @@
 
 	When used in the print element, the system-dividers element
 	affects the dividers that would appear between the current
-	system and the previous system. 
+	system and the previous system.
 -->
 <!ELEMENT system-dividers (left-divider, right-divider)>
 <!ELEMENT left-divider EMPTY>
 <!ATTLIST left-divider
     %print-object;
-    %print-style-align; 
+    %print-style-align;
 >
 <!ELEMENT right-divider EMPTY>
 <!ATTLIST right-divider
     %print-object;
-    %print-style-align; 
+    %print-style-align;
 >
 
 <!--
@@ -177,8 +177,8 @@
 	of the staff specified by the number attribute. The
 	optional number attribute refers to staff numbers within
 	the part, from top to bottom on the system. A value of 1
-	is used if not present. 
-	
+	is used if not present.
+
 	When used in the defaults element, the values apply to all
 	systems in all parts. When used in the print element, the
 	values apply to the current system only. This value is
@@ -193,7 +193,7 @@
 <!--
 	Measure layout includes the horizontal distance from the
 	previous measure. It applies to the current measure only.
-	This value is only used for systems where there is 
+	This value is only used for systems where there is
 	horizontal whitespace in the middle of a system, as in
 	systems with codas. To specify the measure width,
 	use the width attribute of the measure element.
@@ -241,12 +241,12 @@
 	SMuFL glyph to use, including recommended stylistic
 	alternates.
 
-	Glyph type attribute values include quarter-rest, 
+	Glyph type attribute values include quarter-rest,
 	g-clef-ottava-bassa, c-clef, f-clef, percussion-clef,
 	octave-shift-up-8, octave-shift-down-8,
 	octave-shift-continue-8, octave-shift-down-15,
 	octave-shift-up-15, octave-shift-continue-15,
-	octave-shift-down-22, octave-shift-up-22, and 
+	octave-shift-down-22, octave-shift-up-22, and
 	octave-shift-continue-22. A quarter-rest type specifies the
 	glyph to use when a note has a rest element and a type value
 	of quarter. The c-clef, f-clef, and percussion-clef types
@@ -271,7 +271,7 @@
 	though without application interoperability.
 -->
 <!ELEMENT appearance
-	(line-width*, note-size*, distance*, glyph*, 
+	(line-width*, note-size*, distance*, glyph*,
 	 other-appearance*)>
 <!ELEMENT line-width %layout-tenths;>
 <!ATTLIST line-width

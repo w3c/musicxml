@@ -5,7 +5,7 @@
 
   Version 4.1 Draft
 
-  Copyright © 2004-2024 the Contributors to the MusicXML
+  Copyright © 2004-2026 the Contributors to the MusicXML
   Specification, published by the W3C Music Notation Community
   Group under the W3C Community Contributor License Agreement
   (CLA):
@@ -37,9 +37,9 @@
     doctype-public="-//Recordare//DTD MusicXML 1.0 Partwise//EN"/>
 
   <!--
-    For the root, only look for score-partwise. Anything else 
+    For the root, only look for score-partwise. Anything else
     as a root element gets ignored.
-  -->  
+  -->
   <xsl:template match="/">
     <xsl:apply-templates select="./score-partwise"/>
   </xsl:template>
@@ -47,9 +47,9 @@
   <!--
     Transformations that remove post-1.0 elements and attributes.
   -->
-  
+
   <!-- Additions in note.dtd -->
-  <xsl:template 
+  <xsl:template
     match="tuplet-number/@* | tuplet-type/@* | tuplet-dot/@* |
            tuplet/@line-shape | pluck | tremolo |
            tied/@bezier-offset | tied/@bezier-offset2 |
@@ -71,17 +71,17 @@
       <xsl:value-of select="."/>
     </xsl:attribute>
   </xsl:template>
-  
+
   <!-- Additions in attributes.dtd -->
-  <xsl:template 
-    match="staff-size | key/@number | time/@number | 
+  <xsl:template
+    match="staff-size | key/@number | time/@number |
            staff-details/@print-object | staff-details/@print-spacing |
            directive/@relative-x | directive/@relative-y |
            directive/@default-x | directive/@default-y |
            time/@print-object"/>
-  
+
   <!-- Additions in barline.dtd -->
-  <xsl:template 
+  <xsl:template
     match="ending/@relative-x | ending/@relative-y |
            ending/@default-x | ending/@default-y |
            ending/@end-length | ending/text()"/>
@@ -91,11 +91,11 @@
     match="@color | @print-lyric | level/@reference |
            fret/@* | string/@* | footnote/@*"/>
   <xsl:template match="@size[.='large']"/>
-  
-  <!-- 
+
+  <!--
     MusicXML 1.1 makes much greater use of font attributes.
     The more general rule strips the font attributes from
-    most elements. The more specific rule, which takes 
+    most elements. The more specific rule, which takes
     priority, keeps them for the elements where they were
     used in MusicXML 1.0.
   -->
@@ -121,33 +121,33 @@
   </xsl:template>
 
   <!-- Additions in layout.dtd -->
-  <xsl:template 
+  <xsl:template
     match="scaling | page-layout | system-layout |
            staff-layout | measure-layout"/>
-  
+
   <!-- Additions in direction.dtd -->
-  <!-- 
+  <!--
     For safety, remove entire direction that has a new
     MusicXML 1.1 direction-type child.
   -->
-  <xsl:template 
+  <xsl:template
     match="direction[//pedal[@type='change'] |
 		//harp-pedals | //scordatura]"/>
 
   <xsl:template
     match="barre | kind/@* | frame/@* | degree/@* |
            harmony/offset | harmony/staff |
-           words/@halign | words/@valign | words/@enclosure | 
+           words/@halign | words/@valign | words/@enclosure |
            rehearsal/@xml:lang | rehearsal/@enclosure |
            print/@page-number"/>
 
   <!-- Additions in link.dtd -->
-  <xsl:template 
+  <xsl:template
     match="link/@relative-x | link/@relative-y |
            link/@default-x | link/@default-y"/>
 
   <!-- Additions in score.dtd -->
-  <xsl:template 
+  <xsl:template
     match="defaults | credit | measure/@width |
            part-name/@* | part-abbreviation/@* |
            group-name/@* | group-abbreviation/@* |
@@ -171,9 +171,9 @@
   <xsl:template match="text()">
     <xsl:value-of select="." />
   </xsl:template>
-  
+
   <!--
-    Whitespace within an xsl:copy could cause problems with 
+    Whitespace within an xsl:copy could cause problems with
     empty elements.
   -->
   <xsl:template match="*|@*|comment()|processing-instruction()">
