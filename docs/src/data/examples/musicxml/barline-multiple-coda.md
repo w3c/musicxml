@@ -1,4 +1,6 @@
 ---
 title: '<barline> with multiple codas'
-elements: barline
+elements:
+- barline
+- coda
 ---
