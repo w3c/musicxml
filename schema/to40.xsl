@@ -59,6 +59,9 @@
 
   <!-- Remove new/modified elements. -->
   <xsl:template
+    match="part-symbol[preceding-sibling::part-symbol]"/>
+
+  <xsl:template
     match="barline/coda[preceding-sibling::coda] | barline/segno[preceding-sibling::segno]"/>
 
   <!--

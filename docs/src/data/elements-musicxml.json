@@ -9095,7 +9095,7 @@
                "type": "element",
                "value": "part-symbol",
                "min": "0",
-               "max": "1"
+               "max": "unbounded"
             },
             {
                "type": "element",
