@@ -96,7 +96,7 @@ test_003_suite_schematron() {
             local assert=$(get_assertion "$(basename "$file")" "$schema")
             if [[ $assert == "skip" ]]; then continue; fi
 
-            ./schematron.py "validations/$schema" "$file" --noout
+            ./schematron.py "validations/${schema/.sch/.xsl/}" "$file"
             local status=$?
             if [[ $assert == "fail" && $status == 0 ]]; then
                 echo -e "$file" is expected to fail
