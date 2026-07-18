@@ -10,8 +10,7 @@
     <sch:rule context="sound[@tocoda]">
       <sch:let name="tocoda" value="@tocoda"/>
       <sch:assert test="count(//sound[@coda = $tocoda]) = 1">
-        sound element with @tocoda="<sch:value-of select="$tocoda"/>"
-        must have exactly one corresponding sound element with @coda="<sch:value-of select="$tocoda"/>".
+        sound element with @tocoda="<sch:value-of select="$tocoda"/>" must have exactly one corresponding sound element with @coda="<sch:value-of select="$tocoda"/>".
       </sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -21,8 +20,7 @@
     <sch:rule context="sound[@coda]">
       <sch:let name="coda" value="@coda"/>
       <sch:assert test="count(//sound[@tocoda = $coda]) = 1">
-        sound element with @coda="<sch:value-of select="$coda"/>"
-        must have exactly one corresponding sound element with @tocoda="<sch:value-of select="$coda"/>".
+        sound element with @coda="<sch:value-of select="$coda"/>" must have exactly one corresponding sound element with @tocoda="<sch:value-of select="$coda"/>".
       </sch:assert>
     </sch:rule>
   </sch:pattern>

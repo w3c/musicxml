@@ -6,8 +6,10 @@ Exit code 0 if no failed assertions, exit code 1 if there are failed assertions.
 
 import sys
 import argparse
-from pathlib import Path
 from saxonche import PySaxonProcessor
+
+# Don't print stack trace with exception.
+sys.tracebacklimit = 0
 
 def validate_xml(xml_file: str, xsl_file: str) -> dict:
     """
@@ -80,45 +82,27 @@ def main():
     )
     args = parser.parse_args()
 
-    # Validate XML file
-    xml_path = Path(args.xml_file)
-    if not xml_path.exists():
-        print(f"Error: XML file not found: {args.xml_file}", file=sys.stderr)
-        sys.exit(2)
+    # Run validation
+    result = validate_xml(args.xml_file, args.xsl_file)
 
-    # Validate XSL file
-    xsl_path = Path(args.xsl_file)
-    if not xsl_path.exists():
-        print(f"Error: XSLT file not found: {args.xsl_file}", file=sys.stderr)
-        sys.exit(2)
+    # Save SVRL output if requested
+    if args.output_svrl:
+        with open(args.output_svrl, 'w', encoding='utf-8') as f:
+            f.write(result['svrl_output'])
 
-    try:
-        # Run validation
-        result = validate_xml(str(xml_path.absolute()), str(xsl_path.absolute()))
+    # Report results
+    if result['success']:
+        if not args.quiet:
+            print(f"{args.xml_file} validates with {args.xsl_file}", file=sys.stderr)
+        sys.exit(0)
+    else:
+        if not args.quiet:
+            failed_count = len(result['failed_asserts'])
+            print(f"{args.xml_file} fails to validate with {args.xsl_file}", file=sys.stderr)
 
-        # Save SVRL output if requested
-        if args.output_svrl:
-            with open(args.output_svrl, 'w', encoding='utf-8') as f:
-                f.write(result['svrl_output'])
-
-        # Report results
-        if result['success']:
-            if not args.quiet:
-                print(f"{args.xml_file} validates with {args.xsl_file}", file=sys.stderr)
-            sys.exit(0)
-        else:
-            if not args.quiet:
-                failed_count = len(result['failed_asserts'])
-                print(f"{args.xml_file} fails to validate with {args.xsl_file}", file=sys.stderr)
-
-                for i, failed in enumerate(result['failed_asserts'], 1):
-                    print(failed, file=sys.stderr)
-            sys.exit(1)
-
-    except Exception as e:
-        print(f"Error during validation: {e}", file=sys.stderr)
-        sys.exit(2)
-
+            for i, failed in enumerate(result['failed_asserts'], 1):
+                print(failed, file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == '__main__':
     main()

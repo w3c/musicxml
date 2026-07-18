@@ -6,9 +6,10 @@ Transpiles a .sch file to .xsl and outputs to stdout.
 
 import sys
 import argparse
-from pathlib import Path
 from saxonche import PySaxonProcessor
 
+# Don't print stack trace with exception.
+sys.tracebacklimit = 0
 
 def transpile_schematron(sch_file: str, transpile_xsl: str) -> str:
     """
@@ -37,10 +38,7 @@ def transpile_schematron(sch_file: str, transpile_xsl: str) -> str:
         source = proc.parse_xml(xml_file_name=sch_file)
 
         # Apply the transformation
-        result = executable.transform_to_string(xdm_node=source)
-
-        return result
-
+        return executable.transform_to_string(xdm_node=source)
 
 def main():
     parser = argparse.ArgumentParser(
@@ -55,31 +53,11 @@ def main():
         default='transpile.xsl',
         help='Path to the schxslt2 transpile.xsl file (default: ./transpile.xsl)'
     )
-
     args = parser.parse_args()
 
-    # Validate Schematron file
-    sch_path = Path(args.sch_file)
-    if not sch_path.exists():
-        print(f"Error: Schematron file not found: {args.sch_file}", file=sys.stderr)
-        sys.exit(1)
-
-    # Validate transpile XSL
-    transpile_path = Path(args.transpile_xsl)
-    if not transpile_path.exists():
-        print(f"Error: transpile.xsl not found: {args.transpile_xsl}", file=sys.stderr)
-        print("Download it from: https://github.com/schxslt/schxslt2", file=sys.stderr)
-        sys.exit(1)
-
-    try:
-        # Transpile and output to stdout
-        result = transpile_schematron(str(sch_path.absolute()), str(transpile_path.absolute()))
-        print(result)
-
-    except Exception as e:
-        print(f"{e}", file=sys.stderr)
-        sys.exit(1)
-
+    # Transpile and output to stdout
+    result = transpile_schematron(args.sch_file, args.transpile_xsl)
+    print(result)
 
 if __name__ == '__main__':
     main()
