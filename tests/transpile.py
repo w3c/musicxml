@@ -42,7 +42,7 @@ def transpile_schematron(sch_file: str, transpile_xsl: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Transpile Schematron (.sch) to XSLT (.xsl) using schxslt2'
+        description='Transpile Schematron (.sch) to XSLT (.xsl) using schxslt2.'
     )
     parser.add_argument(
         'sch_file',

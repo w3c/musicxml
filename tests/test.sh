@@ -122,7 +122,7 @@ test_004_previous_version() {
         if [[ $assert == "skip" ]]; then continue; fi
 
         local previous="$tempdir/$(basename "$file")"
-        XML_CATALOG_FILES=../schema/catalog.xml xsltproc "../schema/$PREVIOUS_VERSION_XSL" "$file" > "$previous" || exit $?
+        ./transform.py "../schema/$PREVIOUS_VERSION_XSL" "$file" > "$previous" || exit $?
         XML_CATALOG_FILES="$tempdir/schema/catalog.xml" xmllint --schema "$tempdir/schema/musicxml.xsd" "$previous" --noout
         local status=$?
         if [[ $assert == "fail" && $status == 0 ]]; then

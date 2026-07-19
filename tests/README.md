@@ -1,14 +1,14 @@
 # MusicXML Tests
 
 ## Dependencies
-- [xmllint](https://gitlab.gnome.org/GNOME/libxml2)
-- [xsltproc](https://gitlab.gnome.org/GNOME/libxslt)
-- [jq](https://jqlang.org/)
+- Python 3
 - [SaxonC-HE](https://pypi.org/project/saxonche/)
+- [xmllint](https://gitlab.gnome.org/GNOME/libxml2)
+- [jq](https://jqlang.org/)
 
 ## Getting started
 ```shell
-sudo apt-get update && sudo apt-get install libxml2-utils xsltproc python3-pip jq && pip install saxonche
+sudo apt-get update && sudo apt-get install libxml2-utils python3-pip jq && pip install saxonche
 git clone --recurse-submodules git@github.com:w3c-cg/musicxml.git
 cd tests && ./test.sh
 ```

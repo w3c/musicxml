@@ -60,8 +60,7 @@ def validate_xml(xml_file: str, xsl_file: str) -> dict:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Validate XML against a transpiled Schematron schema',
-        epilog='Exit code 0 if valid, 1 if there are failed assertions'
+        description='Validate XML against a transpiled Schematron schema.'
     )
     parser.add_argument(
         'xsl_file',
