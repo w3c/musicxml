@@ -1,14 +1,14 @@
 # MusicXML Tests
 
 ## Dependencies
+- Python 3
+- [SaxonC-HE](https://pypi.org/project/saxonche/)
 - [xmllint](https://gitlab.gnome.org/GNOME/libxml2)
-- [xsltproc](https://gitlab.gnome.org/GNOME/libxslt)
-- [lxml](https://lxml.de/)
 - [jq](https://jqlang.org/)
 
 ## Getting started
 ```shell
-sudo apt-get update && sudo apt-get install libxml2-utils python3-lxml jq
+sudo apt-get update && sudo apt-get install libxml2-utils python3-pip jq && pip install saxonche
 git clone --recurse-submodules git@github.com:w3c-cg/musicxml.git
 cd tests && ./test.sh
 ```
@@ -37,8 +37,11 @@ To determine which test files are expected to skip / pass / fail against a given
   "99d-AccordionInvalid.xml": {
     "musicxml.xsd": "fail"
   },
-  "repeats.musicxml": {
-    "coda-tocoda.sch": "fail"
+  "repeats-jumps-invalid.musicxml": {
+    "repeats-jumps.sch": "pass"
+  },
+  "repeats-jumps-invalid.musicxml": {
+    "repeats-jumps.sch": "fail"
   },
   "harmonic-element.musicxml": {
     "to40.xsl": "pass"
@@ -47,3 +50,18 @@ To determine which test files are expected to skip / pass / fail against a given
 ```
 
 By default, any test file is expected to `pass` against `musicxml.xsd` unless otherwise noted in `assertions.json`. Also by default, any test file is expected to `skip` any Schematron validation `.sch` unless otherwise noted.
+
+## Writing new Schematron validations
+- Identify an existing `.sch` validation whose topic matches best your desired validation, or create a new one.
+- In your assertions, you can use XPath 3.0 expressions.
+- Transpile the `.sch` to `.xsl`:
+```shell
+$ ./transpile.py validations/validation-name.sch > validations/validation-name.xsl
+```
+- Add relevant test cases to `files`. The convention is to add 2 files, one named `validation-name.musicxml` for valid cases, another called `validation-name-invalid.musicxml` for invalid cases.
+- Add the relevant entries to `assertions.json`
+- Test your validations: `TEST_NAME=schematron ./test.sh`
+
+## Credits
+- The repo [`musicxmlTestSuite`](https://github.com/w3c-cg/musicxmlTestSuite) was generously donated by [Michael Asato Cuthbert](https://www.trecento.com), former MusicXML spec editor and W3C Music Notation Community Group co-chair.
+- The [Schematron transpiler](./transpile.xsl) is part of the [`schxslt2`](https://codeberg.org/SchXslt/schxslt2) repo, maintained by David Maus.

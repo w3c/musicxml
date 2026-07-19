@@ -8,10 +8,9 @@
   <!-- Check that every @tocoda has one matching @coda -->
   <sch:pattern id="tocoda-coda-matching">
     <sch:rule context="sound[@tocoda]">
-      <sch:let name="tocoda_value" value="@tocoda"/>
-      <sch:assert test="count(//sound[@coda = $tocoda_value]) = 1">
-        sound element with @tocoda="<sch:value-of select="$tocoda_value"/>"
-        must have exactly one corresponding sound element with @coda="<sch:value-of select="$tocoda_value"/>".
+      <sch:let name="tocoda" value="@tocoda"/>
+      <sch:assert test="count(//sound[@coda = $tocoda]) = 1">
+        sound element with @tocoda="<sch:value-of select="$tocoda"/>" must have exactly one corresponding sound element with @coda="<sch:value-of select="$tocoda"/>".
       </sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -19,10 +18,9 @@
   <!-- Check that every @coda has one matching @tocoda -->
   <sch:pattern id="coda-tocoda-matching">
     <sch:rule context="sound[@coda]">
-      <sch:let name="coda_value" value="@coda"/>
-      <sch:assert test="count(//sound[@tocoda = $coda_value]) = 1">
-        sound element with @coda="<sch:value-of select="$coda_value"/>"
-        must have exactly one corresponding sound element with @tocoda="<sch:value-of select="$coda_value"/>".
+      <sch:let name="coda" value="@coda"/>
+      <sch:assert test="count(//sound[@tocoda = $coda]) = 1">
+        sound element with @coda="<sch:value-of select="$coda"/>" must have exactly one corresponding sound element with @tocoda="<sch:value-of select="$coda"/>".
       </sch:assert>
     </sch:rule>
   </sch:pattern>

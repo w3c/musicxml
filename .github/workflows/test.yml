@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install libxml2-utils xsltproc python3-lxml jq
+        run: sudo apt-get update && sudo apt-get install libxml2-utils python3-pip jq && pip install saxonche
       - name: Checkout repository using git
         uses: actions/checkout@v7
         with:

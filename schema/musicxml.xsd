@@ -5086,7 +5086,7 @@ The print-object attribute allows a time signature to be specified but not print
 				</xs:annotation>
 			</xs:element>
 
-			<xs:element name="part-symbol" type="part-symbol" minOccurs="0">
+			<xs:element name="part-symbol" type="part-symbol" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The &lt;part-symbol&gt; element indicates how a symbol for a multi-staff part is indicated in the score; brace is the default value.
 

@@ -14,6 +14,13 @@
   "repeats-jumps-invalid.musicxml": {
     "repeats-jumps.sch": "fail"
   },
+  "parts-groups.musicxml": {
+    "parts-groups.sch": "pass",
+    "to40.xsl": "pass"
+  },
+  "parts-groups-invalid.musicxml": {
+    "parts-groups.sch": "fail"
+  },
   "harmonic-element.musicxml": {
     "to40.xsl": "pass"
   },
