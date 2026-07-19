@@ -56,8 +56,12 @@ By default, any test file is expected to `pass` against `musicxml.xsd` unless ot
 - In your assertions, you can use XPath 3.0 expressions.
 - Transpile the `.sch` to `.xsl`:
 ```shell
-$ ./transpile.py validation-name.sch > validation-name.xsl
+$ ./transpile.py validations/validation-name.sch > validations/validation-name.xsl
 ```
 - Add relevant test cases to `files`. The convention is to add 2 files, one named `validation-name.musicxml` for valid cases, another called `validation-name-invalid.musicxml` for invalid cases.
 - Add the relevant entries to `assertions.json`
 - Test your validations: `TEST_NAME=schematron ./test.sh`
+
+## Credits
+- The repo [`musicxmlTestSuite`](https://github.com/w3c-cg/musicxmlTestSuite) was generously donated by [Michael Asato Cuthbert](https://www.trecento.com), former MusicXML spec editor and W3C Music Notation Community Group co-chair.
+- The [Schematron transpiler](./transpile.xsl) is part of the [`schxslt2`](https://codeberg.org/SchXslt/schxslt2) repo, maintained by David Maus.
