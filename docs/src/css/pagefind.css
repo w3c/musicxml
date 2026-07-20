@@ -1,0 +1,18 @@
+/* Mobile overrides for Pagefind modal trigger. */
+
+@media (width <= 64rem) {
+  .pf-trigger-btn {
+		background: transparent !important;
+		border: none !important;
+		padding: 0 !important;
+	}
+
+	.pf-trigger-text, .pf-trigger-shortcut {
+		display: none !important;
+	}
+
+	.pf-trigger-icon {
+		width: 20px !important;
+		height: 20px !important;
+	}
+}
