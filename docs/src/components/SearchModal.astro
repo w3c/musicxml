@@ -1,0 +1,11 @@
+---
+import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
+
+const { class: className } = Astro.props;
+---
+
+<div class={className}>
+	<PagefindConfig />
+	<pagefind-modal-trigger></pagefind-modal-trigger>
+	<pagefind-modal></pagefind-modal>
+</div>

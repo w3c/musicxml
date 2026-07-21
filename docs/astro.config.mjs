@@ -1,9 +1,9 @@
 // @ts-check
+import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button';
 import { defineConfig, fontProviders } from 'astro/config';
 import { loadEnv } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import ViteRestart from 'vite-plugin-restart';
-import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button';
 import pagefind from "astro-pagefind";
 
 // Load env

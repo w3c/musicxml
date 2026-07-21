@@ -1,4 +1,4 @@
-/* Mobile overrides for Pagefind modal trigger. */
+/* Overrides for Pagefind modal trigger. */
 
 @media (width <= 64rem) {
   .pf-trigger-btn {
@@ -14,5 +14,11 @@
 	.pf-trigger-icon {
 		width: 20px !important;
 		height: 20px !important;
+	}
+}
+
+@media (width > 64rem) {
+	pagefind-modal-trigger {
+		min-width: --spacing(56) !important;
 	}
 }

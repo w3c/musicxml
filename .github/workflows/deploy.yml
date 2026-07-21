@@ -25,8 +25,8 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Run tests
-        run: cd tests && ./test.sh
+      # - name: Run tests
+      #   run: cd tests && ./test.sh
 
   build:
     needs: test

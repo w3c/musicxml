@@ -3,7 +3,8 @@ import { url } from '@/utils';
 import { siteInfo } from '../site.config';
 import DocsIcon from '@icons/document-code-twotone-rounded.svg';
 import MenuIcon from '@icons/menu-02-stroke-standard.svg';
-import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
+import SearchModal from './SearchModal.astro';
+// import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
 ---
 
 <header class="sticky top-0 z-30 flex h-14 w-full items-center justify-between px-4 border-b border-b-neutral-300 bg-olive-100/80 backdrop-blur md:px-10">
@@ -18,11 +19,7 @@ import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
     <DocsIcon class="w-7 mr-2" />
     <div>{ siteInfo.title } { siteInfo.specVersion } { siteInfo.isDraft && 'Draft' }</div>
   </a>
-
-  <div class="flex items-center">
-    <PagefindConfig />
-    <pagefind-modal-trigger></pagefind-modal-trigger>
-    <pagefind-modal></pagefind-modal>
-  </div>
+    
+  <SearchModal class="flex items-center" />
 
 </header>
