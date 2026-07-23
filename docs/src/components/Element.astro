@@ -109,7 +109,7 @@ if (!element.data.documentation) throw("MISSING ELEMENT DOCUMENTATION!!");
       <tbody>
         {element.data.attributes.sort((a,b) => (a.required !== b.required) ? (b.required ? 1 : -1) : a.name.localeCompare(b.name)).map(async (attribute) => (
           <tr>
-            <td>{attribute.name}</td>
+            <td data-pagefind-meta={`attribute:@${attribute.name}`}>{attribute.name}</td>
             <td><DataTypeLink schema={schema} type={attribute.type} /></td>
             <td class="required">{attribute.required ? 'Yes' : 'No'}
               {attribute.default && <span class="default">({attribute.default})</span>}
