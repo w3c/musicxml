@@ -51,6 +51,7 @@ const { Content } = note ? await render(note) : { Content: null };
 // Prepare base layout.
 const frontmatter = {
   title: `The ${elementName(element.data.name)} element`,
+  titlePagefind: `Element: ${elementName(element.data.name)}`
 }
 const headings = [
   { depth: 2, slug: 'notes', text: 'Notes'},

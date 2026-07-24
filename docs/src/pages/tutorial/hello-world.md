@@ -1,5 +1,6 @@
 ---
 title: '"Hello World" in MusicXML'
+titlePagefind: 'Tutorial: "Hello World" in MusicXML'
 ---
 
 Brian Kernighan and Dennis Ritchie popularized the practice of writing a program that prints the words "hello, world" as the first program to write when learning a new programming language. It is the minimal program that tests how to build a program and display its results.

@@ -1,5 +1,6 @@
 ---
 title: Code Generation
+titlePagefind: "Tutorial: Code Generation"
 ---
 
 Many MusicXML developers now use code generation or data binding tools to automatically generate code from the musicxml.xsd schema file. These tools typically generate classes based on the schema data structures in a particular programming language, and automate reading and writing to MusicXML files. A few examples available as of June 2021 are:
