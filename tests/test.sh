@@ -115,6 +115,10 @@ test_004_previous_version() {
     local tempdir=$(mktemp -d)
     trap "rm -rf $tempdir" 0 1 2 3 15   # clean up on exit
     GIT_INDEX_FILE="$tempdir/git" GIT_WORK_TREE="$tempdir" git checkout "$PREVIOUS_VERSION_TAG" -- schema
+    if [ $? -ne 0 ]; then
+        echo -e "${YELLOW}Skipping test due to missing git tag.${NC}"
+        return 0
+    fi
 
     find -L files \( -name '*.xml' -o -name '*.musicxml' \) -print0 | sort -z | while read -d $'\0' file
     do

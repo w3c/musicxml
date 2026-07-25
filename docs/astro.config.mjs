@@ -1,9 +1,10 @@
 // @ts-check
+import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button';
 import { defineConfig, fontProviders } from 'astro/config';
 import { loadEnv } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import ViteRestart from 'vite-plugin-restart';
-import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button';
+import pagefind from 'astro-pagefind';
 
 // Load env
 const { ORIGIN } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
@@ -72,6 +73,11 @@ export default defineConfig({
   },
   site: ORIGIN || 'https://w3c-cg.github.io',
   base: '/musicxml',
+  integrations: [pagefind({
+    indexConfig: {
+      includeCharacters: '@<>$'
+    }
+  })],
   redirects: {
     '/sounds-reference/elements/any-sounds/': '/musicxml/sounds-reference/elements/any/',
     '/sounds-reference/elements/ensemble-sounds/': '/musicxml/sounds-reference/elements/ensemble/',

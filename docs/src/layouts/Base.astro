@@ -40,7 +40,7 @@ const { frontmatter, headings } = Astro.props;
 
 	</head>
 
-	<body class="flex flex-col min-h-screen bg-olive-50 text-zinc-700">
+	<body data-pagefind-meta={ `title:${frontmatter.titlePagefind ?? frontmatter.title}` } class="flex flex-col min-h-screen bg-olive-50 text-zinc-700">
 
 		<Header />
 

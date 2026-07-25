@@ -1,5 +1,6 @@
 ---
 title: Compressed .MXL Files
+titlePagefind: "Tutorial: Compressed .MXL Files"
 ---
 
 Regular, plain text MusicXML files can be very large - much larger than the original music notation application files, or corresponding MIDI files. This was not a big problem for using MusicXML as an interchange format, but it inhibited MusicXML’s use as a sheet music distribution format.
