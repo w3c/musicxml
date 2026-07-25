@@ -12,8 +12,27 @@
 	}
 
 	.pf-trigger-icon {
-		width: 20px !important;
-		height: 20px !important;
+		width: --spacing(5) !important;
+		height: --spacing(5) !important;
+		background-color: var(--color-zinc-600) !important;
+	}
+
+	.pf-modal-close {
+		width: --spacing(8) !important;
+		height: --spacing(8) !important;
+		color: var(--color-zinc-600) !important;
+	}
+
+	.pf-modal-body {
+		margin-top: --spacing(10) !important;
+	}
+
+  .pf-modal-footer {
+		position: absolute !important;
+		width: 100% !important;
+    top: --spacing(18) !important;
+    border-top: none !important;
+    border-bottom: 1px solid var(--pf-border) !important;
 	}
 }
 
