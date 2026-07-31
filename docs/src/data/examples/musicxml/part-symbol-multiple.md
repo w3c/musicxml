@@ -1,5 +1,5 @@
 ---
-title: '<part-symbol> (Multiple Instances)'
+title: '<part-symbol> (Multiple instances)'
 elements: part-symbol
 description: "Source: Rachmaninoff, S. Prelude in C♯ minor, Op. 3, No. 2"
 ---

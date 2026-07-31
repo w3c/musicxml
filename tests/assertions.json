@@ -26,5 +26,8 @@
   },
   "barline-multiple-coda.musicxml": {
     "to40.xsl": "pass"
+  },
+  "accidental-element-multiple.musicxml": {
+    "to40.xsl": "pass"
   }
 }
