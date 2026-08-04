@@ -586,7 +586,7 @@
         <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
-        <accidental smufl="accSagittal5CommaDown" cautionary="yes" parentheses="no">other</accidental>
+        <accidental smufl="accSagittal5CommaDown">other</accidental>
         <stem>up</stem>
         <notations>
           <tied type="stop"/>
