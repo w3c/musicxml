@@ -3,6 +3,7 @@
 @import "./typography.css" layer(base);
 @import "./code.css" layer(base);
 @import "./musicxml.css" layer(base);
+@import "./pagefind.css" layer(base);
 @custom-variant dark (&:where(.dark, .dark *));
 @utility container { margin: auto }
 @utility scrollbar-hidden {
