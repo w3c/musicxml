@@ -93,6 +93,14 @@
     </part-list>
   <part id="P1">
     <measure number="1" width="152.08">
+      <attributes>
+        <key>
+          <key-step>B</key-step>
+          <key-alter>-1.5</key-alter>
+          <key-accidental smufl="accSagittal7CommaDown">other</key-accidental>
+          <key-accidental>flat</key-accidental>
+        </key>
+      </attributes>
       <print>
         <system-layout>
           <system-margins>
