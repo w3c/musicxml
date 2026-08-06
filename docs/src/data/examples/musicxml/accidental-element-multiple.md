@@ -2,3 +2,100 @@
 title: '<accidental> (Multiple instances)'
 elements: accidental
 ---
+```xml
+<measure number="2">
+	<note>
+		<pitch>
+			<step>C</step>
+			<octave>4</octave>
+		</pitch>
+		<duration>2</duration>
+		<voice>1</voice>
+		<type>half</type>
+		<stem>up</stem>
+	</note>
+	<note>
+		<chord/>
+		<pitch>
+			<step>E</step>
+			<octave>4</octave>
+		</pitch>
+		<duration>2</duration>
+		<voice>1</voice>
+		<type>half</type>
+		<accidental smufl="accSagittal5CommaDown">other</accidental>
+		<stem>up</stem>
+	</note>
+	<note>
+		<chord/>
+		<pitch>
+			<step>G</step>
+			<octave>4</octave>
+		</pitch>
+		<duration>2</duration>
+		<voice>1</voice>
+		<type>half</type>
+		<stem>up</stem>
+	</note>
+	<note>
+		<chord/>
+		<pitch>
+			<step>B</step>
+			<octave>4</octave>
+		</pitch>
+		<duration>2</duration>
+		<voice>1</voice>
+		<type>half</type>
+		<accidental smufl="accSagittal7CommaDown">other</accidental>
+		<accidental>flat</accidental>
+		<stem>up</stem>
+	</note>
+	<note>
+		<pitch>
+			<step>C</step>
+			<octave>4</octave>
+		</pitch>
+		<duration>2</duration>
+		<voice>1</voice>
+		<type>half</type>
+		<stem>up</stem>
+	</note>
+	<note>
+		<chord/>
+		<pitch>
+			<step>E</step>
+			<octave>4</octave>
+		</pitch>
+		<duration>2</duration>
+		<voice>1</voice>
+		<type>half</type>
+		<accidental smufl="accSagittal5CommaUp">other</accidental>
+		<accidental>flat</accidental>
+		<stem>up</stem>
+	</note>
+	<note>
+		<chord/>
+		<pitch>
+			<step>G</step>
+			<octave>4</octave>
+		</pitch>
+		<duration>2</duration>
+		<voice>1</voice>
+		<type>half</type>
+		<stem>up</stem>
+	</note>
+	<note>
+		<chord/>
+		<pitch>
+			<step>B</step>
+			<octave>4</octave>
+		</pitch>
+		<duration>2</duration>
+		<voice>1</voice>
+		<type>half</type>
+		<accidental smufl="accSagittal5CommaUp">other</accidental>
+		<accidental>flat</accidental>
+		<stem>up</stem>
+   </note>
+</measure>
+```
