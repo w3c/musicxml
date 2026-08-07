@@ -19434,7 +19434,7 @@
                "type": "element",
                "value": "accidental",
                "min": "0",
-               "max": "1"
+               "max": "unbounded"
             },
             {
                "type": "element",
@@ -21843,7 +21843,7 @@
                            "type": "element",
                            "value": "key-accidental",
                            "min": "0",
-                           "max": "1"
+                           "max": "unbounded"
                         }
                      ],
                      "min": "0",

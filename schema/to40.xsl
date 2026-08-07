@@ -64,6 +64,9 @@
   <xsl:template
     match="barline/coda[preceding-sibling::coda] | barline/segno[preceding-sibling::segno]"/>
 
+  <xsl:template
+    match="accidental[preceding-sibling::accidental] | key-accidental[preceding-sibling::key-accidental]"/>
+
   <!--
     Convert score version attribute to 4.0.
   -->

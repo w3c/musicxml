@@ -8891,7 +8891,7 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 					<xs:documentation>One &lt;dot&gt; element is used for each dot of prolongation.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="accidental" type="accidental" minOccurs="0">
+			<xs:element name="accidental" type="accidental" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The &lt;accidental&gt; element represents actual notated accidentals.</xs:documentation>
 				</xs:annotation>
@@ -10464,7 +10464,7 @@ The &lt;score-instrument&gt; element can also distinguish multiple instruments o
 					<xs:documentation>Non-traditional key signatures are represented using a list of altered tones. The &lt;key-alter&gt; element represents the alteration for a given pitch step, represented with semitones in the same manner as the &lt;alter&gt; element. The different element names indicate the different meaning of altering notes in a scale versus altering a sounding pitch.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="key-accidental" type="key-accidental" minOccurs="0">
+			<xs:element name="key-accidental" type="key-accidental" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Non-traditional key signatures are represented using a list of altered tones. The &lt;key-accidental&gt; element indicates the accidental to be displayed in the key signature, represented in the same manner as the &lt;accidental&gt; element. It is used for disambiguating microtonal accidentals. The different element names indicate the different meaning of altering notes in a scale versus altering a sounding pitch.</xs:documentation>
 				</xs:annotation>

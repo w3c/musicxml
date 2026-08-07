@@ -1,5 +1,5 @@
 ---
-title: '<chord> (Multiple Stop)'
+title: '<chord> (Multiple stop)'
 elements:
 - chord
 - duration
