@@ -10,6 +10,8 @@ permissions:
 
 jobs:
   test:
+    # skip job if commit message contains "[skip-ci]"
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
