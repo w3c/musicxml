@@ -4671,7 +4671,7 @@
          }
       ],
       "name": "key-accidental",
-      "documentation": "Non-traditional key signatures are represented using a list of altered tones. The <key-accidental> element indicates the accidental to be displayed in the key signature, represented in the same manner as the <accidental> element. It is used for disambiguating microtonal accidentals. The different element names indicate the different meaning of altering notes in a scale versus altering a sounding pitch."
+      "documentation": "Non-traditional key signatures are represented using a list of altered tones. The <key-accidental> element indicates the accidental to be displayed in the key signature, represented in the same manner as the <accidental> element. It is used for disambiguating microtonal accidentals. The different element names indicate the different meaning of altering notes in a scale versus altering a sounding pitch.\n\nIn the case of multiple accidentals per altered tone, accidentals are displayed in the same order they appear in the MusicXML document, i.e. left to right."
    },
    "group-abbreviation-display": {
       "children": {
@@ -7943,7 +7943,7 @@
          }
       ],
       "name": "accidental",
-      "documentation": "The <accidental> element represents actual notated accidentals."
+      "documentation": "The accidental type represents actual notated accidentals. Editorial and cautionary indications are indicated by attributes. Values for these attributes are \"no\" if not present. Specific graphic display such as parentheses, brackets, and size are controlled by the level-display attribute group.\n\nIn the case of multiple accidentals per note, accidentals are displayed in the same order they appear in the MusicXML document, i.e. left to right."
    },
    "schleifer": {
       "children": null,

@@ -8893,7 +8893,9 @@ The pizzicato attribute is used when just this note is sounded pizzicato, vs. th
 			</xs:element>
 			<xs:element name="accidental" type="accidental" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>The &lt;accidental&gt; element represents actual notated accidentals.</xs:documentation>
+					<xs:documentation>The accidental type represents actual notated accidentals. Editorial and cautionary indications are indicated by attributes. Values for these attributes are "no" if not present. Specific graphic display such as parentheses, brackets, and size are controlled by the level-display attribute group.
+
+In the case of multiple accidentals per note, accidentals are displayed in the same order they appear in the MusicXML document, i.e. left to right.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="time-modification" type="time-modification" minOccurs="0">
@@ -10466,7 +10468,9 @@ The &lt;score-instrument&gt; element can also distinguish multiple instruments o
 			</xs:element>
 			<xs:element name="key-accidental" type="key-accidental" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Non-traditional key signatures are represented using a list of altered tones. The &lt;key-accidental&gt; element indicates the accidental to be displayed in the key signature, represented in the same manner as the &lt;accidental&gt; element. It is used for disambiguating microtonal accidentals. The different element names indicate the different meaning of altering notes in a scale versus altering a sounding pitch.</xs:documentation>
+					<xs:documentation>Non-traditional key signatures are represented using a list of altered tones. The &lt;key-accidental&gt; element indicates the accidental to be displayed in the key signature, represented in the same manner as the &lt;accidental&gt; element. It is used for disambiguating microtonal accidentals. The different element names indicate the different meaning of altering notes in a scale versus altering a sounding pitch.
+
+In the case of multiple accidentals per altered tone, accidentals are displayed in the same order they appear in the MusicXML document, i.e. left to right.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
