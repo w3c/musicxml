@@ -1,6 +1,6 @@
 ---
 title: Percussion
-titlePagefind: "Tutorial: Percussion"
+pagefindMeta: "Tutorial: Percussion"
 ---
 
 Percussion instruments can be either pitched or unpitched. Percussion instruments with definite pitch, such as timpani or mallet instruments, are handled using normal musical notation.

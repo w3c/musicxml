@@ -1,6 +1,6 @@
 ---
 title: The MIDI-Compatible Part of MusicXML
-titlePagefind: "Tutorial: The MIDI-Compatible Part of MusicXML"
+pagefindMeta: "Tutorial: The MIDI-Compatible Part of MusicXML"
 ---
 
 MusicXML consists of two main types of elements. One set of elements is used to represent how a piece of music is notated. These elements are used for displaying sheet music on screen or in print. The other set of elements are used to represent a sonic realization of the score, and are commonly used for MIDI playback.

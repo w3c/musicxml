@@ -1,6 +1,6 @@
 ---
 title: Chord Symbols and Diagrams
-titlePagefind: "Tutorial: Chord Symbols and Diagrams"
+pagefindMeta: "Tutorial: Chord Symbols and Diagrams"
 ---
 
 Much contemporary sheet music makes use of chord symbols and chord diagrams. These notations of musical harmony are found in such different types of sheet music as lead sheets, piano / vocal / guitar arrangements, worship music, and jazz big-band charts.

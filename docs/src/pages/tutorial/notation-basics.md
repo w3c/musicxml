@@ -1,6 +1,6 @@
 ---
 title: Notation Basics in MusicXML
-titlePagefind: "Tutorial: Notation Basics in MusicXML"
+pagefindMeta: "Tutorial: Notation Basics in MusicXML"
 ---
 
 MIDI represents musical performance information, but leaves out a great deal of information about music notation. MusicXML represents this information, making it much more useful than MIDI for interchange between notation programs. In this section we describe the main elements used to represent music notation that go far beyond what is represented in MIDI files.

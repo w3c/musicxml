@@ -1,6 +1,6 @@
 ---
 title: The Structure of MusicXML Files
-titlePagefind: "Tutorial: The Structure of MusicXML Files"
+pagefindMeta: "Tutorial: The Structure of MusicXML Files"
 ---
 
 ## Adapting Musical Scores to a Hierarchy

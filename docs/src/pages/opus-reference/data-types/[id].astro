@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { datatype } = Astro.props;
 const frontmatter = {
   title: `The ${datatype.data.name} data type`,
-  titlePagefind: `Data Type: ${datatype.data.name}`
+  pagefindMeta: `Data Type: ${datatype.data.name}`
 }
 ---
 <BaseLayout frontmatter={frontmatter}>

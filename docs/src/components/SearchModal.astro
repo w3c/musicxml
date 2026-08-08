@@ -3,44 +3,26 @@ import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
 
 const { class: className } = Astro.props;
 ---
-
 <div class={className}>
-
 	<PagefindConfig />
-
 	<pagefind-modal-trigger></pagefind-modal-trigger>
-
 	<pagefind-modal>
-
 		<pagefind-modal-header>
-
 			<pagefind-input></pagefind-input>
-
 		</pagefind-modal-header>
-
 		<pagefind-modal-body>
-
 			<pagefind-summary></pagefind-summary>
-
 			<pagefind-results></pagefind-results>
-
 		</pagefind-modal-body>
-
 		<pagefind-modal-footer>
-
 			<!-- Custom keyboard hints -->
 			<div class="pf-keyboard-hint">
 				<kbd class="pf-keyboard-key" title="Use the < and > characters to specifically search for elements">&lt; &gt;</kbd>elements
 			</div>
-
 			<div class="pf-keyboard-hint">
 				<kbd class="pf-keyboard-key" title="Prefix your search with the @ character to search for attributes">@</kbd>attributes
 			</div>
-			
 			<pagefind-keyboard-hints></pagefind-keyboard-hints>
-
 		</pagefind-modal-footer>
-
 	</pagefind-modal>
-
 </div>
