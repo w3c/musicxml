@@ -61,14 +61,16 @@ elements:
 description: Narrative describing the example.
 ---
 '''xml
-<score-partwise version="4.1">
+<score-partwise version="4.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.musicxml.org/xsd/musicxml.xsd">
    <part-list>
       <score-part id="P1">
          <part-name>Soprano Alto</part-name>
 [..]
 '''
 ```
-MusicXML examples can be stored in the same folder `docs/src/data/examples/[schema]` with extension `.musicxml`. The MusicXML file overrides the above `xml` snippet when its filename matches the example Markdown. Similarly, illustrative images are found in `docs/src/assets/img/examples/[schema]`. An image is included in an example when their filenames match.
+MusicXML examples can also be stored in the same folder `docs/src/data/examples/[schema]` with extension `.musicxml`. The MusicXML file overrides the above `xml` snippet when its filename matches the example Markdown. Similarly, illustrative images are found in `docs/src/assets/img/examples/[schema]`. An image is included in an example when their filenames match.
 
 ## Development
 - To build the full site: `npm i && npm run build`

@@ -2,7 +2,9 @@
 title: '<score>'
 ---
 ```xml
-<opus version="4.1">
+<opus version="4.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.musicxml.org/xsd/opus.xsd">
    <title>Fidelio</title>
    <score xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="Nr01.musicxml"/>
    <score xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="Nr02.musicxml"/>

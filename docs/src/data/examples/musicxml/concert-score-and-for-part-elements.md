@@ -13,7 +13,9 @@ elements:
 - part-transpose
 ---
 ```xml
-<score-partwise version="4.1">
+<score-partwise version="4.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.musicxml.org/xsd/musicxml.xsd">
    <movement-title>C Sounds</movement-title>
    <defaults>
       <scaling>

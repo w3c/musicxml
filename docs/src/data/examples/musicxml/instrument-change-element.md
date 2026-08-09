@@ -9,7 +9,9 @@ elements:
 - virtual-name
 ---
 ```xml
-<score-partwise version="4.1">
+<score-partwise version="4.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.musicxml.org/xsd/musicxml.xsd">
    <defaults>
       <scaling>
          <millimeters>7.2319</millimeters>

@@ -12,11 +12,10 @@ In MusicXML, a song with the lyrics "hello, world" is actually more complicated 
 Here it is in MusicXML:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE score-partwise PUBLIC
-    "-//Recordare//DTD MusicXML 4.1 Partwise//EN"
-    "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="4.1">
+<?xml version="1.0" encoding="UTF-8"?>
+<score-partwise version="4.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.musicxml.org/xsd/musicxml.xsd">
   <part-list>
     <score-part id="P1">
       <part-name>Music</part-name>
@@ -56,32 +55,34 @@ Let's look at each element in turn.
 ## XML Declaration
 
 ```xml
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 ```
 
 This is the XML declaration required of all XML documents. We have specified that the characters are written in the Unicode encoding UTF-8. This encoding provides backwards compatibility with ASCII.
 
-## Doctype and Schema
+## Document Root and Schema
 
 ```xml
+<score-partwise version="4.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.musicxml.org/xsd/musicxml.xsd">
+```
+
+This is the root document type. The `<score-partwise>` element is made up of parts, where each part is made up of measures. There is also a deprecated `<score-timewise>` option which is made up of measures, where each measure is made up of parts. The version attribute lets programs distinguish what version of MusicXML is being used more easily. Leave it out if you are writing MusicXML 1.0 files.
+
+As of MusicXML 4.1, XML Document Type Definitions (DTDs) are no longer updated to reflect the latest schema, and thus can no longer be used for validation. Instead, XML Schema Definition files (XSDs) fulfill this role. The `xsi:noNamespaceSchemaLocation` gives the canonical Internet location of the XSD schema, which may or may not be a valid URL. Using MusicXML's XML catalog, validators can be instructed to use the local copy of the schema instead of attempting to access the canonical location.
+
+## Versions 4.0 and Below
+
+For prior versions of MusicXML, the XML header declares a document type for applications that use XML Document Type Definitions (DTDs). It lets those applications know this is a MusicXML file. When using a document type declaration, we also set the value of `standalone` to "no" in the XML declaration since we are defining the document with an external definition in another file.
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE score-partwise PUBLIC
-    "-//Recordare//DTD MusicXML 4.1 Partwise//EN"
+    "-//Recordare//DTD MusicXML 4.0 Partwise//EN"
     "http://www.musicxml.org/dtds/partwise.dtd">
+<score-partwise version="4.0">
 ```
-
-This is the document type declaration for applications that use XML Document Type Definitions (DTDs). It lets those applications know this is a MusicXML file. When using a document type declaration, we also set the value of standalone to "no" in the XML declaration since we are defining the document with an external definition in another file.
-
-The MusicXML DTDs are deprecated as of Version 4.0 in favor of the W3C XML Schema Definition (XSD). However there are still applications using DTDs. When writing MusicXML files, writing the document type declaration makes it easier for all applications - XSD or DTD based - to validate MusicXML files.
-
-This public document type declaration includes an Internet location for the DTD. The URL in this declaration is just for reference. Most applications will know that they are expecting a MusicXML file and will want to validate against their own local copy of the MusicXML schemas. Use MusicXML's XML catalog to validate against the local copy, rather than reading the XSD or DTD definitions slowly over the network.
-
-## Score Partwise
-
-```xml
-<score-partwise version="4.1">
-```
-
-This is the root document type. The `<score-partwise>` element is made up of parts, where each part is made up of measures. There is also a `<score-timewise>` option which is made up of measures, where each measure is made up of parts. The version attribute lets programs distinguish what version of MusicXML is being used more easily. Leave it out if you are writing MusicXML 1.0 files.
 
 ## Part List
 

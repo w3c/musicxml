@@ -8,7 +8,9 @@ elements:
 description: A women's choral part is set up so that on three-way splits, first sopranos should sing the top note, second sopranos should sing the middle note, and all altos should sing the bottom note. A listening application can then see if the pitch is correct based on which player is selected.
 ---
 ```xml
-<score-partwise version="4.1">
+<score-partwise version="4.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.musicxml.org/xsd/musicxml.xsd">
    <part-list>
       <score-part id="P1">
          <part-name>Soprano Alto</part-name>
