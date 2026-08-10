@@ -11,15 +11,21 @@
   "repeats-jumps.musicxml": {
     "repeats-jumps.sch": "pass"
   },
-  "repeats-jumps-invalid.musicxml": {
+  "repeats-jumps.invalid.musicxml": {
     "repeats-jumps.sch": "fail"
   },
   "parts-groups.musicxml": {
     "parts-groups.sch": "pass",
     "to40.xsl": "pass"
   },
-  "parts-groups-invalid.musicxml": {
+  "parts-groups.invalid.musicxml": {
     "parts-groups.sch": "fail"
+  },
+  "beams-ties.musicxml": {
+    "beams-ties.sch": "pass"
+  },
+  "beams-ties.invalid.musicxml": {
+    "beams-ties.sch": "fail"
   },
   "harmonic-element.musicxml": {
     "to40.xsl": "pass"

@@ -49,7 +49,7 @@ To determine which test files are expected to skip / pass / fail against a given
 }
 ```
 
-By default, any test file is expected to `pass` against `musicxml.xsd` unless otherwise noted in `assertions.json`. Also by default, any test file is expected to `skip` any Schematron validation `.sch` unless otherwise noted.
+By default, any test file is expected to `pass` against `musicxml.xsd` unless otherwise noted in `assertions.json`. Also by default, any test file is expected to `skip` any Schematron validation `.sch` and any version downgrading `toXY.xsl` unless otherwise noted.
 
 ## Writing new Schematron validations
 - Identify an existing `.sch` validation whose topic matches best your desired validation, or create a new one.
