@@ -6,18 +6,22 @@ export const siteInfo: SiteInfo = {
 	title: 'MusicXML',
 	specVersion: '4.1',
 	isDraft: true,
-  isDev: import.meta.env.MODE === 'development' || !import.meta.env.SITE.includes('w3c-cg.github.io'),
+  isDev: import.meta.env.MODE === 'development' || !import.meta.env.SITE.includes('musicxml.formats.music'),
+  sites: {
+    draft: 'musicxml.formats.music',
+    stable: 'www.w3.org/2021/06'
+  },
 
   // FIXME!! The following are copies of entries in astro.config.mjs
   // because `astro build` chokes when we import astro.config.mjs
   redirects: {
-    '/sounds-reference/elements/any-sounds/': '/musicxml/sounds-reference/elements/any/',
-    '/sounds-reference/elements/ensemble-sounds/': '/musicxml/sounds-reference/elements/ensemble/',
-    '/sounds-reference/elements/solo-sounds/': '/musicxml/sounds-reference/elements/solo/',
-    '/sounds-reference/elements/sound-sounds/': '/musicxml/sounds-reference/elements/sound/',
-    '/musicxml-reference/elements/opus-reference/': '/musicxml/musicxml-reference/elements/opus/',
-    '/opus-reference/data-types/yes-no-opus/': '/musicxml/opus-reference/data-types/yes-no/',
-    '/sounds-reference/data-types/yes-no-sounds/': '/musicxml/sounds-reference/data-types/yes-no/',
+    '/sounds-reference/elements/any-sounds/': `${import.meta.env.BASE_URL}sounds-reference/elements/any/`,
+    '/sounds-reference/elements/ensemble-sounds/': `${import.meta.env.BASE_URL}sounds-reference/elements/ensemble/`,
+    '/sounds-reference/elements/solo-sounds/': `${import.meta.env.BASE_URL}sounds-reference/elements/solo/`,
+    '/sounds-reference/elements/sound-sounds/': `${import.meta.env.BASE_URL}sounds-reference/elements/sound/`,
+    '/musicxml-reference/elements/opus-reference/': `${import.meta.env.BASE_URL}musicxml-reference/elements/opus/`,
+    '/opus-reference/data-types/yes-no-opus/': `${import.meta.env.BASE_URL}opus-reference/data-types/yes-no/`,
+    '/sounds-reference/data-types/yes-no-sounds/': `${import.meta.env.BASE_URL}sounds-reference/data-types/yes-no/`,
   }
 }
 

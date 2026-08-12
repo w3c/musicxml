@@ -1,5 +1,4 @@
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
-import { siteInfo } from '@/site.config';
 
 export type Schema = 'container' | 'musicxml' | 'opus' | 'sounds';
 
@@ -43,7 +42,7 @@ export async function annotationMarkdown(annotation: string): Promise<string> {
 /**
  * Make a site URL including config.base.
  */
-export const url = (path: string) => `${import.meta.env.BASE_URL}/${path}`;
+export const url = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 /**
  * Convert SVG to Data URL
