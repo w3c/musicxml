@@ -20,6 +20,8 @@ const setLayout = () => {
   };
 };
 
+const base = ORIGIN?.includes('github.io') ? '/musicxml/' : '/';
+
 export default defineConfig({
   fonts: [
     {
@@ -71,20 +73,20 @@ export default defineConfig({
       })
     ]
   },
-  site: ORIGIN || 'https://w3c-cg.github.io',
-  base: '/musicxml',
+  site: ORIGIN || `https://w3c-cg.github.io`,
+  base,
   integrations: [pagefind({
     indexConfig: {
       includeCharacters: '@<>$'
     }
   })],
   redirects: {
-    '/sounds-reference/elements/any-sounds/': '/musicxml/sounds-reference/elements/any/',
-    '/sounds-reference/elements/ensemble-sounds/': '/musicxml/sounds-reference/elements/ensemble/',
-    '/sounds-reference/elements/solo-sounds/': '/musicxml/sounds-reference/elements/solo/',
-    '/sounds-reference/elements/sound-sounds/': '/musicxml/sounds-reference/elements/sound/',
-    '/musicxml-reference/elements/opus-reference/': '/musicxml/musicxml-reference/elements/opus/',
-    '/opus-reference/data-types/yes-no-opus/': '/musicxml/opus-reference/data-types/yes-no/',
-    '/sounds-reference/data-types/yes-no-sounds/': '/musicxml/sounds-reference/data-types/yes-no/',
+    '/sounds-reference/elements/any-sounds/': `${base}sounds-reference/elements/any/`,
+    '/sounds-reference/elements/ensemble-sounds/': `${base}sounds-reference/elements/ensemble/`,
+    '/sounds-reference/elements/solo-sounds/': `${base}sounds-reference/elements/solo/`,
+    '/sounds-reference/elements/sound-sounds/': `${base}sounds-reference/elements/sound/`,
+    '/musicxml-reference/elements/opus-reference/': `${base}musicxml-reference/elements/opus/`,
+    '/opus-reference/data-types/yes-no-opus/': `${base}opus-reference/data-types/yes-no/`,
+    '/sounds-reference/data-types/yes-no-sounds/': `${base}sounds-reference/data-types/yes-no/`,
   }
 });
