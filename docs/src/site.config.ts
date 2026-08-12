@@ -6,9 +6,9 @@ export const siteInfo: SiteInfo = {
 	title: 'MusicXML',
 	specVersion: '4.1',
 	isDraft: true,
-  isDev: import.meta.env.MODE === 'development' || !import.meta.env.SITE.includes('w3c-cg.github.io'),
+  isDev: import.meta.env.MODE === 'development' || !import.meta.env.SITE.includes('musicxml.formats.music'),
   sites: {
-    draft: 'w3c-cg.github.io',
+    draft: 'musicxml.formats.music',
     stable: 'www.w3.org/2021/06'
   },
 

@@ -80,5 +80,5 @@ MusicXML examples can also be stored in the same folder `docs/src/data/examples/
 - To validate a modified XSD schema (requires `xmllint`): `npm run debug:xsd schema-file` (without file extension)
 
 ## Deployment
-- Set `ORIGIN` environment variable to be your host URL's origin (default is https://w3c-cg.github.io). `.env` works too.
+- Set `ORIGIN` environment variable to be your host URL's origin (e.g. https://infojunkie.github.io). `.env` works too.
 - If `ORIGIN` is left unset or blank, the GitHub CI/CD will not proceed with build / deploy steps.
