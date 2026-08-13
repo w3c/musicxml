@@ -20449,7 +20449,7 @@
          {
             "required": false,
             "name": "fan",
-            "documentation": "Beams that have a begin value may also have a fan attribute to indicate accelerandos and ritardandos using fanned beams. The fan attribute may also be used with a continue value if the fanning direction changes on that note. The value is none if not specified.\n\nBecause the fanning factor affects all the beams in a beaming group, it is enough to declare it only once in the group. This is equivalent to adding the fan attribute with the same value to all <beam> element in the beaming group. If different fan values are used in the same beaming group, the behavior of the application will be undefined. A fanning factor applied to a single (eighth note) beam has no visual impact and can be ignored by the application.",
+            "documentation": "Beams that have a begin value may also have a fan attribute to indicate accelerandos and ritardandos using fanned beams. The fan attribute may also be used with a continue value if the fanning direction changes on that note. The value is none if not specified.\n\nBecause the fanning factor affects all the beams in a beaming group, it is enough to declare it only once in the group, i.e. in a single <beam> element. This is equivalent to adding the fan attribute with the same value to all <beam> element in the beaming group. If different fan values are used in the same beaming group, the behavior of the application will be undefined. A fanning factor applied to a single beam (an eighth note) has no meaning and should be ignored by the application.",
             "type": "fan"
          },
          {
