@@ -20449,7 +20449,7 @@
          {
             "required": false,
             "name": "fan",
-            "documentation": "Beams that have a begin value may also have a fan attribute to indicate accelerandos and ritardandos using fanned beams. The fan attribute may also be used with a continue value if the fanning direction changes on that note. The value is none if not specified.",
+            "documentation": "Beams that have a begin value may also have a fan attribute to indicate accelerandos and ritardandos using fanned beams. The fan attribute may also be used with a continue value if the fanning direction changes on that note. The value is none if not specified.\n\nBecause the fanning factor affects all the beams in a beaming group, it is enough to declare it only once in the group, i.e. in a single <beam> element. This is equivalent to adding the fan attribute with the same value to all <beam> element in the beaming group. If different fan values are used in the same beaming group, the behavior of the application will be undefined. A fanning factor applied to a single beam (an eighth note) has no meaning and should be ignored by the application.",
             "type": "fan"
          },
          {
@@ -20466,7 +20466,7 @@
          }
       ],
       "name": "beam",
-      "documentation": "Beam values include begin, continue, end, forward hook, and backward hook. Each beam in a note is represented with a separate <beam> element with a different number attribute, starting with the eighth note beam using a value of 1."
+      "documentation": "Beam values include begin, continue, end, forward hook, and backward hook. Each beam in a note is represented with a separate <beam> element with a different number attribute, starting with the eighth note beam using a value of 1.\n\nNote that the beam number does not distinguish sets of beams that overlap, as it does for slur and other elements. Beaming groups are distinguished by being in different voices and\/or the presence or absence of grace and cue elements.\n\nBeams that have a begin value can also have a fan attribute to indicate accelerandos and ritardandos using fanned beams (also called \"feathered beams\"). The fan attribute may also be used with a continue value if the fanning direction changes on that note. The value is \"none\" if not specified.\n\nThe repeater attribute has been deprecated in MusicXML 3.0. Formerly used for tremolos, it needs to be specified with a \"yes\" value for each beam using it."
    },
    "beater": {
       "children": {
