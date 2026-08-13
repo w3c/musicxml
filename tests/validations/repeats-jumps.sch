@@ -34,4 +34,24 @@
     </sch:rule>
   </sch:pattern>
 
+  <!-- Check that every @dalsegno has a matching @segno -->
+  <sch:pattern id="dalsegno-segno-matching">
+    <sch:rule context="sound[@dalsegno]">
+      <sch:let name="dalsegno" value="@dalsegno"/>
+      <sch:assert test="count(//sound[@segno = $dalsegno]) = 1">
+        sound element with @dalsegno="<sch:value-of select="$dalsegno"/>" must have exactly one corresponding sound element with @segno="<sch:value-of select="$dalsegno"/>".
+      </sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Check that every @segno has one matching @dalsegno -->
+  <sch:pattern id="segno-dalsegno-matching">
+    <sch:rule context="sound[@segno]">
+      <sch:let name="segno" value="@segno"/>
+      <sch:assert test="count(//sound[@dalsegno = $segno]) = 1">
+        sound element with @segno="<sch:value-of select="$segno"/>" must have exactly one corresponding sound element with @dalsegno="<sch:value-of select="$segno"/>".
+      </sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
 </sch:schema>

@@ -264,6 +264,7 @@
         <direction-type>
           <coda default-x="-8.06" default-y="22.74" relative-y="20.00"/>
           </direction-type>
+        <sound dalsegno="segno2"/>
         </direction>
       <note>
         <rest measure="yes"/>
