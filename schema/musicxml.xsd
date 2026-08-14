@@ -8182,9 +8182,9 @@ Note that this attribute does not distinguish sets of beams that overlap, as it 
 				</xs:attribute>
 				<xs:attribute name="fan" type="fan">
 					<xs:annotation>
-						<xs:documentation>Beams that have a begin value may also have a fan attribute to indicate accelerandos and ritardandos using fanned beams. The fan attribute may also be used with a continue value if the fanning direction changes on that note. The value is none if not specified.
+						<xs:documentation>Beams that have a begin value may also have a fan attribute to indicate accelerandos and ritardandos using fanned beams (also called feathered beams). The fan attribute may also be used with a continue value if the fanning direction changes on that note. The value is none if not specified.
 
-Because the fanning factor affects all the beams in a beaming group, it is enough to declare it only once in the group, i.e. in a single &lt;beam&gt; element. This is equivalent to adding the fan attribute with the same value to all &lt;beam&gt; element in the beaming group. If different fan values are used in the same beaming group, the behavior of the application will be undefined. A fanning factor applied to a single beam (an eighth note) has no meaning and should be ignored by the application.</xs:documentation>
+Because fanning affects all the beams in a beaming group, it is enough to declare it only once in the group, i.e. in a single &lt;beam&gt; element. This is equivalent to adding the same fan value to all &lt;beam&gt; elements in the beaming group. If different fan values are declared in the same beaming group, the behavior of the application will be undefined. A fan attribute applied to a single beam (an eighth note) has no meaning and should be ignored by the application.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 				<xs:attributeGroup ref="color"/>
