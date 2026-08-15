@@ -1,11 +1,11 @@
 {
-  "41g-PartNoId.invalid.xml": {
+  "41g-PartNoId.invalid.musicxml": {
     "musicxml.xsd": "fail"
   },
-  "74b-FiguredBass.invalid.xml": {
+  "74b-FiguredBass.invalid.musicxml": {
     "musicxml.xsd": "fail"
   },
-  "75b-Accordion.invalid.xml": {
+  "75b-Accordion.invalid.musicxml": {
     "musicxml.xsd": "fail"
   },
   "repeats-jumps.musicxml": {
