@@ -40,7 +40,7 @@ SOFTWARE.
   <output indent="yes" use-when="$schxslt:debug"/>
 
   <variable name="schxslt:version" as="xs:string"
-                select="if (starts-with('1.11.1', '$')) then 'development' else '1.11.1'"/>
+                select="if (starts-with('${project.version}', '$')) then 'development' else '${project.version}'"/>
 
   <param name="schxslt:phase" as="xs:string" select="'#DEFAULT'">
     <!--
@@ -592,7 +592,7 @@ SOFTWARE.
           </for-each>
           <for-each select="sch:p" use-when="not($schxslt:compact-report)">
             <svrl:text>
-              <sequence select="(@xml:*, @icon)"/>
+              <sequence select="(@xml:lang, @xml:space, @icon)"/>
               <sequence select="node()"/>
             </svrl:text>
           </for-each>
@@ -837,21 +837,19 @@ SOFTWARE.
       <if test="@value">
         <attribute name="dir" select="@value"/>
       </if>
-      <sequence select="@xml:*"/>
       <apply-templates select="node()" mode="#current"/>
     </svrl:dir>
   </template>
 
   <template match="sch:emph" as="element(svrl:emph)" mode="schxslt:copy-message-content">
     <svrl:emph>
-      <sequence select="@xml:*"/>
       <apply-templates select="node()" mode="#current"/>
     </svrl:emph>
   </template>
 
   <template match="sch:span" as="element(svrl:span)" mode="schxslt:copy-message-content">
     <svrl:span>
-      <sequence select="@class, @xml:*"/>
+      <sequence select="@class"/>
       <apply-templates select="node()" mode="#current"/>
     </svrl:span>
   </template>
@@ -944,7 +942,7 @@ SOFTWARE.
 
   <template name="schxslt:report-message" as="element(svrl:text)" visibility="private">
     <svrl:text>
-      <sequence select="@xml:*"/>
+      <sequence select="@xml:lang, @xml:space"/>
       <call-template name="schxslt:copy-attributes">
         <with-param name="attributes" as="attribute()*" select="(@see, @icon, @fpi)"/>
       </call-template>
