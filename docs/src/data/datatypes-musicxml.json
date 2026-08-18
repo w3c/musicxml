@@ -23,7 +23,7 @@
    },
    "smufl-coda-glyph-name": {
       "name": "smufl-coda-glyph-name",
-      "documentation": "The smufl-coda-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) coda character. The value is a SMuFL canonical glyph name that starts with coda.",
+      "documentation": "The smufl-coda-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) coda glyph. The value is a SMuFL canonical glyph name that starts with coda.",
       "base": [
          "smufl-glyph-name"
       ],
@@ -261,7 +261,7 @@
    },
    "smufl-accidental-glyph-name": {
       "name": "smufl-accidental-glyph-name",
-      "documentation": "The smufl-accidental-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) accidental character. The value is a SMuFL canonical glyph name that starts with one of the strings used at the start of glyph names for SMuFL accidentals.",
+      "documentation": "The smufl-accidental-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) accidental glyph. The value is a SMuFL canonical glyph name that starts with one of the strings used at the start of glyph names for SMuFL accidentals.",
       "base": [
          "smufl-glyph-name"
       ],
@@ -270,7 +270,7 @@
    },
    "smufl-pictogram-glyph-name": {
       "name": "smufl-pictogram-glyph-name",
-      "documentation": "The smufl-pictogram-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) percussion pictogram character. The value is a SMuFL canonical glyph name that starts with pict.",
+      "documentation": "The smufl-pictogram-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) percussion pictogram glyph. The value is a SMuFL canonical glyph name that starts with pict.",
       "base": [
          "smufl-glyph-name"
       ],
@@ -583,7 +583,7 @@
    },
    "smufl-segno-glyph-name": {
       "name": "smufl-segno-glyph-name",
-      "documentation": "The smufl-segno-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) segno character. The value is a SMuFL canonical glyph name that starts with segno.",
+      "documentation": "The smufl-segno-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) segno glyph. The value is a SMuFL canonical glyph name that starts with segno.",
       "base": [
          "smufl-glyph-name"
       ],
@@ -1030,7 +1030,7 @@
    },
    "smufl-lyrics-glyph-name": {
       "name": "smufl-lyrics-glyph-name",
-      "documentation": "The smufl-lyrics-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) lyrics elision character. The value is a SMuFL canonical glyph name that starts with lyrics.",
+      "documentation": "The smufl-lyrics-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) lyrics elision glyph. The value is a SMuFL canonical glyph name that starts with lyrics.",
       "base": [
          "smufl-glyph-name"
       ],
@@ -1099,7 +1099,7 @@
    },
    "smufl-wavy-line-glyph-name": {
       "name": "smufl-wavy-line-glyph-name",
-      "documentation": "The smufl-wavy-line-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) wavy line character. The value is a SMuFL canonical glyph name that either starts with wiggle, or begins with guitar and ends with VibratoStroke. This includes all the glyphs in the [Multi-segment lines range](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/multi-segment-lines.html), excluding the beam glyphs.",
+      "documentation": "The smufl-wavy-line-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) wavy line glyph. The value is a SMuFL canonical glyph name that either starts with wiggle, or begins with guitar and ends with VibratoStroke. This includes all the glyphs in the [Multi-segment lines range](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/multi-segment-lines.html), excluding the beam glyphs.",
       "base": [
          "smufl-glyph-name"
       ],
@@ -1454,7 +1454,7 @@
    },
    "staff-divide-symbol": {
       "name": "staff-divide-symbol",
-      "documentation": "The staff-divide-symbol type is used for staff division symbols. The down, up, and up-down values correspond to SMuFL code points U+E00B, U+E00C, and U+E00D respectively.",
+      "documentation": "The staff-divide-symbol type is used for staff division symbols. The down, up, and up-down values correspond to SMuFL glyphs staffDivideArrowDown, staffDivideArrowUp, and staffDivideArrowUpDown, respectively.",
       "base": [
          "xs:token"
       ],
@@ -1544,7 +1544,7 @@
    },
    "smufl-glyph-name": {
       "name": "smufl-glyph-name",
-      "documentation": "The smufl-glyph-name type is used for attributes that reference a specific Standard Music Font Layout (SMuFL) character. The value is a SMuFL canonical glyph name, not a code point. For instance, the value for a standard piano pedal mark would be keyboardPedalPed, not U+E650.",
+      "documentation": "The smufl-glyph-name type is used for attributes that reference a specific Standard Music Font Layout (SMuFL) glyph. The value is a SMuFL canonical glyph name, not a code point. For instance, the value for a standard piano pedal mark would be keyboardPedalPed, not U+E650.",
       "base": [
          "xs:NMTOKEN"
       ],

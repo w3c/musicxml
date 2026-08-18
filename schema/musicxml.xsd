@@ -548,14 +548,14 @@ As this example demonstrates, a reading program should be prepared to handle cas
 
 	<xs:simpleType name="smufl-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-glyph-name type is used for attributes that reference a specific Standard Music Font Layout (SMuFL) character. The value is a SMuFL canonical glyph name, not a code point. For instance, the value for a standard piano pedal mark would be keyboardPedalPed, not U+E650.</xs:documentation>
+			<xs:documentation>The smufl-glyph-name type is used for attributes that reference a specific Standard Music Font Layout (SMuFL) glyph. The value is a SMuFL canonical glyph name, not a code point. For instance, the value for a standard piano pedal mark would be keyboardPedalPed, not U+E650.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:NMTOKEN"/>
 	</xs:simpleType>
 
 	<xs:simpleType name="smufl-accidental-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-accidental-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) accidental character. The value is a SMuFL canonical glyph name that starts with one of the strings used at the start of glyph names for SMuFL accidentals.</xs:documentation>
+			<xs:documentation>The smufl-accidental-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) accidental glyph. The value is a SMuFL canonical glyph name that starts with one of the strings used at the start of glyph names for SMuFL accidentals.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="smufl-glyph-name">
 			<xs:pattern value="(acc|medRenFla|medRenNatura|medRenShar|kievanAccidental)(\c+)"/>
@@ -564,7 +564,7 @@ As this example demonstrates, a reading program should be prepared to handle cas
 
 	<xs:simpleType name="smufl-coda-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-coda-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) coda character. The value is a SMuFL canonical glyph name that starts with coda.</xs:documentation>
+			<xs:documentation>The smufl-coda-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) coda glyph. The value is a SMuFL canonical glyph name that starts with coda.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="smufl-glyph-name">
 			<xs:pattern value="coda\c*"/>
@@ -573,7 +573,7 @@ As this example demonstrates, a reading program should be prepared to handle cas
 
 	<xs:simpleType name="smufl-lyrics-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-lyrics-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) lyrics elision character. The value is a SMuFL canonical glyph name that starts with lyrics.</xs:documentation>
+			<xs:documentation>The smufl-lyrics-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) lyrics elision glyph. The value is a SMuFL canonical glyph name that starts with lyrics.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="smufl-glyph-name">
 			<xs:pattern value="lyrics\c+"/>
@@ -582,7 +582,7 @@ As this example demonstrates, a reading program should be prepared to handle cas
 
 	<xs:simpleType name="smufl-pictogram-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-pictogram-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) percussion pictogram character. The value is a SMuFL canonical glyph name that starts with pict.</xs:documentation>
+			<xs:documentation>The smufl-pictogram-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) percussion pictogram glyph. The value is a SMuFL canonical glyph name that starts with pict.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="smufl-glyph-name">
 			<xs:pattern value="pict\c+"/>
@@ -591,7 +591,7 @@ As this example demonstrates, a reading program should be prepared to handle cas
 
 	<xs:simpleType name="smufl-segno-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-segno-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) segno character. The value is a SMuFL canonical glyph name that starts with segno.</xs:documentation>
+			<xs:documentation>The smufl-segno-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) segno glyph. The value is a SMuFL canonical glyph name that starts with segno.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="smufl-glyph-name">
 			<xs:pattern value="segno\c*"/>
@@ -600,7 +600,7 @@ As this example demonstrates, a reading program should be prepared to handle cas
 
 	<xs:simpleType name="smufl-wavy-line-glyph-name">
 		<xs:annotation>
-			<xs:documentation>The smufl-wavy-line-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) wavy line character. The value is a SMuFL canonical glyph name that either starts with wiggle, or begins with guitar and ends with VibratoStroke. This includes all the glyphs in the [Multi-segment lines range](https://www.w3.org/2021/03/smufl14/tables/multi-segment-lines.html), excluding the beam glyphs.</xs:documentation>
+			<xs:documentation>The smufl-wavy-line-glyph-name type is used to reference a specific Standard Music Font Layout (SMuFL) wavy line glyph. The value is a SMuFL canonical glyph name that either starts with wiggle, or begins with guitar and ends with VibratoStroke. This includes all the glyphs in the [Multi-segment lines range](https://www.w3.org/2021/03/smufl14/tables/multi-segment-lines.html), excluding the beam glyphs.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="smufl-glyph-name">
 			<xs:pattern value="(wiggle\c+)|(guitar\c*VibratoStroke)"/>
@@ -3966,11 +3966,11 @@ By default, all these attributes are set to yes. If print-object is set to no, t
 
 	<xs:attributeGroup name="smufl">
 		<xs:annotation>
-			<xs:documentation>The smufl attribute group is used to indicate a particular Standard Music Font Layout (SMuFL) character. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.</xs:documentation>
+			<xs:documentation>The smufl attribute group is used to indicate a particular Standard Music Font Layout (SMuFL) glyph. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="smufl" type="smufl-glyph-name">
 			<xs:annotation>
-				<xs:documentation>Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.</xs:documentation>
+				<xs:documentation>Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:attributeGroup>
@@ -4425,7 +4425,7 @@ While often numeric, it does not have to be. Non-numeric values are typically us
 				<xs:attributeGroup ref="text-formatting"/>
 				<xs:attribute name="smufl" type="smufl-accidental-glyph-name">
 					<xs:annotation>
-						<xs:documentation>Specifies the exact Standard Music Font Layout (SMuFL) accidental character, using its SMuFL canonical glyph name.</xs:documentation>
+						<xs:documentation>Specifies the exact Standard Music Font Layout (SMuFL) accidental glyph, using its SMuFL canonical glyph name.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -4440,7 +4440,7 @@ While often numeric, it does not have to be. Non-numeric values are typically us
 		<xs:attributeGroup ref="optional-unique-id"/>
 		<xs:attribute name="smufl" type="smufl-coda-glyph-name">
 			<xs:annotation>
-				<xs:documentation>Specifies the exact Standard Music Font Layout (SMuFL) coda character used for the coda sign, using its SMuFL canonical glyph name.</xs:documentation>
+				<xs:documentation>Specifies the exact Standard Music Font Layout (SMuFL) coda glyph used for the coda sign, using its SMuFL canonical glyph name.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -5332,7 +5332,7 @@ The &lt;chromatic&gt; element in a &lt;part-transpose&gt; element will usually h
 			<xs:extension base="accidental-value">
 				<xs:attribute name="smufl" type="smufl-accidental-glyph-name">
 					<xs:annotation>
-						<xs:documentation>Specifies a Standard Music Font Layout (SMuFL) accidental character by its canonical glyph name.</xs:documentation>
+						<xs:documentation>Specifies a Standard Music Font Layout (SMuFL) accidental glyph by its canonical glyph name.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>

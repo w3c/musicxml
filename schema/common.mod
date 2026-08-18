@@ -248,7 +248,7 @@
 <!--
 	The smufl-glyph-name entity is used for attributes that
 	reference a specific Standard Music Font Layout (SMuFL)
-	character. The value is a SMuFL canonical glyph name,
+	glyph. The value is a SMuFL canonical glyph name,
 	not a code point. For instance, the value for a standard
 	piano pedal mark would be keyboardPedalPed, not U+E650.
 -->
@@ -782,7 +782,7 @@
 
 <!--
 	The smufl entity is used to indicate a particular Standard
-	Music Font Layout (SMuFL) character. Sometimes this is a
+	Music Font Layout (SMuFL) glyph. Sometimes this is a
 	formatting choice, and sometimes this is a refinement of
 	the semantic meaning of an element.
 -->

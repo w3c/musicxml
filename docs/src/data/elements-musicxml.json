@@ -3062,7 +3062,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -3442,7 +3442,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -3687,7 +3687,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -4541,7 +4541,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Specifies the exact Standard Music Font Layout (SMuFL) accidental character, using its SMuFL canonical glyph name.",
+            "documentation": "Specifies the exact Standard Music Font Layout (SMuFL) accidental glyph, using its SMuFL canonical glyph name.",
             "type": "smufl-accidental-glyph-name"
          }
       ],
@@ -4666,7 +4666,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Specifies a Standard Music Font Layout (SMuFL) accidental character by its canonical glyph name.",
+            "documentation": "Specifies a Standard Music Font Layout (SMuFL) accidental glyph by its canonical glyph name.",
             "type": "smufl-accidental-glyph-name"
          }
       ],
@@ -5296,7 +5296,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -7033,7 +7033,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          },
          {
@@ -10954,7 +10954,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -11066,7 +11066,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -11524,7 +11524,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          },
          {
@@ -11635,7 +11635,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -13439,7 +13439,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -14914,7 +14914,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -17865,7 +17865,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Specifies the exact Standard Music Font Layout (SMuFL) coda character used for the coda sign, using its SMuFL canonical glyph name.",
+            "documentation": "Specifies the exact Standard Music Font Layout (SMuFL) coda glyph used for the coda sign, using its SMuFL canonical glyph name.",
             "type": "smufl-coda-glyph-name"
          }
       ],
@@ -19752,7 +19752,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
@@ -21785,7 +21785,7 @@
          {
             "required": false,
             "name": "smufl",
-            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) character using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
+            "documentation": "Indicates a particular Standard Music Font Layout (SMuFL) glyph using its canonical glyph name. Sometimes this is a formatting choice, and sometimes this is a refinement of the semantic meaning of an element.",
             "type": "smufl-glyph-name"
          }
       ],
