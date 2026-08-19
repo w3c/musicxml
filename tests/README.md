@@ -60,7 +60,14 @@ $ ./transpile.py validations/validation-name.sch > validations/validation-name.x
 ```
 - Add relevant test cases to `files`. The convention is to add 2 files, one named `validation-name.musicxml` for valid cases, another called `validation-name-invalid.musicxml` for invalid cases.
 - Add the relevant entries to `assertions.json`
-- Test your validations: `TEST=schematron ./test.sh`
+- Test your validations:
+```shell
+$ TEST=schematron ./test.sh
+```
+- Download the latest Schematron transpiler and update the validations:
+```shell
+$ ./transpile.sh
+```
 
 ## Credits
 - The repo [`musicxmlTestSuite`](https://github.com/w3c-cg/musicxmlTestSuite) was generously donated by [Michael Asato Cuthbert](https://www.trecento.com), former MusicXML spec editor and W3C Music Notation Community Group co-chair.
