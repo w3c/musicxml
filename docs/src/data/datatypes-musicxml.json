@@ -2296,7 +2296,7 @@
    },
    "distance-type": {
       "name": "distance-type",
-      "documentation": "The distance-type defines what type of distance is being defined in a <distance> element. Values include:\n\n- beam\n- hyphen\n\nThis is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.\n\nThe beam type represents the distance between beam. The hyphen type represents the distance between hyphens in lyrics.",
+      "documentation": "The distance-type defines what type of distance is being defined in a <distance> element. Values include:\n\n- beam\n- hyphen\n\nThis is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.\n\nThe beam type represents the distance between beams. The hyphen type represents the distance between hyphens in lyrics.",
       "base": [
          "xs:token"
       ],
