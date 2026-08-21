@@ -17,6 +17,6 @@ const display = !value.value.length ? '<empty string>' : value.value;
   <td>{display}</td>
   <td class="enumeration-description">
   {image in images && <Image src={images[image]()} alt={`${datatype.data.name}: ${display}`} />}
-  {value.documentation && <Fragment set:html={annotationMarkdown(value.documentation)}/>}
+  {value.documentation && <Fragment set:html={annotationMarkdown(value.documentation)}/>}</td>
   </tr>
 </tr>
