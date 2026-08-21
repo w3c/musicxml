@@ -1,1 +1,5 @@
-labels: []
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    labels:
+      - "dependencies"
