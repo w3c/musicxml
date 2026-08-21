@@ -2664,7 +2664,7 @@ In start-stop cases, ties can add more elements using a continue type. This is t
 
 This is left as a string so that other application-specific types can be defined, but it is made a separate type so that it can be redefined more strictly.
 
-The beam type represents the distance between beam. The hyphen type represents the distance between hyphens in lyrics.</xs:documentation>
+The beam type represents the distance between beams. The hyphen type represents the distance between hyphens in lyrics.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token"/>
 	</xs:simpleType>
