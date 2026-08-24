@@ -5625,7 +5625,7 @@ The print-object attribute allows a time signature to be specified but not print
 			</xs:sequence>
 			<xs:element name="senza-misura" type="xs:string">
 				<xs:annotation>
-					<xs:documentation>A &lt;senza-misura&gt; element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used, if any, such as an X. The &lt;time&gt; element&apos;s symbol attribute is not used when a &lt;senza-misura&gt; element is present.</xs:documentation>
+					<xs:documentation>A &lt;senza-misura&gt; element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used, if any. Content values "X" (corresponding to SMuFL timeSigX), "~" (corresponding to SMuFL timeSigOpenPenderecki) and empty string (no symbol displayed) are generally recognized - all other values are application-dependent. The &lt;time&gt; element&apos;s symbol attribute is not used when a &lt;senza-misura&gt; element is present.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>

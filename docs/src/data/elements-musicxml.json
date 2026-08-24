@@ -7089,7 +7089,7 @@
          "time"
       ],
       "name": "senza-misura",
-      "documentation": "A <senza-misura> element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used, if any, such as an X. The <time> element's symbol attribute is not used when a <senza-misura> element is present."
+      "documentation": "A <senza-misura> element explicitly indicates that no time signature is present. The optional element content indicates the symbol to be used, if any. Content values \"X\" (corresponding to SMuFL timeSigX), \"~\" (corresponding to SMuFL timeSigOpenPenderecki) and empty string (no symbol displayed) are generally recognized - all other values are application-dependent. The <time> element's symbol attribute is not used when a <senza-misura> element is present."
    },
    "root-step": {
       "children": {
