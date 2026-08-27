@@ -27,7 +27,7 @@
     "xslt3": "^2.7.0"
   },
   "devDependencies": {
-    "@types/node": "^26.2.0"
+    "@types/node": "^26.3.0"
   },
   "allowScripts": {
     "esbuild@0.28.2": true
