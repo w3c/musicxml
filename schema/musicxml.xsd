@@ -10751,7 +10751,7 @@ The &lt;duration&gt; element moves the musical position when used in &lt;backup&
 				<xs:annotation>
 					<xs:documentation>The &lt;display-step&gt; and &lt;display-octave&gt; elements are used to place &lt;rest&gt; and &lt;unpitched&gt; elements on the staff without implying that these elements have pitch. Positioning follows the current clef. If percussion clef is used, the &lt;display-step&gt; and &lt;display-octave&gt; elements are interpreted as if in treble clef, with a G in octave 4 on line 2.
 
-The vertical positioning of the symbol is in reference to where [SMuFL fonts place the baseline for these symbols](https://www.w3.org/2021/03/smufl14/specification/scoring-metrics-glyph-registration.html). See the documentation for &lt;rest&gt; and &lt;unpitched&gt; for specific details about each.</xs:documentation>
+The vertical position of the symbol is determined by the "origin point" from which the symbol's SMuFL glyph is drawn. This origin coincides with [the SMuFL specification of the baseline for each symbol](https://www.w3.org/2021/03/smufl14/specification/scoring-metrics-glyph-registration.html). See the documentation for &lt;rest&gt; and &lt;unpitched&gt; for specific details about each.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="display-octave" type="octave">
@@ -10789,7 +10789,7 @@ The &lt;duration&gt; of a &lt;chord&gt; note does not move the musical position 
 					<xs:annotation>
 						<xs:documentation>The &lt;rest&gt; element indicates notated rests or silences. A &lt;rest&gt; element is usually empty, but placement on the staff can be specified using &lt;display-step&gt; and &lt;display-octave&gt; elements.
 
-The vertical positioning of the symbol is in reference to where [SMuFL fonts place the baseline for these symbols](https://www.w3.org/2021/03/smufl14/tables/rests.html#implementation-notes). This is the top of a whole rest, the bottom of a half rest, and the mid-point for other rests. Full-measure rests are no exception, they also follow the same SMuFL symbol positioning.
+The vertical position of the symbol is determined by the "origin point" from which the symbol's SMuFL glyph is drawn. [This is the top of a whole rest, the bottom of a half rest, and the mid-point for other rests](https://www.w3.org/2021/03/smufl14/tables/rests.html#implementation-notes). Full-measure rests are no exception, they also follow the same SMuFL symbol positioning.
 
 In the absence of explicitly defined &lt;display-step&gt;, the conventional vertical position of the rest symbol is centered in the current staff. This means that the application needs to apply the SMuFL positioning rules to ensure this visual outcome.</xs:documentation>
 					</xs:annotation>

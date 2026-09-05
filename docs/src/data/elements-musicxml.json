@@ -1656,7 +1656,7 @@
          "unpitched"
       ],
       "name": "display-step",
-      "documentation": "The <display-step> and <display-octave> elements are used to place <rest> and <unpitched> elements on the staff without implying that these elements have pitch. Positioning follows the current clef. If percussion clef is used, the <display-step> and <display-octave> elements are interpreted as if in treble clef, with a G in octave 4 on line 2.\n\nThe vertical positioning of the symbol is in reference to where [SMuFL fonts place the baseline for these symbols](https:\/\/www.w3.org\/2021\/03\/smufl14\/specification\/scoring-metrics-glyph-registration.html). See the documentation for <rest> and <unpitched> for specific details about each."
+      "documentation": "The <display-step> and <display-octave> elements are used to place <rest> and <unpitched> elements on the staff without implying that these elements have pitch. Positioning follows the current clef. If percussion clef is used, the <display-step> and <display-octave> elements are interpreted as if in treble clef, with a G in octave 4 on line 2.\n\nThe vertical position of the symbol is determined by the \"origin point\" from which the symbol's SMuFL glyph is drawn. This origin coincides with [the SMuFL specification of the baseline for each symbol](https:\/\/www.w3.org\/2021\/03\/smufl14\/specification\/scoring-metrics-glyph-registration.html). See the documentation for <rest> and <unpitched> for specific details about each."
    },
    "display-text": {
       "children": {
@@ -15005,7 +15005,7 @@
          }
       ],
       "name": "rest",
-      "documentation": "The <rest> element indicates notated rests or silences. A <rest> element is usually empty, but placement on the staff can be specified using <display-step> and <display-octave> elements.\n\nThe vertical positioning of the symbol is in reference to where [SMuFL fonts place the baseline for these symbols](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/rests.html#implementation-notes). This is the top of a whole rest, the bottom of a half rest, and the mid-point for other rests. Full-measure rests are no exception, they also follow the same SMuFL symbol positioning.\n\nIn the absence of explicitly defined <display-step>, the conventional vertical position of the rest symbol is centered in the current staff. This means that the application needs to apply the SMuFL positioning rules to ensure this visual outcome."
+      "documentation": "The <rest> element indicates notated rests or silences. A <rest> element is usually empty, but placement on the staff can be specified using <display-step> and <display-octave> elements.\n\nThe vertical position of the symbol is determined by the \"origin point\" from which the symbol's SMuFL glyph is drawn. [This is the top of a whole rest, the bottom of a half rest, and the mid-point for other rests](https:\/\/www.w3.org\/2021\/03\/smufl14\/tables\/rests.html#implementation-notes). Full-measure rests are no exception, they also follow the same SMuFL symbol positioning.\n\nIn the absence of explicitly defined <display-step>, the conventional vertical position of the rest symbol is centered in the current staff. This means that the application needs to apply the SMuFL positioning rules to ensure this visual outcome."
    },
    "repeat": {
       "children": null,
