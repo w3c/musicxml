@@ -1,6 +1,7 @@
 // @ts-check
 import { transformerCopyButton } from '@selemondev/shiki-transformer-copy-button';
 import { defineConfig, fontProviders } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import { loadEnv } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import ViteRestart from 'vite-plugin-restart';
@@ -53,7 +54,9 @@ export default defineConfig({
     }
   ],
   markdown: {
-    remarkPlugins: [setLayout],
+    processor: unified({
+      remarkPlugins: [setLayout],
+    }),
     shikiConfig: {
       theme: 'github-dark-high-contrast',
       transformers: [transformerCopyButton({
