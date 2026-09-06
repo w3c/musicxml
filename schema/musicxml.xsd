@@ -10791,7 +10791,7 @@ The &lt;duration&gt; of a &lt;chord&gt; note does not move the musical position 
 
 The vertical position of the symbol is determined by the "origin point" from which the symbol's SMuFL glyph is drawn. [This is the top of a whole rest, the bottom of a half rest, and the mid-point for other rests](https://www.w3.org/2021/03/smufl14/tables/rests.html#implementation-notes). Full-measure rests are no exception, they also follow the same SMuFL symbol positioning.
 
-In the absence of explicitly defined &lt;display-step&gt;, the placement of the rest symbol is application-defined. Typically, the conventional placement will be expected, unless the application adjusts the placement to accommodate situations such as multiple voices.</xs:documentation>
+When the &lt;display-step&gt; falls in a staff space instead of a line, the placement of the rest sumbol is considered invalid and the behavior is application-dependent. In the absence of explicitly defined &lt;display-step&gt;, the placement is also application-defined. Typically, the conventional placement will be expected, unless the application adjusts the placement to accommodate situations such as multiple voices.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:choice>
